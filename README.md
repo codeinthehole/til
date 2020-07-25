@@ -1,0 +1,3 @@
+# TIL...
+
+Simple static site of TIL posts.
