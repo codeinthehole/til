@@ -1,6 +1,8 @@
 baseURL = "http://codeinthehole.github.io/"
 languageCode = "en-us"
 title = "Today I Learnt..."
+
+theme = "etch"
              
 # Server statics from above Hugosite root.
 staticDir = ["../images/"]

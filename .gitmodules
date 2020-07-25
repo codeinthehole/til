@@ -1,0 +1,3 @@
+[submodule "hugosite/themes/etch"]
+	path = hugosite/themes/etch
+	url = git@github.com:LukasJoswiak/etch.git
