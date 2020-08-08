@@ -1,0 +1,12 @@
+<h3>I learnt&#8230;</h3>
+
+<ul id="posts">
+    {{ range where site.RegularPages "Type" "in" site.Params.mainSections }}
+        <li>
+            <a href="{{ .Permalink }}">
+                {{- .Title | markdownify -}}
+                <small>on <time>{{ .Date.Format "January 2, 2006" }}</time></small>
+            </a>
+        </li>
+    {{ end }}
+</ul>

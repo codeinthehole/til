@@ -2,7 +2,17 @@ baseURL = "http://codeinthehole.github.io/"
 languageCode = "en-us"
 title = "Today I Learnt..."
 
+# Simple theme (https://github.com/LukasJoswiak/etch/wiki) with customisation.
 theme = "etch"
              
 # Server statics from above Hugosite root.
 staticDir = ["../images/"]
+
+[params]
+  copyright = "Copyright © 2020 David Winterbottom"
+
+  # Goes into HTML meta description
+  description = "Things David Winterbottom has learnt"
+
+  # Disable dark mode
+  dark = "off"
