@@ -31,9 +31,9 @@ function main() {
     echo "Select portion of screen to copy"
     screencapture -i "$filepath"
 
-    # Store image markdown in system clipboard.
+    # Store image markdown in system clipboard. We use the figure built-in shortcode (https://github.com/LukasJoswiak/etch/wiki/Shortcodes)
     filename=$(basename "$filepath")
-    echo "![$description](/$filename)" | pbcopy
+    echo "{{< figure src=\"/$filename\" title=\"\" caption=\"\" alt=\"$description\" >}}" | pbcopy
 
     echo "Image markdown snippet added to clipboard"
 }
