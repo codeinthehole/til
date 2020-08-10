@@ -1,0 +1,8 @@
+<footer id="footer">
+    {{ if .PrevPage }}
+        Previous: <a href="{{ .PrevPage.RelPermalink }}">{{ .PrevPage.Title | markdownify }}</a><br/>
+    {{ end }}
+    {{ if .NextPage }}
+        Next: <a href="{{ .NextPage.RelPermalink }}">{{ .NextPage.Title | markdownify }}</a>
+    {{ end }}
+</footer>

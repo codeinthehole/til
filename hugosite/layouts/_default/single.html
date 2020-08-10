@@ -1,8 +1,8 @@
 {{ define "main" }}
     <article>
         <header id="post-header">
-            On <time>{{ .Date.Format "January 2, 2006" }}</time>, <a href="https://codeinthehole.com">I</a> learnt ...
-            <h1>{{ .Title }}</h1>
+            On <time>{{ .Date.Format "January 2th, 2006" }}</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            <h1>{{ .Title | markdownify }}</h1>
         </header>
 
         {{- .Content -}}
