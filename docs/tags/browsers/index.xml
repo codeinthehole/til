@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>browsers on Today I Learnt...</title>
+    <link>http://codeinthehole.github.io/tags/browsers/</link>
+    <description>Recent content in browsers on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://codeinthehole.github.io/tags/browsers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>About text fragments</title>
+      <link>http://codeinthehole.github.io/posts/about-text-fragments/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://codeinthehole.github.io/posts/about-text-fragments/</guid>
+      <description>Modern versions of Chrome and Edge support Text Fragments, which let you specify a text snippet in the URL fragment that the browser can highlight (or bring to the user&amp;rsquo;s attention in another way).
+For example, opening https://wicg.github.io/scroll-to-text-fragment/#abstract:~:text=user%20agent%20can%20quickly%20emphasise in Chrome will open the page with &amp;ldquo;user agent can quickly emphasise&amp;rdquo; highlighted:
+  Note the :~:text=$query in the URL.
+There&amp;rsquo;s a Google-authored Chrome plugin that eases the process of building one of these URLs.</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Renaming a Terraform module is dangerous</title>
+      <link>http://codeinthehole.github.io/posts/renaming-a-terraform-module-leads-to-resource-recreation/</link>
+      <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://codeinthehole.github.io/posts/renaming-a-terraform-module-leads-to-resource-recreation/</guid>
+      <description>As the state file uses the module name in identifiers and so a module rename causes Terraform to think all existing resources need to be destroyed and recreated.
+You can avoid such needless destruction by editing the state file manually to correct the identifiers.
+It might be possible to use terraform mv although I didn&amp;rsquo;t use that approach today.</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Where authentication for the `ubuntu` user on a EC2 instance is defined</title>
+      <link>http://codeinthehole.github.io/posts/about-passwordless-users-in-ec2/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://codeinthehole.github.io/posts/about-passwordless-users-in-ec2/</guid>
+      <description>The file that controls where the default ubuntu user on an Ubuntu EC2 instance is /etc/sudoers.d/90-cloud-init-users which has contents:
+# User rules for ubuntu ubuntu ALL=(ALL) NOPASSWD:ALL As you can see, the default ubuntu user has password-less, sudo access.
+Source https://serverfault.com/questions/615034/disable-nopasswd-sudo-access-for-ubuntu-user-on-an-ec2-instance</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>About the phrase &#34;Parking downhill&#34;</title>
+      <link>http://codeinthehole.github.io/posts/park-downhill/</link>
+      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://codeinthehole.github.io/posts/park-downhill/</guid>
+      <description>From https://news.ycombinator.com/item?id=23118940
+ Before putting a project or incomplete task away, make notes of what the next thing was that you were going to work on. This lets you bypass that 10 minute orientation getting back into the project the next time you pick it up.
+ This is something I&amp;rsquo;ve done for a while.
+There&amp;rsquo;s various other ways of doing the same thing, such as:
+ Leaving a failing test Leaving an incomplete sentence  In my Trello cards, I like to regularly add comments saying:</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>About Alfred&#39;s clipboard history feature</title>
+      <link>http://codeinthehole.github.io/posts/alfred-clipboard-history/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://codeinthehole.github.io/posts/alfred-clipboard-history/</guid>
+      <description>Alfred has a clipboard history feature which lets you easily pluck out previous values from your system clipboard.
+It&amp;rsquo;s disabled by default.</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>About Alfred&#39;s snippet collections</title>
+      <link>http://codeinthehole.github.io/posts/alfred-snippet-collections/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://codeinthehole.github.io/posts/alfred-snippet-collections/</guid>
+      <description>You can create &amp;ldquo;collections&amp;rdquo; of snippets in Alfred, such as:
+ Common comments used in code review. Calendly URLs Personal Zoom link  Anything that you might want to insert into text regularly.
+  See https://www.alfredapp.com/help/features/snippets/</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>About Quitter</title>
+      <link>http://codeinthehole.github.io/posts/quitter/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://codeinthehole.github.io/posts/quitter/</guid>
+      <description>There&amp;rsquo;s a MacOS app called Quitter which will automatically quit applications after some period of inactivity.
+  </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>About the MacOS `screencapture` utility</title>
+      <link>http://codeinthehole.github.io/posts/about-the-screencapture-bsd-util/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://codeinthehole.github.io/posts/about-the-screencapture-bsd-util/</guid>
+      <description>It&amp;rsquo;s what MacOS uses for its shortcuts but can be called from the command-line:
+$ screencapture It has lots of interesting options &amp;ndash; see man screencapture.</description>
+    </item>
+    
+    
+  </channel>
+</rss>

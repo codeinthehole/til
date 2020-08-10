@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="Things David Winterbottom has learnt">
+        
+
+        <link rel="shortcut icon" href="http://codeinthehole.github.io/favicon.ico">
+
+        
+        
+        <link rel="stylesheet" href="/css/style.min.css">
+
+        <title>
+    TIL Where authentication for the `ubuntu` user on a EC2 instance is defined — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+    <h2><a href="http://codeinthehole.github.io/">Today I Learnt...</a></h2>
+</header>
+
+
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            On <time>July 22th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            <h1>Where authentication for the <code>ubuntu</code> user on a EC2 instance is defined</h1>
+        </header><p>The file that controls where the default <code>ubuntu</code> user on an Ubuntu EC2 instance
+is <code>/etc/sudoers.d/90-cloud-init-users</code> which has contents:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt"># User rules for ubuntu
+ubuntu ALL=(ALL) NOPASSWD:ALL
+</code></pre></div><p>As you can see, the default <code>ubuntu</code> user has password-less, <code>sudo</code> access.</p>
+<p>Source <a href="https://serverfault.com/questions/615034/disable-nopasswd-sudo-access-for-ubuntu-user-on-an-ec2-instance">https://serverfault.com/questions/615034/disable-nopasswd-sudo-access-for-ubuntu-user-on-an-ec2-instance</a></p>
+</article>
+
+        </main>
+
+        <footer id="footer">
+    
+        Previous: <a href="/posts/park-downhill/">About the phrase &ldquo;Parking downhill&rdquo;</a><br/>
+    
+    
+        Next: <a href="/posts/renaming-a-terraform-module-leads-to-resource-recreation/">Renaming a Terraform module is dangerous</a>
+    
+</footer>
+
+        
+    </body>
+</html>
