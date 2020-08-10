@@ -62,6 +62,9 @@ function publish() {
     # Commit the post file and any screenshots that might have been saved while writing this post.
     git add $filepath docs/ static/
     git commit -m "$title" > /dev/null 
+
+    # Publish the changes to Github.
+    git push
 }
 
 if [[ $_ != $0 ]]
