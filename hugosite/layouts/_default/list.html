@@ -1,3 +1,18 @@
+{{ define "title" }}
+    {{ .Title }} - Today I Learnt - David Winterbottom
+{{ end }}
+
 {{ define "main" }}
-{{- partial "posts.html" . -}}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <ul id="posts">
+        {{ range .Pages }}
+            <li>
+                <a href="{{ .Permalink }}">
+                    {{- .Title | markdownify -}}
+                    <small>on <time>{{ .Date.Format "January 2, 2006" }}</time></small>
+                </a>
+            </li>
+        {{ end }}
+    </ul>
 {{ end }}
