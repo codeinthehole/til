@@ -2,6 +2,31 @@
 
 Simple static site of TIL posts.
 
+## Design
+
+The point of this project is to make it super easy to create TIL posts that get
+published to a public site.
+
+### Scripts
+
+To that end, this repo provides two Bash scripts for writing a TIL post and
+creating images to include.
+
+### Publication
+
+The TIL posts are built into a static HTML site using [Hugo](https://gohugo.io/)
+and are published via Github pages.
+
+### Hugo theme
+
+The theme for the site is a customised version of [Etch](https://themes.gohugo.io/etch/).
+
+### Code structure
+
+The repo is structured to keep the TIL content separate from Hugo - all
+Hugo-related content is in `/hugosite`.
+
+
 ## Installation
 
 Checkout the repo and create shell aliases for the two helper scripts:
@@ -21,8 +46,9 @@ For example:
 
     $ til that cows can't look up
 
-which will create a markdown file, named by slugifying the description  (`ie
-that-cows-cant-look-up.md`), pre-populated with Hugo frontmatter:
+which will create a markdown file, named by slugifying the description (ie
+`that-cows-cant-look-up.md`), pre-populated with Hugo frontmatter:
+
 ```markdown
 ---
 title: "TIL that cows can't look-up"
@@ -38,6 +64,10 @@ You then add the TIL text.
 To add screenshots, `CTRL+Z` to background Vim and use the screenshot helper:
 
     $ til_screenshot $description
+
+Eg
+
+    $ til_screenshot Alfred's preferences UI
 
 which will trigger MacOS's `screencapture` utility to capture a selected portion
 of the screen. After selection, the resulting PNG image will be saved to
