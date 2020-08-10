@@ -1,19 +1,14 @@
 baseURL = "https://til.codeinthehole.com/"
 languageCode = "en-us"
 title = "Today I Learnt..."
-author = "David Winterbottom"
 
+# Build static site to /docs folder so Github pages can serve it.
 publishDir = "../docs"
-
-# Simple theme (https://github.com/LukasJoswiak/etch/wiki) with customisation.
-theme = "etch"
              
-# Server statics from above Hugosite root.
+# Serve statics from above Hugosite root.
 staticDir = ["../static/"]
 
 [params]
-  copyright = "Copyright © 2020 David Winterbottom"
-
   # Goes into HTML meta description
   description = "Things David Winterbottom has learnt"
 
