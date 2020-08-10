@@ -1,4 +1,4 @@
-baseURL = "http://codeinthehole.github.io/"
+baseURL = "https://codeinthehole.com/til/"
 languageCode = "en-us"
 title = "Today I Learnt..."
 author = "David Winterbottom"
