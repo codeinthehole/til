@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Today I Learnt...</title>
+    <title>All posts on Today I Learnt...</title>
     <link>https://til.codeinthehole.com/posts/</link>
-    <description>Recent content in Posts on Today I Learnt...</description>
+    <description>Recent content in All posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0000</lastBuildDate>
@@ -46,7 +46,7 @@ It might be possible to use terraform mv although I didn&amp;rsquo;t use that ap
       
       <guid>https://til.codeinthehole.com/posts/about-passwordless-users-in-ec2/</guid>
       <description>The file that controls where the default ubuntu user on an Ubuntu EC2 instance is /etc/sudoers.d/90-cloud-init-users which has contents:
-# User rules for ubuntu ubuntu ALL=(ALL) NOPASSWD:ALL As you can see, the default ubuntu user has password-less, sudo access.
+# User rules for ubuntu ubuntu ALL=(ALL) NOPASSWD:ALL def f(a: int) -&amp;gt; int: return None As you can see, the default ubuntu user has password-less, sudo access.
 Source https://serverfault.com/questions/615034/disable-nopasswd-sudo-access-for-ubuntu-user-on-an-ec2-instance</description>
     </item>
     
