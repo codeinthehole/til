@@ -57,7 +57,7 @@ function publish() {
     local title="$2"
 
     # Commit the post file and any screenshots that might have been saved while writing this post.
-    git add $filepath images/
+    git add $filepath static/
     git commit -m "$title" > /dev/null 
 }
 

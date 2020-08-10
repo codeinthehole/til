@@ -33,13 +33,13 @@ function main() {
 
     # Store image markdown in system clipboard. We use the figure built-in shortcode (https://github.com/LukasJoswiak/etch/wiki/Shortcodes)
     filename=$(basename "$filepath")
-    echo "{{< figure src=\"/$filename\" title=\"\" caption=\"\" alt=\"$description\" >}}" | pbcopy
+    echo "{{< figure src=\"/images/$filename\" title=\"\" caption=\"\" alt=\"$description\" >}}" | pbcopy
 
     echo "Image markdown snippet added to clipboard"
 }
 
 function generate_image_filepath() {
-    echo images/$(slugify "$1").png
+    echo static/images/$(slugify "$1").png
 }
 
 if [[ $_ != $0 ]]

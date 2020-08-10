@@ -7,7 +7,7 @@ author = "David Winterbottom"
 theme = "etch"
              
 # Server statics from above Hugosite root.
-staticDir = ["../images/"]
+staticDir = ["../static/"]
 
 [params]
   copyright = "Copyright © 2020 David Winterbottom"

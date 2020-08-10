@@ -10,7 +10,7 @@ highlight (or bring to the user's attention in another way).
 For example, opening https://wicg.github.io/scroll-to-text-fragment/#abstract:~:text=user%20agent%20can%20quickly%20emphasise
 in Chrome will open the page with "user agent can quickly emphasise" highlighted:
 
-{{< figure src="/text-fragment-example.png" title="" caption="" alt="text fragment example" >}}
+{{< figure src="/images/text-fragment-example.png" title="" caption="" alt="text fragment example" >}}
 
 Note the `:~:text=$query` in the URL.
 
