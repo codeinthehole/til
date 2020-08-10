@@ -1,6 +1,7 @@
 baseURL = "http://codeinthehole.github.io/"
 languageCode = "en-us"
 title = "Today I Learnt..."
+author = "David Winterbottom"
 
 # Simple theme (https://github.com/LukasJoswiak/etch/wiki) with customisation.
 theme = "etch"
