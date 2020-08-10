@@ -56,8 +56,11 @@ function publish() {
     local filepath="$1"
     local title="$2"
 
+    # Rebuild the static site
+    make build
+
     # Commit the post file and any screenshots that might have been saved while writing this post.
-    git add $filepath static/
+    git add $filepath docs/ static/
     git commit -m "$title" > /dev/null 
 }
 
