@@ -1,4 +1,10 @@
-$font-code: 'Menlo', monospace;
+$font-code: 'Monaco', 'Menlo', monospace;
+$font-text: 'Arial', sans-serif;
+
+$color-text: #394548;
+$color-link-hover: #369aff;
+$color-grey: #bbb;
+$color-dark-grey: #aaa;
 
 *, *:before, *:after {
     box-sizing: border-box;
@@ -10,8 +16,8 @@ html {
 
 body {
     font-size: 1.6rem;
-    font-family: 'Helvetica Neue', 'Arial', sans-serif;
-    color: #313a3d;
+    font-family: $font-text;
+    color: $color-text;
     width: 100%;
     margin: 0 auto;
     padding: 0 16px;
@@ -28,7 +34,7 @@ header#banner {
     margin: 5px 0px 20px 0px;
 
     a {
-        color: #313a3d;
+        color: $color-text;
         text-decoration: none;
 
         &:hover {
@@ -51,7 +57,7 @@ main#content {
     }
 
     p {
-        color: #394548;
+        color: $color-text;
         margin: 16px 0;
     }             
 
@@ -60,18 +66,18 @@ main#content {
         text-decoration: none;
 
         &:hover {
-            text-decoration: underline;
+            color: $color-link-hover;
         }          
     }         
 
     blockquote {
         margin: 5px 0px;
-        border-left: 5px solid #ccc;
+        border-left: 5px solid $color-grey;
         padding-left: 10px;
 
         p {
-            color: #666;
-            margin: 0px;
+            color: $color-dark-grey;
+            margin: 0px 0px 4px 0px;
 
             &::before {
                 content: '\201C';
@@ -82,7 +88,7 @@ main#content {
         }
 
         footer {
-            color: #aaa;
+            color: $color-grey;
             font-size: 0.8em;
             padding-left: 0px;
 
@@ -109,13 +115,13 @@ main#content {
                 text-decoration: none;
 
                 &:hover {
-                    color: #369aff;
+                    color: $color-link-hover;
                 }                         
             }                         
             
             small {
                 font-size: 1.2rem;
-                color: #767676;
+                color: $color-dark-grey;
             }
         }
     }             
@@ -124,10 +130,10 @@ main#content {
     article { 
         header#post-header {
             font-size: 1em;
-            color: #767676;
+            color: $color-dark-grey;
 
             a:link, a:visited, a:hover, a:active {
-                color: #767676;
+                color: $color-dark-grey;
             }
             a:hover {
                 text-decoration: underline;
@@ -178,13 +184,19 @@ main#content {
             padding-left: 8px;
         }
 
+        /* Code snippets in headers */
+        h1 code {
+            font-family: $font-code;
+            font-size: 0.9em;
+        }
+
         /* Code snippets in paragraphs */
         p code {
             font-family: $font-code;
             font-size: 0.9em;
             background-color: black;
             color: white;
-            padding: 2px 5px;
+            padding: 3px 10px;
 
             -moz-border-radius: 5px;
             -webkit-border-radius: 5px;
@@ -194,12 +206,11 @@ main#content {
         pre {
             display: block;
             overflow-x: auto;
-            font-size: 14px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             white-space: pre;
             margin: 20px 0;
-            padding: 1.5rem 1.5rem;
-            line-height: 1.4;
+            padding: 10px 14px;
+            line-height: 1.6;
 
             -moz-border-radius: 10px;
             -webkit-border-radius: 10px;
@@ -219,9 +230,21 @@ main#content {
 
 footer#footer {
     font-size: 1.4rem;
-    font-weight: 300;
-    color: #949494;
+    color: $color-grey;
     margin: 40px 0;
+
+    code {
+        font-family: $font-code;
+        font-size: 0.9em;
+    }
+
+    a {
+        text-decoration: underline;
+
+        &:link, &:visited, &:hover, &:active {
+            color: $color-grey;
+        }
+    }
 }
 
 /* For desktop viewing */
