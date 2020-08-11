@@ -7,14 +7,18 @@
 
     {{ .Content }}
 
-    <ul id="posts">
-        {{ range .Pages }}
-            <li>
-                <a href="{{ .Permalink }}">{{- .Title | markdownify -}}</a>
-                <small>on <time>{{ .Date.Format "January 2, 2006" }}</time></small>
-            </li>
-        {{ end }}
-    </ul>
+    {{ range .Pages.GroupByDate "January 2006" }}
+        <h3>{{ .Key }}</h3>
+        <ul id="posts">
+            {{ range .Pages }}
+                <li>
+                    <a href="{{ .Permalink }}">{{- .Title | markdownify -}}</a>
+                    <small>on <time>{{ .Date.Format "January 2, 2006" }}</time></small>
+                </li>
+            {{ end }}
+        </ul>
+
+    {{ end }}
 
 {{ end }}
 
