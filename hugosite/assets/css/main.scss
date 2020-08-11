@@ -90,13 +90,17 @@ main#content {
         footer {
             color: $color-grey;
             font-size: 0.8em;
-            padding-left: 0px;
+            padding-left: 0.6rem;
 
             &::before {
                 content: '—';
             }
             
         }
+    }
+
+    blockquote#home_quote {
+        font-size: 1.8rem;
     }
 
     /* Lists of posts */
