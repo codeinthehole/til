@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta name="description" content="">
+        <meta name="description" content="
+    Which lets you build a CSS stylesheet via something like:
+{{ $style := resources.Get &#34;css/main.scss&#34; | resources.ToCSS }} &lt;link rel=&#34;stylesheet&#34; href=&#34;{{ $style.Permalink }}&#34;&gt; This is rather nice as you get the usual live reloading functionality when using hugo server. In previous Hugo projects, I had a separate process for rebuilding CSS, which can now be factored away.
+This feature is part of Hugo&rsquo;s asset pipeline functionality and has been available since v0.
+">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
 

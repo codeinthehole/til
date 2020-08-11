@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta name="description" content="">
+        <meta name="description" content="
+    As the state file uses the module name in identifiers and so a module rename causes Terraform to think all existing resources need to be destroyed and recreated.
+You can avoid such needless destruction by editing the state file manually to correct the identifiers.
+It might be possible to use terraform mv although I didn&rsquo;t use that approach today.
+">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
 
