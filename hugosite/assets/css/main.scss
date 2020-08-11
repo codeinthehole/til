@@ -1,3 +1,5 @@
+$font-code: 'Menlo', monospace;
+
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -7,7 +9,6 @@ html {
 }
 
 body {
-    font-size: 16px;
     font-size: 1.6rem;
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
     color: #313a3d;
@@ -29,10 +30,11 @@ header#banner {
     a {
         color: #313a3d;
         text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }          
     }
-    a:hover {
-        text-decoration: underline;
-    }          
 
     h2 {
         font-size: 1.6rem;
@@ -56,32 +58,63 @@ main#content {
     a {
         color: #007dfa;
         text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }          
     }         
-    a:hover {
-        text-decoration: underline;
-    }         
+
+    blockquote {
+        margin: 5px 0px;
+        border-left: 5px solid #ccc;
+        padding-left: 10px;
+
+        p {
+            color: #aaa;
+            margin: 0px;
+
+            &::before {
+                content: '\201C';
+            }
+            &::after {
+                content: '\201D';
+            }
+        }
+
+        footer {
+            color: #aaa;
+            font-size: 0.8em;
+            padding-left: 0px;
+
+            &::before {
+                content: '—';
+            }
+            
+        }
+    }
 
     /* Lists of posts */
     ul#posts {
         list-style-type: none;
         font-size: 1.6rem;
-        margin-top: 0;
+        margin-top: 20px;
         padding: 0;
 
         li {
             margin-bottom: 5px;
             padding: 0;
-            line-height: 1.5
+            line-height: 1.5;
 
             a {
                 text-decoration: none;
-            }                         
-            a:hover {
-                color: #369aff;
+
+                &:hover {
+                    color: #369aff;
+                }                         
             }                         
             
             small {
-                font-size: 0.8em;
+                font-size: 1.2rem;
                 color: #767676;
             }
         }
@@ -145,16 +178,19 @@ main#content {
             padding-left: 8px;
         }
 
-        code,
-        pre {
-            font-family: 'Menlo', monospace;
+        /* Code snippets in paragraphs */
+        p code {
+            font-family: $font-code;
+            font-size: 0.9em;
+            background-color: black;
+            color: white;
+            padding: 2px 5px;
+
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
         }
 
-        code {
-            font-size: 0.96em;
-            padding: 0 5px;
-        }
-
+        /* Block code snippets */
         pre {
             display: block;
             overflow-x: auto;
@@ -164,10 +200,14 @@ main#content {
             margin: 20px 0;
             padding: 1.5rem 1.5rem;
             line-height: 1.4;
-        }
 
-        pre code {
-            padding: 0;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+
+            code {
+                padding: 0;
+                font-family: $font-code;
+            }    
         }
 
         section.footnotes {

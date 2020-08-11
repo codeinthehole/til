@@ -9,6 +9,11 @@
 {{ end }}
 
 {{ define "main" }}
+    <blockquote>
+        <p>Every day is a school day</p>
+        <footer>Me, every day.</footer>
+    </blockquote>
+
     <ul id="posts">
         {{ range where site.RegularPages "Type" "in" site.Params.mainSections }}
             <li>

@@ -4,14 +4,14 @@
 
 {{ define "main" }}
     <h1>{{ .Title }}</h1>
+
     {{ .Content }}
+
     <ul id="posts">
         {{ range .Pages }}
             <li>
-                <a href="{{ .Permalink }}">
-                    {{- .Title | markdownify -}}
-                    <small>on <time>{{ .Date.Format "January 2, 2006" }}</time></small>
-                </a>
+                <a href="{{ .Permalink }}">{{- .Title | markdownify -}}</a>
+                <small>on <time>{{ .Date.Format "January 2, 2006" }}</time></small>
             </li>
         {{ end }}
     </ul>
