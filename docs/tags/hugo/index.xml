@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>aws on Today I Learnt...</title>
-    <link>https://til.codeinthehole.com/tags/aws/</link>
-    <description>Recent content in aws on Today I Learnt...</description>
+    <title>hugo on Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/hugo/</link>
+    <description>Recent content in hugo on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://til.codeinthehole.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://til.codeinthehole.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     
