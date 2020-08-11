@@ -4,7 +4,7 @@
 
 {{ define "header" }}
     <header id="banner-home">
-        <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+        <h1>{{ .Site.Title }}</h1>
     </header>
 {{ end }}
 
@@ -12,10 +12,8 @@
     <ul id="posts">
         {{ range where site.RegularPages "Type" "in" site.Params.mainSections }}
             <li>
-                <a href="{{ .Permalink }}">
-                    {{- .Title | markdownify -}}
-                    <small>on <time>{{ .Date.Format "January 2, 2006" }}</time></small>
-                </a>
+                <a href="{{ .Permalink }}">{{- .Title | markdownify -}}</a>
+                <small>on <time>{{ .Date.Format "January 2, 2006" }}</time></small>
             </li>
         {{ end }}
     </ul>
