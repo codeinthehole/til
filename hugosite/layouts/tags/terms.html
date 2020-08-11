@@ -8,12 +8,13 @@
     {{ .Content }}
 
     <ul id="posts">
-        {{ range .Pages }}
+        {{ range .Data.Terms.Alphabetical }}
             <li>
-                <a href="{{ .Permalink }}">{{- .Title | markdownify -}}</a>
-                <small>on <time>{{ .Date.Format "January 2, 2006" }}</time></small>
+                <a href="{{ .Page.Permalink }}">{{- .Name | markdownify -}}</a>
+                ({{ .Count }})
             </li>
         {{ end }}
     </ul>
 
 {{ end }}
+
