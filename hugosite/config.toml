@@ -9,8 +9,5 @@ publishDir = "../docs"
 staticDir = ["../static/"]
 
 [params]
-  # Goes into HTML meta description
-  description = "Things David Winterbottom has learnt"
-
   # Disable dark mode
   dark = "off"
