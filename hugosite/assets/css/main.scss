@@ -113,7 +113,7 @@ main#content {
         li {
             margin-bottom: 5px;
             padding: 0;
-            line-height: 1.5;
+            line-height: 1.5em;
 
             a {
                 text-decoration: none;
@@ -124,7 +124,7 @@ main#content {
             }                         
             
             small {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
                 color: $color-dark-grey;
             }
         }
