@@ -20,10 +20,10 @@
 
 {{ define "footer" }}
     <footer id="footer">
-        {{ if .Params.Tags }}
+        {{ $tag_pages := .GetTerms "tags" }}
+        {{ if $tag_pages }}
             Tagged with:
-            {{ $num_tags := len .Params.Tags }}
-            {{ range $index, $tag := .Params.Tags }}{{ if ne $index 0 }},{{ end}} <a href="/tags/{{ $tag | urlize }}">{{ . }}</a>{{ end }}
+            {{ range $index, $tag := $tag_pages }}{{ if ne $index 0 }},{{ end}} <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>{{ end }}
             <br/>
         {{ end }}
 
