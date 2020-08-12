@@ -18,3 +18,20 @@
     </article>
 {{ end }}
 
+{{ define "footer" }}
+    <footer id="footer">
+        {{ if .Params.Tags }}
+            Tagged with:
+            {{ $num_tags := len .Params.Tags }}
+            {{ range $index, $tag := .Params.Tags }}{{ if ne $index 0 }},{{ end}} <a href="/tags/{{ $tag | urlize }}">{{ . }}</a>{{ end }}
+            <br/>
+        {{ end }}
+
+        {{ if .PrevPage }}
+            Previous: <a href="{{ .PrevPage.RelPermalink }}">{{ .PrevPage.Title | markdownify }}</a><br/>
+        {{ end }}
+        {{ if .NextPage }}
+            Next: <a href="{{ .NextPage.RelPermalink }}">{{ .NextPage.Title | markdownify }}</a>
+        {{ end }}
+    </footer>
+{{ end }}
