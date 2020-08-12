@@ -1,9 +1,9 @@
 {{ define "title" }}
-    TIL {{ .Title }} — David Winterbottom
+    TIL {{ .Title | markdownify | plainify }} — David Winterbottom
 {{ end }}
 
 {{ define "description" }}
-    {{ .Summary }}
+    {{ .Summary | markdownify | plainify }} ...
 {{ end }}
 
 {{ define "main" }}

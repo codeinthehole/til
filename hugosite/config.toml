@@ -8,6 +8,9 @@ publishDir = "../docs"
 # Serve statics from above Hugosite root.
 staticDir = ["../static/"]
 
+# Use really small summaries...
+summaryLength = 70
+
 [params]
   # Disable dark mode
   dark = "off"
