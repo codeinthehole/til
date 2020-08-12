@@ -1,7 +1,7 @@
 +++
 title = "About Alfred's snippet collections"
 date = "2020-07-20"
-tags = ["alfred"]
+tags = ["Alfred"]
 +++
 
 You can create "collections" of snippets in Alfred, such as:

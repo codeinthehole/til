@@ -1,7 +1,7 @@
 ---
 title: "You can have SASS asset pipelines in Hugo"
 date: "2020-08-11"
-tags: ["hugo", "sass"]
+tags: ["Hugo", "SASS"]
 ---
 
 Which lets you build a CSS stylesheet via something like:

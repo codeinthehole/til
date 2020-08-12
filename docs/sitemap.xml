@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
+    <loc>https://til.codeinthehole.com/tags/hugo/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/tags/hugo/</loc>
+    <loc>https://til.codeinthehole.com/posts/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -103,17 +103,7 @@
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/tags/apps/</loc>
-    <lastmod>2020-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://til.codeinthehole.com/tags/macos/</loc>
-    <lastmod>2020-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/quitter/</loc>
     <lastmod>2020-07-20T00:00:00+00:00</lastmod>
   </url>
   

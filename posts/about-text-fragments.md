@@ -1,7 +1,7 @@
 ---
 title: "About text fragments"
 date: "2020-08-10"
-tags: ["browsers"]
+tags: ["Browsers"]
 ---
 Modern versions of Chrome and Edge support [Text Fragments](https://wicg.github.io/scroll-to-text-fragment/), 
 which let you specify a text snippet in the URL fragment that the browser can

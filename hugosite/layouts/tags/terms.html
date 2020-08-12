@@ -10,7 +10,7 @@
     <ul id="posts">
         {{ range .Data.Terms.Alphabetical }}
             <li>
-                <a href="{{ .Page.Permalink }}">{{- .Name | markdownify -}}</a>
+                <a href="{{ .Page.Permalink }}">{{- .Page.Title | markdownify -}}</a>
                 ({{ .Count }})
             </li>
         {{ end }}

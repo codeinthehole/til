@@ -1,7 +1,7 @@
 +++
 title = "Renaming a Terraform module is dangerous"
 date = "2020-07-23"
-tags = ["terraform"]
+tags = ["Terraform"]
 +++
 
 As the state file uses the module name in identifiers and so a module rename causes

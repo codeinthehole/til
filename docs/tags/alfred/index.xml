@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>alfred on Today I Learnt...</title>
+    <title>Alfred on Today I Learnt...</title>
     <link>https://til.codeinthehole.com/tags/alfred/</link>
-    <description>Recent content in alfred on Today I Learnt...</description>
+    <description>Recent content in Alfred on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Jul 2020 00:00:00 +0000</lastBuildDate>

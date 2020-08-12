@@ -1,7 +1,7 @@
 +++
 title = "Where authentication for the `ubuntu` user on a EC2 instance is defined"
 date = "2020-07-22"
-tags = ["aws", "ubuntu"]
+tags = ["AWS", "Ubuntu"]
 +++
 
 The file that controls where the default `ubuntu` user on an Ubuntu EC2 instance
