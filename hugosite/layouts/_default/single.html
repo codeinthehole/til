@@ -9,7 +9,9 @@
 {{ define "main" }}
     <article>
         <header id="post-header">
-            On <time>{{ .Date.Format "January 2th, 2006" }}</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            <div id="date_sentence">
+                On <time>{{ .Date.Format "January 2th, 2006" }}</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
             <h1>{{ .Title | markdownify }}</h1>
         </header>
 
