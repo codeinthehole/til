@@ -6,9 +6,22 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>About `pngcrush`</title>
+      <link>https://til.codeinthehole.com/posts/about-pngcrush/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-pngcrush/</guid>
+      <description>It&amp;rsquo;s an image optimizer for PNG files. It&amp;rsquo;s available via Homebrew for MacOS and works like:
+$ pngcrush -ow screenshot.png where -ow means the original image file will be overwritten.
+I&amp;rsquo;ve integrated it into the til_screenshot.sh helper script used by this repo.</description>
+    </item>
     
     
     

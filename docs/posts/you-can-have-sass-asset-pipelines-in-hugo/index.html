@@ -6,8 +6,8 @@
 
         <meta name="description" content="
     Which lets you build a CSS stylesheet via something like:
-{{ $style := resources.Get &#34;css/main.scss&#34; | resources.ToCSS }} &lt;link rel=&#34;stylesheet&#34; href=&#34;{{ $style.Permalink }}&#34;&gt; This is rather nice as you get the usual live reloading functionality when using hugo server. In previous Hugo projects, I had a separate process for rebuilding CSS, which can now be factored away.
-This feature is part of Hugo&rsquo;s asset pipeline functionality and has been available since v0.
+{{ $style := resources.Get &amp;quot;css/main.scss&amp;quot; | resources.ToCSS }} &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;{{ $style.Permalink }}&amp;quot;&amp;gt; This is rather nice as you get the usual live reloading functionality when using hugo server. In previous Hugo projects, I had a separate process for rebuilding CSS, which can now be factored away.
+This feature is part of Hugo’s asset pipeline functionality and has been available since v0. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -31,7 +31,9 @@ This feature is part of Hugo&rsquo;s asset pipeline functionality and has been a
             
     <article>
         <header id="post-header">
-            On <time>August 11th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            <div id="date_sentence">
+                On <time>August 11th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
             <h1>You can have SASS asset pipelines in Hugo</h1>
         </header><p>Which lets you build a CSS stylesheet via something like:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ $style := resources.Get &#34;css/main.scss&#34; | resources.ToCSS }}
