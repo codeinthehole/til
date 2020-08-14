@@ -13,6 +13,19 @@
     
     
     <item>
+      <title>About the stationery pad feature in Finder</title>
+      <link>https://til.codeinthehole.com/posts/about-the-stationery-pad-feature-in-finder/</link>
+      <pubDate>Fri, 14 Aug 2020 10:30:00 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-the-stationery-pad-feature-in-finder/</guid>
+      <description>If you use Finder to mark a file as a &amp;ldquo;stationery pad&amp;rdquo; then apps will open a copy of the file. The original file will effectively act as a template.
+You can set this flag from the Get Info Finder dialogue:
+  This only works when opening a file from Finder, so not that much use to people who live in iTerm (like me).</description>
+    </item>
+    
+    
+    
+    <item>
       <title>About `pngcrush`</title>
       <link>https://til.codeinthehole.com/posts/about-pngcrush/</link>
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
