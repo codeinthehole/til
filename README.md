@@ -36,6 +36,11 @@ Checkout the repo and create shell aliases for the two helper scripts:
 source /path/to/repo/install.sh
 ```
 
+The `til_screenshot.sh` script requires [`pngcrush`](https://pmt.sourceforge.io/pngcrush/)
+which can be installed from Homebrew:
+
+    $ brew install pngcrush
+
 ## Usage
 
 Create a new post with:

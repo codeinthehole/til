@@ -31,6 +31,9 @@ function main() {
     echo "Select portion of screen to copy"
     screencapture -i "$filepath"
 
+    # Compress image
+    pngcrush -ow "$filepath" 2> /dev/null
+
     # Store image markdown in system clipboard. We use the figure built-in shortcode (https://github.com/LukasJoswiak/etch/wiki/Shortcodes)
     filename=$(basename "$filepath")
     echo "{{< figure src=\"/images/$filename\" title=\"\" caption=\"\" alt=\"$description\" >}}" | pbcopy
