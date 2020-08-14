@@ -31,7 +31,7 @@ function main() {
 
     # Open file pre-populated with Hugo frontmatter
     local title="$(tr '[:lower:]' '[:upper:]' <<< ${description:0:1})${description:1}"
-    date=$(date +%Y-%m-%d)
+    date=$(date --iso-8601=seconds)
     cat >"$filepath" <<- CONTENT
 ---
 title: "$title"
