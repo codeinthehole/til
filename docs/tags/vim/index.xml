@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Today I Learnt...</title>
-    <link>https://til.codeinthehole.com/categories/</link>
-    <description>Recent content in Categories on Today I Learnt...</description>
+    <title>vim on Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/vim/</link>
+    <description>Recent content in vim on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 17 Aug 2020 09:28:52 +0100</lastBuildDate>
     
-	<atom:link href="https://til.codeinthehole.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://til.codeinthehole.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     
     

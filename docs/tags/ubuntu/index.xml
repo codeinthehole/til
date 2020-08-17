@@ -13,6 +13,20 @@
     
     
     <item>
+      <title>About Vim&#39;s `:diffthis` command</title>
+      <link>https://til.codeinthehole.com/posts/about-vims-command/</link>
+      <pubDate>Mon, 17 Aug 2020 09:28:52 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-vims-command/</guid>
+      <description>You can manually compare two more open buffers by running:
+:windo diffthisThis is an alternative to opening the files with vimdiff. One advantage is that you compare buffers that aren&amp;rsquo;t files (eg text pasted from the clipboard).
+Further reading:
+ There&amp;rsquo;s some useful info in the &amp;ldquo;Comparing buffers with vimdiff&amp;rdquo; screencast. :help :diffthis  </description>
+    </item>
+    
+    
+    
+    <item>
       <title>About the stationery pad feature in Finder</title>
       <link>https://til.codeinthehole.com/posts/about-the-stationery-pad-feature-in-finder/</link>
       <pubDate>Fri, 14 Aug 2020 10:30:00 +0100</pubDate>
