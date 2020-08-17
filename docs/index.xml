@@ -6,9 +6,21 @@
     <description>Recent content on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Aug 2020 11:53:31 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2020 14:32:50 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>How to list pages with matching tag in Hugo</title>
+      <link>https://til.codeinthehole.com/posts/how-to-list-pages-with-matching-tag-in-hugo/</link>
+      <pubDate>Mon, 17 Aug 2020 14:32:50 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-list-pages-with-matching-tag-in-hugo/</guid>
+      <description>In a detail template, you can grab a post&amp;rsquo;s tags with {{ .GetTerms &amp;quot;tags&amp;quot; }}. You can then loop over this and fetch a list of pages with each tag, excluding the current post:
+{{ range $tag_pages }} {{ $related_tag_pages := where .Pages &amp;#34;Title&amp;#34; &amp;#34;!=&amp;#34; $.Title }} {{ if $related_tag_pages }} &amp;lt;p&amp;gt;Other posts about &amp;lt;a href=&amp;#34;{{ .Permalink }}&amp;#34;&amp;gt;{{ .Title | markdownify }}&amp;lt;/a&amp;gt;:&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt; {{ range $related_tag_pages }} &amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;{{ .RelPermalink }}&amp;#34;&amp;gt;{{ .</description>
+    </item>
     
     
     
