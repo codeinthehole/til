@@ -13,11 +13,24 @@
     
     
     <item>
+      <title>About `:help macvim`</title>
+      <link>https://til.codeinthehole.com/posts/about-help-macvim/</link>
+      <pubDate>Mon, 17 Aug 2020 11:53:31 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-help-macvim/</guid>
+      <description>MacVim ships with its own help files, accessed via:
+:help macvimThese provide lots of useful info on things like:
+ The differences between MacVim and other Vim variants MacVim-specific preferences The macvim color scheme  and much more.</description>
+    </item>
+    
+    
+    
+    <item>
       <title>About Vim&#39;s `:diffthis` command</title>
-      <link>https://til.codeinthehole.com/posts/about-vims-command/</link>
+      <link>https://til.codeinthehole.com/posts/about-vims-diffthis-command/</link>
       <pubDate>Mon, 17 Aug 2020 09:28:52 +0100</pubDate>
       
-      <guid>https://til.codeinthehole.com/posts/about-vims-command/</guid>
+      <guid>https://til.codeinthehole.com/posts/about-vims-diffthis-command/</guid>
       <description>You can manually compare two more open buffers by running:
 :windo diffthisThis is an alternative to opening the files with vimdiff. One advantage is that you compare buffers that aren&amp;rsquo;t files (eg text pasted from the clipboard).
 Further reading:
