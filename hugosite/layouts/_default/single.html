@@ -1,5 +1,5 @@
 {{ define "title" }}
-    TIL {{ .Title | markdownify | plainify }} — David Winterbottom
+    TIL {{ replace .Title "`" "'" }} — David Winterbottom
 {{ end }}
 
 {{ define "description" }}
