@@ -206,5 +206,19 @@ $ screencapture It has lots of interesting options &amp;ndash; see man screencap
     </item>
     
     
+    
+    <item>
+      <title>About Twitter&#39;s `min_faves` search filter</title>
+      <link>https://til.codeinthehole.com/posts/about-twitters-minfaves-search-filter/</link>
+      <pubDate>Thu, 16 Jul 2020 11:31:56 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-twitters-minfaves-search-filter/</guid>
+      <description>You can do searches like:
+from:frankieboyle min_faves:10000 to see, for example, the best tweets from a given account. It works really well
+ you just need to pick an appropriate minimum value for the account.  Examples:
+ https://twitter.com/search?q=from%3Afrankieboyle%20min_faves%3A10000 https://twitter.com/search?q=from%3Afesshole%20min_faves%3A400  There&amp;rsquo;s also a min_retweets filter which can be used for a similar purpose.</description>
+    </item>
+    
+    
   </channel>
 </rss>
