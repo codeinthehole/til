@@ -254,6 +254,16 @@ footer#footer {
         font-size: 0.9em;
     }
 
+    p {
+        margin: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 0px;
+        list-style-position: inside;
+    }
+
     a {
         text-decoration: underline;
 

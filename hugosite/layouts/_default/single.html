@@ -23,17 +23,16 @@
 {{ define "footer" }}
     <footer id="footer">
         {{ $tag_pages := .GetTerms "tags" }}
-        {{ if $tag_pages }}
-            Tagged with:
-            {{ range $index, $tag := $tag_pages }}{{ if ne $index 0 }},{{ end}} <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>{{ end }}
-            <br/>
-        {{ end }}
-
-        {{ if .PrevPage }}
-            Previous: <a href="{{ .PrevPage.RelPermalink }}">{{ .PrevPage.Title | markdownify }}</a><br/>
-        {{ end }}
-        {{ if .NextPage }}
-            Next: <a href="{{ .NextPage.RelPermalink }}">{{ .NextPage.Title | markdownify }}</a>
+        {{ range $tag_pages }}
+            {{ $related_tag_pages := where .Pages "Title" "!=" $.Title }}
+            {{ if $related_tag_pages }}
+                <p>Other posts about <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>:</p>
+                <ul>
+                {{ range $related_tag_pages }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
+                {{ end }}
+                </ul>
+            {{ end }}
         {{ end }}
     </footer>
 {{ end }}
