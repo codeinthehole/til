@@ -58,8 +58,12 @@ main#content {
 
     p {
         color: $color-text;
-        margin: 16px 0;
+        margin: 0.7em 0;
     }             
+
+    ul {
+        margin: 0.7em 0;
+    }
 
     a {
         color: #007dfa;
@@ -216,7 +220,7 @@ main#content {
             overflow-x: auto;
             font-size: 1.3rem;
             white-space: pre;
-            margin: 20px 0;
+            margin: 0.7em 0;
             padding: 10px 14px;
             line-height: 1.6;
 
@@ -227,6 +231,10 @@ main#content {
                 padding: 0;
                 font-family: $font-code;
             }    
+        }
+
+        ul {
+            padding-left: 1em;
         }
 
         section.footnotes {
