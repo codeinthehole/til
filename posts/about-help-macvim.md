@@ -1,7 +1,7 @@
 ---
 title: "About `:help macvim`"
 date: "2020-08-17T11:53:31+01:00"
-tags: ["vim"]
+tags: ["Vim"]
 ---
 
 MacVim ships with its own help files, accessed via:

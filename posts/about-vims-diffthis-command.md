@@ -1,7 +1,7 @@
 ---
 title: "About Vim's `:diffthis` command"
 date: "2020-08-17T09:28:52+01:00"
-tags: ["vim"]
+tags: ["Vim"]
 ---
 
 You can manually compare two more open buffers by running:
