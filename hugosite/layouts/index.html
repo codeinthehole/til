@@ -19,19 +19,18 @@
         <footer>Me, every day 🤔</footer>
     </blockquote>
 
+    <p>
+        This is a catalogue of things <a href="https://codeinthehole.com">David Winterbottom</a>
+        has learnt recently.
+    </p>
+
     <h3>Recent learnings</h3>
     
-    {{ $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ $posts := where site.RegularPages "Type" "in" "posts" }}
     {{ partial "posts.html" $posts }}
 
     <p>
         Browse <a href="/posts/">all posts</a> or <a href="/tags">by tag</a>.
-    </p>
-
-    <h3>About</h3>
-    <p>
-        This is a catalogue of things <a href="https://codeinthehole.com">David Winterbottom</a>
-        has learnt recently.
     </p>
 
 {{ end }}
