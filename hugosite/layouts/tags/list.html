@@ -7,14 +7,7 @@
 
     {{ .Content }}
 
-    <ul id="posts">
-        {{ range .Pages }}
-            <li>
-                <a href="{{ .Permalink }}">{{- .Title | markdownify -}}</a>
-                <small>on <time>{{ .Date.Format "January 2, 2006" }}</time></small>
-            </li>
-        {{ end }}
-    </ul>
+    {{ partial "posts.html" .Pages }}
 
     <p>
         Browse <a href="/tags/">all tags</a> or <a href="/posts/">all posts</a>.
