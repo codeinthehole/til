@@ -26,7 +26,7 @@
 
     <h3>Recent learnings</h3>
     
-    {{ $posts := where site.RegularPages "Type" "in" "posts" }}
+    {{ $posts := first 10 (where site.RegularPages "Type" "in" "posts") }}
     {{ partial "posts.html" $posts }}
 
     <p>
