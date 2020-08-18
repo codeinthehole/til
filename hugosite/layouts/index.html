@@ -19,15 +19,17 @@
         <footer>Me, every day 🤔</footer>
     </blockquote>
 
+    {{ $posts := where site.RegularPages "Type" "in" "posts" }}
+
     <p>
-        This is a catalogue of things <a href="https://codeinthehole.com">David Winterbottom</a>
-        has learnt recently.
+        This is a catalogue of 
+        things <a href="https://codeinthehole.com">David Winterbottom</a>
+        has learnt recently. <strong>{{ len $posts }}</strong> TILs so far.
     </p>
 
     <h3>Recent learnings</h3>
     
-    {{ $posts := first 10 (where site.RegularPages "Type" "in" "posts") }}
-    {{ partial "posts.html" $posts }}
+    {{ partial "posts.html" (first 20 $posts) }}
 
     <p>
         Browse <a href="/posts/">all posts</a> or <a href="/tags">by tag</a>.
