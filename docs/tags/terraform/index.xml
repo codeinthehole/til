@@ -13,6 +13,19 @@
     
     
     <item>
+      <title>You can rate-limit issues using a Sentry DSN</title>
+      <link>https://til.codeinthehole.com/posts/you-can-ratelimit-issues-using-a-sentry-dsn/</link>
+      <pubDate>Mon, 24 Aug 2020 16:19:10 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-ratelimit-issues-using-a-sentry-dsn/</guid>
+      <description>If you want to manage how your event quota is consumed with Sentry, you can apply rate limits at the DSN level.
+  This lets you apply different rate limiting settings for different parts of your application by using separate DSNs.
+See Sentry&amp;rsquo;s docs on the subject.</description>
+    </item>
+    
+    
+    
+    <item>
       <title>How to list pages with matching tag in Hugo</title>
       <link>https://til.codeinthehole.com/posts/how-to-list-pages-with-matching-tag-in-hugo/</link>
       <pubDate>Mon, 17 Aug 2020 14:32:50 +0100</pubDate>
