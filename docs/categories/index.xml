@@ -12,6 +12,21 @@
     
     
     <item>
+      <title>AWS Availability Zones have counter-intuitive IDs</title>
+      <link>https://til.codeinthehole.com/posts/aws-availability-zones-have-counterintuitive-ids/</link>
+      <pubDate>Tue, 25 Aug 2020 22:18:32 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/aws-availability-zones-have-counterintuitive-ids/</guid>
+      <description>Today, the AWS Service Health Dashboard referred to an Availability Zone in a way I wasn&amp;rsquo;t familiar with:
+ 3:52 AM PDT We are experiencing instance connectivity issues in a single Availability Zone (euw2-az2) in the EU-WEST-2 Region.
+ See:
+  Here &amp;ldquo;euw2-az2&amp;rdquo; is the &amp;ldquo;Zone ID&amp;rdquo; of the Availability Zone, and the mapping from Zone ID to the more familiar Zone Name is non-obvious. See, for example:
+$ aws ec2 describe-availability-zones --region eu-west-2 | jq -r &amp;#39;.</description>
+    </item>
+    
+    
+    
+    <item>
       <title>You can rate-limit issues using a Sentry DSN</title>
       <link>https://til.codeinthehole.com/posts/you-can-ratelimit-issues-using-a-sentry-dsn/</link>
       <pubDate>Mon, 24 Aug 2020 16:19:10 +0100</pubDate>
