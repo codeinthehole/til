@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/posts/about-better-yaml-file-folding-in-vim/</loc>
+    <lastmod>2020-08-28T18:36:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2020-08-28T18:36:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2020-08-28T18:36:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-08-28T18:36:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/vim/</loc>
+    <lastmod>2020-08-28T18:36:09+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/tags/home-networking/</loc>
     <lastmod>2020-08-27T12:03:43+01:00</lastmod>
   </url>
@@ -14,21 +39,6 @@
   
   <url>
     <loc>https://til.codeinthehole.com/posts/opendns-provide-free-pornblocking-dns-servers/</loc>
-    <lastmod>2020-08-27T12:03:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-08-27T12:03:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-08-27T12:03:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2020-08-27T12:03:43+01:00</lastmod>
   </url>
   
@@ -64,11 +74,6 @@
   
   <url>
     <loc>https://til.codeinthehole.com/posts/about-help-macvim/</loc>
-    <lastmod>2020-08-17T11:53:31+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/vim/</loc>
     <lastmod>2020-08-17T11:53:31+01:00</lastmod>
   </url>
   

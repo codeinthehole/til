@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>About better YAML file folding in Vim</title>
+      <link>https://til.codeinthehole.com/posts/about-better-yaml-file-folding-in-vim/</link>
+      <pubDate>Fri, 28 Aug 2020 18:36:09 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-better-yaml-file-folding-in-vim/</guid>
+      <description>Using foldmethod=indent is ok but it&amp;rsquo;s better to use the pedrohdz/vim-yaml-folds plugin. The author gives more detail in Vim folding rules for YAML.</description>
+    </item>
+    
+    
+    
+    <item>
       <title>OpenDNS provide free porn-blocking DNS servers</title>
       <link>https://til.codeinthehole.com/posts/opendns-provide-free-pornblocking-dns-servers/</link>
       <pubDate>Thu, 27 Aug 2020 12:03:43 +0100</pubDate>
