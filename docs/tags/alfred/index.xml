@@ -6,9 +6,23 @@
     <description>Recent content in Alfred on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 11:34:04 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/alfred/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>How to configure Alfred&#39;s Bear workflow to open notes in the main window</title>
+      <link>https://til.codeinthehole.com/posts/how-to-configure-alfreds-bear-workflow-to-open-notes-in-the-main-window/</link>
+      <pubDate>Wed, 02 Sep 2020 11:34:04 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-configure-alfreds-bear-workflow-to-open-notes-in-the-main-window/</guid>
+      <description>This applies to the Bear workflow written in Go whose default behaviour (in v1.1.6) is to open notes in a new window rather than the main Bear application window.
+To adjust this, after installing and performing the dance of authorising all the workflow scripts, you need to manually edit the workflow property list file and replace new_window=yes with new_window=no.
+FYI: the info.plist file can be found in:
+~/Library/Application Support/Alfred/Alfred.alfredpreferences/workflows/ ~/Library/Application Support/Alfred/Alfred.alfredpreferences/workflows/ or by right clicking on the workflow in Alfred preferences and selecting &amp;ldquo;Open in Finder&amp;rdquo;.</description>
+    </item>
     
     
     
