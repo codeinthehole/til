@@ -22,18 +22,24 @@
     {{ $posts := where site.RegularPages "Type" "in" "posts" }}
 
     <p>
-        This is a catalogue of 
+        This is a catalogue of notable
         things <a href="https://codeinthehole.com">David Winterbottom</a>
-        has learnt recently. <strong>{{ len $posts }}</strong> TILs so far.
+        has learnt (since July 2020) — <strong>{{ len $posts }}</strong> TILs so far.
     </p>
+    <p>
+        Browse <a href="/posts/">all posts</a> or <a href="/tags">by tag</a>.
+    </p>
+
 
     <h3>Recent learnings</h3>
     
     {{ partial "posts.html" (first 20 $posts) }}
 
-    <p>
-        Browse <a href="/posts/">all posts</a> or <a href="/tags">by tag</a>.
-    </p>
+    <h3>Other TIL sites</h3>
+    <ul>
+        <li><a href="https://github.com/jbranchaud/til">jbranchaud/til</a> - Josh Branchaud</li>
+        <li><a href="https://github.com/simonw/til">simonw/til</a> - Simon Willison</li>
+    </ul>
 
 {{ end }}
 
