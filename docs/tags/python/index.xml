@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/python/</link>
+    <description>Recent content in Python on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Sep 2020 17:13:22 +0100</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to use type annotations with Python&#39;s `csv` module</title>
+      <link>https://til.codeinthehole.com/posts/how-to-typecheck-csv-objects-in-python/</link>
+      <pubDate>Thu, 03 Sep 2020 17:13:22 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-typecheck-csv-objects-in-python/</guid>
+      <description>Adding a type annotation for a &amp;ldquo;writer&amp;rdquo; object created by csv.writer(...) is fiddlier than you might think.
+The type of the writer object is _csv.writer which you verify with:
+&amp;gt;&amp;gt;&amp;gt; import csv, sys &amp;gt;&amp;gt;&amp;gt; type(csv.writer(sys.stdout)) &amp;lt;class &amp;#39;_csv.writer&amp;#39;&amp;gt; but if you try this:
+import _csv def generate_report(writer: _csv.writer): pass mypy complains that:
+Function &amp;quot;_csv.writer&amp;quot; is not valid as a type [valid-type]. The correct approach is to use _csv._writer as the type annotation.</description>
+    </item>
+    
+
+  </channel>
+</rss>

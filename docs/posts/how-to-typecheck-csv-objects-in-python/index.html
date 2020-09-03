@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Adding a type annotation for a “writer” object created by csv.writer(&amp;hellip;) is fiddlier than you might think.
+The type of the writer object is _csv.writer which you verify with:
+&amp;gt;&amp;gt;&amp;gt; import csv, sys &amp;gt;&amp;gt;&amp;gt; type(csv.writer(sys.stdout)) &amp;lt;class &#39;_csv.writer&#39;&amp;gt; but if you try this:
+import _csv def generate_report(writer: _csv.writer): pass mypy complains that:
+Function &amp;quot;_csv.writer&amp;quot; is not valid as a type [valid-type]. The correct approach is to use _csv._writer as the type annotation. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL How to use type annotations with Python&#39;s &#39;csv&#39; module — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>September 3th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to use type annotations with Python&rsquo;s <code>csv</code> module</h1>
+        </header><p>Adding a type annotation for a &ldquo;writer&rdquo; object created by <code>csv.writer(...)</code> is fiddlier than you might think.</p>
+<p>The type of the writer object is <code>_csv.writer</code> which you verify with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">import</span> csv<span style="color:#f92672">,</span> sys
+<span style="color:#f92672">&gt;&gt;&gt;</span> type(csv<span style="color:#f92672">.</span>writer(sys<span style="color:#f92672">.</span>stdout))
+<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">_csv</span><span style="color:#f92672">.</span>writer<span style="color:#e6db74">&#39;&gt;</span>
+</code></pre></div><p>but if you try this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> _csv
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_report</span>(writer: _csv<span style="color:#f92672">.</span>writer):
+    <span style="color:#66d9ef">pass</span>
+</code></pre></div><p><code>mypy</code> complains that:</p>
+<pre><code>Function &quot;_csv.writer&quot; is not valid as a type  [valid-type].
+</code></pre><p>The correct approach is to use <code>_csv._writer</code> as the type annotation.  A string literal is required
+otherwise you&rsquo;ll get a <code>AttributeError: module '_csv' has no attribute '_writer'</code> exception.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> _csv
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_report</span>(writer: <span style="color:#e6db74">&#39;_csv._writer&#39;</span>):
+    <span style="color:#66d9ef">pass</span>
+</code></pre></div></article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+        
+    </footer>
+
+    </body>
+</html>
