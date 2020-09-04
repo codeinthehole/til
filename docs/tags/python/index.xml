@@ -6,11 +6,25 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Sep 2020 17:13:22 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2020 16:27:33 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Python 3.7 supports postponed evaluation of annotations</title>
+      <link>https://til.codeinthehole.com/posts/python-37-supports-postponed-evaluation-of-annotations/</link>
+      <pubDate>Fri, 04 Sep 2020 16:27:33 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/python-37-supports-postponed-evaluation-of-annotations/</guid>
+      <description>For example, instead of:
+import _csv def generate_report(writer: &amp;#39;_csv._writer&amp;#39;): pass you can use:
+from __future__ import annotations import _csv def generate_report(writer: _csv._writer): pass and avoid using a string literal for the type annotation.
+This follows on from a related TIL about how to specify type annotations for the csv module.
+Related:
+ __future__ statement definitions PEP 563 - Postponed Evaluation of Annotations  </description>
+    </item>
     
     <item>
       <title>How to use type annotations with Python&#39;s `csv` module</title>
