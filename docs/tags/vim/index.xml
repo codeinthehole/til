@@ -6,11 +6,23 @@
     <description>Recent content in Vim on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Aug 2020 18:36:09 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2020 11:38:38 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Vim doesn&#39;t create the persistent undo folder automatically</title>
+      <link>https://til.codeinthehole.com/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/</link>
+      <pubDate>Fri, 04 Sep 2020 11:38:38 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/</guid>
+      <description>I have this in ~/.vimrc:
+&amp;#34; Keep undo history between sessionsif has(&amp;#39;persistent_undo&amp;#39;) set undofile set undodir=~/.vim_undo set undolevels=2000endifbut, after switching laptops, I noticed the persistent undo feature wasn&amp;rsquo;t working.
+The problem was that the ~/.vim_undo folder didn&amp;rsquo;t exist which silently prevents the feature working.
+You can create this automaticaly in ~/.vimrc if you like.</description>
+    </item>
     
     <item>
       <title>About better YAML file folding in Vim</title>

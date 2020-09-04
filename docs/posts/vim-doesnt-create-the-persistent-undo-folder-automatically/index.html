@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    I have this in ~/.vimrc:
+&amp;quot; Keep undo history between sessionsif has(&#39;persistent_undo&#39;) set undofile set undodir=~/.vim_undo set undolevels=2000endifbut, after switching laptops, I noticed the persistent undo feature wasn’t working.
+The problem was that the ~/.vim_undo folder didn’t exist which silently prevents the feature working.
+You can create this automaticaly in ~/.vimrc if you like. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL Vim doesn&#39;t create the persistent undo folder automatically — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>September 4th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>Vim doesn&rsquo;t create the persistent undo folder automatically</h1>
+        </header><p>I have this in <code>~/.vimrc</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-viml" data-lang="viml"><span style="color:#75715e">&#34; Keep undo history between sessions</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">has</span>(<span style="color:#e6db74">&#39;persistent_undo&#39;</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">undofile</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">undodir</span>=~/.<span style="color:#a6e22e">vim_undo</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">undolevels</span>=<span style="color:#ae81ff">2000</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">endif</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>but, after switching laptops, I noticed the persistent undo feature wasn&rsquo;t
+working.</p>
+<p>The problem was that the <code>~/.vim_undo</code> folder didn&rsquo;t exist which silently
+prevents the feature working.</p>
+<p>You can <a href="https://vi.stackexchange.com/questions/6/how-can-i-use-the-undofile">create this automaticaly in <code>~/.vimrc</code></a>
+if you like.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/about-better-yaml-file-folding-in-vim/">About better YAML file folding in Vim</a></li>
+                
+                <li><a href="/posts/about-help-macvim/">About <code>:help macvim</code></a></li>
+                
+                <li><a href="/posts/about-vims-diffthis-command/">About Vim&rsquo;s <code>:diffthis</code> command</a></li>
+                
+                </ul>
+            
+        
+    </footer>
+
+    </body>
+</html>
