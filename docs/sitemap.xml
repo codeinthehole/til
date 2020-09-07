@@ -3,8 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/tags/alfred/</loc>
+    <lastmod>2020-09-07T10:37:57+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-09-04T16:27:33+01:00</lastmod>
+    <lastmod>2020-09-07T10:37:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2020-09-07T10:37:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-09-07T10:37:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/you-can-display-the-typed-text-in-alfred-in-a-huge-typeface/</loc>
+    <lastmod>2020-09-07T10:37:57+01:00</lastmod>
   </url>
   
   <url>
@@ -14,16 +34,6 @@
   
   <url>
     <loc>https://til.codeinthehole.com/posts/python-37-supports-postponed-evaluation-of-annotations/</loc>
-    <lastmod>2020-09-04T16:27:33+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-09-04T16:27:33+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2020-09-04T16:27:33+01:00</lastmod>
   </url>
   
@@ -40,11 +50,6 @@
   <url>
     <loc>https://til.codeinthehole.com/posts/how-to-typecheck-csv-objects-in-python/</loc>
     <lastmod>2020-09-03T17:13:22+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/alfred/</loc>
-    <lastmod>2020-09-02T11:34:04+01:00</lastmod>
   </url>
   
   <url>

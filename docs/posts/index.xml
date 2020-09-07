@@ -6,11 +6,23 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Sep 2020 16:27:33 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2020 10:37:57 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can display the typed text in Alfred in a huge typeface</title>
+      <link>https://til.codeinthehole.com/posts/you-can-display-the-typed-text-in-alfred-in-a-huge-typeface/</link>
+      <pubDate>Mon, 07 Sep 2020 10:37:57 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-display-the-typed-text-in-alfred-in-a-huge-typeface/</guid>
+      <description>By pressing cmd + L after typing the text.
+The text is so large, someone across the room can read it.
+  See?
+From https://news.ycombinator.com/item?id=24391899</description>
+    </item>
     
     <item>
       <title>Python 3.7 supports postponed evaluation of annotations</title>
