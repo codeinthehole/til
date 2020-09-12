@@ -6,11 +6,21 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Sep 2020 10:37:57 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2020 21:22:44 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can change the font in Slack with `/slackfont $font`</title>
+      <link>https://til.codeinthehole.com/posts/you-can-change-the-font-in-slack-with-slackfont-font/</link>
+      <pubDate>Sat, 12 Sep 2020 21:22:44 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-change-the-font-in-slack-with-slackfont-font/</guid>
+      <description>For example: /slackfont Comic Sans MS or even /slackfont Wingdings.
+To reset to the default font, run /slackfont without an argument.</description>
+    </item>
     
     <item>
       <title>You can display the typed text in Alfred in a huge typeface</title>
