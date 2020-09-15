@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    It’s not obvious how to build a Terraform list where an item is only included if some condition is met. One solution is to use flatten along with a conditional expression.
+Something like this:
+resource &amp;quot;aws_security_group&amp;quot; &amp;quot;this&amp;quot; { &amp;hellip; ingress { &amp;hellip; security_groups = flatten([ aws_security_group.server-type-a.id, var.include_server_type_b ? aws_security_group.server-type-b[*].id : [] ]) } where the server-type-b security group is only included the security_groups list if var.include_server_type_b is truthy. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL How to conditionally include items in a Terraform list — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>September 15th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to conditionally include items in a Terraform list</h1>
+        </header><p>It&rsquo;s not obvious how to build a Terraform list where an item is only included if
+some condition is met. One solution is to use <code>flatten</code> along with a conditional
+expression.</p>
+<p>Something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_security_group&#34; &#34;this&#34;</span> {
+  ...
+  <span style="color:#66d9ef">ingress</span> {
+    ...
+    security_groups <span style="color:#f92672">=</span> <span style="color:#66d9ef">flatten</span>([
+      <span style="color:#66d9ef">aws_security_group</span>.<span style="color:#66d9ef">server</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#66d9ef">type</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#66d9ef">a</span>.<span style="color:#66d9ef">id</span>,
+      <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">include_server_type_b</span> <span style="color:#960050;background-color:#1e0010">?</span> <span style="color:#66d9ef">aws_security_group</span>.<span style="color:#66d9ef">server</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#66d9ef">type</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#66d9ef">b</span>[<span style="color:#960050;background-color:#1e0010">*</span>].<span style="color:#66d9ef">id</span> <span style="color:#960050;background-color:#1e0010">:</span> []
+    ])
+  }
+</code></pre></div><p>where the <code>server-type-b</code> security group is only included the <code>security_groups</code>
+list if <code>var.include_server_type_b</code> is truthy.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/terraform/">Terraform</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/renaming-a-terraform-module-leads-to-resource-recreation/">Renaming a Terraform module is dangerous</a></li>
+                
+                </ul>
+            
+        
+    </footer>
+
+    </body>
+</html>

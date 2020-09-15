@@ -6,11 +6,22 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Sep 2020 21:22:44 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2020 11:49:53 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to conditionally include items in a Terraform list</title>
+      <link>https://til.codeinthehole.com/posts/how-to-conditionally-include-items-in-a-terraform-list/</link>
+      <pubDate>Tue, 15 Sep 2020 11:49:53 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-conditionally-include-items-in-a-terraform-list/</guid>
+      <description>It&amp;rsquo;s not obvious how to build a Terraform list where an item is only included if some condition is met. One solution is to use flatten along with a conditional expression.
+Something like this:
+resource &amp;#34;aws_security_group&amp;#34; &amp;#34;this&amp;#34; { ... ingress { ... security_groups = flatten([ aws_security_group.server-type-a.id, var.include_server_type_b ? aws_security_group.server-type-b[*].id : [] ]) } where the server-type-b security group is only included the security_groups list if var.include_server_type_b is truthy.</description>
+    </item>
     
     <item>
       <title>You can change the font in Slack with `/slackfont $font`</title>
