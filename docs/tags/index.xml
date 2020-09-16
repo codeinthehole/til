@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Sep 2020 11:49:53 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2020 09:16:47 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Vim</title>
+      <link>https://til.codeinthehole.com/tags/vim/</link>
+      <pubDate>Wed, 16 Sep 2020 09:16:47 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/vim/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Terraform</title>
@@ -45,15 +54,6 @@
       <pubDate>Fri, 04 Sep 2020 16:27:33 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vim</title>
-      <link>https://til.codeinthehole.com/tags/vim/</link>
-      <pubDate>Fri, 04 Sep 2020 11:38:38 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/vim/</guid>
       <description></description>
     </item>
     

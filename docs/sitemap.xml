@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2020-09-16T09:16:47+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2020-09-16T09:16:47+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-09-16T09:16:47+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/vim/</loc>
+    <lastmod>2020-09-16T09:16:47+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/vim-recommends-using-emacsstyle-key-bindings-in-command-mode/</loc>
+    <lastmod>2020-09-16T09:16:47+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/posts/how-to-conditionally-include-items-in-a-terraform-list/</loc>
     <lastmod>2020-09-15T11:49:53+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-09-15T11:49:53+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-09-15T11:49:53+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://til.codeinthehole.com/tags/terraform/</loc>
-    <lastmod>2020-09-15T11:49:53+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2020-09-15T11:49:53+01:00</lastmod>
   </url>
   
@@ -55,11 +65,6 @@
   <url>
     <loc>https://til.codeinthehole.com/posts/python-37-supports-postponed-evaluation-of-annotations/</loc>
     <lastmod>2020-09-04T16:27:33+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/vim/</loc>
-    <lastmod>2020-09-04T11:38:38+01:00</lastmod>
   </url>
   
   <url>
