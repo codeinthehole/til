@@ -6,11 +6,21 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Sep 2020 09:16:47 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2020 14:27:56 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About Vim&#39;s `:helpgrep` command</title>
+      <link>https://til.codeinthehole.com/posts/about-vims-helpgrep-command/</link>
+      <pubDate>Wed, 16 Sep 2020 14:27:56 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-vims-helpgrep-command/</guid>
+      <description>Which lets you search Vim&amp;rsquo;s help files for a given pattern. For example:
+:helpgrep What is the meaning of life Discovered via a Hashrocket TIL and an episode of Josh Branchaud&amp;rsquo;s Vim Un-Alphabet screencast series.</description>
+    </item>
     
     <item>
       <title>Vim recommends using Emacs-style key bindings in command mode</title>
