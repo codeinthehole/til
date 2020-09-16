@@ -36,3 +36,17 @@
         {{ end }}
     </footer>
 {{ end }}
+
+{{ define "scripts" }}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        {{ if .PrevPage }}
+            Mousetrap.bind("left", function() { window.location.replace("{{ .PrevPage.RelPermalink }}"); })
+        {{ end }}
+
+        {{ if .NextPage }}
+            Mousetrap.bind("right", function() { window.location.replace("{{ .NextPage.RelPermalink }}"); })
+        {{ end }}
+    </script>
+{{ end }}
+
