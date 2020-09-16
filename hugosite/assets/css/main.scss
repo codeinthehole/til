@@ -4,6 +4,7 @@ $font-text: 'Helvetica', sans-serif;
 $color-text: #394548;
 $color-link-hover: #369aff;
 $color-grey: #bbb;
+$color-light-grey: #eee;
 $color-dark-grey: #aaa;
 
 *, *:before, *:after {
@@ -91,6 +92,7 @@ main#content {
             }
         }
 
+        /* Citation */
         footer {
             color: $color-grey;
             font-size: 0.8em;
@@ -258,7 +260,15 @@ footer#footer {
     }
 
     p {
-        margin: 0;
+        margin: 10px 0 0 0;
+
+        span.key {
+            background-color: $color-light-grey;
+            padding: 2px;
+            border: 1px solid #ccc;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+        }
     }
 
     ul {
