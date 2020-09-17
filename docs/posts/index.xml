@@ -6,11 +6,21 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Sep 2020 14:27:56 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2020 15:54:21 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to count lines of code in a Git repo for a given commit</title>
+      <link>https://til.codeinthehole.com/posts/how-to-count-lines-of-code-in-a-git-repo/</link>
+      <pubDate>Thu, 17 Sep 2020 15:54:21 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-count-lines-of-code-in-a-git-repo/</guid>
+      <description>For a given commit $SHA, use:
+$ git diff --shortstat `git hash-object -t tree /dev/null`..$SHA which works as git hash-object -t tree /dev/null computes the hash of the empty tree.</description>
+    </item>
     
     <item>
       <title>About Vim&#39;s `:helpgrep` command</title>

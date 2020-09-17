@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    For a given commit $SHA, use: $ git diff &amp;ndash;shortstat git hash-object -t tree /dev/null..$SHA which works as git hash-object -t tree /dev/null computes the hash of the empty tree. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL How to count lines of code in a Git repo for a given commit — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>September 17th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to count lines of code in a Git repo for a given commit</h1>
+        </header><p>For a given commit <code>$SHA</code>, use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git diff --shortstat <span style="color:#e6db74">`</span>git hash-object -t tree /dev/null<span style="color:#e6db74">`</span>..$SHA
+</code></pre></div><p>which works as <code>git hash-object -t tree /dev/null</code> computes the hash of the
+empty tree.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+        
+
+        
+            <p>Jump to the previous TIL using the <span class="key">◀</span> cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-vims-helpgrep-command\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

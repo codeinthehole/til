@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://til.codeinthehole.com/posts/about-vims-helpgrep-command/</loc>
-    <lastmod>2020-09-16T14:27:56+01:00</lastmod>
+    <loc>https://til.codeinthehole.com/tags/git/</loc>
+    <lastmod>2020-09-17T15:54:21+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/how-to-count-lines-of-code-in-a-git-repo/</loc>
+    <lastmod>2020-09-17T15:54:21+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-09-16T14:27:56+01:00</lastmod>
+    <lastmod>2020-09-17T15:54:21+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-09-16T14:27:56+01:00</lastmod>
+    <lastmod>2020-09-17T15:54:21+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-09-17T15:54:21+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/about-vims-helpgrep-command/</loc>
     <lastmod>2020-09-16T14:27:56+01:00</lastmod>
   </url>
   
