@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    For instance, in YAML 1.1:
+Yes and No parse to true and false x:y is parsed as a base-60 number if y is less than 60  See for yourself with these Python tests:
+import yaml import io def test_parsing_iso_country_codes(): f = io.StringIO(&amp;quot;&amp;quot;&amp;quot;&amp;mdash; england: GB norway: NO &amp;quot;&amp;quot;&amp;quot;) content = yaml.load(f, Loader=yaml.FullLoader) assert content == { &amp;quot;england&amp;quot;: &amp;quot;GB&amp;quot;, &amp;quot;norway&amp;quot;: False, } def test_parsing_ports(): f = io.StringIO(&amp;quot;&amp;quot;&amp;quot;&amp;mdash; low: 1:1 high: 20:100 &amp;quot;&amp;quot;&amp;quot;) content = yaml. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL YAML has several string-parsing gotchas — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>September 21th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>YAML has several string-parsing gotchas</h1>
+        </header><p>For instance, in YAML 1.1:</p>
+<ul>
+<li><code>Yes</code> and <code>No</code> parse to <code>true</code> and <code>false</code></li>
+<li><code>x:y</code> is parsed as a base-60 number if <code>y</code> is less than 60</li>
+</ul>
+<p>See for yourself with these Python tests:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> yaml
+<span style="color:#f92672">import</span> io
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_parsing_iso_country_codes</span>():
+    f <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>StringIO(<span style="color:#e6db74">&#34;&#34;&#34;---
+</span><span style="color:#e6db74">england: GB
+</span><span style="color:#e6db74">norway: NO
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>)
+    content <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span>load(f, Loader<span style="color:#f92672">=</span>yaml<span style="color:#f92672">.</span>FullLoader)
+
+    <span style="color:#66d9ef">assert</span> content <span style="color:#f92672">==</span> {
+        <span style="color:#e6db74">&#34;england&#34;</span>: <span style="color:#e6db74">&#34;GB&#34;</span>,
+        <span style="color:#e6db74">&#34;norway&#34;</span>: False,
+    }
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_parsing_ports</span>():
+    f <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>StringIO(<span style="color:#e6db74">&#34;&#34;&#34;---
+</span><span style="color:#e6db74">low: 1:1
+</span><span style="color:#e6db74">high: 20:100
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>)
+    content <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span>load(f, Loader<span style="color:#f92672">=</span>yaml<span style="color:#f92672">.</span>FullLoader)
+
+    <span style="color:#66d9ef">assert</span> content <span style="color:#f92672">==</span> {
+        <span style="color:#e6db74">&#34;low&#34;</span>: <span style="color:#ae81ff">61</span>,  <span style="color:#75715e"># which is &#39;1:1&#39; in base-60</span>
+        <span style="color:#e6db74">&#34;high&#34;</span>: <span style="color:#e6db74">&#34;20:100&#34;</span>
+    }
+</code></pre></div><p>Related:</p>
+<ul>
+<li><a href="https://yaml.org/type/float.html">YAML 1.1 spec</a></li>
+</ul>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+        
+            
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/javascripts-unary-plus-operator-casts-null-to-zero\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

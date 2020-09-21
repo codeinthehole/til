@@ -6,11 +6,22 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Sep 2020 10:24:01 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2020 12:33:56 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>YAML has several string-parsing gotchas</title>
+      <link>https://til.codeinthehole.com/posts/yaml-has-several-stringparsing-gotchas/</link>
+      <pubDate>Mon, 21 Sep 2020 12:33:56 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/yaml-has-several-stringparsing-gotchas/</guid>
+      <description>For instance, in YAML 1.1:
+ Yes and No parse to true and false x:y is parsed as a base-60 number if y is less than 60  See for yourself with these Python tests:
+import yaml import io def test_parsing_iso_country_codes(): f = io.StringIO(&amp;#34;&amp;#34;&amp;#34;--- england: GB norway: NO &amp;#34;&amp;#34;&amp;#34;) content = yaml.load(f, Loader=yaml.FullLoader) assert content == { &amp;#34;england&amp;#34;: &amp;#34;GB&amp;#34;, &amp;#34;norway&amp;#34;: False, } def test_parsing_ports(): f = io.StringIO(&amp;#34;&amp;#34;&amp;#34;--- low: 1:1 high: 20:100 &amp;#34;&amp;#34;&amp;#34;) content = yaml.</description>
+    </item>
     
     <item>
       <title>Javascript&#39;s unary `&#43;` operator casts `null` to zero</title>
