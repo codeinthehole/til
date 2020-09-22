@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://til.codeinthehole.com/tags/gotchas/</loc>
-    <lastmod>2020-09-21T12:33:56+01:00</lastmod>
+    <loc>https://til.codeinthehole.com/tags/aws/</loc>
+    <lastmod>2020-09-22T22:12:13+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-09-21T12:33:56+01:00</lastmod>
+    <lastmod>2020-09-22T22:12:13+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-09-21T12:33:56+01:00</lastmod>
+    <lastmod>2020-09-22T22:12:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/theres-a-chrome-extension-for-switching-aws-iam-roles/</loc>
+    <lastmod>2020-09-22T22:12:13+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-09-22T22:12:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/gotchas/</loc>
     <lastmod>2020-09-21T12:33:56+01:00</lastmod>
   </url>
   
@@ -145,11 +155,6 @@
   <url>
     <loc>https://til.codeinthehole.com/posts/opendns-provide-free-pornblocking-dns-servers/</loc>
     <lastmod>2020-08-27T12:03:43+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/aws/</loc>
-    <lastmod>2020-08-25T22:18:32+01:00</lastmod>
   </url>
   
   <url>
