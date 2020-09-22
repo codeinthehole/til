@@ -5,7 +5,7 @@
 {{ define "main" }}
     <h1>{{ .Title }}</h1>
 
-    {{ .Content }}
+    <p>This page should be a tag cloud.</p>
 
     <ul id="posts">
         {{ range .Data.Terms.Alphabetical }}
@@ -17,7 +17,7 @@
     </ul>
 
     <p>
-        Browse <a href="/posts/">all posts</a>.
+        Browse all posts <a href="/posts/">by month</a>.
     </p>
 
 {{ end }}
