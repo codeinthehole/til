@@ -6,11 +6,23 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2020 22:12:13 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2020 10:16:13 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>SSH config supports multiple host patterns in one block</title>
+      <link>https://til.codeinthehole.com/posts/ssh-config-supports-multiple-host-patterns-in-one-block/</link>
+      <pubDate>Wed, 23 Sep 2020 10:16:13 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/ssh-config-supports-multiple-host-patterns-in-one-block/</guid>
+      <description>From man ssh_config:
+ Host Restricts the following declarations (up to the next Host or Match keyword) to be only for those hosts that match one of the patterns given after the keyword. If more than one pattern is provided, they should be separated by whitespace.
+ and so you can do this:
+Host 10.0.20.* 10.0.28.* 10.0.29.* 10.0.30.* User ubuntu IdentityFile ~/.ssh/xxx/id_rsa ProxyJump some-bastion-host StrictHostKeyChecking no UserKnownHostsFile /dev/null where multiple host patterns are used for one block.</description>
+    </item>
     
     <item>
       <title>There&#39;s a Chrome extension for switching AWS IAM roles</title>

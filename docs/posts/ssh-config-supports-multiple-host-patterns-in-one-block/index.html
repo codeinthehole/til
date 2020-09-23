@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    From man ssh_config:
+Host Restricts the following declarations (up to the next Host or Match keyword) to be only for those hosts that match one of the patterns given after the keyword. If more than one pattern is provided, they should be separated by whitespace.
+and so you can do this:
+Host 10.0.20.* 10.0.28.* 10.0.29.* 10.0.30.* User ubuntu IdentityFile ~/.ssh/xxx/id_rsa ProxyJump some-bastion-host StrictHostKeyChecking no UserKnownHostsFile /dev/null where multiple host patterns are used for one block. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL SSH config supports multiple host patterns in one block — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>September 23th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>SSH config supports multiple host patterns in one block</h1>
+        </header><p>From <code>man ssh_config</code>:</p>
+<blockquote>
+<p>Host    Restricts the following declarations (up to the next Host or Match
+keyword) to be only for those hosts that match one of the patterns
+given after the keyword.  If more than one pattern is provided,
+they should be separated by whitespace.</p>
+</blockquote>
+<p>and so you can do this:</p>
+<pre><code class="language-ssh" data-lang="ssh">Host 10.0.20.* 10.0.28.* 10.0.29.* 10.0.30.*
+    User ubuntu
+    IdentityFile ~/.ssh/xxx/id_rsa
+    ProxyJump some-bastion-host
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+</code></pre><p>where multiple host patterns are used for one block.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/theres-a-chrome-extension-for-switching-aws-iam-roles\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
