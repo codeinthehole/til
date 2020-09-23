@@ -6,11 +6,22 @@
     <description>Recent content in Vim on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Sep 2020 14:27:56 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2020 16:00:09 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to read from one buffer to another in Vim</title>
+      <link>https://til.codeinthehole.com/posts/how-to-read-from-one-buffer-to-another-in-vim/</link>
+      <pubDate>Wed, 23 Sep 2020 16:00:09 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-read-from-one-buffer-to-another-in-vim/</guid>
+      <description>Refer to the buffer&amp;rsquo;s number using a hash. For example, run:
+:read #3to insert the contents of the file linked to buffer 3. Note that a buffer&amp;rsquo;s content isn&amp;rsquo;t necessarily the same as the linked file.
+From: https://stackoverflow.com/questions/37859530/vim-how-to-read-from-one-buffer-into-another</description>
+    </item>
     
     <item>
       <title>About Vim&#39;s `:helpgrep` command</title>
