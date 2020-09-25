@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Sep 2020 16:00:09 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2020 10:25:17 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>MacOS</title>
+      <link>https://til.codeinthehole.com/tags/macos/</link>
+      <pubDate>Fri, 25 Sep 2020 10:25:17 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/macos/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Vim</title>
@@ -153,15 +162,6 @@
       <pubDate>Mon, 17 Aug 2020 14:32:50 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MacOS</title>
-      <link>https://til.codeinthehole.com/tags/macos/</link>
-      <pubDate>Fri, 14 Aug 2020 10:30:00 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/macos/</guid>
       <description></description>
     </item>
     
