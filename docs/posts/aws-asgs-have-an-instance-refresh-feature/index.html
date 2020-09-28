@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Which lets you replace all the instances in an auto-scaling group, possibly with a new AMI. See the announcement from the AWS Compute Blog.
+If you use an immutable infrastructure approach and deploy using AMIs, this provides an alternative deployment mechanism. In contrast to using Terraform’s create_before_destroy mechanism, which creates a new auto-scaling group for each deploy, this method would allow a single long-lived ASG to be used.
+Looks interesting. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL AWS ASGs have an &#39;instance refresh&#39; feature — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>September 28th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>AWS ASGs have an &lsquo;instance refresh&rsquo; feature</h1>
+        </header><p>Which lets you replace all the instances in an auto-scaling group, possibly with
+a new AMI. See <a href="https://aws.amazon.com/blogs/compute/introducing-instance-refresh-for-ec2-auto-scaling/">the announcement</a>
+from the AWS Compute Blog.</p>
+<p>If you use an immutable infrastructure approach and deploy using AMIs, this
+provides an alternative deployment mechanism. In contrast to using Terraform&rsquo;s
+<code>create_before_destroy</code> mechanism, which creates a new auto-scaling group for
+each deploy, this method would allow a single long-lived ASG to be used.</p>
+<p>Looks interesting.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/aws/">AWS</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/theres-a-chrome-extension-for-switching-aws-iam-roles/">There&rsquo;s a Chrome extension for switching AWS IAM roles</a></li>
+                
+                <li><a href="/posts/aws-availability-zones-have-counterintuitive-ids/">AWS Availability Zones have counter-intuitive IDs</a></li>
+                
+                <li><a href="/posts/about-passwordless-users-in-ec2/">Where authentication for the <code>ubuntu</code> user on a EC2 instance is defined</a></li>
+                
+                </ul>
+            
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/terraform/">Terraform</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/how-to-conditionally-include-items-in-a-terraform-list/">How to conditionally include items in a Terraform list</a></li>
+                
+                <li><a href="/posts/renaming-a-terraform-module-leads-to-resource-recreation/">Renaming a Terraform module is dangerous</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/the-macos-keybinds-for-en-and-emdashes\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

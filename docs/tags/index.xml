@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2020 10:25:17 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2020 16:02:44 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>AWS</title>
+      <link>https://til.codeinthehole.com/tags/aws/</link>
+      <pubDate>Mon, 28 Sep 2020 16:02:44 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Terraform</title>
+      <link>https://til.codeinthehole.com/tags/terraform/</link>
+      <pubDate>Mon, 28 Sep 2020 16:02:44 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/terraform/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>MacOS</title>
@@ -36,15 +54,6 @@
       <pubDate>Wed, 23 Sep 2020 10:16:13 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/openssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AWS</title>
-      <link>https://til.codeinthehole.com/tags/aws/</link>
-      <pubDate>Tue, 22 Sep 2020 22:12:13 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/aws/</guid>
       <description></description>
     </item>
     
@@ -81,15 +90,6 @@
       <pubDate>Thu, 17 Sep 2020 15:54:21 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Terraform</title>
-      <link>https://til.codeinthehole.com/tags/terraform/</link>
-      <pubDate>Tue, 15 Sep 2020 11:49:53 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/terraform/</guid>
       <description></description>
     </item>
     

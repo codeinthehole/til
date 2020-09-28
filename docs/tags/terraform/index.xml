@@ -6,11 +6,22 @@
     <description>Recent content in Terraform on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Sep 2020 11:49:53 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2020 16:02:44 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>AWS ASGs have an &#39;instance refresh&#39; feature</title>
+      <link>https://til.codeinthehole.com/posts/aws-asgs-have-an-instance-refresh-feature/</link>
+      <pubDate>Mon, 28 Sep 2020 16:02:44 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/aws-asgs-have-an-instance-refresh-feature/</guid>
+      <description>Which lets you replace all the instances in an auto-scaling group, possibly with a new AMI. See the announcement from the AWS Compute Blog.
+If you use an immutable infrastructure approach and deploy using AMIs, this provides an alternative deployment mechanism. In contrast to using Terraform&amp;rsquo;s create_before_destroy mechanism, which creates a new auto-scaling group for each deploy, this method would allow a single long-lived ASG to be used.
+Looks interesting.</description>
+    </item>
     
     <item>
       <title>How to conditionally include items in a Terraform list</title>
