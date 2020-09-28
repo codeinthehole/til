@@ -1,15 +1,11 @@
 # TIL...
 
-Simple static site of TIL posts.
-
-## Design
-
-The point of this project is to make it super easy to create TIL posts that get
-published to a public site.
+A Hugo-built static site of TIL posts, designed to make it as easy as possible
+to publish a new post.
 
 ### Scripts
 
-To that end, this repo provides two Bash scripts for writing a TIL post and
+This repo provides two Bash scripts for writing a TIL post and
 creating images to include.
 
 ### Publication
@@ -36,10 +32,12 @@ Checkout the repo and create shell aliases for the two helper scripts:
 source /path/to/repo/install.sh
 ```
 
-The `til_screenshot.sh` script requires [`pngcrush`](https://pmt.sourceforge.io/pngcrush/)
-which can be installed from Homebrew:
+Consider adding this `source`ing to your Bash start-up script.
 
-    $ brew install pngcrush
+Note, the `til_screenshot.sh` script requires [`pngcrush`](https://pmt.sourceforge.io/pngcrush/)
+and `imagemagick`; both of which can be installed from Homebrew:
+
+    $ brew install pngcrush imagemagick
 
 ## Usage
 
@@ -76,7 +74,7 @@ Eg
 
 which will trigger MacOS's `screencapture` utility to capture a selected portion
 of the screen. After selection, the resulting PNG image will be saved to
-`images/` using a filename based on a slugified `$description` and the markdown
+`static/images/` using a filename based on a slugified `$description` and the markdown
 to include in the post will be added to the system clipboard.
 
 After saving and exiting Vim, the markdown file and any new images will be
