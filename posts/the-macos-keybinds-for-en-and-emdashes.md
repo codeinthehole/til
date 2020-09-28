@@ -6,9 +6,11 @@ tags: ["MacOS"]
 
 Which are:
 
-- `alt + -` for an en-dash;
-- `shift + alt + -` for an em-dash;
+- `alt + -` for an en-dash (–);
+- `shift + alt + -` for an em-dash (—);
 
 You can always get them from the `ctrl + cmd + space` character picker but good
-to quicker alternatives.
+to know quicker alternatives.
+
+Don't seem to work in MacVim though.
 

@@ -30,7 +30,8 @@ Looks interesting.</description>
       
       <guid>https://til.codeinthehole.com/posts/the-macos-keybinds-for-en-and-emdashes/</guid>
       <description>Which are:
- alt + - for an en-dash; shift + alt + - for an em-dash;  You can always get them from the ctrl + cmd + space character picker but good to quicker alternatives.</description>
+ alt + - for an en-dash (–); shift + alt + - for an em-dash (—);  You can always get them from the ctrl + cmd + space character picker but good to know quicker alternatives.
+Don&amp;rsquo;t seem to work in MacVim though.</description>
     </item>
     
     <item>
