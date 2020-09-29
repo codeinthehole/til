@@ -6,11 +6,22 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Sep 2020 16:02:44 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2020 12:47:23 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to use `xargs` with `printf`</title>
+      <link>https://til.codeinthehole.com/posts/how-to-use-xargs-with-printf/</link>
+      <pubDate>Tue, 29 Sep 2020 12:47:23 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-use-xargs-with-printf/</guid>
+      <description>This is obvious in retrospect but it hadn&amp;rsquo;t dawned on me that you can use xargs printf to use STDIN as printf arguments. Trivial example:
+$ echo world | xargs printf &amp;#34;hello %s&amp;#34; hello world It&amp;rsquo;s useful for building strings from streams of data. Today&amp;rsquo;s usecase was building a pastable Python snippet from a JSON file containing object IDs:
+$ cat loggly_events.json | jq &amp;#39;.events[].event.json.object_id&amp;#39; \  | paste -sd, | xargs printf &amp;#34;object_ids = [%s]&amp;#34; object_ids = [4,6,8,2,3,4] Here jq is used to extract a newline-separated stream of IDs which are joined into a CSV-string using paste before being formatted into a Python snippet with printf.</description>
+    </item>
     
     <item>
       <title>AWS ASGs have an &#39;instance refresh&#39; feature</title>

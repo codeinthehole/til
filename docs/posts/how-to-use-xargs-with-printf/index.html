@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    This is obvious in retrospect but it hadn’t dawned on me that you can use xargs printf to use STDIN as printf arguments. Trivial example:
+$ echo world | xargs printf &amp;quot;hello %s&amp;quot; hello world It’s useful for building strings from streams of data. Today’s usecase was building a pastable Python snippet from a JSON file containing object IDs:
+$ cat loggly_events.json | jq &#39;.events[].event.json.object_id&#39; \  | paste -sd, | xargs printf &amp;quot;object_ids = [%s]&amp;quot; object_ids = [4,6,8,2,3,4] Here jq is used to extract a newline-separated stream of IDs which are joined into a CSV-string using paste before being formatted into a Python snippet with printf. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL How to use &#39;xargs&#39; with &#39;printf&#39; — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>September 29th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to use <code>xargs</code> with <code>printf</code></h1>
+        </header><p>This is obvious in retrospect but it hadn&rsquo;t dawned on me that you can use <code>xargs printf</code> to use STDIN as <code>printf</code> arguments. Trivial example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo world | xargs printf <span style="color:#e6db74">&#34;hello %s&#34;</span>
+hello world
+</code></pre></div><p>It&rsquo;s useful for building strings from streams of data. Today&rsquo;s usecase was
+building a pastable Python snippet from a JSON file containing object IDs:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat loggly_events.json | jq <span style="color:#e6db74">&#39;.events[].event.json.object_id&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    | paste -sd, | xargs printf <span style="color:#e6db74">&#34;object_ids = [%s]&#34;</span>
+object_ids <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>4,6,8,2,3,4<span style="color:#f92672">]</span>
+</code></pre></div><p>Here <code>jq</code> is used to extract a newline-separated stream of IDs which are
+joined into a CSV-string using <code>paste</code> before being formatted into a Python
+snippet with <code>printf</code>.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/about-pngcrush/">About <code>pngcrush</code></a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/aws-asgs-have-an-instance-refresh-feature\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
