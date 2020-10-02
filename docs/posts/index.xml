@@ -6,11 +6,21 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Sep 2020 12:47:23 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2020 14:55:57 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>There is a &#34;Bongcloud&#34; chess opening</title>
+      <link>https://til.codeinthehole.com/posts/there-is-a-bongcloud-chess-opening/</link>
+      <pubDate>Fri, 02 Oct 2020 14:55:57 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/there-is-a-bongcloud-chess-opening/</guid>
+      <description>Which starts 1 f3 and 2 Kf2.
+Played by Magnus Carlsen recently: https://www.theguardian.com/sport/2020/oct/02/chess-carlsen-wins-with-1-f3-as-play-magnus-raises-42m-in-oslo-listing</description>
+    </item>
     
     <item>
       <title>How to use `xargs` with `printf`</title>
