@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    If there’s been a large-scale renaming of files in master and you attempt to rebase your pull-request branch, the resulting conflicts can be tricky to resolve. You’ll see lots of conflicts of form:
+CONFLICT (modify/delete): $FILEPATH deleted in HEAD and modified in $SHA&amp;hellip; $COMMIT_MSG One resolution is to manually apply the changes in $SHA to the new filepaths but this is manual and error-prone.
+Better is to use git diff to generate patch files and apply these with patch. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL How to resolve Git rebase conflicts on renamed files — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>October 5th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to resolve Git rebase conflicts on renamed files</h1>
+        </header><p>If there&rsquo;s been a large-scale renaming of files in <code>master</code> and you attempt to rebase
+your pull-request branch, the resulting conflicts can be tricky to resolve.
+You&rsquo;ll see lots of conflicts of form:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">CONFLICT (modify/delete): $FILEPATH deleted in HEAD and modified in $SHA... $COMMIT_MSG
+</code></pre></div><p>One resolution is to manually apply the changes in <code>$SHA</code> to the new filepaths
+but this is manual and error-prone.</p>
+<p>Better is to use <code>git diff</code> to generate patch files and apply these with <code>patch</code>.</p>
+<p>Run this for each filepath modified in your PR but deleted in <code>master</code>:</p>
+<pre><code>$ git show REBASE_HEAD $OLD_FILEPATH | patch $NEW_FILEPATH
+</code></pre><p>Note, <code>REBASE_HEAD</code> is a useful pseudo-ref for the conflicting commit from the
+ongoing rebase.</p>
+<p>If you&rsquo;re interested, I&rsquo;ve written previously about <a href="https://codeinthehole.com/guides/resolving-conflicts-during-a-git-rebase/">resolving Git conflicts during a Git rebase</a>.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/how-to-count-lines-of-code-in-a-git-repo/">How to count lines of code in a Git repo for a given commit</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/there-is-a-bongcloud-chess-opening\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

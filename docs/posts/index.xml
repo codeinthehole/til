@@ -6,11 +6,22 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Oct 2020 14:55:57 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2020 11:34:01 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to resolve Git rebase conflicts on renamed files</title>
+      <link>https://til.codeinthehole.com/posts/how-to-resolve-git-conflicts-on-renamed-files/</link>
+      <pubDate>Mon, 05 Oct 2020 11:34:01 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-resolve-git-conflicts-on-renamed-files/</guid>
+      <description>If there&amp;rsquo;s been a large-scale renaming of files in master and you attempt to rebase your pull-request branch, the resulting conflicts can be tricky to resolve. You&amp;rsquo;ll see lots of conflicts of form:
+CONFLICT (modify/delete): $FILEPATH deleted in HEAD and modified in $SHA... $COMMIT_MSG One resolution is to manually apply the changes in $SHA to the new filepaths but this is manual and error-prone.
+Better is to use git diff to generate patch files and apply these with patch.</description>
+    </item>
     
     <item>
       <title>There is a &#34;Bongcloud&#34; chess opening</title>
