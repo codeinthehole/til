@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/bash/</link>
+    <description>Recent content in Bash on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Oct 2020 11:15:11 +0100</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>About Bash&#39;s DEBUG signal</title>
+      <link>https://til.codeinthehole.com/posts/about-bashs-debug-signal/</link>
+      <pubDate>Wed, 07 Oct 2020 11:15:11 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-bashs-debug-signal/</guid>
+      <description>Bash has a DEBUG signal that you can register a handler for using trap.
+As Julia Evans tweeted, you can use this to print a prompt before each command is executed, which allows you to step through a Bash script:
+trap &#39;(read -p &amp;quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &amp;quot;)&#39; DEBUG </description>
+    </item>
+    
+
+  </channel>
+</rss>

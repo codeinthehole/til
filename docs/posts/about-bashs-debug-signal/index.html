@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Bash has a DEBUG signal that you can register a handler for using trap.
+As Julia Evans tweeted, you can use this to print a prompt before each command is executed, which allows you to step through a Bash script:
+trap &amp;lsquo;(read -p &amp;quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &amp;quot;)&amp;rsquo; DEBUG ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL About Bash&#39;s DEBUG signal — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>October 7th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>About Bash&rsquo;s DEBUG signal</h1>
+        </header><p>Bash has a <code>DEBUG</code> signal that you can register a handler for using <code>trap</code>.</p>
+<p>As <a href="https://twitter.com/b0rk/status/1312413117436104705">Julia Evans tweeted</a>,
+you can use this to print a prompt before each command is executed, which allows
+you to step through a Bash script:</p>
+<pre><code>trap '(read -p &quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &quot;)' DEBUG
+</code></pre></article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-resolve-git-conflicts-on-renamed-files\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
