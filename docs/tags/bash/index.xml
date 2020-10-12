@@ -6,11 +6,20 @@
     <description>Recent content in Bash on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Oct 2020 11:15:11 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2020 10:30:00 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About `shellcheck`</title>
+      <link>https://til.codeinthehole.com/posts/about-shellcheck/</link>
+      <pubDate>Mon, 12 Oct 2020 10:30:00 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-shellcheck/</guid>
+      <description>Which is a static analysis tool for shell scripts. You can try it out by pasting a script into a form and it is run automatically by Vim&amp;rsquo;s Ale plugin.</description>
+    </item>
     
     <item>
       <title>About Bash&#39;s DEBUG signal</title>

@@ -3,12 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://til.codeinthehole.com/posts/about-piplicenses/</loc>
-    <lastmod>2020-10-08T14:56:38+01:00</lastmod>
+    <loc>https://til.codeinthehole.com/posts/about-shellcheck/</loc>
+    <lastmod>2020-10-12T10:30:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/bash/</loc>
+    <lastmod>2020-10-12T10:30:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2020-10-12T10:30:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2020-10-12T10:30:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-10-12T10:30:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/vim/</loc>
+    <lastmod>2020-10-12T10:30:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/about-piplicenses/</loc>
     <lastmod>2020-10-08T14:56:38+01:00</lastmod>
   </url>
   
@@ -18,22 +43,7 @@
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-10-08T14:56:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
-    <lastmod>2020-10-08T14:56:38+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://til.codeinthehole.com/posts/about-bashs-debug-signal/</loc>
-    <lastmod>2020-10-07T11:15:11+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/bash/</loc>
     <lastmod>2020-10-07T11:15:11+01:00</lastmod>
   </url>
   
@@ -94,11 +104,6 @@
   
   <url>
     <loc>https://til.codeinthehole.com/posts/how-to-read-from-one-buffer-to-another-in-vim/</loc>
-    <lastmod>2020-09-23T16:00:09+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/vim/</loc>
     <lastmod>2020-09-23T16:00:09+01:00</lastmod>
   </url>
   
