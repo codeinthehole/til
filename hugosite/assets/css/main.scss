@@ -141,6 +141,28 @@ main#content {
         }
     }             
 
+    /* Tag cloud */
+    #tagcloud {
+        /* The number of classes to build. Make sure this is higher than the max freq of any one tag. */
+        $num_classes: 20;
+
+        /* The tag count that gets the max font size. */
+        $max_font_size_count: 10;
+
+        /* The min/max font size */
+        $min_font_size: 1em;
+        $max_font_size: 10em;
+
+        @for $i from 1 through $num_classes {
+            $size: 1em;
+            @if $i <= $max_font_size_count { $size: $min_font_size + ( ($max_font_size - $min_font_size) / $max_font_size_count ) * ($i - 1); }
+            @if $i >  $max_font_size_count { $size: $max_font_size; }
+            .font_size_#{$i} { 
+                font-size: $size; 
+            }
+        }
+    }
+
     /* Single post */
     article { 
         header#post-header {

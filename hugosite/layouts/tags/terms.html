@@ -5,16 +5,14 @@
 {{ define "main" }}
     <h1>{{ .Title }}</h1>
 
-    <p>This page should be a tag cloud.</p>
+    <p>Yep, a tag cloud.</p>
 
-    <ul id="posts">
-        {{ range .Data.Terms.Alphabetical }}
-            <li>
-                <a href="{{ .Page.Permalink }}">{{- .Page.Title | markdownify -}}</a>
-                ({{ .Count }})
-            </li>
+    <div id="tagcloud">
+        {{ $tags := $.Data.Terms.Alphabetical }}
+        {{ range $tags }}
+        <a href="{{ .Page.Permalink }}" class="font_size_{{ .Count }}" >{{ .Page.Title | markdownify }}</a>
         {{ end }}
-    </ul>
+    </div>
 
     <p>
         Browse all posts <a href="/posts/">by month</a>.
