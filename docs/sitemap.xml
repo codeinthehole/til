@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/posts/about-the-difference-between-minimising-and-hiding-windows-in-macos/</loc>
+    <lastmod>2020-10-19T10:24:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/macos/</loc>
+    <lastmod>2020-10-19T10:24:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2020-10-19T10:24:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2020-10-19T10:24:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-10-19T10:24:44+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/posts/about-readonly-bash-variables/</loc>
     <lastmod>2020-10-13T16:02:02+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/tags/bash/</loc>
-    <lastmod>2020-10-13T16:02:02+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-10-13T16:02:02+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-10-13T16:02:02+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2020-10-13T16:02:02+01:00</lastmod>
   </url>
   
@@ -95,11 +105,6 @@
   <url>
     <loc>https://til.codeinthehole.com/tags/terraform/</loc>
     <lastmod>2020-09-28T16:02:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/macos/</loc>
-    <lastmod>2020-09-25T10:25:17+01:00</lastmod>
   </url>
   
   <url>

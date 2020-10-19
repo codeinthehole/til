@@ -6,11 +6,27 @@
     <description>Recent content in MacOS on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2020 10:25:17 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2020 10:24:44 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/macos/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About the difference between minimising and hiding windows in MacOS</title>
+      <link>https://til.codeinthehole.com/posts/about-the-difference-between-minimising-and-hiding-windows-in-macos/</link>
+      <pubDate>Mon, 19 Oct 2020 10:24:44 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-the-difference-between-minimising-and-hiding-windows-in-macos/</guid>
+      <description>Minimising:
+  ⌘ + m minimises the active application window.
+  Window icon appears in Dock.
+  Selecting application via the ⌘ + tab application switcher doesn&amp;rsquo;t restore window.
+  Hiding:
+  ⌘ + h hides all windows of active application.
+  ⌘ + ⌥ + h hides all windows of all applications except the active one (useful).
+  Window icon not show in Dock.</description>
+    </item>
     
     <item>
       <title>The MacOS keybinds for en- and em-dashes</title>
