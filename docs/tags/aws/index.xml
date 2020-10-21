@@ -6,11 +6,22 @@
     <description>Recent content in AWS on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Sep 2020 16:02:44 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2020 15:38:20 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to use AWS profiles that require MFA</title>
+      <link>https://til.codeinthehole.com/posts/how-to-use-aws-profiles-that-require-mfa/</link>
+      <pubDate>Wed, 21 Oct 2020 15:38:20 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-use-aws-profiles-that-require-mfa/</guid>
+      <description>If you have an AWS organisation and several child AWS accounts that you can assume-role into, you can work around MFA restrictions on the trust relationship using a mfa_serial setting in ~/.aws/config.
+Example config:
+[profile parent] # Account ID 111111111111 region = eu-west-2 [profile child-account1] # Account ID 222222222222 role_arn = arn:aws:iam::222222222222:role/OrganizationAccountAccessRole mfa_serial = arn:aws:iam::111111111111:mfa/david.winterbottom region = eu-west-1 source_profile = parent  [profile child-account2] # Account ID 333333333333 role_arn = arn:aws:iam::333333333333:role/OrganizationAccountAccessRole mfa_serial = arn:aws:iam::111111111111:mfa/david.</description>
+    </item>
     
     <item>
       <title>AWS ASGs have an &#39;instance refresh&#39; feature</title>

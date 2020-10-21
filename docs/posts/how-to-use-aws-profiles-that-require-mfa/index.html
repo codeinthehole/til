@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    If you have an AWS organisation and several child AWS accounts that you can assume-role into, you can work around MFA restrictions on the trust relationship using a mfa_serial setting in ~/.aws/config.
+Example config:
+[profile parent] # Account ID 111111111111 region = eu-west-2 [profile child-account1] # Account ID 222222222222 role_arn = arn:aws:iam::222222222222:role/OrganizationAccountAccessRole mfa_serial = arn:aws:iam::111111111111:mfa/david.winterbottom region = eu-west-1 source_profile = parent  [profile child-account2] # Account ID 333333333333 role_arn = arn:aws:iam::333333333333:role/OrganizationAccountAccessRole mfa_serial = arn:aws:iam::111111111111:mfa/david. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL How to use AWS profiles that require MFA — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>October 21th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to use AWS profiles that require MFA</h1>
+        </header><p>If you have an AWS organisation and several child AWS accounts that you can
+assume-role into, you can work around MFA restrictions on the trust relationship
+using a <code>mfa_serial</code> setting in <code>~/.aws/config</code>.</p>
+<p>Example config:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[profile parent]</span>
+<span style="color:#75715e"># Account ID 111111111111</span>
+<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-2</span>
+
+<span style="color:#66d9ef">[profile child-account1]</span>
+<span style="color:#75715e"># Account ID 222222222222</span>
+<span style="color:#a6e22e">role_arn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::222222222222:role/OrganizationAccountAccessRole</span>
+<span style="color:#a6e22e">mfa_serial</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::111111111111:mfa/david.winterbottom</span>
+<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+<span style="color:#a6e22e">source_profile</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">parent </span>
+
+<span style="color:#66d9ef">[profile child-account2]</span>
+<span style="color:#75715e"># Account ID 333333333333</span>
+<span style="color:#a6e22e">role_arn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::333333333333:role/OrganizationAccountAccessRole</span>
+<span style="color:#a6e22e">mfa_serial</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::111111111111:mfa/david.winterbottom</span>
+<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+<span style="color:#a6e22e">source_profile</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">parent </span>
+</code></pre></div><p>Then you can make <code>aws</code> CLI calls into the child accounts and you&rsquo;ll be prompted
+to enter your MFA code from your parent account IAM user.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws --profile<span style="color:#f92672">=</span>child-account1 ec2 describe-instances
+Enter MFA code <span style="color:#66d9ef">for</span> arn:aws:iam::111111111111:mfa/david.winterbottom:
+<span style="color:#f92672">{</span> 
+    ...
+<span style="color:#f92672">}</span>
+</code></pre></div><p>You can find your <code>mfa_serial</code> string in the IAM dashboard.</p>
+<p>More info: <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html#cli-configure-role-mfa">https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html#cli-configure-role-mfa</a></p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/aws/">AWS</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/aws-asgs-have-an-instance-refresh-feature/">AWS ASGs have an &lsquo;instance refresh&rsquo; feature</a></li>
+                
+                <li><a href="/posts/theres-a-chrome-extension-for-switching-aws-iam-roles/">There&rsquo;s a Chrome extension for switching AWS IAM roles</a></li>
+                
+                <li><a href="/posts/aws-availability-zones-have-counterintuitive-ids/">AWS Availability Zones have counter-intuitive IDs</a></li>
+                
+                <li><a href="/posts/about-passwordless-users-in-ec2/">Where authentication for the <code>ubuntu</code> user on a EC2 instance is defined</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-the-difference-between-minimising-and-hiding-windows-in-macos\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
