@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/posts/datetimedatetime-is-a-subclass-of-datetimedate/</loc>
+    <lastmod>2020-10-22T15:38:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2020-10-22T15:38:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2020-10-22T15:38:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2020-10-22T15:38:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-10-22T15:38:04+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/tags/1password/</loc>
     <lastmod>2020-10-22T12:31:26+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-10-22T12:31:26+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-10-22T12:31:26+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://til.codeinthehole.com/posts/the-keyboard-shortcut-for-grabbing-a-mfa-code-in-1pw/</loc>
-    <lastmod>2020-10-22T12:31:26+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2020-10-22T12:31:26+01:00</lastmod>
   </url>
   
@@ -69,11 +79,6 @@
   
   <url>
     <loc>https://til.codeinthehole.com/posts/about-piplicenses/</loc>
-    <lastmod>2020-10-08T14:56:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
     <lastmod>2020-10-08T14:56:38+01:00</lastmod>
   </url>
   

@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which is a useful Python library that lists all the licenses of packages installed with pip: (venv) $ pip-licenses Name Version License Django 2.0.2 BSD pytz 2017.3 MIT &amp;hellip; See https://github.com/raimon49/pip-licenses ...
+    See for yourself:
+&amp;gt;&amp;gt;&amp;gt; import datetime &amp;gt;&amp;gt;&amp;gt; isinstance(datetime.datetime.now(), datetime.date) True Apparently, this is not a bug but it is certainly confusing. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -14,7 +15,7 @@
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
         <title>
-    TIL About &#39;pip-licenses&#39; — David Winterbottom
+    TIL &#39;datetime.datetime&#39; is a subclass of &#39;datetime.date&#39; — David Winterbottom
 </title>
     </head>
 
@@ -30,17 +31,15 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>October 8th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>October 22th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>pip-licenses</code></h1>
-        </header><p>Which is a useful Python library that lists all the licenses of packages
-installed with <code>pip</code>:</p>
-<pre><code>(venv) $ pip-licenses
- Name    Version  License
- Django  2.0.2    BSD
- pytz    2017.3   MIT
- ...
-</code></pre><p>See <a href="https://github.com/raimon49/pip-licenses">https://github.com/raimon49/pip-licenses</a></p>
+            <h1><code>datetime.datetime</code> is a subclass of <code>datetime.date</code></h1>
+        </header><p>See for yourself:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">import</span> datetime
+<span style="color:#f92672">&gt;&gt;&gt;</span> isinstance(datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now(), datetime<span style="color:#f92672">.</span>date)
+True
+</code></pre></div><p>Apparently, <a href="https://bugs.python.org/issue28878">this is not a bug</a> but it is
+certainly confusing.</p>
 </article>
 
         </main>
@@ -54,7 +53,7 @@ installed with <code>pip</code>:</p>
                 <p>Other posts about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/datetimedatetime-is-a-subclass-of-datetimedate/"><code>datetime.datetime</code> is a subclass of <code>datetime.date</code></a></li>
+                <li><a href="/posts/about-piplicenses/">About <code>pip-licenses</code></a></li>
                 
                 <li><a href="/posts/python-37-supports-postponed-evaluation-of-annotations/">Python 3.7 supports postponed evaluation of annotations</a></li>
                 
@@ -65,9 +64,9 @@ installed with <code>pip</code>:</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -76,11 +75,9 @@ installed with <code>pip</code>:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-bashs-debug-signal\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/the-keyboard-shortcut-for-grabbing-a-mfa-code-in-1pw\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-shellcheck\/"); })
         
     </script>
 
