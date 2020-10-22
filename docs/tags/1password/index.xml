@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1Password - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/1password/</link>
+    <description>Recent content in 1Password on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Oct 2020 12:31:26 +0100</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/1password/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>The keyboard shortcut for grabbing a MFA code in 1PW</title>
+      <link>https://til.codeinthehole.com/posts/the-keyboard-shortcut-for-grabbing-a-mfa-code-in-1pw/</link>
+      <pubDate>Thu, 22 Oct 2020 12:31:26 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/the-keyboard-shortcut-for-grabbing-a-mfa-code-in-1pw/</guid>
+      <description>After opening the 1Password mini window (with cmd + option + \), select the item you want and hit shift + ctrl + cmd + c to copy the MFA code to your clipboard.
+This compliments shift + cmd + c, which copies the password.</description>
+    </item>
+    
+
+  </channel>
+</rss>
