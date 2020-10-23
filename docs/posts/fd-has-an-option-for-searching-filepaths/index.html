@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    If you pass -p, then the fd will retrieve all filepaths matching $PATTERN: $ fd -p epex tests/fixtures/epex tests/fixtures/epex/hourly.csv tests/fixtures/epex/half_hourly.csv tests/unit/common/vendors/epex tests/unit/common/vendors/epex/init.py tests/unit/common/vendors/epex/test_parsers.py octoenergy/vendors/epex octoenergy/vendors/epex/init.py octoenergy/vendors/epex/parsers.py Very useful. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL &#39;fd&#39; has an option for searching filepaths — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>October 23th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1><code>fd</code> has an option for searching filepaths</h1>
+        </header><p>If you pass <code>-p</code>, then the <a href="https://github.com/sharkdp/fd"><code>fd</code></a> will retrieve all filepaths matching <code>$PATTERN</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ fd -p epex
+tests/fixtures/epex
+tests/fixtures/epex/hourly.csv
+tests/fixtures/epex/half_hourly.csv
+tests/unit/common/vendors/epex
+tests/unit/common/vendors/epex/__init__.py
+tests/unit/common/vendors/epex/test_parsers.py
+octoenergy/vendors/epex
+octoenergy/vendors/epex/__init__.py
+octoenergy/vendors/epex/parsers.py
+</code></pre></div><p>Very useful.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/how-to-use-xargs-with-printf/">How to use <code>xargs</code> with <code>printf</code></a></li>
+                
+                <li><a href="/posts/about-pngcrush/">About <code>pngcrush</code></a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/datetimedatetime-is-a-subclass-of-datetimedate\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
