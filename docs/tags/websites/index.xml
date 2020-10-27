@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Websites - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/websites/</link>
+    <description>Recent content in Websites on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 Oct 2020 09:26:52 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/websites/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>You can create QR codes for WiFi networks</title>
+      <link>https://til.codeinthehole.com/posts/you-can-create-qr-codes-for-wifi-networks/</link>
+      <pubDate>Tue, 27 Oct 2020 09:26:52 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-create-qr-codes-for-wifi-networks/</guid>
+      <description>Create a QR code for your network at https://qifi.org/ then the default camera app on most phones will recognise and prompt to join. Very slick.
+Discovered via https://twitter.com/codinghorror/status/1320813528899411968</description>
+    </item>
+    
+
+  </channel>
+</rss>
