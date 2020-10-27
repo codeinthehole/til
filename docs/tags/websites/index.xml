@@ -19,7 +19,9 @@
       
       <guid>https://til.codeinthehole.com/posts/you-can-create-qr-codes-for-wifi-networks/</guid>
       <description>Create a QR code for your network at https://qifi.org/ then the default camera app on most phones will recognise and prompt to join. Very slick.
-Discovered via https://twitter.com/codinghorror/status/1320813528899411968</description>
+Source:
+This is really cool and I had no idea it &amp;quot;just worked&amp;quot; like this. Create a QR code with your wifi SSID and password, point default camera phone app at it to join! https://t.co/c1oYojdwa4
+&amp;mdash; Jeff Atwood (@codinghorror) October 26, 2020  </description>
     </item>
     
 

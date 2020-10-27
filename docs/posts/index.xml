@@ -30,7 +30,9 @@ This is how you create code blocks in markdown: ```` Here is the code: ``` def h
       
       <guid>https://til.codeinthehole.com/posts/you-can-create-qr-codes-for-wifi-networks/</guid>
       <description>Create a QR code for your network at https://qifi.org/ then the default camera app on most phones will recognise and prompt to join. Very slick.
-Discovered via https://twitter.com/codinghorror/status/1320813528899411968</description>
+Source:
+This is really cool and I had no idea it &amp;quot;just worked&amp;quot; like this. Create a QR code with your wifi SSID and password, point default camera phone app at it to join! https://t.co/c1oYojdwa4
+&amp;mdash; Jeff Atwood (@codinghorror) October 26, 2020  </description>
     </item>
     
     <item>
@@ -128,8 +130,10 @@ See the Linux Shell Scripting Tutorial wiki for basic examples. See this Stack O
       
       <guid>https://til.codeinthehole.com/posts/about-bashs-debug-signal/</guid>
       <description>Bash has a DEBUG signal that you can register a handler for using trap.
-As Julia Evans tweeted, you can use this to print a prompt before each command is executed, which allows you to step through a Bash script:
-trap &#39;(read -p &amp;quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &amp;quot;)&#39; DEBUG </description>
+You can use this to print a prompt before each command is executed, which allows you to step through a Bash script:
+trap &#39;(read -p &amp;quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &amp;quot;)&#39; DEBUG Source:
+TIL that you can use the &amp;quot;DEBUG&amp;quot; trap to step through a bash script line by line pic.twitter.com/JBckrcr06G
+&amp;mdash; 🔎Julia Evans🔍 (@b0rk) October 3, 2020  </description>
     </item>
     
     <item>

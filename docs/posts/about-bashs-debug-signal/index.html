@@ -6,8 +6,10 @@
 
         <meta name="description" content="
     Bash has a DEBUG signal that you can register a handler for using trap.
-As Julia Evans tweeted, you can use this to print a prompt before each command is executed, which allows you to step through a Bash script:
-trap &amp;lsquo;(read -p &amp;quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &amp;quot;)&amp;rsquo; DEBUG ...
+You can use this to print a prompt before each command is executed, which allows you to step through a Bash script:
+trap &amp;lsquo;(read -p &amp;quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &amp;quot;)&amp;rsquo; DEBUG Source:
+TIL that you can use the &amp;quot;DEBUG&amp;quot; trap to step through a bash script line by line pic.twitter.com/JBckrcr06G
+— 🔎Julia Evans🔍 (@b0rk) October 3, 2020 ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -36,11 +38,14 @@ trap &amp;lsquo;(read -p &amp;quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &amp;quo
             </div>
             <h1>About Bash&rsquo;s DEBUG signal</h1>
         </header><p>Bash has a <code>DEBUG</code> signal that you can register a handler for using <code>trap</code>.</p>
-<p>As <a href="https://twitter.com/b0rk/status/1312413117436104705">Julia Evans tweeted</a>,
-you can use this to print a prompt before each command is executed, which allows
+<p>You can use this to print a prompt before each command is executed, which allows
 you to step through a Bash script:</p>
 <pre><code>trap '(read -p &quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &quot;)' DEBUG
-</code></pre></article>
+</code></pre><p>Source:</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">TIL that you can use the &quot;DEBUG&quot; trap to step through a bash script line by line <a href="https://t.co/JBckrcr06G">pic.twitter.com/JBckrcr06G</a></p>&mdash; 🔎Julia Evans🔍 (@b0rk) <a href="https://twitter.com/b0rk/status/1312413117436104705?ref_src=twsrc%5Etfw">October 3, 2020</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</article>
 
         </main>
 
