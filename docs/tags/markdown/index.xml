@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>markdown - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/markdown/</link>
+    <description>Recent content in markdown on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 Oct 2020 16:39:43 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to embed markdown content in a Github code block</title>
+      <link>https://til.codeinthehole.com/posts/how-to-embed-markdown-content-in-a-github-code-block/</link>
+      <pubDate>Tue, 27 Oct 2020 16:39:43 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-embed-markdown-content-in-a-github-code-block/</guid>
+      <description>Normally, fenced code blocks are delimited with triple backticks ```.
+If your code block is a markdown snippet including triple backticks, then the solution is to delimit with a block of 4 (or more) backticks.
+This is how you create code blocks in markdown: ```` Here is the code: ``` def hello(): return &amp;quot;hello&amp;quot; ``` ```` </description>
+    </item>
+    
+
+  </channel>
+</rss>
