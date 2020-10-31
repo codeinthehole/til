@@ -6,11 +6,22 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Oct 2020 16:39:43 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2020 11:39:36 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can jump to previous quickfix lists in Vim</title>
+      <link>https://til.codeinthehole.com/posts/you-can-jump-to-previous-quickfix-lists-in-vim/</link>
+      <pubDate>Sat, 31 Oct 2020 11:39:36 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-jump-to-previous-quickfix-lists-in-vim/</guid>
+      <description>Vim remembers the previous ten quickfix lists; you can list them with:
+:chistory error list 1 of 3; 70 errors :rg --vimgrep --smart-case search error list 2 of 3; 61 errors :rg --vimgrep --smart-case what&amp;gt; error list 3 of 3; 187 errors :rg --vimgrep --smart-case howYou can activate a particular list using its index (e.g. :1chi to select the 1st error list) or by browsing with :colder and :cnewer.
+There&amp;rsquo;s a rather glorious section in the quickfix.</description>
+    </item>
     
     <item>
       <title>How to embed markdown content in a Github code block</title>
