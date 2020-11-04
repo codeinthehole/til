@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Using foldmethod=indent is ok but it’s better to use the pedrohdz/vim-yaml-folds plugin. The author gives more detail in Vim folding rules for YAML. ...
+    Which you can target in an autocmd to open the quickfix window whenever a quickfix command populates the error list (e.g. :make or :grep): autocmd QuickFixCmdPost [^l]* cwindowTaken from https://gist.github.com/romainl/ce55ce6fdc1659c5fbc0f4224fd6ad29 ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
         <title>
-    TIL About better YAML file folding in Vim — David Winterbottom
+    TIL There&#39;s a &#39;QuickFixCmdPost&#39; event in Vim — David Winterbottom
 </title>
     </head>
 
@@ -30,12 +30,13 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>August 28th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>November 4th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About better YAML file folding in Vim</h1>
-        </header><p>Using <code>foldmethod=indent</code> is ok but it&rsquo;s better to use the
-<a href="https://github.com/pedrohdz/vim-yaml-folds"><code>pedrohdz/vim-yaml-folds</code></a> plugin.
-The author gives more detail in <a href="https://pedrohdz.com/posts/programming/yaml_vim_folds/">Vim folding rules for YAML</a>.</p>
+            <h1>There&rsquo;s a <code>QuickFixCmdPost</code> event in Vim</h1>
+        </header><p>Which you can target in an <code>autocmd</code> to open the quickfix window whenever a
+quickfix command populates the error list (e.g. <code>:make</code> or <code>:grep</code>):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">QuickFixCmdPost</span> [^<span style="color:#a6e22e">l</span>]* <span style="color:#a6e22e">cwindow</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>Taken from <a href="https://gist.github.com/romainl/ce55ce6fdc1659c5fbc0f4224fd6ad29">https://gist.github.com/romainl/ce55ce6fdc1659c5fbc0f4224fd6ad29</a></p>
 </article>
 
         </main>
@@ -49,8 +50,6 @@ The author gives more detail in <a href="https://pedrohdz.com/posts/programming/
                 <p>Other posts about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/theres-a-quickfixcmdpost-event-in-vim/">There&rsquo;s a <code>QuickFixCmdPost</code> event in Vim</a></li>
-                
                 <li><a href="/posts/you-can-jump-to-previous-quickfix-lists-in-vim/">You can jump to previous quickfix lists in Vim</a></li>
                 
                 <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
@@ -63,6 +62,8 @@ The author gives more detail in <a href="https://pedrohdz.com/posts/programming/
                 
                 <li><a href="/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/">Vim doesn&rsquo;t create the persistent undo folder automatically</a></li>
                 
+                <li><a href="/posts/about-better-yaml-file-folding-in-vim/">About better YAML file folding in Vim</a></li>
+                
                 <li><a href="/posts/about-help-macvim/">About <code>:help macvim</code></a></li>
                 
                 <li><a href="/posts/about-vims-diffthis-command/">About Vim&rsquo;s <code>:diffthis</code> command</a></li>
@@ -72,9 +73,9 @@ The author gives more detail in <a href="https://pedrohdz.com/posts/programming/
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -83,11 +84,9 @@ The author gives more detail in <a href="https://pedrohdz.com/posts/programming/
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/opendns-provide-free-pornblocking-dns-servers\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-jump-to-previous-quickfix-lists-in-vim\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-configure-alfreds-bear-workflow-to-open-notes-in-the-main-window\/"); })
         
     </script>
 
