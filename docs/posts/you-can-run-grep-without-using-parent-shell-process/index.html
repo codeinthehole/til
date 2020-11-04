@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Using ripgrep as a :grep command can be configured with:
+set grepprg=rg\ &amp;ndash;vimgrepThis is a big upgrade in performance and functionality but it has a couple of downsides:
+Vim is suspended for the duration of the command. Results are printed in the parent shell, clogging it up. Getting back to Vim requires hitting enter.  These problems can be avoided by using :cgetexpr to populate the quickfix list via a command executed with system. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL You can run &#39;:grep&#39; without using parent shell process — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>November 4th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>You can run <code>:grep</code> without using parent shell process</h1>
+        </header><p>Using <a href="">ripgrep</a> as a <code>:grep</code> command can be configured with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-viml" data-lang="viml"><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">grepprg</span>=<span style="color:#a6e22e">rg</span>\ --<span style="color:#a6e22e">vimgrep</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>This is a big upgrade in performance and functionality but it has a couple of
+downsides:</p>
+<ul>
+<li>Vim is suspended for the duration of the command.</li>
+<li>Results are printed in the parent shell, clogging it up.</li>
+<li>Getting back to Vim requires hitting enter.</li>
+</ul>
+<p>These problems can be avoided by using <code>:cgetexpr</code> to populate the quickfix list via
+a command executed with <code>system</code>. Here&rsquo;s a custom <code>:Grep</code> command that does
+exactly that.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-viml" data-lang="viml"><span style="color:#66d9ef">function</span>! <span style="color:#a6e22e">Grep</span>(...)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">return</span> <span style="color:#a6e22e">system</span>(<span style="color:#a6e22e">join</span>([&amp;<span style="color:#a6e22e">grepprg</span>] + [<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">a</span>:<span style="color:#ae81ff">000</span>, <span style="color:#e6db74">&#39; &#39;</span>)], <span style="color:#e6db74">&#39; &#39;</span>))<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">endfunction</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span><span style="color:#75715e">&#34; Define custom commands for quickfix/location lists.</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">command</span>! -<span style="color:#a6e22e">nargs</span>=+ -<span style="color:#a6e22e">complete</span>=<span style="color:#a6e22e">file_in_path</span> <span style="color:#a6e22e">Grep</span>  <span style="color:#a6e22e">cgetexpr</span> <span style="color:#a6e22e">Grep</span>(&lt;<span style="color:#a6e22e">f</span>-<span style="color:#a6e22e">args</span>&gt;)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">command</span>! -<span style="color:#a6e22e">nargs</span>=+ -<span style="color:#a6e22e">complete</span>=<span style="color:#a6e22e">file_in_path</span> <span style="color:#a6e22e">LGrep</span> <span style="color:#a6e22e">lgetexpr</span> <span style="color:#a6e22e">Grep</span>(&lt;<span style="color:#a6e22e">f</span>-<span style="color:#a6e22e">args</span>&gt;)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span><span style="color:#75715e">&#34; Use an autocommand to automatically open the quickfix/location list if there</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; are errors.</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">augroup</span> <span style="color:#a6e22e">quickfix</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">autocmd</span>!<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">QuickFixCmdPost</span> <span style="color:#a6e22e">cgetexpr</span> <span style="color:#a6e22e">cwindow</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">QuickFixCmdPost</span> <span style="color:#a6e22e">lgetexpr</span> <span style="color:#a6e22e">lwindow</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">augroup</span> <span style="color:#a6e22e">END</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>Credit to Romain Lafourcade, who wrote this up in <a href="https://gist.github.com/romainl/56f0c28ef953ffc157f36cc495947ab3">&ldquo;Instant grep + quickfix&rdquo;</a>.
+The command I use is slightly different to his as:</p>
+<ul>
+<li>
+<p>I don&rsquo;t use <code>expandcmd</code> as it prevents using regex special characters like
+<code>\b</code>.</p>
+</li>
+<li>
+<p>I don&rsquo;t use the <code>-bar</code> option when declaring the command as I want to use
+double quotes to wrap multi-word queries.</p>
+</li>
+</ul>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/theres-a-quickfixcmdpost-event-in-vim/">There&rsquo;s a <code>QuickFixCmdPost</code> event in Vim</a></li>
+                
+                <li><a href="/posts/you-can-jump-to-previous-quickfix-lists-in-vim/">You can jump to previous quickfix lists in Vim</a></li>
+                
+                <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
+                
+                <li><a href="/posts/how-to-read-from-one-buffer-to-another-in-vim/">How to read from one buffer to another in Vim</a></li>
+                
+                <li><a href="/posts/about-vims-helpgrep-command/">About Vim&rsquo;s <code>:helpgrep</code> command</a></li>
+                
+                <li><a href="/posts/vim-recommends-using-emacsstyle-key-bindings-in-command-mode/">Vim recommends using Emacs-style key bindings in command mode</a></li>
+                
+                <li><a href="/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/">Vim doesn&rsquo;t create the persistent undo folder automatically</a></li>
+                
+                <li><a href="/posts/about-better-yaml-file-folding-in-vim/">About better YAML file folding in Vim</a></li>
+                
+                <li><a href="/posts/about-help-macvim/">About <code>:help macvim</code></a></li>
+                
+                <li><a href="/posts/about-vims-diffthis-command/">About Vim&rsquo;s <code>:diffthis</code> command</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/theres-a-quickfixcmdpost-event-in-vim\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
