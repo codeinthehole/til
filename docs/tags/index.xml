@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Nov 2020 16:56:20 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2020 11:22:02 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>G-Suite</title>
+      <link>https://til.codeinthehole.com/tags/g-suite/</link>
+      <pubDate>Fri, 06 Nov 2020 11:22:02 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/g-suite/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Vim</title>

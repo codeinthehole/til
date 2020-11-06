@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>G-Suite - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/g-suite/</link>
+    <description>Recent content in G-Suite on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Nov 2020 11:22:02 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/g-suite/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>You can hide night-time hours in Google calendar</title>
+      <link>https://til.codeinthehole.com/posts/you-can-hide-nighttime-hours-in-google-calendar/</link>
+      <pubDate>Fri, 06 Nov 2020 11:22:02 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-hide-nighttime-hours-in-google-calendar/</guid>
+      <description>In the &amp;ldquo;Week&amp;rdquo; view of Google Calendar, it&amp;rsquo;s annoying that each day is listed from 00:00 onwards. Since I never have events that start before 8am, it&amp;rsquo;s creates a lot of dead space:
+  Fortunately, there&amp;rsquo;s a Google Calendar Plus Chrome extension that has an option to limit the working hours that are shown.
+  </description>
+    </item>
+    
+
+  </channel>
+</rss>
