@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://til.codeinthehole.com/tags/g-suite/</loc>
-    <lastmod>2020-11-06T11:22:02+00:00</lastmod>
+    <loc>https://til.codeinthehole.com/posts/about-column/</loc>
+    <lastmod>2020-11-12T14:43:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/command-line-tools/</loc>
+    <lastmod>2020-11-12T14:43:50+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-11-06T11:22:02+00:00</lastmod>
+    <lastmod>2020-11-12T14:43:50+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-11-06T11:22:02+00:00</lastmod>
+    <lastmod>2020-11-12T14:43:50+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-11-12T14:43:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/g-suite/</loc>
     <lastmod>2020-11-06T11:22:02+00:00</lastmod>
   </url>
   
@@ -74,11 +84,6 @@
   
   <url>
     <loc>https://til.codeinthehole.com/posts/fd-has-an-option-for-searching-filepaths/</loc>
-    <lastmod>2020-10-23T17:35:10+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/command-line-tools/</loc>
     <lastmod>2020-10-23T17:35:10+01:00</lastmod>
   </url>
   

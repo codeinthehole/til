@@ -6,11 +6,22 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Nov 2020 11:22:02 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2020 14:43:50 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About `column`</title>
+      <link>https://til.codeinthehole.com/posts/about-column/</link>
+      <pubDate>Thu, 12 Nov 2020 14:43:50 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-column/</guid>
+      <description>Which formats input into columns. This is useful for formatting data into a table structure.
+Example usage: printing a table of running EC2 instances:
+$ aws ec2 describe-instances --filters=&amp;#34;Name=instance-state-name,Values=running&amp;#34; \  | jq -r &amp;#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&amp;#34;|&amp;#34;)&amp;#39; \  | column -t -s &amp;#34;|&amp;#34; i-0fe1eb8debbff316f 10.0.0.54 i-0ed0af108b30084a2 10.0.20.202 i-0935f54b5a3002760 10.0.1.83 i-063621cd0118bc69d 10.0.248.118 i-0f11a4f1cea7d60da 10.0.238.126 i-01bb8c6bf2a4109e5 10.0.234.252 i-03e990e42886c2da3 10.0.237.103 i-011e55d5fab3aad13 10.0.238.213 i-02651b70f191f7068 10.0.29.221 i-0b07423fbf8b79554 10.0.29.85 i-04e5c99694eb27c92 10.</description>
+    </item>
     
     <item>
       <title>You can hide night-time hours in Google calendar</title>

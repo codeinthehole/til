@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Which formats input into columns. This is useful for formatting data into a table structure.
+Example usage: printing a table of running EC2 instances:
+$ aws ec2 describe-instances &amp;ndash;filters=&amp;quot;Name=instance-state-name,Values=running&amp;quot; \  | jq -r &#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&amp;quot;|&amp;quot;)&#39; \  | column -t -s &amp;quot;|&amp;quot; i-0fe1eb8debbff316f 10.0.0.54 i-0ed0af108b30084a2 10.0.20.202 i-0935f54b5a3002760 10.0.1.83 i-063621cd0118bc69d 10.0.248.118 i-0f11a4f1cea7d60da 10.0.238.126 i-01bb8c6bf2a4109e5 10.0.234.252 i-03e990e42886c2da3 10.0.237.103 i-011e55d5fab3aad13 10.0.238.213 i-02651b70f191f7068 10.0.29.221 i-0b07423fbf8b79554 10.0.29.85 i-04e5c99694eb27c92 10. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL About &#39;column&#39; — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>November 12th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>About <code>column</code></h1>
+        </header><p>Which formats input into columns. This is useful for formatting data into a
+table structure.</p>
+<p>Example usage: printing a table of running EC2 instances:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws ec2 describe-instances --filters<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name=instance-state-name,Values=running&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    | jq -r <span style="color:#e6db74">&#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&#34;|&#34;)&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    | column -t -s <span style="color:#e6db74">&#34;|&#34;</span>
+i-0fe1eb8debbff316f  10.0.0.54
+i-0ed0af108b30084a2  10.0.20.202
+i-0935f54b5a3002760  10.0.1.83
+i-063621cd0118bc69d  10.0.248.118
+i-0f11a4f1cea7d60da  10.0.238.126
+i-01bb8c6bf2a4109e5  10.0.234.252
+i-03e990e42886c2da3  10.0.237.103
+i-011e55d5fab3aad13  10.0.238.213
+i-02651b70f191f7068  10.0.29.221
+i-0b07423fbf8b79554  10.0.29.85
+i-04e5c99694eb27c92  10.0.29.7
+</code></pre></div><p>Here we use <code>jq</code> to build a pipe-separated stream of instance data which is
+tabulated by <code>column</code>.</p>
+<p>You can add a header row using either <code>awk</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws ec2 describe-instances --filters<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name=instance-state-name,Values=running&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    | jq -r <span style="color:#e6db74">&#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&#34;|&#34;)&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    | awk <span style="color:#e6db74">&#39;BEGIN { print &#34;Instance ID|Private IP address&#34; } { print }&#39;</span> |
+    | column -t -s <span style="color:#e6db74">&#34;|&#34;</span>
+Instance ID          Private IP address
+i-0fe1eb8debbff316f  10.0.0.54
+i-0ed0af108b30084a2  10.0.20.202
+...
+</code></pre></div><p>or <code>sed</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws ec2 describe-instances --filters<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name=instance-state-name,Values=running&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    | jq -r <span style="color:#e6db74">&#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&#34;|&#34;)&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    | sed -e <span style="color:#e6db74">$&#39;1i\\\nInstance ID|Private IP address&#39;</span>
+    | column -t -s <span style="color:#e6db74">&#34;|&#34;</span>
+Instance ID          Private IP address
+i-0fe1eb8debbff316f  10.0.0.54
+i-0ed0af108b30084a2  10.0.20.202
+...
+</code></pre></div><p>The <code>awk</code> version is easier to understand.</p>
+<p>See <a href="https://man.openbsd.org/column.1">https://man.openbsd.org/column.1</a> for more.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/fd-has-an-option-for-searching-filepaths/"><code>fd</code> has an option for searching filepaths</a></li>
+                
+                <li><a href="/posts/how-to-use-xargs-with-printf/">How to use <code>xargs</code> with <code>printf</code></a></li>
+                
+                <li><a href="/posts/about-pngcrush/">About <code>pngcrush</code></a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-hide-nighttime-hours-in-google-calendar\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
