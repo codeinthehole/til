@@ -7,12 +7,20 @@
 
     <p>Yep, a tag cloud.</p>
 
+    {{ $tags := $.Data.Terms.Alphabetical }}
+
     <div id="tagcloud">
-        {{ $tags := $.Data.Terms.Alphabetical }}
         {{ range $tags }}
         <a href="{{ .Page.Permalink }}" class="font_size_{{ .Count }}" >{{ .Page.Title | markdownify }}</a>
         {{ end }}
     </div>
+
+    <p>And here's all posts broken down by tag:</p>
+
+    {{ range $tags }}
+        <h3>{{ .Page.Title | markdownify }}</h3>
+        {{ partial "posts.html" .Pages }}
+    {{ end }}
 
     <p>
         Browse all posts <a href="/posts/">by month</a>.
