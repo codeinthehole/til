@@ -6,11 +6,23 @@
     <description>Recent content in Command-line tools on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Nov 2020 14:43:50 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2020 22:10:57 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/command-line-tools/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Exuberant-ctags has been superceded by Universal-ctags</title>
+      <link>https://til.codeinthehole.com/posts/exuberantctags-has-been-superceded-by-universalctags/</link>
+      <pubDate>Mon, 16 Nov 2020 22:10:57 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/exuberantctags-has-been-superceded-by-universalctags/</guid>
+      <description>In the sense that the Exuberant ctags project has stalled, and Universal ctags has been introduced to continue development.
+I discovered this while investigating why the --python-kinds flag didn&amp;rsquo;t seem to work with Exuberant ctags.
+On MacOS, install Universal ctags with:
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags </description>
+    </item>
     
     <item>
       <title>About `column`</title>

@@ -5,9 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    It’s an image optimizer for PNG files. It’s available via Homebrew for MacOS and works like:
-$ pngcrush -ow screenshot.png where -ow means the original image file will be overwritten.
-I’ve integrated it into the til_screenshot.sh helper script used by this repo. ...
+    In the sense that the Exuberant ctags project has stalled, and Universal ctags has been introduced to continue development.
+I discovered this while investigating why the &amp;ndash;python-kinds flag didn’t seem to work with Exuberant ctags.
+On MacOS, install Universal ctags with:
+brew install &amp;ndash;HEAD universal-ctags/universal-ctags/universal-ctags ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -16,7 +17,7 @@ I’ve integrated it into the til_screenshot.sh helper script used by this repo.
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
         <title>
-    TIL About &#39;pngcrush&#39; — David Winterbottom
+    TIL Exuberant-ctags has been superceded by Universal-ctags — David Winterbottom
 </title>
     </head>
 
@@ -32,15 +33,17 @@ I’ve integrated it into the til_screenshot.sh helper script used by this repo.
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>August 14th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>November 16th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>pngcrush</code></h1>
-        </header><p>It&rsquo;s an image optimizer for PNG files. It&rsquo;s available via Homebrew for MacOS and
-works like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pngcrush -ow screenshot.png
-</code></pre></div><p>where <code>-ow</code> means the original image file will be overwritten.</p>
-<p>I&rsquo;ve integrated it into the <code>til_screenshot.sh</code> helper script used by this repo.</p>
-</article>
+            <h1>Exuberant-ctags has been superceded by Universal-ctags</h1>
+        </header><p>In the sense that the Exuberant ctags project has stalled, and <a href="https://docs.ctags.io/en/latest/index.html">Universal
+ctags</a> has been introduced to
+continue development.</p>
+<p>I discovered this while investigating why <a href="https://stackoverflow.com/questions/46203565/exuberant-ctags-ignores-python-kinds-option">the <code>--python-kinds</code> flag didn&rsquo;t seem
+to work</a> with Exuberant ctags.</p>
+<p>On MacOS, install Universal ctags with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+</code></pre></div></article>
 
         </main>
 
@@ -53,22 +56,22 @@ works like:</p>
                 <p>Other posts about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/exuberantctags-has-been-superceded-by-universalctags/">Exuberant-ctags has been superceded by Universal-ctags</a></li>
-                
                 <li><a href="/posts/about-column/">About <code>column</code></a></li>
                 
                 <li><a href="/posts/fd-has-an-option-for-searching-filepaths/"><code>fd</code> has an option for searching filepaths</a></li>
                 
                 <li><a href="/posts/how-to-use-xargs-with-printf/">How to use <code>xargs</code> with <code>printf</code></a></li>
                 
+                <li><a href="/posts/about-pngcrush/">About <code>pngcrush</code></a></li>
+                
                 </ul>
             
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -77,11 +80,9 @@ works like:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/asana-has-some-magic-search-terms\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-column\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-the-stationery-pad-feature-in-finder\/"); })
         
     </script>
 
