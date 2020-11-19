@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Nov 2020 22:10:57 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2020 10:54:49 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Security</title>
+      <link>https://til.codeinthehole.com/tags/security/</link>
+      <pubDate>Thu, 19 Nov 2020 10:54:49 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://til.codeinthehole.com/tags/vim/</link>
+      <pubDate>Thu, 19 Nov 2020 10:54:49 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/vim/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Command-line tools</title>
@@ -27,15 +45,6 @@
       <pubDate>Fri, 06 Nov 2020 11:22:02 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/g-suite/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vim</title>
-      <link>https://til.codeinthehole.com/tags/vim/</link>
-      <pubDate>Wed, 04 Nov 2020 16:56:20 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/vim/</guid>
       <description></description>
     </item>
     

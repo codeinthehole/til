@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which is a static analysis tool for shell scripts. You can try it out by pasting a script into a form and it is run automatically by Vim’s Ale plugin. ...
+    One way to populate Vim’s quickfix list is by running :make which runs the program specified by the makeprg setting. Due to Vim’s C heritage, the default behaviour is to run the make command-line tool but there are many other useful programs that print locations to stdout.
+Bandit is a Python static analysis tool that looks for common security issues. You can use it to populate the quickfix list by setting: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -14,7 +15,7 @@
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
         <title>
-    TIL About &#39;shellcheck&#39; — David Winterbottom
+    TIL How to use Bandit with Vim&#39;s quickfix list — David Winterbottom
 </title>
     </head>
 
@@ -30,12 +31,22 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>October 12th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>November 19th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>shellcheck</code></h1>
-        </header><p>Which is a static analysis tool for shell scripts. You can try it out by <a href="https://www.shellcheck.net/#">pasting
-a script into a form</a> and it is run automatically
-by Vim&rsquo;s <a href="https://github.com/dense-analysis/ale">Ale</a> plugin.</p>
+            <h1>How to use Bandit with Vim&rsquo;s quickfix list</h1>
+        </header><p>One way to populate Vim&rsquo;s quickfix list is by running <code>:make</code> which runs the
+program specified by the <code>makeprg</code> setting. Due to Vim&rsquo;s C heritage, the default
+behaviour is to run the <code>make</code> command-line tool but there are many other useful
+programs that print locations to stdout.</p>
+<p><a href="https://bandit.readthedocs.io/en/latest/">Bandit</a> is a Python static analysis
+tool that looks for common security issues. You can use it to populate the
+quickfix list by setting:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">makeprg</span>=<span style="color:#a6e22e">bandit</span>\ -<span style="color:#a6e22e">r</span>\ -<span style="color:#a6e22e">f</span>\ <span style="color:#a6e22e">custom</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>then you can run <code>:make</code> to work through any warnings with <code>:cwindow</code>,
+<code>:cnext</code> etc.</p>
+<p>Note, <code>:make</code> will pass on any command-line options so you can do
+things like <code>:make -t B112</code> to work though just one type of warning.</p>
+<p>You can do a similar thing for linting errors by setting <code>makeprg=flake8</code>.</p>
 </article>
 
         </main>
@@ -46,28 +57,16 @@ by Vim&rsquo;s <a href="https://github.com/dense-analysis/ale">Ale</a> plugin.</
         
             
             
-                <p>Other posts about <a href="https://til.codeinthehole.com/tags/bash/">Bash</a>:</p>
-                <ul>
-                
-                <li><a href="/posts/about-readonly-bash-variables/">About <code>readonly</code> Bash variables</a></li>
-                
-                <li><a href="/posts/about-bashs-debug-signal/">About Bash&rsquo;s DEBUG signal</a></li>
-                
-                </ul>
-            
-        
-            
-            
                 <p>Other posts about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/how-to-use-bandit-with-vims-quickfix-list/">How to use Bandit with Vim&rsquo;s quickfix list</a></li>
                 
                 <li><a href="/posts/you-can-run-grep-without-using-parent-shell-process/">You can run <code>:grep</code> without using parent shell process</a></li>
                 
                 <li><a href="/posts/theres-a-quickfixcmdpost-event-in-vim/">There&rsquo;s a <code>QuickFixCmdPost</code> event in Vim</a></li>
                 
                 <li><a href="/posts/you-can-jump-to-previous-quickfix-lists-in-vim/">You can jump to previous quickfix lists in Vim</a></li>
+                
+                <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
                 
                 <li><a href="/posts/how-to-read-from-one-buffer-to-another-in-vim/">How to read from one buffer to another in Vim</a></li>
                 
@@ -86,11 +85,14 @@ by Vim&rsquo;s <a href="https://github.com/dense-analysis/ale">Ale</a> plugin.</
                 </ul>
             
         
+            
+            
+        
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -99,11 +101,9 @@ by Vim&rsquo;s <a href="https://github.com/dense-analysis/ale">Ale</a> plugin.</
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-piplicenses\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/exuberantctags-has-been-superceded-by-universalctags\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-readonly-bash-variables\/"); })
         
     </script>
 
