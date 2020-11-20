@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Nov 2020 10:54:49 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2020 14:32:18 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can convert a Slack group direct message chat into a private channel</title>
+      <link>https://til.codeinthehole.com/posts/you-can-convert-a-slack-group-direct-message-chat-into-a-private-channel/</link>
+      <pubDate>Fri, 20 Nov 2020 14:32:18 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-convert-a-slack-group-direct-message-chat-into-a-private-channel/</guid>
+      <description>See https://slack.com/intl/en-gb/help/articles/217555437-Move-group-direct-messages-to-a-private-channel</description>
+    </item>
     
     <item>
       <title>How to use Bandit with Vim&#39;s quickfix list</title>

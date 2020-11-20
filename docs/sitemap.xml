@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2020-11-20T14:32:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/slack/</loc>
+    <lastmod>2020-11-20T14:32:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2020-11-20T14:32:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-11-20T14:32:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/you-can-convert-a-slack-group-direct-message-chat-into-a-private-channel/</loc>
+    <lastmod>2020-11-20T14:32:18+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/posts/how-to-use-bandit-with-vims-quickfix-list/</loc>
     <lastmod>2020-11-19T10:54:49+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-11-19T10:54:49+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://til.codeinthehole.com/tags/security/</loc>
-    <lastmod>2020-11-19T10:54:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-11-19T10:54:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2020-11-19T10:54:49+00:00</lastmod>
   </url>
   
@@ -270,11 +280,6 @@
   <url>
     <loc>https://til.codeinthehole.com/posts/how-to-conditionally-include-items-in-a-terraform-list/</loc>
     <lastmod>2020-09-15T11:49:53+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/slack/</loc>
-    <lastmod>2020-09-12T21:22:44+01:00</lastmod>
   </url>
   
   <url>
