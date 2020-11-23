@@ -6,11 +6,23 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Nov 2020 14:32:18 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2020 17:25:36 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can easily shared 1Password items via a link</title>
+      <link>https://til.codeinthehole.com/posts/you-can-easily-shared-1password-items-via-a-link/</link>
+      <pubDate>Mon, 23 Nov 2020 17:25:36 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-easily-shared-1password-items-via-a-link/</guid>
+      <description>People often ask about where certain credentials are in 1Password and I&amp;rsquo;ve only just discovered each item has a link that can be shared.
+In the 1Password app, there&amp;rsquo;s a &amp;ldquo;Copy link&amp;rdquo; option in the share drop-down:
+  To get the link from 1Password mini, use the &amp;ldquo;Pin on Screen&amp;rdquo; option for an item to get access to the share button.
+This feature only works with a Business 1Password plan.</description>
+    </item>
     
     <item>
       <title>You can convert a Slack group direct message chat into a private channel</title>

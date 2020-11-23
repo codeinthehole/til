@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-11-20T14:32:18+00:00</lastmod>
+    <loc>https://til.codeinthehole.com/tags/1password/</loc>
+    <lastmod>2020-11-23T17:25:36+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/tags/slack/</loc>
-    <lastmod>2020-11-20T14:32:18+00:00</lastmod>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2020-11-23T17:25:36+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-11-20T14:32:18+00:00</lastmod>
+    <lastmod>2020-11-23T17:25:36+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-11-23T17:25:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/you-can-easily-shared-1password-items-via-a-link/</loc>
+    <lastmod>2020-11-23T17:25:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/slack/</loc>
     <lastmod>2020-11-20T14:32:18+00:00</lastmod>
   </url>
   
@@ -120,11 +130,6 @@
   <url>
     <loc>https://til.codeinthehole.com/tags/python/</loc>
     <lastmod>2020-10-22T15:38:04+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/1password/</loc>
-    <lastmod>2020-10-22T12:31:26+01:00</lastmod>
   </url>
   
   <url>
