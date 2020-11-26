@@ -18,9 +18,7 @@
       <pubDate>Wed, 21 Oct 2020 15:38:20 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-aws-profiles-that-require-mfa/</guid>
-      <description>If you have an AWS organisation and several child AWS accounts that you can assume-role into, you can work around MFA restrictions on the trust relationship using a mfa_serial setting in ~/.aws/config.
-Example config:
-[profile parent] # Account ID 111111111111 region = eu-west-2 [profile child-account1] # Account ID 222222222222 role_arn = arn:aws:iam::222222222222:role/OrganizationAccountAccessRole mfa_serial = arn:aws:iam::111111111111:mfa/david.winterbottom region = eu-west-1 source_profile = parent  [profile child-account2] # Account ID 333333333333 role_arn = arn:aws:iam::333333333333:role/OrganizationAccountAccessRole mfa_serial = arn:aws:iam::111111111111:mfa/david.</description>
+      <description>If you have an AWS organisation and several child AWS accounts that you can assume-role into, you can work around MFA restrictions on the trust relationship using a mfa_serial setting in ~/.</description>
     </item>
     
     <item>
@@ -29,9 +27,7 @@ Example config:
       <pubDate>Mon, 28 Sep 2020 16:02:44 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/aws-asgs-have-an-instance-refresh-feature/</guid>
-      <description>Which lets you replace all the instances in an auto-scaling group, possibly with a new AMI. See the announcement from the AWS Compute Blog.
-If you use an immutable infrastructure approach and deploy using AMIs, this provides an alternative deployment mechanism. In contrast to using Terraform&amp;rsquo;s create_before_destroy mechanism, which creates a new auto-scaling group for each deploy, this method would allow a single long-lived ASG to be used.
-Looks interesting.</description>
+      <description>Which lets you replace all the instances in an auto-scaling group, possibly with a new AMI.</description>
     </item>
     
     <item>
@@ -41,8 +37,7 @@ Looks interesting.</description>
       
       <guid>https://til.codeinthehole.com/posts/theres-a-chrome-extension-for-switching-aws-iam-roles/</guid>
       <description>It&amp;rsquo;s the AWS Extend Switch Roles extension.
-AWS&amp;rsquo;s Console only keeps your 5 most recent AWS accounts as quick links, which this extension gives doesn&amp;rsquo;t limit you.
-This is useful if you&amp;rsquo;re using AWS Organizations and have lots of child AWS accounts that you need to assume roles into.</description>
+AWS&amp;rsquo;s Console only keeps your 5 most recent AWS accounts as quick links, which this extension gives doesn&amp;rsquo;t limit you.</description>
     </item>
     
     <item>
@@ -51,11 +46,7 @@ This is useful if you&amp;rsquo;re using AWS Organizations and have lots of chil
       <pubDate>Tue, 25 Aug 2020 22:18:32 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/aws-availability-zones-have-counterintuitive-ids/</guid>
-      <description>Today, the AWS Service Health Dashboard referred to an Availability Zone in a way I wasn&amp;rsquo;t familiar with:
- 3:52 AM PDT We are experiencing instance connectivity issues in a single Availability Zone (euw2-az2) in the EU-WEST-2 Region.
- See:
-  Here &amp;ldquo;euw2-az2&amp;rdquo; is the &amp;ldquo;Zone ID&amp;rdquo; of the Availability Zone, and the mapping from Zone ID to the more familiar Zone Name is non-obvious. See, for example:
-$ aws ec2 describe-availability-zones --region eu-west-2 | jq -r &amp;#39;.</description>
+      <description>Today, the AWS Service Health Dashboard referred to an Availability Zone in a way I wasn&amp;rsquo;t familiar with:</description>
     </item>
     
     <item>
@@ -64,9 +55,7 @@ $ aws ec2 describe-availability-zones --region eu-west-2 | jq -r &amp;#39;.</des
       <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-passwordless-users-in-ec2/</guid>
-      <description>The file that controls where the default ubuntu user on an Ubuntu EC2 instance is /etc/sudoers.d/90-cloud-init-users which has contents:
-# User rules for ubuntu ubuntu ALL=(ALL) NOPASSWD:ALL def f(a: int) -&amp;gt; int: return None As you can see, the default ubuntu user has password-less, sudo access.
-Source https://serverfault.com/questions/615034/disable-nopasswd-sudo-access-for-ubuntu-user-on-an-ec2-instance</description>
+      <description>The file that controls where the default ubuntu user on an Ubuntu EC2 instance is /etc/sudoers.</description>
     </item>
     
 

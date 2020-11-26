@@ -18,9 +18,7 @@
       <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-passwordless-users-in-ec2/</guid>
-      <description>The file that controls where the default ubuntu user on an Ubuntu EC2 instance is /etc/sudoers.d/90-cloud-init-users which has contents:
-# User rules for ubuntu ubuntu ALL=(ALL) NOPASSWD:ALL def f(a: int) -&amp;gt; int: return None As you can see, the default ubuntu user has password-less, sudo access.
-Source https://serverfault.com/questions/615034/disable-nopasswd-sudo-access-for-ubuntu-user-on-an-ec2-instance</description>
+      <description>The file that controls where the default ubuntu user on an Ubuntu EC2 instance is /etc/sudoers.</description>
     </item>
     
 

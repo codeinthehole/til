@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    For a given commit $SHA, use: $ git diff &amp;ndash;shortstat git hash-object -t tree /dev/null..$SHA which works as git hash-object -t tree /dev/null computes the hash of the empty tree. ...
+    For a given commit $SHA, use: $ git diff &amp;ndash;shortstat git hash-object -t tree /dev/null. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -13,9 +13,18 @@
         
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
+        
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-count-lines-of-code-in-a-git-repo/" />
+<meta property="og:title" content="How to count lines of code in a Git repo for a given commit" />
+<meta property="og:description" content="For a given commit $SHA, use:
+$ git diff --shortstat `git hash-object -t tree /dev/null`. ..." />
+
+
         <title>
     TIL How to count lines of code in a Git repo for a given commit — David Winterbottom
 </title>
+
     </head>
 
     <body>

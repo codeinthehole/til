@@ -18,10 +18,7 @@
       <pubDate>Mon, 23 Nov 2020 17:25:36 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-easily-shared-1password-items-via-a-link/</guid>
-      <description>People often ask about where certain credentials are in 1Password and I&amp;rsquo;ve only just discovered each item has a link that can be shared.
-In the 1Password app, there&amp;rsquo;s a &amp;ldquo;Copy link&amp;rdquo; option in the share drop-down:
-  To get the link from 1Password mini, use the &amp;ldquo;Pin on Screen&amp;rdquo; option for an item to get access to the share button.
-This feature only works with a Business 1Password plan.</description>
+      <description>People often ask about where certain credentials are in 1Password and I&amp;rsquo;ve only just discovered each item has a link that can be shared.</description>
     </item>
     
     <item>
@@ -30,8 +27,7 @@ This feature only works with a Business 1Password plan.</description>
       <pubDate>Thu, 22 Oct 2020 12:31:26 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/the-keyboard-shortcut-for-grabbing-a-mfa-code-in-1pw/</guid>
-      <description>After opening the 1Password mini window (with cmd + option + \), select the item you want and hit shift + ctrl + cmd + c to copy the MFA code to your clipboard.
-This compliments shift + cmd + c, which copies the password.</description>
+      <description>After opening the 1Password mini window (with cmd + option + \), select the item you want and hit shift + ctrl + cmd + c to copy the MFA code to your clipboard.</description>
     </item>
     
 

@@ -18,10 +18,7 @@
       <pubDate>Thu, 26 Nov 2020 16:09:12 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-configure-ctags-to-parse-terraform-files/</guid>
-      <description>If you&amp;rsquo;re using Universal Ctags (which you should be), you just need to add a ~/.ctags.d/terraform.ctags with contents:
---langdef=terraform --langmap=terraform:.tf.tfvars --regex-terraform=/^[[:space:]]*resource[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\2/r,Resource/ --regex-terraform=/^[[:space:]]*data[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\2/d,Data/ --regex-terraform=/^[[:space:]]*variable[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\1/v,Variable/ --regex-terraform=/^[[:space:]]*provider[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\1/p,Provider/ --regex-terraform=/^[[:space:]]*module[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\1/m,Module/ --regex-terraform=/^[[:space:]]*output[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\1/o,Output/ --regex-terraform=/^([a-z0-9_]+)[[:space:]]*=/\1/f,TFVar/ Then, for example, a Terraform resource like:
-resource &amp;#34;aws_cloudwatch_log_group&amp;#34; &amp;#34;my-log-group&amp;#34; { name = &amp;#34;my-log-group&amp;#34; ... } will have my-log-group stored as an identifier so you can jump to its definition from other references.
-Inspiration taken from ctag support for Terraform although the snippet above is a slightly amended version from the vim-terraform-completion repo.</description>
+      <description>If you&amp;rsquo;re using Universal Ctags (which you should be), you just need to add a ~/.</description>
     </item>
     
     <item>
@@ -30,10 +27,7 @@ Inspiration taken from ctag support for Terraform although the snippet above is 
       <pubDate>Mon, 23 Nov 2020 17:25:36 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-easily-shared-1password-items-via-a-link/</guid>
-      <description>People often ask about where certain credentials are in 1Password and I&amp;rsquo;ve only just discovered each item has a link that can be shared.
-In the 1Password app, there&amp;rsquo;s a &amp;ldquo;Copy link&amp;rdquo; option in the share drop-down:
-  To get the link from 1Password mini, use the &amp;ldquo;Pin on Screen&amp;rdquo; option for an item to get access to the share button.
-This feature only works with a Business 1Password plan.</description>
+      <description>People often ask about where certain credentials are in 1Password and I&amp;rsquo;ve only just discovered each item has a link that can be shared.</description>
     </item>
     
     <item>
@@ -51,8 +45,7 @@ This feature only works with a Business 1Password plan.</description>
       <pubDate>Thu, 19 Nov 2020 10:54:49 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-bandit-with-vims-quickfix-list/</guid>
-      <description>One way to populate Vim&amp;rsquo;s quickfix list is by running :make which runs the program specified by the makeprg setting. Due to Vim&amp;rsquo;s C heritage, the default behaviour is to run the make command-line tool but there are many other useful programs that print locations to stdout.
-Bandit is a Python static analysis tool that looks for common security issues. You can use it to populate the quickfix list by setting:</description>
+      <description>One way to populate Vim&amp;rsquo;s quickfix list is by running :make which runs the program specified by the makeprg setting.</description>
     </item>
     
     <item>
@@ -61,10 +54,7 @@ Bandit is a Python static analysis tool that looks for common security issues. Y
       <pubDate>Mon, 16 Nov 2020 22:10:57 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/exuberantctags-has-been-superceded-by-universalctags/</guid>
-      <description>In the sense that the Exuberant ctags project has stalled, and Universal ctags has been introduced to continue development.
-I discovered this while investigating why the --python-kinds flag didn&amp;rsquo;t seem to work with Exuberant ctags.
-On MacOS, install Universal ctags with:
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags </description>
+      <description>In the sense that the Exuberant ctags project has stalled, and Universal ctags has been introduced to continue development.</description>
     </item>
     
     <item>
@@ -73,9 +63,7 @@ brew install --HEAD universal-ctags/universal-ctags/universal-ctags </descriptio
       <pubDate>Thu, 12 Nov 2020 14:43:50 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-column/</guid>
-      <description>Which formats input into columns. This is useful for formatting data into a table structure.
-Example usage: printing a table of running EC2 instances:
-$ aws ec2 describe-instances --filters=&amp;#34;Name=instance-state-name,Values=running&amp;#34; \  | jq -r &amp;#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&amp;#34;|&amp;#34;)&amp;#39; \  | column -t -s &amp;#34;|&amp;#34; i-0fe1eb8debbff316f 10.0.0.54 i-0ed0af108b30084a2 10.0.20.202 i-0935f54b5a3002760 10.0.1.83 i-063621cd0118bc69d 10.0.248.118 i-0f11a4f1cea7d60da 10.0.238.126 i-01bb8c6bf2a4109e5 10.0.234.252 i-03e990e42886c2da3 10.0.237.103 i-011e55d5fab3aad13 10.0.238.213 i-02651b70f191f7068 10.0.29.221 i-0b07423fbf8b79554 10.0.29.85 i-04e5c99694eb27c92 10.</description>
+      <description>Which formats input into columns. This is useful for formatting data into a table structure.</description>
     </item>
     
     <item>
@@ -84,9 +72,7 @@ $ aws ec2 describe-instances --filters=&amp;#34;Name=instance-state-name,Values=
       <pubDate>Fri, 06 Nov 2020 11:22:02 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-hide-nighttime-hours-in-google-calendar/</guid>
-      <description>In the &amp;ldquo;Week&amp;rdquo; view of Google Calendar, it&amp;rsquo;s annoying that each day is listed from 00:00 onwards. Since I never have events that start before 8am, it&amp;rsquo;s creates a lot of dead space:
-  Fortunately, there&amp;rsquo;s a Google Calendar Plus Chrome extension that has an option to limit the working hours that are shown.
-  </description>
+      <description>In the &amp;ldquo;Week&amp;rdquo; view of Google Calendar, it&amp;rsquo;s annoying that each day is listed from 00:00 onwards.</description>
     </item>
     
     <item>
@@ -95,9 +81,7 @@ $ aws ec2 describe-instances --filters=&amp;#34;Name=instance-state-name,Values=
       <pubDate>Wed, 04 Nov 2020 16:56:20 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-run-grep-without-using-parent-shell-process/</guid>
-      <description>Using ripgrep as a :grep command can be configured with:
-set grepprg=rg\ --vimgrepThis is a big upgrade in performance and functionality but it has a couple of downsides:
- Vim is suspended for the duration of the command. Results are printed in the parent shell, clogging it up. Getting back to Vim requires hitting enter.  These problems can be avoided by using :cgetexpr to populate the quickfix list via a command executed with system.</description>
+      <description>Using ripgrep as a :grep command can be configured with:</description>
     </item>
     
     <item>
@@ -106,8 +90,7 @@ set grepprg=rg\ --vimgrepThis is a big upgrade in performance and functionality 
       <pubDate>Wed, 04 Nov 2020 11:55:58 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/theres-a-quickfixcmdpost-event-in-vim/</guid>
-      <description>Which you can target in an autocmd to open the quickfix window whenever a quickfix command populates the error list (e.g. :make or :grep):
-autocmd QuickFixCmdPost [^l]* cwindowTaken from https://gist.github.com/romainl/ce55ce6fdc1659c5fbc0f4224fd6ad29</description>
+      <description>Which you can target in an autocmd to open the quickfix window whenever a quickfix command populates the error list (e.</description>
     </item>
     
     <item>
@@ -116,9 +99,7 @@ autocmd QuickFixCmdPost [^l]* cwindowTaken from https://gist.github.com/romainl/
       <pubDate>Sat, 31 Oct 2020 11:39:36 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-jump-to-previous-quickfix-lists-in-vim/</guid>
-      <description>Vim remembers the previous ten quickfix lists; you can list them with:
-:chistory error list 1 of 3; 70 errors :rg --vimgrep --smart-case search error list 2 of 3; 61 errors :rg --vimgrep --smart-case what&amp;gt; error list 3 of 3; 187 errors :rg --vimgrep --smart-case howYou can activate a particular list using its index (e.g. :1chi to select the 1st error list) or by browsing with :colder and :cnewer.
-There&amp;rsquo;s a rather glorious section in the quickfix.</description>
+      <description>Vim remembers the previous ten quickfix lists; you can list them with:</description>
     </item>
     
     <item>
@@ -127,9 +108,7 @@ There&amp;rsquo;s a rather glorious section in the quickfix.</description>
       <pubDate>Tue, 27 Oct 2020 16:39:43 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-embed-markdown-content-in-a-github-code-block/</guid>
-      <description>Normally, fenced code blocks are delimited with triple backticks ```.
-If your code block is a markdown snippet including triple backticks, then the solution is to delimit with a block of 4 (or more) backticks.
-This is how you create code blocks in markdown: ```` Here is the code: ``` def hello(): return &amp;quot;hello&amp;quot; ``` ```` </description>
+      <description>Normally, fenced code blocks are delimited with triple backticks ```.</description>
     </item>
     
     <item>
@@ -138,10 +117,7 @@ This is how you create code blocks in markdown: ```` Here is the code: ``` def h
       <pubDate>Tue, 27 Oct 2020 09:26:52 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-create-qr-codes-for-wifi-networks/</guid>
-      <description>Create a QR code for your network at https://qifi.org/ then the default camera app on most phones will recognise and prompt to join. Very slick.
-Source:
-This is really cool and I had no idea it &amp;quot;just worked&amp;quot; like this. Create a QR code with your wifi SSID and password, point default camera phone app at it to join! https://t.co/c1oYojdwa4
-&amp;mdash; Jeff Atwood (@codinghorror) October 26, 2020  </description>
+      <description>Create a QR code for your network at https://qifi.</description>
     </item>
     
     <item>
@@ -150,8 +126,7 @@ This is really cool and I had no idea it &amp;quot;just worked&amp;quot; like th
       <pubDate>Fri, 23 Oct 2020 17:35:10 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/fd-has-an-option-for-searching-filepaths/</guid>
-      <description>If you pass -p, then the fd will retrieve all filepaths matching $PATTERN:
-$ fd -p epex tests/fixtures/epex tests/fixtures/epex/hourly.csv tests/fixtures/epex/half_hourly.csv tests/unit/common/vendors/epex tests/unit/common/vendors/epex/__init__.py tests/unit/common/vendors/epex/test_parsers.py octoenergy/vendors/epex octoenergy/vendors/epex/__init__.py octoenergy/vendors/epex/parsers.py Very useful.</description>
+      <description>If you pass -p, then the fd will retrieve all filepaths matching $PATTERN:</description>
     </item>
     
     <item>
@@ -161,7 +136,7 @@ $ fd -p epex tests/fixtures/epex tests/fixtures/epex/hourly.csv tests/fixtures/e
       
       <guid>https://til.codeinthehole.com/posts/datetimedatetime-is-a-subclass-of-datetimedate/</guid>
       <description>See for yourself:
-&amp;gt;&amp;gt;&amp;gt; import datetime &amp;gt;&amp;gt;&amp;gt; isinstance(datetime.datetime.now(), datetime.date) True Apparently, this is not a bug but it is certainly confusing.</description>
+&amp;gt;&amp;gt;&amp;gt; import datetime &amp;gt;&amp;gt;&amp;gt; isinstance(datetime.datetime.now(), datetime.</description>
     </item>
     
     <item>
@@ -170,8 +145,7 @@ $ fd -p epex tests/fixtures/epex tests/fixtures/epex/hourly.csv tests/fixtures/e
       <pubDate>Thu, 22 Oct 2020 12:31:26 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/the-keyboard-shortcut-for-grabbing-a-mfa-code-in-1pw/</guid>
-      <description>After opening the 1Password mini window (with cmd + option + \), select the item you want and hit shift + ctrl + cmd + c to copy the MFA code to your clipboard.
-This compliments shift + cmd + c, which copies the password.</description>
+      <description>After opening the 1Password mini window (with cmd + option + \), select the item you want and hit shift + ctrl + cmd + c to copy the MFA code to your clipboard.</description>
     </item>
     
     <item>
@@ -180,9 +154,7 @@ This compliments shift + cmd + c, which copies the password.</description>
       <pubDate>Wed, 21 Oct 2020 15:38:20 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-aws-profiles-that-require-mfa/</guid>
-      <description>If you have an AWS organisation and several child AWS accounts that you can assume-role into, you can work around MFA restrictions on the trust relationship using a mfa_serial setting in ~/.aws/config.
-Example config:
-[profile parent] # Account ID 111111111111 region = eu-west-2 [profile child-account1] # Account ID 222222222222 role_arn = arn:aws:iam::222222222222:role/OrganizationAccountAccessRole mfa_serial = arn:aws:iam::111111111111:mfa/david.winterbottom region = eu-west-1 source_profile = parent  [profile child-account2] # Account ID 333333333333 role_arn = arn:aws:iam::333333333333:role/OrganizationAccountAccessRole mfa_serial = arn:aws:iam::111111111111:mfa/david.</description>
+      <description>If you have an AWS organisation and several child AWS accounts that you can assume-role into, you can work around MFA restrictions on the trust relationship using a mfa_serial setting in ~/.</description>
     </item>
     
     <item>
@@ -192,13 +164,7 @@ Example config:
       
       <guid>https://til.codeinthehole.com/posts/about-the-difference-between-minimising-and-hiding-windows-in-macos/</guid>
       <description>Minimising:
-  ⌘ + m minimises the active application window.
-  Window icon appears in Dock.
-  Selecting application via the ⌘ + tab application switcher doesn&amp;rsquo;t restore window.
-  Hiding:
-  ⌘ + h hides all windows of active application.
-  ⌘ + ⌥ + h hides all windows of all applications except the active one (useful).
-  Window icon not show in Dock.</description>
+  ⌘ + m minimises the active application window.</description>
     </item>
     
     <item>
@@ -208,9 +174,7 @@ Example config:
       
       <guid>https://til.codeinthehole.com/posts/about-readonly-bash-variables/</guid>
       <description>Doing this:
-$ readonly myvar=1 means that $myvar can&amp;rsquo;t have its value changed within the global scope.
-$ myvar=2 -bash: myvar: readonly variable You can use declare -r to enforce immutability within a local scope (eg within a function body).
-See the Linux Shell Scripting Tutorial wiki for basic examples. See this Stack Overflow answer for more details on the differences between readonly and declare -r.</description>
+$ readonly myvar=1 means that $myvar can&amp;rsquo;t have its value changed within the global scope.</description>
     </item>
     
     <item>
@@ -219,7 +183,7 @@ See the Linux Shell Scripting Tutorial wiki for basic examples. See this Stack O
       <pubDate>Mon, 12 Oct 2020 10:30:00 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-shellcheck/</guid>
-      <description>Which is a static analysis tool for shell scripts. You can try it out by pasting a script into a form and it is run automatically by Vim&amp;rsquo;s Ale plugin.</description>
+      <description>Which is a static analysis tool for shell scripts.</description>
     </item>
     
     <item>
@@ -228,8 +192,7 @@ See the Linux Shell Scripting Tutorial wiki for basic examples. See this Stack O
       <pubDate>Thu, 08 Oct 2020 14:56:38 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-piplicenses/</guid>
-      <description>Which is a useful Python library that lists all the licenses of packages installed with pip:
-(venv) $ pip-licenses Name Version License Django 2.0.2 BSD pytz 2017.3 MIT ... See https://github.com/raimon49/pip-licenses</description>
+      <description>Which is a useful Python library that lists all the licenses of packages installed with pip:</description>
     </item>
     
     <item>
@@ -238,11 +201,7 @@ See the Linux Shell Scripting Tutorial wiki for basic examples. See this Stack O
       <pubDate>Wed, 07 Oct 2020 11:15:11 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-bashs-debug-signal/</guid>
-      <description>Bash has a DEBUG signal that you can register a handler for using trap.
-You can use this to print a prompt before each command is executed, which allows you to step through a Bash script:
-trap &#39;(read -p &amp;quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &amp;quot;)&#39; DEBUG Source:
-TIL that you can use the &amp;quot;DEBUG&amp;quot; trap to step through a bash script line by line pic.twitter.com/JBckrcr06G
-&amp;mdash; 🔎Julia Evans🔍 (@b0rk) October 3, 2020  </description>
+      <description>Bash has a DEBUG signal that you can register a handler for using trap.</description>
     </item>
     
     <item>
@@ -251,9 +210,7 @@ TIL that you can use the &amp;quot;DEBUG&amp;quot; trap to step through a bash s
       <pubDate>Mon, 05 Oct 2020 11:34:01 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-resolve-git-conflicts-on-renamed-files/</guid>
-      <description>If there&amp;rsquo;s been a large-scale renaming of files in master and you attempt to rebase your pull-request branch, the resulting conflicts can be tricky to resolve. You&amp;rsquo;ll see lots of conflicts of form:
-CONFLICT (modify/delete): $FILEPATH deleted in HEAD and modified in $SHA... $COMMIT_MSG One resolution is to manually apply the changes in $SHA to the new filepaths but this is manual and error-prone.
-Better is to use git diff to generate patch files and apply these with patch.</description>
+      <description>If there&amp;rsquo;s been a large-scale renaming of files in master and you attempt to rebase your pull-request branch, the resulting conflicts can be tricky to resolve.</description>
     </item>
     
     <item>
@@ -263,7 +220,7 @@ Better is to use git diff to generate patch files and apply these with patch.</d
       
       <guid>https://til.codeinthehole.com/posts/there-is-a-bongcloud-chess-opening/</guid>
       <description>Which starts 1 f3 and 2 Kf2.
-Played by Magnus Carlsen recently: https://www.theguardian.com/sport/2020/oct/02/chess-carlsen-wins-with-1-f3-as-play-magnus-raises-42m-in-oslo-listing</description>
+Played by Magnus Carlsen recently: https://www.</description>
     </item>
     
     <item>
@@ -272,9 +229,7 @@ Played by Magnus Carlsen recently: https://www.theguardian.com/sport/2020/oct/02
       <pubDate>Tue, 29 Sep 2020 12:47:23 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-xargs-with-printf/</guid>
-      <description>This is obvious in retrospect but it hadn&amp;rsquo;t dawned on me that you can use xargs printf to use STDIN as printf arguments. Trivial example:
-$ echo world | xargs printf &amp;#34;hello %s&amp;#34; hello world It&amp;rsquo;s useful for building strings from streams of data. Today&amp;rsquo;s usecase was building a pastable Python snippet from a JSON file containing object IDs:
-$ cat loggly_events.json | jq &amp;#39;.events[].event.json.object_id&amp;#39; \  | paste -sd, | xargs printf &amp;#34;object_ids = [%s]&amp;#34; object_ids = [4,6,8,2,3,4] Here jq is used to extract a newline-separated stream of IDs which are joined into a CSV-string using paste before being formatted into a Python snippet with printf.</description>
+      <description>This is obvious in retrospect but it hadn&amp;rsquo;t dawned on me that you can use xargs printf to use STDIN as printf arguments.</description>
     </item>
     
     <item>
@@ -283,9 +238,7 @@ $ cat loggly_events.json | jq &amp;#39;.events[].event.json.object_id&amp;#39; \
       <pubDate>Mon, 28 Sep 2020 16:02:44 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/aws-asgs-have-an-instance-refresh-feature/</guid>
-      <description>Which lets you replace all the instances in an auto-scaling group, possibly with a new AMI. See the announcement from the AWS Compute Blog.
-If you use an immutable infrastructure approach and deploy using AMIs, this provides an alternative deployment mechanism. In contrast to using Terraform&amp;rsquo;s create_before_destroy mechanism, which creates a new auto-scaling group for each deploy, this method would allow a single long-lived ASG to be used.
-Looks interesting.</description>
+      <description>Which lets you replace all the instances in an auto-scaling group, possibly with a new AMI.</description>
     </item>
     
     <item>
@@ -295,8 +248,7 @@ Looks interesting.</description>
       
       <guid>https://til.codeinthehole.com/posts/the-macos-keybinds-for-en-and-emdashes/</guid>
       <description>Which are:
- alt + - for an en-dash (–); shift + alt + - for an em-dash (—);  You can always get them from the ctrl + cmd + space character picker but good to know quicker alternatives.
-Don&amp;rsquo;t seem to work in MacVim though.</description>
+ alt + - for an en-dash (–); shift + alt + - for an em-dash (—);  You can always get them from the ctrl + cmd + space character picker but good to know quicker alternatives.</description>
     </item>
     
     <item>
@@ -305,9 +257,7 @@ Don&amp;rsquo;t seem to work in MacVim though.</description>
       <pubDate>Wed, 23 Sep 2020 16:00:09 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-read-from-one-buffer-to-another-in-vim/</guid>
-      <description>Refer to the buffer&amp;rsquo;s number using a hash. For example, run:
-:read #3to insert the contents of the file linked to buffer 3. Note that a buffer&amp;rsquo;s content isn&amp;rsquo;t necessarily the same as the linked file.
-From: https://stackoverflow.com/questions/37859530/vim-how-to-read-from-one-buffer-into-another</description>
+      <description>Refer to the buffer&amp;rsquo;s number using a hash. For example, run:</description>
     </item>
     
     <item>
@@ -317,9 +267,7 @@ From: https://stackoverflow.com/questions/37859530/vim-how-to-read-from-one-buff
       
       <guid>https://til.codeinthehole.com/posts/ssh-config-supports-multiple-host-patterns-in-one-block/</guid>
       <description>From man ssh_config:
- Host Restricts the following declarations (up to the next Host or Match keyword) to be only for those hosts that match one of the patterns given after the keyword. If more than one pattern is provided, they should be separated by whitespace.
- and so you can do this:
-Host 10.0.20.* 10.0.28.* 10.0.29.* 10.0.30.* User ubuntu IdentityFile ~/.ssh/xxx/id_rsa ProxyJump some-bastion-host StrictHostKeyChecking no UserKnownHostsFile /dev/null where multiple host patterns are used for one block.</description>
+ Host Restricts the following declarations (up to the next Host or Match keyword) to be only for those hosts that match one of the patterns given after the keyword.</description>
     </item>
     
     <item>
@@ -329,8 +277,7 @@ Host 10.0.20.* 10.0.28.* 10.0.29.* 10.0.30.* User ubuntu IdentityFile ~/.ssh/xxx
       
       <guid>https://til.codeinthehole.com/posts/theres-a-chrome-extension-for-switching-aws-iam-roles/</guid>
       <description>It&amp;rsquo;s the AWS Extend Switch Roles extension.
-AWS&amp;rsquo;s Console only keeps your 5 most recent AWS accounts as quick links, which this extension gives doesn&amp;rsquo;t limit you.
-This is useful if you&amp;rsquo;re using AWS Organizations and have lots of child AWS accounts that you need to assume roles into.</description>
+AWS&amp;rsquo;s Console only keeps your 5 most recent AWS accounts as quick links, which this extension gives doesn&amp;rsquo;t limit you.</description>
     </item>
     
     <item>
@@ -340,8 +287,7 @@ This is useful if you&amp;rsquo;re using AWS Organizations and have lots of chil
       
       <guid>https://til.codeinthehole.com/posts/yaml-has-several-stringparsing-gotchas/</guid>
       <description>For instance, in YAML 1.1:
- Yes and No parse to true and false x:y is parsed as a base-60 number if y is less than 60  See for yourself with these Python tests:
-import yaml import io def test_parsing_iso_country_codes(): f = io.StringIO(&amp;#34;&amp;#34;&amp;#34;--- england: GB norway: NO &amp;#34;&amp;#34;&amp;#34;) content = yaml.load(f, Loader=yaml.FullLoader) assert content == { &amp;#34;england&amp;#34;: &amp;#34;GB&amp;#34;, &amp;#34;norway&amp;#34;: False, } def test_parsing_ports(): f = io.StringIO(&amp;#34;&amp;#34;&amp;#34;--- low: 1:1 high: 20:100 &amp;#34;&amp;#34;&amp;#34;) content = yaml.</description>
+ Yes and No parse to true and false x:y is parsed as a base-60 number if y is less than 60  See for yourself with these Python tests:</description>
     </item>
     
     <item>
@@ -361,7 +307,7 @@ import yaml import io def test_parsing_iso_country_codes(): f = io.StringIO(&amp
       
       <guid>https://til.codeinthehole.com/posts/how-to-count-lines-of-code-in-a-git-repo/</guid>
       <description>For a given commit $SHA, use:
-$ git diff --shortstat `git hash-object -t tree /dev/null`..$SHA which works as git hash-object -t tree /dev/null computes the hash of the empty tree.</description>
+$ git diff --shortstat `git hash-object -t tree /dev/null`.</description>
     </item>
     
     <item>
@@ -370,8 +316,7 @@ $ git diff --shortstat `git hash-object -t tree /dev/null`..$SHA which works as 
       <pubDate>Wed, 16 Sep 2020 14:27:56 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-vims-helpgrep-command/</guid>
-      <description>Which lets you search Vim&amp;rsquo;s help files for a given pattern. For example:
-:helpgrep What is the meaning of life Discovered via a Hashrocket TIL and an episode of Josh Branchaud&amp;rsquo;s Vim Un-Alphabet screencast series.</description>
+      <description>Which lets you search Vim&amp;rsquo;s help files for a given pattern.</description>
     </item>
     
     <item>
@@ -390,9 +335,7 @@ $ git diff --shortstat `git hash-object -t tree /dev/null`..$SHA which works as 
       <pubDate>Tue, 15 Sep 2020 11:49:53 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-conditionally-include-items-in-a-terraform-list/</guid>
-      <description>It&amp;rsquo;s not obvious how to build a Terraform list where an item is only included if some condition is met. One solution is to use flatten along with a conditional expression.
-Something like this:
-resource &amp;#34;aws_security_group&amp;#34; &amp;#34;this&amp;#34; { ... ingress { ... security_groups = flatten([ aws_security_group.server-type-a.id, var.include_server_type_b ? aws_security_group.server-type-b[*].id : [] ]) } where the server-type-b security group is only included the security_groups list if var.include_server_type_b is truthy.</description>
+      <description>It&amp;rsquo;s not obvious how to build a Terraform list where an item is only included if some condition is met.</description>
     </item>
     
     <item>
@@ -401,8 +344,7 @@ resource &amp;#34;aws_security_group&amp;#34; &amp;#34;this&amp;#34; { ... ingre
       <pubDate>Sat, 12 Sep 2020 21:22:44 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-change-the-font-in-slack-with-slackfont-font/</guid>
-      <description>For example: /slackfont Comic Sans MS or even /slackfont Wingdings.
-To reset to the default font, run /slackfont without an argument.</description>
+      <description>For example: /slackfont Comic Sans MS or even /slackfont Wingdings.</description>
     </item>
     
     <item>
@@ -411,10 +353,7 @@ To reset to the default font, run /slackfont without an argument.</description>
       <pubDate>Mon, 07 Sep 2020 10:37:57 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-display-the-typed-text-in-alfred-in-a-huge-typeface/</guid>
-      <description>By pressing cmd + L after typing the text.
-The text is so large, someone across the room can read it.
-  See?
-From https://news.ycombinator.com/item?id=24391899</description>
+      <description>By pressing cmd + L after typing the text.</description>
     </item>
     
     <item>
@@ -424,11 +363,7 @@ From https://news.ycombinator.com/item?id=24391899</description>
       
       <guid>https://til.codeinthehole.com/posts/python-37-supports-postponed-evaluation-of-annotations/</guid>
       <description>For example, instead of:
-import _csv def generate_report(writer: &amp;#39;_csv._writer&amp;#39;): pass you can use:
-from __future__ import annotations import _csv def generate_report(writer: _csv._writer): pass and avoid using a string literal for the type annotation.
-This follows on from a related TIL about how to specify type annotations for the csv module.
-Related:
- __future__ statement definitions PEP 563 - Postponed Evaluation of Annotations  </description>
+import _csv def generate_report(writer: &amp;#39;_csv.</description>
     </item>
     
     <item>
@@ -438,9 +373,7 @@ Related:
       
       <guid>https://til.codeinthehole.com/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/</guid>
       <description>I have this in ~/.vimrc:
-&amp;#34; Keep undo history between sessionsif has(&amp;#39;persistent_undo&amp;#39;) set undofile set undodir=~/.vim_undo set undolevels=2000endifbut, after switching laptops, I noticed the persistent undo feature wasn&amp;rsquo;t working.
-The problem was that the ~/.vim_undo folder didn&amp;rsquo;t exist which silently prevents the feature working.
-You can create this automaticaly in ~/.vimrc if you like.</description>
+&amp;#34; Keep undo history between sessionsif has(&amp;#39;persistent_undo&amp;#39;) set undofile set undodir=~/.</description>
     </item>
     
     <item>
@@ -449,11 +382,7 @@ You can create this automaticaly in ~/.vimrc if you like.</description>
       <pubDate>Thu, 03 Sep 2020 17:13:22 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-typecheck-csv-objects-in-python/</guid>
-      <description>Adding a type annotation for a &amp;ldquo;writer&amp;rdquo; object created by csv.writer(...) is fiddlier than you might think.
-The type of the writer object is _csv.writer which you verify with:
-&amp;gt;&amp;gt;&amp;gt; import csv, sys &amp;gt;&amp;gt;&amp;gt; type(csv.writer(sys.stdout)) &amp;lt;class &amp;#39;_csv.writer&amp;#39;&amp;gt; but if you try this:
-import _csv def generate_report(writer: _csv.writer): pass mypy complains that:
-Function &amp;quot;_csv.writer&amp;quot; is not valid as a type [valid-type]. The correct approach is to use _csv._writer as the type annotation.</description>
+      <description>Adding a type annotation for a &amp;ldquo;writer&amp;rdquo; object created by csv.</description>
     </item>
     
     <item>
@@ -462,10 +391,7 @@ Function &amp;quot;_csv.writer&amp;quot; is not valid as a type [valid-type]. Th
       <pubDate>Wed, 02 Sep 2020 11:34:04 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-configure-alfreds-bear-workflow-to-open-notes-in-the-main-window/</guid>
-      <description>This applies to the Bear workflow written in Go whose default behaviour (in v1.1.6) is to open notes in a new window rather than the main Bear application window.
-To adjust this, after installing and performing the dance of authorising all the workflow scripts, you need to manually edit the workflow property list file and replace new_window=yes with new_window=no.
-FYI: the info.plist file can be found in:
-~/Library/Application Support/Alfred/Alfred.alfredpreferences/workflows/ or by right clicking on the workflow in Alfred&amp;rsquo;s preferences and selecting &amp;ldquo;Open in Finder&amp;rdquo;.</description>
+      <description>This applies to the Bear workflow written in Go whose default behaviour (in v1.</description>
     </item>
     
     <item>
@@ -474,7 +400,7 @@ FYI: the info.plist file can be found in:
       <pubDate>Fri, 28 Aug 2020 18:36:09 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-better-yaml-file-folding-in-vim/</guid>
-      <description>Using foldmethod=indent is ok but it&amp;rsquo;s better to use the pedrohdz/vim-yaml-folds plugin. The author gives more detail in Vim folding rules for YAML.</description>
+      <description>Using foldmethod=indent is ok but it&amp;rsquo;s better to use the pedrohdz/vim-yaml-folds plugin.</description>
     </item>
     
     <item>
@@ -483,8 +409,7 @@ FYI: the info.plist file can be found in:
       <pubDate>Thu, 27 Aug 2020 12:03:43 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/opendns-provide-free-pornblocking-dns-servers/</guid>
-      <description>Installation requires switching the DNS servers of your router or device to use the OpenDNS ones. If you create an account, you can customise the degree of filtering and view some simple stats.
-This is useful for home networking when you have kids. Unfortunately, the Virgin Media Hub 3.0 I have doesn&amp;rsquo;t support custom DNS settings - you need to use it as a modem with a separate router to achieve that.</description>
+      <description>Installation requires switching the DNS servers of your router or device to use the OpenDNS ones.</description>
     </item>
     
     <item>
@@ -493,11 +418,7 @@ This is useful for home networking when you have kids. Unfortunately, the Virgin
       <pubDate>Tue, 25 Aug 2020 22:18:32 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/aws-availability-zones-have-counterintuitive-ids/</guid>
-      <description>Today, the AWS Service Health Dashboard referred to an Availability Zone in a way I wasn&amp;rsquo;t familiar with:
- 3:52 AM PDT We are experiencing instance connectivity issues in a single Availability Zone (euw2-az2) in the EU-WEST-2 Region.
- See:
-  Here &amp;ldquo;euw2-az2&amp;rdquo; is the &amp;ldquo;Zone ID&amp;rdquo; of the Availability Zone, and the mapping from Zone ID to the more familiar Zone Name is non-obvious. See, for example:
-$ aws ec2 describe-availability-zones --region eu-west-2 | jq -r &amp;#39;.</description>
+      <description>Today, the AWS Service Health Dashboard referred to an Availability Zone in a way I wasn&amp;rsquo;t familiar with:</description>
     </item>
     
     <item>
@@ -506,9 +427,7 @@ $ aws ec2 describe-availability-zones --region eu-west-2 | jq -r &amp;#39;.</des
       <pubDate>Mon, 24 Aug 2020 16:19:10 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-ratelimit-issues-using-a-sentry-dsn/</guid>
-      <description>If you want to manage how your event quota is consumed with Sentry, you can apply rate limits at the DSN level.
-  This lets you apply different rate limiting settings for different parts of your application by using separate DSNs.
-See Sentry&amp;rsquo;s docs on the subject.</description>
+      <description>If you want to manage how your event quota is consumed with Sentry, you can apply rate limits at the DSN level.</description>
     </item>
     
     <item>
@@ -517,8 +436,7 @@ See Sentry&amp;rsquo;s docs on the subject.</description>
       <pubDate>Mon, 17 Aug 2020 14:32:50 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-list-pages-with-matching-tag-in-hugo/</guid>
-      <description>In a detail template, you can grab a post&amp;rsquo;s tags with {{ .GetTerms &amp;quot;tags&amp;quot; }}. You can then loop over this and fetch a list of pages with each tag, excluding the current post:
-{{ range $tag_pages }} {{ $related_tag_pages := where .Pages &amp;#34;Title&amp;#34; &amp;#34;!=&amp;#34; $.Title }} {{ if $related_tag_pages }} &amp;lt;p&amp;gt;Other posts about &amp;lt;a href=&amp;#34;{{ .Permalink }}&amp;#34;&amp;gt;{{ .Title | markdownify }}&amp;lt;/a&amp;gt;:&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt; {{ range $related_tag_pages }} &amp;lt;li&amp;gt;&amp;lt;a href=&amp;#34;{{ .RelPermalink }}&amp;#34;&amp;gt;{{ .</description>
+      <description>In a detail template, you can grab a post&amp;rsquo;s tags with {{ .</description>
     </item>
     
     <item>
@@ -527,9 +445,7 @@ See Sentry&amp;rsquo;s docs on the subject.</description>
       <pubDate>Mon, 17 Aug 2020 11:53:31 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-help-macvim/</guid>
-      <description>MacVim ships with its own help files, accessed via:
-:help macvimThese provide lots of useful info on things like:
- The differences between MacVim and other Vim variants MacVim-specific preferences The macvim color scheme  and much more.</description>
+      <description>MacVim ships with its own help files, accessed via:</description>
     </item>
     
     <item>
@@ -538,10 +454,7 @@ See Sentry&amp;rsquo;s docs on the subject.</description>
       <pubDate>Mon, 17 Aug 2020 09:28:52 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-vims-diffthis-command/</guid>
-      <description>You can manually compare two more open buffers by running:
-:windo diffthisThis is an alternative to opening the files with vimdiff. One advantage is that you compare buffers that aren&amp;rsquo;t files (eg text pasted from the clipboard).
-Further reading:
- There&amp;rsquo;s some useful info in the &amp;ldquo;Comparing buffers with vimdiff&amp;rdquo; screencast. :help :diffthis  </description>
+      <description>You can manually compare two more open buffers by running:</description>
     </item>
     
     <item>
@@ -550,9 +463,7 @@ Further reading:
       <pubDate>Fri, 14 Aug 2020 10:30:00 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-the-stationery-pad-feature-in-finder/</guid>
-      <description>If you use Finder to mark a file as a &amp;ldquo;stationery pad&amp;rdquo; then apps will open a copy of the file. The original file will effectively act as a template.
-You can set this flag from the Get Info Finder dialogue:
-  This only works when opening a file from Finder, so not that much use to people who live in iTerm (like me).</description>
+      <description>If you use Finder to mark a file as a &amp;ldquo;stationery pad&amp;rdquo; then apps will open a copy of the file.</description>
     </item>
     
     <item>
@@ -561,9 +472,7 @@ You can set this flag from the Get Info Finder dialogue:
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-pngcrush/</guid>
-      <description>It&amp;rsquo;s an image optimizer for PNG files. It&amp;rsquo;s available via Homebrew for MacOS and works like:
-$ pngcrush -ow screenshot.png where -ow means the original image file will be overwritten.
-I&amp;rsquo;ve integrated it into the til_screenshot.sh helper script used by this repo.</description>
+      <description>It&amp;rsquo;s an image optimizer for PNG files. It&amp;rsquo;s available via Homebrew for MacOS and works like:</description>
     </item>
     
     <item>
@@ -572,9 +481,7 @@ I&amp;rsquo;ve integrated it into the til_screenshot.sh helper script used by th
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/asana-has-some-magic-search-terms/</guid>
-      <description>If you use the &amp;ldquo;Search this project&amp;rdquo; widget (via the &amp;ldquo;&amp;hellip;&amp;rdquo; link on the right-hand side of the project view), you can search for:
- &amp;quot;nobody&amp;quot; to see unassigned tickets &amp;quot;not me&amp;quot; to see tickets assigned to anyone but you    Found via https://forum.asana.com/t/search-for-unassigned-tasks/4770
-Quite basic functionality really but I almost gave up trying to find it.</description>
+      <description>If you use the &amp;ldquo;Search this project&amp;rdquo; widget (via the &amp;ldquo;&amp;hellip;&amp;rdquo; link on the right-hand side of the project view), you can search for:</description>
     </item>
     
     <item>
@@ -583,9 +490,7 @@ Quite basic functionality really but I almost gave up trying to find it.</descri
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-have-sass-asset-pipelines-in-hugo/</guid>
-      <description>Which lets you build a CSS stylesheet via something like:
-{{ $style := resources.Get &amp;#34;css/main.scss&amp;#34; | resources.ToCSS }} &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;{{ $style.Permalink }}&amp;#34;&amp;gt; This is rather nice as you get the usual live reloading functionality when using hugo server. In previous Hugo projects, I had a separate process for rebuilding CSS, which can now be factored away.
-This feature is part of Hugo&amp;rsquo;s asset pipeline functionality and has been available since v0.</description>
+      <description>Which lets you build a CSS stylesheet via something like:</description>
     </item>
     
     <item>
@@ -594,10 +499,7 @@ This feature is part of Hugo&amp;rsquo;s asset pipeline functionality and has be
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-text-fragments/</guid>
-      <description>Modern versions of Chrome and Edge support Text Fragments, which let you specify a text snippet in the URL fragment that the browser can highlight (or bring to the user&amp;rsquo;s attention in another way).
-For example, opening https://wicg.github.io/scroll-to-text-fragment/#abstract:~:text=user%20agent%20can%20quickly%20emphasise in Chrome will open the page with &amp;ldquo;user agent can quickly emphasise&amp;rdquo; highlighted:
-  Note the :~:text=$query in the URL.
-There&amp;rsquo;s a Google-authored Chrome plugin that eases the process of building one of these URLs.</description>
+      <description>Modern versions of Chrome and Edge support Text Fragments, which let you specify a text snippet in the URL fragment that the browser can highlight (or bring to the user&amp;rsquo;s attention in another way).</description>
     </item>
     
     <item>
@@ -606,9 +508,7 @@ There&amp;rsquo;s a Google-authored Chrome plugin that eases the process of buil
       <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/renaming-a-terraform-module-leads-to-resource-recreation/</guid>
-      <description>As the state file uses the module name in identifiers and so a module rename causes Terraform to think all existing resources need to be destroyed and recreated.
-You can avoid such needless destruction by editing the state file manually to correct the identifiers.
-It might be possible to use terraform mv although I didn&amp;rsquo;t use that approach today.</description>
+      <description>As the state file uses the module name in identifiers and so a module rename causes Terraform to think all existing resources need to be destroyed and recreated.</description>
     </item>
     
     <item>
@@ -617,9 +517,7 @@ It might be possible to use terraform mv although I didn&amp;rsquo;t use that ap
       <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-passwordless-users-in-ec2/</guid>
-      <description>The file that controls where the default ubuntu user on an Ubuntu EC2 instance is /etc/sudoers.d/90-cloud-init-users which has contents:
-# User rules for ubuntu ubuntu ALL=(ALL) NOPASSWD:ALL def f(a: int) -&amp;gt; int: return None As you can see, the default ubuntu user has password-less, sudo access.
-Source https://serverfault.com/questions/615034/disable-nopasswd-sudo-access-for-ubuntu-user-on-an-ec2-instance</description>
+      <description>The file that controls where the default ubuntu user on an Ubuntu EC2 instance is /etc/sudoers.</description>
     </item>
     
     <item>
@@ -629,10 +527,7 @@ Source https://serverfault.com/questions/615034/disable-nopasswd-sudo-access-for
       
       <guid>https://til.codeinthehole.com/posts/park-downhill/</guid>
       <description>From https://news.ycombinator.com/item?id=23118940
- Before putting a project or incomplete task away, make notes of what the next thing was that you were going to work on. This lets you bypass that 10 minute orientation getting back into the project the next time you pick it up.
- This is something I&amp;rsquo;ve done for a while.
-There&amp;rsquo;s various other ways of doing the same thing, such as:
- Leaving a failing test Leaving an incomplete sentence  In my Trello cards, I like to regularly add comments saying:</description>
+ Before putting a project or incomplete task away, make notes of what the next thing was that you were going to work on.</description>
     </item>
     
     <item>
@@ -641,8 +536,7 @@ There&amp;rsquo;s various other ways of doing the same thing, such as:
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/alfred-clipboard-history/</guid>
-      <description>Alfred has a clipboard history feature which lets you easily pluck out previous values from your system clipboard.
-It&amp;rsquo;s disabled by default.</description>
+      <description>Alfred has a clipboard history feature which lets you easily pluck out previous values from your system clipboard.</description>
     </item>
     
     <item>
@@ -651,9 +545,7 @@ It&amp;rsquo;s disabled by default.</description>
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/alfred-snippet-collections/</guid>
-      <description>You can create &amp;ldquo;collections&amp;rdquo; of snippets in Alfred, such as:
- Common comments used in code review. Calendly URLs Personal Zoom link  Anything that you might want to insert into text regularly.
-  See https://www.alfredapp.com/help/features/snippets/</description>
+      <description>You can create &amp;ldquo;collections&amp;rdquo; of snippets in Alfred, such as:</description>
     </item>
     
     <item>
@@ -662,8 +554,7 @@ It&amp;rsquo;s disabled by default.</description>
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/quitter/</guid>
-      <description>There&amp;rsquo;s a MacOS app called Quitter which will automatically quit applications after some period of inactivity.
-  </description>
+      <description>There&amp;rsquo;s a MacOS app called Quitter which will automatically quit applications after some period of inactivity.</description>
     </item>
     
     <item>
@@ -672,8 +563,7 @@ It&amp;rsquo;s disabled by default.</description>
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-the-screencapture-bsd-util/</guid>
-      <description>It&amp;rsquo;s what MacOS uses for its shortcuts but can be called from the command-line:
-$ screencapture It has lots of interesting options &amp;ndash; see man screencapture.</description>
+      <description>It&amp;rsquo;s what MacOS uses for its shortcuts but can be called from the command-line:</description>
     </item>
     
     <item>
@@ -683,9 +573,7 @@ $ screencapture It has lots of interesting options &amp;ndash; see man screencap
       
       <guid>https://til.codeinthehole.com/posts/about-twitters-minfaves-search-filter/</guid>
       <description>You can do searches like:
-from:frankieboyle min_faves:10000 to see, for example, the best tweets from a given account. It works really well &amp;ndash; you just need to pick an appropriate minimum value for the account.
-Examples:
- https://twitter.com/search?q=from%3Afrankieboyle%20min_faves%3A10000 https://twitter.com/search?q=from%3Afesshole%20min_faves%3A400  There&amp;rsquo;s also a min_retweets filter which can be used for a similar purpose.</description>
+from:frankieboyle min_faves:10000 to see, for example, the best tweets from a given account.</description>
     </item>
     
 

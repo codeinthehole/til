@@ -15,7 +15,10 @@
         {{ $style := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify }}
         <link rel="stylesheet" href="{{ $style.Permalink }}">
 
+        {{ block "head" . }}{{ end }}
+
         <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
     </head>
 
     <body>

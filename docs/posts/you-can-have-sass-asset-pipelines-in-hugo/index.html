@@ -5,9 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which lets you build a CSS stylesheet via something like:
-{{ $style := resources.Get &amp;quot;css/main.scss&amp;quot; | resources.ToCSS }} &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;{{ $style.Permalink }}&amp;quot;&amp;gt; This is rather nice as you get the usual live reloading functionality when using hugo server. In previous Hugo projects, I had a separate process for rebuilding CSS, which can now be factored away.
-This feature is part of Hugo’s asset pipeline functionality and has been available since v0. ...
+    Which lets you build a CSS stylesheet via something like: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,9 +13,17 @@ This feature is part of Hugo’s asset pipeline functionality and has been avail
         
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
+        
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-have-sass-asset-pipelines-in-hugo/" />
+<meta property="og:title" content="You can have SASS asset pipelines in Hugo" />
+<meta property="og:description" content="Which lets you build a CSS stylesheet via something like: ..." />
+
+
         <title>
     TIL You can have SASS asset pipelines in Hugo — David Winterbottom
 </title>
+
     </head>
 
     <body>

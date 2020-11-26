@@ -9,4 +9,4 @@ publishDir = "../docs"
 staticDir = ["../static/"]
 
 # Use really small summaries...
-summaryLength = 70
+summaryLength = 8

@@ -18,8 +18,7 @@
       <pubDate>Thu, 19 Nov 2020 10:54:49 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-bandit-with-vims-quickfix-list/</guid>
-      <description>One way to populate Vim&amp;rsquo;s quickfix list is by running :make which runs the program specified by the makeprg setting. Due to Vim&amp;rsquo;s C heritage, the default behaviour is to run the make command-line tool but there are many other useful programs that print locations to stdout.
-Bandit is a Python static analysis tool that looks for common security issues. You can use it to populate the quickfix list by setting:</description>
+      <description>One way to populate Vim&amp;rsquo;s quickfix list is by running :make which runs the program specified by the makeprg setting.</description>
     </item>
     
 

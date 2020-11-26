@@ -19,9 +19,7 @@
       
       <guid>https://til.codeinthehole.com/posts/about-readonly-bash-variables/</guid>
       <description>Doing this:
-$ readonly myvar=1 means that $myvar can&amp;rsquo;t have its value changed within the global scope.
-$ myvar=2 -bash: myvar: readonly variable You can use declare -r to enforce immutability within a local scope (eg within a function body).
-See the Linux Shell Scripting Tutorial wiki for basic examples. See this Stack Overflow answer for more details on the differences between readonly and declare -r.</description>
+$ readonly myvar=1 means that $myvar can&amp;rsquo;t have its value changed within the global scope.</description>
     </item>
     
     <item>
@@ -30,7 +28,7 @@ See the Linux Shell Scripting Tutorial wiki for basic examples. See this Stack O
       <pubDate>Mon, 12 Oct 2020 10:30:00 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-shellcheck/</guid>
-      <description>Which is a static analysis tool for shell scripts. You can try it out by pasting a script into a form and it is run automatically by Vim&amp;rsquo;s Ale plugin.</description>
+      <description>Which is a static analysis tool for shell scripts.</description>
     </item>
     
     <item>
@@ -39,11 +37,7 @@ See the Linux Shell Scripting Tutorial wiki for basic examples. See this Stack O
       <pubDate>Wed, 07 Oct 2020 11:15:11 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-bashs-debug-signal/</guid>
-      <description>Bash has a DEBUG signal that you can register a handler for using trap.
-You can use this to print a prompt before each command is executed, which allows you to step through a Bash script:
-trap &#39;(read -p &amp;quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &amp;quot;)&#39; DEBUG Source:
-TIL that you can use the &amp;quot;DEBUG&amp;quot; trap to step through a bash script line by line pic.twitter.com/JBckrcr06G
-&amp;mdash; 🔎Julia Evans🔍 (@b0rk) October 3, 2020  </description>
+      <description>Bash has a DEBUG signal that you can register a handler for using trap.</description>
     </item>
     
 

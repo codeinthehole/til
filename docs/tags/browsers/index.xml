@@ -18,10 +18,7 @@
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-text-fragments/</guid>
-      <description>Modern versions of Chrome and Edge support Text Fragments, which let you specify a text snippet in the URL fragment that the browser can highlight (or bring to the user&amp;rsquo;s attention in another way).
-For example, opening https://wicg.github.io/scroll-to-text-fragment/#abstract:~:text=user%20agent%20can%20quickly%20emphasise in Chrome will open the page with &amp;ldquo;user agent can quickly emphasise&amp;rdquo; highlighted:
-  Note the :~:text=$query in the URL.
-There&amp;rsquo;s a Google-authored Chrome plugin that eases the process of building one of these URLs.</description>
+      <description>Modern versions of Chrome and Edge support Text Fragments, which let you specify a text snippet in the URL fragment that the browser can highlight (or bring to the user&amp;rsquo;s attention in another way).</description>
     </item>
     
 

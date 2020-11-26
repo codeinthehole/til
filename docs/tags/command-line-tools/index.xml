@@ -18,10 +18,7 @@
       <pubDate>Mon, 16 Nov 2020 22:10:57 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/exuberantctags-has-been-superceded-by-universalctags/</guid>
-      <description>In the sense that the Exuberant ctags project has stalled, and Universal ctags has been introduced to continue development.
-I discovered this while investigating why the --python-kinds flag didn&amp;rsquo;t seem to work with Exuberant ctags.
-On MacOS, install Universal ctags with:
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags </description>
+      <description>In the sense that the Exuberant ctags project has stalled, and Universal ctags has been introduced to continue development.</description>
     </item>
     
     <item>
@@ -30,9 +27,7 @@ brew install --HEAD universal-ctags/universal-ctags/universal-ctags </descriptio
       <pubDate>Thu, 12 Nov 2020 14:43:50 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-column/</guid>
-      <description>Which formats input into columns. This is useful for formatting data into a table structure.
-Example usage: printing a table of running EC2 instances:
-$ aws ec2 describe-instances --filters=&amp;#34;Name=instance-state-name,Values=running&amp;#34; \  | jq -r &amp;#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&amp;#34;|&amp;#34;)&amp;#39; \  | column -t -s &amp;#34;|&amp;#34; i-0fe1eb8debbff316f 10.0.0.54 i-0ed0af108b30084a2 10.0.20.202 i-0935f54b5a3002760 10.0.1.83 i-063621cd0118bc69d 10.0.248.118 i-0f11a4f1cea7d60da 10.0.238.126 i-01bb8c6bf2a4109e5 10.0.234.252 i-03e990e42886c2da3 10.0.237.103 i-011e55d5fab3aad13 10.0.238.213 i-02651b70f191f7068 10.0.29.221 i-0b07423fbf8b79554 10.0.29.85 i-04e5c99694eb27c92 10.</description>
+      <description>Which formats input into columns. This is useful for formatting data into a table structure.</description>
     </item>
     
     <item>
@@ -41,8 +36,7 @@ $ aws ec2 describe-instances --filters=&amp;#34;Name=instance-state-name,Values=
       <pubDate>Fri, 23 Oct 2020 17:35:10 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/fd-has-an-option-for-searching-filepaths/</guid>
-      <description>If you pass -p, then the fd will retrieve all filepaths matching $PATTERN:
-$ fd -p epex tests/fixtures/epex tests/fixtures/epex/hourly.csv tests/fixtures/epex/half_hourly.csv tests/unit/common/vendors/epex tests/unit/common/vendors/epex/__init__.py tests/unit/common/vendors/epex/test_parsers.py octoenergy/vendors/epex octoenergy/vendors/epex/__init__.py octoenergy/vendors/epex/parsers.py Very useful.</description>
+      <description>If you pass -p, then the fd will retrieve all filepaths matching $PATTERN:</description>
     </item>
     
     <item>
@@ -51,9 +45,7 @@ $ fd -p epex tests/fixtures/epex tests/fixtures/epex/hourly.csv tests/fixtures/e
       <pubDate>Tue, 29 Sep 2020 12:47:23 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-xargs-with-printf/</guid>
-      <description>This is obvious in retrospect but it hadn&amp;rsquo;t dawned on me that you can use xargs printf to use STDIN as printf arguments. Trivial example:
-$ echo world | xargs printf &amp;#34;hello %s&amp;#34; hello world It&amp;rsquo;s useful for building strings from streams of data. Today&amp;rsquo;s usecase was building a pastable Python snippet from a JSON file containing object IDs:
-$ cat loggly_events.json | jq &amp;#39;.events[].event.json.object_id&amp;#39; \  | paste -sd, | xargs printf &amp;#34;object_ids = [%s]&amp;#34; object_ids = [4,6,8,2,3,4] Here jq is used to extract a newline-separated stream of IDs which are joined into a CSV-string using paste before being formatted into a Python snippet with printf.</description>
+      <description>This is obvious in retrospect but it hadn&amp;rsquo;t dawned on me that you can use xargs printf to use STDIN as printf arguments.</description>
     </item>
     
     <item>
@@ -62,9 +54,7 @@ $ cat loggly_events.json | jq &amp;#39;.events[].event.json.object_id&amp;#39; \
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-pngcrush/</guid>
-      <description>It&amp;rsquo;s an image optimizer for PNG files. It&amp;rsquo;s available via Homebrew for MacOS and works like:
-$ pngcrush -ow screenshot.png where -ow means the original image file will be overwritten.
-I&amp;rsquo;ve integrated it into the til_screenshot.sh helper script used by this repo.</description>
+      <description>It&amp;rsquo;s an image optimizer for PNG files. It&amp;rsquo;s available via Homebrew for MacOS and works like:</description>
     </item>
     
 

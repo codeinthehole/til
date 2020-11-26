@@ -18,10 +18,7 @@
       <pubDate>Thu, 26 Nov 2020 16:09:12 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-configure-ctags-to-parse-terraform-files/</guid>
-      <description>If you&amp;rsquo;re using Universal Ctags (which you should be), you just need to add a ~/.ctags.d/terraform.ctags with contents:
---langdef=terraform --langmap=terraform:.tf.tfvars --regex-terraform=/^[[:space:]]*resource[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\2/r,Resource/ --regex-terraform=/^[[:space:]]*data[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\2/d,Data/ --regex-terraform=/^[[:space:]]*variable[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\1/v,Variable/ --regex-terraform=/^[[:space:]]*provider[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\1/p,Provider/ --regex-terraform=/^[[:space:]]*module[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\1/m,Module/ --regex-terraform=/^[[:space:]]*output[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\1/o,Output/ --regex-terraform=/^([a-z0-9_]+)[[:space:]]*=/\1/f,TFVar/ Then, for example, a Terraform resource like:
-resource &amp;#34;aws_cloudwatch_log_group&amp;#34; &amp;#34;my-log-group&amp;#34; { name = &amp;#34;my-log-group&amp;#34; ... } will have my-log-group stored as an identifier so you can jump to its definition from other references.
-Inspiration taken from ctag support for Terraform although the snippet above is a slightly amended version from the vim-terraform-completion repo.</description>
+      <description>If you&amp;rsquo;re using Universal Ctags (which you should be), you just need to add a ~/.</description>
     </item>
     
     <item>
@@ -30,8 +27,7 @@ Inspiration taken from ctag support for Terraform although the snippet above is 
       <pubDate>Thu, 19 Nov 2020 10:54:49 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-bandit-with-vims-quickfix-list/</guid>
-      <description>One way to populate Vim&amp;rsquo;s quickfix list is by running :make which runs the program specified by the makeprg setting. Due to Vim&amp;rsquo;s C heritage, the default behaviour is to run the make command-line tool but there are many other useful programs that print locations to stdout.
-Bandit is a Python static analysis tool that looks for common security issues. You can use it to populate the quickfix list by setting:</description>
+      <description>One way to populate Vim&amp;rsquo;s quickfix list is by running :make which runs the program specified by the makeprg setting.</description>
     </item>
     
     <item>
@@ -40,9 +36,7 @@ Bandit is a Python static analysis tool that looks for common security issues. Y
       <pubDate>Wed, 04 Nov 2020 16:56:20 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-run-grep-without-using-parent-shell-process/</guid>
-      <description>Using ripgrep as a :grep command can be configured with:
-set grepprg=rg\ --vimgrepThis is a big upgrade in performance and functionality but it has a couple of downsides:
- Vim is suspended for the duration of the command. Results are printed in the parent shell, clogging it up. Getting back to Vim requires hitting enter.  These problems can be avoided by using :cgetexpr to populate the quickfix list via a command executed with system.</description>
+      <description>Using ripgrep as a :grep command can be configured with:</description>
     </item>
     
     <item>
@@ -51,8 +45,7 @@ set grepprg=rg\ --vimgrepThis is a big upgrade in performance and functionality 
       <pubDate>Wed, 04 Nov 2020 11:55:58 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/theres-a-quickfixcmdpost-event-in-vim/</guid>
-      <description>Which you can target in an autocmd to open the quickfix window whenever a quickfix command populates the error list (e.g. :make or :grep):
-autocmd QuickFixCmdPost [^l]* cwindowTaken from https://gist.github.com/romainl/ce55ce6fdc1659c5fbc0f4224fd6ad29</description>
+      <description>Which you can target in an autocmd to open the quickfix window whenever a quickfix command populates the error list (e.</description>
     </item>
     
     <item>
@@ -61,9 +54,7 @@ autocmd QuickFixCmdPost [^l]* cwindowTaken from https://gist.github.com/romainl/
       <pubDate>Sat, 31 Oct 2020 11:39:36 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-jump-to-previous-quickfix-lists-in-vim/</guid>
-      <description>Vim remembers the previous ten quickfix lists; you can list them with:
-:chistory error list 1 of 3; 70 errors :rg --vimgrep --smart-case search error list 2 of 3; 61 errors :rg --vimgrep --smart-case what&amp;gt; error list 3 of 3; 187 errors :rg --vimgrep --smart-case howYou can activate a particular list using its index (e.g. :1chi to select the 1st error list) or by browsing with :colder and :cnewer.
-There&amp;rsquo;s a rather glorious section in the quickfix.</description>
+      <description>Vim remembers the previous ten quickfix lists; you can list them with:</description>
     </item>
     
     <item>
@@ -72,7 +63,7 @@ There&amp;rsquo;s a rather glorious section in the quickfix.</description>
       <pubDate>Mon, 12 Oct 2020 10:30:00 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-shellcheck/</guid>
-      <description>Which is a static analysis tool for shell scripts. You can try it out by pasting a script into a form and it is run automatically by Vim&amp;rsquo;s Ale plugin.</description>
+      <description>Which is a static analysis tool for shell scripts.</description>
     </item>
     
     <item>
@@ -81,9 +72,7 @@ There&amp;rsquo;s a rather glorious section in the quickfix.</description>
       <pubDate>Wed, 23 Sep 2020 16:00:09 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-read-from-one-buffer-to-another-in-vim/</guid>
-      <description>Refer to the buffer&amp;rsquo;s number using a hash. For example, run:
-:read #3to insert the contents of the file linked to buffer 3. Note that a buffer&amp;rsquo;s content isn&amp;rsquo;t necessarily the same as the linked file.
-From: https://stackoverflow.com/questions/37859530/vim-how-to-read-from-one-buffer-into-another</description>
+      <description>Refer to the buffer&amp;rsquo;s number using a hash. For example, run:</description>
     </item>
     
     <item>
@@ -92,8 +81,7 @@ From: https://stackoverflow.com/questions/37859530/vim-how-to-read-from-one-buff
       <pubDate>Wed, 16 Sep 2020 14:27:56 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-vims-helpgrep-command/</guid>
-      <description>Which lets you search Vim&amp;rsquo;s help files for a given pattern. For example:
-:helpgrep What is the meaning of life Discovered via a Hashrocket TIL and an episode of Josh Branchaud&amp;rsquo;s Vim Un-Alphabet screencast series.</description>
+      <description>Which lets you search Vim&amp;rsquo;s help files for a given pattern.</description>
     </item>
     
     <item>
@@ -113,9 +101,7 @@ From: https://stackoverflow.com/questions/37859530/vim-how-to-read-from-one-buff
       
       <guid>https://til.codeinthehole.com/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/</guid>
       <description>I have this in ~/.vimrc:
-&amp;#34; Keep undo history between sessionsif has(&amp;#39;persistent_undo&amp;#39;) set undofile set undodir=~/.vim_undo set undolevels=2000endifbut, after switching laptops, I noticed the persistent undo feature wasn&amp;rsquo;t working.
-The problem was that the ~/.vim_undo folder didn&amp;rsquo;t exist which silently prevents the feature working.
-You can create this automaticaly in ~/.vimrc if you like.</description>
+&amp;#34; Keep undo history between sessionsif has(&amp;#39;persistent_undo&amp;#39;) set undofile set undodir=~/.</description>
     </item>
     
     <item>
@@ -124,7 +110,7 @@ You can create this automaticaly in ~/.vimrc if you like.</description>
       <pubDate>Fri, 28 Aug 2020 18:36:09 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-better-yaml-file-folding-in-vim/</guid>
-      <description>Using foldmethod=indent is ok but it&amp;rsquo;s better to use the pedrohdz/vim-yaml-folds plugin. The author gives more detail in Vim folding rules for YAML.</description>
+      <description>Using foldmethod=indent is ok but it&amp;rsquo;s better to use the pedrohdz/vim-yaml-folds plugin.</description>
     </item>
     
     <item>
@@ -133,9 +119,7 @@ You can create this automaticaly in ~/.vimrc if you like.</description>
       <pubDate>Mon, 17 Aug 2020 11:53:31 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-help-macvim/</guid>
-      <description>MacVim ships with its own help files, accessed via:
-:help macvimThese provide lots of useful info on things like:
- The differences between MacVim and other Vim variants MacVim-specific preferences The macvim color scheme  and much more.</description>
+      <description>MacVim ships with its own help files, accessed via:</description>
     </item>
     
     <item>
@@ -144,10 +128,7 @@ You can create this automaticaly in ~/.vimrc if you like.</description>
       <pubDate>Mon, 17 Aug 2020 09:28:52 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-vims-diffthis-command/</guid>
-      <description>You can manually compare two more open buffers by running:
-:windo diffthisThis is an alternative to opening the files with vimdiff. One advantage is that you compare buffers that aren&amp;rsquo;t files (eg text pasted from the clipboard).
-Further reading:
- There&amp;rsquo;s some useful info in the &amp;ldquo;Comparing buffers with vimdiff&amp;rdquo; screencast. :help :diffthis  </description>
+      <description>You can manually compare two more open buffers by running:</description>
     </item>
     
 

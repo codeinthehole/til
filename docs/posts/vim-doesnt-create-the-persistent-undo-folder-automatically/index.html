@@ -6,9 +6,7 @@
 
         <meta name="description" content="
     I have this in ~/.vimrc:
-&amp;quot; Keep undo history between sessionsif has(&#39;persistent_undo&#39;) set undofile set undodir=~/.vim_undo set undolevels=2000endifbut, after switching laptops, I noticed the persistent undo feature wasn’t working.
-The problem was that the ~/.vim_undo folder didn’t exist which silently prevents the feature working.
-You can create this automaticaly in ~/.vimrc if you like. ...
+&amp;quot; Keep undo history between sessionsif has(&#39;persistent_undo&#39;) set undofile set undodir=~/. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -16,9 +14,18 @@ You can create this automaticaly in ~/.vimrc if you like. ...
         
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
+        
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/" />
+<meta property="og:title" content="Vim doesn&#39;t create the persistent undo folder automatically" />
+<meta property="og:description" content="I have this in ~/.vimrc:
+&#34; Keep undo history between sessionsif has(&#39;persistent_undo&#39;) set undofile set undodir=~/. ..." />
+
+
         <title>
     TIL Vim doesn&#39;t create the persistent undo folder automatically — David Winterbottom
 </title>
+
     </head>
 
     <body>

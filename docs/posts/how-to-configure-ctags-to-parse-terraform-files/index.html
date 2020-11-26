@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    If you’re using Universal Ctags (which you should be), you just need to add a ~/.ctags.d/terraform.ctags with contents: &amp;ndash;langdef=terraform &amp;ndash;langmap=terraform:.tf.tfvars &amp;ndash;regex-terraform=/^[[:space:]]resource[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;/\2/r,Resource/ &amp;ndash;regex-terraform=/^[[:space:]]data[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;/\2/d,Data/ &amp;ndash;regex-terraform=/^[[:space:]]variable[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;/\1/v,Variable/ &amp;ndash;regex-terraform=/^[[:space:]]provider[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;/\1/p,Provider/ &amp;ndash;regex-terraform=/^[[:space:]]module[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;/\1/m,Module/ &amp;ndash;regex-terraform=/^[[:space:]]output[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;/\1/o,Output/ &amp;ndash;regex-terraform=/^([a-z0-9_]&#43;)[[:space:]]*=/\1/f,TFVar/ Then, for example, a Terraform resource like: resource &amp;quot;aws_cloudwatch_log_group&amp;quot; &amp;quot;my-log-group&amp;quot; { name = &amp;quot;my-log-group&amp;quot; &amp;hellip; } will have my-log-group stored as an identifier so you can jump to its definition from other references. Inspiration taken from ctag support for Terraform although the snippet above is a slightly amended version from the vim-terraform-completion repo. ...
+    If you’re using Universal Ctags (which you should be), you just need to add a ~/. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -13,9 +13,17 @@
         
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
+        
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-configure-ctags-to-parse-terraform-files/" />
+<meta property="og:title" content="How to configure `ctags` to parse Terraform files" />
+<meta property="og:description" content="If you&rsquo;re using Universal Ctags (which you should be), you just need to add a ~/. ..." />
+
+
         <title>
     TIL How to configure &#39;ctags&#39; to parse Terraform files — David Winterbottom
 </title>
+
     </head>
 
     <body>

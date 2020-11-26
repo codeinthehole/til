@@ -5,11 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Today, the AWS Service Health Dashboard referred to an Availability Zone in a way I wasn’t familiar with:
-3:52 AM PDT We are experiencing instance connectivity issues in a single Availability Zone (euw2-az2) in the EU-WEST-2 Region.
-See:
-Here “euw2-az2” is the “Zone ID” of the Availability Zone, and the mapping from Zone ID to the more familiar Zone Name is non-obvious. See, for example:
-$ aws ec2 describe-availability-zones &amp;ndash;region eu-west-2 | jq -r &#39;. ...
+    Today, the AWS Service Health Dashboard referred to an Availability Zone in a way I wasn’t familiar with: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -17,9 +13,17 @@ $ aws ec2 describe-availability-zones &amp;ndash;region eu-west-2 | jq -r &#39;.
         
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
+        
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/aws-availability-zones-have-counterintuitive-ids/" />
+<meta property="og:title" content="AWS Availability Zones have counter-intuitive IDs" />
+<meta property="og:description" content="Today, the AWS Service Health Dashboard referred to an Availability Zone in a way I wasn&rsquo;t familiar with: ..." />
+
+
         <title>
     TIL AWS Availability Zones have counter-intuitive IDs — David Winterbottom
 </title>
+
     </head>
 
     <body>

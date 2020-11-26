@@ -19,7 +19,7 @@
       
       <guid>https://til.codeinthehole.com/posts/datetimedatetime-is-a-subclass-of-datetimedate/</guid>
       <description>See for yourself:
-&amp;gt;&amp;gt;&amp;gt; import datetime &amp;gt;&amp;gt;&amp;gt; isinstance(datetime.datetime.now(), datetime.date) True Apparently, this is not a bug but it is certainly confusing.</description>
+&amp;gt;&amp;gt;&amp;gt; import datetime &amp;gt;&amp;gt;&amp;gt; isinstance(datetime.datetime.now(), datetime.</description>
     </item>
     
     <item>
@@ -28,8 +28,7 @@
       <pubDate>Thu, 08 Oct 2020 14:56:38 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-piplicenses/</guid>
-      <description>Which is a useful Python library that lists all the licenses of packages installed with pip:
-(venv) $ pip-licenses Name Version License Django 2.0.2 BSD pytz 2017.3 MIT ... See https://github.com/raimon49/pip-licenses</description>
+      <description>Which is a useful Python library that lists all the licenses of packages installed with pip:</description>
     </item>
     
     <item>
@@ -39,11 +38,7 @@
       
       <guid>https://til.codeinthehole.com/posts/python-37-supports-postponed-evaluation-of-annotations/</guid>
       <description>For example, instead of:
-import _csv def generate_report(writer: &amp;#39;_csv._writer&amp;#39;): pass you can use:
-from __future__ import annotations import _csv def generate_report(writer: _csv._writer): pass and avoid using a string literal for the type annotation.
-This follows on from a related TIL about how to specify type annotations for the csv module.
-Related:
- __future__ statement definitions PEP 563 - Postponed Evaluation of Annotations  </description>
+import _csv def generate_report(writer: &amp;#39;_csv.</description>
     </item>
     
     <item>
@@ -52,11 +47,7 @@ Related:
       <pubDate>Thu, 03 Sep 2020 17:13:22 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-typecheck-csv-objects-in-python/</guid>
-      <description>Adding a type annotation for a &amp;ldquo;writer&amp;rdquo; object created by csv.writer(...) is fiddlier than you might think.
-The type of the writer object is _csv.writer which you verify with:
-&amp;gt;&amp;gt;&amp;gt; import csv, sys &amp;gt;&amp;gt;&amp;gt; type(csv.writer(sys.stdout)) &amp;lt;class &amp;#39;_csv.writer&amp;#39;&amp;gt; but if you try this:
-import _csv def generate_report(writer: _csv.writer): pass mypy complains that:
-Function &amp;quot;_csv.writer&amp;quot; is not valid as a type [valid-type]. The correct approach is to use _csv._writer as the type annotation.</description>
+      <description>Adding a type annotation for a &amp;ldquo;writer&amp;rdquo; object created by csv.</description>
     </item>
     
 

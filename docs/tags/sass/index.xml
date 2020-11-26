@@ -18,9 +18,7 @@
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-have-sass-asset-pipelines-in-hugo/</guid>
-      <description>Which lets you build a CSS stylesheet via something like:
-{{ $style := resources.Get &amp;#34;css/main.scss&amp;#34; | resources.ToCSS }} &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;{{ $style.Permalink }}&amp;#34;&amp;gt; This is rather nice as you get the usual live reloading functionality when using hugo server. In previous Hugo projects, I had a separate process for rebuilding CSS, which can now be factored away.
-This feature is part of Hugo&amp;rsquo;s asset pipeline functionality and has been available since v0.</description>
+      <description>Which lets you build a CSS stylesheet via something like:</description>
     </item>
     
 

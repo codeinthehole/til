@@ -5,9 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which formats input into columns. This is useful for formatting data into a table structure.
-Example usage: printing a table of running EC2 instances:
-$ aws ec2 describe-instances &amp;ndash;filters=&amp;quot;Name=instance-state-name,Values=running&amp;quot; \  | jq -r &#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&amp;quot;|&amp;quot;)&#39; \  | column -t -s &amp;quot;|&amp;quot; i-0fe1eb8debbff316f 10.0.0.54 i-0ed0af108b30084a2 10.0.20.202 i-0935f54b5a3002760 10.0.1.83 i-063621cd0118bc69d 10.0.248.118 i-0f11a4f1cea7d60da 10.0.238.126 i-01bb8c6bf2a4109e5 10.0.234.252 i-03e990e42886c2da3 10.0.237.103 i-011e55d5fab3aad13 10.0.238.213 i-02651b70f191f7068 10.0.29.221 i-0b07423fbf8b79554 10.0.29.85 i-04e5c99694eb27c92 10. ...
+    Which formats input into columns. This is useful for formatting data into a table structure. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,9 +13,17 @@ $ aws ec2 describe-instances &amp;ndash;filters=&amp;quot;Name=instance-state-na
         
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
+        
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-column/" />
+<meta property="og:title" content="About `column`" />
+<meta property="og:description" content="Which formats input into columns. This is useful for formatting data into a table structure. ..." />
+
+
         <title>
     TIL About &#39;column&#39; — David Winterbottom
 </title>
+
     </head>
 
     <body>

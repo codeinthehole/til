@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    In a detail template, you can grab a post’s tags with {{ .GetTerms &amp;quot;tags&amp;quot; }}. You can then loop over this and fetch a list of pages with each tag, excluding the current post:
-{{ range $tag_pages }} {{ $related_tag_pages := where .Pages &amp;quot;Title&amp;quot; &amp;quot;!=&amp;quot; $.Title }} {{ if $related_tag_pages }} &amp;lt;p&amp;gt;Other posts about &amp;lt;a href=&amp;quot;{{ .Permalink }}&amp;quot;&amp;gt;{{ .Title | markdownify }}&amp;lt;/a&amp;gt;:&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt; {{ range $related_tag_pages }} &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .RelPermalink }}&amp;quot;&amp;gt;{{ . ...
+    In a detail template, you can grab a post’s tags with {{ . ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -14,9 +13,17 @@
         
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
+        
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-list-pages-with-matching-tag-in-hugo/" />
+<meta property="og:title" content="How to list pages with matching tag in Hugo" />
+<meta property="og:description" content="In a detail template, you can grab a post&rsquo;s tags with {{ . ..." />
+
+
         <title>
     TIL How to list pages with matching tag in Hugo — David Winterbottom
 </title>
+
     </head>
 
     <body>

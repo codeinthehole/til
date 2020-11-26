@@ -18,9 +18,7 @@
       <pubDate>Mon, 28 Sep 2020 16:02:44 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/aws-asgs-have-an-instance-refresh-feature/</guid>
-      <description>Which lets you replace all the instances in an auto-scaling group, possibly with a new AMI. See the announcement from the AWS Compute Blog.
-If you use an immutable infrastructure approach and deploy using AMIs, this provides an alternative deployment mechanism. In contrast to using Terraform&amp;rsquo;s create_before_destroy mechanism, which creates a new auto-scaling group for each deploy, this method would allow a single long-lived ASG to be used.
-Looks interesting.</description>
+      <description>Which lets you replace all the instances in an auto-scaling group, possibly with a new AMI.</description>
     </item>
     
     <item>
@@ -29,9 +27,7 @@ Looks interesting.</description>
       <pubDate>Tue, 15 Sep 2020 11:49:53 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-conditionally-include-items-in-a-terraform-list/</guid>
-      <description>It&amp;rsquo;s not obvious how to build a Terraform list where an item is only included if some condition is met. One solution is to use flatten along with a conditional expression.
-Something like this:
-resource &amp;#34;aws_security_group&amp;#34; &amp;#34;this&amp;#34; { ... ingress { ... security_groups = flatten([ aws_security_group.server-type-a.id, var.include_server_type_b ? aws_security_group.server-type-b[*].id : [] ]) } where the server-type-b security group is only included the security_groups list if var.include_server_type_b is truthy.</description>
+      <description>It&amp;rsquo;s not obvious how to build a Terraform list where an item is only included if some condition is met.</description>
     </item>
     
     <item>
@@ -40,9 +36,7 @@ resource &amp;#34;aws_security_group&amp;#34; &amp;#34;this&amp;#34; { ... ingre
       <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/renaming-a-terraform-module-leads-to-resource-recreation/</guid>
-      <description>As the state file uses the module name in identifiers and so a module rename causes Terraform to think all existing resources need to be destroyed and recreated.
-You can avoid such needless destruction by editing the state file manually to correct the identifiers.
-It might be possible to use terraform mv although I didn&amp;rsquo;t use that approach today.</description>
+      <description>As the state file uses the module name in identifiers and so a module rename causes Terraform to think all existing resources need to be destroyed and recreated.</description>
     </item>
     
 

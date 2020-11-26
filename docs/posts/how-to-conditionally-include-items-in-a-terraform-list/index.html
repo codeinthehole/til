@@ -5,9 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    It’s not obvious how to build a Terraform list where an item is only included if some condition is met. One solution is to use flatten along with a conditional expression.
-Something like this:
-resource &amp;quot;aws_security_group&amp;quot; &amp;quot;this&amp;quot; { &amp;hellip; ingress { &amp;hellip; security_groups = flatten([ aws_security_group.server-type-a.id, var.include_server_type_b ? aws_security_group.server-type-b[*].id : [] ]) } where the server-type-b security group is only included the security_groups list if var.include_server_type_b is truthy. ...
+    It’s not obvious how to build a Terraform list where an item is only included if some condition is met. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,9 +13,17 @@ resource &amp;quot;aws_security_group&amp;quot; &amp;quot;this&amp;quot; { &amp;
         
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
+        
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-conditionally-include-items-in-a-terraform-list/" />
+<meta property="og:title" content="How to conditionally include items in a Terraform list" />
+<meta property="og:description" content="It&rsquo;s not obvious how to build a Terraform list where an item is only included if some condition is met. ..." />
+
+
         <title>
     TIL How to conditionally include items in a Terraform list — David Winterbottom
 </title>
+
     </head>
 
     <body>

@@ -5,9 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    If you have an AWS organisation and several child AWS accounts that you can assume-role into, you can work around MFA restrictions on the trust relationship using a mfa_serial setting in ~/.aws/config.
-Example config:
-[profile parent] # Account ID 111111111111 region = eu-west-2 [profile child-account1] # Account ID 222222222222 role_arn = arn:aws:iam::222222222222:role/OrganizationAccountAccessRole mfa_serial = arn:aws:iam::111111111111:mfa/david.winterbottom region = eu-west-1 source_profile = parent  [profile child-account2] # Account ID 333333333333 role_arn = arn:aws:iam::333333333333:role/OrganizationAccountAccessRole mfa_serial = arn:aws:iam::111111111111:mfa/david. ...
+    If you have an AWS organisation and several child AWS accounts that you can assume-role into, you can work around MFA restrictions on the trust relationship using a mfa_serial setting in ~/. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,9 +13,17 @@ Example config:
         
         <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
 
+        
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-aws-profiles-that-require-mfa/" />
+<meta property="og:title" content="How to use AWS profiles that require MFA" />
+<meta property="og:description" content="If you have an AWS organisation and several child AWS accounts that you can assume-role into, you can work around MFA restrictions on the trust relationship using a mfa_serial setting in ~/. ..." />
+
+
         <title>
     TIL How to use AWS profiles that require MFA — David Winterbottom
 </title>
+
     </head>
 
     <body>
