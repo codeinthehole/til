@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ctags - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/ctags/</link>
+    <description>Recent content in Ctags on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Nov 2020 16:09:12 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/ctags/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to configure `ctags` to parse Terraform files</title>
+      <link>https://til.codeinthehole.com/posts/how-to-configure-ctags-to-parse-terraform-files/</link>
+      <pubDate>Thu, 26 Nov 2020 16:09:12 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-configure-ctags-to-parse-terraform-files/</guid>
+      <description>If you&amp;rsquo;re using Universal Ctags (which you should be), you just need to add a ~/.ctags.d/terraform.ctags with contents:
+--langdef=terraform --langmap=terraform:.tf.tfvars --regex-terraform=/^[[:space:]]*resource[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\2/r,Resource/ --regex-terraform=/^[[:space:]]*data[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\2/d,Data/ --regex-terraform=/^[[:space:]]*variable[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\1/v,Variable/ --regex-terraform=/^[[:space:]]*provider[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\1/p,Provider/ --regex-terraform=/^[[:space:]]*module[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\1/m,Module/ --regex-terraform=/^[[:space:]]*output[[:space:]]*&amp;#34;([^&amp;#34;]*)&amp;#34;/\1/o,Output/ --regex-terraform=/^([a-z0-9_]+)[[:space:]]*=/\1/f,TFVar/ Then, for example, a Terraform resource like:
+resource &amp;#34;aws_cloudwatch_log_group&amp;#34; &amp;#34;my-log-group&amp;#34; { name = &amp;#34;my-log-group&amp;#34; ... } will have my-log-group stored as an identifier so you can jump to its definition from other references.
+Inspiration taken from ctag support for Terraform although the snippet above is a slightly amended version from the vim-terraform-completion repo.</description>
+    </item>
+    
+
+  </channel>
+</rss>

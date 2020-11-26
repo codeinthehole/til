@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    If you’re using Universal Ctags (which you should be), you just need to add a ~/.ctags.d/terraform.ctags with contents: &amp;ndash;langdef=terraform &amp;ndash;langmap=terraform:.tf.tfvars &amp;ndash;regex-terraform=/^[[:space:]]resource[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;/\2/r,Resource/ &amp;ndash;regex-terraform=/^[[:space:]]data[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;/\2/d,Data/ &amp;ndash;regex-terraform=/^[[:space:]]variable[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;/\1/v,Variable/ &amp;ndash;regex-terraform=/^[[:space:]]provider[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;/\1/p,Provider/ &amp;ndash;regex-terraform=/^[[:space:]]module[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;/\1/m,Module/ &amp;ndash;regex-terraform=/^[[:space:]]output[[:space:]]&amp;quot;([^&amp;quot;])&amp;quot;/\1/o,Output/ &amp;ndash;regex-terraform=/^([a-z0-9_]&#43;)[[:space:]]*=/\1/f,TFVar/ Then, for example, a Terraform resource like: resource &amp;quot;aws_cloudwatch_log_group&amp;quot; &amp;quot;my-log-group&amp;quot; { name = &amp;quot;my-log-group&amp;quot; &amp;hellip; } will have my-log-group stored as an identifier so you can jump to its definition from other references. Inspiration taken from ctag support for Terraform although the snippet above is a slightly amended version from the vim-terraform-completion repo. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        <title>
+    TIL How to configure &#39;ctags&#39; to parse Terraform files — David Winterbottom
+</title>
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>November 26th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to configure <code>ctags</code> to parse Terraform files</h1>
+        </header><p>If you&rsquo;re using <a href="https://github.com/universal-ctags/ctags">Universal Ctags</a> (which you should be), you just need to add
+a <code>~/.ctags.d/terraform.ctags</code> with contents:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">--langdef=terraform
+--langmap=terraform:.tf.tfvars
+--regex-terraform=/^[[:space:]]*resource[[:space:]]*&#34;([^&#34;]*)&#34;[[:space:]]*&#34;([^&#34;]*)&#34;/\2/r,Resource/
+--regex-terraform=/^[[:space:]]*data[[:space:]]*&#34;([^&#34;]*)&#34;[[:space:]]*&#34;([^&#34;]*)&#34;/\2/d,Data/
+--regex-terraform=/^[[:space:]]*variable[[:space:]]*&#34;([^&#34;]*)&#34;/\1/v,Variable/
+--regex-terraform=/^[[:space:]]*provider[[:space:]]*&#34;([^&#34;]*)&#34;/\1/p,Provider/
+--regex-terraform=/^[[:space:]]*module[[:space:]]*&#34;([^&#34;]*)&#34;/\1/m,Module/
+--regex-terraform=/^[[:space:]]*output[[:space:]]*&#34;([^&#34;]*)&#34;/\1/o,Output/
+--regex-terraform=/^([a-z0-9_]+)[[:space:]]*=/\1/f,TFVar/
+</code></pre></div><p>Then, for example, a Terraform resource like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_cloudwatch_log_group&#34;</span> <span style="color:#e6db74">&#34;my-log-group&#34;</span> {
+  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;my-log-group&#34;</span>
+  ...
+}
+</code></pre></div><p>will have <code>my-log-group</code> stored as an identifier so you can jump to its
+definition from other references.</p>
+<p>Inspiration taken from <a href="https://z0mbix.io/2016/09/04/ctag-support-for-terraform/">ctag support for
+Terraform</a> although
+the snippet above is a slightly amended version from the
+<a href="https://github.com/juliosueiras/vim-terraform-completion/blob/master/ctags/terraform.ctags">vim-terraform-completion</a>
+repo.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/how-to-use-bandit-with-vims-quickfix-list/">How to use Bandit with Vim&rsquo;s quickfix list</a></li>
+                
+                <li><a href="/posts/you-can-run-grep-without-using-parent-shell-process/">You can run <code>:grep</code> without using parent shell process</a></li>
+                
+                <li><a href="/posts/theres-a-quickfixcmdpost-event-in-vim/">There&rsquo;s a <code>QuickFixCmdPost</code> event in Vim</a></li>
+                
+                <li><a href="/posts/you-can-jump-to-previous-quickfix-lists-in-vim/">You can jump to previous quickfix lists in Vim</a></li>
+                
+                <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
+                
+                <li><a href="/posts/how-to-read-from-one-buffer-to-another-in-vim/">How to read from one buffer to another in Vim</a></li>
+                
+                <li><a href="/posts/about-vims-helpgrep-command/">About Vim&rsquo;s <code>:helpgrep</code> command</a></li>
+                
+                <li><a href="/posts/vim-recommends-using-emacsstyle-key-bindings-in-command-mode/">Vim recommends using Emacs-style key bindings in command mode</a></li>
+                
+                <li><a href="/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/">Vim doesn&rsquo;t create the persistent undo folder automatically</a></li>
+                
+                <li><a href="/posts/about-better-yaml-file-folding-in-vim/">About better YAML file folding in Vim</a></li>
+                
+                <li><a href="/posts/about-help-macvim/">About <code>:help macvim</code></a></li>
+                
+                <li><a href="/posts/about-vims-diffthis-command/">About Vim&rsquo;s <code>:diffthis</code> command</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-easily-shared-1password-items-via-a-link\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
