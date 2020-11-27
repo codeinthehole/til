@@ -6,11 +6,20 @@
     <description>Recent content in Vim on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Nov 2020 16:09:12 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2020 11:42:44 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About how to use `keywordprg` effectively</title>
+      <link>https://til.codeinthehole.com/posts/about-how-to-use-keywordprg-effectively/</link>
+      <pubDate>Fri, 27 Nov 2020 11:42:44 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-how-to-use-keywordprg-effectively/</guid>
+      <description>Hitting K in Vim opens the program specified by keywordprg, passing the keyword under the cursor as an argument.</description>
+    </item>
     
     <item>
       <title>How to configure `ctags` to parse Terraform files</title>
