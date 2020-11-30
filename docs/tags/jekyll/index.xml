@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/jekyll/</link>
+    <description>Recent content in Jekyll on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Nov 2020 11:28:09 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to run Jekyll in a Docker container</title>
+      <link>https://til.codeinthehole.com/posts/how-to-run-jekyll-in-a-docker-container/</link>
+      <pubDate>Mon, 30 Nov 2020 11:28:09 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-run-jekyll-in-a-docker-container/</guid>
+      <description>To run the server, run:
+docker run --rm \  --volume=&amp;#34;${PWD}:/srv/jekyll&amp;#34; \  -p 4000:4000 \  -it jekyll/jekyll:3.</description>
+    </item>
+    
+
+  </channel>
+</rss>

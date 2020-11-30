@@ -6,11 +6,21 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Nov 2020 11:42:44 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Nov 2020 11:28:09 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to run Jekyll in a Docker container</title>
+      <link>https://til.codeinthehole.com/posts/how-to-run-jekyll-in-a-docker-container/</link>
+      <pubDate>Mon, 30 Nov 2020 11:28:09 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-run-jekyll-in-a-docker-container/</guid>
+      <description>To run the server, run:
+docker run --rm \  --volume=&amp;#34;${PWD}:/srv/jekyll&amp;#34; \  -p 4000:4000 \  -it jekyll/jekyll:3.</description>
+    </item>
     
     <item>
       <title>About how to use `keywordprg` effectively</title>
