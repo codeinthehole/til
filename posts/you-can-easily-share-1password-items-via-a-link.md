@@ -1,5 +1,5 @@
 ---
-title: "You can easily shared 1Password items via a link"
+title: "You can easily share 1Password items via a link"
 date: "2020-11-23T17:25:36+00:00"
 tags: ["1Password"]
 ---
