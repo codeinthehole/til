@@ -5,17 +5,18 @@ tags: ["Vim"]
 ---
 
 Hitting `K` in Vim opens the program specified by `keywordprg`, passing the
-keyword under the cursor as an argument. Effectively executing this:
+keyword under the cursor as an argument — effectively executing this:
 
 ```vim
 :!{keywordprg} {keyword}
 ```
 
-The default is `man -s` which is only useful is you're editing C- or
+The default is `man -s` which is only useful if you're editing C- or
 Bash-filetype buffers.
 
 You can drastically improve this functionality by binding a more appropriate
-function for each filetype you work with. For example:
+function for each filetype you work with. For example, I have the following
+scattered within my `~/.vim/after/ftplugin/` folder:
 
 ```vim
 " Use built-in help when working on Vim files or browsing the help docs.
@@ -44,13 +45,14 @@ setlocal keywordprg=pydoc
 If it's awkward to craft an appropriate `keywordprg` snippet, write a script that takes the
 keyword as the first argument and opens the relevant page.
 
-For example, you can use the MacOS dictionary app in text and markdown files:
+For example, you can use the MacOS dictionary app to look-up work definitions
+when working in text and markdown buffers:
 ```vim
 " ~/.vim/after/ftplugin/markdown.vim
 " ~/.vim/after/ftplugin/text.vim
 setlocal keywordprg=open-dict
 ```
-where `open-dict` is:
+where `open-dict` is on your `$PATH` and has contents:
 ```bash
 #!/usr/bin/env bash
 set -e
@@ -62,7 +64,7 @@ function main() {
 main "$1"
 ```
 
-Here's a similar thing for Terraform resources:
+Here's a similar script for Terraform resources:
 
 ```vim
 " ~/.vim/after/ftplugin/terraform.vim

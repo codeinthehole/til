@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Hitting K in Vim opens the program specified by keywordprg, passing the keyword under the cursor as an argument. ...
+    Hitting K in Vim opens the program specified by keywordprg, passing the keyword under the cursor as an argument — effectively executing this: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/about-how-to-use-keywordprg-effectively/" />
 <meta property="og:title" content="TIL About how to use &#39;keywordprg&#39; effectively — David Winterbottom" /> 
-<meta property="og:description" content="Hitting K in Vim opens the program specified by keywordprg, passing the keyword under the cursor as an argument. [Reading time: 2 minutes]" />
+<meta property="og:description" content="Hitting K in Vim opens the program specified by keywordprg, passing the keyword under the cursor as an argument — effectively executing this: [Reading time: 2 minutes]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
@@ -45,12 +45,13 @@
             </div>
             <h1>About how to use <code>keywordprg</code> effectively</h1>
         </header><p>Hitting <code>K</code> in Vim opens the program specified by <code>keywordprg</code>, passing the
-keyword under the cursor as an argument. Effectively executing this:</p>
+keyword under the cursor as an argument — effectively executing this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:!{<span style="color:#a6e22e">keywordprg</span>} {<span style="color:#a6e22e">keyword</span>}<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>The default is <code>man -s</code> which is only useful is you&rsquo;re editing C- or
+</span></code></pre></div><p>The default is <code>man -s</code> which is only useful if you&rsquo;re editing C- or
 Bash-filetype buffers.</p>
 <p>You can drastically improve this functionality by binding a more appropriate
-function for each filetype you work with. For example:</p>
+function for each filetype you work with. For example, I have the following
+scattered within my <code>~/.vim/after/ftplugin/</code> folder:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; Use built-in help when working on Vim files or browsing the help docs.</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
 </span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/help.vim</span><span style="color:#960050;background-color:#1e0010">
@@ -74,11 +75,12 @@ function for each filetype you work with. For example:</p>
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">pydoc</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>If it&rsquo;s awkward to craft an appropriate <code>keywordprg</code> snippet, write a script that takes the
 keyword as the first argument and opens the relevant page.</p>
-<p>For example, you can use the MacOS dictionary app in text and markdown files:</p>
+<p>For example, you can use the MacOS dictionary app to look-up work definitions
+when working in text and markdown buffers:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/markdown.vim</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/text.vim</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">open</span>-<span style="color:#a6e22e">dict</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>where <code>open-dict</code> is:</p>
+</span></code></pre></div><p>where <code>open-dict</code> is on your <code>$PATH</code> and has contents:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
 </span><span style="color:#75715e"></span>set -e
 
@@ -87,7 +89,7 @@ keyword as the first argument and opens the relevant page.</p>
 <span style="color:#f92672">}</span>
 
 main <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
-</code></pre></div><p>Here&rsquo;s a similar thing for Terraform resources:</p>
+</code></pre></div><p>Here&rsquo;s a similar script for Terraform resources:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/terraform.vim</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">terraform</span>-<span style="color:#a6e22e">docs</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>where <code>terraform-docs</code> is:</p>

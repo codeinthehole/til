@@ -18,7 +18,7 @@
       <pubDate>Fri, 27 Nov 2020 11:42:44 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-how-to-use-keywordprg-effectively/</guid>
-      <description>Hitting K in Vim opens the program specified by keywordprg, passing the keyword under the cursor as an argument.</description>
+      <description>Hitting K in Vim opens the program specified by keywordprg, passing the keyword under the cursor as an argument — effectively executing this:</description>
     </item>
     
     <item>
