@@ -19,6 +19,18 @@
 
         <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            // https://developers.google.com/analytics/devguides/collection/gtagjs/user-opt-out
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
     </head>
 
     <body>
