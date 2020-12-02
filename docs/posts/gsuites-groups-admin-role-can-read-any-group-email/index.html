@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    If members of your Google org want to administer groups, it’s tempting to make them a “Groups Admin”. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/gsuites-groups-admin-role-can-read-any-group-email/" />
+<meta property="og:title" content="TIL GSuite&#39;s &#34;Groups Admin&#34; role can read any group email — David Winterbottom" /> 
+<meta property="og:description" content="If members of your Google org want to administer groups, it&rsquo;s tempting to make them a &ldquo;Groups Admin&rdquo;. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL GSuite&#39;s &#34;Groups Admin&#34; role can read any group email — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+
+            <!-- Only run in prodution - see https:
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>December 2th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>GSuite&rsquo;s &ldquo;Groups Admin&rdquo; role can read any group email</h1>
+        </header><p>If members of your Google org want to administer groups, it&rsquo;s tempting to
+make them a &ldquo;Groups Admin&rdquo;.</p>
+<figure>
+    <img src="/images/gsuite-groups-admin.png"
+         alt="G-Suite Groups Admin"/> 
+</figure>
+
+<p>Be careful though as this allows the person to read <em>any</em> message sent to <em>any</em> group
+(including historical messages), and most organisations have groups whose
+messages contain sensitive information (e.g. HR or payroll).</p>
+<p>A Groups Admin can browse group messages by visiting the appropriate conversation page:</p>
+<pre><code>https://groups.google.com/a/$ORG_DOMAIN/g/$GROUP_NAME
+</code></pre><p>A Groups Admin has access to such pages even if they aren&rsquo;t an
+owner/manager/member of the group.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/g-suite/">G-Suite</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/you-can-hide-nighttime-hours-in-google-calendar/">You can hide night-time hours in Google calendar</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-run-jekyll-in-a-docker-container\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

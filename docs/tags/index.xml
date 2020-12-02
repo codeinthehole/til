@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Nov 2020 11:28:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Dec 2020 11:39:41 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>G-Suite</title>
+      <link>https://til.codeinthehole.com/tags/g-suite/</link>
+      <pubDate>Wed, 02 Dec 2020 11:39:41 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/g-suite/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Docker</title>
@@ -90,15 +99,6 @@
       <pubDate>Mon, 16 Nov 2020 22:10:57 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/command-line-tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>G-Suite</title>
-      <link>https://til.codeinthehole.com/tags/g-suite/</link>
-      <pubDate>Fri, 06 Nov 2020 11:22:02 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/g-suite/</guid>
       <description></description>
     </item>
     
