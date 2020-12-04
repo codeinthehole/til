@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    If you pass -p, then the fd will retrieve all filepaths matching $PATTERN: ...
+    In some projects, you want ripgrep to ignore some files that aren’t in . ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/fd-has-an-option-for-searching-filepaths/" />
-<meta property="og:title" content="TIL &#39;fd&#39; has an option for searching filepaths — David Winterbottom" /> 
-<meta property="og:description" content="If you pass -p, then the fd will retrieve all filepaths matching $PATTERN: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-set-perproject-ripgrep-exclude-rules/" />
+<meta property="og:title" content="TIL How to set per-project &#39;ripgrep&#39; and &#39;fzf&#39; exclude rules — David Winterbottom" /> 
+<meta property="og:description" content="In some projects, you want ripgrep to ignore some files that aren&rsquo;t in . [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL &#39;fd&#39; has an option for searching filepaths — David Winterbottom
+    TIL How to set per-project &#39;ripgrep&#39; and &#39;fzf&#39; exclude rules — David Winterbottom
 </title>
 
         
@@ -53,21 +53,15 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>October 23th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>December 4th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1><code>fd</code> has an option for searching filepaths</h1>
-        </header><p>If you pass <code>-p</code>, then the <a href="https://github.com/sharkdp/fd"><code>fd</code></a> will retrieve all filepaths matching <code>$PATTERN</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ fd -p epex
-tests/fixtures/epex
-tests/fixtures/epex/hourly.csv
-tests/fixtures/epex/half_hourly.csv
-tests/unit/common/vendors/epex
-tests/unit/common/vendors/epex/__init__.py
-tests/unit/common/vendors/epex/test_parsers.py
-octoenergy/vendors/epex
-octoenergy/vendors/epex/__init__.py
-octoenergy/vendors/epex/parsers.py
-</code></pre></div><p>Very useful.</p>
+            <h1>How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</h1>
+        </header><p>In some projects, you want <code>ripgrep</code> to ignore some files that aren&rsquo;t in
+<code>.gitignore</code> — things like statically generated files in a Hugo site (like this
+one). You can do this by adding them to a local <code>.ignore</code> file.</p>
+<p>This also works for <a href="https://github.com/junegunn/fzf"><code>fzf</code></a>.</p>
+<p>This ensures Vim&rsquo;s <code>:grep</code> and <code>:Files</code> (via
+<a href="https://github.com/junegunn/fzf.vim"><code>fzf.vim</code></a>) commands don&rsquo;t find irrelevant files.</p>
 </article>
 
         </main>
@@ -81,11 +75,11 @@ octoenergy/vendors/epex/parsers.py
                 <p>Other posts about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
-                
                 <li><a href="/posts/exuberantctags-has-been-superceded-by-universalctags/">Exuberant-ctags has been superceded by Universal-ctags</a></li>
                 
                 <li><a href="/posts/about-column/">About <code>column</code></a></li>
+                
+                <li><a href="/posts/fd-has-an-option-for-searching-filepaths/"><code>fd</code> has an option for searching filepaths</a></li>
                 
                 <li><a href="/posts/how-to-use-xargs-with-printf/">How to use <code>xargs</code> with <code>printf</code></a></li>
                 
@@ -96,9 +90,9 @@ octoenergy/vendors/epex/parsers.py
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -107,11 +101,9 @@ octoenergy/vendors/epex/parsers.py
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/datetimedatetime-is-a-subclass-of-datetimedate\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/vimmarkdown-has-some-useful-commands\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/you-can-create-qr-codes-for-wifi-networks\/"); })
         
     </script>
 

@@ -6,11 +6,20 @@
     <description>Recent content in Command-line tools on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Nov 2020 22:10:57 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Dec 2020 21:38:22 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/command-line-tools/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to set per-project `ripgrep` and `fzf` exclude rules</title>
+      <link>https://til.codeinthehole.com/posts/how-to-set-perproject-ripgrep-exclude-rules/</link>
+      <pubDate>Fri, 04 Dec 2020 21:38:22 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-set-perproject-ripgrep-exclude-rules/</guid>
+      <description>In some projects, you want ripgrep to ignore some files that aren&amp;rsquo;t in .</description>
+    </item>
     
     <item>
       <title>Exuberant-ctags has been superceded by Universal-ctags</title>
