@@ -226,13 +226,17 @@ main#content {
             font-size: 0.9em;
         }
 
+        li p {
+            margin: 5px;
+        }
+
         /* Code snippets in paragraphs */
         p code, ul code  {
             font-family: $font-code;
             font-size: 1.3rem;
-            background-color: black;
-            color: white;
-            padding: 3px 10px;
+            background-color: #eee;
+            color: $color-text;
+            padding: 3px 5px;
             white-space: nowrap;
 
             -moz-border-radius: 5px;
@@ -313,7 +317,7 @@ footer#footer {
 @media (min-width: 770px) {
     body {
         width: 650px;
-        line-height: 1.5;
+        line-height: 1.6;
     }
 
     /* index.html styles */
