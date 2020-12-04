@@ -33,8 +33,7 @@
             window.dataLayer = window.dataLayer || [];
             function gtag() {dataLayer.push(arguments); }
 
-
-            <!-- Only run in prodution - see https:
+            
             window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
             gtag('js', new Date());
             gtag('config', 'G-4500T4RE03');
@@ -91,9 +90,9 @@ owner/manager/member of the group.</p>
         
 
         
-            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
+            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -105,6 +104,8 @@ owner/manager/member of the group.</p>
             Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-run-jekyll-in-a-docker-container\/"); })
         
 
+        
+            Mousetrap.bind("right", function() { window.location.replace("\/posts\/vimmarkdown-has-some-useful-commands\/"); })
         
     </script>
 

@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/tags/markdown/</loc>
+    <lastmod>2020-12-04T17:19:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2020-12-04T17:19:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2020-12-04T17:19:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-12-04T17:19:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/vim/</loc>
+    <lastmod>2020-12-04T17:19:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/vimmarkdown-has-some-useful-commands/</loc>
+    <lastmod>2020-12-04T17:19:14+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/tags/g-suite/</loc>
     <lastmod>2020-12-02T11:39:41+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/posts/gsuites-groups-admin-role-can-read-any-group-email/</loc>
-    <lastmod>2020-12-02T11:39:41+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-12-02T11:39:41+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-12-02T11:39:41+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2020-12-02T11:39:41+00:00</lastmod>
   </url>
   
@@ -49,11 +64,6 @@
   
   <url>
     <loc>https://til.codeinthehole.com/posts/about-how-to-use-keywordprg-effectively/</loc>
-    <lastmod>2020-11-27T11:42:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/vim/</loc>
     <lastmod>2020-11-27T11:42:44+00:00</lastmod>
   </url>
   
@@ -139,11 +149,6 @@
   
   <url>
     <loc>https://til.codeinthehole.com/posts/how-to-embed-markdown-content-in-a-github-code-block/</loc>
-    <lastmod>2020-10-27T16:39:43+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/markdown/</loc>
     <lastmod>2020-10-27T16:39:43+00:00</lastmod>
   </url>
   

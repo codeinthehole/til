@@ -6,11 +6,20 @@
     <description>Recent content in Markdown on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Oct 2020 16:39:43 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Dec 2020 17:19:14 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Vim-markdown has some useful commands</title>
+      <link>https://til.codeinthehole.com/posts/vimmarkdown-has-some-useful-commands/</link>
+      <pubDate>Fri, 04 Dec 2020 17:19:14 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/vimmarkdown-has-some-useful-commands/</guid>
+      <description>I use sheerun/vim-polyglot but disable its markdown support in favour of plasticboy/vim-markdown.</description>
+    </item>
     
     <item>
       <title>How to embed markdown content in a Github code block</title>
