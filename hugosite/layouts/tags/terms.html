@@ -11,7 +11,7 @@
 
     <div id="tagcloud">
         {{ range $tags }}
-        <a href="{{ .Page.Permalink }}" class="font_size_{{ .Count }}" >{{ .Page.Title | markdownify }}</a>
+        <a href="{{ .Page.Permalink }}" class="font_size_{{ .Count }}" >{{ replace .Page.Title " " "&nbsp;" | markdownify }}</a>
         {{ end }}
     </div>
 
