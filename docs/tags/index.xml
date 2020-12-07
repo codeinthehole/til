@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Dec 2020 21:38:22 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Dec 2020 11:34:05 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>CircleCI</title>
+      <link>https://til.codeinthehole.com/tags/circleci/</link>
+      <pubDate>Mon, 07 Dec 2020 11:34:05 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/circleci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://til.codeinthehole.com/tags/markdown/</link>
+      <pubDate>Mon, 07 Dec 2020 11:34:05 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/markdown/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Command-line tools</title>
@@ -18,15 +36,6 @@
       <pubDate>Fri, 04 Dec 2020 21:38:22 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/command-line-tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Markdown</title>
-      <link>https://til.codeinthehole.com/tags/markdown/</link>
-      <pubDate>Fri, 04 Dec 2020 17:19:14 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/markdown/</guid>
       <description></description>
     </item>
     

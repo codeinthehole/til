@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    The tmaier/markdown-spellcheck Docker image wraps node-markdown-spellcheck and can be used locally and on CircleCI to spell-check markdown files. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-spellcheck-markdown-repos-on-circleci/" />
+<meta property="og:title" content="TIL How to spell-check markdown repos on CircleCI — David Winterbottom" /> 
+<meta property="og:description" content="The tmaier/markdown-spellcheck Docker image wraps node-markdown-spellcheck and can be used locally and on CircleCI to spell-check markdown files. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to spell-check markdown repos on CircleCI — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>December 7th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to spell-check markdown repos on CircleCI</h1>
+        </header><p>The <a href="https://hub.docker.com/r/tmaier/markdown-spellcheck"><code>tmaier/markdown-spellcheck</code></a> Docker image
+wraps <a href="https://github.com/lukeapage/node-markdown-spellcheck"><code>node-markdown-spellcheck</code></a> and can be used locally and on CircleCI to
+spell-check markdown files.</p>
+<p>Locally, run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run --rm -ti -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/workdir tmaier/markdown-spellcheck:latest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --report --ignore-numbers --ignore-acronyms <span style="color:#e6db74">&#34;**/*.md&#34;</span>
+</code></pre></div><p>In your <code>.circleci/config.yml</code> file, use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
+
+<span style="color:#f92672">jobs</span>:
+
+  <span style="color:#f92672">spelling</span>:
+    <span style="color:#f92672">docker</span>:
+      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">tmaier/markdown-spellcheck:latest</span>
+    <span style="color:#f92672">steps</span>:
+      - <span style="color:#ae81ff">checkout</span>
+      - <span style="color:#f92672">run</span>:
+          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Check spelling</span>
+          <span style="color:#f92672">command</span>: <span style="color:#ae81ff">mdspell --report --ignore-numbers --ignore-acronyms &#34;**/*.md&#34;</span>
+
+<span style="color:#f92672">workflows</span>:
+  <span style="color:#f92672">static-analysis</span>:
+    <span style="color:#f92672">jobs</span>:
+      - <span style="color:#ae81ff">spelling</span>
+</code></pre></div><p>Thanks to <a href="https://github.com/lukeapage">Luke Page</a> for the node library and <a href="https://tobiasmaier.info/">Tobias L. Maier</a> for the Docker wrapper.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/markdown/">Markdown</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
+                
+                <li><a href="/posts/how-to-embed-markdown-content-in-a-github-code-block/">How to embed markdown content in a Github code block</a></li>
+                
+                </ul>
+            
+        
+            
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-set-perproject-ripgrep-exclude-rules\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
