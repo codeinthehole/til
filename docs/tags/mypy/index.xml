@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mypy - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/mypy/</link>
+    <description>Recent content in Mypy on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Dec 2020 15:51:44 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/mypy/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>A better way of configuring `mypy`</title>
+      <link>https://til.codeinthehole.com/posts/a-better-way-of-configuring-mypy/</link>
+      <pubDate>Thu, 10 Dec 2020 15:51:44 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/a-better-way-of-configuring-mypy/</guid>
+      <description>I didn&amp;rsquo;t realise you can put all your config into setup.</description>
+    </item>
+    
+
+  </channel>
+</rss>

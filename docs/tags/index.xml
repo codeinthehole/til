@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Dec 2020 11:34:05 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Dec 2020 15:51:44 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Mypy</title>
+      <link>https://til.codeinthehole.com/tags/mypy/</link>
+      <pubDate>Thu, 10 Dec 2020 15:51:44 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/mypy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://til.codeinthehole.com/tags/python/</link>
+      <pubDate>Thu, 10 Dec 2020 15:51:44 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>CircleCI</title>
@@ -135,15 +153,6 @@
       <pubDate>Tue, 27 Oct 2020 09:26:52 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/websites/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Thu, 22 Oct 2020 15:38:04 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/python/</guid>
       <description></description>
     </item>
     

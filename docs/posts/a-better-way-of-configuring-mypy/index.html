@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    I didn’t realise you can put all your config into setup. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/a-better-way-of-configuring-mypy/" />
+<meta property="og:title" content="TIL A better way of configuring &#39;mypy&#39; — David Winterbottom" /> 
+<meta property="og:description" content="I didn&rsquo;t realise you can put all your config into setup. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL A better way of configuring &#39;mypy&#39; — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>December 10th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>A better way of configuring <code>mypy</code></h1>
+        </header><p>I didn&rsquo;t realise you can put <em>all</em> your config into <code>setup.cfg</code> so that you can
+just run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mypy
+</code></pre></div><p>with (no further options) to run the type checker.</p>
+<p>A typical <code>setup.cfg</code> contains this kind of thing:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dosini" data-lang="dosini"><span style="color:#66d9ef">[mypy]</span>
+<span style="color:#a6e22e">show_error_codes</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">True</span>
+<span style="color:#a6e22e">warn_unused_ignores</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">True</span>
+<span style="color:#a6e22e">files</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">.</span>
+
+<span style="color:#66d9ef">[mypy-pytest]</span>
+<span style="color:#a6e22e">ignore_missing_imports</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">True</span>
+
+<span style="color:#66d9ef">[mypy-structlog]</span>
+<span style="color:#a6e22e">ignore_missing_imports</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">True</span>
+</code></pre></div></article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/datetimedatetime-is-a-subclass-of-datetimedate/"><code>datetime.datetime</code> is a subclass of <code>datetime.date</code></a></li>
+                
+                <li><a href="/posts/about-piplicenses/">About <code>pip-licenses</code></a></li>
+                
+                <li><a href="/posts/python-37-supports-postponed-evaluation-of-annotations/">Python 3.7 supports postponed evaluation of annotations</a></li>
+                
+                <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
+                
+                </ul>
+            
+        
+            
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-spellcheck-markdown-repos-on-circleci\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
