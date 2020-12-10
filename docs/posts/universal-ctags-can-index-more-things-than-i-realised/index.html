@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which lets you search Vim’s help files for a given pattern. ...
+    For instance, it can index make, markdown and ini files without custom configuration. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-vims-helpgrep-command/" />
-<meta property="og:title" content="TIL About Vim&#39;s &#39;:helpgrep&#39; command — David Winterbottom" /> 
-<meta property="og:description" content="Which lets you search Vim&rsquo;s help files for a given pattern. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/universal-ctags-can-index-more-things-than-i-realised/" />
+<meta property="og:title" content="TIL Universal Ctags can index more things than I realised — David Winterbottom" /> 
+<meta property="og:description" content="For instance, it can index make, markdown and ini files without custom configuration. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About Vim&#39;s &#39;:helpgrep&#39; command — David Winterbottom
+    TIL Universal Ctags can index more things than I realised — David Winterbottom
 </title>
 
         
@@ -53,13 +53,21 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>September 16th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>December 10th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About Vim&rsquo;s <code>:helpgrep</code> command</h1>
-        </header><p>Which lets you search Vim&rsquo;s help files for a given pattern. For example:</p>
-<pre><code>:helpgrep What is the meaning of life
-</code></pre><p>Discovered via a <a href="https://til.hashrocket.com/posts/hdwqjbnl65-use-helpgrep-to-search-plugin-help-files-too">Hashrocket TIL</a> and
-an episode of Josh Branchaud&rsquo;s <a href="https://www.youtube.com/playlist?list=PL46-cKSxMYYCMpzXo6p0Cof8hJInYgohU">Vim Un-Alphabet</a> screencast series.</p>
+            <h1>Universal Ctags can index more things than I realised</h1>
+        </header><p>For instance, it can index make, markdown and ini files without custom
+configuration.</p>
+<p>List supported languages with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ctags --list-languages
+</code></pre></div><p>List the &ldquo;kinds&rdquo; of tag for a language with e.g.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ctags --list-kinds<span style="color:#f92672">=</span>python
+</code></pre></div><p>Knowing what&rsquo;s in your local <code>tags</code> file provides for more effective use of
+Vim&rsquo;s tag jumping functions like <code>:tag</code> and <code>:tselect</code>.</p>
+<p>Further, it&rsquo;s worth ensuring <code>ctags</code> can be run without custom options in all
+your projects and generate useful results. Tune your global and project-local
+settings — in <code>~/.ctags.d/</code> and <code>$PROJECT_ROOT/.ctags.d/</code> respectively — to make
+that so.</p>
 </article>
 
         </main>
@@ -70,10 +78,18 @@ an episode of Josh Branchaud&rsquo;s <a href="https://www.youtube.com/playlist?l
         
             
             
-                <p>Other posts about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/ctags/">Ctags</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/universal-ctags-can-index-more-things-than-i-realised/">Universal Ctags can index more things than I realised</a></li>
+                <li><a href="/posts/how-to-configure-ctags-to-parse-terraform-files/">How to configure <code>ctags</code> to parse Terraform files</a></li>
+                
+                </ul>
+            
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
+                <ul>
                 
                 <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
                 
@@ -93,6 +109,8 @@ an episode of Josh Branchaud&rsquo;s <a href="https://www.youtube.com/playlist?l
                 
                 <li><a href="/posts/how-to-read-from-one-buffer-to-another-in-vim/">How to read from one buffer to another in Vim</a></li>
                 
+                <li><a href="/posts/about-vims-helpgrep-command/">About Vim&rsquo;s <code>:helpgrep</code> command</a></li>
+                
                 <li><a href="/posts/vim-recommends-using-emacsstyle-key-bindings-in-command-mode/">Vim recommends using Emacs-style key bindings in command mode</a></li>
                 
                 <li><a href="/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/">Vim doesn&rsquo;t create the persistent undo folder automatically</a></li>
@@ -108,9 +126,9 @@ an episode of Josh Branchaud&rsquo;s <a href="https://www.youtube.com/playlist?l
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -119,11 +137,9 @@ an episode of Josh Branchaud&rsquo;s <a href="https://www.youtube.com/playlist?l
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/vim-recommends-using-emacsstyle-key-bindings-in-command-mode\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/a-better-way-of-configuring-mypy\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-count-lines-of-code-in-a-git-repo\/"); })
         
     </script>
 

@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Dec 2020 15:51:44 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Dec 2020 18:24:55 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Universal Ctags can index more things than I realised</title>
+      <link>https://til.codeinthehole.com/posts/universal-ctags-can-index-more-things-than-i-realised/</link>
+      <pubDate>Thu, 10 Dec 2020 18:24:55 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/universal-ctags-can-index-more-things-than-i-realised/</guid>
+      <description>For instance, it can index make, markdown and ini files without custom configuration.</description>
+    </item>
     
     <item>
       <title>A better way of configuring `mypy`</title>

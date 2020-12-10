@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/tags/ctags/</loc>
+    <lastmod>2020-12-10T18:24:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2020-12-10T18:24:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2020-12-10T18:24:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-12-10T18:24:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/universal-ctags-can-index-more-things-than-i-realised/</loc>
+    <lastmod>2020-12-10T18:24:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/vim/</loc>
+    <lastmod>2020-12-10T18:24:55+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/posts/a-better-way-of-configuring-mypy/</loc>
     <lastmod>2020-12-10T15:51:44+00:00</lastmod>
   </url>
@@ -13,22 +43,7 @@
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-12-10T15:51:44+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://til.codeinthehole.com/tags/python/</loc>
-    <lastmod>2020-12-10T15:51:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-12-10T15:51:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2020-12-10T15:51:44+00:00</lastmod>
   </url>
   
@@ -55,11 +70,6 @@
   <url>
     <loc>https://til.codeinthehole.com/posts/how-to-set-perproject-ripgrep-exclude-rules/</loc>
     <lastmod>2020-12-04T21:38:22+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/vim/</loc>
-    <lastmod>2020-12-04T17:19:14+00:00</lastmod>
   </url>
   
   <url>
@@ -100,11 +110,6 @@
   <url>
     <loc>https://til.codeinthehole.com/posts/about-how-to-use-keywordprg-effectively/</loc>
     <lastmod>2020-11-27T11:42:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/ctags/</loc>
-    <lastmod>2020-11-26T16:09:12+00:00</lastmod>
   </url>
   
   <url>
