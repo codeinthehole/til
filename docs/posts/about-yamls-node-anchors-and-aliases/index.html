@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    I’ve seen these a few times but only today decided to actually work out how they worked. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-yamls-node-anchors-and-aliases/" />
+<meta property="og:title" content="TIL About YAML&#39;s node anchors and aliases — David Winterbottom" /> 
+<meta property="og:description" content="I&rsquo;ve seen these a few times but only today decided to actually work out how they worked. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL About YAML&#39;s node anchors and aliases — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>December 11th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>About YAML&rsquo;s node anchors and aliases</h1>
+        </header><p>I&rsquo;ve seen these a few times but only today decided to actually work out how they
+worked.</p>
+<p>YAML lets you define an anchor (<code>&amp;name</code>) for a node, sequence or scalar that you can refer
+to later with an alias (<code>*name</code>). This lets you avoid duplication by extending or
+overriding objects</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">twin1</span>: <span style="color:#75715e">&amp;person</span>
+    <span style="color:#f92672">first</span>: <span style="color:#ae81ff">Barry</span>
+    <span style="color:#f92672">last</span>: <span style="color:#ae81ff">Chuckle</span>
+<span style="color:#f92672">twin2</span>:
+    <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*person</span>
+    <span style="color:#f92672">first</span>: <span style="color:#ae81ff">Paul</span>
+</code></pre></div><p>For more, see <a href="http://blogs.perl.org/users/tinita/2019/05/reusing-data-with-yaml-anchors-aliases-and-merge-keys.html">http://blogs.perl.org/users/tinita/2019/05/reusing-data-with-yaml-anchors-aliases-and-merge-keys.html</a></p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/yaml/">YAML</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/yaml-has-several-stringparsing-gotchas/">YAML has several string-parsing gotchas</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-label-parameterized-fixtures-with-pytest\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
