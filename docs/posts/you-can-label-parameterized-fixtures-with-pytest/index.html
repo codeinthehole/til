@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    For example, running this parameterized test:
+@pytest.mark.parametrize( &amp;quot;date&amp;quot;, ( datetime. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-label-parameterized-fixtures-with-pytest/" />
+<meta property="og:title" content="TIL You can label parameterized fixtures with pytest — David Winterbottom" /> 
+<meta property="og:description" content="For example, running this parameterized test:
+@pytest.mark.parametrize( &#34;date&#34;, ( datetime. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL You can label parameterized fixtures with pytest — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>December 11th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>You can label parameterized fixtures with pytest</h1>
+        </header><p>For example, running this parameterized test:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#a6e22e">@pytest.mark.parametrize</span>(
+    <span style="color:#e6db74">&#34;date&#34;</span>,
+    (
+        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2012</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">21</span>),  <span style="color:#75715e"># Predicted by Mayans</span>
+        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">1988</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">25</span>),  <span style="color:#75715e"># Predicted by True Way</span>
+    ),
+)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_did_world_did_not_end_on</span>(date):
+    <span style="color:#66d9ef">pass</span>
+</code></pre></div><p>in verbose mode gives output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">$ pytest -v test_predictions.py
+============== test session starts ==============
+...
+test_predictions.py::test_did_world_did_not_end_on[date0] PASSED
+test_predictions.py::test_did_world_did_not_end_on[date1] PASSED
+</code></pre></div><p>As you can see, the tests are distinguished by the labels <code>date0</code> and <code>date1</code> — not that
+informative.</p>
+<p>We can do better by using the <code>ids</code> kwarg to <code>pytest.mark.parametrize</code> to
+provide more useful labels.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#a6e22e">@pytest.mark.parametrize</span>(
+    <span style="color:#e6db74">&#34;date&#34;</span>,
+    (
+        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2012</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">21</span>),
+        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">1988</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">25</span>),
+    ),
+    ids<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#34;date predicted by Mayans&#34;</span>, <span style="color:#e6db74">&#34;date predicted by True Way&#34;</span>),
+)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_world_did_not_end_on</span>(date):
+    <span style="color:#66d9ef">pass</span>
+</code></pre></div><p>which leads to:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">$ pytest -v test_predictions.py
+============== test session starts ==============
+...
+test_predictions.py::test_world_did_not_end_on[date predicted by Mayans] PASSED
+test_predictions.py::test_world_did_not_end_on[date predicted by True Way] PASSED
+</code></pre></div><p>See <a href="https://docs.pytest.org/en/stable/reference.html#pytest.python.Metafunc.parametrize">https://docs.pytest.org/en/stable/reference.html#pytest.python.Metafunc.parametrize</a></p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/a-better-way-of-configuring-mypy/">A better way of configuring <code>mypy</code></a></li>
+                
+                <li><a href="/posts/datetimedatetime-is-a-subclass-of-datetimedate/"><code>datetime.datetime</code> is a subclass of <code>datetime.date</code></a></li>
+                
+                <li><a href="/posts/about-piplicenses/">About <code>pip-licenses</code></a></li>
+                
+                <li><a href="/posts/python-37-supports-postponed-evaluation-of-annotations/">Python 3.7 supports postponed evaluation of annotations</a></li>
+                
+                <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/universal-ctags-can-index-more-things-than-i-realised\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

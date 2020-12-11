@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/testing/</link>
+    <description>Recent content in Testing on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Dec 2020 13:28:09 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>You can label parameterized fixtures with pytest</title>
+      <link>https://til.codeinthehole.com/posts/you-can-label-parameterized-fixtures-with-pytest/</link>
+      <pubDate>Fri, 11 Dec 2020 13:28:09 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-label-parameterized-fixtures-with-pytest/</guid>
+      <description>For example, running this parameterized test:
+@pytest.mark.parametrize( &amp;#34;date&amp;#34;, ( datetime.</description>
+    </item>
+    
+
+  </channel>
+</rss>

@@ -6,11 +6,21 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Dec 2020 18:24:55 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Dec 2020 13:28:09 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can label parameterized fixtures with pytest</title>
+      <link>https://til.codeinthehole.com/posts/you-can-label-parameterized-fixtures-with-pytest/</link>
+      <pubDate>Fri, 11 Dec 2020 13:28:09 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-label-parameterized-fixtures-with-pytest/</guid>
+      <description>For example, running this parameterized test:
+@pytest.mark.parametrize( &amp;#34;date&amp;#34;, ( datetime.</description>
+    </item>
     
     <item>
       <title>Universal Ctags can index more things than I realised</title>
