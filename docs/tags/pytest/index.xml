@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Testing - Today I Learnt...</title>
-    <link>https://til.codeinthehole.com/tags/testing/</link>
-    <description>Recent content in Testing on Today I Learnt...</description>
+    <title>pytest - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/pytest/</link>
+    <description>Recent content in pytest on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Dec 2020 10:41:26 +0000</lastBuildDate>
     
-	<atom:link href="https://til.codeinthehole.com/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://til.codeinthehole.com/tags/pytest/index.xml" rel="self" type="application/rss+xml" />
     
 
     
@@ -20,16 +20,6 @@
       <guid>https://til.codeinthehole.com/posts/you-can-stack-pytests-parametrize-decorators/</guid>
       <description>As in:
 import pytest @pytest.mark.parametrize(&amp;#34;x&amp;#34;, [1,2,3]) @pytest.mark.parametrize(&amp;#34;y&amp;#34;, [4,5,6]) def test_cartesian_product(x, y): pass which will run the test for all combinations of the two input lists:</description>
-    </item>
-    
-    <item>
-      <title>You can label parameterized fixtures with pytest</title>
-      <link>https://til.codeinthehole.com/posts/you-can-label-parameterized-fixtures-with-pytest/</link>
-      <pubDate>Fri, 11 Dec 2020 13:28:09 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/posts/you-can-label-parameterized-fixtures-with-pytest/</guid>
-      <description>For example, running this parameterized test:
-@pytest.mark.parametrize( &amp;#34;date&amp;#34;, ( datetime.</description>
     </item>
     
 

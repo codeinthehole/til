@@ -6,25 +6,25 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Dec 2020 20:53:22 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Dec 2020 10:41:26 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
     
     <item>
-      <title>YAML</title>
-      <link>https://til.codeinthehole.com/tags/yaml/</link>
-      <pubDate>Fri, 11 Dec 2020 20:53:22 +0000</pubDate>
+      <title>pytest</title>
+      <link>https://til.codeinthehole.com/tags/pytest/</link>
+      <pubDate>Wed, 16 Dec 2020 10:41:26 +0000</pubDate>
       
-      <guid>https://til.codeinthehole.com/tags/yaml/</guid>
+      <guid>https://til.codeinthehole.com/tags/pytest/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
       <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Fri, 11 Dec 2020 13:28:09 +0000</pubDate>
+      <pubDate>Wed, 16 Dec 2020 10:41:26 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/python/</guid>
       <description></description>
@@ -33,9 +33,18 @@
     <item>
       <title>Testing</title>
       <link>https://til.codeinthehole.com/tags/testing/</link>
-      <pubDate>Fri, 11 Dec 2020 13:28:09 +0000</pubDate>
+      <pubDate>Wed, 16 Dec 2020 10:41:26 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>YAML</title>
+      <link>https://til.codeinthehole.com/tags/yaml/</link>
+      <pubDate>Fri, 11 Dec 2020 20:53:22 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/yaml/</guid>
       <description></description>
     </item>
     

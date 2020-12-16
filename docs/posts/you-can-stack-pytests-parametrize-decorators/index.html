@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    As in:
+import pytest @pytest.mark.parametrize(&amp;quot;x&amp;quot;, [1,2,3]) @pytest.mark.parametrize(&amp;quot;y&amp;quot;, [4,5,6]) def test_cartesian_product(x, y): pass which will run the test for all combinations of the two input lists: ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-stack-pytests-parametrize-decorators/" />
+<meta property="og:title" content="TIL You can stack &#39;pytest&#39;&#39;s &#39;parametrize&#39; decorators — David Winterbottom" /> 
+<meta property="og:description" content="As in:
+import pytest @pytest.mark.parametrize(&#34;x&#34;, [1,2,3]) @pytest.mark.parametrize(&#34;y&#34;, [4,5,6]) def test_cartesian_product(x, y): pass which will run the test for all combinations of the two input lists: [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL You can stack &#39;pytest&#39;&#39;s &#39;parametrize&#39; decorators — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>December 16th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</h1>
+        </header><p>As in:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> pytest
+
+<span style="color:#a6e22e">@pytest.mark.parametrize</span>(<span style="color:#e6db74">&#34;x&#34;</span>, [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>])
+<span style="color:#a6e22e">@pytest.mark.parametrize</span>(<span style="color:#e6db74">&#34;y&#34;</span>, [<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_cartesian_product</span>(x, y):
+    <span style="color:#66d9ef">pass</span>
+</code></pre></div><p>which will run the test for all combinations of the two input lists:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">test_parameterize.py::test_cartesian_product[4-1] PASSED
+test_parameterize.py::test_cartesian_product[4-2] PASSED
+test_parameterize.py::test_cartesian_product[4-3] PASSED
+test_parameterize.py::test_cartesian_product[5-1] PASSED
+test_parameterize.py::test_cartesian_product[5-2] PASSED
+test_parameterize.py::test_cartesian_product[5-3] PASSED
+test_parameterize.py::test_cartesian_product[6-1] PASSED
+test_parameterize.py::test_cartesian_product[6-2] PASSED
+test_parameterize.py::test_cartesian_product[6-3] PASSED
+</code></pre></div><p>See <a href="https://docs.pytest.org/en/stable/parametrize.html">https://docs.pytest.org/en/stable/parametrize.html</a></p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
+                
+                <li><a href="/posts/a-better-way-of-configuring-mypy/">A better way of configuring <code>mypy</code></a></li>
+                
+                <li><a href="/posts/datetimedatetime-is-a-subclass-of-datetimedate/"><code>datetime.datetime</code> is a subclass of <code>datetime.date</code></a></li>
+                
+                <li><a href="/posts/about-piplicenses/">About <code>pip-licenses</code></a></li>
+                
+                <li><a href="/posts/python-37-supports-postponed-evaluation-of-annotations/">Python 3.7 supports postponed evaluation of annotations</a></li>
+                
+                <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
+                
+                </ul>
+            
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/testing/">Testing</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
+                
+                </ul>
+            
+        
+            
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-yamls-node-anchors-and-aliases\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
