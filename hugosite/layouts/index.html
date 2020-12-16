@@ -27,19 +27,29 @@
         has learnt (since July 2020).
     </p>
 
-    <!-- Show recent tags -->
-    {{ $tag_pages := (first 4 $posts) }}
-    {{ $recent_tags := slice }}
-    {{ range $tag_pages }}
+    <!-- 
+    Show recent tags
+    ----------------
+    We two slices to track the tag pages and their names. It's easier to
+    check uniqueness using the name.
+    -->
+    {{ $recent_tag_pages := slice }}
+    {{ $recent_tag_names := slice }}
+
+    {{ $recent_posts := (first 4 $posts) }}
+    {{ range $recent_posts }}
         {{ range .GetTerms "tags" }}
-            {{ $recent_tags = $recent_tags | append . }}
+            {{ if not (in $recent_tag_names .Title) }}
+                {{ $recent_tag_pages = $recent_tag_pages | append . }}
+                {{ $recent_tag_names = $recent_tag_names | append .Title }}
+            {{ end }}
         {{ end }}
     {{ end }}
 
     <p>
         There have been <strong>{{ len $posts }}</strong> TILs so far —
         recent topics include 
-        {{ range $i, $p := $recent_tags }}{{- if $i -}}, {{ end -}}<a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ end }}.
+        {{ range $i, $p := $recent_tag_pages }}{{- if $i -}}, {{ end -}}<a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ end }}.
     </p>
 
     <p>
