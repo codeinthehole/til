@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    MacVim ships with its own help files, accessed via: ...
+    There’s various ways to do this but I quite like using an autocmd based on a buffer’s filepath. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-help-macvim/" />
-<meta property="og:title" content="TIL About &#39;:help macvim&#39; — David Winterbottom" /> 
-<meta property="og:description" content="MacVim ships with its own help files, accessed via: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-add-project-specific-vim-settings/" />
+<meta property="og:title" content="TIL How to add project-specific Vim settings — David Winterbottom" /> 
+<meta property="og:description" content="There&rsquo;s various ways to do this but I quite like using an autocmd based on a buffer&rsquo;s filepath. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;:help macvim&#39; — David Winterbottom
+    TIL How to add project-specific Vim settings — David Winterbottom
 </title>
 
         
@@ -53,18 +53,36 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>August 17th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>December 18th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>:help macvim</code></h1>
-        </header><p>MacVim ships with its own help files, accessed via:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">help</span> <span style="color:#a6e22e">macvim</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>These provide lots of useful info on things like:</p>
+            <h1>How to add project-specific Vim settings</h1>
+        </header><p>There&rsquo;s various ways to do this but I quite like using an  <code>autocmd</code> based on
+a buffer&rsquo;s filepath. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; ~/.vim/vimrc</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ConfigureKrakenCore</span>()<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">nnoremap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">ct</span> :!<span style="color:#a6e22e">ctags</span> --<span style="color:#a6e22e">languages</span>=<span style="color:#a6e22e">python</span>&lt;<span style="color:#a6e22e">cr</span>&gt;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">endfunction</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">BufRead</span> *<span style="color:#e6db74">/kraken-core/</span>* <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">ConfigureKrakenCore</span>()<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>In this case, I wanted to customise my <code>,ct</code> mapping (that runs <code>ctags</code>) to only
+index Python files as the &ldquo;kraken-core&rdquo; project has reams of Javascript that I
+don&rsquo;t want indexing (as it takes ages). This is a preference particular to me so
+it would be inappropriate to hard-code configuration to the repo (via, say, a
+<code>.ctags.d/project.ctags</code> file).</p>
+<p>Note, we&rsquo;re <code>call</code>ing a function so it&rsquo;s easier to add new project-specific settings later on.</p>
+<p>Another option is to <code>set exrc</code> and use a per-project <code>.vimrc</code> file (kept out of
+source control). See:</p>
 <ul>
-<li>The differences between MacVim and other Vim variants</li>
-<li>MacVim-specific preferences</li>
-<li>The <code>macvim</code> color scheme</li>
+<li>
+<p><a href="https://akrabat.com/using-vimrc-for-project-specific-settings/">Using .vimrc for project specific settings</a></p>
+</li>
+<li>
+<p><a href="https://vim.fandom.com/wiki/Project_specific_settings">Vim tips wiki: Project specific settings</a></p>
+</li>
+<li>
+<p><a href="https://til.hashrocket.com/posts/720a6a05f9-matching-on-directories-for-vims-autocmd">Hashrocket TIL: Matching on directories for Vim&rsquo;s autocmd</a></p>
+</li>
 </ul>
-<p>and much more.</p>
 </article>
 
         </main>
@@ -77,8 +95,6 @@
             
                 <p>Other posts about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/how-to-add-project-specific-vim-settings/">How to add project-specific Vim settings</a></li>
                 
                 <li><a href="/posts/universal-ctags-can-index-more-things-than-i-realised/">Universal Ctags can index more things than I realised</a></li>
                 
@@ -108,6 +124,8 @@
                 
                 <li><a href="/posts/about-better-yaml-file-folding-in-vim/">About better YAML file folding in Vim</a></li>
                 
+                <li><a href="/posts/about-help-macvim/">About <code>:help macvim</code></a></li>
+                
                 <li><a href="/posts/about-vims-diffthis-command/">About Vim&rsquo;s <code>:diffthis</code> command</a></li>
                 
                 </ul>
@@ -115,9 +133,9 @@
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -126,11 +144,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-vims-diffthis-command\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-stack-pytests-parametrize-decorators\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-list-pages-with-matching-tag-in-hugo\/"); })
         
     </script>
 

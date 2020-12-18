@@ -6,11 +6,20 @@
     <description>Recent content in Vim on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Dec 2020 18:24:55 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Dec 2020 09:46:49 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to add project-specific Vim settings</title>
+      <link>https://til.codeinthehole.com/posts/how-to-add-project-specific-vim-settings/</link>
+      <pubDate>Fri, 18 Dec 2020 09:46:49 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-add-project-specific-vim-settings/</guid>
+      <description>There&amp;rsquo;s various ways to do this but I quite like using an autocmd based on a buffer&amp;rsquo;s filepath.</description>
+    </item>
     
     <item>
       <title>Universal Ctags can index more things than I realised</title>
