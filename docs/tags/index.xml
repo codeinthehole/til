@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Dec 2020 09:46:49 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Dec 2020 22:49:55 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Command-line tools</title>
+      <link>https://til.codeinthehole.com/tags/command-line-tools/</link>
+      <pubDate>Sat, 19 Dec 2020 22:49:55 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/command-line-tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://til.codeinthehole.com/tags/kubernetes/</link>
+      <pubDate>Sat, 19 Dec 2020 22:49:55 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/kubernetes/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Vim</title>
@@ -90,15 +108,6 @@
       <pubDate>Mon, 07 Dec 2020 11:34:05 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Command-line tools</title>
-      <link>https://til.codeinthehole.com/tags/command-line-tools/</link>
-      <pubDate>Fri, 04 Dec 2020 21:38:22 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/command-line-tools/</guid>
       <description></description>
     </item>
     

@@ -6,11 +6,20 @@
     <description>Recent content in Command-line tools on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Dec 2020 21:38:22 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Dec 2020 22:49:55 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/command-line-tools/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About `envsubst`</title>
+      <link>https://til.codeinthehole.com/posts/about-envsubst/</link>
+      <pubDate>Sat, 19 Dec 2020 22:49:55 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-envsubst/</guid>
+      <description>Am learning Kubernetes and was looking for ways to dynamically create YAML resource files.</description>
+    </item>
     
     <item>
       <title>How to set per-project `ripgrep` and `fzf` exclude rules</title>
