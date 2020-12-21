@@ -6,11 +6,20 @@
     <description>Recent content in Command-line tools on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Dec 2020 22:49:55 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Dec 2020 10:33:25 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/command-line-tools/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can specify the file-type for `bat`</title>
+      <link>https://til.codeinthehole.com/posts/you-can-specify-the-filetype-for-bat/</link>
+      <pubDate>Mon, 21 Dec 2020 10:33:25 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-specify-the-filetype-for-bat/</guid>
+      <description>bat is a useful replacement for cat that supports syntax highlighting.</description>
+    </item>
     
     <item>
       <title>About `envsubst`</title>

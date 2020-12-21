@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Am learning Kubernetes and was looking for ways to dynamically create YAML resource files. ...
+    bat is a useful replacement for cat that supports syntax highlighting. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-envsubst/" />
-<meta property="og:title" content="TIL About &#39;envsubst&#39; — David Winterbottom" /> 
-<meta property="og:description" content="Am learning Kubernetes and was looking for ways to dynamically create YAML resource files. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-specify-the-filetype-for-bat/" />
+<meta property="og:title" content="TIL You can specify the file-type for &#39;bat&#39; — David Winterbottom" /> 
+<meta property="og:description" content="bat is a useful replacement for cat that supports syntax highlighting. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;envsubst&#39; — David Winterbottom
+    TIL You can specify the file-type for &#39;bat&#39; — David Winterbottom
 </title>
 
         
@@ -53,26 +53,17 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>December 19th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>December 21th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>envsubst</code></h1>
-        </header><p>Am learning Kubernetes and was looking for ways to dynamically create YAML
-resource files.</p>
-<p>I stumbled upon the <a href="https://www.gnu.org/software/gettext/manual/html_node/envsubst-Invocation.html"><code>envsubst</code> utility</a>
-which will substitute in the value of environment variables to STDIN.</p>
-<p>Eg:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; export foo<span style="color:#f92672">=</span>bar
-&gt; echo <span style="color:#e6db74">&#39;$foo&#39;</span>
-$foo
-&gt; echo <span style="color:#e6db74">&#39;$foo&#39;</span> | envsubst
-bar
-</code></pre></div><p>So you could have a Kubernetes <code>deployment.yml</code> file where the image tag is set
-by a environment variable instead of being hard-coded:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; export DOCKER_IMAGE_TAG<span style="color:#f92672">=</span>...
-&gt; cat deployment.yml | envsubst | kubectl apply -f -
-</code></pre></div><p>I&rsquo;m sure there are better ways of setting up Kubernetes deployment pipelines but
-this is a neat trick to know.</p>
-</article>
+            <h1>You can specify the file-type for <code>bat</code></h1>
+        </header><p><a href="https://github.com/sharkdp/bat"><code>bat</code></a> is a useful replacement for <code>cat</code> that
+supports syntax highlighting.</p>
+<p><code>bat</code> can auto-detect file-types but, for cases when it can&rsquo;t, you can use the
+<code>-l, --language</code> option. This is useful for syntax-highlighting the output of
+commands. For example, the output of <code>helm install --dry-run</code> which prints the
+contents of the compiled YAML files:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ helm install --dry-run --generate-name . | cat -l yaml
+</code></pre></div></article>
 
         </main>
 
@@ -85,7 +76,7 @@ this is a neat trick to know.</p>
                 <p>Other posts about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/you-can-specify-the-filetype-for-bat/">You can specify the file-type for <code>bat</code></a></li>
+                <li><a href="/posts/about-envsubst/">About <code>envsubst</code></a></li>
                 
                 <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
                 
@@ -107,9 +98,9 @@ this is a neat trick to know.</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -118,11 +109,9 @@ this is a neat trick to know.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-add-project-specific-vim-settings\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-envsubst\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/you-can-specify-the-filetype-for-bat\/"); })
         
     </script>
 
