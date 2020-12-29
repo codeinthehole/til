@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/tags/command-line-tools/</loc>
+    <lastmod>2020-12-29T16:23:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2020-12-29T16:23:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/ripgrep/</loc>
+    <lastmod>2020-12-29T16:23:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2020-12-29T16:23:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2020-12-29T16:23:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/you-can-define-custom-filetype-filters-in-ripgrep/</loc>
+    <lastmod>2020-12-29T16:23:12+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/tags/docker/</loc>
     <lastmod>2020-12-29T15:55:34+00:00</lastmod>
   </url>
@@ -10,26 +40,6 @@
   <url>
     <loc>https://til.codeinthehole.com/posts/how-to-enable-docker-buildkit-in-macos-docker-desktop/</loc>
     <lastmod>2020-12-29T15:55:34+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2020-12-29T15:55:34+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2020-12-29T15:55:34+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
-    <lastmod>2020-12-29T15:55:34+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/command-line-tools/</loc>
-    <lastmod>2020-12-21T10:33:25+00:00</lastmod>
   </url>
   
   <url>

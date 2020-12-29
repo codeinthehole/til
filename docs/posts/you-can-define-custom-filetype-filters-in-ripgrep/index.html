@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    It’s an image optimizer for PNG files. It’s available via Homebrew for MacOS and works like: ...
+    ripgrep lets you filter files by their language type — e. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-pngcrush/" />
-<meta property="og:title" content="TIL About &#39;pngcrush&#39; — David Winterbottom" /> 
-<meta property="og:description" content="It&rsquo;s an image optimizer for PNG files. It&rsquo;s available via Homebrew for MacOS and works like: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-define-custom-filetype-filters-in-ripgrep/" />
+<meta property="og:title" content="TIL You can define custom file-type filters in &#39;ripgrep&#39; — David Winterbottom" /> 
+<meta property="og:description" content="ripgrep lets you filter files by their language type — e. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;pngcrush&#39; — David Winterbottom
+    TIL You can define custom file-type filters in &#39;ripgrep&#39; — David Winterbottom
 </title>
 
         
@@ -53,15 +53,28 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>August 14th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>December 29th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>pngcrush</code></h1>
-        </header><p>It&rsquo;s an image optimizer for PNG files. It&rsquo;s available via Homebrew for MacOS and
-works like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pngcrush -ow screenshot.png
-</code></pre></div><p>where <code>-ow</code> means the original image file will be overwritten.</p>
-<p>I&rsquo;ve integrated it into the <code>til_screenshot.sh</code> helper script used by this repo.</p>
-</article>
+            <h1>You can define custom file-type filters in <code>ripgrep</code></h1>
+        </header><p><a href="https://github.com/BurntSushi/ripgrep"><code>ripgrep</code></a> lets you filter files
+by their language type — e.g. search only <code>C</code>-related files:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rg <span style="color:#e6db74">&#39;int main&#39;</span> --type c
+</code></pre></div><p>Here the <code>--type</code> value maps to a glob (e.g. <code>c</code> maps to <code>*.{c.h}</code>). You can
+list all the available types with <code>rg --type-list</code>.</p>
+<p>Furthermore you can <a href="https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#manual-filtering-file-types">define your own types</a> such as &ldquo;web&rdquo; related files:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rg --type-add <span style="color:#e6db74">&#39;web:*.{html,css,js}&#39;</span>
+</code></pre></div><p>which lets you search such files with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rg --type<span style="color:#f92672">=</span>web $QUERY
+</code></pre></div><p>Even better, define your own types in your <code>$RIPGREP_CONFIG_PATH</code> config file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt"># ~/.ripgreprc
+
+--smart-case
+--hidden
+--glob=!git/*
+
+--type-add=web:*.{html,css,js}
+--type-add=django:*.{py,html}
+</code></pre></div></article>
 
         </main>
 
@@ -73,8 +86,6 @@ works like:</p>
             
                 <p>Other posts about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/you-can-define-custom-filetype-filters-in-ripgrep/">You can define custom file-type filters in <code>ripgrep</code></a></li>
                 
                 <li><a href="/posts/you-can-specify-the-filetype-for-bat/">You can specify the file-type for <code>bat</code></a></li>
                 
@@ -90,14 +101,19 @@ works like:</p>
                 
                 <li><a href="/posts/how-to-use-xargs-with-printf/">How to use <code>xargs</code> with <code>printf</code></a></li>
                 
+                <li><a href="/posts/about-pngcrush/">About <code>pngcrush</code></a></li>
+                
                 </ul>
+            
+        
+            
             
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -106,11 +122,9 @@ works like:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/asana-has-some-magic-search-terms\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-enable-docker-buildkit-in-macos-docker-desktop\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-the-stationery-pad-feature-in-finder\/"); })
         
     </script>
 

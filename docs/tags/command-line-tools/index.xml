@@ -6,11 +6,20 @@
     <description>Recent content in Command-line tools on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Dec 2020 10:33:25 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Dec 2020 16:23:12 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/command-line-tools/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can define custom file-type filters in `ripgrep`</title>
+      <link>https://til.codeinthehole.com/posts/you-can-define-custom-filetype-filters-in-ripgrep/</link>
+      <pubDate>Tue, 29 Dec 2020 16:23:12 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-define-custom-filetype-filters-in-ripgrep/</guid>
+      <description>ripgrep lets you filter files by their language type — e.</description>
+    </item>
     
     <item>
       <title>You can specify the file-type for `bat`</title>
