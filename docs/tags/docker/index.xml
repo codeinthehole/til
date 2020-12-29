@@ -6,11 +6,20 @@
     <description>Recent content in Docker on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Nov 2020 11:28:09 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Dec 2020 15:55:34 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to enable Docker BuildKit in MacOS Docker Desktop</title>
+      <link>https://til.codeinthehole.com/posts/how-to-enable-docker-buildkit-in-macos-docker-desktop/</link>
+      <pubDate>Tue, 29 Dec 2020 15:55:34 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-enable-docker-buildkit-in-macos-docker-desktop/</guid>
+      <description>Since Docker 18.09, you can the BuildKit feature to take advantages of improved performance and extra features when building images — see Build images with Buildkit from the Docker docs.</description>
+    </item>
     
     <item>
       <title>How to run Jekyll in a Docker container</title>
