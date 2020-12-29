@@ -21,6 +21,24 @@
       <description>ripgrep lets you filter files by their language type — e.</description>
     </item>
     
+    <item>
+      <title>How to set per-project `ripgrep` and `fzf` exclude rules</title>
+      <link>https://til.codeinthehole.com/posts/how-to-set-perproject-ripgrep-exclude-rules/</link>
+      <pubDate>Fri, 04 Dec 2020 21:38:22 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-set-perproject-ripgrep-exclude-rules/</guid>
+      <description>In some projects, you want ripgrep to ignore some files that aren&amp;rsquo;t in .</description>
+    </item>
+    
+    <item>
+      <title>You can run `:grep` without using parent shell process</title>
+      <link>https://til.codeinthehole.com/posts/you-can-run-grep-without-using-parent-shell-process/</link>
+      <pubDate>Wed, 04 Nov 2020 16:56:20 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-run-grep-without-using-parent-shell-process/</guid>
+      <description>Using ripgrep as a :grep command can be configured with:</description>
+    </item>
+    
 
   </channel>
 </rss>

@@ -1,7 +1,7 @@
 ---
 title: "You can run `:grep` without using parent shell process"
 date: "2020-11-04T16:56:20+00:00"
-tags: ["Vim"]
+tags: ["Vim", "ripgrep"]
 ---
 
 Using [ripgrep]() as a `:grep` command can be configured with:

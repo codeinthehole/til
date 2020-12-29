@@ -1,7 +1,7 @@
 ---
 title: "How to set per-project `ripgrep` and `fzf` exclude rules"
 date: "2020-12-04T21:38:22+00:00"
-tags: ["Command-line tools"]
+tags: ["Command-line tools", "ripgrep"]
 ---
 
 In some projects, you want `ripgrep` to ignore some files that aren't in
