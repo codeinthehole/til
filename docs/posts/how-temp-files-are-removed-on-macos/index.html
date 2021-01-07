@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    On MacOS, temporary files are stored in either /tmp/ or a per-user temporary folder specified by the $TMPDIR environment variable; this is normally a subfolder of /var/folders/. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-temp-files-are-removed-on-macos/" />
+<meta property="og:title" content="TIL How temporary files are removed on MacOS — David Winterbottom" /> 
+<meta property="og:description" content="On MacOS, temporary files are stored in either /tmp/ or a per-user temporary folder specified by the $TMPDIR environment variable; this is normally a subfolder of /var/folders/. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How temporary files are removed on MacOS — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>January 7th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How temporary files are removed on MacOS</h1>
+        </header><p>On MacOS, temporary files are stored in either <code>/tmp/</code> or a per-user temporary
+folder specified by the <code>$TMPDIR</code> environment variable; this is normally a
+subfolder of <code>/var/folders/</code>.</p>
+<p>Temporary files are periodically removed by the <code>com.apple.periodic-daily</code>
+launch daemon (specified in <code>/System/Library/LaunchDaemons/com.apple.periodic-daily.plist</code>). This runs
+the <code>/usr/sbin/periodic</code> shell script (via <code>/usr/libexec/periodic-wrapper</code>).
+This runs all scripts in <code>/etc/periodic/daily/</code> including
+<code>/etc/periodic/daily/110.clean-tmps</code> which is responsible for removing old temporary files.
+The default configuration <code>/etc/defaults/periodic.conf</code> ensures any files
+in <code>/tmp</code> that haven&rsquo;t been accessed for 3 days are deleted.</p>
+<pre><code># /etc/defaults/periodic.conf
+
+...
+# 110.clean-tmps
+daily_clean_tmps_enable=&quot;YES&quot;      # Delete stuff daily
+daily_clean_tmps_dirs=&quot;/tmp&quot;       # Delete under here
+daily_clean_tmps_days=&quot;3&quot;          # If not accessed for
+...
+</code></pre><p>Output from this job is logged in <code>/var/log/daily.out</code>.</p>
+<p>It&rsquo;s hard to determine exactly how stale files in <code>$TMPDIR</code> are removed. The
+folder appears to be flushed when a machine reboots but I can&rsquo;t tell if they are
+periodically removed as well.</p>
+<p>This is accurate as of MacOS 10.15.7</p>
+<p>Sources:</p>
+<ul>
+<li><a href="https://superuser.com/a/187105">Stack Overflow: &ldquo;In MacOS, how often is <code>/tmp</code> deleted?&quot;</a></li>
+<li><a href="http://www.magnusviri.com/what-is-var-folders.html">What is <code>/var/folders</code>?</a></li>
+<li><a href="https://www.unix.com/man-page/osx/8/periodic-wrapper"><code>periodic-wrapper</code> man page</a></li>
+</ul>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/macos/">MacOS</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/about-the-difference-between-minimising-and-hiding-windows-in-macos/">About the difference between minimising and hiding windows in MacOS</a></li>
+                
+                <li><a href="/posts/the-macos-keybinds-for-en-and-emdashes/">The MacOS keybinds for en- and em-dashes</a></li>
+                
+                <li><a href="/posts/about-the-stationery-pad-feature-in-finder/">About the stationery pad feature in Finder</a></li>
+                
+                <li><a href="/posts/quitter/">About Quitter</a></li>
+                
+                <li><a href="/posts/about-the-screencapture-bsd-util/">About the MacOS <code>screencapture</code> utility</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-define-custom-filetype-filters-in-ripgrep\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
