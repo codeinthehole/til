@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alexa - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/alexa/</link>
+    <description>Recent content in Alexa on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Jan 2021 15:47:57 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/alexa/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>BBC Sounds only works on Alexa if the language setting is UK English</title>
+      <link>https://til.codeinthehole.com/posts/bbc-sounds-only-works-on-alexa-if-the-language-setting-is-uk-english/</link>
+      <pubDate>Thu, 07 Jan 2021 15:47:57 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/bbc-sounds-only-works-on-alexa-if-the-language-setting-is-uk-english/</guid>
+      <description>Was puzzled as to why:
+ alexa, play bbc radio four</description>
+    </item>
+    
+
+  </channel>
+</rss>

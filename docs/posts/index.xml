@@ -6,11 +6,21 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Jan 2021 10:51:08 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jan 2021 15:47:57 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>BBC Sounds only works on Alexa if the language setting is UK English</title>
+      <link>https://til.codeinthehole.com/posts/bbc-sounds-only-works-on-alexa-if-the-language-setting-is-uk-english/</link>
+      <pubDate>Thu, 07 Jan 2021 15:47:57 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/bbc-sounds-only-works-on-alexa-if-the-language-setting-is-uk-english/</guid>
+      <description>Was puzzled as to why:
+ alexa, play bbc radio four</description>
+    </item>
     
     <item>
       <title>How temporary files are removed on MacOS</title>
