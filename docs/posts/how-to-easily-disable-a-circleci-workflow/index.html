@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Sometimes it’s useful to only run a subset of CircleCI jobs after each commit to a pull request branch. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-easily-disable-a-circleci-workflow/" />
+<meta property="og:title" content="TIL How to easily disable a CircleCI workflow — David Winterbottom" /> 
+<meta property="og:description" content="Sometimes it&rsquo;s useful to only run a subset of CircleCI jobs after each commit to a pull request branch. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to easily disable a CircleCI workflow — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>January 8th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to easily disable a CircleCI workflow</h1>
+        </header><p>Sometimes it&rsquo;s useful to only run a subset of CircleCI jobs after each commit to
+a pull request branch. For instance, if you&rsquo;re working on packaging step of your
+test-package-deploy pipeline, it&rsquo;s helpful to create a faster feedback loop by
+only running the packaging jobs after each push.</p>
+<p>This can be done by adding a temporary commit that disables the main workflow
+and adds a custom one running only the jobs you care about.</p>
+<p>You can disable a CircleCI workflow using the <code>when</code> attribute:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># .circleci/config.yml</span>
+
+<span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
+
+<span style="color:#f92672">workflows</span>:
+
+    <span style="color:#75715e"># Define a custom workflow that only runs the jobs you&#39;re interested in.</span>
+    <span style="color:#f92672">temp_workflow</span>:
+        - <span style="color:#ae81ff">build_job_1</span>
+        - <span style="color:#ae81ff">build_job_2</span>
+
+    <span style="color:#75715e"># The standard (but slow) workflow that normally runs on each push.</span>
+    <span style="color:#ae81ff">test_build_deploy;</span>
+        <span style="color:#75715e"># Temporarily disable this workflow</span>
+        <span style="color:#f92672">when</span>: <span style="color:#66d9ef">false</span>
+
+        <span style="color:#ae81ff">...</span>
+</code></pre></div><p>Make sure you rebase out this commit before requesting review or merging the
+pull request; it&rsquo;s just a crutch to speed up development.</p>
+<p>See CircleCI&rsquo;s docs on <a href="https://circleci.com/docs/2.0/configuration-reference/#using-when-in-workflows">using <code>when</code> in workflows</a>.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/circleci/">CircleCI</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/how-to-spellcheck-markdown-repos-on-circleci/">How to spell-check markdown repos on CircleCI</a></li>
+                
+                </ul>
+            
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/testing/">Testing</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
+                
+                <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/bbc-sounds-only-works-on-alexa-if-the-language-setting-is-uk-english\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

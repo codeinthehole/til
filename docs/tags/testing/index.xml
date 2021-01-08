@@ -6,11 +6,20 @@
     <description>Recent content in Testing on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Dec 2020 10:41:26 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jan 2021 12:32:30 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to easily disable a CircleCI workflow</title>
+      <link>https://til.codeinthehole.com/posts/how-to-easily-disable-a-circleci-workflow/</link>
+      <pubDate>Fri, 08 Jan 2021 12:32:30 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-easily-disable-a-circleci-workflow/</guid>
+      <description>Sometimes it&amp;rsquo;s useful to only run a subset of CircleCI jobs after each commit to a pull request branch.</description>
+    </item>
     
     <item>
       <title>You can stack `pytest`&#39;s `parametrize` decorators</title>

@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/tags/circleci/</loc>
+    <lastmod>2021-01-08T12:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/how-to-easily-disable-a-circleci-workflow/</loc>
+    <lastmod>2021-01-08T12:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-01-08T12:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-01-08T12:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/testing/</loc>
+    <lastmod>2021-01-08T12:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-01-08T12:32:30+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/tags/alexa/</loc>
     <lastmod>2021-01-07T15:47:57+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/posts/bbc-sounds-only-works-on-alexa-if-the-language-setting-is-uk-english/</loc>
-    <lastmod>2021-01-07T15:47:57+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-01-07T15:47:57+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-01-07T15:47:57+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-01-07T15:47:57+00:00</lastmod>
   </url>
   
@@ -103,11 +118,6 @@
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/tags/testing/</loc>
-    <lastmod>2020-12-16T10:41:26+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://til.codeinthehole.com/posts/you-can-stack-pytests-parametrize-decorators/</loc>
     <lastmod>2020-12-16T10:41:26+00:00</lastmod>
   </url>
@@ -145,11 +155,6 @@
   <url>
     <loc>https://til.codeinthehole.com/tags/mypy/</loc>
     <lastmod>2020-12-10T15:51:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/circleci/</loc>
-    <lastmod>2020-12-07T11:34:05+00:00</lastmod>
   </url>
   
   <url>

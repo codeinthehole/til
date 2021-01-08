@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Jan 2021 15:47:57 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jan 2021 12:32:30 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>CircleCI</title>
+      <link>https://til.codeinthehole.com/tags/circleci/</link>
+      <pubDate>Fri, 08 Jan 2021 12:32:30 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/circleci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://til.codeinthehole.com/tags/testing/</link>
+      <pubDate>Fri, 08 Jan 2021 12:32:30 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/testing/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Alexa</title>
@@ -103,15 +121,6 @@
     </item>
     
     <item>
-      <title>Testing</title>
-      <link>https://til.codeinthehole.com/tags/testing/</link>
-      <pubDate>Wed, 16 Dec 2020 10:41:26 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/testing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>YAML</title>
       <link>https://til.codeinthehole.com/tags/yaml/</link>
       <pubDate>Fri, 11 Dec 2020 20:53:22 +0000</pubDate>
@@ -135,15 +144,6 @@
       <pubDate>Thu, 10 Dec 2020 15:51:44 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/mypy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CircleCI</title>
-      <link>https://til.codeinthehole.com/tags/circleci/</link>
-      <pubDate>Mon, 07 Dec 2020 11:34:05 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/circleci/</guid>
       <description></description>
     </item>
     
