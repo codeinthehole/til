@@ -6,11 +6,21 @@
     <description>Recent content in Vim on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Dec 2020 09:46:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Jan 2021 11:52:56 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to copy the current filepath to the system clipboard in Vim</title>
+      <link>https://til.codeinthehole.com/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/</link>
+      <pubDate>Tue, 12 Jan 2021 11:52:56 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/</guid>
+      <description>Run:
+:let @* = expand(&amp;#34;%&amp;#34;)where @* references the system clipboard register.</description>
+    </item>
     
     <item>
       <title>How to add project-specific Vim settings</title>
