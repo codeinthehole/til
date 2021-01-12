@@ -6,11 +6,20 @@
     <description>Recent content in Command-line tools on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Dec 2020 16:23:12 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Jan 2021 09:37:14 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/command-line-tools/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to search for fixed strings with `grep` and `ripgrep`</title>
+      <link>https://til.codeinthehole.com/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/</link>
+      <pubDate>Tue, 12 Jan 2021 09:37:14 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/</guid>
+      <description>To search for a fixed string (i.e. not a regex), use:</description>
+    </item>
     
     <item>
       <title>You can define custom file-type filters in `ripgrep`</title>
