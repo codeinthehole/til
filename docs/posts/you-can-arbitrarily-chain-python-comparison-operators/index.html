@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    I didn’t realise you can put all your config into setup. ...
+    Which explains why:
+&amp;gt;&amp;gt;&amp;gt; False == False in [False] True This odd looking expression is equivalent to (False == False) and (False in [False]), hence why it evaluates to True. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +16,17 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/a-better-way-of-configuring-mypy/" />
-<meta property="og:title" content="TIL A better way of configuring &#39;mypy&#39; — David Winterbottom" /> 
-<meta property="og:description" content="I didn&rsquo;t realise you can put all your config into setup. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-arbitrarily-chain-python-comparison-operators/" />
+<meta property="og:title" content="TIL You can arbitrarily chain Python comparison operations — David Winterbottom" /> 
+<meta property="og:description" content="Which explains why:
+&gt;&gt;&gt; False == False in [False] True This odd looking expression is equivalent to (False == False) and (False in [False]), hence why it evaluates to True. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL A better way of configuring &#39;mypy&#39; — David Winterbottom
+    TIL You can arbitrarily chain Python comparison operations — David Winterbottom
 </title>
 
         
@@ -53,25 +55,19 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>December 10th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>January 15th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>A better way of configuring <code>mypy</code></h1>
-        </header><p>I didn&rsquo;t realise you can put <em>all</em> your config into <code>setup.cfg</code> so that you can
-just run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mypy
-</code></pre></div><p>with (no further options) to run the type checker.</p>
-<p>A typical <code>setup.cfg</code> contains this kind of thing:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dosini" data-lang="dosini"><span style="color:#66d9ef">[mypy]</span>
-<span style="color:#a6e22e">show_error_codes</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">True</span>
-<span style="color:#a6e22e">warn_unused_ignores</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">True</span>
-<span style="color:#a6e22e">files</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">.</span>
-
-<span style="color:#66d9ef">[mypy-pytest]</span>
-<span style="color:#a6e22e">ignore_missing_imports</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">True</span>
-
-<span style="color:#66d9ef">[mypy-structlog]</span>
-<span style="color:#a6e22e">ignore_missing_imports</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">True</span>
-</code></pre></div></article>
+            <h1>You can arbitrarily chain Python comparison operations</h1>
+        </header><p>Which explains why:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> False <span style="color:#f92672">==</span> False <span style="color:#f92672">in</span> [False]
+True
+</code></pre></div><p>This odd looking expression is equivalent to <code>(False == False) and (False in [False])</code>, hence why it evaluates to <code>True</code>.</p>
+<p>And since there&rsquo;s no limit to how many comparisons can be chained together, this
+kind of thing is legal syntax:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> False <span style="color:#f92672">is</span> False <span style="color:#f92672">==</span> False <span style="color:#f92672">in</span> [False] <span style="color:#f92672">in</span> [[False]] <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> [False]
+True
+</code></pre></div><p>See the <a href="https://docs.python.org/3/reference/expressions.html#comparisons">Python docs on comparisons for more details</a>.</p>
+</article>
 
         </main>
 
@@ -84,11 +80,11 @@ just run:</p>
                 <p>Other posts about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/you-can-arbitrarily-chain-python-comparison-operators/">You can arbitrarily chain Python comparison operations</a></li>
-                
                 <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
                 
                 <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
+                
+                <li><a href="/posts/a-better-way-of-configuring-mypy/">A better way of configuring <code>mypy</code></a></li>
                 
                 <li><a href="/posts/datetimedatetime-is-a-subclass-of-datetimedate/"><code>datetime.datetime</code> is a subclass of <code>datetime.date</code></a></li>
                 
@@ -101,14 +97,11 @@ just run:</p>
                 </ul>
             
         
-            
-            
-        
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -117,11 +110,9 @@ just run:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-spellcheck-markdown-repos-on-circleci\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-pipe-an-argument-list-into-vim\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/universal-ctags-can-index-more-things-than-i-realised\/"); })
         
     </script>
 
