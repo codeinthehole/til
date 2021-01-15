@@ -6,11 +6,21 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Jan 2021 11:52:56 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jan 2021 09:45:07 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to pipe an argument list into Vim</title>
+      <link>https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/</link>
+      <pubDate>Fri, 15 Jan 2021 09:45:07 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/</guid>
+      <description>Use something like:
+$ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits.</description>
+    </item>
     
     <item>
       <title>How to copy the current filepath to the system clipboard in Vim</title>

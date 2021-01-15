@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://til.codeinthehole.com/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/</loc>
-    <lastmod>2021-01-12T11:52:56+00:00</lastmod>
+    <loc>https://til.codeinthehole.com/tags/fd/</loc>
+    <lastmod>2021-01-15T09:45:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/</loc>
+    <lastmod>2021-01-15T09:45:07+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-01-12T11:52:56+00:00</lastmod>
+    <lastmod>2021-01-15T09:45:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/ripgrep/</loc>
+    <lastmod>2021-01-15T09:45:07+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-01-12T11:52:56+00:00</lastmod>
+    <lastmod>2021-01-15T09:45:07+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/</loc>
-    <lastmod>2021-01-12T11:52:56+00:00</lastmod>
+    <lastmod>2021-01-15T09:45:07+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/tags/vim/</loc>
+    <lastmod>2021-01-15T09:45:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/</loc>
     <lastmod>2021-01-12T11:52:56+00:00</lastmod>
   </url>
   
@@ -34,11 +49,6 @@
   
   <url>
     <loc>https://til.codeinthehole.com/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/</loc>
-    <lastmod>2021-01-12T09:37:14+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/ripgrep/</loc>
     <lastmod>2021-01-12T09:37:14+00:00</lastmod>
   </url>
   

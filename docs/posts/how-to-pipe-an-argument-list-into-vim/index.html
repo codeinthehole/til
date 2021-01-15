@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    You can manually compare two more open buffers by running: ...
+    Use something like:
+$ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +16,17 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-vims-diffthis-command/" />
-<meta property="og:title" content="TIL About Vim&#39;s &#39;:diffthis&#39; command — David Winterbottom" /> 
-<meta property="og:description" content="You can manually compare two more open buffers by running: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/" />
+<meta property="og:title" content="TIL How to pipe an argument list into Vim — David Winterbottom" /> 
+<meta property="og:description" content="Use something like:
+$ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About Vim&#39;s &#39;:diffthis&#39; command — David Winterbottom
+    TIL How to pipe an argument list into Vim — David Winterbottom
 </title>
 
         
@@ -53,18 +55,21 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>August 17th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>January 15th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About Vim&rsquo;s <code>:diffthis</code> command</h1>
-        </header><p>You can manually compare two more open buffers by running:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">windo</span> <span style="color:#a6e22e">diffthis</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>This is an alternative to opening the files with <code>vimdiff</code>. One advantage is
-that you compare buffers that aren&rsquo;t files (eg text pasted from the clipboard).</p>
-<p>Further reading:</p>
-<ul>
-<li>There&rsquo;s some useful info in the <a href="http://vimcasts.org/episodes/comparing-buffers-with-vimdiff/">&ldquo;Comparing buffers with vimdiff&rdquo;</a> screencast.</li>
-<li><a href="http://vimdoc.sourceforge.net/htmldoc/diff.html#:diffthis"><code>:help :diffthis</code></a></li>
-</ul>
+            <h1>How to pipe an argument list into Vim</h1>
+        </header><p>Use something like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo file1 file2 | xargs -o vim
+</code></pre></div><p>The <code>-o</code> option for <code>xargs</code> re-opens <code>stdin</code> as <code>/dev/tty</code> (rather than the
+default <code>/dev/null</code>) and is essential otherwise Vim will <a href="https://superuser.com/questions/336016/invoking-vi-through-find-xargs-breaks-my-terminal-why">break your terminal
+when it exits</a>.</p>
+<p>This is a useful way of populating Vim&rsquo;s <a href="https://vimhelp.org/editing.txt.html#argument-list">argument list</a>. It works especially
+well with modern search tools <code>fd</code> and <code>ripgrep</code>. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rg --type py --files-with-matches <span style="color:#e6db74">&#34;logger = .*getLogger*&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    | xargs rg --files-without-match <span style="color:#e6db74">&#34;logger\.&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    | xargs -o vim
+</code></pre></div><p>This instructs Vim to open all Python files that create a <code>logger</code> instance but
+don&rsquo;t actually use it.</p>
 </article>
 
         </main>
@@ -77,8 +82,6 @@ that you compare buffers that aren&rsquo;t files (eg text pasted from the clipbo
             
                 <p>Other posts about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/how-to-pipe-an-argument-list-into-vim/">How to pipe an argument list into Vim</a></li>
                 
                 <li><a href="/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/">How to copy the current filepath to the system clipboard in Vim</a></li>
                 
@@ -114,14 +117,35 @@ that you compare buffers that aren&rsquo;t files (eg text pasted from the clipbo
                 
                 <li><a href="/posts/about-help-macvim/">About <code>:help macvim</code></a></li>
                 
+                <li><a href="/posts/about-vims-diffthis-command/">About Vim&rsquo;s <code>:diffthis</code> command</a></li>
+                
                 </ul>
+            
+        
+            
+            
+                <p>Other posts about <a href="https://til.codeinthehole.com/tags/ripgrep/">ripgrep</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/">How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></a></li>
+                
+                <li><a href="/posts/you-can-define-custom-filetype-filters-in-ripgrep/">You can define custom file-type filters in <code>ripgrep</code></a></li>
+                
+                <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
+                
+                <li><a href="/posts/you-can-run-grep-without-using-parent-shell-process/">You can run <code>:grep</code> without using parent shell process</a></li>
+                
+                </ul>
+            
+        
+            
             
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -130,11 +154,9 @@ that you compare buffers that aren&rsquo;t files (eg text pasted from the clipbo
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-the-stationery-pad-feature-in-finder\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-help-macvim\/"); })
         
     </script>
 

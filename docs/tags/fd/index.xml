@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fd - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/fd/</link>
+    <description>Recent content in fd on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Jan 2021 09:45:07 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/fd/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to pipe an argument list into Vim</title>
+      <link>https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/</link>
+      <pubDate>Fri, 15 Jan 2021 09:45:07 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/</guid>
+      <description>Use something like:
+$ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits.</description>
+    </item>
+    
+
+  </channel>
+</rss>
