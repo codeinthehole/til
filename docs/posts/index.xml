@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Jan 2021 16:05:14 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Jan 2021 17:33:45 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can take screenshots with Chrome DevTools</title>
+      <link>https://til.codeinthehole.com/posts/you-can-take-screenshots-with-chrome-devtools/</link>
+      <pubDate>Mon, 25 Jan 2021 17:33:45 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-take-screenshots-with-chrome-devtools/</guid>
+      <description>Chrome DevTools can take screenshots via its Command Menu (which can be opened with cmd + shift + p).</description>
+    </item>
     
     <item>
       <title>You can arbitrarily chain Python comparison operations</title>
