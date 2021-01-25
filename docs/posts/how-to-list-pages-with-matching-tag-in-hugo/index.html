@@ -61,7 +61,7 @@ excluding the current post:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ range $tag_pages }}
     {{ $related_tag_pages := where .Pages &#34;Title&#34; &#34;!=&#34; $.Title }}
     {{ if $related_tag_pages }}
-        &lt;<span style="color:#f92672">p</span>&gt;Other posts about &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Permalink }}&#34;</span>&gt;{{ .Title | markdownify }}&lt;/<span style="color:#f92672">a</span>&gt;:&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;Other things learnt about &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Permalink }}&#34;</span>&gt;{{ .Title | markdownify }}&lt;/<span style="color:#f92672">a</span>&gt;:&lt;/<span style="color:#f92672">p</span>&gt;
         &lt;<span style="color:#f92672">ul</span>&gt;
         {{ range $related_tag_pages }}
             &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .RelPermalink }}&#34;</span>&gt;{{ .Title | markdownify }}&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
@@ -80,7 +80,7 @@ excluding the current post:</p>
         
             
             
-                <p>Other posts about <a href="https://til.codeinthehole.com/tags/hugo/">Hugo</a>:</p>
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/hugo/">Hugo</a>:</p>
                 <ul>
                 
                 <li><a href="/posts/you-can-have-sass-asset-pipelines-in-hugo/">You can have SASS asset pipelines in Hugo</a></li>

@@ -12,7 +12,7 @@ excluding the current post:
 {{ range $tag_pages }}
     {{ $related_tag_pages := where .Pages "Title" "!=" $.Title }}
     {{ if $related_tag_pages }}
-        <p>Other posts about <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>:</p>
+        <p>Other things learnt about <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>:</p>
         <ul>
         {{ range $related_tag_pages }}
             <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
