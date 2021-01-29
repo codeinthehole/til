@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Jan 2021 10:19:42 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Jan 2021 16:36:52 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Virgin Media&#39;s &#34;Web Safe&#34; product uses DNS</title>
+      <link>https://til.codeinthehole.com/posts/virgin-medias-web-safe-product-uses-dns/</link>
+      <pubDate>Fri, 29 Jan 2021 16:36:52 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/virgin-medias-web-safe-product-uses-dns/</guid>
+      <description>Virgin Media&amp;rsquo;s Web Safe product applies its blocking rules using its DNS servers, the same way the OpenDNS&amp;rsquo;s Family Shield does.</description>
+    </item>
     
     <item>
       <title>How to scroll horizontally with a mouse</title>

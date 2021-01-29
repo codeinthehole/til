@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Jan 2021 10:19:42 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Jan 2021 16:36:52 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Home networking</title>
+      <link>https://til.codeinthehole.com/tags/home-networking/</link>
+      <pubDate>Fri, 29 Jan 2021 16:36:52 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/home-networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virgin Media</title>
+      <link>https://til.codeinthehole.com/tags/virgin-media/</link>
+      <pubDate>Fri, 29 Jan 2021 16:36:52 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/virgin-media/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>MacOS</title>
@@ -333,15 +351,6 @@
       <pubDate>Wed, 02 Sep 2020 11:34:04 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/bear/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Home networking</title>
-      <link>https://til.codeinthehole.com/tags/home-networking/</link>
-      <pubDate>Thu, 27 Aug 2020 12:03:43 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/home-networking/</guid>
       <description></description>
     </item>
     
