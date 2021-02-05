@@ -6,11 +6,20 @@
     <description>Recent content in Github on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Oct 2020 16:39:43 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Feb 2021 12:17:33 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About Github&#39;s `@me` search term</title>
+      <link>https://til.codeinthehole.com/posts/about-githubs-me-search-term/</link>
+      <pubDate>Fri, 05 Feb 2021 12:17:33 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-githubs-me-search-term/</guid>
+      <description>Which lets you filter by the current user. For example, use is:open is:pr author:@me to show pull-requests authored by yourself:</description>
+    </item>
     
     <item>
       <title>How to embed markdown content in a Github code block</title>

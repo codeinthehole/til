@@ -3,8 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/posts/about-githubs-me-search-term/</loc>
+    <lastmod>2021-02-05T12:17:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/github/</loc>
+    <lastmod>2021-02-05T12:17:33+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-02-03T16:15:10+00:00</lastmod>
+    <lastmod>2021-02-05T12:17:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-02-05T12:17:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-02-05T12:17:33+00:00</lastmod>
   </url>
   
   <url>
@@ -14,16 +34,6 @@
   
   <url>
     <loc>https://til.codeinthehole.com/tags/recruitment/</loc>
-    <lastmod>2021-02-03T16:15:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-02-03T16:15:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-02-03T16:15:10+00:00</lastmod>
   </url>
   
@@ -335,11 +345,6 @@
   <url>
     <loc>https://til.codeinthehole.com/posts/you-can-jump-to-previous-quickfix-lists-in-vim/</loc>
     <lastmod>2020-10-31T11:39:36+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/github/</loc>
-    <lastmod>2020-10-27T16:39:43+00:00</lastmod>
   </url>
   
   <url>
