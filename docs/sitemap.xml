@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-02-06T15:54:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-02-06T15:54:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/the-order-of-permissions-matter-with-chmod/</loc>
+    <lastmod>2021-02-06T15:54:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-02-06T15:54:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/unix/</loc>
+    <lastmod>2021-02-06T15:54:07+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/posts/about-githubs-me-search-term/</loc>
     <lastmod>2021-02-05T12:17:33+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/tags/github/</loc>
-    <lastmod>2021-02-05T12:17:33+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-02-05T12:17:33+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-02-05T12:17:33+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-02-05T12:17:33+00:00</lastmod>
   </url>
   
