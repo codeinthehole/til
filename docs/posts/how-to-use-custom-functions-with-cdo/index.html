@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Vim’s :cdo command lets you run an Ex command in each entry in the quickfix list. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-custom-functions-with-cdo/" />
+<meta property="og:title" content="TIL How to use custom functions with &#39;:cdo&#39; — David Winterbottom" /> 
+<meta property="og:description" content="Vim&rsquo;s :cdo command lets you run an Ex command in each entry in the quickfix list. [Reading time: 2 minutes]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to use custom functions with &#39;:cdo&#39; — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>February 15th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to use custom functions with <code>:cdo</code></h1>
+        </header><p>Vim&rsquo;s <code>:cdo</code> command lets you run an Ex command in each entry in the quickfix list.
+This is useful for large-scale refactoring work.</p>
+<p>One way to leverage this is to write a macro to perform the required update then
+run it with <code>:cdo</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">cdo</span> <span style="color:#a6e22e">normal</span> @<span style="color:#a6e22e">q</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>Macros are powerful and many update operations can be done this way.
+However, sometimes the necessary update is too complex for a macro. This happens
+when there are several &ldquo;categories&rdquo; of update required and conditional logic is
+required to determine the appropriate operation.</p>
+<p>For such circumstances you can write a custom Vim function and call that for
+each quickfix entry.</p>
+<p>For example, I used this technique to factor out around 1,400
+<a href="https://www.flake8rules.com/rules/F841.html">F841</a> <code>flake8</code> violations
+from a project today.</p>
+<p>For <code>flake8</code> work, the quickfix list can be populated by
+setting <code>makeprg=flake8</code> and running <code>:make</code>.</p>
+<p>As there were several distinct categories of violation that required a separate
+update operation to resolve, I created a <code>FixF841Error</code> function that
+inspected the line in question to determine the appropriate remedy. Something
+like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#66d9ef">function</span>! <span style="color:#a6e22e">FixF841Error</span>()<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34; Example the line of the error to determine what fix is required.</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">line</span> = <span style="color:#a6e22e">getline</span>(<span style="color:#e6db74">&#39;.&#39;</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">line</span> =~ <span style="color:#e6db74">&#39;as e:&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">        &#34; Handle scenario of unused exception variable</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        ...<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">elseif</span> <span style="color:#a6e22e">line</span> =~ <span style="color:#e6db74">&#39;^\s\+\w\+ = factory&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">        &#34; Handle scenario of unused test factory variable</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        ...<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">else</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        <span style="color:#a6e22e">echom</span> <span style="color:#e6db74">&#34;Unable to fix&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">endif</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">endfunction</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>After <code>source</code>-ing the function I ran:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">cdo</span> <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">FixF841Error</span>()<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>to resolve the majority of the errors.</p>
+<p>Would have taken all day without this.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/how-to-pipe-an-argument-list-into-vim/">How to pipe an argument list into Vim</a></li>
+                
+                <li><a href="/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/">How to copy the current filepath to the system clipboard in Vim</a></li>
+                
+                <li><a href="/posts/how-to-add-project-specific-vim-settings/">How to add project-specific Vim settings</a></li>
+                
+                <li><a href="/posts/universal-ctags-can-index-more-things-than-i-realised/">Universal Ctags can index more things than I realised</a></li>
+                
+                <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
+                
+                <li><a href="/posts/about-how-to-use-keywordprg-effectively/">About how to use <code>keywordprg</code> effectively</a></li>
+                
+                <li><a href="/posts/how-to-configure-ctags-to-parse-terraform-files/">How to configure <code>ctags</code> to parse Terraform files</a></li>
+                
+                <li><a href="/posts/how-to-use-bandit-with-vims-quickfix-list/">How to use Bandit with Vim&rsquo;s quickfix list</a></li>
+                
+                <li><a href="/posts/you-can-run-grep-without-using-parent-shell-process/">You can run <code>:grep</code> without using parent shell process</a></li>
+                
+                <li><a href="/posts/theres-a-quickfixcmdpost-event-in-vim/">There&rsquo;s a <code>QuickFixCmdPost</code> event in Vim</a></li>
+                
+                <li><a href="/posts/you-can-jump-to-previous-quickfix-lists-in-vim/">You can jump to previous quickfix lists in Vim</a></li>
+                
+                <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
+                
+                <li><a href="/posts/how-to-read-from-one-buffer-to-another-in-vim/">How to read from one buffer to another in Vim</a></li>
+                
+                <li><a href="/posts/about-vims-helpgrep-command/">About Vim&rsquo;s <code>:helpgrep</code> command</a></li>
+                
+                <li><a href="/posts/vim-recommends-using-emacsstyle-key-bindings-in-command-mode/">Vim recommends using Emacs-style key bindings in command mode</a></li>
+                
+                <li><a href="/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/">Vim doesn&rsquo;t create the persistent undo folder automatically</a></li>
+                
+                <li><a href="/posts/about-better-yaml-file-folding-in-vim/">About better YAML file folding in Vim</a></li>
+                
+                <li><a href="/posts/about-help-macvim/">About <code>:help macvim</code></a></li>
+                
+                <li><a href="/posts/about-vims-diffthis-command/">About Vim&rsquo;s <code>:diffthis</code> command</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/the-order-of-permissions-matter-with-chmod\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
