@@ -75,6 +75,11 @@ main#content {
         }          
     }         
 
+    /* Anchor heading links */
+    h3 a.anchorjs-link {
+        color: $color-text;
+    }
+
     blockquote {
         margin: 5px 0px;
         border-left: 5px solid $color-grey;
@@ -276,6 +281,7 @@ main#content {
     }
 }
 
+/* Footer */
 footer#footer {
     font-size: 1.4rem;
     color: $color-grey;

@@ -8,8 +8,16 @@
     <p>Sorted chronologically.</p>
 
     {{ range .Pages.GroupByDate "January 2006" }}
-        <h3>{{ .Key }}</h3>
+    <h3>{{ .Key }}</h3>
         {{ partial "posts.html" .Pages }}
     {{ end }}
+{{ end }}
+
+{{ define "scripts" }}
+    <!-- Use a JS library to provide anchor links by headings to allow deep linking. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script type="text/javascript">
+        anchors.add('h3');
+    </script>
 {{ end }}
 
