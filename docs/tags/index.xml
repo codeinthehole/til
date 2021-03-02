@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Feb 2021 09:01:38 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Mar 2021 12:30:06 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>pytest</title>
+      <link>https://til.codeinthehole.com/tags/pytest/</link>
+      <pubDate>Tue, 02 Mar 2021 12:30:06 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/pytest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://til.codeinthehole.com/tags/python/</link>
+      <pubDate>Tue, 02 Mar 2021 12:30:06 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Chrome</title>
@@ -81,15 +99,6 @@
       <pubDate>Tue, 26 Jan 2021 10:19:42 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/macos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Fri, 15 Jan 2021 16:05:14 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/python/</guid>
       <description></description>
     </item>
     
@@ -171,15 +180,6 @@
       <pubDate>Sat, 19 Dec 2020 22:49:55 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pytest</title>
-      <link>https://til.codeinthehole.com/tags/pytest/</link>
-      <pubDate>Wed, 16 Dec 2020 10:41:26 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/pytest/</guid>
       <description></description>
     </item>
     

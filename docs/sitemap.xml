@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-03-02T12:30:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/pytest/</loc>
+    <lastmod>2021-03-02T12:30:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/pytest-doesnt-play-nicely-with-ipdb/</loc>
+    <lastmod>2021-03-02T12:30:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2021-03-02T12:30:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-03-02T12:30:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-03-02T12:30:06+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/tags/chrome/</loc>
     <lastmod>2021-02-16T09:01:38+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/posts/chrome-has-a-flags-page-for-enabling-experimental-features/</loc>
-    <lastmod>2021-02-16T09:01:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-02-16T09:01:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-02-16T09:01:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-02-16T09:01:38+00:00</lastmod>
   </url>
   
@@ -95,11 +110,6 @@
   <url>
     <loc>https://til.codeinthehole.com/posts/you-can-take-screenshots-with-chrome-devtools/</loc>
     <lastmod>2021-01-25T17:33:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
-    <lastmod>2021-01-15T16:05:14+00:00</lastmod>
   </url>
   
   <url>
@@ -205,11 +215,6 @@
   <url>
     <loc>https://til.codeinthehole.com/posts/how-to-add-project-specific-vim-settings/</loc>
     <lastmod>2020-12-18T09:46:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/pytest/</loc>
-    <lastmod>2020-12-16T10:41:26+00:00</lastmod>
   </url>
   
   <url>

@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Feb 2021 09:01:38 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Mar 2021 12:30:06 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Pytest doesn&#39;t play nicely with ipdb</title>
+      <link>https://til.codeinthehole.com/posts/pytest-doesnt-play-nicely-with-ipdb/</link>
+      <pubDate>Tue, 02 Mar 2021 12:30:06 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/pytest-doesnt-play-nicely-with-ipdb/</guid>
+      <description>To ensure breakpoint() triggers iPDB as my default debugger, I used to set:</description>
+    </item>
     
     <item>
       <title>Chrome has a flags page for enabling experimental features</title>

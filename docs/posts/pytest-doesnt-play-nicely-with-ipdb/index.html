@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    To ensure breakpoint() triggers iPDB as my default debugger, I used to set: ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/pytest-doesnt-play-nicely-with-ipdb/" />
+<meta property="og:title" content="TIL Pytest doesn&#39;t play nicely with ipdb — David Winterbottom" /> 
+<meta property="og:description" content="To ensure breakpoint() triggers iPDB as my default debugger, I used to set: [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL Pytest doesn&#39;t play nicely with ipdb — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>March 2th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>Pytest doesn&rsquo;t play nicely with ipdb</h1>
+        </header><p>To ensure <code>breakpoint()</code> triggers iPDB as my default debugger, I used to set:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PYTHONBREAKPOINT<span style="color:#f92672">=</span>ipdb.set_trace<span style="color:#e6db74">`</span>
+</code></pre></div><p>in <code>~/.bash_profile</code> (following <a href="https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/">this advice</a>).
+However, this doesn&rsquo;t play nicely with Pytest&rsquo;s output capturing.</p>
+<p>Pytest has a useful feature where <a href="https://docs.pytest.org/en/stable/usage.html#setting-breakpoints">it disables output capturing if <code>breakpoint</code>
+is called during test execution</a>.</p>
+<p>However, this only works if <code>PYTHONBREAKPOINT</code> is unset (or set to its default
+value). If you have <code>PYTHONBREAKPOINT</code> set, then you need to use Pytest&rsquo;s <code>-s</code>
+option to disable output capturing. But this isn&rsquo;t generally desirable as it
+can lead to lots of unnecessary output being printed to your terminal during
+test runs.</p>
+<p>Specifying <code>--pdbcls=IPython.terminal.debugger:Pdb</code> doesn&rsquo;t make any difference.</p>
+<p>A decent work-around is to not set <code>PYTHONBREAKPOINT</code> and install
+<a href="https://pypi.org/project/pdbpp/"><code>pdb++</code></a> which provides much of the benefit of
+<code>ipdb</code> (e.g. syntax highlighting, tab completion) but doesn&rsquo;t suffer from the
+above problem.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/pytest/">pytest</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
+                
+                </ul>
+            
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/you-can-arbitrarily-chain-python-comparison-operators/">You can arbitrarily chain Python comparison operations</a></li>
+                
+                <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
+                
+                <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
+                
+                <li><a href="/posts/a-better-way-of-configuring-mypy/">A better way of configuring <code>mypy</code></a></li>
+                
+                <li><a href="/posts/datetimedatetime-is-a-subclass-of-datetimedate/"><code>datetime.datetime</code> is a subclass of <code>datetime.date</code></a></li>
+                
+                <li><a href="/posts/about-piplicenses/">About <code>pip-licenses</code></a></li>
+                
+                <li><a href="/posts/python-37-supports-postponed-evaluation-of-annotations/">Python 3.7 supports postponed evaluation of annotations</a></li>
+                
+                <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/chrome-has-a-flags-page-for-enabling-experimental-features\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
