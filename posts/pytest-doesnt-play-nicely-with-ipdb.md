@@ -1,7 +1,7 @@
 ---
 title: "Pytest doesn't play nicely with ipdb"
 date: "2021-03-02T12:30:06+00:00"
-tags: ["pytest", "Python"]
+tags: ["Testing", "pytest", "Python"]
 ---
 
 To ensure `breakpoint()` triggers iPDB as my default debugger, I used to set:

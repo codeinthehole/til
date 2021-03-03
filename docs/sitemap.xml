@@ -28,6 +28,11 @@
   </url>
   
   <url>
+    <loc>https://til.codeinthehole.com/tags/testing/</loc>
+    <lastmod>2021-03-02T12:30:06+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-03-02T12:30:06+00:00</lastmod>
   </url>
@@ -154,11 +159,6 @@
   
   <url>
     <loc>https://til.codeinthehole.com/posts/how-to-easily-disable-a-circleci-workflow/</loc>
-    <lastmod>2021-01-08T12:32:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/testing/</loc>
     <lastmod>2021-01-08T12:32:30+00:00</lastmod>
   </url>
   

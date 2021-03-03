@@ -31,6 +31,15 @@
     </item>
     
     <item>
+      <title>Testing</title>
+      <link>https://til.codeinthehole.com/tags/testing/</link>
+      <pubDate>Tue, 02 Mar 2021 12:30:06 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Chrome</title>
       <link>https://til.codeinthehole.com/tags/chrome/</link>
       <pubDate>Tue, 16 Feb 2021 09:01:38 +0000</pubDate>
@@ -135,15 +144,6 @@
       <pubDate>Fri, 08 Jan 2021 12:32:30 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/circleci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Testing</title>
-      <link>https://til.codeinthehole.com/tags/testing/</link>
-      <pubDate>Fri, 08 Jan 2021 12:32:30 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/testing/</guid>
       <description></description>
     </item>
     

@@ -1,7 +1,7 @@
 ---
 title: "You can label parameterized fixtures with pytest"
 date: "2020-12-11T13:28:09+00:00"
-tags: ["Testing", "Python"]
+tags: ["Testing", "Python", "pytest"]
 ---
 
 For example, running this parameterized test:
