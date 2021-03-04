@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    To ensure breakpoint() triggers iPDB as my default debugger, I used to set: ...
+    To ensure breakpoint() triggers ipdb as my default debugger, I used to set: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/pytest-doesnt-play-nicely-with-ipdb/" />
 <meta property="og:title" content="TIL Pytest doesn&#39;t play nicely with ipdb — David Winterbottom" /> 
-<meta property="og:description" content="To ensure breakpoint() triggers iPDB as my default debugger, I used to set: [Reading time: 1 minute]" />
+<meta property="og:description" content="To ensure breakpoint() triggers ipdb as my default debugger, I used to set: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
@@ -56,22 +56,28 @@
                 On <time>March 2th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>Pytest doesn&rsquo;t play nicely with ipdb</h1>
-        </header><p>To ensure <code>breakpoint()</code> triggers iPDB as my default debugger, I used to set:</p>
+        </header><p>To ensure <code>breakpoint()</code> triggers <a href="https://github.com/gotcha/ipdb"><code>ipdb</code></a> as my default debugger, I used to set:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PYTHONBREAKPOINT<span style="color:#f92672">=</span>ipdb.set_trace<span style="color:#e6db74">`</span>
 </code></pre></div><p>in <code>~/.bash_profile</code> (following <a href="https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/">this advice</a>).
 However, this doesn&rsquo;t play nicely with Pytest&rsquo;s output capturing.</p>
 <p>Pytest has a useful feature where <a href="https://docs.pytest.org/en/stable/usage.html#setting-breakpoints">it disables output capturing if <code>breakpoint</code>
-is called during test execution</a>.</p>
-<p>However, this only works if <code>PYTHONBREAKPOINT</code> is unset (or set to its default
-value). If you have <code>PYTHONBREAKPOINT</code> set, then you need to use Pytest&rsquo;s <code>-s</code>
-option to disable output capturing. But this isn&rsquo;t generally desirable as it
+is called during test
+execution</a>,
+which allows access to the debugger prompt. However, this only works if
+<code>PYTHONBREAKPOINT</code> is unset. If you have <code>PYTHONBREAKPOINT</code> set to a non-empty
+value, then you need to use Pytest&rsquo;s
+<a href="https://docs.pytest.org/en/reorganize-docs/new-docs/user/commandlineuseful.html#s-capture-no"><code>-s</code></a>
+option to disable all output capturing. But this isn&rsquo;t generally desirable as it
 can lead to lots of unnecessary output being printed to your terminal during
 test runs.</p>
-<p>Specifying <code>--pdbcls=IPython.terminal.debugger:Pdb</code> doesn&rsquo;t make any difference.</p>
-<p>A decent work-around is to not set <code>PYTHONBREAKPOINT</code> and install
+<p>Specifying <code>--pdbcls=IPython.terminal.debugger:Pdb</code> doesn&rsquo;t make any difference
+if <code>PYTHONBREAKPOINT</code> is set.</p>
+<p>A decent work-around is to not set <code>PYTHONBREAKPOINT</code> globally and install
 <a href="https://pypi.org/project/pdbpp/"><code>pdb++</code></a> which provides much of the benefit of
 <code>ipdb</code> (e.g. syntax highlighting, tab completion) but doesn&rsquo;t suffer from the
-above problem.</p>
+above problem; you can access the debugger without using the <code>-s</code> option.</p>
+<p>For projects that use <code>ipdb</code>, you can set <code>PYTHONBREAKPOINT</code> on a per-project
+basis.</p>
 </article>
 
         </main>

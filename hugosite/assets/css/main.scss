@@ -2,6 +2,7 @@ $font-code: 'Monaco', 'Menlo', monospace;
 $font-text: 'Helvetica', sans-serif;
 
 $color-text: #394548;
+$color-link: #007dfa;
 $color-link-hover: #369aff;
 $color-grey: #bbb;
 $color-light-grey: #eee;
@@ -67,7 +68,7 @@ main#content {
     }
 
     a {
-        color: #007dfa;
+        color: $color-link;
         text-decoration: none;
 
         &:hover {
@@ -246,6 +247,9 @@ main#content {
 
             -moz-border-radius: 5px;
             -webkit-border-radius: 5px;
+        }
+        a code {
+            color: $color-link;
         }
 
         /* Block code snippets */
