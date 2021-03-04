@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Mar 2021 12:30:06 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Mar 2021 16:09:11 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>To prefer `dateutil` over `pytz`</title>
+      <link>https://til.codeinthehole.com/posts/to-prefer-dateutil-over-pytz/</link>
+      <pubDate>Thu, 04 Mar 2021 16:09:11 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/to-prefer-dateutil-over-pytz/</guid>
+      <description>When constructing datetime.datetime instances, it&amp;rsquo;s better to use dateutil to provide the tzinfo argument — avoid using pytz.</description>
+    </item>
     
     <item>
       <title>Pytest doesn&#39;t play nicely with ipdb</title>
