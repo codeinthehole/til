@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Modern versions of git log provide a -L option which lets you trace the evolution of a line range or function: ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-use-git-log-to-view-the-evolution-of-a-function/" />
+<meta property="og:title" content="TIL You can use Git log to view the evolution of a function — David Winterbottom" /> 
+<meta property="og:description" content="Modern versions of git log provide a -L option which lets you trace the evolution of a line range or function: [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL You can use Git log to view the evolution of a function — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>March 5th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>You can use Git log to view the evolution of a function</h1>
+        </header><p>Modern versions of <code>git log</code> provide a <code>-L</code> option which lets you trace the
+evolution of a line range or function:</p>
+<figure>
+    <img src="/images/git-log-function-evolution.png"
+         alt="git log function evolution"/> 
+</figure>
+
+<p>Usage is:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git log -L :&lt;funcname&gt;:&lt;file&gt;
+</code></pre></div><p>where:</p>
+<ul>
+<li><code>&lt;funcname&gt;</code> is a regular expression to match the function name.</li>
+<li><code>&lt;file&gt;</code> is the path to the file where the function lives.</li>
+</ul>
+<p>Example usage:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git log -L :get_locale:octoenergy/utils/workingdays.py
+</code></pre></div><p>Depending on what language you&rsquo;re working with, you may need to adjust you local
+<code>~/.gitattributes</code> file to ensure Git can determine the patch hunk headers.</p>
+<p>More in <a href="https://git-scm.com/docs/git-log/#Documentation/git-log.txt--Lltfuncnamegtltfilegt">the official git docs</a>.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/how-to-resolve-git-conflicts-on-renamed-files/">How to resolve Git rebase conflicts on renamed files</a></li>
+                
+                <li><a href="/posts/how-to-count-lines-of-code-in-a-git-repo/">How to count lines of code in a Git repo for a given commit</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/to-prefer-dateutil-over-pytz\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
