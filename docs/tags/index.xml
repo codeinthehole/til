@@ -6,11 +6,38 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Mar 2021 22:49:17 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Mar 2021 13:54:04 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>APT</title>
+      <link>https://til.codeinthehole.com/tags/apt/</link>
+      <pubDate>Tue, 09 Mar 2021 13:54:04 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/apt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://til.codeinthehole.com/tags/linux/</link>
+      <pubDate>Tue, 09 Mar 2021 13:54:04 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>systemd</title>
+      <link>https://til.codeinthehole.com/tags/systemd/</link>
+      <pubDate>Tue, 09 Mar 2021 13:54:04 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/systemd/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Git</title>
