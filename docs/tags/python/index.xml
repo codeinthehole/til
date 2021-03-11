@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Mar 2021 16:09:11 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Mar 2021 13:34:25 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>`pdbpp` has a useful &#39;sticky&#39; mode</title>
+      <link>https://til.codeinthehole.com/posts/pdbpp-has-a-useful-sticky-mode/</link>
+      <pubDate>Thu, 11 Mar 2021 13:34:25 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/pdbpp-has-a-useful-sticky-mode/</guid>
+      <description>pdbpp provides some additional interactive commands to pdb. One such command is sticky which toggles &amp;ldquo;sticky mode&amp;rdquo;:</description>
+    </item>
     
     <item>
       <title>To prefer `dateutil` over `pytz`</title>

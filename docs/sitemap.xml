@@ -3,17 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://til.codeinthehole.com/posts/pdbpp-has-a-useful-sticky-mode/</loc>
+    <lastmod>2021-03-11T13:34:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/debugging/</loc>
+    <lastmod>2021-03-11T13:34:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-03-11T13:34:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2021-03-11T13:34:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-03-11T13:34:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-03-11T13:34:25+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://til.codeinthehole.com/tags/apt/</loc>
     <lastmod>2021-03-09T13:54:04+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/tags/linux/</loc>
-    <lastmod>2021-03-09T13:54:04+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
     <lastmod>2021-03-09T13:54:04+00:00</lastmod>
   </url>
   
@@ -28,16 +53,6 @@
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-03-09T13:54:04+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
-    <lastmod>2021-03-09T13:54:04+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://til.codeinthehole.com/tags/git/</loc>
     <lastmod>2021-03-05T22:49:17+00:00</lastmod>
   </url>
@@ -45,11 +60,6 @@
   <url>
     <loc>https://til.codeinthehole.com/posts/you-can-use-git-log-to-view-the-evolution-of-a-function/</loc>
     <lastmod>2021-03-05T22:49:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
-    <lastmod>2021-03-04T16:09:11+00:00</lastmod>
   </url>
   
   <url>

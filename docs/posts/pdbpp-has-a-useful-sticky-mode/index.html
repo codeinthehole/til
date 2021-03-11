@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    For example, instead of:
-import _csv def generate_report(writer: &#39;_csv. ...
+    pdbpp provides some additional interactive commands to pdb. One such command is sticky which toggles “sticky mode”: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -16,17 +15,16 @@ import _csv def generate_report(writer: &#39;_csv. ...
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/python-37-supports-postponed-evaluation-of-annotations/" />
-<meta property="og:title" content="TIL Python 3.7 supports postponed evaluation of annotations — David Winterbottom" /> 
-<meta property="og:description" content="For example, instead of:
-import _csv def generate_report(writer: &#39;_csv. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/pdbpp-has-a-useful-sticky-mode/" />
+<meta property="og:title" content="TIL &#39;pdbpp&#39; has a useful &#39;sticky&#39; mode — David Winterbottom" /> 
+<meta property="og:description" content="pdbpp provides some additional interactive commands to pdb. One such command is sticky which toggles &ldquo;sticky mode&rdquo;: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL Python 3.7 supports postponed evaluation of annotations — David Winterbottom
+    TIL &#39;pdbpp&#39; has a useful &#39;sticky&#39; mode — David Winterbottom
 </title>
 
         
@@ -55,29 +53,23 @@ import _csv def generate_report(writer: &#39;_csv. [Reading time: 1 minute]" />
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>September 4th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>March 11th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>Python 3.7 supports postponed evaluation of annotations</h1>
-        </header><p>For example, instead of:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> _csv
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_report</span>(writer: <span style="color:#e6db74">&#39;_csv._writer&#39;</span>):
-    <span style="color:#66d9ef">pass</span>
-</code></pre></div><p>you can use:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> __future__ <span style="color:#f92672">import</span> annotations
-
-<span style="color:#f92672">import</span> _csv
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_report</span>(writer: _csv<span style="color:#f92672">.</span>_writer):
-    <span style="color:#66d9ef">pass</span>
-</code></pre></div><p>and avoid using a string literal for the type annotation.</p>
-<p>This follows on from a <a href="https://til.codeinthehole.com/posts/how-to-typecheck-csv-objects-in-python/">related TIL about how to specify type annotations for the <code>csv</code> module</a>.</p>
-<p>Related:</p>
-<ul>
-<li><a href="https://docs.python.org/3/library/__future__.html"><code>__future__</code> statement definitions</a></li>
-<li><a href="https://www.python.org/dev/peps/pep-0563/">PEP 563 - Postponed Evaluation of Annotations</a></li>
-</ul>
-</article>
+            <h1><code>pdbpp</code> has a useful &lsquo;sticky&rsquo; mode</h1>
+        </header><p><code>pdbpp</code> provides <a href="https://github.com/pdbpp/pdbpp#new-interactive-commands">some additional interactive commands to
+<code>pdb</code></a>. One such
+command is <code>sticky</code> which toggles &ldquo;sticky mode&rdquo;:</p>
+<blockquote>
+<p>When in this mode, every time the current position changes, the screen is
+repainted and the whole function shown. Thus, when doing step-by-step
+execution you can easily follow the flow of the execution.</p>
+</blockquote>
+<p>I find this a useful mode to use.</p>
+<p>To enable this by default, create a <code>~/.pdbrc.py</code> file with contents:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> pdb
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Config</span>(pdb<span style="color:#f92672">.</span>DefaultConfig):
+    sticky_by_default <span style="color:#f92672">=</span> True
+</code></pre></div></article>
 
         </main>
 
@@ -89,8 +81,6 @@ import _csv def generate_report(writer: &#39;_csv. [Reading time: 1 minute]" />
             
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/pdbpp-has-a-useful-sticky-mode/"><code>pdbpp</code> has a useful &lsquo;sticky&rsquo; mode</a></li>
                 
                 <li><a href="/posts/to-prefer-dateutil-over-pytz/">To prefer <code>dateutil</code> over <code>pytz</code></a></li>
                 
@@ -108,16 +98,21 @@ import _csv def generate_report(writer: &#39;_csv. [Reading time: 1 minute]" />
                 
                 <li><a href="/posts/about-piplicenses/">About <code>pip-licenses</code></a></li>
                 
+                <li><a href="/posts/python-37-supports-postponed-evaluation-of-annotations/">Python 3.7 supports postponed evaluation of annotations</a></li>
+                
                 <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
                 
                 </ul>
             
         
+            
+            
+        
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -126,11 +121,9 @@ import _csv def generate_report(writer: &#39;_csv. [Reading time: 1 minute]" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/vim-doesnt-create-the-persistent-undo-folder-automatically\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/systemd-timers-can-be-stopped\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/you-can-display-the-typed-text-in-alfred-in-a-huge-typeface\/"); })
         
     </script>
 
