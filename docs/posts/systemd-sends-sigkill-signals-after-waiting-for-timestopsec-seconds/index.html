@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    From man systemd.kill:
+Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=). ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/systemd-sends-sigkill-signals-after-waiting-for-timestopsec-seconds/" />
+<meta property="og:title" content="TIL systemd sends SIGKILL signals after waiting for &#39;TimeoutStopSec&#39; seconds — David Winterbottom" /> 
+<meta property="og:description" content="From man systemd.kill:
+ Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=). [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL systemd sends SIGKILL signals after waiting for &#39;TimeoutStopSec&#39; seconds — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>March 12th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>systemd sends SIGKILL signals after waiting for <code>TimeoutStopSec</code> seconds</h1>
+        </header><p>From <a href="https://www.freedesktop.org/software/systemd/man/systemd.kill.html"><code>man systemd.kill</code></a>:</p>
+<blockquote>
+<p>Processes will first be terminated via SIGTERM (unless the signal to send is
+changed via KillSignal=). Optionally, this is immediately followed by a
+SIGHUP (if enabled with SendSIGHUP=). If then, after a delay (configured via
+the TimeoutStopSec= option), processes still remain, the termination request
+is repeated with the SIGKILL signal (unless this is disabled via the
+SendSIGKILL= option).</p>
+</blockquote>
+<p>The default for <code>TimeoutStopSec</code> is 90 seconds. You can check how a particular
+unit is configured with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl $UNIT_NAME check | grep Timeout
+TimeoutStartUSec<span style="color:#f92672">=</span>infinity
+TimeoutStopUSec<span style="color:#f92672">=</span>1min 30s
+JobTimeoutUSec<span style="color:#f92672">=</span>infinity
+JobRunningTimeoutUSec<span style="color:#f92672">=</span>infinity
+JobTimeoutAction<span style="color:#f92672">=</span>none
+</code></pre></div><p>If you don&rsquo;t want <code>systemd</code> to forcibly kill your process, you might consider
+setting <code>TimeoutStopSec=infinity</code>.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/systemd/">systemd</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/systemd-timers-can-be-stopped/">systemd timers can be stopped</a></li>
+                
+                </ul>
+            
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/linux/">linux</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/systemd-timers-can-be-stopped/">systemd timers can be stopped</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/iterm2s-cursor-boost-feature-will-cause-everything-to-appear-dimmed\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

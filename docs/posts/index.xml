@@ -6,11 +6,21 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Mar 2021 11:31:35 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Mar 2021 15:28:38 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>systemd sends SIGKILL signals after waiting for `TimeoutStopSec` seconds</title>
+      <link>https://til.codeinthehole.com/posts/systemd-sends-sigkill-signals-after-waiting-for-timestopsec-seconds/</link>
+      <pubDate>Fri, 12 Mar 2021 15:28:38 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/systemd-sends-sigkill-signals-after-waiting-for-timestopsec-seconds/</guid>
+      <description>From man systemd.kill:
+ Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=).</description>
+    </item>
     
     <item>
       <title>ITerm2&#39;s &#34;Cursor boost&#34; feature will cause everything to appear dimmed</title>
@@ -31,7 +41,7 @@
     </item>
     
     <item>
-      <title>SystemD timers can be stopped</title>
+      <title>systemd timers can be stopped</title>
       <link>https://til.codeinthehole.com/posts/systemd-timers-can-be-stopped/</link>
       <pubDate>Tue, 09 Mar 2021 13:54:04 +0000</pubDate>
       

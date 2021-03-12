@@ -1,5 +1,5 @@
 ---
-title: "SystemD timers can be stopped"
+title: "systemd timers can be stopped"
 date: "2021-03-09T13:54:04+00:00"
 tags: ["systemd", "Linux", "APT"]
 ---
