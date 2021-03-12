@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    If you use Finder to mark a file as a “stationery pad” then apps will open a copy of the file. ...
+    I had inadvertently moved the “Cursor Boost” slider to a high level and the terminal became very dim and hard to read. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-the-stationery-pad-feature-in-finder/" />
-<meta property="og:title" content="TIL About the stationery pad feature in Finder — David Winterbottom" /> 
-<meta property="og:description" content="If you use Finder to mark a file as a &ldquo;stationery pad&rdquo; then apps will open a copy of the file. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/iterm2s-cursor-boost-feature-will-cause-everything-to-appear-dimmed/" />
+<meta property="og:title" content="TIL ITerm2&#39;s &#34;Cursor boost&#34; feature will cause everything to appear dimmed — David Winterbottom" /> 
+<meta property="og:description" content="I had inadvertently moved the &ldquo;Cursor Boost&rdquo; slider to a high level and the terminal became very dim and hard to read. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About the stationery pad feature in Finder — David Winterbottom
+    TIL ITerm2&#39;s &#34;Cursor boost&#34; feature will cause everything to appear dimmed — David Winterbottom
 </title>
 
         
@@ -53,18 +53,22 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>August 14th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>March 12th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About the stationery pad feature in Finder</h1>
-        </header><p>If you use Finder to mark a file as a &ldquo;stationery pad&rdquo; then apps will open a
-copy of the file. The original file will effectively act as a template.</p>
-<p>You can set this flag from the <code>Get Info</code> Finder dialogue:</p>
+            <h1>ITerm2&rsquo;s &ldquo;Cursor boost&rdquo; feature will cause everything to appear dimmed</h1>
+        </header><p>I had inadvertently moved the &ldquo;Cursor Boost&rdquo; slider to a high level and the terminal
+became very dim and hard to read. Resetting the slider to zero fixed the issue.</p>
 <figure>
-    <img src="/images/stationery-pad-option.png"/> 
+    <img src="/images/iterm2-cursor-boost.png"
+         alt="iTerm2 Cursor Boost"/> <figcaption>
+            <p>The &lsquo;Cursor Boost&rsquo; slider is at the bottom of the &lsquo;Colors&rsquo; tab.</p>
+        </figcaption>
 </figure>
 
-<p>This only works when opening a file from Finder, so not that much use to
-people who live in iTerm (like me).</p>
+<p>As noted in <a href="https://groups.google.com/g/iterm2-discuss/c/sVjKI3VqRcs">this Google Groups
+conversation</a>, &ldquo;Cursor
+Boost&rdquo; could more accurately be called &ldquo;Dim everything except the
+Cursor&rdquo; and avoid this confusion.</p>
 </article>
 
         </main>
@@ -75,10 +79,11 @@ people who live in iTerm (like me).</p>
         
             
             
+        
+            
+            
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/macos/">MacOS</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/iterm2s-cursor-boost-feature-will-cause-everything-to-appear-dimmed/">ITerm2&rsquo;s &ldquo;Cursor boost&rdquo; feature will cause everything to appear dimmed</a></li>
                 
                 <li><a href="/posts/how-to-scroll-horizontally-with-a-mouse/">How to scroll horizontally with a mouse</a></li>
                 
@@ -87,6 +92,8 @@ people who live in iTerm (like me).</p>
                 <li><a href="/posts/about-the-difference-between-minimising-and-hiding-windows-in-macos/">About the difference between minimising and hiding windows in MacOS</a></li>
                 
                 <li><a href="/posts/the-macos-keybinds-for-en-and-emdashes/">The MacOS keybinds for en- and em-dashes</a></li>
+                
+                <li><a href="/posts/about-the-stationery-pad-feature-in-finder/">About the stationery pad feature in Finder</a></li>
                 
                 <li><a href="/posts/quitter/">About Quitter</a></li>
                 
@@ -97,9 +104,9 @@ people who live in iTerm (like me).</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -108,11 +115,9 @@ people who live in iTerm (like me).</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-pngcrush\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/pdbpp-has-a-useful-sticky-mode\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-vims-diffthis-command\/"); })
         
     </script>
 

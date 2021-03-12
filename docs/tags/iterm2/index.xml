@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iTerm2 - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/iterm2/</link>
+    <description>Recent content in iTerm2 on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Mar 2021 11:31:35 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/iterm2/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>ITerm2&#39;s &#34;Cursor boost&#34; feature will cause everything to appear dimmed</title>
+      <link>https://til.codeinthehole.com/posts/iterm2s-cursor-boost-feature-will-cause-everything-to-appear-dimmed/</link>
+      <pubDate>Fri, 12 Mar 2021 11:31:35 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/iterm2s-cursor-boost-feature-will-cause-everything-to-appear-dimmed/</guid>
+      <description>I had inadvertently moved the &amp;ldquo;Cursor Boost&amp;rdquo; slider to a high level and the terminal became very dim and hard to read.</description>
+    </item>
+    
+
+  </channel>
+</rss>

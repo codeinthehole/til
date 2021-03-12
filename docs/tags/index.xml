@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Mar 2021 13:34:25 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Mar 2021 11:31:35 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>iTerm2</title>
+      <link>https://til.codeinthehole.com/tags/iterm2/</link>
+      <pubDate>Fri, 12 Mar 2021 11:31:35 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/iterm2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MacOS</title>
+      <link>https://til.codeinthehole.com/tags/macos/</link>
+      <pubDate>Fri, 12 Mar 2021 11:31:35 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/macos/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Debugging</title>
@@ -153,15 +171,6 @@
       <pubDate>Fri, 29 Jan 2021 16:36:52 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/virgin-media/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MacOS</title>
-      <link>https://til.codeinthehole.com/tags/macos/</link>
-      <pubDate>Tue, 26 Jan 2021 10:19:42 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/macos/</guid>
       <description></description>
     </item>
     
