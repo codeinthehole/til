@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open-source - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/open-source/</link>
+    <description>Recent content in Open-source on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Mar 2021 12:36:25 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>That software can be &#34;free as in mattress&#34;</title>
+      <link>https://til.codeinthehole.com/posts/that-software-can-be-free-as-in-mattress/</link>
+      <pubDate>Mon, 15 Mar 2021 12:36:25 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-software-can-be-free-as-in-mattress/</guid>
+      <description>Extending the notion of &amp;ldquo;free as in beer&amp;rdquo; or &amp;ldquo;free as in speech&amp;rdquo;, there&amp;rsquo;s also:</description>
+    </item>
+    
+
+  </channel>
+</rss>

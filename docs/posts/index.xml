@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Mar 2021 15:28:38 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Mar 2021 12:36:25 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That software can be &#34;free as in mattress&#34;</title>
+      <link>https://til.codeinthehole.com/posts/that-software-can-be-free-as-in-mattress/</link>
+      <pubDate>Mon, 15 Mar 2021 12:36:25 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-software-can-be-free-as-in-mattress/</guid>
+      <description>Extending the notion of &amp;ldquo;free as in beer&amp;rdquo; or &amp;ldquo;free as in speech&amp;rdquo;, there&amp;rsquo;s also:</description>
+    </item>
     
     <item>
       <title>systemd sends SIGKILL signals after waiting for `TimeoutStopSec` seconds</title>

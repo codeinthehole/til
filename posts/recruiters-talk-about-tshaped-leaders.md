@@ -1,7 +1,7 @@
 ---
 title: "Recruiters talk about T-shaped leaders"
 date: "2021-02-03T16:15:10+00:00"
-tags: ["Recruitment"]
+tags: ["Recruitment", "Terminology"]
 ---
 
 For example:
