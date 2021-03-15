@@ -1,5 +1,5 @@
 ---
-title: "ITerm2's \"Cursor boost\" feature will cause everything to appear dimmed"
+title: "iTerm2's \"Cursor boost\" feature will cause everything to appear dimmed"
 date: "2021-03-12T11:31:35+00:00"
 tags: ["iTerm2", "MacOS"]
 ---

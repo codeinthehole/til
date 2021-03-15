@@ -1,7 +1,7 @@
 ---
 title: "systemd sends SIGKILL signals after waiting for `TimeoutStopSec` seconds"
 date: "2021-03-12T15:28:38+00:00"
-tags: ["systemd", "linux"]
+tags: ["systemd", "Linux"]
 ---
 
 From [`man systemd.kill`](https://www.freedesktop.org/software/systemd/man/systemd.kill.html):
