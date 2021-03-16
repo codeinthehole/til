@@ -3,17 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://til.codeinthehole.com/tags/open-source/</loc>
-    <lastmod>2021-03-15T12:36:25+00:00</lastmod>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-03-16T17:36:21+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-03-15T12:36:25+00:00</lastmod>
+    <loc>https://til.codeinthehole.com/tags/pytest/</loc>
+    <lastmod>2021-03-16T17:36:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2021-03-16T17:36:21+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-03-16T17:36:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/testing/</loc>
+    <lastmod>2021-03-16T17:36:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-03-16T17:36:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/posts/you-can-have-classscoped-autouse-pytest-fixtures/</loc>
+    <lastmod>2021-03-16T17:36:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://til.codeinthehole.com/tags/open-source/</loc>
     <lastmod>2021-03-15T12:36:25+00:00</lastmod>
   </url>
   
@@ -24,11 +49,6 @@
   
   <url>
     <loc>https://til.codeinthehole.com/posts/that-software-can-be-free-as-in-mattress/</loc>
-    <lastmod>2021-03-15T12:36:25+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-03-15T12:36:25+00:00</lastmod>
   </url>
   
@@ -73,11 +93,6 @@
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
-    <lastmod>2021-03-11T13:34:25+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://til.codeinthehole.com/tags/apt/</loc>
     <lastmod>2021-03-09T13:54:04+00:00</lastmod>
   </url>
@@ -108,17 +123,7 @@
   </url>
   
   <url>
-    <loc>https://til.codeinthehole.com/tags/pytest/</loc>
-    <lastmod>2021-03-02T12:30:06+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://til.codeinthehole.com/posts/pytest-doesnt-play-nicely-with-ipdb/</loc>
-    <lastmod>2021-03-02T12:30:06+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/testing/</loc>
     <lastmod>2021-03-02T12:30:06+00:00</lastmod>
   </url>
   

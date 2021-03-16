@@ -6,11 +6,20 @@
     <description>Recent content in Testing on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Mar 2021 12:30:06 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Mar 2021 17:36:21 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can have class-scoped autouse pytest fixtures</title>
+      <link>https://til.codeinthehole.com/posts/you-can-have-classscoped-autouse-pytest-fixtures/</link>
+      <pubDate>Tue, 16 Mar 2021 17:36:21 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-have-classscoped-autouse-pytest-fixtures/</guid>
+      <description>If you decorate a class instance method as an autouse=True pytest fixture, then it will be automatically applied for all test methods on that class.</description>
+    </item>
     
     <item>
       <title>Pytest doesn&#39;t play nicely with ipdb</title>

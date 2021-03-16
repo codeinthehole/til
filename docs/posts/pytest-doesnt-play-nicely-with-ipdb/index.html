@@ -59,13 +59,13 @@
         </header><p>To ensure <code>breakpoint()</code> triggers <a href="https://github.com/gotcha/ipdb"><code>ipdb</code></a> as my default debugger, I used to set:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PYTHONBREAKPOINT<span style="color:#f92672">=</span>ipdb.set_trace<span style="color:#e6db74">`</span>
 </code></pre></div><p>in <code>~/.bash_profile</code> (following <a href="https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/">this advice</a>).
-However, this doesn&rsquo;t play nicely with Pytest&rsquo;s output capturing.</p>
+However, this doesn&rsquo;t play nicely with pytest&rsquo;s output capturing.</p>
 <p>Pytest has a useful feature where <a href="https://docs.pytest.org/en/stable/usage.html#setting-breakpoints">it disables output capturing if <code>breakpoint</code>
 is called during test
 execution</a>,
 which allows access to the debugger prompt. However, this only works if
 <code>PYTHONBREAKPOINT</code> is unset. If you have <code>PYTHONBREAKPOINT</code> set to a non-empty
-value, then you need to use Pytest&rsquo;s
+value, then you need to use pytest&rsquo;s
 <a href="https://docs.pytest.org/en/reorganize-docs/new-docs/user/commandlineuseful.html#s-capture-no"><code>-s</code></a>
 option to disable all output capturing. But this isn&rsquo;t generally desirable as it
 can lead to lots of unnecessary output being printed to your terminal during
@@ -91,6 +91,8 @@ basis.</p>
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/testing/">Testing</a>:</p>
                 <ul>
                 
+                <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
+                
                 <li><a href="/posts/how-to-easily-disable-a-circleci-workflow/">How to easily disable a CircleCI workflow</a></li>
                 
                 <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
@@ -105,6 +107,8 @@ basis.</p>
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/pytest/">pytest</a>:</p>
                 <ul>
                 
+                <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
+                
                 <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
                 
                 <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
@@ -116,6 +120,8 @@ basis.</p>
             
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
                 <ul>
+                
+                <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
                 
                 <li><a href="/posts/pdbpp-has-a-useful-sticky-mode/"><code>pdbpp</code> has a useful &lsquo;sticky&rsquo; mode</a></li>
                 

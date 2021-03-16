@@ -9,14 +9,14 @@ To ensure `breakpoint()` triggers [`ipdb`](https://github.com/gotcha/ipdb) as my
 PYTHONBREAKPOINT=ipdb.set_trace`
 ```
 in `~/.bash_profile` (following [this advice](https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/)).
-However, this doesn't play nicely with Pytest's output capturing.
+However, this doesn't play nicely with pytest's output capturing.
 
 Pytest has a useful feature where [it disables output capturing if `breakpoint`
 is called during test
 execution](https://docs.pytest.org/en/stable/usage.html#setting-breakpoints),
 which allows access to the debugger prompt. However, this only works if
 `PYTHONBREAKPOINT` is unset. If you have `PYTHONBREAKPOINT` set to a non-empty
-value, then you need to use Pytest's
+value, then you need to use pytest's
 [`-s`](https://docs.pytest.org/en/reorganize-docs/new-docs/user/commandlineuseful.html#s-capture-no)
 option to disable all output capturing. But this isn't generally desirable as it
 can lead to lots of unnecessary output being printed to your terminal during
