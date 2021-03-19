@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Mar 2021 17:36:21 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Mar 2021 09:42:34 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About delta, a viewer for git and diff output</title>
+      <link>https://til.codeinthehole.com/posts/about-delta/</link>
+      <pubDate>Fri, 19 Mar 2021 09:42:34 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-delta/</guid>
+      <description>delta provides much improved diff views in the terminal.</description>
+    </item>
     
     <item>
       <title>You can have class-scoped autouse pytest fixtures</title>

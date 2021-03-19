@@ -1,814 +1,493 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>https://til.codeinthehole.com/posts/about-delta/</loc>
+    <lastmod>2021-03-19T09:42:34+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/command-line-tools/</loc>
+    <lastmod>2021-03-19T09:42:34+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/git/</loc>
+    <lastmod>2021-03-19T09:42:34+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-03-16T17:36:21+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-03-19T09:42:34+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-03-19T09:42:34+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-03-19T09:42:34+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/pytest/</loc>
     <lastmod>2021-03-16T17:36:21+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/python/</loc>
     <lastmod>2021-03-16T17:36:21+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-03-16T17:36:21+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/testing/</loc>
     <lastmod>2021-03-16T17:36:21+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/</loc>
-    <lastmod>2021-03-16T17:36:21+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-have-classscoped-autouse-pytest-fixtures/</loc>
     <lastmod>2021-03-16T17:36:21+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/open-source/</loc>
     <lastmod>2021-03-15T12:36:25+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/terminology/</loc>
     <lastmod>2021-03-15T12:36:25+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/that-software-can-be-free-as-in-mattress/</loc>
     <lastmod>2021-03-15T12:36:25+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/linux/</loc>
     <lastmod>2021-03-12T15:28:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/systemd/</loc>
     <lastmod>2021-03-12T15:28:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/systemd-sends-sigkill-signals-after-waiting-for-timestopsec-seconds/</loc>
     <lastmod>2021-03-12T15:28:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/iterm2/</loc>
     <lastmod>2021-03-12T11:31:35+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/iterm2s-cursor-boost-feature-will-cause-everything-to-appear-dimmed/</loc>
     <lastmod>2021-03-12T11:31:35+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/macos/</loc>
     <lastmod>2021-03-12T11:31:35+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/pdbpp-has-a-useful-sticky-mode/</loc>
     <lastmod>2021-03-11T13:34:25+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/debugging/</loc>
     <lastmod>2021-03-11T13:34:25+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/apt/</loc>
     <lastmod>2021-03-09T13:54:04+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/systemd-timers-can-be-stopped/</loc>
     <lastmod>2021-03-09T13:54:04+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/git/</loc>
-    <lastmod>2021-03-05T22:49:17+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-use-git-log-to-view-the-evolution-of-a-function/</loc>
     <lastmod>2021-03-05T22:49:17+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/timezones/</loc>
     <lastmod>2021-03-04T16:09:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/to-prefer-dateutil-over-pytz/</loc>
     <lastmod>2021-03-04T16:09:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/pytest-doesnt-play-nicely-with-ipdb/</loc>
     <lastmod>2021-03-02T12:30:06+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/chrome/</loc>
     <lastmod>2021-02-16T09:01:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/chrome-has-a-flags-page-for-enabling-experimental-features/</loc>
     <lastmod>2021-02-16T09:01:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-use-custom-functions-with-cdo/</loc>
     <lastmod>2021-02-15T14:36:46+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/vim/</loc>
     <lastmod>2021-02-15T14:36:46+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/the-order-of-permissions-matter-with-chmod/</loc>
     <lastmod>2021-02-06T15:54:07+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/unix/</loc>
     <lastmod>2021-02-06T15:54:07+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-githubs-me-search-term/</loc>
     <lastmod>2021-02-05T12:17:33+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/github/</loc>
     <lastmod>2021-02-05T12:17:33+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/recruiters-talk-about-tshaped-leaders/</loc>
     <lastmod>2021-02-03T16:15:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/recruitment/</loc>
     <lastmod>2021-02-03T16:15:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/home-networking/</loc>
     <lastmod>2021-01-29T16:36:52+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/virgin-media/</loc>
     <lastmod>2021-01-29T16:36:52+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/virgin-medias-web-safe-product-uses-dns/</loc>
     <lastmod>2021-01-29T16:36:52+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-scroll-horizontally-with-a-mouse/</loc>
     <lastmod>2021-01-26T10:19:42+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-take-screenshots-with-chrome-devtools/</loc>
     <lastmod>2021-01-25T17:33:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-arbitrarily-chain-python-comparison-operators/</loc>
     <lastmod>2021-01-15T16:05:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/fd/</loc>
     <lastmod>2021-01-15T09:45:07+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/</loc>
     <lastmod>2021-01-15T09:45:07+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/ripgrep/</loc>
     <lastmod>2021-01-15T09:45:07+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/</loc>
     <lastmod>2021-01-12T11:52:56+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://til.codeinthehole.com/tags/command-line-tools/</loc>
-    <lastmod>2021-01-12T09:37:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/</loc>
     <lastmod>2021-01-12T09:37:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/circleci/</loc>
     <lastmod>2021-01-08T12:32:30+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-easily-disable-a-circleci-workflow/</loc>
     <lastmod>2021-01-08T12:32:30+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/alexa/</loc>
     <lastmod>2021-01-07T15:47:57+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/bbc-sounds-only-works-on-alexa-if-the-language-setting-is-uk-english/</loc>
     <lastmod>2021-01-07T15:47:57+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-temp-files-are-removed-on-macos/</loc>
     <lastmod>2021-01-07T10:51:08+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-define-custom-filetype-filters-in-ripgrep/</loc>
     <lastmod>2020-12-29T16:23:12+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/docker/</loc>
     <lastmod>2020-12-29T15:55:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-enable-docker-buildkit-in-macos-docker-desktop/</loc>
     <lastmod>2020-12-29T15:55:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/helm/</loc>
     <lastmod>2020-12-21T10:33:25+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-specify-the-filetype-for-bat/</loc>
     <lastmod>2020-12-21T10:33:25+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-envsubst/</loc>
     <lastmod>2020-12-19T22:49:55+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/kubernetes/</loc>
     <lastmod>2020-12-19T22:49:55+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-add-project-specific-vim-settings/</loc>
     <lastmod>2020-12-18T09:46:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-stack-pytests-parametrize-decorators/</loc>
     <lastmod>2020-12-16T10:41:26+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-yamls-node-anchors-and-aliases/</loc>
     <lastmod>2020-12-11T20:53:22+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/yaml/</loc>
     <lastmod>2020-12-11T20:53:22+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-label-parameterized-fixtures-with-pytest/</loc>
     <lastmod>2020-12-11T13:28:09+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/ctags/</loc>
     <lastmod>2020-12-10T18:24:55+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/universal-ctags-can-index-more-things-than-i-realised/</loc>
     <lastmod>2020-12-10T18:24:55+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/a-better-way-of-configuring-mypy/</loc>
     <lastmod>2020-12-10T15:51:44+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/mypy/</loc>
     <lastmod>2020-12-10T15:51:44+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-spellcheck-markdown-repos-on-circleci/</loc>
     <lastmod>2020-12-07T11:34:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/markdown/</loc>
     <lastmod>2020-12-07T11:34:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-set-perproject-ripgrep-exclude-rules/</loc>
     <lastmod>2020-12-04T21:38:22+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/vimmarkdown-has-some-useful-commands/</loc>
     <lastmod>2020-12-04T17:19:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/g-suite/</loc>
     <lastmod>2020-12-02T11:39:41+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/gsuites-groups-admin-role-can-read-any-group-email/</loc>
     <lastmod>2020-12-02T11:39:41+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-run-jekyll-in-a-docker-container/</loc>
     <lastmod>2020-11-30T11:28:09+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/jekyll/</loc>
     <lastmod>2020-11-30T11:28:09+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/ruby/</loc>
     <lastmod>2020-11-30T11:28:09+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-how-to-use-keywordprg-effectively/</loc>
     <lastmod>2020-11-27T11:42:44+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-configure-ctags-to-parse-terraform-files/</loc>
     <lastmod>2020-11-26T16:09:12+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/1password/</loc>
     <lastmod>2020-11-23T17:25:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-easily-share-1password-items-via-a-link/</loc>
     <lastmod>2020-11-23T17:25:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/slack/</loc>
     <lastmod>2020-11-20T14:32:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-convert-a-slack-group-direct-message-chat-into-a-private-channel/</loc>
     <lastmod>2020-11-20T14:32:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-use-bandit-with-vims-quickfix-list/</loc>
     <lastmod>2020-11-19T10:54:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/security/</loc>
     <lastmod>2020-11-19T10:54:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/exuberantctags-has-been-superceded-by-universalctags/</loc>
     <lastmod>2020-11-16T22:10:57+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-column/</loc>
     <lastmod>2020-11-12T14:43:50+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-hide-nighttime-hours-in-google-calendar/</loc>
     <lastmod>2020-11-06T11:22:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-run-grep-without-using-parent-shell-process/</loc>
     <lastmod>2020-11-04T16:56:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/theres-a-quickfixcmdpost-event-in-vim/</loc>
     <lastmod>2020-11-04T11:55:58+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-jump-to-previous-quickfix-lists-in-vim/</loc>
     <lastmod>2020-10-31T11:39:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-embed-markdown-content-in-a-github-code-block/</loc>
     <lastmod>2020-10-27T16:39:43+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/websites/</loc>
     <lastmod>2020-10-27T09:26:52+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-create-qr-codes-for-wifi-networks/</loc>
     <lastmod>2020-10-27T09:26:52+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/fd-has-an-option-for-searching-filepaths/</loc>
     <lastmod>2020-10-23T17:35:10+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/datetimedatetime-is-a-subclass-of-datetimedate/</loc>
     <lastmod>2020-10-22T15:38:04+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/the-keyboard-shortcut-for-grabbing-a-mfa-code-in-1pw/</loc>
     <lastmod>2020-10-22T12:31:26+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/aws/</loc>
     <lastmod>2020-10-21T15:38:20+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-use-aws-profiles-that-require-mfa/</loc>
     <lastmod>2020-10-21T15:38:20+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-the-difference-between-minimising-and-hiding-windows-in-macos/</loc>
     <lastmod>2020-10-19T10:24:44+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-readonly-bash-variables/</loc>
     <lastmod>2020-10-13T16:02:02+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/bash/</loc>
     <lastmod>2020-10-13T16:02:02+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-shellcheck/</loc>
     <lastmod>2020-10-12T10:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-piplicenses/</loc>
     <lastmod>2020-10-08T14:56:38+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-bashs-debug-signal/</loc>
     <lastmod>2020-10-07T11:15:11+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-resolve-git-conflicts-on-renamed-files/</loc>
     <lastmod>2020-10-05T11:34:01+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/chess/</loc>
     <lastmod>2020-10-02T14:55:57+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/there-is-a-bongcloud-chess-opening/</loc>
     <lastmod>2020-10-02T14:55:57+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-use-xargs-with-printf/</loc>
     <lastmod>2020-09-29T12:47:23+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/aws-asgs-have-an-instance-refresh-feature/</loc>
     <lastmod>2020-09-28T16:02:44+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/terraform/</loc>
     <lastmod>2020-09-28T16:02:44+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/the-macos-keybinds-for-en-and-emdashes/</loc>
     <lastmod>2020-09-25T10:25:17+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-read-from-one-buffer-to-another-in-vim/</loc>
     <lastmod>2020-09-23T16:00:09+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/openssh/</loc>
     <lastmod>2020-09-23T10:16:13+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/ssh-config-supports-multiple-host-patterns-in-one-block/</loc>
     <lastmod>2020-09-23T10:16:13+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/theres-a-chrome-extension-for-switching-aws-iam-roles/</loc>
     <lastmod>2020-09-22T22:12:13+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/gotchas/</loc>
     <lastmod>2020-09-21T12:33:56+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/yaml-has-several-stringparsing-gotchas/</loc>
     <lastmod>2020-09-21T12:33:56+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/javascript/</loc>
     <lastmod>2020-09-21T10:24:01+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/javascripts-unary-plus-operator-casts-null-to-zero/</loc>
     <lastmod>2020-09-21T10:24:01+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-count-lines-of-code-in-a-git-repo/</loc>
     <lastmod>2020-09-17T15:54:21+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-vims-helpgrep-command/</loc>
     <lastmod>2020-09-16T14:27:56+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/vim-recommends-using-emacsstyle-key-bindings-in-command-mode/</loc>
     <lastmod>2020-09-16T09:16:47+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-conditionally-include-items-in-a-terraform-list/</loc>
     <lastmod>2020-09-15T11:49:53+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-change-the-font-in-slack-with-slackfont-font/</loc>
     <lastmod>2020-09-12T21:22:44+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/alfred/</loc>
     <lastmod>2020-09-07T10:37:57+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-display-the-typed-text-in-alfred-in-a-huge-typeface/</loc>
     <lastmod>2020-09-07T10:37:57+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/python-37-supports-postponed-evaluation-of-annotations/</loc>
     <lastmod>2020-09-04T16:27:33+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/</loc>
     <lastmod>2020-09-04T11:38:38+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-typecheck-csv-objects-in-python/</loc>
     <lastmod>2020-09-03T17:13:22+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/bear/</loc>
     <lastmod>2020-09-02T11:34:04+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-configure-alfreds-bear-workflow-to-open-notes-in-the-main-window/</loc>
     <lastmod>2020-09-02T11:34:04+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-better-yaml-file-folding-in-vim/</loc>
     <lastmod>2020-08-28T18:36:09+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/opendns/</loc>
     <lastmod>2020-08-27T12:03:43+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/opendns-provide-free-pornblocking-dns-servers/</loc>
     <lastmod>2020-08-27T12:03:43+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/aws-availability-zones-have-counterintuitive-ids/</loc>
     <lastmod>2020-08-25T22:18:32+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/sentry/</loc>
     <lastmod>2020-08-24T16:19:10+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-ratelimit-issues-using-a-sentry-dsn/</loc>
     <lastmod>2020-08-24T16:19:10+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-list-pages-with-matching-tag-in-hugo/</loc>
     <lastmod>2020-08-17T14:32:50+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/hugo/</loc>
     <lastmod>2020-08-17T14:32:50+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-help-macvim/</loc>
     <lastmod>2020-08-17T11:53:31+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-vims-diffthis-command/</loc>
     <lastmod>2020-08-17T09:28:52+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-the-stationery-pad-feature-in-finder/</loc>
     <lastmod>2020-08-14T10:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-pngcrush/</loc>
     <lastmod>2020-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/asana/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/asana-has-some-magic-search-terms/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/sass/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-have-sass-asset-pipelines-in-hugo/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-text-fragments/</loc>
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/browsers/</loc>
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/renaming-a-terraform-module-leads-to-resource-recreation/</loc>
     <lastmod>2020-07-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/ubuntu/</loc>
     <lastmod>2020-07-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-passwordless-users-in-ec2/</loc>
     <lastmod>2020-07-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/park-downhill/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/productivity/</loc>
     <lastmod>2020-07-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/alfred-clipboard-history/</loc>
     <lastmod>2020-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/alfred-snippet-collections/</loc>
     <lastmod>2020-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/quitter/</loc>
     <lastmod>2020-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-the-screencapture-bsd-util/</loc>
     <lastmod>2020-07-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-twitters-minfaves-search-filter/</loc>
     <lastmod>2020-07-16T11:31:56+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/twitter/</loc>
     <lastmod>2020-07-16T11:31:56+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://til.codeinthehole.com/categories/</loc>
   </url>
-  
 </urlset>

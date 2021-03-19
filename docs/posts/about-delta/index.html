@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    It’s an image optimizer for PNG files. It’s available via Homebrew for MacOS and works like: ...
+    delta provides much improved diff views in the terminal. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-pngcrush/" />
-<meta property="og:title" content="TIL About &#39;pngcrush&#39; — David Winterbottom" /> 
-<meta property="og:description" content="It&rsquo;s an image optimizer for PNG files. It&rsquo;s available via Homebrew for MacOS and works like: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-delta/" />
+<meta property="og:title" content="TIL About delta, a viewer for git and diff output — David Winterbottom" /> 
+<meta property="og:description" content="delta provides much improved diff views in the terminal. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;pngcrush&#39; — David Winterbottom
+    TIL About delta, a viewer for git and diff output — David Winterbottom
 </title>
 
         
@@ -53,15 +53,36 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>August 14th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>March 19th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>pngcrush</code></h1>
-        </header><p>It&rsquo;s an image optimizer for PNG files. It&rsquo;s available via Homebrew for MacOS and
-works like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pngcrush -ow screenshot.png
-</code></pre></div><p>where <code>-ow</code> means the original image file will be overwritten.</p>
-<p>I&rsquo;ve integrated it into the <code>til_screenshot.sh</code> helper script used by this repo.</p>
-</article>
+            <h1>About delta, a viewer for git and diff output</h1>
+        </header><p><a href="https://github.com/dandavison/delta"><code>delta</code></a> provides much improved diff views
+in the terminal. It provides things like:</p>
+<ul>
+<li>
+<p>Syntax highlighting with color themes</p>
+</li>
+<li>
+<p>Within-line highlights</p>
+</li>
+<li>
+<p>Side-by-side view</p>
+</li>
+</ul>
+<p>After <code>brew install git-delta</code>, you can configure Git to use it via something
+like:</p>
+<pre><code># ~/.gitconfig
+
+[delta]
+    features = decorations
+    whitespace-error-style = 22 reverse
+
+[delta &quot;decorations&quot;]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold
+    file-decoration-style = red box
+    hunk-header-decoration-style = ul
+</code></pre></article>
 
         </main>
 
@@ -71,10 +92,22 @@ works like:</p>
         
             
             
-                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/about-delta/">About delta, a viewer for git and diff output</a></li>
+                <li><a href="/posts/you-can-use-git-log-to-view-the-evolution-of-a-function/">You can use Git log to view the evolution of a function</a></li>
+                
+                <li><a href="/posts/how-to-resolve-git-conflicts-on-renamed-files/">How to resolve Git rebase conflicts on renamed files</a></li>
+                
+                <li><a href="/posts/how-to-count-lines-of-code-in-a-git-repo/">How to count lines of code in a Git repo for a given commit</a></li>
+                
+                </ul>
+            
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
+                <ul>
                 
                 <li><a href="/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/">How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></a></li>
                 
@@ -94,14 +127,16 @@ works like:</p>
                 
                 <li><a href="/posts/how-to-use-xargs-with-printf/">How to use <code>xargs</code> with <code>printf</code></a></li>
                 
+                <li><a href="/posts/about-pngcrush/">About <code>pngcrush</code></a></li>
+                
                 </ul>
             
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -110,11 +145,9 @@ works like:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/asana-has-some-magic-search-terms\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-have-classscoped-autouse-pytest-fixtures\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-the-stationery-pad-feature-in-finder\/"); })
         
     </script>
 
