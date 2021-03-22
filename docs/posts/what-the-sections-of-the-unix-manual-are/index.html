@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    From man man:
+MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 System Calls 3 C Library Functions 4 Devices and Special Files 5 File Formats and Conventions 6 Games et. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/what-the-sections-of-the-unix-manual-are/" />
+<meta property="og:title" content="TIL What the sections of the Unix manual are — David Winterbottom" /> 
+<meta property="og:description" content="From man man:
+MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 System Calls 3 C Library Functions 4 Devices and Special Files 5 File Formats and Conventions 6 Games et. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL What the sections of the Unix manual are — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>March 22th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>What the sections of the Unix manual are</h1>
+        </header><p>From <code>man man</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">MANUAL SECTIONS
+       The standard sections of the manual include:
+
+       1      User Commands
+
+       2      System Calls
+
+       3      C Library Functions
+
+       4      Devices and Special Files
+
+       5      File Formats and Conventions
+
+       6      Games et. Al.
+
+       7      Miscellanea
+
+       8      System Administration tools and Deamons
+</code></pre></div><p>You can see the sections that have pages for a given query with <code>man -f</code> or
+<code>whatis</code>. E.g.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ man -f passwd
+passwd<span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>                   - modify a user<span style="color:#960050;background-color:#1e0010">&#39;</span>s password
+passwd<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span>, master.passwd<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span> - format of the password file
+slapd-passwd<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span>             - /etc/passwd backend to slapd
+</code></pre></div><p>The section number is in parentheses. These can be used to open a man page from
+a particular section. Use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ man <span style="color:#ae81ff">1</span> passwd
+</code></pre></div><p>to learn about how to use the <code>passwd</code> command and:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ man <span style="color:#ae81ff">5</span> passwd
+</code></pre></div><p>to learn about the format of the password file.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/unix/">Unix</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/the-order-of-permissions-matter-with-chmod/">The order of permissions matters with <code>chmod</code></a></li>
+                
+                </ul>
+            
+        
+            
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-delta\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

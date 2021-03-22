@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/documentation/</loc>
+    <lastmod>2021-03-22T16:06:20+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-03-22T16:06:20+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-03-22T16:06:20+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-03-22T16:06:20+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/unix/</loc>
+    <lastmod>2021-03-22T16:06:20+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/what-the-sections-of-the-unix-manual-are/</loc>
+    <lastmod>2021-03-22T16:06:20+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-delta/</loc>
     <lastmod>2021-03-19T09:42:34+00:00</lastmod>
   </url><url>
@@ -9,15 +27,6 @@
     <lastmod>2021-03-19T09:42:34+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/git/</loc>
-    <lastmod>2021-03-19T09:42:34+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-03-19T09:42:34+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-03-19T09:42:34+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-03-19T09:42:34+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/pytest/</loc>
@@ -96,9 +105,6 @@
     <lastmod>2021-02-15T14:36:46+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/the-order-of-permissions-matter-with-chmod/</loc>
-    <lastmod>2021-02-06T15:54:07+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/unix/</loc>
     <lastmod>2021-02-06T15:54:07+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/about-githubs-me-search-term/</loc>

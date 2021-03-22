@@ -6,11 +6,21 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Mar 2021 09:42:34 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Mar 2021 16:06:20 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>What the sections of the Unix manual are</title>
+      <link>https://til.codeinthehole.com/posts/what-the-sections-of-the-unix-manual-are/</link>
+      <pubDate>Mon, 22 Mar 2021 16:06:20 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/what-the-sections-of-the-unix-manual-are/</guid>
+      <description>From man man:
+MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 System Calls 3 C Library Functions 4 Devices and Special Files 5 File Formats and Conventions 6 Games et.</description>
+    </item>
     
     <item>
       <title>About delta, a viewer for git and diff output</title>
