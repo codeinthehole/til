@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Mar 2021 16:06:20 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Mar 2021 16:14:23 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About `xargs -t`</title>
+      <link>https://til.codeinthehole.com/posts/about-xargs-t/</link>
+      <pubDate>Mon, 22 Mar 2021 16:14:23 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-xargs-t/</guid>
+      <description>Which echos the command to be executed to standard error immediately before it is executed.</description>
+    </item>
     
     <item>
       <title>What the sections of the Unix manual are</title>
