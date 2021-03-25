@@ -6,11 +6,20 @@
     <description>Recent content in Git on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Mar 2021 09:42:34 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Mar 2021 17:11:34 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to include the date in `git reflog` output</title>
+      <link>https://til.codeinthehole.com/posts/how-to-include-the-date-in-git-reflog-output/</link>
+      <pubDate>Thu, 25 Mar 2021 17:11:34 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-include-the-date-in-git-reflog-output/</guid>
+      <description>By default, the output of git reflog doesn&amp;rsquo;t include the date when the reference was updated.</description>
+    </item>
     
     <item>
       <title>About delta, a viewer for git and diff output</title>
