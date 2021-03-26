@@ -23,8 +23,9 @@ workflows:
 
     # Define a custom workflow that only runs the jobs you're interested in.
     temp_workflow:
-        - build_job_1
-        - build_job_2
+        jobs:
+            - build_job_1
+            - build_job_2
 
     # The standard (but slow) workflow that normally runs on each push.
     test_build_deploy;

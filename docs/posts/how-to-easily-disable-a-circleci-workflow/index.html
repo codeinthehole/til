@@ -71,8 +71,9 @@ and adds a custom one running only the jobs you care about.</p>
 
     <span style="color:#75715e"># Define a custom workflow that only runs the jobs you&#39;re interested in.</span>
     <span style="color:#f92672">temp_workflow</span>:
-        - <span style="color:#ae81ff">build_job_1</span>
-        - <span style="color:#ae81ff">build_job_2</span>
+        <span style="color:#f92672">jobs</span>:
+            - <span style="color:#ae81ff">build_job_1</span>
+            - <span style="color:#ae81ff">build_job_2</span>
 
     <span style="color:#75715e"># The standard (but slow) workflow that normally runs on each push.</span>
     <span style="color:#ae81ff">test_build_deploy;</span>
