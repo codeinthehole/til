@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Mar 2021 11:09:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Mar 2021 14:37:33 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>JSON is valid YAML</title>
+      <link>https://til.codeinthehole.com/posts/json-is-valid-yaml/</link>
+      <pubDate>Fri, 26 Mar 2021 14:37:33 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/json-is-valid-yaml/</guid>
+      <description>YAML is a superset of JSON which means a YAML parser can parse JSON (but not necessarily the other way around).</description>
+    </item>
     
     <item>
       <title>How to convert SSH2 public keys to OpenSSH format</title>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    YAML is a superset of JSON which means a YAML parser can parse JSON (but not necessarily the other way around). ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/json-is-valid-yaml/" />
+<meta property="og:title" content="TIL JSON is valid YAML — David Winterbottom" /> 
+<meta property="og:description" content="YAML is a superset of JSON which means a YAML parser can parse JSON (but not necessarily the other way around). [Reading time: 2 minutes]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL JSON is valid YAML — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>March 26th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>JSON is valid YAML</h1>
+        </header><p>YAML is a superset of JSON which means a YAML parser can parse JSON (but not
+necessarily the other way around).</p>
+<p>This test passes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> io
+<span style="color:#f92672">import</span> json
+<span style="color:#f92672">import</span> yaml
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_json_is_yaml</span>():
+    data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Jimmy&#34;</span>, <span style="color:#e6db74">&#34;attributes&#34;</span>: {<span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#ae81ff">35</span>, <span style="color:#e6db74">&#34;height&#34;</span>: <span style="color:#ae81ff">1.89</span>}}
+    f <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>StringIO(json<span style="color:#f92672">.</span>dumps(data))
+    from_json <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span>load(f, Loader<span style="color:#f92672">=</span>yaml<span style="color:#f92672">.</span>FullLoader)
+
+    f <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>StringIO(
+        <span style="color:#e6db74">&#34;&#34;&#34;---
+</span><span style="color:#e6db74">name: Jimmy
+</span><span style="color:#e6db74">attributes:
+</span><span style="color:#e6db74">    age: 35
+</span><span style="color:#e6db74">    height: 1.89
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    )
+    from_yaml <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span>load(f, Loader<span style="color:#f92672">=</span>yaml<span style="color:#f92672">.</span>FullLoader)
+
+    <span style="color:#66d9ef">assert</span> from_json <span style="color:#f92672">==</span> from_yaml
+</code></pre></div><p>This is noted in the <a href="https://yaml.org/spec/1.2/spec.html#id2759572">YAML spec</a>:</p>
+<blockquote>
+<p>Both JSON and YAML aim to be human readable data interchange formats. However,
+JSON and YAML have different priorities. JSON’s foremost design goal is
+simplicity and universality. Thus, JSON is trivial to generate and parse, at
+the cost of reduced human readability. It also uses a lowest common
+denominator information model, ensuring any JSON data can be easily processed
+by every modern programming environment.</p>
+<p>In contrast, YAML’s foremost design goals are human readability and support
+for serializing arbitrary native data structures. Thus, YAML allows for
+extremely readable files, but is more complex to generate and parse. In
+addition, YAML ventures beyond the lowest common denominator data types,
+requiring more complex processing when crossing between different programming
+environments.</p>
+<p>YAML can therefore be viewed as a natural superset of JSON, offering improved
+human readability and a more complete information model. This is also the case
+in practice; every JSON file is also a valid YAML file. This makes it easy to
+migrate from JSON to YAML if/when the additional features are required.</p>
+</blockquote>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/yaml/">YAML</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/about-yamls-node-anchors-and-aliases/">About YAML&rsquo;s node anchors and aliases</a></li>
+                
+                <li><a href="/posts/yaml-has-several-stringparsing-gotchas/">YAML has several string-parsing gotchas</a></li>
+                
+                </ul>
+            
+        
+            
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-convert-ssh2-public-keys-to-openssh-format\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
