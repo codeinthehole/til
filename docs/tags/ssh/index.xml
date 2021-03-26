@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSH - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/ssh/</link>
+    <description>Recent content in SSH on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Mar 2021 11:09:30 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to convert SSH2 public keys to OpenSSH format</title>
+      <link>https://til.codeinthehole.com/posts/how-to-convert-ssh2-public-keys-to-openssh-format/</link>
+      <pubDate>Fri, 26 Mar 2021 11:09:30 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-convert-ssh2-public-keys-to-openssh-format/</guid>
+      <description>Turns out cloud-init requires public keys to be in the single-line OpenSSH format but I was passing keys in multi-line SSH2 format.</description>
+    </item>
+    
+
+  </channel>
+</rss>

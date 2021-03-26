@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Turns out cloud-init requires public keys to be in the single-line OpenSSH format but I was passing keys in multi-line SSH2 format. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-convert-ssh2-public-keys-to-openssh-format/" />
+<meta property="og:title" content="TIL How to convert SSH2 public keys to OpenSSH format — David Winterbottom" /> 
+<meta property="og:description" content="Turns out cloud-init requires public keys to be in the single-line OpenSSH format but I was passing keys in multi-line SSH2 format. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to convert SSH2 public keys to OpenSSH format — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>March 26th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to convert SSH2 public keys to OpenSSH format</h1>
+        </header><p>Turns out <a href="https://cloudinit.readthedocs.io/en/latest/"><code>cloud-init</code></a> requires
+public keys to be in the single-line OpenSSH format but I was passing keys in
+multi-line SSH2 format. <code>/var/log/cloud-init.log</code> was complaining that:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">2021-03-25 15:31:55,032 - util.py[WARNING]: Failed loading yaml blob. Invalid format at line 22 column 1: &#34;while scanning a simple key
+  in &#34;&lt;unicode string&gt;&#34;, line 22, column 1:
+    AAAAB3NzaC1yc2EAAAABJQAAAQEAmZHH ...
+    ^
+could not find expected &#39;:&#39;
+  in &#34;&lt;unicode string&gt;&#34;, line 23, column 1:
+    3EBOn0CEF2/aGO4Ja+bE05PdhmzNc3Tn ...
+    ^&#34;
+</code></pre></div><p>To convert, use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ssh-keygen -i -f ssh2.pub &gt; openssh.pub
+</code></pre></div><p>For the record, to convert the other way, use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ssh-keygen -e -f openssh.pub &gt; ssh2.pub
+</code></pre></div></article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-include-the-date-in-git-reflog-output\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
