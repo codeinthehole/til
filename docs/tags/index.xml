@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Mar 2021 14:37:33 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Mar 2021 11:28:17 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Git</title>
+      <link>https://til.codeinthehole.com/tags/git/</link>
+      <pubDate>Sun, 28 Mar 2021 11:28:17 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/git/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>JSON</title>
@@ -36,15 +45,6 @@
       <pubDate>Fri, 26 Mar 2021 11:09:30 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://til.codeinthehole.com/tags/git/</link>
-      <pubDate>Thu, 25 Mar 2021 17:11:34 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/git/</guid>
       <description></description>
     </item>
     

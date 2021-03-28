@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Mar 2021 14:37:33 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Mar 2021 11:28:17 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About `git-absorb`</title>
+      <link>https://til.codeinthehole.com/posts/about-gitabsorb/</link>
+      <pubDate>Sun, 28 Mar 2021 11:28:17 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-gitabsorb/</guid>
+      <description>git-absorb is a great tool for crafting atomic commits.</description>
+    </item>
     
     <item>
       <title>JSON is valid YAML</title>
@@ -59,7 +68,7 @@ MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 S
     </item>
     
     <item>
-      <title>About delta, a viewer for git and diff output</title>
+      <title>About delta, a viewer for Git and diff output</title>
       <link>https://til.codeinthehole.com/posts/about-delta/</link>
       <pubDate>Fri, 19 Mar 2021 09:42:34 +0000</pubDate>
       

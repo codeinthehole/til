@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    For a given commit $SHA, use: $ git diff &amp;ndash;shortstat git hash-object -t tree /dev/null. ...
+    git-absorb is a great tool for crafting atomic commits. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,17 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-count-lines-of-code-in-a-git-repo/" />
-<meta property="og:title" content="TIL How to count lines of code in a Git repo for a given commit — David Winterbottom" /> 
-<meta property="og:description" content="For a given commit $SHA, use:
-$ git diff --shortstat `git hash-object -t tree /dev/null`. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-gitabsorb/" />
+<meta property="og:title" content="TIL About &#39;git-absorb&#39; — David Winterbottom" /> 
+<meta property="og:description" content="git-absorb is a great tool for crafting atomic commits. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL How to count lines of code in a Git repo for a given commit — David Winterbottom
+    TIL About &#39;git-absorb&#39; — David Winterbottom
 </title>
 
         
@@ -54,13 +53,18 @@ $ git diff --shortstat `git hash-object -t tree /dev/null`. [Reading time: 1 min
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>September 17th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>March 28th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>How to count lines of code in a Git repo for a given commit</h1>
-        </header><p>For a given commit <code>$SHA</code>, use:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git diff --shortstat <span style="color:#e6db74">`</span>git hash-object -t tree /dev/null<span style="color:#e6db74">`</span>..$SHA
-</code></pre></div><p>which works as <code>git hash-object -t tree /dev/null</code> computes the hash of the
-empty tree.</p>
+            <h1>About <code>git-absorb</code></h1>
+        </header><p><a href="https://github.com/tummychow/git-absorb"><code>git-absorb</code></a> is a great tool for crafting atomic commits. Given some uncommitted
+changes, it automates the process of identifying which commit to squash each
+change into. The workflow is simply:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vim  <span style="color:#75715e"># address code-review feedback</span>
+$ git add $CHANGED_FILES
+$ git absorb --and-rebase
+</code></pre></div><p>There&rsquo;s an excellent <a href="https://github.com/tummychow/git-absorb#elevator-pitch">elevator pitch</a> on
+the project README.</p>
+<p>Highly recommended.</p>
 </article>
 
         </main>
@@ -74,8 +78,6 @@ empty tree.</p>
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/about-gitabsorb/">About <code>git-absorb</code></a></li>
-                
                 <li><a href="/posts/how-to-include-the-date-in-git-reflog-output/">How to include the date in <code>git reflog</code> output</a></li>
                 
                 <li><a href="/posts/about-delta/">About delta, a viewer for Git and diff output</a></li>
@@ -84,14 +86,16 @@ empty tree.</p>
                 
                 <li><a href="/posts/how-to-resolve-git-conflicts-on-renamed-files/">How to resolve Git rebase conflicts on renamed files</a></li>
                 
+                <li><a href="/posts/how-to-count-lines-of-code-in-a-git-repo/">How to count lines of code in a Git repo for a given commit</a></li>
+                
                 </ul>
             
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -100,11 +104,9 @@ empty tree.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-vims-helpgrep-command\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/json-is-valid-yaml\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/javascripts-unary-plus-operator-casts-null-to-zero\/"); })
         
     </script>
 

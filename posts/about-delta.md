@@ -1,5 +1,5 @@
 ---
-title: "About delta, a viewer for git and diff output"
+title: "About delta, a viewer for Git and diff output"
 date: "2021-03-19T09:42:34+00:00"
 tags: ["Git", "Command-line tools"]
 ---

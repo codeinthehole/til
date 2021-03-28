@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/about-gitabsorb/</loc>
+    <lastmod>2021-03-28T11:28:17+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/git/</loc>
+    <lastmod>2021-03-28T11:28:17+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-03-28T11:28:17+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-03-28T11:28:17+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-03-28T11:28:17+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/json/</loc>
     <lastmod>2021-03-26T14:37:33+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/json-is-valid-yaml/</loc>
-    <lastmod>2021-03-26T14:37:33+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-03-26T14:37:33+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-03-26T14:37:33+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-03-26T14:37:33+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/yaml/</loc>
@@ -25,9 +31,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/tags/ssh/</loc>
     <lastmod>2021-03-26T11:09:30+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/git/</loc>
-    <lastmod>2021-03-25T17:11:34+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-include-the-date-in-git-reflog-output/</loc>
     <lastmod>2021-03-25T17:11:34+00:00</lastmod>
