@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which lets you search Vim’s help files for a given pattern. ...
+    Hub, the Github CLI tool, allows a pull request to be created from the command line. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-vims-helpgrep-command/" />
-<meta property="og:title" content="TIL About Vim&#39;s &#39;:helpgrep&#39; command — David Winterbottom" /> 
-<meta property="og:description" content="Which lets you search Vim&rsquo;s help files for a given pattern. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/" />
+<meta property="og:title" content="TIL That &#39;vim-polyglot&#39; conflicts with Hub when creating pull requests — David Winterbottom" /> 
+<meta property="og:description" content="Hub, the Github CLI tool, allows a pull request to be created from the command line. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About Vim&#39;s &#39;:helpgrep&#39; command — David Winterbottom
+    TIL That &#39;vim-polyglot&#39; conflicts with Hub when creating pull requests — David Winterbottom
 </title>
 
         
@@ -53,13 +53,19 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>September 16th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>March 30th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About Vim&rsquo;s <code>:helpgrep</code> command</h1>
-        </header><p>Which lets you search Vim&rsquo;s help files for a given pattern. For example:</p>
-<pre><code>:helpgrep What is the meaning of life
-</code></pre><p>Discovered via a <a href="https://til.hashrocket.com/posts/hdwqjbnl65-use-helpgrep-to-search-plugin-help-files-too">Hashrocket TIL</a> and
-an episode of Josh Branchaud&rsquo;s <a href="https://www.youtube.com/playlist?list=PL46-cKSxMYYCMpzXo6p0Cof8hJInYgohU">Vim Un-Alphabet</a> screencast series.</p>
+            <h1>That <code>vim-polyglot</code> conflicts with Hub when creating pull requests</h1>
+        </header><p><a href="https://hub.github.com/">Hub</a>, the Github CLI tool, allows a pull request to be
+created from the command line. It does this by opening Vim like so:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vim --cmd set ft<span style="color:#f92672">=</span>gitcommit tw<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> wrap lbr .git/PULLREQ_EDITMSG
+</code></pre></div><p>(As of Hub 2.14.2 at least).</p>
+<p>However, the <a href="https://github.com/sheerun/vim-polyglot"><code>vim-polyglot</code></a> language
+pack assigns a file type of <code>pullrequest</code> to files named
+<code>PULLREQ_EDITMSG</code> and so the <code>gitcommit</code> file type that Hub specifies is ignored.</p>
+<p>This can be worked around by setting:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">polyglot_disabled</span> = [<span style="color:#e6db74">&#39;pullrequest&#39;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>before you load the <code>vim-polyglot</code> plugin in your <code>~/.vimrc</code> file.</p>
 </article>
 
         </main>
@@ -72,8 +78,6 @@ an episode of Josh Branchaud&rsquo;s <a href="https://www.youtube.com/playlist?l
             
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/">That <code>vim-polyglot</code> conflicts with Hub when creating pull requests</a></li>
                 
                 <li><a href="/posts/how-to-use-custom-functions-with-cdo/">How to use custom functions with <code>:cdo</code></a></li>
                 
@@ -103,6 +107,8 @@ an episode of Josh Branchaud&rsquo;s <a href="https://www.youtube.com/playlist?l
                 
                 <li><a href="/posts/how-to-read-from-one-buffer-to-another-in-vim/">How to read from one buffer to another in Vim</a></li>
                 
+                <li><a href="/posts/about-vims-helpgrep-command/">About Vim&rsquo;s <code>:helpgrep</code> command</a></li>
+                
                 <li><a href="/posts/vim-recommends-using-emacsstyle-key-bindings-in-command-mode/">Vim recommends using Emacs-style key bindings in command mode</a></li>
                 
                 <li><a href="/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/">Vim doesn&rsquo;t create the persistent undo folder automatically</a></li>
@@ -116,11 +122,31 @@ an episode of Josh Branchaud&rsquo;s <a href="https://www.youtube.com/playlist?l
                 </ul>
             
         
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/about-gitabsorb/">About <code>git-absorb</code></a></li>
+                
+                <li><a href="/posts/how-to-include-the-date-in-git-reflog-output/">How to include the date in <code>git reflog</code> output</a></li>
+                
+                <li><a href="/posts/about-delta/">About delta, a viewer for Git and diff output</a></li>
+                
+                <li><a href="/posts/you-can-use-git-log-to-view-the-evolution-of-a-function/">You can use Git log to view the evolution of a function</a></li>
+                
+                <li><a href="/posts/how-to-resolve-git-conflicts-on-renamed-files/">How to resolve Git rebase conflicts on renamed files</a></li>
+                
+                <li><a href="/posts/how-to-count-lines-of-code-in-a-git-repo/">How to count lines of code in a Git repo for a given commit</a></li>
+                
+                </ul>
+            
+        
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -129,11 +155,9 @@ an episode of Josh Branchaud&rsquo;s <a href="https://www.youtube.com/playlist?l
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/vim-recommends-using-emacsstyle-key-bindings-in-command-mode\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-gitabsorb\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-count-lines-of-code-in-a-git-repo\/"); })
         
     </script>
 

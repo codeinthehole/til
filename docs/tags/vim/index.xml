@@ -6,11 +6,20 @@
     <description>Recent content in Vim on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Feb 2021 14:36:46 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Mar 2021 16:46:39 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That `vim-polyglot` conflicts with Hub when creating pull requests</title>
+      <link>https://til.codeinthehole.com/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/</link>
+      <pubDate>Tue, 30 Mar 2021 16:46:39 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/</guid>
+      <description>Hub, the Github CLI tool, allows a pull request to be created from the command line.</description>
+    </item>
     
     <item>
       <title>How to use custom functions with `:cdo`</title>
