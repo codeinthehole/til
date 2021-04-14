@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Mar 2021 16:46:39 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 14 Apr 2021 12:09:31 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can use `shuf` to take random samples of lines</title>
+      <link>https://til.codeinthehole.com/posts/you-can-shuf-to-take-random-samples-of-lines/</link>
+      <pubDate>Wed, 14 Apr 2021 12:09:31 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-shuf-to-take-random-samples-of-lines/</guid>
+      <description>For example, I wanted to share a random sample of accounts affected by some issue based on a Loggly event export.</description>
+    </item>
     
     <item>
       <title>That `vim-polyglot` conflicts with Hub when creating pull requests</title>

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which echos the command to be executed to standard error immediately before it is executed. ...
+    For example, I wanted to share a random sample of accounts affected by some issue based on a Loggly event export. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-xargs-t/" />
-<meta property="og:title" content="TIL About &#39;xargs -t&#39; — David Winterbottom" /> 
-<meta property="og:description" content="Which echos the command to be executed to standard error immediately before it is executed. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-shuf-to-take-random-samples-of-lines/" />
+<meta property="og:title" content="TIL You can use &#39;shuf&#39; to take random samples of lines — David Winterbottom" /> 
+<meta property="og:description" content="For example, I wanted to share a random sample of accounts affected by some issue based on a Loggly event export. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;xargs -t&#39; — David Winterbottom
+    TIL You can use &#39;shuf&#39; to take random samples of lines — David Winterbottom
 </title>
 
         
@@ -53,11 +53,13 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>March 22th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>April 14th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>xargs -t</code></h1>
-        </header><p>Which echos the command to be executed to standard error immediately before it
-is executed.</p>
+            <h1>You can use <code>shuf</code> to take random samples of lines</h1>
+        </header><p>For example, I wanted to share a random sample of accounts affected by some
+issue based on a Loggly event export. This can be done with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cat loggly_events.json | jq -r <span style="color:#e6db74">&#39;.events[].event.json.account&#39;</span> | shuf -n20
+</code></pre></div><p>More info in <a href="https://shapeshed.com/unix-shuf/">this short <code>shuf</code> tutorial</a>.</p>
 </article>
 
         </main>
@@ -71,7 +73,7 @@ is executed.</p>
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/unix/">Unix</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/you-can-shuf-to-take-random-samples-of-lines/">You can use <code>shuf</code> to take random samples of lines</a></li>
+                <li><a href="/posts/about-xargs-t/">About <code>xargs -t</code></a></li>
                 
                 <li><a href="/posts/what-the-sections-of-the-unix-manual-are/">What the sections of the Unix manual are</a></li>
                 
@@ -82,9 +84,9 @@ is executed.</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -93,11 +95,9 @@ is executed.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/what-the-sections-of-the-unix-manual-are\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-include-the-date-in-git-reflog-output\/"); })
         
     </script>
 
