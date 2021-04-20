@@ -3,13 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-04-14T12:09:31+01:00</lastmod>
+    <lastmod>2021-04-20T21:45:28+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2021-04-20T21:45:28+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/pythons-csvwriter-function-defaults-to-windows-line-endings/</loc>
+    <lastmod>2021-04-20T21:45:28+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-04-14T12:09:31+01:00</lastmod>
+    <lastmod>2021-04-20T21:45:28+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/</loc>
-    <lastmod>2021-04-14T12:09:31+01:00</lastmod>
+    <lastmod>2021-04-20T21:45:28+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/unix/</loc>
     <lastmod>2021-04-14T12:09:31+01:00</lastmod>
@@ -63,9 +69,6 @@
     <lastmod>2021-03-19T09:42:34+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/pytest/</loc>
-    <lastmod>2021-03-16T17:36:21+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
     <lastmod>2021-03-16T17:36:21+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/testing/</loc>

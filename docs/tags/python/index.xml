@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Mar 2021 17:36:21 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Apr 2021 21:45:28 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Python&#39;s `csv.writer` function defaults to Windows line endings</title>
+      <link>https://til.codeinthehole.com/posts/pythons-csvwriter-function-defaults-to-windows-line-endings/</link>
+      <pubDate>Tue, 20 Apr 2021 21:45:28 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/pythons-csvwriter-function-defaults-to-windows-line-endings/</guid>
+      <description>I was confused as to why awk wasn&amp;rsquo;t matching the final element in a CSV stream from csv.</description>
+    </item>
     
     <item>
       <title>You can have class-scoped autouse pytest fixtures</title>
