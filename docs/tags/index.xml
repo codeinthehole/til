@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Apr 2021 21:45:28 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 28 Apr 2021 09:46:21 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>PostgreSQL</title>
+      <link>https://til.codeinthehole.com/tags/postgresql/</link>
+      <pubDate>Wed, 28 Apr 2021 09:46:21 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Python</title>

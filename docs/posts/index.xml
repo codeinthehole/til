@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Apr 2021 21:45:28 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 28 Apr 2021 09:46:21 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>The correct sequence of SQL statements for dropping a role</title>
+      <link>https://til.codeinthehole.com/posts/the-correct-sequence-of-sql-statements-for-dropping-a-role/</link>
+      <pubDate>Wed, 28 Apr 2021 09:46:21 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/the-correct-sequence-of-sql-statements-for-dropping-a-role/</guid>
+      <description>Suppose you create a PostgreSQL user with read-only privileges as follows:</description>
+    </item>
     
     <item>
       <title>Python&#39;s `csv.writer` function defaults to Windows line endings</title>
