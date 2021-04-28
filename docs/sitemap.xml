@@ -2,19 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-04-28T17:09:21+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/security/</loc>
+    <lastmod>2021-04-28T17:09:21+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/sensitive-terraform-cloud-variables-are-included-in-sentinel-mocks/</loc>
+    <lastmod>2021-04-28T17:09:21+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/sentinel/</loc>
+    <lastmod>2021-04-28T17:09:21+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-04-28T17:09:21+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/terraform/</loc>
+    <lastmod>2021-04-28T17:09:21+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-04-28T17:09:21+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/postgresql/</loc>
     <lastmod>2021-04-28T09:46:21+01:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-04-28T09:46:21+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-04-28T09:46:21+01:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/posts/the-correct-sequence-of-sql-statements-for-dropping-a-role/</loc>
-    <lastmod>2021-04-28T09:46:21+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-04-28T09:46:21+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/python/</loc>
@@ -299,9 +311,6 @@
     <loc>https://til.codeinthehole.com/posts/how-to-use-bandit-with-vims-quickfix-list/</loc>
     <lastmod>2020-11-19T10:54:49+00:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/tags/security/</loc>
-    <lastmod>2020-11-19T10:54:49+00:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/posts/exuberantctags-has-been-superceded-by-universalctags/</loc>
     <lastmod>2020-11-16T22:10:57+00:00</lastmod>
   </url><url>
@@ -375,9 +384,6 @@
     <lastmod>2020-09-29T12:47:23+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/aws-asgs-have-an-instance-refresh-feature/</loc>
-    <lastmod>2020-09-28T16:02:44+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/terraform/</loc>
     <lastmod>2020-09-28T16:02:44+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/the-macos-keybinds-for-en-and-emdashes/</loc>

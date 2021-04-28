@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Apr 2021 09:46:21 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 28 Apr 2021 17:09:21 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Sensitive Terraform Cloud variables are included in Sentinel mocks</title>
+      <link>https://til.codeinthehole.com/posts/sensitive-terraform-cloud-variables-are-included-in-sentinel-mocks/</link>
+      <pubDate>Wed, 28 Apr 2021 17:09:21 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/sensitive-terraform-cloud-variables-are-included-in-sentinel-mocks/</guid>
+      <description>Hasicorp&amp;rsquo;s Sentinel framework allows you to write tests using a mock Terraform plan file.</description>
+    </item>
     
     <item>
       <title>The correct sequence of SQL statements for dropping a role</title>

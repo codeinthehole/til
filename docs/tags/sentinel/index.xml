@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Security - Today I Learnt...</title>
-    <link>https://til.codeinthehole.com/tags/security/</link>
-    <description>Recent content in Security on Today I Learnt...</description>
+    <title>Sentinel - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/sentinel/</link>
+    <description>Recent content in Sentinel on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Apr 2021 17:09:21 +0100</lastBuildDate>
     
-	<atom:link href="https://til.codeinthehole.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://til.codeinthehole.com/tags/sentinel/index.xml" rel="self" type="application/rss+xml" />
     
 
     
@@ -19,15 +19,6 @@
       
       <guid>https://til.codeinthehole.com/posts/sensitive-terraform-cloud-variables-are-included-in-sentinel-mocks/</guid>
       <description>Hasicorp&amp;rsquo;s Sentinel framework allows you to write tests using a mock Terraform plan file.</description>
-    </item>
-    
-    <item>
-      <title>How to use Bandit with Vim&#39;s quickfix list</title>
-      <link>https://til.codeinthehole.com/posts/how-to-use-bandit-with-vims-quickfix-list/</link>
-      <pubDate>Thu, 19 Nov 2020 10:54:49 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/posts/how-to-use-bandit-with-vims-quickfix-list/</guid>
-      <description>One way to populate Vim&amp;rsquo;s quickfix list is by running :make which runs the program specified by the makeprg setting.</description>
     </item>
     
 
