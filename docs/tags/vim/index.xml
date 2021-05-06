@@ -6,11 +6,20 @@
     <description>Recent content in Vim on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Mar 2021 16:46:39 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 06 May 2021 15:42:04 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That Vim&#39;s uppercase marks are global and persistent</title>
+      <link>https://til.codeinthehole.com/posts/that-vims-uppercase-marks-are-global-and-persistent/</link>
+      <pubDate>Thu, 06 May 2021 15:42:04 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-vims-uppercase-marks-are-global-and-persistent/</guid>
+      <description>Basic stuff but I didn&amp;rsquo;t realise that setting an uppercase mark (e.</description>
+    </item>
     
     <item>
       <title>That `vim-polyglot` conflicts with Hub when creating pull requests</title>
