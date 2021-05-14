@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    I use sheerun/vim-polyglot but disable its markdown support in favour of plasticboy/vim-markdown. ...
+    A search with / or ? can include an additional offset to position the cursor after jumping to the search match. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/vimmarkdown-has-some-useful-commands/" />
-<meta property="og:title" content="TIL Vim-markdown has some useful commands — David Winterbottom" /> 
-<meta property="og:description" content="I use sheerun/vim-polyglot but disable its markdown support in favour of plasticboy/vim-markdown. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-vims-semicolon-search-offset/" />
+<meta property="og:title" content="TIL About Vim&#39;s semi-colon search offset — David Winterbottom" /> 
+<meta property="og:description" content="A search with / or ? can include an additional offset to position the cursor after jumping to the search match. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL Vim-markdown has some useful commands — David Winterbottom
+    TIL About Vim&#39;s semi-colon search offset — David Winterbottom
 </title>
 
         
@@ -53,37 +53,21 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>December 4th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>May 14th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>Vim-markdown has some useful commands</h1>
-        </header><p>I use <a href="https://github.com/sheerun/vim-polyglot"><code>sheerun/vim-polyglot</code></a> but
-disable its <code>markdown</code> support in favour of
-<a href="https://github.com/plasticboy/vim-markdown"><code>plasticboy/vim-markdown</code></a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; ~/.vimrc</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
-</span><span style="color:#75715e">&#34; Disable polyglot&#39;s markdown support...</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">polyglot_disabled</span> = [<span style="color:#e6db74">&#39;markdown&#39;</span>]<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;sheerun/vim-polyglot&#39;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
-</span><span style="color:#75715e">&#34; ...so we can use the more sophisticated vim-markdown instead.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;godlygeek/tabular&#39;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;plasticboy/vim-markdown&#39;</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>Why? Because <code>plasticboy/vim-markdown</code> has better support for folding, front-matter
-and syntax highlighting.</p>
-<p>Also, I spotted today that it defines several useful Ex commands:</p>
-<ul>
-<li>
-<p><code>:HeaderIncrease</code> &mdash; Increase the level of all headers in buffer/selection.</p>
-</li>
-<li>
-<p><code>:Toc</code> &mdash; Populate the location list with a table of contents and open it in
-a vertical window (you can use <code>:lnext</code> and <code>:lprev</code> to jump between headings).</p>
-</li>
-<li>
-<p><code>:InsertToc</code> &mdash; Insert a table of contents at the current line.</p>
-</li>
-</ul>
-<p>Will start using these more.</p>
+            <h1>About Vim&rsquo;s semi-colon search offset</h1>
+        </header><p>A search with <code>/</code> or <code>?</code> can include an additional offset to position the cursor
+after jumping to the search match. From <a href="http://vimdoc.sourceforge.net/htmldoc/pattern.html#search-offset">the docs</a>:</p>
+<pre><code>pattern			cursor position
+/test/+1		one line below &quot;test&quot;, in column 1
+/test/e			on the last t of &quot;test&quot;
+/test/s+2		on the 's' of &quot;test&quot;
+/test/b-3		three characters before &quot;test&quot;
+</code></pre><p>A special offset is <code>;</code> which lets you position the cursor by doing a second
+search (normally within the same line as the original match). E.g.</p>
+<pre><code>/test_.*_errors/;/errors
+</code></pre><p>which will position the cursor on the <code>errors</code> part of each search match.</p>
+<p>Useful for repeating common changes in a buffer using <code>n.n.n.</code> etc.</p>
 </article>
 
         </main>
@@ -96,8 +80,6 @@ a vertical window (you can use <code>:lnext</code> and <code>:lprev</code> to ju
             
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/about-vims-semicolon-search-offset/">About Vim&rsquo;s semi-colon search offset</a></li>
                 
                 <li><a href="/posts/that-vims-uppercase-marks-are-global-and-persistent/">That Vim&rsquo;s uppercase marks are global and persistent</a></li>
                 
@@ -112,6 +94,8 @@ a vertical window (you can use <code>:lnext</code> and <code>:lprev</code> to ju
                 <li><a href="/posts/how-to-add-project-specific-vim-settings/">How to add project-specific Vim settings</a></li>
                 
                 <li><a href="/posts/universal-ctags-can-index-more-things-than-i-realised/">Universal Ctags can index more things than I realised</a></li>
+                
+                <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
                 
                 <li><a href="/posts/about-how-to-use-keywordprg-effectively/">About how to use <code>keywordprg</code> effectively</a></li>
                 
@@ -144,23 +128,11 @@ a vertical window (you can use <code>:lnext</code> and <code>:lprev</code> to ju
                 </ul>
             
         
-            
-            
-                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/markdown/">Markdown</a>:</p>
-                <ul>
-                
-                <li><a href="/posts/how-to-spellcheck-markdown-repos-on-circleci/">How to spell-check markdown repos on CircleCI</a></li>
-                
-                <li><a href="/posts/how-to-embed-markdown-content-in-a-github-code-block/">How to embed markdown content in a Github code block</a></li>
-                
-                </ul>
-            
-        
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -169,11 +141,9 @@ a vertical window (you can use <code>:lnext</code> and <code>:lprev</code> to ju
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/gsuites-groups-admin-role-can-read-any-group-email\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/the-iso3166-codes-for-the-united-kingdon-are-inaccurate\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-set-perproject-ripgrep-exclude-rules\/"); })
         
     </script>
 

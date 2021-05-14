@@ -6,11 +6,20 @@
     <description>Recent content in Vim on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 May 2021 15:42:04 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 14 May 2021 12:46:44 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About Vim&#39;s semi-colon search offset</title>
+      <link>https://til.codeinthehole.com/posts/about-vims-semicolon-search-offset/</link>
+      <pubDate>Fri, 14 May 2021 12:46:44 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-vims-semicolon-search-offset/</guid>
+      <description>A search with / or ? can include an additional offset to position the cursor after jumping to the search match.</description>
+    </item>
     
     <item>
       <title>That Vim&#39;s uppercase marks are global and persistent</title>
