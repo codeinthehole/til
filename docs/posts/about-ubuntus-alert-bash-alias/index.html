@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Ubuntu’s default ~/.bashrc includes an alert alias for triggering desktop notifications when long-running processes have completed: ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-ubuntus-alert-bash-alias/" />
+<meta property="og:title" content="TIL About Ubuntu&#39;s &#39;alert&#39; Bash alias — David Winterbottom" /> 
+<meta property="og:description" content="Ubuntu&rsquo;s default ~/.bashrc includes an alert alias for triggering desktop notifications when long-running processes have completed: [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL About Ubuntu&#39;s &#39;alert&#39; Bash alias — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>May 14th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>About Ubuntu&rsquo;s <code>alert</code> Bash alias</h1>
+        </header><p><a href="https://gist.github.com/marioBonales/1637696#file-bashrc-L85-L87">Ubuntu&rsquo;s default <code>~/.bashrc</code></a> includes an <code>alert</code> alias for triggering
+desktop notifications when long-running processes have completed:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias alert<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;notify-send
+</span><span style="color:#e6db74">    --urgency=low
+</span><span style="color:#e6db74">    -i &#34;$([ $? = 0 ] &amp;&amp; echo terminal || echo error)&#34;
+</span><span style="color:#e6db74">    &#34;$(history | tail -n1 | sed -e &#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;s/^\s*[0-9]\+\s*//;s/[;&amp;|]\s*alert$//&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;)&#34;&#39;</span>
+</code></pre></div><p>(Wrapped for clarity).</p>
+<p>Example usage:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ./run_test_suite.sh ; alert
+</code></pre></div><p>It uses the exit code of the previous process <code>$?</code> to determine the message and
+icon displayed. As you can see, it uses <a href="notifysend"><code>notify-send</code></a> to create the alert — <a href="explanation">here&rsquo;s an explanation of how it works</a>.</p>
+<p>You can create a macOS equivalent with the Homebrew-installed <a href="https://formulae.brew.sh/formula/terminal-notifier"><code>terminal-notifier</code></a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias alert<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;terminal-notifier
+</span><span style="color:#e6db74">    -title &#34;Process finished&#34;
+</span><span style="color:#e6db74">    -message &#34;$([ $? = 0 ] &amp;&amp; echo Success || echo Error)&#34;&#39;</span>
+</code></pre></div><p>This is a basic version. You can make use of <code>terminal-notifier</code>&rsquo;s options to
+add sounds, icons and even activate iTerm2 again (with <code>-activate com.googlecode.iterm2</code>).</p>
+<p>The appearance of the <code>terminal-notifier</code> notifications can be configured in
+<code>System Preferences &gt; Notifications</code>:</p>
+<figure>
+    <img src="/images/terminalnotifier-preferences.png"
+         alt="terminal-notifier preferences"/> 
+</figure>
+
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/ubuntu/">Ubuntu</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/about-passwordless-users-in-ec2/">Where authentication for the <code>ubuntu</code> user on a EC2 instance is defined</a></li>
+                
+                </ul>
+            
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/bash/">Bash</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/about-readonly-bash-variables/">About <code>readonly</code> Bash variables</a></li>
+                
+                <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
+                
+                <li><a href="/posts/about-bashs-debug-signal/">About Bash&rsquo;s DEBUG signal</a></li>
+                
+                </ul>
+            
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/linux/">Linux</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/systemd-sends-sigkill-signals-after-waiting-for-timestopsec-seconds/">systemd sends SIGKILL signals after waiting for <code>TimeoutStopSec</code> seconds</a></li>
+                
+                <li><a href="/posts/systemd-timers-can-be-stopped/">systemd timers can be stopped</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-vims-semicolon-search-offset\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

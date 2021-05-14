@@ -2,16 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://til.codeinthehole.com/posts/about-vims-semicolon-search-offset/</loc>
-    <lastmod>2021-05-14T12:46:44+01:00</lastmod>
+    <loc>https://til.codeinthehole.com/posts/about-ubuntus-alert-bash-alias/</loc>
+    <lastmod>2021-05-14T14:28:19+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/bash/</loc>
+    <lastmod>2021-05-14T14:28:19+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/linux/</loc>
+    <lastmod>2021-05-14T14:28:19+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-05-14T12:46:44+01:00</lastmod>
+    <lastmod>2021-05-14T14:28:19+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-05-14T12:46:44+01:00</lastmod>
+    <lastmod>2021-05-14T14:28:19+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-05-14T14:28:19+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/ubuntu/</loc>
+    <lastmod>2021-05-14T14:28:19+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/about-vims-semicolon-search-offset/</loc>
     <lastmod>2021-05-14T12:46:44+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/vim/</loc>
@@ -115,9 +127,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-software-can-be-free-as-in-mattress/</loc>
     <lastmod>2021-03-15T12:36:25+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/linux/</loc>
-    <lastmod>2021-03-12T15:28:38+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/systemd/</loc>
     <lastmod>2021-03-12T15:28:38+00:00</lastmod>
@@ -371,9 +380,6 @@
     <loc>https://til.codeinthehole.com/posts/about-readonly-bash-variables/</loc>
     <lastmod>2020-10-13T16:02:02+01:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/tags/bash/</loc>
-    <lastmod>2020-10-13T16:02:02+01:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-shellcheck/</loc>
     <lastmod>2020-10-12T10:30:00+01:00</lastmod>
   </url><url>
@@ -517,9 +523,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/posts/renaming-a-terraform-module-leads-to-resource-recreation/</loc>
     <lastmod>2020-07-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/ubuntu/</loc>
-    <lastmod>2020-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/about-passwordless-users-in-ec2/</loc>
     <lastmod>2020-07-22T00:00:00+00:00</lastmod>

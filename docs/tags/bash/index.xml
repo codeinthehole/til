@@ -6,11 +6,20 @@
     <description>Recent content in Bash on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2020 16:02:02 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 14 May 2021 14:28:19 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About Ubuntu&#39;s `alert` Bash alias</title>
+      <link>https://til.codeinthehole.com/posts/about-ubuntus-alert-bash-alias/</link>
+      <pubDate>Fri, 14 May 2021 14:28:19 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-ubuntus-alert-bash-alias/</guid>
+      <description>Ubuntu&amp;rsquo;s default ~/.bashrc includes an alert alias for triggering desktop notifications when long-running processes have completed:</description>
+    </item>
     
     <item>
       <title>About `readonly` Bash variables</title>
