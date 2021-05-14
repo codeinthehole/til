@@ -150,7 +150,7 @@ main#content {
     /* Tag cloud */
     #tagcloud {
         /* The number of classes to build. Make sure this is higher than the max freq of any one tag. */
-        $num_classes: 20;
+        $num_classes: 30;
 
         /* The tag count that gets the max font size. */
         $max_font_size_count: 10;
@@ -165,6 +165,7 @@ main#content {
             @if $i >  $max_font_size_count { $size: $max_font_size; }
             .font_size_#{$i} { 
                 font-size: $size; 
+                line-height: 1;
             }
         }
     }
