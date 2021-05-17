@@ -18,7 +18,7 @@
       <pubDate>Fri, 14 May 2021 14:28:19 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-ubuntus-alert-bash-alias/</guid>
-      <description>Ubuntu&amp;rsquo;s default ~/.bashrc includes an alert alias for triggering desktop notifications when long-running processes have completed:</description>
+      <description>Ubuntu&amp;rsquo;s default ~/.bashrc includes an alert alias for triggering a desktop notification when a long-running processes has completed:</description>
     </item>
     
     <item>

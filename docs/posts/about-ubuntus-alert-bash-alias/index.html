@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Ubuntu’s default ~/.bashrc includes an alert alias for triggering desktop notifications when long-running processes have completed: ...
+    Ubuntu’s default ~/.bashrc includes an alert alias for triggering a desktop notification when a long-running processes has completed: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/about-ubuntus-alert-bash-alias/" />
 <meta property="og:title" content="TIL About Ubuntu&#39;s &#39;alert&#39; Bash alias — David Winterbottom" /> 
-<meta property="og:description" content="Ubuntu&rsquo;s default ~/.bashrc includes an alert alias for triggering desktop notifications when long-running processes have completed: [Reading time: 1 minute]" />
+<meta property="og:description" content="Ubuntu&rsquo;s default ~/.bashrc includes an alert alias for triggering a desktop notification when a long-running processes has completed: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
@@ -56,23 +56,24 @@
                 On <time>May 14th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>About Ubuntu&rsquo;s <code>alert</code> Bash alias</h1>
-        </header><p><a href="https://gist.github.com/marioBonales/1637696#file-bashrc-L85-L87">Ubuntu&rsquo;s default <code>~/.bashrc</code></a> includes an <code>alert</code> alias for triggering
-desktop notifications when long-running processes have completed:</p>
+        </header><p><a href="https://git.launchpad.net/ubuntu/+source/bash/tree/debian/skel.bashrc#n97">Ubuntu&rsquo;s default <code>~/.bashrc</code></a> includes an <code>alert</code> alias for triggering
+a desktop notification when a long-running processes has completed:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias alert<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;notify-send
 </span><span style="color:#e6db74">    --urgency=low
 </span><span style="color:#e6db74">    -i &#34;$([ $? = 0 ] &amp;&amp; echo terminal || echo error)&#34;
 </span><span style="color:#e6db74">    &#34;$(history | tail -n1 | sed -e &#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;s/^\s*[0-9]\+\s*//;s/[;&amp;|]\s*alert$//&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;)&#34;&#39;</span>
-</code></pre></div><p>(Wrapped for clarity).</p>
+</code></pre></div><p>(Command wrapped for clarity).</p>
 <p>Example usage:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ./run_test_suite.sh ; alert
 </code></pre></div><p>It uses the exit code of the previous process <code>$?</code> to determine the message and
-icon displayed. As you can see, it uses <a href="notifysend"><code>notify-send</code></a> to create the alert — <a href="explanation">here&rsquo;s an explanation of how it works</a>.</p>
+icon displayed. As you can see, it uses <a href="notifysend"><code>notify-send</code></a> to create the alert — <a href="explanation">here&rsquo;s a more detailed explanation of how it works</a>.</p>
 <p>You can create a macOS equivalent with the Homebrew-installed <a href="https://formulae.brew.sh/formula/terminal-notifier"><code>terminal-notifier</code></a>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias alert<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;terminal-notifier
 </span><span style="color:#e6db74">    -title &#34;Process finished&#34;
 </span><span style="color:#e6db74">    -message &#34;$([ $? = 0 ] &amp;&amp; echo Success || echo Error)&#34;&#39;</span>
-</code></pre></div><p>This is a basic version. You can make use of <code>terminal-notifier</code>&rsquo;s options to
-add sounds, icons and even activate iTerm2 again (with <code>-activate com.googlecode.iterm2</code>).</p>
+</code></pre></div><p>(Command wrapped for clarity again).</p>
+<p>This is a basic version: you can make use of <code>terminal-notifier</code>&rsquo;s options to
+add sounds, icons and even activate iTerm2 again with <code>-activate com.googlecode.iterm2</code>.</p>
 <p>The appearance of the <code>terminal-notifier</code> notifications can be configured in
 <code>System Preferences &gt; Notifications</code>:</p>
 <figure>
