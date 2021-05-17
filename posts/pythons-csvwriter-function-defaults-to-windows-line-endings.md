@@ -27,7 +27,7 @@ The fix is to use Posix-style line endings `\n`:
 ```sh
 $ python -c "
 > import csv, sys
-> w = csv.writer(sys.stdout, delimiter='\t', linetermintor='\n')
+> w = csv.writer(sys.stdout, delimiter='\t', lineterminator='\n')
 > w.writerow(['foo', 'bar'])
 > " | awk '$2 == "bar" { print $1 }'
 foo

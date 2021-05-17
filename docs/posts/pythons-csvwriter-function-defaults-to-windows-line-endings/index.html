@@ -71,7 +71,7 @@ which prevents <code>awk</code> from matching the last field on each line.</p>
 <p>The fix is to use Posix-style line endings <code>\n</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python -c <span style="color:#e6db74">&#34;
 </span><span style="color:#e6db74">&gt; import csv, sys
-</span><span style="color:#e6db74">&gt; w = csv.writer(sys.stdout, delimiter=&#39;\t&#39;, linetermintor=&#39;\n&#39;)
+</span><span style="color:#e6db74">&gt; w = csv.writer(sys.stdout, delimiter=&#39;\t&#39;, lineterminator=&#39;\n&#39;)
 </span><span style="color:#e6db74">&gt; w.writerow([&#39;foo&#39;, &#39;bar&#39;])
 </span><span style="color:#e6db74">&gt; &#34;</span> | awk <span style="color:#e6db74">&#39;$2 == &#34;bar&#34; { print $1 }&#39;</span>
 foo
