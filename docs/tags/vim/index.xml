@@ -6,11 +6,20 @@
     <description>Recent content in Vim on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 May 2021 12:46:44 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 25 May 2021 10:59:39 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About the `:ALEInfo` command</title>
+      <link>https://til.codeinthehole.com/posts/about-the-aleinfo-command/</link>
+      <pubDate>Tue, 25 May 2021 10:59:39 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-the-aleinfo-command/</guid>
+      <description>The ALE plugin for Vim includes a :ALEInfo command that shows how ALE is configured for the current file and the output of any commands that have run.</description>
+    </item>
     
     <item>
       <title>About Vim&#39;s semi-colon search offset</title>
