@@ -6,11 +6,20 @@
     <description>Recent content in Git on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Mar 2021 16:46:39 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jun 2021 13:00:25 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About `git log -G`</title>
+      <link>https://til.codeinthehole.com/posts/about-git-log-g/</link>
+      <pubDate>Wed, 02 Jun 2021 13:00:25 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-git-log-g/</guid>
+      <description>git log supports two options for searching the contents of each commit&amp;rsquo;s patch:</description>
+    </item>
     
     <item>
       <title>That `vim-polyglot` conflicts with Hub when creating pull requests</title>

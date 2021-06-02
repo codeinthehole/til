@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://til.codeinthehole.com/posts/about-the-aleinfo-command/</loc>
-    <lastmod>2021-05-25T10:59:39+01:00</lastmod>
+    <loc>https://til.codeinthehole.com/posts/about-git-log-g/</loc>
+    <lastmod>2021-06-02T13:00:25+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/git/</loc>
+    <lastmod>2021-06-02T13:00:25+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-05-25T10:59:39+01:00</lastmod>
+    <lastmod>2021-06-02T13:00:25+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-05-25T10:59:39+01:00</lastmod>
+    <lastmod>2021-06-02T13:00:25+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-06-02T13:00:25+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/about-the-aleinfo-command/</loc>
     <lastmod>2021-05-25T10:59:39+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/vim/</loc>
@@ -70,9 +76,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-shuf-to-take-random-samples-of-lines/</loc>
     <lastmod>2021-04-14T12:09:31+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/git/</loc>
-    <lastmod>2021-03-30T16:46:39+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/</loc>
     <lastmod>2021-03-30T16:46:39+01:00</lastmod>

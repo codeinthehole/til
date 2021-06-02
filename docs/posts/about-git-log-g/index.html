@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Modern versions of git log provide a -L option which lets you trace the evolution of a line range or function: ...
+    git log supports two options for searching the contents of each commit’s patch: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-use-git-log-to-view-the-evolution-of-a-function/" />
-<meta property="og:title" content="TIL You can use Git log to view the evolution of a function — David Winterbottom" /> 
-<meta property="og:description" content="Modern versions of git log provide a -L option which lets you trace the evolution of a line range or function: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-git-log-g/" />
+<meta property="og:title" content="TIL About &#39;git log -G&#39; — David Winterbottom" /> 
+<meta property="og:description" content="git log supports two options for searching the contents of each commit&rsquo;s patch: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL You can use Git log to view the evolution of a function — David Winterbottom
+    TIL About &#39;git log -G&#39; — David Winterbottom
 </title>
 
         
@@ -53,28 +53,26 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>March 5th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>June 2th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>You can use Git log to view the evolution of a function</h1>
-        </header><p>Modern versions of <code>git log</code> provide a <code>-L</code> option which lets you trace the
-evolution of a line range or function:</p>
-<figure>
-    <img src="/images/git-log-function-evolution.png"
-         alt="git log function evolution"/> 
-</figure>
-
-<p>Usage is:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git log -L :&lt;funcname&gt;:&lt;file&gt;
-</code></pre></div><p>where:</p>
+            <h1>About <code>git log -G</code></h1>
+        </header><p><code>git log</code> supports two options for searching the contents of each commit&rsquo;s
+patch:</p>
 <ul>
-<li><code>&lt;funcname&gt;</code> is a regular expression to match the function name.</li>
-<li><code>&lt;file&gt;</code> is the path to the file where the function lives.</li>
+<li><a href="https://git-scm.com/docs/git-log#Documentation/git-log.txt--Sltstringgt"><code>-S&lt;string&gt;</code></a> — look for patches containing a fixed string. Technically, this option looks for
+differences in the number of occurrences of a string in a file.</li>
+<li><a href="https://git-scm.com/docs/git-log#Documentation/git-log.txt--Gltregexgt"><code>-G&lt;regex&gt;</code></a> — look for patches matching a regex.</li>
 </ul>
-<p>Example usage:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git log -L :get_locale:octoenergy/utils/workingdays.py
-</code></pre></div><p>Depending on what language you&rsquo;re working with, you may need to adjust you local
-<code>~/.gitattributes</code> file to ensure Git can determine the patch hunk headers.</p>
-<p>More in <a href="https://git-scm.com/docs/git-log/#Documentation/git-log.txt--Lltfuncnamegtltfilegt">the official git docs</a>.</p>
+<p>The <code>-G</code> option can be useful to add a word boundary character to a fixed
+string. So instead of:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git log -S my_string
+</code></pre></div><p>use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git log -G <span style="color:#e6db74">&#34;\&lt;my_string\&gt;&#34;</span>
+</code></pre></div><p>to avoid unwanted matches (like <code>my_string_with_extra_stuff</code>).</p>
+<p>These filtering options are best used with the <a href="https://git-scm.com/docs/git-log#Documentation/git-log.txt---patch"><code>-p</code> or
+<code>--patch</code></a> option to show
+the commit diff of files that contain the searched-for string/regex. To see the diff
+of <em>all</em> files in each matching commit, use the <a href="https://git-scm.com/docs/git-log#Documentation/git-log.txt---pickaxe-all"><code>--pickaxe-all</code></a> option too.</p>
 </article>
 
         </main>
@@ -88,8 +86,6 @@ evolution of a line range or function:</p>
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/about-git-log-g/">About <code>git log -G</code></a></li>
-                
                 <li><a href="/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/">That <code>vim-polyglot</code> conflicts with Hub when creating pull requests</a></li>
                 
                 <li><a href="/posts/about-gitabsorb/">About <code>git-absorb</code></a></li>
@@ -97,6 +93,8 @@ evolution of a line range or function:</p>
                 <li><a href="/posts/how-to-include-the-date-in-git-reflog-output/">How to include the date in <code>git reflog</code> output</a></li>
                 
                 <li><a href="/posts/about-delta/">About delta, a viewer for Git and diff output</a></li>
+                
+                <li><a href="/posts/you-can-use-git-log-to-view-the-evolution-of-a-function/">You can use Git log to view the evolution of a function</a></li>
                 
                 <li><a href="/posts/how-to-resolve-git-conflicts-on-renamed-files/">How to resolve Git rebase conflicts on renamed files</a></li>
                 
@@ -107,9 +105,9 @@ evolution of a line range or function:</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -118,11 +116,9 @@ evolution of a line range or function:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/to-prefer-dateutil-over-pytz\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-the-aleinfo-command\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/systemd-timers-can-be-stopped\/"); })
         
     </script>
 
