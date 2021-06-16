@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which is a useful Python library that lists all the licenses of packages installed with pip: ...
+    Which can be used for debugging type annotation problems. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-piplicenses/" />
-<meta property="og:title" content="TIL About &#39;pip-licenses&#39; — David Winterbottom" /> 
-<meta property="og:description" content="Which is a useful Python library that lists all the licenses of packages installed with pip: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-mypys-revealtype-and-reveallocals-functions/" />
+<meta property="og:title" content="TIL About &#39;mypy&#39;&#39;s &#39;reveal_type&#39; and &#39;reveal_locals&#39; functions — David Winterbottom" /> 
+<meta property="og:description" content="Which can be used for debugging type annotation problems. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;pip-licenses&#39; — David Winterbottom
+    TIL About &#39;mypy&#39;&#39;s &#39;reveal_type&#39; and &#39;reveal_locals&#39; functions — David Winterbottom
 </title>
 
         
@@ -53,17 +53,15 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>October 8th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>June 16th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>pip-licenses</code></h1>
-        </header><p>Which is a useful Python library that lists all the licenses of packages
-installed with <code>pip</code>:</p>
-<pre><code>(venv) $ pip-licenses
- Name    Version  License
- Django  2.0.2    BSD
- pytz    2017.3   MIT
- ...
-</code></pre><p>See <a href="https://github.com/raimon49/pip-licenses">https://github.com/raimon49/pip-licenses</a></p>
+            <h1>About <code>mypy</code>&rsquo;s <code>reveal_type</code> and <code>reveal_locals</code> functions</h1>
+        </header><p>Which can be used for debugging type annotation problems. Insert them liberally
+into your code before running <code>mypy</code> to see the inferred static types of
+expressions or local variables.</p>
+<p>Make sure you remove them before committing or the Python interpreter will
+complain.</p>
+<p>More at <a href="https://mypy.readthedocs.io/en/latest/common_issues.html?highlight=reveal_type#reveal-type">displaying the type of an expression</a> in the <code>mypy</code> docs.</p>
 </article>
 
         </main>
@@ -76,8 +74,6 @@ installed with <code>pip</code>:</p>
             
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/about-mypys-revealtype-and-reveallocals-functions/">About <code>mypy</code>&rsquo;s <code>reveal_type</code> and <code>reveal_locals</code> functions</a></li>
                 
                 <li><a href="/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/">That <code>mypy</code> only type-checks functions that have at least one type annotation</a></li>
                 
@@ -101,7 +97,23 @@ installed with <code>pip</code>:</p>
                 
                 <li><a href="/posts/datetimedatetime-is-a-subclass-of-datetimedate/"><code>datetime.datetime</code> is a subclass of <code>datetime.date</code></a></li>
                 
+                <li><a href="/posts/about-piplicenses/">About <code>pip-licenses</code></a></li>
+                
                 <li><a href="/posts/python-37-supports-postponed-evaluation-of-annotations/">Python 3.7 supports postponed evaluation of annotations</a></li>
+                
+                <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
+                
+                </ul>
+            
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/mypy/">mypy</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/">That <code>mypy</code> only type-checks functions that have at least one type annotation</a></li>
+                
+                <li><a href="/posts/a-better-way-of-configuring-mypy/">A better way of configuring <code>mypy</code></a></li>
                 
                 <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
                 
@@ -110,9 +122,9 @@ installed with <code>pip</code>:</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -121,11 +133,9 @@ installed with <code>pip</code>:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-bashs-debug-signal\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-shellcheck\/"); })
         
     </script>
 
