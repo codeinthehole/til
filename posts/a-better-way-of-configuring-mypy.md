@@ -1,7 +1,7 @@
 ---
 title: "A better way of configuring `mypy`"
 date: "2020-12-10T15:51:44+00:00"
-tags: ["Python", "Mypy"]
+tags: ["Python", "mypy"]
 ---
 
 I didn't realise you can put _all_ your config into `setup.cfg` so that you can

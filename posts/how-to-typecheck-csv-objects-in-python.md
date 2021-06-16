@@ -1,7 +1,7 @@
 ---
 title: "How to use type annotations with Python's `csv` module"
 date: "2020-09-03T17:13:22+01:00"
-tags: ["Python"]
+tags: ["Python", "mypy"]
 ---
 
 Adding a type annotation for a "writer" object created by `csv.writer(...)` is fiddlier than you might think.
