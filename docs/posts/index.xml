@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Jun 2021 13:00:25 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jun 2021 15:16:58 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That `mypy` only type-checks functions that have at least one type annotation</title>
+      <link>https://til.codeinthehole.com/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/</link>
+      <pubDate>Wed, 16 Jun 2021 15:16:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/</guid>
+      <description>This is noted in the common issues and solutions documentation.</description>
+    </item>
     
     <item>
       <title>About `git log -G`</title>

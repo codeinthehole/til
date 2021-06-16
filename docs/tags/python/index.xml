@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Apr 2021 21:45:28 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jun 2021 15:16:58 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That `mypy` only type-checks functions that have at least one type annotation</title>
+      <link>https://til.codeinthehole.com/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/</link>
+      <pubDate>Wed, 16 Jun 2021 15:16:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/</guid>
+      <description>This is noted in the common issues and solutions documentation.</description>
+    </item>
     
     <item>
       <title>Python&#39;s `csv.writer` function defaults to Windows line endings</title>

@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mypy - Today I Learnt...</title>
+    <title>mypy - Today I Learnt...</title>
     <link>https://til.codeinthehole.com/tags/mypy/</link>
-    <description>Recent content in Mypy on Today I Learnt...</description>
+    <description>Recent content in mypy on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Dec 2020 15:51:44 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jun 2021 15:16:58 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/mypy/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That `mypy` only type-checks functions that have at least one type annotation</title>
+      <link>https://til.codeinthehole.com/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/</link>
+      <pubDate>Wed, 16 Jun 2021 15:16:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/</guid>
+      <description>This is noted in the common issues and solutions documentation.</description>
+    </item>
     
     <item>
       <title>A better way of configuring `mypy`</title>
@@ -19,6 +28,15 @@
       
       <guid>https://til.codeinthehole.com/posts/a-better-way-of-configuring-mypy/</guid>
       <description>I didn&amp;rsquo;t realise you can put all your config into setup.</description>
+    </item>
+    
+    <item>
+      <title>How to use type annotations with Python&#39;s `csv` module</title>
+      <link>https://til.codeinthehole.com/posts/how-to-typecheck-csv-objects-in-python/</link>
+      <pubDate>Thu, 03 Sep 2020 17:13:22 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-typecheck-csv-objects-in-python/</guid>
+      <description>Adding a type annotation for a &amp;ldquo;writer&amp;rdquo; object created by csv.</description>
     </item>
     
 
