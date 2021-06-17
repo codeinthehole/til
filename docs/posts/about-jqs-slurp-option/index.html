@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Problem: you want to find the unique values of a key in some JSON Lines input using jq. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-jqs-slurp-option/" />
+<meta property="og:title" content="TIL About &#39;jq&#39;&#39;s &#39;--slurp&#39; option — David Winterbottom" /> 
+<meta property="og:description" content="Problem: you want to find the unique values of a key in some JSON Lines input using jq. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL About &#39;jq&#39;&#39;s &#39;--slurp&#39; option — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>June 17th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>About <code>jq</code>&rsquo;s <code>--slurp</code> option</h1>
+        </header><p>Problem: you want to find the unique values of a key in some <a href="https://jsonlines.org/">JSON Lines</a> input using <a href="https://stedolan.github.io/jq/manual/"><code>jq</code></a>.</p>
+<p>JQ&rsquo;s <code>unique</code> function requires an array as input and so we must convert the
+separate JSON objects from the JSONL steam into an array. This is done using the
+<code>--slurp</code> option:</p>
+<figure>
+    <img src="/images/jq-slurp-docs.png"
+         alt="jq slurp docs"/> 
+</figure>
+
+<p>Example usage:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Find unique workspace names</span>
+$ cat workspaces.jsonl | jq --slurp <span style="color:#e6db74">&#39;[.[].workspace_name] | unique&#39;</span>
+</code></pre></div><p>where <code>[.[].workspace_name]</code> creates an array of all <code>.workspace_name</code> keys from
+each object in the JSONL stream.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/jq/">JQ</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/you-can-shuf-to-take-random-samples-of-lines/">You can use <code>shuf</code> to take random samples of lines</a></li>
+                
+                <li><a href="/posts/aws-availability-zones-have-counterintuitive-ids/">AWS Availability Zones have counter-intuitive IDs</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-mypys-revealtype-and-reveallocals-functions\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

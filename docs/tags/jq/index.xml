@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JQ - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/jq/</link>
+    <description>Recent content in JQ on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Jun 2021 11:15:08 +0100</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/jq/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>About `jq`&#39;s `--slurp` option</title>
+      <link>https://til.codeinthehole.com/posts/about-jqs-slurp-option/</link>
+      <pubDate>Thu, 17 Jun 2021 11:15:08 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-jqs-slurp-option/</guid>
+      <description>Problem: you want to find the unique values of a key in some JSON Lines input using jq.</description>
+    </item>
+    
+    <item>
+      <title>You can use `shuf` to take random samples of lines</title>
+      <link>https://til.codeinthehole.com/posts/you-can-shuf-to-take-random-samples-of-lines/</link>
+      <pubDate>Wed, 14 Apr 2021 12:09:31 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-shuf-to-take-random-samples-of-lines/</guid>
+      <description>For example, I wanted to share a random sample of accounts affected by some issue based on a Loggly event export.</description>
+    </item>
+    
+    <item>
+      <title>AWS Availability Zones have counter-intuitive IDs</title>
+      <link>https://til.codeinthehole.com/posts/aws-availability-zones-have-counterintuitive-ids/</link>
+      <pubDate>Tue, 25 Aug 2020 22:18:32 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/aws-availability-zones-have-counterintuitive-ids/</guid>
+      <description>Today, the AWS Service Health Dashboard referred to an Availability Zone in a way I wasn&amp;rsquo;t familiar with:</description>
+    </item>
+    
+
+  </channel>
+</rss>

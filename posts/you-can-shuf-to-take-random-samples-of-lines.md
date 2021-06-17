@@ -1,7 +1,7 @@
 ---
 title: "You can use `shuf` to take random samples of lines"
 date: "2021-04-14T12:09:31+01:00"
-tags: ["Unix"]
+tags: ["Unix", "JQ"]
 ---
 
 For example, I wanted to share a random sample of accounts affected by some

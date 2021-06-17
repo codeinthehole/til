@@ -1,7 +1,7 @@
 ---
 title: "AWS Availability Zones have counter-intuitive IDs"
 date: "2020-08-25T22:18:32+01:00"
-tags: ["AWS"]
+tags: ["AWS", "JQ"]
 ---
 Today, the [AWS Service Health Dashboard](https://status.aws.amazon.com/#EU_block) referred to an Availability Zone in a way I wasn't familiar
 with:
