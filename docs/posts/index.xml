@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Jun 2021 11:15:08 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 21 Jun 2021 14:54:25 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About `mypy`&#39;s unreachable code functionality</title>
+      <link>https://til.codeinthehole.com/posts/about-mypys-unreachable-code-functionality/</link>
+      <pubDate>Mon, 21 Jun 2021 14:54:25 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-mypys-unreachable-code-functionality/</guid>
+      <description>Mypy can be configured to raise an error when it finds unreachable code.</description>
+    </item>
     
     <item>
       <title>About `jq`&#39;s `--slurp` option</title>

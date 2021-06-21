@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    See for yourself:
-&amp;gt;&amp;gt;&amp;gt; import datetime &amp;gt;&amp;gt;&amp;gt; isinstance(datetime.datetime.now(), datetime. ...
+    Mypy can be configured to raise an error when it finds unreachable code. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -16,17 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/datetimedatetime-is-a-subclass-of-datetimedate/" />
-<meta property="og:title" content="TIL &#39;datetime.datetime&#39; is a subclass of &#39;datetime.date&#39; — David Winterbottom" /> 
-<meta property="og:description" content="See for yourself:
-&gt;&gt;&gt; import datetime &gt;&gt;&gt; isinstance(datetime.datetime.now(), datetime. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-mypys-unreachable-code-functionality/" />
+<meta property="og:title" content="TIL About &#39;mypy&#39;&#39;s unreachable code functionality — David Winterbottom" /> 
+<meta property="og:description" content="Mypy can be configured to raise an error when it finds unreachable code. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL &#39;datetime.datetime&#39; is a subclass of &#39;datetime.date&#39; — David Winterbottom
+    TIL About &#39;mypy&#39;&#39;s unreachable code functionality — David Winterbottom
 </title>
 
         
@@ -55,15 +53,18 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>October 22th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>June 21th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1><code>datetime.datetime</code> is a subclass of <code>datetime.date</code></h1>
-        </header><p>See for yourself:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">import</span> datetime
-<span style="color:#f92672">&gt;&gt;&gt;</span> isinstance(datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now(), datetime<span style="color:#f92672">.</span>date)
-True
-</code></pre></div><p>Apparently, <a href="https://bugs.python.org/issue28878">this is not a bug</a> but it is
-certainly confusing.</p>
+            <h1>About <code>mypy</code>&rsquo;s unreachable code functionality</h1>
+        </header><p>Mypy <a href="https://mypy.readthedocs.io/en/stable/common_issues.html#unreachable-code">can be configured</a> to raise an error when it finds unreachable code.
+This is a useful check and can highlight several categories of bug.</p>
+<p>To enable, ensure your <code>setup.cfg</code> includes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[mypy]</span>
+<span style="color:#a6e22e">warn_unreachable</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+</code></pre></div><p>Further reading:</p>
+<ul>
+<li><a href="https://adamj.eu/tech/2021/05/19/python-type-hints-mypy-unreachable-code-detection/">Python Type Hints - How to use Mypy’s unreachable code detection</a></li>
+</ul>
 </article>
 
         </main>
@@ -74,10 +75,24 @@ certainly confusing.</p>
         
             
             
-                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/mypy/">mypy</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/about-mypys-unreachable-code-functionality/">About <code>mypy</code>&rsquo;s unreachable code functionality</a></li>
+                <li><a href="/posts/about-mypys-revealtype-and-reveallocals-functions/">About <code>mypy</code>&rsquo;s <code>reveal_type</code> and <code>reveal_locals</code> functions</a></li>
+                
+                <li><a href="/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/">That <code>mypy</code> only type-checks functions that have at least one type annotation</a></li>
+                
+                <li><a href="/posts/a-better-way-of-configuring-mypy/">A better way of configuring <code>mypy</code></a></li>
+                
+                <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
+                
+                </ul>
+            
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                <ul>
                 
                 <li><a href="/posts/about-mypys-revealtype-and-reveallocals-functions/">About <code>mypy</code>&rsquo;s <code>reveal_type</code> and <code>reveal_locals</code> functions</a></li>
                 
@@ -101,6 +116,8 @@ certainly confusing.</p>
                 
                 <li><a href="/posts/a-better-way-of-configuring-mypy/">A better way of configuring <code>mypy</code></a></li>
                 
+                <li><a href="/posts/datetimedatetime-is-a-subclass-of-datetimedate/"><code>datetime.datetime</code> is a subclass of <code>datetime.date</code></a></li>
+                
                 <li><a href="/posts/about-piplicenses/">About <code>pip-licenses</code></a></li>
                 
                 <li><a href="/posts/python-37-supports-postponed-evaluation-of-annotations/">Python 3.7 supports postponed evaluation of annotations</a></li>
@@ -112,9 +129,9 @@ certainly confusing.</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -123,11 +140,9 @@ certainly confusing.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/the-keyboard-shortcut-for-grabbing-a-mfa-code-in-1pw\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-jqs-slurp-option\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/fd-has-an-option-for-searching-filepaths\/"); })
         
     </script>
 

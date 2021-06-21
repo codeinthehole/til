@@ -6,25 +6,16 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Jun 2021 11:15:08 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 21 Jun 2021 14:54:25 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
     
     <item>
-      <title>JQ</title>
-      <link>https://til.codeinthehole.com/tags/jq/</link>
-      <pubDate>Thu, 17 Jun 2021 11:15:08 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/jq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>mypy</title>
       <link>https://til.codeinthehole.com/tags/mypy/</link>
-      <pubDate>Wed, 16 Jun 2021 17:33:21 +0100</pubDate>
+      <pubDate>Mon, 21 Jun 2021 14:54:25 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/mypy/</guid>
       <description></description>
@@ -33,9 +24,18 @@
     <item>
       <title>Python</title>
       <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Wed, 16 Jun 2021 17:33:21 +0100</pubDate>
+      <pubDate>Mon, 21 Jun 2021 14:54:25 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JQ</title>
+      <link>https://til.codeinthehole.com/tags/jq/</link>
+      <pubDate>Thu, 17 Jun 2021 11:15:08 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/jq/</guid>
       <description></description>
     </item>
     
