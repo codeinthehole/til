@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Jun 2021 14:54:25 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 30 Jun 2021 14:35:17 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About Chrome&#39;s named windows</title>
+      <link>https://til.codeinthehole.com/posts/about-chromes-named-windows/</link>
+      <pubDate>Wed, 30 Jun 2021 14:35:17 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-chromes-named-windows/</guid>
+      <description>Since Google Chrome v88 (Jan 2021), browser windows can be given a name via the .</description>
+    </item>
     
     <item>
       <title>About `mypy`&#39;s unreachable code functionality</title>

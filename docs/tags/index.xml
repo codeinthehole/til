@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Jun 2021 14:54:25 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 30 Jun 2021 14:35:17 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Chrome</title>
+      <link>https://til.codeinthehole.com/tags/chrome/</link>
+      <pubDate>Wed, 30 Jun 2021 14:35:17 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/chrome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MacOS</title>
+      <link>https://til.codeinthehole.com/tags/macos/</link>
+      <pubDate>Wed, 30 Jun 2021 14:35:17 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/macos/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>mypy</title>
@@ -238,15 +256,6 @@
     </item>
     
     <item>
-      <title>MacOS</title>
-      <link>https://til.codeinthehole.com/tags/macos/</link>
-      <pubDate>Fri, 12 Mar 2021 11:31:35 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/macos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Debugging</title>
       <link>https://til.codeinthehole.com/tags/debugging/</link>
       <pubDate>Thu, 11 Mar 2021 13:34:25 +0000</pubDate>
@@ -270,15 +279,6 @@
       <pubDate>Thu, 04 Mar 2021 16:09:11 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/timezones/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Chrome</title>
-      <link>https://til.codeinthehole.com/tags/chrome/</link>
-      <pubDate>Tue, 16 Feb 2021 09:01:38 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/chrome/</guid>
       <description></description>
     </item>
     
