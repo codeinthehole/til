@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    As in:
-import pytest @pytest.mark.parametrize(&amp;quot;x&amp;quot;, [1,2,3]) @pytest.mark.parametrize(&amp;quot;y&amp;quot;, [4,5,6]) def test_cartesian_product(x, y): pass which will run the test for all combinations of the two input lists: ...
+    Wrapping tests classes with FreezeGun’s @freezegun.freeze_time doesn’t control calls to the system clock from fixtures. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -16,17 +15,16 @@ import pytest @pytest.mark.parametrize(&amp;quot;x&amp;quot;, [1,2,3]) @pytest.m
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-stack-pytests-parametrize-decorators/" />
-<meta property="og:title" content="TIL You can stack &#39;pytest&#39;&#39;s &#39;parametrize&#39; decorators — David Winterbottom" /> 
-<meta property="og:description" content="As in:
-import pytest @pytest.mark.parametrize(&#34;x&#34;, [1,2,3]) @pytest.mark.parametrize(&#34;y&#34;, [4,5,6]) def test_cartesian_product(x, y): pass which will run the test for all combinations of the two input lists: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-freezegun-doesnt-work-with-pytest-fixtures/" />
+<meta property="og:title" content="TIL That FreezeGun doesn&#39;t work with Pytest fixtures (unless you use &#39;pytest-freezegun&#39;) — David Winterbottom" /> 
+<meta property="og:description" content="Wrapping tests classes with FreezeGun&rsquo;s @freezegun.freeze_time doesn&rsquo;t control calls to the system clock from fixtures. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL You can stack &#39;pytest&#39;&#39;s &#39;parametrize&#39; decorators — David Winterbottom
+    TIL That FreezeGun doesn&#39;t work with Pytest fixtures (unless you use &#39;pytest-freezegun&#39;) — David Winterbottom
 </title>
 
         
@@ -55,28 +53,48 @@ import pytest @pytest.mark.parametrize(&#34;x&#34;, [1,2,3]) @pytest.mark.parame
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>December 16th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>July 12th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</h1>
-        </header><p>As in:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> pytest
+            <h1>That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</h1>
+        </header><p>Wrapping tests classes with <a href="https://github.com/spulec/freezegun#decorator">FreezeGun</a>&rsquo;s <code>@freezegun.freeze_time</code> doesn&rsquo;t control calls to the
+system clock from fixtures. That is, this test fails when run on any date other than 2021-07-01:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> datetime
+<span style="color:#f92672">import</span> freezegun
+<span style="color:#f92672">import</span> pytest
 
-<span style="color:#a6e22e">@pytest.mark.parametrize</span>(<span style="color:#e6db74">&#34;x&#34;</span>, [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>])
-<span style="color:#a6e22e">@pytest.mark.parametrize</span>(<span style="color:#e6db74">&#34;y&#34;</span>, [<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_cartesian_product</span>(x, y):
-    <span style="color:#66d9ef">pass</span>
-</code></pre></div><p>which will run the test for all combinations of the two input lists:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">test_parameterize.py::test_cartesian_product[4-1] PASSED
-test_parameterize.py::test_cartesian_product[4-2] PASSED
-test_parameterize.py::test_cartesian_product[4-3] PASSED
-test_parameterize.py::test_cartesian_product[5-1] PASSED
-test_parameterize.py::test_cartesian_product[5-2] PASSED
-test_parameterize.py::test_cartesian_product[5-3] PASSED
-test_parameterize.py::test_cartesian_product[6-1] PASSED
-test_parameterize.py::test_cartesian_product[6-2] PASSED
-test_parameterize.py::test_cartesian_product[6-3] PASSED
-</code></pre></div><p>See <a href="https://docs.pytest.org/en/stable/parametrize.html">https://docs.pytest.org/en/stable/parametrize.html</a></p>
-</article>
+<span style="color:#a6e22e">@pytest.fixture</span>()
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">current_date</span>():
+    <span style="color:#66d9ef">return</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
+
+<span style="color:#a6e22e">@freezegun.freeze_time</span>(<span style="color:#e6db74">&#34;2021-07-01&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_freezing_with_library_freezegun</span>(current_date):
+    today <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
+    <span style="color:#66d9ef">assert</span> today <span style="color:#f92672">==</span> current_date
+</code></pre></div><p>with result:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">test_freezegun_example.py:12: in test_freezing_with_library_freezegun
+    assert today == today_from_fixture
+E   assert FakeDate(2021, 7, 1) == datetime.date(2021, 7, 12)
+E     +FakeDate(2021, 7, 1)
+E     -datetime.date(2021, 7, 12)
+</code></pre></div><p>However, if you use the <code>pytest.mark.freeze_time</code> decorator provided by
+<a href="https://github.com/ktosiek/pytest-freezegun"><code>pytest-freezegun</code></a>, then calls to the system clock in the fixture function
+<em>are</em> controlled by FreezeGun.</p>
+<p>For example, if we replace
+<code>@freezegun.freeze_time</code> with <code>@pytest.mark.freeze_time</code> then the test always
+passes no matter what day it is run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> datetime
+<span style="color:#f92672">import</span> freezegun
+<span style="color:#f92672">import</span> pytest
+
+<span style="color:#a6e22e">@pytest.fixture</span>()
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">current_date</span>():
+    <span style="color:#66d9ef">return</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
+
+<span style="color:#a6e22e">@pytest.mark.freeze_time</span>(<span style="color:#e6db74">&#34;2021-07-01&#34;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_freezing_with_pytest_freezegun</span>(current_date):
+    today <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
+    <span style="color:#66d9ef">assert</span> today <span style="color:#f92672">==</span> current_date
+</code></pre></div></article>
 
         </main>
 
@@ -88,8 +106,6 @@ test_parameterize.py::test_cartesian_product[6-3] PASSED
             
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/that-freezegun-doesnt-work-with-pytest-fixtures/">That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</a></li>
                 
                 <li><a href="/posts/about-mypys-unreachable-code-functionality/">About <code>mypy</code>&rsquo;s unreachable code functionality</a></li>
                 
@@ -108,6 +124,8 @@ test_parameterize.py::test_cartesian_product[6-3] PASSED
                 <li><a href="/posts/pytest-doesnt-play-nicely-with-ipdb/">Pytest doesn&rsquo;t play nicely with ipdb</a></li>
                 
                 <li><a href="/posts/you-can-arbitrarily-chain-python-comparison-operators/">You can arbitrarily chain Python comparison operations</a></li>
+                
+                <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
                 
                 <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
                 
@@ -129,27 +147,13 @@ test_parameterize.py::test_cartesian_product[6-3] PASSED
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/testing/">Testing</a>:</p>
                 <ul>
                 
-                <li><a href="/posts/that-freezegun-doesnt-work-with-pytest-fixtures/">That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</a></li>
-                
                 <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
                 
                 <li><a href="/posts/pytest-doesnt-play-nicely-with-ipdb/">Pytest doesn&rsquo;t play nicely with ipdb</a></li>
                 
                 <li><a href="/posts/how-to-easily-disable-a-circleci-workflow/">How to easily disable a CircleCI workflow</a></li>
                 
-                <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
-                
-                </ul>
-            
-        
-            
-            
-                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/pytest/">pytest</a>:</p>
-                <ul>
-                
-                <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
-                
-                <li><a href="/posts/pytest-doesnt-play-nicely-with-ipdb/">Pytest doesn&rsquo;t play nicely with ipdb</a></li>
+                <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
                 
                 <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
                 
@@ -158,9 +162,9 @@ test_parameterize.py::test_cartesian_product[6-3] PASSED
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -169,11 +173,9 @@ test_parameterize.py::test_cartesian_product[6-3] PASSED
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-yamls-node-anchors-and-aliases\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-chromes-named-windows\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-add-project-specific-vim-settings\/"); })
         
     </script>
 
