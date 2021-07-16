@@ -6,16 +6,25 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Jul 2021 17:05:19 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jul 2021 15:17:08 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
     
     <item>
+      <title>pytest</title>
+      <link>https://til.codeinthehole.com/tags/pytest/</link>
+      <pubDate>Fri, 16 Jul 2021 15:17:08 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/pytest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Python</title>
       <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Mon, 12 Jul 2021 17:05:19 +0100</pubDate>
+      <pubDate>Fri, 16 Jul 2021 15:17:08 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/python/</guid>
       <description></description>
@@ -24,7 +33,7 @@
     <item>
       <title>Testing</title>
       <link>https://til.codeinthehole.com/tags/testing/</link>
-      <pubDate>Mon, 12 Jul 2021 17:05:19 +0100</pubDate>
+      <pubDate>Fri, 16 Jul 2021 15:17:08 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/testing/</guid>
       <description></description>
@@ -207,15 +216,6 @@
       <pubDate>Fri, 19 Mar 2021 09:42:34 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/command-line-tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pytest</title>
-      <link>https://til.codeinthehole.com/tags/pytest/</link>
-      <pubDate>Tue, 16 Mar 2021 17:36:21 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/pytest/</guid>
       <description></description>
     </item>
     
