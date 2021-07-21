@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Jul 2021 15:17:08 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jul 2021 15:01:33 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>File-level flake8 comments ignore all errors</title>
+      <link>https://til.codeinthehole.com/posts/filelevel-flake8-comments-ignore-all-errors/</link>
+      <pubDate>Wed, 21 Jul 2021 15:01:33 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/filelevel-flake8-comments-ignore-all-errors/</guid>
+      <description>Until today, I was under the impression that including:</description>
+    </item>
     
     <item>
       <title>That Pytest&#39;s &#34;keyword expression&#34; filtering supports Python conditionals</title>

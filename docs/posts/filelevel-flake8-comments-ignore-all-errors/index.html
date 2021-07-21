@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    When constructing datetime.datetime instances, it’s better to use dateutil to provide the tzinfo argument — avoid using pytz. ...
+    Until today, I was under the impression that including: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/to-prefer-dateutil-over-pytz/" />
-<meta property="og:title" content="TIL To prefer &#39;dateutil&#39; over &#39;pytz&#39; — David Winterbottom" /> 
-<meta property="og:description" content="When constructing datetime.datetime instances, it&rsquo;s better to use dateutil to provide the tzinfo argument — avoid using pytz. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/filelevel-flake8-comments-ignore-all-errors/" />
+<meta property="og:title" content="TIL File-level flake8 comments ignore all errors — David Winterbottom" /> 
+<meta property="og:description" content="Until today, I was under the impression that including: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL To prefer &#39;dateutil&#39; over &#39;pytz&#39; — David Winterbottom
+    TIL File-level flake8 comments ignore all errors — David Winterbottom
 </title>
 
         
@@ -53,34 +53,24 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>March 4th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>July 21th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>To prefer <code>dateutil</code> over <code>pytz</code></h1>
-        </header><p>When constructing <code>datetime.datetime</code> instances, it&rsquo;s better to use <code>dateutil</code>
-to provide the <code>tzinfo</code> argument — avoid using <code>pytz</code>.</p>
-<p>That is, prefer this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> datetime
-<span style="color:#f92672">from</span> dateutil <span style="color:#f92672">import</span> tz
-
-tzinfo <span style="color:#f92672">=</span> tz<span style="color:#f92672">.</span>gettz(<span style="color:#e6db74">&#34;Europe/London&#34;</span>)
-datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">0</span>, tzinfo<span style="color:#f92672">=</span>tzinfo)
-</code></pre></div><p>to</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> datetime
-<span style="color:#f92672">import</span> pytz
-
-tzinfo <span style="color:#f92672">=</span> pytz<span style="color:#f92672">.</span>timezone(<span style="color:#e6db74">&#34;Europe/London&#34;</span>)
-datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">0</span>, tzinfo<span style="color:#f92672">=</span>tzinfo)
-</code></pre></div><p>Why? Because passing <code>pytz</code>&rsquo;s timezones to the <code>datetime.datetime</code> constructor
-can often lead to bugs after date arithmetic (i.e. computing new dates using
-<code>datetime.timedelta</code>). This is noted in the <a href="https://pythonhosted.org/pytz/"><code>pytz</code>
-docs</a>:</p>
-<figure><img src="/images/pytz-docs.png"
-         alt="pytz docs"/>
-</figure>
-
-<p>It&rsquo;s easy to be lulled into a false sense of security as such bugs don&rsquo;t affect
-timezones without daylight savings transitions, like UTC.</p>
-<p>See <a href="https://blog.ganssle.io/articles/2018/03/pytz-fastest-footgun.html"><code>pytz</code>: The Fastest Footgun in the West</a> for more details.</p>
+            <h1>File-level flake8 comments ignore all errors</h1>
+        </header><p>Until today, I was under the impression that including:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># flake8: noqa: F401</span>
+</code></pre></div><p>at the top of a Python module would ignore all F401 errors in the file.</p>
+<p>However that isn&rsquo;t true: the above directive ignores <em>all</em> errors in the file,
+not just F401: the <code>: F401</code> part of the comment is silently ignored.</p>
+<p>Alternatively you can:</p>
+<ul>
+<li>append <code># noqa: F401</code> to each offending line, or:</li>
+<li>use the <a href="https://flake8.pycqa.org/en/latest/user/options.html#cmdoption-flake8-per-file-ignores"><code>--per-file-ignores</code> configuration option</a> to ignore certain error
+codes in files matching a set of globs.</li>
+</ul>
+<p>Related:</p>
+<ul>
+<li><a href="https://flake8.pycqa.org/en/3.1.1/user/ignoring-errors.html#ignoring-entire-files">Flake8 docs on ignoring entire files</a></li>
+</ul>
 </article>
 
         </main>
@@ -91,10 +81,11 @@ timezones without daylight savings transitions, like UTC.</p>
         
             
             
+        
+            
+            
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/filelevel-flake8-comments-ignore-all-errors/">File-level flake8 comments ignore all errors</a></li>
                 
                 <li><a href="/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/">That Pytest&rsquo;s &ldquo;keyword expression&rdquo; filtering supports Python conditionals</a></li>
                 
@@ -111,6 +102,8 @@ timezones without daylight savings transitions, like UTC.</p>
                 <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
                 
                 <li><a href="/posts/pdbpp-has-a-useful-sticky-mode/"><code>pdbpp</code> has a useful &lsquo;sticky&rsquo; mode</a></li>
+                
+                <li><a href="/posts/to-prefer-dateutil-over-pytz/">To prefer <code>dateutil</code> over <code>pytz</code></a></li>
                 
                 <li><a href="/posts/pytest-doesnt-play-nicely-with-ipdb/">Pytest doesn&rsquo;t play nicely with ipdb</a></li>
                 
@@ -133,14 +126,11 @@ timezones without daylight savings transitions, like UTC.</p>
                 </ul>
             
         
-            
-            
-        
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -149,11 +139,9 @@ timezones without daylight savings transitions, like UTC.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/pytest-doesnt-play-nicely-with-ipdb\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-git-aliases-that-run-an-external-command-are-run-from-the-repository-root\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/you-can-use-git-log-to-view-the-evolution-of-a-function\/"); })
         
     </script>
 

@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jul 2021 12:50:48 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jul 2021 15:01:33 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>File-level flake8 comments ignore all errors</title>
+      <link>https://til.codeinthehole.com/posts/filelevel-flake8-comments-ignore-all-errors/</link>
+      <pubDate>Wed, 21 Jul 2021 15:01:33 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/filelevel-flake8-comments-ignore-all-errors/</guid>
+      <description>Until today, I was under the impression that including:</description>
+    </item>
     
     <item>
       <title>Git aliases that run an external command are run from the repository root</title>
