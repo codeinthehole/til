@@ -62,11 +62,11 @@ system clock from fixtures. That is, this test fails when run on any date other 
 <span style="color:#f92672">import</span> freezegun
 <span style="color:#f92672">import</span> pytest
 
-<span style="color:#a6e22e">@pytest.fixture</span>()
+<span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>fixture()
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">current_date</span>():
     <span style="color:#66d9ef">return</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
 
-<span style="color:#a6e22e">@freezegun.freeze_time</span>(<span style="color:#e6db74">&#34;2021-07-01&#34;</span>)
+<span style="color:#a6e22e">@freezegun</span><span style="color:#f92672">.</span>freeze_time(<span style="color:#e6db74">&#34;2021-07-01&#34;</span>)
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_freezing_with_library_freezegun</span>(current_date):
     today <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
     <span style="color:#66d9ef">assert</span> today <span style="color:#f92672">==</span> current_date
@@ -86,11 +86,11 @@ passes no matter what day it is run:</p>
 <span style="color:#f92672">import</span> freezegun
 <span style="color:#f92672">import</span> pytest
 
-<span style="color:#a6e22e">@pytest.fixture</span>()
+<span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>fixture()
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">current_date</span>():
     <span style="color:#66d9ef">return</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
 
-<span style="color:#a6e22e">@pytest.mark.freeze_time</span>(<span style="color:#e6db74">&#34;2021-07-01&#34;</span>)
+<span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>mark<span style="color:#f92672">.</span>freeze_time(<span style="color:#e6db74">&#34;2021-07-01&#34;</span>)
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_freezing_with_pytest_freezegun</span>(current_date):
     today <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
     <span style="color:#66d9ef">assert</span> today <span style="color:#f92672">==</span> current_date

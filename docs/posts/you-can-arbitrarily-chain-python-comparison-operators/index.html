@@ -59,13 +59,13 @@
             </div>
             <h1>You can arbitrarily chain Python comparison operations</h1>
         </header><p>Which explains why:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> False <span style="color:#f92672">==</span> False <span style="color:#f92672">in</span> [False]
-True
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">False</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span> <span style="color:#f92672">in</span> [<span style="color:#66d9ef">False</span>]
+<span style="color:#66d9ef">True</span>
 </code></pre></div><p>This odd looking expression is equivalent to <code>(False == False) and (False in [False])</code>, hence why it evaluates to <code>True</code>.</p>
 <p>And since there&rsquo;s no limit to how many comparisons can be chained together, this
 kind of thing is legal syntax:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> False <span style="color:#f92672">is</span> False <span style="color:#f92672">==</span> False <span style="color:#f92672">in</span> [False] <span style="color:#f92672">in</span> [[False]] <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> [False]
-True
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">False</span> <span style="color:#f92672">is</span> <span style="color:#66d9ef">False</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span> <span style="color:#f92672">in</span> [<span style="color:#66d9ef">False</span>] <span style="color:#f92672">in</span> [[<span style="color:#66d9ef">False</span>]] <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> [<span style="color:#66d9ef">False</span>]
+<span style="color:#66d9ef">True</span>
 </code></pre></div><p>See the <a href="https://docs.python.org/3/reference/expressions.html#comparisons">Python docs on comparisons for more details</a>.</p>
 </article>
 

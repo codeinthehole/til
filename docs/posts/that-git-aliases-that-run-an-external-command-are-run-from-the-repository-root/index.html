@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Verify this by creating an alias in ~/.gitconfig like so: ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-git-aliases-that-run-an-external-command-are-run-from-the-repository-root/" />
+<meta property="og:title" content="TIL Git aliases that run an external command are run from the repository root — David Winterbottom" /> 
+<meta property="og:description" content="Verify this by creating an alias in ~/.gitconfig like so: [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL Git aliases that run an external command are run from the repository root — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>July 21th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>Git aliases that run an external command are run from the repository root</h1>
+        </header><p>Verify this by creating an alias in <code>~/.gitconfig</code> like so:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dosini" data-lang="dosini"><span style="color:#a6e22e">pwd</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;!f() { pwd; }; f&#34;</span>
+</code></pre></div><p>and you&rsquo;ll find that, no matter where you call it from, it always prints the
+repository root directory.</p>
+<p>This is annoying for <code>git diff</code> aliases that print filepaths where it&rsquo;s useful
+to have them relative to the current directory (using the <code>--relative</code> option).</p>
+<p>For example, until five minutes ago I had this alias for printing all files
+touched in a pull request:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dosini" data-lang="dosini"><span style="color:#a6e22e">prfiles</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;!f() { git diff --relative --name-only origin/$(git defaultbranch)...HEAD; }; f&#34;</span>
+</code></pre></div><p>but this would print the path from the repository root, meaning you
+couldn&rsquo;t pipe the output to a command (like <code>xargs rg</code>) unless your current
+directory was the repository root.</p>
+<p>The solution is to use the <code>$GIT_PREFIX</code> environment variable which contains the
+directory where the alias was invoked. So my <code>prfiles</code> alias is now:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dosini" data-lang="dosini"><span style="color:#a6e22e">prfiles</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;!f() { cd ${GIT_PREFIX:-./}; git diff --relative --name-only origin/$(git defaultbranch)...HEAD; }; f&#34;</span>
+</code></pre></div><p>Note, we define a default value of <code>./</code> as <code>$GIT_PREFIX</code> isn&rsquo;t set when the
+alias is invoked from the repository root.</p>
+<p>The <code>$GIT_PREFIX</code> variable isn&rsquo;t mentioned in the <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">current online docs on aliases</a> but has been available since
+v1.7.6 (see the <a href="https://github.com/git/git/blob/77bd3ea9f54f1584147b594abc04c26ca516d987/Documentation/RelNotes/1.7.6.txt#L29-L31">release notes</a>).</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/about-git-log-g/">About <code>git log -G</code></a></li>
+                
+                <li><a href="/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/">That <code>vim-polyglot</code> conflicts with Hub when creating pull requests</a></li>
+                
+                <li><a href="/posts/about-gitabsorb/">About <code>git-absorb</code></a></li>
+                
+                <li><a href="/posts/how-to-include-the-date-in-git-reflog-output/">How to include the date in <code>git reflog</code> output</a></li>
+                
+                <li><a href="/posts/about-delta/">About delta, a viewer for Git and diff output</a></li>
+                
+                <li><a href="/posts/you-can-use-git-log-to-view-the-evolution-of-a-function/">You can use Git log to view the evolution of a function</a></li>
+                
+                <li><a href="/posts/how-to-resolve-git-conflicts-on-renamed-files/">How to resolve Git rebase conflicts on renamed files</a></li>
+                
+                <li><a href="/posts/how-to-count-lines-of-code-in-a-git-repo/">How to count lines of code in a Git repo for a given commit</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-pytests-keyword-expression-filtering-supports-python-conditionals\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

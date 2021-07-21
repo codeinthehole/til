@@ -59,9 +59,8 @@
         </header><p>Hasicorp&rsquo;s <a href="https://www.hashicorp.com/sentinel">Sentinel</a> framework allows you
 to write tests using a mock Terraform plan file. A tarball of mock files can be
 downloaded from the run detail page on Terraform Cloud:</p>
-<figure>
-    <img src="/images/terraform-cloud-download-sentinel-mocks.png"
-         alt="Terraform Cloud download Sentinel mocks"/> 
+<figure><img src="/images/terraform-cloud-download-sentinel-mocks.png"
+         alt="Terraform Cloud download Sentinel mocks"/>
 </figure>
 
 <p>The tarball includes these files:</p>
@@ -79,9 +78,8 @@ downloaded from the run detail page on Terraform Cloud:</p>
 workspace variables in plaintext, including those marked as sensitive.</p>
 <p>To be fair <a href="https://learn.hashicorp.com/tutorials/terraform/sentinel-testing?in=terraform/policy">the Terraform docs do warn that mocks can contain sensitive state values</a>
 but I hadn&rsquo;t expected the wholespace variables to be included.</p>
-<figure>
-    <img src="/images/terraform-cloud-mocks-warning.png"
-         alt="Terraform Cloud mocks warning"/> 
+<figure><img src="/images/terraform-cloud-mocks-warning.png"
+         alt="Terraform Cloud mocks warning"/>
 </figure>
 
 <p>Moral of the story: don&rsquo;t naively commit a Sentinel mock file, downloaded from

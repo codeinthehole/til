@@ -69,7 +69,7 @@ all test methods:</p>
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestSomethingAboutTimezones</span>:
 
-    <span style="color:#a6e22e">@pytest.fixture</span>(autouse<span style="color:#f92672">=</span>True)
+    <span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>fixture(autouse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">use_london_timezone</span>(self):
         <span style="color:#66d9ef">with</span> override_settings(TIME_ZONE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Europe/London&#34;</span>):
             <span style="color:#66d9ef">yield</span>
