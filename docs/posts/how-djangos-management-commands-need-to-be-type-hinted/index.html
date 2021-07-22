@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    For Django management commands with arguments, you might not expect Mypy (configured with the django-stubs plugin) to complain about this signature: ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-djangos-management-commands-need-to-be-type-hinted/" />
+<meta property="og:title" content="TIL How Django&#39;s management commands need to be type hinted — David Winterbottom" /> 
+<meta property="og:description" content="For Django management commands with arguments, you might not expect Mypy (configured with the django-stubs plugin) to complain about this signature: [Reading time: 2 minutes]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How Django&#39;s management commands need to be type hinted — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>July 22th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How Django&rsquo;s management commands need to be type hinted</h1>
+        </header><p>For Django management commands with arguments, you might not expect Mypy
+(configured with the <a href="https://github.com/typeddjango/django-stubs"><code>django-stubs</code></a> plugin) to
+complain about this signature:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.core.management.base <span style="color:#f92672">import</span> BaseCommand, CommandParser
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Command</span>(BaseCommand):
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_arguments</span>(self, parser: CommandParser) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+        parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#34;name&#34;</span>)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle</span>(self, name: str, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>options) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+        <span style="color:#f92672">...</span>
+</code></pre></div><p>but it does with error:</p>
+<pre><code>Signature of &quot;handle&quot; incompatible with supertype &quot;BaseCommand&quot; [override]
+</code></pre><p>The problem is the <code>name</code> positional argument which makes the argument types
+<em>more specific</em> than <code>BaseCommand.handle</code> which has <a href="https://github.com/typeddjango/django-stubs/blob/d5e45db79bcea6d6f4f45eacca3a2fe6e125e2e3/django-stubs/core/management/base.pyi#L70">type signature</a> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle</span>(self, <span style="color:#f92672">*</span>args: Any, <span style="color:#f92672">**</span>options: Any) <span style="color:#f92672">-&gt;</span> Optional[str]:
+</code></pre></div><p>This is well explained in the <a href="https://mypy.readthedocs.io/en/stable/common_issues.html#incompatible-overrides">Mypy docs</a>:</p>
+<blockquote>
+<p>It&rsquo;s unsafe to override a method with a more specific argument type, as it
+violates the Liskov substitution principle. For return types, it’s unsafe to
+override a method with a more general return type.</p>
+</blockquote>
+<p>To proceed you can either pluck the positional arguments out of the <code>kwargs</code>
+dict:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.core.management.base <span style="color:#f92672">import</span> BaseCommand, CommandParser
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Command</span>(BaseCommand):
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_arguments</span>(self, parser: CommandParser) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+        parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#34;name&#34;</span>)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle</span>(self, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>options) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+        name: str <span style="color:#f92672">=</span> options[<span style="color:#e6db74">&#34;name&#34;</span>]
+        <span style="color:#f92672">...</span>
+</code></pre></div><p>or ignore the <code>override</code> error:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.core.management.base <span style="color:#f92672">import</span> BaseCommand
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Command</span>(BaseCommand):
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_arguments</span>(self, parser: CommandParser) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+        parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#34;name&#34;</span>)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle</span>(self, name: str, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>options) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:  <span style="color:#75715e"># type: ignore[override]</span>
+        <span style="color:#f92672">...</span>
+</code></pre></div><p>The former is slightly safer as the ignore approach may cause issues if the type
+signature of <code>BaseCommand.handle</code> changes in a future Django version.</p>
+<p>Accurate as of Django v3.1, Django-Stubs v1.8 and Mypy v0.812.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+            
+            
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/mypy/">mypy</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/about-mypys-unreachable-code-functionality/">About <code>mypy</code>&rsquo;s unreachable code functionality</a></li>
+                
+                <li><a href="/posts/about-mypys-revealtype-and-reveallocals-functions/">About <code>mypy</code>&rsquo;s <code>reveal_type</code> and <code>reveal_locals</code> functions</a></li>
+                
+                <li><a href="/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/">That <code>mypy</code> only type-checks functions that have at least one type annotation</a></li>
+                
+                <li><a href="/posts/a-better-way-of-configuring-mypy/">A better way of configuring <code>mypy</code></a></li>
+                
+                <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
+                
+                </ul>
+            
+        
+            
+            
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                <ul>
+                
+                <li><a href="/posts/filelevel-flake8-comments-ignore-all-errors/">File-level flake8 comments ignore all errors</a></li>
+                
+                <li><a href="/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/">That Pytest&rsquo;s &ldquo;keyword expression&rdquo; filtering supports Python conditionals</a></li>
+                
+                <li><a href="/posts/that-freezegun-doesnt-work-with-pytest-fixtures/">That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</a></li>
+                
+                <li><a href="/posts/about-mypys-unreachable-code-functionality/">About <code>mypy</code>&rsquo;s unreachable code functionality</a></li>
+                
+                <li><a href="/posts/about-mypys-revealtype-and-reveallocals-functions/">About <code>mypy</code>&rsquo;s <code>reveal_type</code> and <code>reveal_locals</code> functions</a></li>
+                
+                <li><a href="/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/">That <code>mypy</code> only type-checks functions that have at least one type annotation</a></li>
+                
+                <li><a href="/posts/pythons-csvwriter-function-defaults-to-windows-line-endings/">Python&rsquo;s <code>csv.writer</code> function defaults to Windows line endings</a></li>
+                
+                <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
+                
+                <li><a href="/posts/pdbpp-has-a-useful-sticky-mode/"><code>pdbpp</code> has a useful &lsquo;sticky&rsquo; mode</a></li>
+                
+                <li><a href="/posts/to-prefer-dateutil-over-pytz/">To prefer <code>dateutil</code> over <code>pytz</code></a></li>
+                
+                <li><a href="/posts/pytest-doesnt-play-nicely-with-ipdb/">Pytest doesn&rsquo;t play nicely with ipdb</a></li>
+                
+                <li><a href="/posts/you-can-arbitrarily-chain-python-comparison-operators/">You can arbitrarily chain Python comparison operations</a></li>
+                
+                <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
+                
+                <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
+                
+                <li><a href="/posts/a-better-way-of-configuring-mypy/">A better way of configuring <code>mypy</code></a></li>
+                
+                <li><a href="/posts/datetimedatetime-is-a-subclass-of-datetimedate/"><code>datetime.datetime</code> is a subclass of <code>datetime.date</code></a></li>
+                
+                <li><a href="/posts/about-piplicenses/">About <code>pip-licenses</code></a></li>
+                
+                <li><a href="/posts/python-37-supports-postponed-evaluation-of-annotations/">Python 3.7 supports postponed evaluation of annotations</a></li>
+                
+                <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
+                
+                </ul>
+            
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/filelevel-flake8-comments-ignore-all-errors\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
