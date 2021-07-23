@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Jul 2021 17:31:28 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jul 2021 15:03:26 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,27 @@
     <item>
       <title>Django</title>
       <link>https://til.codeinthehole.com/tags/django/</link>
-      <pubDate>Thu, 22 Jul 2021 17:31:28 +0100</pubDate>
+      <pubDate>Fri, 23 Jul 2021 15:03:26 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://til.codeinthehole.com/tags/python/</link>
+      <pubDate>Fri, 23 Jul 2021 15:03:26 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://til.codeinthehole.com/tags/testing/</link>
+      <pubDate>Fri, 23 Jul 2021 15:03:26 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/testing/</guid>
       <description></description>
     </item>
     
@@ -27,15 +45,6 @@
       <pubDate>Thu, 22 Jul 2021 17:31:28 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/mypy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Thu, 22 Jul 2021 17:31:28 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/python/</guid>
       <description></description>
     </item>
     
@@ -63,15 +72,6 @@
       <pubDate>Fri, 16 Jul 2021 15:17:08 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/pytest/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Testing</title>
-      <link>https://til.codeinthehole.com/tags/testing/</link>
-      <pubDate>Fri, 16 Jul 2021 15:17:08 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/testing/</guid>
       <description></description>
     </item>
     

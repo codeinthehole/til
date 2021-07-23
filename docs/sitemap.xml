@@ -3,24 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://til.codeinthehole.com/tags/django/</loc>
-    <lastmod>2021-07-22T17:31:28+01:00</lastmod>
+    <lastmod>2021-07-23T15:03:26+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/django-doesnt-flush-caches-between-tests/</loc>
+    <lastmod>2021-07-23T15:03:26+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-07-23T15:03:26+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2021-07-23T15:03:26+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-07-23T15:03:26+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/testing/</loc>
+    <lastmod>2021-07-23T15:03:26+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-07-23T15:03:26+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-djangos-management-commands-need-to-be-type-hinted/</loc>
     <lastmod>2021-07-22T17:31:28+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/mypy/</loc>
-    <lastmod>2021-07-22T17:31:28+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-07-22T17:31:28+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
-    <lastmod>2021-07-22T17:31:28+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-07-22T17:31:28+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-07-22T17:31:28+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/filelevel-flake8-comments-ignore-all-errors/</loc>
@@ -36,9 +42,6 @@
     <lastmod>2021-07-21T12:50:48+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/pytest/</loc>
-    <lastmod>2021-07-16T15:17:08+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/testing/</loc>
     <lastmod>2021-07-16T15:17:08+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/</loc>

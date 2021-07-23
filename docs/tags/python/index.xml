@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Jul 2021 17:31:28 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jul 2021 15:03:26 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Django doesn&#39;t flush caches between tests</title>
+      <link>https://til.codeinthehole.com/posts/django-doesnt-flush-caches-between-tests/</link>
+      <pubDate>Fri, 23 Jul 2021 15:03:26 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/django-doesnt-flush-caches-between-tests/</guid>
+      <description>This is slightly counter-intuitive as it&amp;rsquo;s different to how databases are treated by the test runner.</description>
+    </item>
     
     <item>
       <title>How Django&#39;s management commands need to be type hinted</title>
