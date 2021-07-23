@@ -1,7 +1,7 @@
 {{ define "head" }}
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:title" content="TIL {{ replace .Title "`" "'" }} — David Winterbottom" /> 
+<meta property="og:title" content="TIL {{ replace .Title "`" "'" }} — David Winterbottom" />
 <meta property="og:description" content="{{ .Summary }} [Reading time: {{ .ReadingTime }} {{ cond (eq .ReadingTime 1) "minute" "minutes" }}]" />
 
 <!-- Screenshot of homepage from Nov 2020 -->
@@ -33,16 +33,39 @@
 {{ define "footer" }}
     <footer id="footer">
         {{ $tag_pages := .GetTerms "tags" }}
+        {{ $listed := slice }}
+
         {{ range $tag_pages }}
+
             {{ $related_tag_pages := where .Pages "Title" "!=" $.Title }}
-            {{ if $related_tag_pages }}
+
+            {{ if $listed }}
+                {{ $related_tag_pages := $related_tag_pages | intersect (where .Pages "Title" "not in" $listed) }}
+
                 <p>Other things learnt about <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>:</p>
                 <ul>
-                {{ range $related_tag_pages }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
-                {{ end }}
+                    {{ range $related_tag_pages }}
+                        <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
+                    {{ end }}
+                    {{ range $related_tag_pages }}
+                        {{ $listed = $listed | append .Title }}
+                    {{ end }}
                 </ul>
+            {{ else }}
+                {{ if $related_tag_pages }}
+                    <p>Other things learnt about <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>:</p>
+                    <ul>
+                    {{ range $related_tag_pages }}
+                        <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
+                    {{ end }}
+                    </ul>
+                    {{ range $related_tag_pages }}
+                        {{ $listed = $listed | append .Title }}
+                    {{ end }}
+                {{ end }}
+
             {{ end }}
+
         {{ end }}
 
         {{ if and (.PrevPage) (not (.NextPage)) }}

@@ -17,7 +17,7 @@ $ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev
         
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/" />
-<meta property="og:title" content="TIL How to pipe an argument list into Vim — David Winterbottom" /> 
+<meta property="og:title" content="TIL How to pipe an argument list into Vim — David Winterbottom" />
 <meta property="og:description" content="Use something like:
 $ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits. [Reading time: 1 minute]" />
 
@@ -78,85 +78,158 @@ don&rsquo;t actually use it.</p>
     <footer id="footer">
         
         
-            
-            
-                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
-                <ul>
-                
-                <li><a href="/posts/about-the-aleinfo-command/">About the <code>:ALEInfo</code> command</a></li>
-                
-                <li><a href="/posts/about-vims-semicolon-search-offset/">About Vim&rsquo;s semi-colon search offset</a></li>
-                
-                <li><a href="/posts/that-vims-uppercase-marks-are-global-and-persistent/">That Vim&rsquo;s uppercase marks are global and persistent</a></li>
-                
-                <li><a href="/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/">That <code>vim-polyglot</code> conflicts with Hub when creating pull requests</a></li>
-                
-                <li><a href="/posts/how-to-use-custom-functions-with-cdo/">How to use custom functions with <code>:cdo</code></a></li>
-                
-                <li><a href="/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/">How to copy the current filepath to the system clipboard in Vim</a></li>
-                
-                <li><a href="/posts/how-to-add-project-specific-vim-settings/">How to add project-specific Vim settings</a></li>
-                
-                <li><a href="/posts/universal-ctags-can-index-more-things-than-i-realised/">Universal Ctags can index more things than I realised</a></li>
-                
-                <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
-                
-                <li><a href="/posts/about-how-to-use-keywordprg-effectively/">About how to use <code>keywordprg</code> effectively</a></li>
-                
-                <li><a href="/posts/how-to-configure-ctags-to-parse-terraform-files/">How to configure <code>ctags</code> to parse Terraform files</a></li>
-                
-                <li><a href="/posts/how-to-use-bandit-with-vims-quickfix-list/">How to use Bandit with Vim&rsquo;s quickfix list</a></li>
-                
-                <li><a href="/posts/you-can-run-grep-without-using-parent-shell-process/">You can run <code>:grep</code> without using parent shell process</a></li>
-                
-                <li><a href="/posts/theres-a-quickfixcmdpost-event-in-vim/">There&rsquo;s a <code>QuickFixCmdPost</code> event in Vim</a></li>
-                
-                <li><a href="/posts/you-can-jump-to-previous-quickfix-lists-in-vim/">You can jump to previous quickfix lists in Vim</a></li>
-                
-                <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
-                
-                <li><a href="/posts/how-to-read-from-one-buffer-to-another-in-vim/">How to read from one buffer to another in Vim</a></li>
-                
-                <li><a href="/posts/about-vims-helpgrep-command/">About Vim&rsquo;s <code>:helpgrep</code> command</a></li>
-                
-                <li><a href="/posts/vim-recommends-using-emacsstyle-key-bindings-in-command-mode/">Vim recommends using Emacs-style key bindings in command mode</a></li>
-                
-                <li><a href="/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/">Vim doesn&rsquo;t create the persistent undo folder automatically</a></li>
-                
-                <li><a href="/posts/about-better-yaml-file-folding-in-vim/">About better YAML file folding in Vim</a></li>
-                
-                <li><a href="/posts/about-help-macvim/">About <code>:help macvim</code></a></li>
-                
-                <li><a href="/posts/about-vims-diffthis-command/">About Vim&rsquo;s <code>:diffthis</code> command</a></li>
-                
-                </ul>
-            
+
         
+
             
+
             
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
+                    <ul>
+                    
+                        <li><a href="/posts/about-the-aleinfo-command/">About the <code>:ALEInfo</code> command</a></li>
+                    
+                        <li><a href="/posts/about-vims-semicolon-search-offset/">About Vim&rsquo;s semi-colon search offset</a></li>
+                    
+                        <li><a href="/posts/that-vims-uppercase-marks-are-global-and-persistent/">That Vim&rsquo;s uppercase marks are global and persistent</a></li>
+                    
+                        <li><a href="/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/">That <code>vim-polyglot</code> conflicts with Hub when creating pull requests</a></li>
+                    
+                        <li><a href="/posts/how-to-use-custom-functions-with-cdo/">How to use custom functions with <code>:cdo</code></a></li>
+                    
+                        <li><a href="/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/">How to copy the current filepath to the system clipboard in Vim</a></li>
+                    
+                        <li><a href="/posts/how-to-add-project-specific-vim-settings/">How to add project-specific Vim settings</a></li>
+                    
+                        <li><a href="/posts/universal-ctags-can-index-more-things-than-i-realised/">Universal Ctags can index more things than I realised</a></li>
+                    
+                        <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
+                    
+                        <li><a href="/posts/about-how-to-use-keywordprg-effectively/">About how to use <code>keywordprg</code> effectively</a></li>
+                    
+                        <li><a href="/posts/how-to-configure-ctags-to-parse-terraform-files/">How to configure <code>ctags</code> to parse Terraform files</a></li>
+                    
+                        <li><a href="/posts/how-to-use-bandit-with-vims-quickfix-list/">How to use Bandit with Vim&rsquo;s quickfix list</a></li>
+                    
+                        <li><a href="/posts/you-can-run-grep-without-using-parent-shell-process/">You can run <code>:grep</code> without using parent shell process</a></li>
+                    
+                        <li><a href="/posts/theres-a-quickfixcmdpost-event-in-vim/">There&rsquo;s a <code>QuickFixCmdPost</code> event in Vim</a></li>
+                    
+                        <li><a href="/posts/you-can-jump-to-previous-quickfix-lists-in-vim/">You can jump to previous quickfix lists in Vim</a></li>
+                    
+                        <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
+                    
+                        <li><a href="/posts/how-to-read-from-one-buffer-to-another-in-vim/">How to read from one buffer to another in Vim</a></li>
+                    
+                        <li><a href="/posts/about-vims-helpgrep-command/">About Vim&rsquo;s <code>:helpgrep</code> command</a></li>
+                    
+                        <li><a href="/posts/vim-recommends-using-emacsstyle-key-bindings-in-command-mode/">Vim recommends using Emacs-style key bindings in command mode</a></li>
+                    
+                        <li><a href="/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/">Vim doesn&rsquo;t create the persistent undo folder automatically</a></li>
+                    
+                        <li><a href="/posts/about-better-yaml-file-folding-in-vim/">About better YAML file folding in Vim</a></li>
+                    
+                        <li><a href="/posts/about-help-macvim/">About <code>:help macvim</code></a></li>
+                    
+                        <li><a href="/posts/about-vims-diffthis-command/">About Vim&rsquo;s <code>:diffthis</code> command</a></li>
+                    
+                    </ul>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                
+
+            
+
+        
+
+            
+
+            
+                
+
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/ripgrep/">ripgrep</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/">How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></a></li>
-                
-                <li><a href="/posts/you-can-define-custom-filetype-filters-in-ripgrep/">You can define custom file-type filters in <code>ripgrep</code></a></li>
-                
-                <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
-                
-                <li><a href="/posts/you-can-run-grep-without-using-parent-shell-process/">You can run <code>:grep</code> without using parent shell process</a></li>
-                
+                    
+                        <li><a href="/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/">How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></a></li>
+                    
+                        <li><a href="/posts/you-can-define-custom-filetype-filters-in-ripgrep/">You can define custom file-type filters in <code>ripgrep</code></a></li>
+                    
+                        <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
                 </ul>
             
+
         
+
             
+
             
+                
+
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/fd/">fd</a>:</p>
                 <ul>
-                
-                <li><a href="/posts/fd-has-an-option-for-searching-filepaths/"><code>fd</code> has an option for searching filepaths</a></li>
-                
+                    
+                        <li><a href="/posts/fd-has-an-option-for-searching-filepaths/"><code>fd</code> has an option for searching filepaths</a></li>
+                    
+                    
+                        
+                    
                 </ul>
             
+
         
 
         
