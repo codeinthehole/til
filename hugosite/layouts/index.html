@@ -36,7 +36,7 @@
     {{ $recent_tag_pages := slice }}
     {{ $recent_tag_names := slice }}
 
-    {{ $recent_posts := (first 4 $posts) }}
+    {{ $recent_posts := (first 5 $posts) }}
     {{ range $recent_posts }}
         {{ range .GetTerms "tags" }}
             {{ if not (in $recent_tag_names .Title) }}
@@ -46,14 +46,15 @@
         {{ end }}
     {{ end }}
 
+    {{ $num_recent_tag_pages := len $recent_tag_pages }}
     <p>
         There have been <strong>{{ len $posts }}</strong> TILs so far —
         recent topics include 
-        {{ range $i, $p := $recent_tag_pages }}{{- if $i -}}, {{ end -}}<a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ end }}.
+        {{ range $i, $p := $recent_tag_pages }}{{ if eq $i (sub $num_recent_tag_pages 1) }} and {{ else if $i }}, {{ end -}}<a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ end }}.
     </p>
 
     <p>
-        Browse posts <a href="/posts/">by month</a> or <a href="/tags/">by tag</a>.
+        You can browse posts <a href="/posts/">chronologically</a> or <a href="/tags/">by tag</a>.
     </p>
 
 
