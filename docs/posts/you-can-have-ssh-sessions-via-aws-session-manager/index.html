@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which lets you replace all the instances in an auto-scaling group, possibly with a new AMI. ...
+    This can be achieved by adding a block like this to your ~/. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/aws-asgs-have-an-instance-refresh-feature/" />
-<meta property="og:title" content="TIL AWS ASGs have an &#39;instance refresh&#39; feature — David Winterbottom" />
-<meta property="og:description" content="Which lets you replace all the instances in an auto-scaling group, possibly with a new AMI. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-have-ssh-sessions-via-aws-session-manager/" />
+<meta property="og:title" content="TIL You can have SSH sessions via AWS Session Manager — David Winterbottom" />
+<meta property="og:description" content="This can be achieved by adding a block like this to your ~/. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL AWS ASGs have an &#39;instance refresh&#39; feature — David Winterbottom
+    TIL You can have SSH sessions via AWS Session Manager — David Winterbottom
 </title>
 
         
@@ -53,17 +53,22 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>September 28th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>August 9th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>AWS ASGs have an &lsquo;instance refresh&rsquo; feature</h1>
-        </header><p>Which lets you replace all the instances in an auto-scaling group, possibly with
-a new AMI. See <a href="https://aws.amazon.com/blogs/compute/introducing-instance-refresh-for-ec2-auto-scaling/">the announcement</a>
-from the AWS Compute Blog.</p>
-<p>If you use an immutable infrastructure approach and deploy using AMIs, this
-provides an alternative deployment mechanism. In contrast to using Terraform&rsquo;s
-<code>create_before_destroy</code> mechanism, which creates a new auto-scaling group for
-each deploy, this method would allow a single long-lived ASG to be used.</p>
-<p>Looks interesting.</p>
+            <h1>You can have SSH sessions via AWS Session Manager</h1>
+        </header><p>This can be achieved by adding a block like this to your <code>~/.ssh/config</code>:</p>
+<pre><code class="language-ssh" data-lang="ssh">host i-* mi-*
+    ProxyCommand sh -c &quot;aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'&quot;
+</code></pre><p>This allows an SSH session to be started with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ssh $INSTANCE_ID
+</code></pre></div><p>If you work with more than one AWS account, you can use a pseudo host string to
+indicate which AWS profile to use:</p>
+<pre><code class="language-ssh" data-lang="ssh">Host i-*.*
+    ProxyCommand sh -c &quot;aws --profile=$(echo %h | cut -d'.' -f2) ssm start-session --target $(echo %h | cut -d'.' -f1) --document-name AWS-StartSSHSession --parameters 'portNumber=%p'&quot;
+</code></pre><p>where we pass hosts in the form <code>$INSTANCE_ID.$PROFILE_NAME</code>. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ssh i-0c47f1891eb987860.staging
+</code></pre></div><p>Note that commands aren&rsquo;t logged for SSH sessions.</p>
+<p>For more see the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started-enable-ssh-connections.html">AWS SSM docs</a>.</p>
 </article>
 
         </main>
@@ -82,9 +87,9 @@ each deploy, this method would allow a single long-lived ASG to be used.</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/aws/">AWS</a>:</p>
                     <ul>
                     
-                        <li><a href="/posts/you-can-have-ssh-sessions-via-aws-session-manager/">You can have SSH sessions via AWS Session Manager</a></li>
-                    
                         <li><a href="/posts/how-to-use-aws-profiles-that-require-mfa/">How to use AWS profiles that require MFA</a></li>
+                    
+                        <li><a href="/posts/aws-asgs-have-an-instance-refresh-feature/">AWS ASGs have an &lsquo;instance refresh&rsquo; feature</a></li>
                     
                         <li><a href="/posts/theres-a-chrome-extension-for-switching-aws-iam-roles/">There&rsquo;s a Chrome extension for switching AWS IAM roles</a></li>
                     
@@ -115,19 +120,11 @@ each deploy, this method would allow a single long-lived ASG to be used.</p>
             
                 
 
-                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/terraform/">Terraform</a>:</p>
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/ssh/">SSH</a>:</p>
                 <ul>
                     
-                        <li><a href="/posts/sensitive-terraform-cloud-variables-are-included-in-sentinel-mocks/">Sensitive Terraform Cloud variables are included in Sentinel mocks</a></li>
+                        <li><a href="/posts/how-to-convert-ssh2-public-keys-to-openssh-format/">How to convert SSH2 public keys to OpenSSH format</a></li>
                     
-                        <li><a href="/posts/how-to-conditionally-include-items-in-a-terraform-list/">How to conditionally include items in a Terraform list</a></li>
-                    
-                        <li><a href="/posts/renaming-a-terraform-module-leads-to-resource-recreation/">Renaming a Terraform module is dangerous</a></li>
-                    
-                    
-                        
-                    
-                        
                     
                         
                     
@@ -137,9 +134,9 @@ each deploy, this method would allow a single long-lived ASG to be used.</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -148,11 +145,9 @@ each deploy, this method would allow a single long-lived ASG to be used.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/the-macos-keybinds-for-en-and-emdashes\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/django-doesnt-flush-caches-between-tests\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-use-xargs-with-printf\/"); })
         
     </script>
 

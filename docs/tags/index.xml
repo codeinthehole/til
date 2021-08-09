@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Jul 2021 15:03:26 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 09 Aug 2021 12:26:02 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>AWS</title>
+      <link>https://til.codeinthehole.com/tags/aws/</link>
+      <pubDate>Mon, 09 Aug 2021 12:26:02 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSH</title>
+      <link>https://til.codeinthehole.com/tags/ssh/</link>
+      <pubDate>Mon, 09 Aug 2021 12:26:02 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/ssh/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Django</title>
@@ -207,15 +225,6 @@
       <pubDate>Fri, 26 Mar 2021 14:37:33 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/yaml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SSH</title>
-      <link>https://til.codeinthehole.com/tags/ssh/</link>
-      <pubDate>Fri, 26 Mar 2021 11:09:30 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/ssh/</guid>
       <description></description>
     </item>
     
@@ -468,15 +477,6 @@
       <pubDate>Tue, 27 Oct 2020 09:26:52 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/websites/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AWS</title>
-      <link>https://til.codeinthehole.com/tags/aws/</link>
-      <pubDate>Wed, 21 Oct 2020 15:38:20 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/aws/</guid>
       <description></description>
     </item>
     
