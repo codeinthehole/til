@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Aug 2021 12:26:02 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 08 Sep 2021 09:29:15 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About `git merge-base`</title>
+      <link>https://til.codeinthehole.com/posts/about-git-mergebase/</link>
+      <pubDate>Wed, 08 Sep 2021 09:29:15 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-git-mergebase/</guid>
+      <description>Git&amp;rsquo;s merge-base command can be used to find the common ancestor for two commits (or branches/references).</description>
+    </item>
     
     <item>
       <title>You can have SSH sessions via AWS Session Manager</title>

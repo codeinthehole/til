@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    git-absorb is a great tool for crafting atomic commits. ...
+    Git’s merge-base command can be used to find the common ancestor for two commits (or branches/references). ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-gitabsorb/" />
-<meta property="og:title" content="TIL About &#39;git-absorb&#39; — David Winterbottom" />
-<meta property="og:description" content="git-absorb is a great tool for crafting atomic commits. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-git-mergebase/" />
+<meta property="og:title" content="TIL About &#39;git merge-base&#39; — David Winterbottom" />
+<meta property="og:description" content="Git&rsquo;s merge-base command can be used to find the common ancestor for two commits (or branches/references). [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;git-absorb&#39; — David Winterbottom
+    TIL About &#39;git merge-base&#39; — David Winterbottom
 </title>
 
         
@@ -53,19 +53,34 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>March 28th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>September 8th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>git-absorb</code></h1>
-        </header><p><a href="https://github.com/tummychow/git-absorb"><code>git-absorb</code></a> is a great tool for crafting atomic commits. Given some uncommitted
-changes, it automates the process of identifying which commit to squash each
-change into. The workflow is simply:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vim  <span style="color:#75715e"># address code-review feedback</span>
-$ git add $CHANGED_FILES
-$ git absorb --and-rebase
-</code></pre></div><p>There&rsquo;s an excellent <a href="https://github.com/tummychow/git-absorb#elevator-pitch">elevator pitch</a> on
-the project README.</p>
-<p>Highly recommended.</p>
-</article>
+            <h1>About <code>git merge-base</code></h1>
+        </header><p>Git&rsquo;s <code>merge-base</code> command can be used to find the common ancestor for
+two commits (or branches/references). From the <a href="https://git-scm.com/docs/git-merge-base#_discussion">docs</a>:</p>
+<pre><code>Given two commits A and B, git merge-base A B will output a commit which is
+reachable from both A and B through the parent relationship.
+
+For example, with this topology:
+
+             o---o---o---B
+            /
+    ---o---1---o---o---o---A
+
+the merge base between A and B is 1.
+</code></pre><p>This is useful for <a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">rebasing feature branches</a>. This command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git rebase -i <span style="color:#e6db74">`</span>git merge-base head origin/master<span style="color:#e6db74">`</span>
+</code></pre></div><p>will open the interactive rebase editor with every commit from your feature
+branch selected.</p>
+<p>If you often rebase commits to create a readable, self-contained history, this
+command is invaluable and I recommend you alias it to something easy to type. I have
+this in my <code>~/.bash_aliases</code> file:</p>
+<pre><code>alias grb='git rebase -i `git merge-base head origin/$(git defaultbranch)`'
+</code></pre><p>where the <code>defaultbranch</code> alias is defined in <code>~/.gitconfig</code> as:</p>
+<pre><code>[alias]
+...
+defaultbranch = &quot;!f() { git symbolic-ref refs/remotes/origin/HEAD | cut -d/ -f4; }; f&quot;
+</code></pre></article>
 
         </main>
 
@@ -83,13 +98,13 @@ the project README.</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
                     <ul>
                     
-                        <li><a href="/posts/about-git-mergebase/">About <code>git merge-base</code></a></li>
-                    
                         <li><a href="/posts/that-git-aliases-that-run-an-external-command-are-run-from-the-repository-root/">Git aliases that run an external command are run from the repository root</a></li>
                     
                         <li><a href="/posts/about-git-log-g/">About <code>git log -G</code></a></li>
                     
                         <li><a href="/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/">That <code>vim-polyglot</code> conflicts with Hub when creating pull requests</a></li>
+                    
+                        <li><a href="/posts/about-gitabsorb/">About <code>git-absorb</code></a></li>
                     
                         <li><a href="/posts/how-to-include-the-date-in-git-reflog-output/">How to include the date in <code>git reflog</code> output</a></li>
                     
@@ -128,9 +143,9 @@ the project README.</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -139,11 +154,9 @@ the project README.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/json-is-valid-yaml\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-have-ssh-sessions-via-aws-session-manager\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests\/"); })
         
     </script>
 
