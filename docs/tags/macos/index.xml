@@ -6,11 +6,20 @@
     <description>Recent content in MacOS on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Sep 2021 09:28:14 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 13 Sep 2021 14:26:37 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/macos/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to easily copy annotated screenshots to the clipboard on macOS</title>
+      <link>https://til.codeinthehole.com/posts/how-to-easily-copy-annotated-screenshots-to-the-clipboard-on-macos/</link>
+      <pubDate>Mon, 13 Sep 2021 14:26:37 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-easily-copy-annotated-screenshots-to-the-clipboard-on-macos/</guid>
+      <description>I frequently want to take screenshots, annotate them, then paste the marked up image into an application like Slack or Github; I don&amp;rsquo;t want to save a file to the ~/Desktop.</description>
+    </item>
     
     <item>
       <title>The names for macOS keyboard meta-characters</title>

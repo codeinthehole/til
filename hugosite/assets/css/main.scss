@@ -238,7 +238,7 @@ main#content {
         }
 
         /* Code snippets in paragraphs */
-        p code, ul code  {
+        p code, ul code, ol code  {
             font-family: $font-code;
             font-size: 1.3rem;
             background-color: #eee;

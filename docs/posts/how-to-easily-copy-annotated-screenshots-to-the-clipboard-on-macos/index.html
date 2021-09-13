@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    You can insert a ⌘ character using the Character Viewer pop-up. ...
+    I frequently want to take screenshots, annotate them, then paste the marked up image into an application like Slack or Github; I don’t want to save a file to the ~/Desktop. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -15,16 +15,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/the-names-for-macos-keyboard-metacharacters/" />
-<meta property="og:title" content="TIL The names for macOS keyboard meta-characters — David Winterbottom" />
-<meta property="og:description" content="You can insert a ⌘ character using the Character Viewer pop-up. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-easily-copy-annotated-screenshots-to-the-clipboard-on-macos/" />
+<meta property="og:title" content="TIL How to easily copy annotated screenshots to the clipboard on macOS — David Winterbottom" />
+<meta property="og:description" content="I frequently want to take screenshots, annotate them, then paste the marked up image into an application like Slack or Github; I don&rsquo;t want to save a file to the ~/Desktop. [Reading time: 2 minutes]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL The names for macOS keyboard meta-characters — David Winterbottom
+    TIL How to easily copy annotated screenshots to the clipboard on macOS — David Winterbottom
 </title>
 
         
@@ -53,19 +53,36 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>September 10th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>September 13th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>The names for macOS keyboard meta-characters</h1>
-        </header><p>You can insert a <code>⌘</code> character using the <a href="https://support.apple.com/en-gb/guide/mac-help/mchlp1560/mac">Character
-Viewer</a> pop-up.</p>
-<p>But the characters for macOS meta-keys like command and option have unusual
-names which makes them hard to find by searching. Their names are:</p>
-<ul>
-<li><code>⌘</code> - &ldquo;PLACE OF INTEREST&rdquo;</li>
-<li><code>⇧</code> - &ldquo;UPWARDS WHITE ARROW&rdquo;</li>
-<li><code>⇪</code> - &ldquo;UPWARDS WHITE ARROW FROM BAR&rdquo;</li>
-<li><code>⌃</code> - &ldquo;UP ARROWHEAD&rdquo;</li>
-</ul>
+            <h1>How to easily copy annotated screenshots to the clipboard on macOS</h1>
+        </header><p>I frequently want to take screenshots, annotate them, then paste the marked up
+image into an application like Slack or Github; I don&rsquo;t want to save a file to
+the <code>~/Desktop</code>.</p>
+<h3 id="before-today">Before today</h3>
+<p>Prior to today, my workflow for this was:</p>
+<ol>
+<li>Use <code>⇧ + ⌘ + 4</code> to <a href="https://support.apple.com/en-gb/HT201361">take a screenshot of a portion of the screen</a>.</li>
+<li>Click the thumbnail in the bottom right to open the Markup editor.</li>
+<li>Mark up the screenshot.</li>
+<li>Use <code>⇧ + ⌃ + ⌘ + 4</code> to copy a screenshot of the Markup editor to the
+clipboard (which is a bit awkward).</li>
+<li>Paste the image.</li>
+<li>Hit the trash button in the Markup editor to discard the marked up image.</li>
+</ol>
+<p>Taking a screenshot of a screenshot editor never felt right.</p>
+<h3 id="after-today">After today</h3>
+<p>Today <a href="https://apple.stackexchange.com/questions/367962/how-to-copy-an-image-from-screenshots-markup">I&rsquo;ve learnt</a> that you can copy the marked up image to the clipboard using the conventional <code>⌘ + c</code> binding in the Markup editor. This simplifies the above
+workflow to:</p>
+<ol>
+<li>Use <code>⇧ + ⌘ + 4</code> to take a screenshot of a portion of the screen.</li>
+<li>Click the thumbnail in the bottom right to open the Markup editor.</li>
+<li>Mark up the screenshot.</li>
+<li>Use <code>⌘ + c</code> to copy the marked up image to the clipboard.</li>
+<li>Paste the image.</li>
+<li>Hit the trash button in the Markup editor to discard the marked up image.</li>
+</ol>
+<p>The same number of steps but a much simpler journey.</p>
 </article>
 
         </main>
@@ -84,7 +101,7 @@ names which makes them hard to find by searching. Their names are:</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/macos/">MacOS</a>:</p>
                     <ul>
                     
-                        <li><a href="/posts/how-to-easily-copy-annotated-screenshots-to-the-clipboard-on-macos/">How to easily copy annotated screenshots to the clipboard on macOS</a></li>
+                        <li><a href="/posts/the-names-for-macos-keyboard-metacharacters/">The names for macOS keyboard meta-characters</a></li>
                     
                         <li><a href="/posts/about-chromes-named-windows/">About Chrome&rsquo;s named windows</a></li>
                     
@@ -133,9 +150,9 @@ names which makes them hard to find by searching. Their names are:</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -144,11 +161,9 @@ names which makes them hard to find by searching. Their names are:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-git-mergebase\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/the-names-for-macos-keyboard-metacharacters\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-easily-copy-annotated-screenshots-to-the-clipboard-on-macos\/"); })
         
     </script>
 
