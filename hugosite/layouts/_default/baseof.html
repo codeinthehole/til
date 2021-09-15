@@ -8,9 +8,13 @@
 
         {{ printf `<link rel="shortcut icon" href="%s">` ("favicon.ico" | absURL) | safeHTML }}
 
-        {{ with .OutputFormats.Get "rss" -}}
-            {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-        {{ end -}}
+        {{ if .IsHome }}
+            <link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="Today I Learnt...">
+        {{ else }}
+            {{ with .OutputFormats.Get "rss" }}
+                {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+            {{ end -}}
+        {{ end }}
 
         {{ $style := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify }}
         <link rel="stylesheet" href="{{ $style.Permalink }}">
