@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Sep 2021 14:26:37 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 16 Sep 2021 14:08:54 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to reset an SSH session</title>
+      <link>https://til.codeinthehole.com/posts/how-to-reset-an-ssh-session/</link>
+      <pubDate>Thu, 16 Sep 2021 14:08:54 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-reset-an-ssh-session/</guid>
+      <description>Hit enter to start a new line then type ~.</description>
+    </item>
     
     <item>
       <title>How to easily copy annotated screenshots to the clipboard on macOS</title>
