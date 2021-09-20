@@ -6,11 +6,20 @@
     <description>Recent content in Django on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Jul 2021 15:03:26 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 20 Sep 2021 15:04:15 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Django settings prefixed with an underscore are private</title>
+      <link>https://til.codeinthehole.com/posts/django-settings-prefixed-with-an-underscore-are-private/</link>
+      <pubDate>Mon, 20 Sep 2021 15:04:15 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/django-settings-prefixed-with-an-underscore-are-private/</guid>
+      <description>As in: you can&amp;rsquo;t access them from outside the settings module.</description>
+    </item>
     
     <item>
       <title>Django doesn&#39;t flush caches between tests</title>
