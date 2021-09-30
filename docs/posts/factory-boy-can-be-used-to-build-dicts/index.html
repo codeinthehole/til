@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    As in:
-import pytest @pytest.mark.parametrize(&amp;quot;x&amp;quot;, [1,2,3]) @pytest.mark.parametrize(&amp;quot;y&amp;quot;, [4,5,6]) def test_cartesian_product(x, y): pass which will run the test for all combinations of the two input lists: ...
+    Conventionally subclasses of factory.Factory are used to build objects, often Django models that are persisted to some data store. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -19,17 +18,16 @@ import pytest @pytest.mark.parametrize(&amp;quot;x&amp;quot;, [1,2,3]) @pytest.m
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-stack-pytests-parametrize-decorators/" />
-<meta property="og:title" content="TIL You can stack &#39;pytest&#39;&#39;s &#39;parametrize&#39; decorators — David Winterbottom" />
-<meta property="og:description" content="As in:
-import pytest @pytest.mark.parametrize(&#34;x&#34;, [1,2,3]) @pytest.mark.parametrize(&#34;y&#34;, [4,5,6]) def test_cartesian_product(x, y): pass which will run the test for all combinations of the two input lists: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/factory-boy-can-be-used-to-build-dicts/" />
+<meta property="og:title" content="TIL Factory boy can be used to build dicts — David Winterbottom" />
+<meta property="og:description" content="Conventionally subclasses of factory.Factory are used to build objects, often Django models that are persisted to some data store. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL You can stack &#39;pytest&#39;&#39;s &#39;parametrize&#39; decorators — David Winterbottom
+    TIL Factory boy can be used to build dicts — David Winterbottom
 </title>
 
         
@@ -58,28 +56,60 @@ import pytest @pytest.mark.parametrize(&#34;x&#34;, [1,2,3]) @pytest.mark.parame
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>December 16th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>September 30th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</h1>
-        </header><p>As in:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> pytest
+            <h1>Factory boy can be used to build dicts</h1>
+        </header><p>Conventionally subclasses of <code>factory.Factory</code> are used to build objects,
+often Django models that are persisted to some data store.</p>
+<p>But they can also be used to build plain <code>dict</code>s, which can be useful for
+building complex <code>dict</code>s in tests.</p>
+<p>This is done via the <a href="https://factoryboy.readthedocs.io/en/stable/reference.html#factory.FactoryOptions.model"><code>Meta.model</code> field</a> which specifies the
+class of object to create. There&rsquo;s also a convenient <code>factory.DictFactory</code>
+class.</p>
+<p>Here&rsquo;s an example using <code>factory.Factory</code> subclasses to create a nested <code>dict</code> fixture:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> factory
 
-<span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>mark<span style="color:#f92672">.</span>parametrize(<span style="color:#e6db74">&#34;x&#34;</span>, [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>])
-<span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>mark<span style="color:#f92672">.</span>parametrize(<span style="color:#e6db74">&#34;y&#34;</span>, [<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>])
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_cartesian_product</span>(x, y):
-    <span style="color:#66d9ef">pass</span>
-</code></pre></div><p>which will run the test for all combinations of the two input lists:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">test_parameterize.py::test_cartesian_product[4-1] PASSED
-test_parameterize.py::test_cartesian_product[4-2] PASSED
-test_parameterize.py::test_cartesian_product[4-3] PASSED
-test_parameterize.py::test_cartesian_product[5-1] PASSED
-test_parameterize.py::test_cartesian_product[5-2] PASSED
-test_parameterize.py::test_cartesian_product[5-3] PASSED
-test_parameterize.py::test_cartesian_product[6-1] PASSED
-test_parameterize.py::test_cartesian_product[6-2] PASSED
-test_parameterize.py::test_cartesian_product[6-3] PASSED
-</code></pre></div><p>See <a href="https://docs.pytest.org/en/stable/parametrize.html">https://docs.pytest.org/en/stable/parametrize.html</a></p>
-</article>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pet</span>(factory<span style="color:#f92672">.</span>DictFactory):
+    species <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dog&#34;</span>
+    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rover&#34;</span>
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>(factory<span style="color:#f92672">.</span>DictFactory):
+    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;barry&#34;</span>
+    age <span style="color:#f92672">=</span> <span style="color:#ae81ff">41</span>
+    pet <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span>SubFactory(Pet)
+    has_pet_insurance <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+
+    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Meta</span>:
+        <span style="color:#75715e"># Ensure dict field uses hyphens not underscores.</span>
+        rename <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;has_pet_insurance&#34;</span>: <span style="color:#e6db74">&#34;has-pet-insurance&#34;</span>}
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_default_fields</span>():
+    <span style="color:#66d9ef">assert</span> Person() <span style="color:#f92672">==</span> {
+        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;barry&#34;</span>,
+        <span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#ae81ff">41</span>,
+        <span style="color:#e6db74">&#34;has-pet-insurance&#34;</span>: <span style="color:#66d9ef">False</span>,
+        <span style="color:#e6db74">&#34;pet&#34;</span>: {
+            <span style="color:#e6db74">&#34;species&#34;</span>: <span style="color:#e6db74">&#34;dog&#34;</span>,
+            <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;rover&#34;</span>
+        }
+    }
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_overriding_fields</span>():
+    <span style="color:#66d9ef">assert</span> Person(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alan&#34;</span>, pet__name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lassie&#34;</span>) <span style="color:#f92672">==</span> {
+        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;alan&#34;</span>,
+        <span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#ae81ff">41</span>,
+        <span style="color:#e6db74">&#34;has-pet-insurance&#34;</span>: <span style="color:#66d9ef">False</span>,
+        <span style="color:#e6db74">&#34;pet&#34;</span>: {
+            <span style="color:#e6db74">&#34;species&#34;</span>: <span style="color:#e6db74">&#34;dog&#34;</span>,
+            <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;lassie&#34;</span>
+        }
+    }
+
+
+</code></pre></div></article>
 
         </main>
 
@@ -96,8 +126,6 @@ test_parameterize.py::test_cartesian_product[6-3] PASSED
                 
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
                     <ul>
-                    
-                        <li><a href="/posts/factory-boy-can-be-used-to-build-dicts/">Factory boy can be used to build dicts</a></li>
                     
                         <li><a href="/posts/django-settings-prefixed-with-an-underscore-are-private/">Django settings prefixed with an underscore are private</a></li>
                     
@@ -128,6 +156,8 @@ test_parameterize.py::test_cartesian_product[6-3] PASSED
                         <li><a href="/posts/pytest-doesnt-play-nicely-with-ipdb/">Pytest doesn&rsquo;t play nicely with ipdb</a></li>
                     
                         <li><a href="/posts/you-can-arbitrarily-chain-python-comparison-operators/">You can arbitrarily chain Python comparison operations</a></li>
+                    
+                        <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
                     
                         <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
                     
@@ -211,24 +241,10 @@ test_parameterize.py::test_cartesian_product[6-3] PASSED
 
         
 
-            
-
-            
-                
-
-                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/pytest/">pytest</a>:</p>
-                <ul>
-                    
-                    
-                </ul>
-            
-
         
-
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-        
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -237,11 +253,9 @@ test_parameterize.py::test_cartesian_product[6-3] PASSED
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-yamls-node-anchors-and-aliases\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/django-settings-prefixed-with-an-underscore-are-private\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-add-project-specific-vim-settings\/"); })
         
     </script>
 

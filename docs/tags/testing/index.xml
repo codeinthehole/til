@@ -6,11 +6,20 @@
     <description>Recent content in Testing on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Jul 2021 15:03:26 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 30 Sep 2021 13:56:48 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Factory boy can be used to build dicts</title>
+      <link>https://til.codeinthehole.com/posts/factory-boy-can-be-used-to-build-dicts/</link>
+      <pubDate>Thu, 30 Sep 2021 13:56:48 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/factory-boy-can-be-used-to-build-dicts/</guid>
+      <description>Conventionally subclasses of factory.Factory are used to build objects, often Django models that are persisted to some data store.</description>
+    </item>
     
     <item>
       <title>Django doesn&#39;t flush caches between tests</title>
