@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://til.codeinthehole.com/posts/factory-boy-can-be-used-to-build-dicts/</loc>
-    <lastmod>2021-09-30T13:56:48+01:00</lastmod>
+    <loc>https://til.codeinthehole.com/posts/how-to-delete-all-buffers-in-vim/</loc>
+    <lastmod>2021-10-05T17:14:16+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-10-05T17:14:16+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-10-05T17:14:16+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-10-05T17:14:16+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/vim/</loc>
+    <lastmod>2021-10-05T17:14:16+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/factory-boy-can-be-used-to-build-dicts/</loc>
     <lastmod>2021-09-30T13:56:48+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/python/</loc>
     <lastmod>2021-09-30T13:56:48+01:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-09-30T13:56:48+01:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/tags/testing/</loc>
-    <lastmod>2021-09-30T13:56:48+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-09-30T13:56:48+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/django/</loc>
@@ -105,9 +111,6 @@
     <lastmod>2021-06-02T13:00:25+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/about-the-aleinfo-command/</loc>
-    <lastmod>2021-05-25T10:59:39+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/vim/</loc>
     <lastmod>2021-05-25T10:59:39+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/about-ubuntus-alert-bash-alias/</loc>
