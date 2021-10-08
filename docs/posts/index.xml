@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Oct 2021 17:14:16 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 08 Oct 2021 21:05:16 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to effectively scan files using an iPhone</title>
+      <link>https://til.codeinthehole.com/posts/how-to-effectively-scan-files-using-an-iphone/</link>
+      <pubDate>Fri, 08 Oct 2021 21:05:16 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-effectively-scan-files-using-an-iphone/</guid>
+      <description>In iOS 13 the Files app has a useful utility for scanning files accessed via the ellipsis menu in the top-right of the screen.</description>
+    </item>
     
     <item>
       <title>How to delete all buffers in Vim</title>

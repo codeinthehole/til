@@ -61,14 +61,14 @@
             <h1>Django settings prefixed with an underscore are private</h1>
         </header><p>As in: you can&rsquo;t access them from outside the settings module.</p>
 <p>If you have:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">_FOO <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">_FOO <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
 </code></pre></div><p>in your settings module, then this test:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.conf <span style="color:#f92672">import</span> settings
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.conf <span style="color:#f92672">import</span> settings
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_private_settings_are_inaccessible</span>():
     <span style="color:#66d9ef">assert</span> settings<span style="color:#f92672">.</span>_FOO <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>
 </code></pre></div><p>will fail with error:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">AttributeError: &#39;Settings&#39; object has no attribute &#39;_FOO&#39;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">AttributeError: &#39;Settings&#39; object has no attribute &#39;_FOO&#39;
 </code></pre></div></article>
 
         </main>

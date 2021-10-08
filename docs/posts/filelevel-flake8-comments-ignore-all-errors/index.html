@@ -60,7 +60,7 @@
             </div>
             <h1>File-level flake8 comments ignore all errors</h1>
         </header><p>Until today, I was under the impression that including:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># flake8: noqa: F401</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># flake8: noqa: F401</span>
 </code></pre></div><p>at the top of a Python module would ignore all F401 errors in the file.</p>
 <p>However that isn&rsquo;t true: the above directive ignores <em>all</em> errors in the file,
 not just F401: the <code>: F401</code> part of the comment is silently ignored.</p>

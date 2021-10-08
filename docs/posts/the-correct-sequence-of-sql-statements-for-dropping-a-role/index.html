@@ -60,7 +60,7 @@
             </div>
             <h1>The correct sequence of SQL statements for dropping a role</h1>
         </header><p>Suppose you create a PostgreSQL user with read-only privileges as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- Create the new role.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- Create the new role.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">ROLE</span> :username <span style="color:#66d9ef">WITH</span> LOGIN PASSWORD :<span style="color:#e6db74">&#39;password&#39;</span>;
 
 <span style="color:#75715e">-- Connect to database in question:
@@ -78,7 +78,7 @@
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">IN</span> <span style="color:#66d9ef">SCHEMA</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">ON</span> TABLES <span style="color:#66d9ef">TO</span> :username;
 <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">IN</span> <span style="color:#66d9ef">SCHEMA</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">ON</span> SEQUENCES <span style="color:#66d9ef">TO</span> :username;
 </code></pre></div><p>then the appropriate sequence of statements for dropping this user is:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- Connect to database in question:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- Connect to database in question:
 </span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#66d9ef">c</span> :database_name
 
 <span style="color:#75715e">-- Act as table owner.

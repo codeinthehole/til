@@ -61,9 +61,9 @@
             <h1>Where authentication for the <code>ubuntu</code> user on a EC2 instance is defined</h1>
         </header><p>The file that controls where the default <code>ubuntu</code> user on an Ubuntu EC2 instance
 is <code>/etc/sudoers.d/90-cloud-init-users</code> which has contents:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt"># User rules for ubuntu
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt"># User rules for ubuntu
 ubuntu ALL=(ALL) NOPASSWD:ALL
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(a: int) <span style="color:#f92672">-&gt;</span> int:
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(a: int) <span style="color:#f92672">-&gt;</span> int:
     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
 </code></pre></div><p>As you can see, the default <code>ubuntu</code> user has password-less, <code>sudo</code> access.</p>
 <p>Source <a href="https://serverfault.com/questions/615034/disable-nopasswd-sudo-access-for-ubuntu-user-on-an-ec2-instance">https://serverfault.com/questions/615034/disable-nopasswd-sudo-access-for-ubuntu-user-on-an-ec2-instance</a></p>

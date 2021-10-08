@@ -61,15 +61,15 @@
             <h1>You can define custom file-type filters in <code>ripgrep</code></h1>
         </header><p><a href="https://github.com/BurntSushi/ripgrep"><code>ripgrep</code></a> lets you filter files
 by their language type — e.g. search only <code>C</code>-related files:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rg <span style="color:#e6db74">&#39;int main&#39;</span> --type c
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rg <span style="color:#e6db74">&#39;int main&#39;</span> --type c
 </code></pre></div><p>Here the <code>--type</code> value maps to a glob (e.g. <code>c</code> maps to <code>*.{c.h}</code>). You can
 list all the available types with <code>rg --type-list</code>.</p>
 <p>Furthermore you can <a href="https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#manual-filtering-file-types">define your own types</a> such as &ldquo;web&rdquo; related files:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rg --type-add <span style="color:#e6db74">&#39;web:*.{html,css,js}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rg --type-add <span style="color:#e6db74">&#39;web:*.{html,css,js}&#39;</span>
 </code></pre></div><p>which lets you search such files with:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rg --type<span style="color:#f92672">=</span>web $QUERY
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rg --type<span style="color:#f92672">=</span>web $QUERY
 </code></pre></div><p>Even better, define your own types in your <code>$RIPGREP_CONFIG_PATH</code> config file:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt"># ~/.ripgreprc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt"># ~/.ripgreprc
 
 --smart-case
 --hidden

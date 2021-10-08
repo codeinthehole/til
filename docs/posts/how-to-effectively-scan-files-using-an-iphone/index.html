@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    In iOS 13 the Files app has a useful utility for scanning files accessed via the ellipsis menu in the top-right of the screen. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-effectively-scan-files-using-an-iphone/" />
+<meta property="og:title" content="TIL How to effectively scan files using an iPhone — David Winterbottom" />
+<meta property="og:description" content="In iOS 13 the Files app has a useful utility for scanning files accessed via the ellipsis menu in the top-right of the screen. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to effectively scan files using an iPhone — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>October 8th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to effectively scan files using an iPhone</h1>
+        </header><p>In iOS 13 <a href="https://www.macrumors.com/how-to/scan-documents-ios-files-app/">the Files app has a useful utility for scanning files</a>
+accessed via the ellipsis menu in the top-right of the screen.</p>
+<p>The scanned document will be saved in your iCloud Drive folder. It will normally
+be quite large, possibly too large for Gmail&rsquo;s 25Mb attachment limit. In that case, use
+<code>ps2pdf</code> to reduce its file size:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ps2pdf scanned-file.pdf smaller-file.pdf
+</code></pre></div><p><code>ps2pdf</code> is provided by the <a href="https://formulae.brew.sh/formula/ghostscript"><code>ghostscript</code> Homebrew
+package</a> installed with:</p>
+<pre tabindex="0"><code>$ brew install ghostscript
+</code></pre><p>This has worked well in my experience but there are alternatives on <a href="https://askubuntu.com/questions/113544/how-can-i-reduce-the-file-size-of-a-scanned-pdf-file">this Stack
+Overflow page</a>.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+
+        
+
+            
+
+            
+                
+
+            
+
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-delete-all-buffers-in-vim\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

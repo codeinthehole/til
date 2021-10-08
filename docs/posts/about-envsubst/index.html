@@ -64,14 +64,14 @@ resource files.</p>
 <p>I stumbled upon the <a href="https://www.gnu.org/software/gettext/manual/html_node/envsubst-Invocation.html"><code>envsubst</code> utility</a>
 which will substitute in the value of environment variables to STDIN.</p>
 <p>Eg:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; export foo<span style="color:#f92672">=</span>bar
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; export foo<span style="color:#f92672">=</span>bar
 &gt; echo <span style="color:#e6db74">&#39;$foo&#39;</span>
 $foo
 &gt; echo <span style="color:#e6db74">&#39;$foo&#39;</span> | envsubst
 bar
 </code></pre></div><p>So you could have a Kubernetes <code>deployment.yml</code> file where the image tag is set
 by a environment variable instead of being hard-coded:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; export DOCKER_IMAGE_TAG<span style="color:#f92672">=</span>...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; export DOCKER_IMAGE_TAG<span style="color:#f92672">=</span>...
 &gt; cat deployment.yml | envsubst | kubectl apply -f -
 </code></pre></div><p>I&rsquo;m sure there are better ways of setting up Kubernetes deployment pipelines but
 this is a neat trick to know.</p>

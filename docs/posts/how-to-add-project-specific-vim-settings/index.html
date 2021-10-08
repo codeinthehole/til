@@ -61,7 +61,7 @@
             <h1>How to add project-specific Vim settings</h1>
         </header><p>There&rsquo;s various ways to do this but I quite like using an  <code>autocmd</code> based on
 a buffer&rsquo;s filepath. For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; ~/.vim/vimrc</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; ~/.vim/vimrc</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ConfigureKrakenCore</span>()<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">nnoremap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">ct</span> :!<span style="color:#a6e22e">ctags</span> --<span style="color:#a6e22e">languages</span>=<span style="color:#a6e22e">python</span>&lt;<span style="color:#a6e22e">cr</span>&gt;<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">endfunction</span><span style="color:#960050;background-color:#1e0010">

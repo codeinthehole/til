@@ -61,7 +61,7 @@
             <h1>How to list pages with matching tag in Hugo</h1>
         </header><p>In a detail template, you can grab a post&rsquo;s tags with <code>{{ .GetTerms &quot;tags&quot; }}</code>. You can then loop over this and fetch a list of pages with each tag,
 excluding the current post:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ range $tag_pages }}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ range $tag_pages }}
     {{ $related_tag_pages := where .Pages &#34;Title&#34; &#34;!=&#34; $.Title }}
     {{ if $related_tag_pages }}
         &lt;<span style="color:#f92672">p</span>&gt;Other things learnt about &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Permalink }}&#34;</span>&gt;{{ .Title | markdownify }}&lt;/<span style="color:#f92672">a</span>&gt;:&lt;/<span style="color:#f92672">p</span>&gt;

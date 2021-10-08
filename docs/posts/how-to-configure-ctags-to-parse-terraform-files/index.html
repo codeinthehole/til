@@ -61,7 +61,7 @@
             <h1>How to configure <code>ctags</code> to parse Terraform files</h1>
         </header><p>If you&rsquo;re using <a href="https://github.com/universal-ctags/ctags">Universal Ctags</a> (which you should be), you just need to add
 a <code>~/.ctags.d/terraform.ctags</code> with contents:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">--langdef=terraform
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">--langdef=terraform
 --langmap=terraform:.tf.tfvars
 --regex-terraform=/^[[:space:]]*resource[[:space:]]*&#34;([^&#34;]*)&#34;[[:space:]]*&#34;([^&#34;]*)&#34;/\2/r,Resource/
 --regex-terraform=/^[[:space:]]*data[[:space:]]*&#34;([^&#34;]*)&#34;[[:space:]]*&#34;([^&#34;]*)&#34;/\2/d,Data/
@@ -71,7 +71,7 @@ a <code>~/.ctags.d/terraform.ctags</code> with contents:</p>
 --regex-terraform=/^[[:space:]]*output[[:space:]]*&#34;([^&#34;]*)&#34;/\1/o,Output/
 --regex-terraform=/^([a-z0-9_]+)[[:space:]]*=/\1/f,TFVar/
 </code></pre></div><p>Then, for example, a Terraform resource like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_cloudwatch_log_group&#34;</span> <span style="color:#e6db74">&#34;my-log-group&#34;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_cloudwatch_log_group&#34;</span> <span style="color:#e6db74">&#34;my-log-group&#34;</span> {
   <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;my-log-group&#34;</span>
   ...
 }

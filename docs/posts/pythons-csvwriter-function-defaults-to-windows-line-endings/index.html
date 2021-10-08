@@ -61,7 +61,7 @@
             <h1>Python&rsquo;s <code>csv.writer</code> function defaults to Windows line endings</h1>
         </header><p>I was confused as to why <code>awk</code> wasn&rsquo;t matching the final element in a CSV
 stream from <code>csv.writer</code>. Example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python -c <span style="color:#e6db74">&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python -c <span style="color:#e6db74">&#34;
 </span><span style="color:#e6db74">&gt; import csv, sys
 </span><span style="color:#e6db74">&gt; w = csv.writer(sys.stdout, delimiter=&#39;\t&#39;)
 </span><span style="color:#e6db74">&gt; w.writerow([&#39;foo&#39;, &#39;bar&#39;])
@@ -72,7 +72,7 @@ doesn&rsquo;t.</p>
 <code>\r\n</code></a>
 which prevents <code>awk</code> from matching the last field on each line.</p>
 <p>The fix is to use Posix-style line endings <code>\n</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python -c <span style="color:#e6db74">&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python -c <span style="color:#e6db74">&#34;
 </span><span style="color:#e6db74">&gt; import csv, sys
 </span><span style="color:#e6db74">&gt; w = csv.writer(sys.stdout, delimiter=&#39;\t&#39;, lineterminator=&#39;\n&#39;)
 </span><span style="color:#e6db74">&gt; w.writerow([&#39;foo&#39;, &#39;bar&#39;])

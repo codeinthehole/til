@@ -60,11 +60,11 @@
             </div>
             <h1>How to use <code>xargs</code> with <code>printf</code></h1>
         </header><p>This is obvious in retrospect but it hadn&rsquo;t dawned on me that you can use <code>xargs printf</code> to use STDIN as <code>printf</code> arguments. Trivial example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo world | xargs printf <span style="color:#e6db74">&#34;hello %s&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo world | xargs printf <span style="color:#e6db74">&#34;hello %s&#34;</span>
 hello world
 </code></pre></div><p>It&rsquo;s useful for building strings from streams of data. Today&rsquo;s usecase was
 building a pastable Python snippet from a JSON file containing object IDs:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat loggly_events.json | jq <span style="color:#e6db74">&#39;.events[].event.json.object_id&#39;</span> <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat loggly_events.json | jq <span style="color:#e6db74">&#39;.events[].event.json.object_id&#39;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    | paste -sd, | xargs printf <span style="color:#e6db74">&#34;object_ids = [%s]&#34;</span>
 object_ids <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>4,6,8,2,3,4<span style="color:#f92672">]</span>
 </code></pre></div><p>Here <code>jq</code> is used to extract a newline-separated stream of IDs which are

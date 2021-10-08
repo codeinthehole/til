@@ -60,7 +60,7 @@
             </div>
             <h1>You can have SASS asset pipelines in Hugo</h1>
         </header><p>Which lets you build a CSS stylesheet via something like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ $style := resources.Get &#34;css/main.scss&#34; | resources.ToCSS }}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ $style := resources.Get &#34;css/main.scss&#34; | resources.ToCSS }}
 &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $style.Permalink }}&#34;</span>&gt;
 </code></pre></div><p>This is rather nice as you get the usual live reloading functionality when using
 <code>hugo server</code>. In previous Hugo projects, I had a separate process for

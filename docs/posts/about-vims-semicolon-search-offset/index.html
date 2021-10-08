@@ -61,14 +61,14 @@
             <h1>About Vim&rsquo;s semi-colon search offset</h1>
         </header><p>A search with <code>/</code> or <code>?</code> can include an additional offset to position the cursor
 after jumping to the search match. From <a href="http://vimdoc.sourceforge.net/htmldoc/pattern.html#search-offset">the docs</a>:</p>
-<pre><code>pattern			cursor position
+<pre tabindex="0"><code>pattern			cursor position
 /test/+1		one line below &quot;test&quot;, in column 1
 /test/e			on the last t of &quot;test&quot;
 /test/s+2		on the 's' of &quot;test&quot;
 /test/b-3		three characters before &quot;test&quot;
 </code></pre><p>A special offset is <code>;</code> which lets you position the cursor by doing a second
 search (normally within the same line as the original match). E.g.</p>
-<pre><code>/test_.*_errors/;/errors
+<pre tabindex="0"><code>/test_.*_errors/;/errors
 </code></pre><p>which will position the cursor on the <code>errors</code> part of each search match.</p>
 <p>Useful for repeating common changes in a buffer using <code>n.n.n.</code> etc.</p>
 </article>

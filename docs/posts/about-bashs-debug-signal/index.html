@@ -62,7 +62,7 @@
         </header><p>Bash has a <code>DEBUG</code> signal that you can register a handler for using <code>trap</code>.</p>
 <p>You can use this to print a prompt before each command is executed, which allows
 you to step through a Bash script:</p>
-<pre><code>trap '(read -p &quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &quot;)' DEBUG
+<pre tabindex="0"><code>trap '(read -p &quot;[$BASH_SOURCE:$LINENO] $BASH_COMMAND &quot;)' DEBUG
 </code></pre><p>Source:</p>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">TIL that you can use the &quot;DEBUG&quot; trap to step through a bash script line by line <a href="https://t.co/JBckrcr06G">pic.twitter.com/JBckrcr06G</a></p>&mdash; 🔎Julia Evans🔍 (@b0rk) <a href="https://twitter.com/b0rk/status/1312413117436104705?ref_src=twsrc%5Etfw">October 3, 2020</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

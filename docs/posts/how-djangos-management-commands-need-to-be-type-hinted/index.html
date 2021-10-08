@@ -62,7 +62,7 @@
         </header><p>For Django management commands with arguments, you might not expect Mypy
 (configured with the <a href="https://github.com/typeddjango/django-stubs"><code>django-stubs</code></a> plugin) to
 complain about this signature:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.core.management.base <span style="color:#f92672">import</span> BaseCommand, CommandParser
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.core.management.base <span style="color:#f92672">import</span> BaseCommand, CommandParser
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Command</span>(BaseCommand):
 
@@ -72,10 +72,10 @@ complain about this signature:</p>
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle</span>(self, name: str, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>options) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
         <span style="color:#f92672">...</span>
 </code></pre></div><p>but it does with error:</p>
-<pre><code>Signature of &quot;handle&quot; incompatible with supertype &quot;BaseCommand&quot; [override]
+<pre tabindex="0"><code>Signature of &quot;handle&quot; incompatible with supertype &quot;BaseCommand&quot; [override]
 </code></pre><p>The problem is the <code>name</code> positional argument which makes the argument types
 <em>more specific</em> than <code>BaseCommand.handle</code> which has <a href="https://github.com/typeddjango/django-stubs/blob/d5e45db79bcea6d6f4f45eacca3a2fe6e125e2e3/django-stubs/core/management/base.pyi#L70">type signature</a> :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle</span>(self, <span style="color:#f92672">*</span>args: Any, <span style="color:#f92672">**</span>options: Any) <span style="color:#f92672">-&gt;</span> Optional[str]:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle</span>(self, <span style="color:#f92672">*</span>args: Any, <span style="color:#f92672">**</span>options: Any) <span style="color:#f92672">-&gt;</span> Optional[str]:
 </code></pre></div><p>This is well explained in the <a href="https://mypy.readthedocs.io/en/stable/common_issues.html#incompatible-overrides">Mypy docs</a>:</p>
 <blockquote>
 <p>It&rsquo;s unsafe to override a method with a more specific argument type, as it
@@ -84,7 +84,7 @@ override a method with a more general return type.</p>
 </blockquote>
 <p>To proceed you can either pluck the positional arguments out of the <code>kwargs</code>
 dict:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.core.management.base <span style="color:#f92672">import</span> BaseCommand, CommandParser
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.core.management.base <span style="color:#f92672">import</span> BaseCommand, CommandParser
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Command</span>(BaseCommand):
 
@@ -95,7 +95,7 @@ dict:</p>
         name: str <span style="color:#f92672">=</span> options[<span style="color:#e6db74">&#34;name&#34;</span>]
         <span style="color:#f92672">...</span>
 </code></pre></div><p>or ignore the <code>override</code> error:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.core.management.base <span style="color:#f92672">import</span> BaseCommand
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.core.management.base <span style="color:#f92672">import</span> BaseCommand
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Command</span>(BaseCommand):
 

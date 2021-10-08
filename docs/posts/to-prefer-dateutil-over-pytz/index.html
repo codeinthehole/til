@@ -62,13 +62,13 @@
         </header><p>When constructing <code>datetime.datetime</code> instances, it&rsquo;s better to use <code>dateutil</code>
 to provide the <code>tzinfo</code> argument — avoid using <code>pytz</code>.</p>
 <p>That is, prefer this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> datetime
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> datetime
 <span style="color:#f92672">from</span> dateutil <span style="color:#f92672">import</span> tz
 
 tzinfo <span style="color:#f92672">=</span> tz<span style="color:#f92672">.</span>gettz(<span style="color:#e6db74">&#34;Europe/London&#34;</span>)
 datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">0</span>, tzinfo<span style="color:#f92672">=</span>tzinfo)
 </code></pre></div><p>to</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> datetime
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> datetime
 <span style="color:#f92672">import</span> pytz
 
 tzinfo <span style="color:#f92672">=</span> pytz<span style="color:#f92672">.</span>timezone(<span style="color:#e6db74">&#34;Europe/London&#34;</span>)

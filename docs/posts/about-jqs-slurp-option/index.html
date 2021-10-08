@@ -68,7 +68,7 @@ separate JSON objects from the JSONL steam into an array. This is done using the
 </figure>
 
 <p>Example usage:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Find unique workspace names</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Find unique workspace names</span>
 $ cat workspaces.jsonl | jq --slurp <span style="color:#e6db74">&#39;[.[].workspace_name] | unique&#39;</span>
 </code></pre></div><p>where <code>[.[].workspace_name]</code> creates an array of all <code>.workspace_name</code> keys from
 each object in the JSONL stream.</p>

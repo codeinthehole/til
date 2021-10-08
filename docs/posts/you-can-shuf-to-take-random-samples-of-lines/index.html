@@ -61,7 +61,7 @@
             <h1>You can use <code>shuf</code> to take random samples of lines</h1>
         </header><p>For example, I wanted to share a random sample of accounts affected by some
 issue based on a Loggly event export. This can be done with:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cat loggly_events.json | jq -r <span style="color:#e6db74">&#39;.events[].event.json.account&#39;</span> | shuf -n20
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cat loggly_events.json | jq -r <span style="color:#e6db74">&#39;.events[].event.json.account&#39;</span> | shuf -n20
 </code></pre></div><p>More info in <a href="https://shapeshed.com/unix-shuf/">this short <code>shuf</code> tutorial</a>.</p>
 </article>
 

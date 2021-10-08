@@ -64,7 +64,7 @@ treated by the test runner. It is noted <a href="https://docs.djangoproject.com/
 docs</a> and there&rsquo;s
 an <a href="https://code.djangoproject.com/ticket/11505">open ticket</a> on the matter.</p>
 <p>To work around, here&rsquo;s a Pytest fixture that flushes the cache after a test:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.conf <span style="color:#f92672">import</span> settings
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.conf <span style="color:#f92672">import</span> settings
 <span style="color:#f92672">from</span> django.core.cache <span style="color:#f92672">import</span> cache
 <span style="color:#f92672">import</span> pytest
 

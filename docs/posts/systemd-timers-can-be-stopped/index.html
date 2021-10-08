@@ -62,9 +62,9 @@
         </header><p>Timers are systemd unit files that control services. I didn&rsquo;t realise until
 today that, when disabling a timer, it also needs to be stopped too. This can be
 done with the <code>--now</code> option:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl disable --now apt-daily.timer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl disable --now apt-daily.timer
 </code></pre></div><p>Before this, running:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl disable apt-daily.timer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl disable apt-daily.timer
 $ systemctl stop apt-daily.service
 </code></pre></div><p>didn&rsquo;t guarantee that the <code>apt-daily</code> service had stopped, which caused
 intermittent lock acquisition problems when provisioning.</p>

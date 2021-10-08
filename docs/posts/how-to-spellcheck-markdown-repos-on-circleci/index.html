@@ -63,10 +63,10 @@
 wraps <a href="https://github.com/lukeapage/node-markdown-spellcheck"><code>node-markdown-spellcheck</code></a> and can be used locally and on CircleCI to
 spell-check markdown files.</p>
 <p>Locally, run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run --rm -ti -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/workdir tmaier/markdown-spellcheck:latest <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run --rm -ti -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/workdir tmaier/markdown-spellcheck:latest <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --report --ignore-numbers --ignore-acronyms <span style="color:#e6db74">&#34;**/*.md&#34;</span>
 </code></pre></div><p>In your <code>.circleci/config.yml</code> file, use:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
 
 <span style="color:#f92672">jobs</span>:
 
