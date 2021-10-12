@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Modern versions of git log provide a -L option which lets you trace the evolution of a line range or function: ...
+    Setting this option to true in ~/.gitconfig ensures diff commands show paths relative to the current directory: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-use-git-log-to-view-the-evolution-of-a-function/" />
-<meta property="og:title" content="TIL You can use Git log to view the evolution of a function — David Winterbottom" />
-<meta property="og:description" content="Modern versions of git log provide a -L option which lets you trace the evolution of a line range or function: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-gits-diffrelative-config-option/" />
+<meta property="og:title" content="TIL About Git&#39;s &#39;diff.relative&#39; config option — David Winterbottom" />
+<meta property="og:description" content="Setting this option to true in ~/.gitconfig ensures diff commands show paths relative to the current directory: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL You can use Git log to view the evolution of a function — David Winterbottom
+    TIL About Git&#39;s &#39;diff.relative&#39; config option — David Winterbottom
 </title>
 
         
@@ -56,27 +56,16 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>March 5th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>October 12th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>You can use Git log to view the evolution of a function</h1>
-        </header><p>Modern versions of <code>git log</code> provide a <code>-L</code> option which lets you trace the
-evolution of a line range or function:</p>
-<figure><img src="/images/git-log-function-evolution.png"
-         alt="git log function evolution"/>
-</figure>
-
-<p>Usage is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git log -L :&lt;funcname&gt;:&lt;file&gt;
-</code></pre></div><p>where:</p>
-<ul>
-<li><code>&lt;funcname&gt;</code> is a regular expression to match the function name.</li>
-<li><code>&lt;file&gt;</code> is the path to the file where the function lives.</li>
-</ul>
-<p>Example usage:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git log -L :get_locale:octoenergy/utils/workingdays.py
-</code></pre></div><p>Depending on what language you&rsquo;re working with, you may need to adjust you local
-<code>~/.gitattributes</code> file to ensure Git can determine the patch hunk headers.</p>
-<p>More in <a href="https://git-scm.com/docs/git-log/#Documentation/git-log.txt--Lltfuncnamegtltfilegt">the official git docs</a>.</p>
+            <h1>About Git&rsquo;s <code>diff.relative</code> config option</h1>
+        </header><p>Setting this option to true in <code>~/.gitconfig</code> ensures diff commands show paths
+relative to the current directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[diff]</span>
+<span style="color:#a6e22e">relative</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+</code></pre></div><p>This is mentioned on the <a href="https://git-scm.com/docs/diff-options#Documentation/diff-options.txt---relativeltpathgt">diff
+options</a>
+page in the Git online manual.</p>
 </article>
 
         </main>
@@ -95,8 +84,6 @@ evolution of a line range or function:</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
                     <ul>
                     
-                        <li><a href="/posts/about-gits-diffrelative-config-option/">About Git&rsquo;s <code>diff.relative</code> config option</a></li>
-                    
                         <li><a href="/posts/about-git-mergebase/">About <code>git merge-base</code></a></li>
                     
                         <li><a href="/posts/that-git-aliases-that-run-an-external-command-are-run-from-the-repository-root/">Git aliases that run an external command are run from the repository root</a></li>
@@ -110,6 +97,8 @@ evolution of a line range or function:</p>
                         <li><a href="/posts/how-to-include-the-date-in-git-reflog-output/">How to include the date in <code>git reflog</code> output</a></li>
                     
                         <li><a href="/posts/about-delta/">About delta, a viewer for Git and diff output</a></li>
+                    
+                        <li><a href="/posts/you-can-use-git-log-to-view-the-evolution-of-a-function/">You can use Git log to view the evolution of a function</a></li>
                     
                         <li><a href="/posts/how-to-resolve-git-conflicts-on-renamed-files/">How to resolve Git rebase conflicts on renamed files</a></li>
                     
@@ -144,9 +133,9 @@ evolution of a line range or function:</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -155,11 +144,9 @@ evolution of a line range or function:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/to-prefer-dateutil-over-pytz\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-effectively-scan-files-using-an-iphone\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/systemd-timers-can-be-stopped\/"); })
         
     </script>
 

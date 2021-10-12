@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/about-gits-diffrelative-config-option/</loc>
+    <lastmod>2021-10-12T14:37:13+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/git/</loc>
+    <lastmod>2021-10-12T14:37:13+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-10-12T14:37:13+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-10-12T14:37:13+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-10-12T14:37:13+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-effectively-scan-files-using-an-iphone/</loc>
     <lastmod>2021-10-08T21:05:16+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/ios/</loc>
-    <lastmod>2021-10-08T21:05:16+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-10-08T21:05:16+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-10-08T21:05:16+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-10-08T21:05:16+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-delete-all-buffers-in-vim/</loc>
@@ -54,9 +60,6 @@
     <lastmod>2021-09-10T09:28:14+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/about-git-mergebase/</loc>
-    <lastmod>2021-09-08T09:29:15+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/git/</loc>
     <lastmod>2021-09-08T09:29:15+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/aws/</loc>
