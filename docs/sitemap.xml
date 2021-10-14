@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-10-14T14:14:59+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2021-10-14T14:14:59+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/pythons-envparse-library-has-counterintuitive-boolean-casting/</loc>
+    <lastmod>2021-10-14T14:14:59+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-10-14T14:14:59+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-10-14T14:14:59+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-gits-diffrelative-config-option/</loc>
     <lastmod>2021-10-12T14:37:13+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/git/</loc>
-    <lastmod>2021-10-12T14:37:13+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-10-12T14:37:13+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-10-12T14:37:13+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-10-12T14:37:13+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-effectively-scan-files-using-an-iphone/</loc>
@@ -30,9 +36,6 @@
     <lastmod>2021-10-05T17:14:16+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/factory-boy-can-be-used-to-build-dicts/</loc>
-    <lastmod>2021-09-30T13:56:48+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
     <lastmod>2021-09-30T13:56:48+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/testing/</loc>

@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Sep 2021 13:56:48 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 14 Oct 2021 14:14:59 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Python&#39;s `envparse` library has counter-intuitive boolean casting</title>
+      <link>https://til.codeinthehole.com/posts/pythons-envparse-library-has-counterintuitive-boolean-casting/</link>
+      <pubDate>Thu, 14 Oct 2021 14:14:59 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/pythons-envparse-library-has-counterintuitive-boolean-casting/</guid>
+      <description>If you use env.bool from the envparse library to convert an environment variable into a boolean Python variable then only an allow-list of strings are considered truthy.</description>
+    </item>
     
     <item>
       <title>Factory boy can be used to build dicts</title>
