@@ -6,11 +6,20 @@
     <description>Recent content in Git on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Oct 2021 14:37:13 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 15 Oct 2021 16:54:35 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to find the files from a commit that deleted a given pattern</title>
+      <link>https://til.codeinthehole.com/posts/how-to-print-the-changed-filepaths-from-a-commit-and-nothing-else/</link>
+      <pubDate>Fri, 15 Oct 2021 16:54:35 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-print-the-changed-filepaths-from-a-commit-and-nothing-else/</guid>
+      <description>The --name-only option for git log restricts the output to the changed file paths but not their full diffs.</description>
+    </item>
     
     <item>
       <title>About Git&#39;s `diff.relative` config option</title>
