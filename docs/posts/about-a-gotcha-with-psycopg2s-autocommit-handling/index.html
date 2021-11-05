@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    When using Pytest’s -k filtering, you can use Python expressions to combine separate search terms. ...
+    Some commands in Postgres can’t be run inside a transaction (e. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/" />
-<meta property="og:title" content="TIL That Pytest&#39;s &#34;keyword expression&#34; filtering supports Python conditionals — David Winterbottom" />
-<meta property="og:description" content="When using Pytest&rsquo;s -k filtering, you can use Python expressions to combine separate search terms. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-a-gotcha-with-psycopg2s-autocommit-handling/" />
+<meta property="og:title" content="TIL About a gotcha with &#39;psycopg2&#39;&#39;s autocommit handling — David Winterbottom" />
+<meta property="og:description" content="Some commands in Postgres can&rsquo;t be run inside a transaction (e. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL That Pytest&#39;s &#34;keyword expression&#34; filtering supports Python conditionals — David Winterbottom
+    TIL About a gotcha with &#39;psycopg2&#39;&#39;s autocommit handling — David Winterbottom
 </title>
 
         
@@ -56,16 +56,22 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>July 16th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>November 5th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>That Pytest&rsquo;s &ldquo;keyword expression&rdquo; filtering supports Python conditionals</h1>
-        </header><p>When using Pytest&rsquo;s <code>-k</code> filtering, you can use Python expressions to combine
-separate search terms. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ pytest -k <span style="color:#e6db74">&#34;TestSomeUnit and not test_foo&#34;</span>
-</code></pre></div><p>will run all tests in a class matching <code>TestSomeUnit</code> but not those with method
-name matching <code>test_foo</code>.</p>
-<p>See the <a href="https://docs.pytest.org/en/6.2.x/usage.html#specifying-tests-selecting-tests">Pytest docs on specifying which tests to run</a>
-for more.</p>
+            <h1>About a gotcha with <code>psycopg2</code>&rsquo;s autocommit handling</h1>
+        </header><p>Some commands in Postgres can&rsquo;t be run inside a transaction (e.g. running
+<code>VACUUM FULL</code> or creating indexes concurrently); they require <code>autocommit</code> mode to
+be enabled on the connection.</p>
+<p>However there is a subtle gotcha when doing this as if you execute
+multiple statements then a transaction is implicitly created leading to an error.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">conn <span style="color:#f92672">=</span> psycopg2<span style="color:#f92672">.</span>connect(<span style="color:#f92672">...</span>)
+conn<span style="color:#f92672">.</span>autocommit <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+cur <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>cursor()
+cur<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#34;VACUUM FULL; SELECT 1&#34;</span>)
+<span style="color:#75715e"># exception: ActiveSqlTransaction: VACUUM cannot run inside a transaction block</span>
+</code></pre></div><p>I lost an hour of my life this week tracking this down until I
+stumbled upon <a href="https://stackoverflow.com/a/67418518">this StackOverflow answer</a> and
+<a href="https://github.com/psycopg/psycopg2/issues/1201">related <code>psycopg2</code> issue</a>.</p>
 </article>
 
         </main>
@@ -81,59 +87,17 @@ for more.</p>
 
             
                 
-                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/pytest/">pytest</a>:</p>
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/postgresql/">PostgreSQL</a>:</p>
                     <ul>
                     
-                        <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
-                    
-                        <li><a href="/posts/pytest-doesnt-play-nicely-with-ipdb/">Pytest doesn&rsquo;t play nicely with ipdb</a></li>
-                    
-                        <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
-                    
-                        <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
+                        <li><a href="/posts/the-correct-sequence-of-sql-statements-for-dropping-a-role/">The correct sequence of SQL statements for dropping a role</a></li>
                     
                     </ul>
                     
                         
                     
-                        
-                    
-                        
-                    
-                        
-                    
                 
 
-            
-
-        
-
-            
-
-            
-                
-
-                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/testing/">Testing</a>:</p>
-                <ul>
-                    
-                        <li><a href="/posts/factory-boy-can-be-used-to-build-dicts/">Factory boy can be used to build dicts</a></li>
-                    
-                        <li><a href="/posts/django-doesnt-flush-caches-between-tests/">Django doesn&rsquo;t flush caches between tests</a></li>
-                    
-                        <li><a href="/posts/that-freezegun-doesnt-work-with-pytest-fixtures/">That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</a></li>
-                    
-                        <li><a href="/posts/how-to-easily-disable-a-circleci-workflow/">How to easily disable a CircleCI workflow</a></li>
-                    
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                </ul>
             
 
         
@@ -146,15 +110,21 @@ for more.</p>
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
                 <ul>
                     
-                        <li><a href="/posts/about-a-gotcha-with-psycopg2s-autocommit-handling/">About a gotcha with <code>psycopg2</code>&rsquo;s autocommit handling</a></li>
-                    
                         <li><a href="/posts/pythons-envparse-library-has-counterintuitive-boolean-casting/">Python&rsquo;s <code>envparse</code> library has counter-intuitive boolean casting</a></li>
                     
+                        <li><a href="/posts/factory-boy-can-be-used-to-build-dicts/">Factory boy can be used to build dicts</a></li>
+                    
                         <li><a href="/posts/django-settings-prefixed-with-an-underscore-are-private/">Django settings prefixed with an underscore are private</a></li>
+                    
+                        <li><a href="/posts/django-doesnt-flush-caches-between-tests/">Django doesn&rsquo;t flush caches between tests</a></li>
                     
                         <li><a href="/posts/how-djangos-management-commands-need-to-be-type-hinted/">How Django&rsquo;s management commands need to be type hinted</a></li>
                     
                         <li><a href="/posts/filelevel-flake8-comments-ignore-all-errors/">File-level flake8 comments ignore all errors</a></li>
+                    
+                        <li><a href="/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/">That Pytest&rsquo;s &ldquo;keyword expression&rdquo; filtering supports Python conditionals</a></li>
+                    
+                        <li><a href="/posts/that-freezegun-doesnt-work-with-pytest-fixtures/">That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</a></li>
                     
                         <li><a href="/posts/about-mypys-unreachable-code-functionality/">About <code>mypy</code>&rsquo;s unreachable code functionality</a></li>
                     
@@ -164,11 +134,19 @@ for more.</p>
                     
                         <li><a href="/posts/pythons-csvwriter-function-defaults-to-windows-line-endings/">Python&rsquo;s <code>csv.writer</code> function defaults to Windows line endings</a></li>
                     
+                        <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
+                    
                         <li><a href="/posts/pdbpp-has-a-useful-sticky-mode/"><code>pdbpp</code> has a useful &lsquo;sticky&rsquo; mode</a></li>
                     
                         <li><a href="/posts/to-prefer-dateutil-over-pytz/">To prefer <code>dateutil</code> over <code>pytz</code></a></li>
                     
+                        <li><a href="/posts/pytest-doesnt-play-nicely-with-ipdb/">Pytest doesn&rsquo;t play nicely with ipdb</a></li>
+                    
                         <li><a href="/posts/you-can-arbitrarily-chain-python-comparison-operators/">You can arbitrarily chain Python comparison operations</a></li>
+                    
+                        <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
+                    
+                        <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
                     
                         <li><a href="/posts/a-better-way-of-configuring-mypy/">A better way of configuring <code>mypy</code></a></li>
                     
@@ -215,15 +193,29 @@ for more.</p>
                     
                         
                     
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
                 </ul>
             
 
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -232,11 +224,9 @@ for more.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-freezegun-doesnt-work-with-pytest-fixtures\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-print-the-changed-filepaths-from-a-commit-and-nothing-else\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/that-git-aliases-that-run-an-external-command-are-run-from-the-repository-root\/"); })
         
     </script>
 

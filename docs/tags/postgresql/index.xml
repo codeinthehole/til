@@ -6,11 +6,20 @@
     <description>Recent content in PostgreSQL on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Apr 2021 09:46:21 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 05 Nov 2021 16:54:26 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About a gotcha with `psycopg2`&#39;s autocommit handling</title>
+      <link>https://til.codeinthehole.com/posts/about-a-gotcha-with-psycopg2s-autocommit-handling/</link>
+      <pubDate>Fri, 05 Nov 2021 16:54:26 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-a-gotcha-with-psycopg2s-autocommit-handling/</guid>
+      <description>Some commands in Postgres can&amp;rsquo;t be run inside a transaction (e.</description>
+    </item>
     
     <item>
       <title>The correct sequence of SQL statements for dropping a role</title>

@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Oct 2021 16:54:35 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 05 Nov 2021 16:54:26 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>PostgreSQL</title>
+      <link>https://til.codeinthehole.com/tags/postgresql/</link>
+      <pubDate>Fri, 05 Nov 2021 16:54:26 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://til.codeinthehole.com/tags/python/</link>
+      <pubDate>Fri, 05 Nov 2021 16:54:26 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Git</title>
@@ -18,15 +36,6 @@
       <pubDate>Fri, 15 Oct 2021 16:54:35 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Thu, 14 Oct 2021 14:14:59 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/python/</guid>
       <description></description>
     </item>
     
@@ -198,15 +207,6 @@
       <pubDate>Wed, 28 Apr 2021 17:09:21 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/terraform/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PostgreSQL</title>
-      <link>https://til.codeinthehole.com/tags/postgresql/</link>
-      <pubDate>Wed, 28 Apr 2021 09:46:21 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/postgresql/</guid>
       <description></description>
     </item>
     
