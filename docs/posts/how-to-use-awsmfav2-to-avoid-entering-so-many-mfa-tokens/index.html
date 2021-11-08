@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which can be used for debugging type annotation problems. ...
+    Prior to being told about aws-mfa-v2 my ~/.aws/config file looked like this: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-mypys-revealtype-and-reveallocals-functions/" />
-<meta property="og:title" content="TIL About &#39;mypy&#39;&#39;s &#39;reveal_type&#39; and &#39;reveal_locals&#39; functions — David Winterbottom" />
-<meta property="og:description" content="Which can be used for debugging type annotation problems. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-awsmfav2-to-avoid-entering-so-many-mfa-tokens/" />
+<meta property="og:title" content="TIL How to use &#39;aws-mfa-v2&#39; to avoid entering so many MFA tokens — David Winterbottom" />
+<meta property="og:description" content="Prior to being told about aws-mfa-v2 my ~/.aws/config file looked like this: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;mypy&#39;&#39;s &#39;reveal_type&#39; and &#39;reveal_locals&#39; functions — David Winterbottom
+    TIL How to use &#39;aws-mfa-v2&#39; to avoid entering so many MFA tokens — David Winterbottom
 </title>
 
         
@@ -56,15 +56,39 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>June 16th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>November 8th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>mypy</code>&rsquo;s <code>reveal_type</code> and <code>reveal_locals</code> functions</h1>
-        </header><p>Which can be used for debugging type annotation problems. Insert them liberally
-into your code before running <code>mypy</code> to see the inferred static types of
-expressions or local variables.</p>
-<p>Make sure you remove them before committing or the Python interpreter will
-complain.</p>
-<p>More at <a href="https://mypy.readthedocs.io/en/latest/common_issues.html?highlight=reveal_type#reveal-type">displaying the type of an expression</a> in the <code>mypy</code> docs.</p>
+            <h1>How to use <code>aws-mfa-v2</code> to avoid entering so many MFA tokens</h1>
+        </header><p>Prior to being told about <a href="https://github.com/rkeiii/aws-mfa-v2"><code>aws-mfa-v2</code></a> my <code>~/.aws/config</code> file looked
+like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dosini" data-lang="dosini"><span style="color:#66d9ef">[profile parent-account]</span>
+<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+
+<span style="color:#66d9ef">[profile child-account]</span>
+<span style="color:#a6e22e">mfa_serial</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::$PARENT_AWS_ACCOUNT_ID:mfa/$USERNAME</span>
+<span style="color:#a6e22e">role_arn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::$CHILD_AWS_ACCOUNT_ID:role/$ROLE_NAME</span>
+<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+<span style="color:#a6e22e">source_profile</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">parent-account</span>
+</code></pre></div><p>which worked fine but meant <code>awscli</code> calls using the <code>child-account</code> profile prompted for an MFA
+token. Over the course of a day I would look up a token many times.</p>
+<p>But following a tip from <a href="https://github.com/dooferlad">James Tunnicliffe</a> I greatly reduced how often I
+need to do this by using the <code>aws-mfa-v2</code> utility. This uses your long-lived AWS
+account to create temporary profiles with credentials fetched from AWS STS.</p>
+<p>In practice, this requires you to run:</p>
+<pre tabindex="0"><code>$ aws-mfa --mfa-profile parent-account --token $TOKEN
+</code></pre><p>once a day to create/update a temporary AWS profile (called, in this example,
+<code>parent-account-mfa</code>).</p>
+<p>Plus I needed to rearrange <code>~/.aws/config</code> to have this structure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dosini" data-lang="dosini"><span style="color:#66d9ef">[profile parent-account]</span>
+<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+<span style="color:#a6e22e">mfa_serial</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::$PARENT_AWS_ACCOUNT_ID:mfa/$USERNAME</span>
+
+<span style="color:#66d9ef">[profile child-account]</span>
+<span style="color:#a6e22e">role_arn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::$CHILD_AWS_ACCOUNT_ID:role/$ROLE_NAME</span>
+<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+<span style="color:#a6e22e">source_profile</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">parent-account-mfa</span>
+</code></pre></div><p>Note the updated <code>source_profile</code> value that refers to a profile only defined in
+<code>~/.aws/credentials</code>.</p>
 </article>
 
         </main>
@@ -80,10 +104,48 @@ complain.</p>
 
             
                 
-                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/aws/">AWS</a>:</p>
                     <ul>
                     
-                        <li><a href="/posts/how-to-use-awsmfav2-to-avoid-entering-so-many-mfa-tokens/">How to use <code>aws-mfa-v2</code> to avoid entering so many MFA tokens</a></li>
+                        <li><a href="/posts/you-can-have-ssh-sessions-via-aws-session-manager/">You can have SSH sessions via AWS Session Manager</a></li>
+                    
+                        <li><a href="/posts/how-to-use-aws-profiles-that-require-mfa/">How to use AWS profiles that require MFA</a></li>
+                    
+                        <li><a href="/posts/aws-asgs-have-an-instance-refresh-feature/">AWS ASGs have an &lsquo;instance refresh&rsquo; feature</a></li>
+                    
+                        <li><a href="/posts/theres-a-chrome-extension-for-switching-aws-iam-roles/">There&rsquo;s a Chrome extension for switching AWS IAM roles</a></li>
+                    
+                        <li><a href="/posts/aws-availability-zones-have-counterintuitive-ids/">AWS Availability Zones have counter-intuitive IDs</a></li>
+                    
+                        <li><a href="/posts/about-passwordless-users-in-ec2/">Where authentication for the <code>ubuntu</code> user on a EC2 instance is defined</a></li>
+                    
+                    </ul>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                
+
+            
+
+        
+
+            
+
+            
+                
+
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                <ul>
                     
                         <li><a href="/posts/about-a-gotcha-with-psycopg2s-autocommit-handling/">About a gotcha with <code>psycopg2</code>&rsquo;s autocommit handling</a></li>
                     
@@ -104,6 +166,8 @@ complain.</p>
                         <li><a href="/posts/that-freezegun-doesnt-work-with-pytest-fixtures/">That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</a></li>
                     
                         <li><a href="/posts/about-mypys-unreachable-code-functionality/">About <code>mypy</code>&rsquo;s unreachable code functionality</a></li>
+                    
+                        <li><a href="/posts/about-mypys-revealtype-and-reveallocals-functions/">About <code>mypy</code>&rsquo;s <code>reveal_type</code> and <code>reveal_locals</code> functions</a></li>
                     
                         <li><a href="/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/">That <code>mypy</code> only type-checks functions that have at least one type annotation</a></li>
                     
@@ -133,7 +197,6 @@ complain.</p>
                     
                         <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
                     
-                    </ul>
                     
                         
                     
@@ -184,21 +247,6 @@ complain.</p>
                         
                     
                         
-                    
-                
-
-            
-
-        
-
-            
-
-            
-                
-
-                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/mypy/">mypy</a>:</p>
-                <ul>
-                    
                     
                 </ul>
             
@@ -206,9 +254,9 @@ complain.</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -217,11 +265,9 @@ complain.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-a-gotcha-with-psycopg2s-autocommit-handling\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-jqs-slurp-option\/"); })
         
     </script>
 
