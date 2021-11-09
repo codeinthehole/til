@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aurora - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/aurora/</link>
+    <description>Recent content in Aurora on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Nov 2021 20:37:53 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/aurora/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>That AWS Aurora clusters have two types of storage</title>
+      <link>https://til.codeinthehole.com/posts/that-aws-aurora-clusters-have-two-types-of-storage/</link>
+      <pubDate>Tue, 09 Nov 2021 20:37:53 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-aws-aurora-clusters-have-two-types-of-storage/</guid>
+      <description>Aurora PostgreSQL clusters have:
+  Auto-scaling storage for persistent data (the &amp;ldquo;cluster volume&amp;rdquo;).</description>
+    </item>
+    
+
+  </channel>
+</rss>
