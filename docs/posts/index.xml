@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Nov 2021 20:37:53 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Nov 2021 11:37:54 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to continue a Git rebase and skip editing the commit message</title>
+      <link>https://til.codeinthehole.com/posts/how-to-continue-a-git-rebase-and-skip-editing-the-commit-message/</link>
+      <pubDate>Fri, 12 Nov 2021 11:37:54 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-continue-a-git-rebase-and-skip-editing-the-commit-message/</guid>
+      <description>During an interactive rebase, when you&amp;rsquo;ve fixed the conflicts or finished editing the commit you can run:</description>
+    </item>
     
     <item>
       <title>That AWS Aurora clusters have two types of storage</title>

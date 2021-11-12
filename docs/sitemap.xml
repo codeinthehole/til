@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/git/</loc>
+    <lastmod>2021-11-12T11:37:54+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/how-to-continue-a-git-rebase-and-skip-editing-the-commit-message/</loc>
+    <lastmod>2021-11-12T11:37:54+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-11-12T11:37:54+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-11-12T11:37:54+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-11-12T11:37:54+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/aurora/</loc>
     <lastmod>2021-11-09T20:37:53+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/aws/</loc>
     <lastmod>2021-11-09T20:37:53+00:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-11-09T20:37:53+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-11-09T20:37:53+00:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/posts/that-aws-aurora-clusters-have-two-types-of-storage/</loc>
-    <lastmod>2021-11-09T20:37:53+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-11-09T20:37:53+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-use-awsmfav2-to-avoid-entering-so-many-mfa-tokens/</loc>
@@ -31,9 +37,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/tags/postgresql/</loc>
     <lastmod>2021-11-05T16:54:26+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/git/</loc>
-    <lastmod>2021-10-15T16:54:35+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-print-the-changed-filepaths-from-a-commit-and-nothing-else/</loc>
     <lastmod>2021-10-15T16:54:35+01:00</lastmod>
