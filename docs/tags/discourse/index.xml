@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Discourse - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/discourse/</link>
+    <description>Recent content in Discourse on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Dec 2021 10:42:03 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/discourse/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to list the mounts of a running Docker container</title>
+      <link>https://til.codeinthehole.com/posts/how-to-list-the-mounts-of-a-running-docker-container/</link>
+      <pubDate>Tue, 07 Dec 2021 10:42:03 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-list-the-mounts-of-a-running-docker-container/</guid>
+      <description>Use docker inspect like so:
+$ docker inspect -f &amp;#34;{{ .</description>
+    </item>
+    
+
+  </channel>
+</rss>

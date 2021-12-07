@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/discourse/</loc>
+    <lastmod>2021-12-07T10:42:03+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/docker/</loc>
+    <lastmod>2021-12-07T10:42:03+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/how-to-list-the-mounts-of-a-running-docker-container/</loc>
+    <lastmod>2021-12-07T10:42:03+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2021-12-07T10:42:03+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2021-12-07T10:42:03+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2021-12-07T10:42:03+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-bashs-seconds-shell-variable/</loc>
     <lastmod>2021-11-26T15:19:29+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/bash/</loc>
-    <lastmod>2021-11-26T15:19:29+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2021-11-26T15:19:29+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2021-11-26T15:19:29+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2021-11-26T15:19:29+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-vim-can-transform-replacement-values-when-substituting/</loc>
@@ -355,9 +364,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-define-custom-filetype-filters-in-ripgrep/</loc>
     <lastmod>2020-12-29T16:23:12+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/docker/</loc>
-    <lastmod>2020-12-29T15:55:34+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-enable-docker-buildkit-in-macos-docker-desktop/</loc>
     <lastmod>2020-12-29T15:55:34+00:00</lastmod>
