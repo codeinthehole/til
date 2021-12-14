@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Nov 2021 17:48:54 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Dec 2021 15:55:28 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About Django&#39;s `setup` method for generic view classes</title>
+      <link>https://til.codeinthehole.com/posts/about-djangos-setup-method-for-generic-view-classes/</link>
+      <pubDate>Tue, 14 Dec 2021 15:55:28 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-djangos-setup-method-for-generic-view-classes/</guid>
+      <description>Django 2.2 (released in April 2019) introduced a setup method to the django.</description>
+    </item>
     
     <item>
       <title>How to use `aws-mfa-v2` to avoid entering so many MFA tokens</title>

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Conventionally subclasses of factory.Factory are used to build objects, often Django models that are persisted to some data store. ...
+    Django 2.2 (released in April 2019) introduced a setup method to the django. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/factory-boy-can-be-used-to-build-dicts/" />
-<meta property="og:title" content="TIL Factory boy can be used to build dicts — David Winterbottom" />
-<meta property="og:description" content="Conventionally subclasses of factory.Factory are used to build objects, often Django models that are persisted to some data store. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-djangos-setup-method-for-generic-view-classes/" />
+<meta property="og:title" content="TIL About Django&#39;s &#39;setup&#39; method for generic view classes — David Winterbottom" />
+<meta property="og:description" content="Django 2.2 (released in April 2019) introduced a setup method to the django. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL Factory boy can be used to build dicts — David Winterbottom
+    TIL About Django&#39;s &#39;setup&#39; method for generic view classes — David Winterbottom
 </title>
 
         
@@ -56,60 +56,29 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>September 30th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>December 14th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>Factory boy can be used to build dicts</h1>
-        </header><p>Conventionally subclasses of <code>factory.Factory</code> are used to build objects,
-often Django models that are persisted to some data store.</p>
-<p>But they can also be used to build plain <code>dict</code>s, which can be useful for
-building complex <code>dict</code>s in tests.</p>
-<p>This is done via the <a href="https://factoryboy.readthedocs.io/en/stable/reference.html#factory.FactoryOptions.model"><code>Meta.model</code> field</a> which specifies the
-class of object to create. There&rsquo;s also a convenient <code>factory.DictFactory</code>
-class.</p>
-<p>Here&rsquo;s an example using <code>factory.Factory</code> subclasses to create a nested <code>dict</code> fixture:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> factory
+            <h1>About Django&rsquo;s <code>setup</code> method for generic view classes</h1>
+        </header><p>Django 2.2 (released in April 2019) <a href="https://docs.djangoproject.com/en/3.2/releases/2.2/#generic-views">introduced a <code>setup</code>
+method</a> to the
+<code>django.views.View</code> class, which is available to all generic views.</p>
+<p>This is intended to be overridden to assign instance attributes that other
+methods will need.</p>
+<p>For example, you would use this to load model instances identified in the URL
+arguments:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.views <span style="color:#f92672">import</span> generic
+<span style="color:#f92672">from</span> django <span style="color:#f92672">import</span> shortcuts
+<span style="color:#f92672">from</span> myapp <span style="color:#f92672">import</span> models
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pet</span>(factory<span style="color:#f92672">.</span>DictFactory):
-    species <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dog&#34;</span>
-    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rover&#34;</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Frob</span>(generic<span style="color:#f92672">.</span>TemplateView):
 
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>(factory<span style="color:#f92672">.</span>DictFactory):
-    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;barry&#34;</span>
-    age <span style="color:#f92672">=</span> <span style="color:#ae81ff">41</span>
-    pet <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span>SubFactory(Pet)
-    has_pet_insurance <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
-
-    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Meta</span>:
-        <span style="color:#75715e"># Ensure dict field uses hyphens not underscores.</span>
-        rename <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;has_pet_insurance&#34;</span>: <span style="color:#e6db74">&#34;has-pet-insurance&#34;</span>}
-
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_default_fields</span>():
-    <span style="color:#66d9ef">assert</span> Person() <span style="color:#f92672">==</span> {
-        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;barry&#34;</span>,
-        <span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#ae81ff">41</span>,
-        <span style="color:#e6db74">&#34;has-pet-insurance&#34;</span>: <span style="color:#66d9ef">False</span>,
-        <span style="color:#e6db74">&#34;pet&#34;</span>: {
-            <span style="color:#e6db74">&#34;species&#34;</span>: <span style="color:#e6db74">&#34;dog&#34;</span>,
-            <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;rover&#34;</span>
-        }
-    }
-
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_overriding_fields</span>():
-    <span style="color:#66d9ef">assert</span> Person(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alan&#34;</span>, pet__name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lassie&#34;</span>) <span style="color:#f92672">==</span> {
-        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;alan&#34;</span>,
-        <span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#ae81ff">41</span>,
-        <span style="color:#e6db74">&#34;has-pet-insurance&#34;</span>: <span style="color:#66d9ef">False</span>,
-        <span style="color:#e6db74">&#34;pet&#34;</span>: {
-            <span style="color:#e6db74">&#34;species&#34;</span>: <span style="color:#e6db74">&#34;dog&#34;</span>,
-            <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;lassie&#34;</span>
-        }
-    }
-
-
-</code></pre></div></article>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setup</span>(self, request, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
+        super()<span style="color:#f92672">.</span>setup(request, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+        self<span style="color:#f92672">.</span>frob <span style="color:#f92672">=</span> shortcuts<span style="color:#f92672">.</span>get_object_or_404(models<span style="color:#f92672">.</span>Frob, pk<span style="color:#f92672">=</span>kwargs[<span style="color:#e6db74">&#34;pk&#34;</span>])
+</code></pre></div><p>To date, I&rsquo;ve been overriding <code>dispatch</code> to do this - didn&rsquo;t realise there was a
+dedicated method.</p>
+<p>More in the <a href="https://docs.djangoproject.com/en/2.2/ref/class-based-views/base/#django.views.generic.base.View.setup">Django view docs</a></p>
+</article>
 
         </main>
 
@@ -124,10 +93,36 @@ class.</p>
 
             
                 
-                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/django/">Django</a>:</p>
                     <ul>
                     
-                        <li><a href="/posts/about-djangos-setup-method-for-generic-view-classes/">About Django&rsquo;s <code>setup</code> method for generic view classes</a></li>
+                        <li><a href="/posts/django-settings-prefixed-with-an-underscore-are-private/">Django settings prefixed with an underscore are private</a></li>
+                    
+                        <li><a href="/posts/django-doesnt-flush-caches-between-tests/">Django doesn&rsquo;t flush caches between tests</a></li>
+                    
+                        <li><a href="/posts/how-djangos-management-commands-need-to-be-type-hinted/">How Django&rsquo;s management commands need to be type hinted</a></li>
+                    
+                    </ul>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                
+
+            
+
+        
+
+            
+
+            
+                
+
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                <ul>
                     
                         <li><a href="/posts/how-to-use-awsmfav2-to-avoid-entering-so-many-mfa-tokens/">How to use <code>aws-mfa-v2</code> to avoid entering so many MFA tokens</a></li>
                     
@@ -135,11 +130,7 @@ class.</p>
                     
                         <li><a href="/posts/pythons-envparse-library-has-counterintuitive-boolean-casting/">Python&rsquo;s <code>envparse</code> library has counter-intuitive boolean casting</a></li>
                     
-                        <li><a href="/posts/django-settings-prefixed-with-an-underscore-are-private/">Django settings prefixed with an underscore are private</a></li>
-                    
-                        <li><a href="/posts/django-doesnt-flush-caches-between-tests/">Django doesn&rsquo;t flush caches between tests</a></li>
-                    
-                        <li><a href="/posts/how-djangos-management-commands-need-to-be-type-hinted/">How Django&rsquo;s management commands need to be type hinted</a></li>
+                        <li><a href="/posts/factory-boy-can-be-used-to-build-dicts/">Factory boy can be used to build dicts</a></li>
                     
                         <li><a href="/posts/filelevel-flake8-comments-ignore-all-errors/">File-level flake8 comments ignore all errors</a></li>
                     
@@ -179,7 +170,6 @@ class.</p>
                     
                         <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
                     
-                    </ul>
                     
                         
                     
@@ -224,31 +214,6 @@ class.</p>
                         
                     
                         
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                
-
-            
-
-        
-
-            
-
-            
-                
-
-                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/testing/">Testing</a>:</p>
-                <ul>
-                    
-                        <li><a href="/posts/how-to-easily-disable-a-circleci-workflow/">How to easily disable a CircleCI workflow</a></li>
-                    
                     
                         
                     
@@ -258,9 +223,9 @@ class.</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -269,11 +234,9 @@ class.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/django-settings-prefixed-with-an-underscore-are-private\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-list-the-mounts-of-a-running-docker-container\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-delete-all-buffers-in-vim\/"); })
         
     </script>
 
