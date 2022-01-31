@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Dec 2021 15:55:28 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Jan 2022 17:23:09 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Google Groups can be nested</title>
+      <link>https://til.codeinthehole.com/posts/google-groups-can-be-nested/</link>
+      <pubDate>Mon, 31 Jan 2022 17:23:09 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/google-groups-can-be-nested/</guid>
+      <description>You can do this from the &amp;ldquo;Add members&amp;rdquo; section of the Group detail page.</description>
+    </item>
     
     <item>
       <title>About Django&#39;s `setup` method for generic view classes</title>
