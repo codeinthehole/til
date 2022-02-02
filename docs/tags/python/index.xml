@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Dec 2021 15:55:28 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Feb 2022 11:55:29 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can&#39;t use Django&#39;s generic foreign key field with objects stored in a separate database</title>
+      <link>https://til.codeinthehole.com/posts/you-cant-use-djangos-generic-foreign-key-field-with-objects-stored-in-a-separate-database/</link>
+      <pubDate>Wed, 02 Feb 2022 11:55:29 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-cant-use-djangos-generic-foreign-key-field-with-objects-stored-in-a-separate-database/</guid>
+      <description>Django supports using separate databases for specified models or apps.</description>
+    </item>
     
     <item>
       <title>About Django&#39;s `setup` method for generic view classes</title>
