@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/about-githubs-involves-search-filter/</loc>
+    <lastmod>2022-02-02T18:08:58+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/github/</loc>
+    <lastmod>2022-02-02T18:08:58+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2022-02-02T18:08:58+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2022-02-02T18:08:58+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2022-02-02T18:08:58+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/django/</loc>
     <lastmod>2022-02-02T11:55:29+00:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2022-02-02T11:55:29+00:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/tags/python/</loc>
-    <lastmod>2022-02-02T11:55:29+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2022-02-02T11:55:29+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2022-02-02T11:55:29+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/you-cant-use-djangos-generic-foreign-key-field-with-objects-stored-in-a-separate-database/</loc>
@@ -315,9 +321,6 @@
     <lastmod>2021-02-06T15:54:07+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/about-githubs-me-search-term/</loc>
-    <lastmod>2021-02-05T12:17:33+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/github/</loc>
     <lastmod>2021-02-05T12:17:33+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/recruiters-talk-about-tshaped-leaders/</loc>

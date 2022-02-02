@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Feb 2022 11:55:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Feb 2022 18:08:58 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About Github&#39;s `involves:$username` search filter</title>
+      <link>https://til.codeinthehole.com/posts/about-githubs-involves-search-filter/</link>
+      <pubDate>Wed, 02 Feb 2022 18:08:58 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-githubs-involves-search-filter/</guid>
+      <description>There&amp;rsquo;s a plethora of filters that can be used with Github&amp;rsquo;s search functionality.</description>
+    </item>
     
     <item>
       <title>You can&#39;t use Django&#39;s generic foreign key field with objects stored in a separate database</title>

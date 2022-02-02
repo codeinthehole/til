@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    There’s a plethora of filters that can be used with Github’s search functionality. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-githubs-involves-search-filter/" />
+<meta property="og:title" content="TIL About Github&#39;s &#39;involves:$username&#39; search filter — David Winterbottom" />
+<meta property="og:description" content="There&rsquo;s a plethora of filters that can be used with Github&rsquo;s search functionality. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL About Github&#39;s &#39;involves:$username&#39; search filter — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>February 2th, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>About Github&rsquo;s <code>involves:$username</code> search filter</h1>
+        </header><p>There&rsquo;s a <a href="https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests">plethora of filters</a> that can be used with Github&rsquo;s search
+functionality.</p>
+<p>An interesting filter is <a href="https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests#search-by-a-user-thats-involved-in-an-issue-or-pull-request"><code>involves:$username</code></a> which selects
+issues or pull requests where the user:</p>
+<ul>
+<li>Is the author</li>
+<li>Has commented</li>
+<li>Has been mentioned</li>
+<li>Has been assigned</li>
+<li>Has been requested as a reviewer</li>
+</ul>
+<p>This can be useful to get an overview of a team&rsquo;s activity over some period. You
+can use the <code>updated:&gt;YYYY-DD-MM</code> filter to restrict the results to pull
+requests with recent activity.</p>
+<p>I discovered this when trying to find how to select pull requests authored by a
+set of users. This isn&rsquo;t possible in the pull request search (URL path <code>/pulls</code>);
+only the last author is used. But it is possible in the more general search (URL
+path <code>/search</code>) which has a different display format.</p>
+<p>This <a href="https://stackoverflow.com/questions/36433230/in-github-is-there-a-way-to-search-for-pull-requests-created-by-any-author-from">Stack Overflow post</a> contained the pertinent advice.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+
+        
+
+            
+
+            
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/github/">Github</a>:</p>
+                    <ul>
+                    
+                        <li><a href="/posts/about-githubs-me-search-term/">About Github&rsquo;s <code>@me</code> search term</a></li>
+                    
+                        <li><a href="/posts/how-to-embed-markdown-content-in-a-github-code-block/">How to embed markdown content in a Github code block</a></li>
+                    
+                    </ul>
+                    
+                        
+                    
+                        
+                    
+                
+
+            
+
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-cant-use-djangos-generic-foreign-key-field-with-objects-stored-in-a-separate-database\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
