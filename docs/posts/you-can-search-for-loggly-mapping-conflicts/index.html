@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Loggly stores your JSON event data in a single ElasticSearch schema. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-search-for-loggly-mapping-conflicts/" />
+<meta property="og:title" content="TIL You can search for Loggly mapping conflicts — David Winterbottom" />
+<meta property="og:description" content="Loggly stores your JSON event data in a single ElasticSearch schema. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL You can search for Loggly mapping conflicts — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>February 10th, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>You can search for Loggly mapping conflicts</h1>
+        </header><p>Loggly stores your JSON event data in a single ElasticSearch schema. As such,
+you need to be careful about using consistent types within your JSON payloads.</p>
+<p>For example, if you publish a field as a string in one event but an object in
+another then you&rsquo;ll get a mapping conflict and the latter object won&rsquo;t be
+indexed correctly.</p>
+<p>You can find mapping conflicts by searching for
+<code>LogglyNotifications.type:MappingConflict</code> then use the notifications data to
+see which field has the problem.</p>
+<p>It&rsquo;s hard to guard against this problem with static analysis in your codebase.
+But you can fix problems rapidly by setting up a alert that trips when new
+events match the above mapping conflict filter.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+
+        
+
+            
+
+            
+                
+
+            
+
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-githubs-involves-search-filter\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
