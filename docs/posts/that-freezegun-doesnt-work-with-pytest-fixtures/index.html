@@ -59,8 +59,10 @@
                 On <time>July 12th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</h1>
-        </header><p>Wrapping tests classes with <a href="https://github.com/spulec/freezegun#decorator">FreezeGun</a>&rsquo;s <code>@freezegun.freeze_time</code> doesn&rsquo;t control calls to the
-system clock from fixtures. That is, this test fails when run on any date other than 2021-07-01:</p>
+        </header><p>Wrapping tests classes with
+<a href="https://github.com/spulec/freezegun#decorator">FreezeGun</a>&rsquo;s
+<code>@freezegun.freeze_time</code> doesn&rsquo;t control calls to the system clock from
+fixtures. That is, this test fails when run on any date other than 2021-07-01:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> datetime
 <span style="color:#f92672">import</span> freezegun
 <span style="color:#f92672">import</span> pytest
@@ -80,11 +82,11 @@ E   assert FakeDate(2021, 7, 1) == datetime.date(2021, 7, 12)
 E     +FakeDate(2021, 7, 1)
 E     -datetime.date(2021, 7, 12)
 </code></pre></div><p>However, if you use the <code>pytest.mark.freeze_time</code> decorator provided by
-<a href="https://github.com/ktosiek/pytest-freezegun"><code>pytest-freezegun</code></a>, then calls to the system clock in the fixture function
-<em>are</em> controlled by FreezeGun.</p>
-<p>For example, if we replace
-<code>@freezegun.freeze_time</code> with <code>@pytest.mark.freeze_time</code> then the test always
-passes no matter what day it is run:</p>
+<a href="https://github.com/ktosiek/pytest-freezegun"><code>pytest-freezegun</code></a>, then calls to
+the system clock in the fixture function <em>are</em> controlled by FreezeGun.</p>
+<p>For example, if we replace <code>@freezegun.freeze_time</code> with
+<code>@pytest.mark.freeze_time</code> then the test always passes no matter what day it is
+run:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> datetime
 <span style="color:#f92672">import</span> freezegun
 <span style="color:#f92672">import</span> pytest

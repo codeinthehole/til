@@ -60,17 +60,17 @@
             </div>
             <h1>About a gotcha with <code>psycopg2</code>&rsquo;s autocommit handling</h1>
         </header><p>Some commands in Postgres can&rsquo;t be run inside a transaction (e.g. running
-<code>VACUUM FULL</code> or creating indexes concurrently); they require <code>autocommit</code> mode to
-be enabled on the connection.</p>
-<p>However there is a subtle gotcha when doing this as if you execute
-multiple statements then a transaction is implicitly created leading to an error.</p>
+<code>VACUUM FULL</code> or creating indexes concurrently); they require <code>autocommit</code> mode
+to be enabled on the connection.</p>
+<p>However there is a subtle gotcha when doing this as if you execute multiple
+statements then a transaction is implicitly created leading to an error.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">conn <span style="color:#f92672">=</span> psycopg2<span style="color:#f92672">.</span>connect(<span style="color:#f92672">...</span>)
 conn<span style="color:#f92672">.</span>autocommit <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
 cur <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>cursor()
 cur<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#34;VACUUM FULL; SELECT 1&#34;</span>)
 <span style="color:#75715e"># exception: ActiveSqlTransaction: VACUUM cannot run inside a transaction block</span>
-</code></pre></div><p>I lost an hour of my life this week tracking this down until I
-stumbled upon <a href="https://stackoverflow.com/a/67418518">this StackOverflow answer</a> and
+</code></pre></div><p>I lost an hour of my life this week tracking this down until I stumbled upon
+<a href="https://stackoverflow.com/a/67418518">this StackOverflow answer</a> and
 <a href="https://github.com/psycopg/psycopg2/issues/1201">related <code>psycopg2</code> issue</a>.</p>
 </article>
 

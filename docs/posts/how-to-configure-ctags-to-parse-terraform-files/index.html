@@ -59,8 +59,9 @@
                 On <time>November 26th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>How to configure <code>ctags</code> to parse Terraform files</h1>
-        </header><p>If you&rsquo;re using <a href="https://github.com/universal-ctags/ctags">Universal Ctags</a> (which you should be), you just need to add
-a <code>~/.ctags.d/terraform.ctags</code> with contents:</p>
+        </header><p>If you&rsquo;re using <a href="https://github.com/universal-ctags/ctags">Universal Ctags</a>
+(which you should be), you just need to add a <code>~/.ctags.d/terraform.ctags</code> with
+contents:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">--langdef=terraform
 --langmap=terraform:.tf.tfvars
 --regex-terraform=/^[[:space:]]*resource[[:space:]]*&#34;([^&#34;]*)&#34;[[:space:]]*&#34;([^&#34;]*)&#34;/\2/r,Resource/
@@ -77,9 +78,9 @@ a <code>~/.ctags.d/terraform.ctags</code> with contents:</p>
 }
 </code></pre></div><p>will have <code>my-log-group</code> stored as an identifier so you can jump to its
 definition from other references.</p>
-<p>Inspiration taken from <a href="https://z0mbix.io/2016/09/04/ctag-support-for-terraform/">ctag support for
-Terraform</a> although
-the snippet above is a slightly amended version from the
+<p>Inspiration taken from
+<a href="https://z0mbix.io/2016/09/04/ctag-support-for-terraform/">ctag support for Terraform</a>
+although the snippet above is a slightly amended version from the
 <a href="https://github.com/juliosueiras/vim-terraform-completion/blob/master/ctags/terraform.ctags">vim-terraform-completion</a>
 repo.</p>
 </article>

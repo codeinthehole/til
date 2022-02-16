@@ -20,7 +20,7 @@ ps2pdf scanned-file.pdf smaller-file.pdf
 [`ghostscript` Homebrew package](https://formulae.brew.sh/formula/ghostscript)
 installed with:
 
-```
+```sh
 brew install ghostscript
 ```
 

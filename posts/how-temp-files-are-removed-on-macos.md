@@ -17,7 +17,7 @@ runs all scripts in `/etc/periodic/daily/` including
 temporary files. The default configuration `/etc/defaults/periodic.conf` ensures
 any files in `/tmp` that haven't been accessed for 3 days are deleted.
 
-```
+```sh
 # /etc/defaults/periodic.conf
 
 ...

@@ -69,14 +69,17 @@ a desktop notification when a long-running processes has completed:</p>
 <p>Example usage:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run_test_suite.sh ; alert
 </code></pre></div><p>It uses the exit code of the previous process <code>$?</code> to determine the message and
-icon displayed. As you can see, it uses <a href="notifysend"><code>notify-send</code></a> to create the alert — <a href="explanation">here&rsquo;s a more detailed explanation of how it works</a>.</p>
-<p>You can create a macOS equivalent with the Homebrew-installed <a href="https://formulae.brew.sh/formula/terminal-notifier"><code>terminal-notifier</code></a>:</p>
+icon displayed. As you can see, it uses <a href="notifysend"><code>notify-send</code></a> to create
+the alert — <a href="explanation">here&rsquo;s a more detailed explanation of how it works</a>.</p>
+<p>You can create a macOS equivalent with the Homebrew-installed
+<a href="https://formulae.brew.sh/formula/terminal-notifier"><code>terminal-notifier</code></a>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias alert<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;terminal-notifier
 </span><span style="color:#e6db74">    -title &#34;Process finished&#34;
 </span><span style="color:#e6db74">    -message &#34;$([ $? = 0 ] &amp;&amp; echo Success || echo Error)&#34;&#39;</span>
 </code></pre></div><p>(Command wrapped for clarity again).</p>
 <p>This is a basic version: you can make use of <code>terminal-notifier</code>&rsquo;s options to
-add sounds, icons and even activate iTerm2 again with <code>-activate com.googlecode.iterm2</code>.</p>
+add sounds, icons and even activate iTerm2 again with
+<code>-activate com.googlecode.iterm2</code>.</p>
 <p>The appearance of the <code>terminal-notifier</code> notifications can be configured in
 <code>System Preferences &gt; Notifications</code>:</p>
 <figure><img src="/images/terminalnotifier-preferences.png"

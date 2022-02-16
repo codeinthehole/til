@@ -59,9 +59,11 @@
                 On <time>December 7th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>How to spell-check markdown repos on CircleCI</h1>
-        </header><p>The <a href="https://hub.docker.com/r/tmaier/markdown-spellcheck"><code>tmaier/markdown-spellcheck</code></a> Docker image
-wraps <a href="https://github.com/lukeapage/node-markdown-spellcheck"><code>node-markdown-spellcheck</code></a> and can be used locally and on CircleCI to
-spell-check markdown files.</p>
+        </header><p>The
+<a href="https://hub.docker.com/r/tmaier/markdown-spellcheck"><code>tmaier/markdown-spellcheck</code></a>
+Docker image wraps
+<a href="https://github.com/lukeapage/node-markdown-spellcheck"><code>node-markdown-spellcheck</code></a>
+and can be used locally and on CircleCI to spell-check markdown files.</p>
 <p>Locally, run:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run --rm -ti -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/workdir tmaier/markdown-spellcheck:latest <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --report --ignore-numbers --ignore-acronyms <span style="color:#e6db74">&#34;**/*.md&#34;</span>
@@ -69,7 +71,6 @@ spell-check markdown files.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
 
 <span style="color:#f92672">jobs</span>:
-
   <span style="color:#f92672">spelling</span>:
     <span style="color:#f92672">docker</span>:
       - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">tmaier/markdown-spellcheck:latest</span>
@@ -83,7 +84,8 @@ spell-check markdown files.</p>
   <span style="color:#f92672">static-analysis</span>:
     <span style="color:#f92672">jobs</span>:
       - <span style="color:#ae81ff">spelling</span>
-</code></pre></div><p>Thanks to <a href="https://github.com/lukeapage">Luke Page</a> for the node library and <a href="https://tobiasmaier.info/">Tobias L. Maier</a> for the Docker wrapper.</p>
+</code></pre></div><p>Thanks to <a href="https://github.com/lukeapage">Luke Page</a> for the node library and
+<a href="https://tobiasmaier.info/">Tobias L. Maier</a> for the Docker wrapper.</p>
 </article>
 
         </main>

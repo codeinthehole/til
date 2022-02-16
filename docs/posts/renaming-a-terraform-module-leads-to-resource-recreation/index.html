@@ -59,8 +59,9 @@
                 On <time>July 23th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>Renaming a Terraform module is dangerous</h1>
-        </header><p>As the state file uses the module name in identifiers and so a module rename causes
-Terraform to think all existing resources need to be destroyed and recreated.</p>
+        </header><p>As the state file uses the module name in identifiers and so a module rename
+causes Terraform to think all existing resources need to be destroyed and
+recreated.</p>
 <p>You can avoid such needless destruction by editing the state file manually to
 correct the identifiers.</p>
 <p>It might be possible to use <code>terraform mv</code> although I didn&rsquo;t use that approach

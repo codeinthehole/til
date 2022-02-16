@@ -63,10 +63,10 @@ Host Restricts the following declarations (up to the next Host or Match keyword)
             <h1>SSH config supports multiple host patterns in one block</h1>
         </header><p>From <code>man ssh_config</code>:</p>
 <blockquote>
-<p>Host    Restricts the following declarations (up to the next Host or Match
-keyword) to be only for those hosts that match one of the patterns
-given after the keyword.  If more than one pattern is provided,
-they should be separated by whitespace.</p>
+<p>Host Restricts the following declarations (up to the next Host or Match
+keyword) to be only for those hosts that match one of the patterns given after
+the keyword. If more than one pattern is provided, they should be separated by
+whitespace.</p>
 </blockquote>
 <p>and so you can do this:</p>
 <pre tabindex="0"><code class="language-ssh" data-lang="ssh">Host 10.0.20.* 10.0.28.* 10.0.29.* 10.0.30.*

@@ -59,7 +59,9 @@
                 On <time>June 17th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>About <code>jq</code>&rsquo;s <code>--slurp</code> option</h1>
-        </header><p>Problem: you want to find the unique values of a key in some <a href="https://jsonlines.org/">JSON Lines</a> input using <a href="https://stedolan.github.io/jq/manual/"><code>jq</code></a>.</p>
+        </header><p>Problem: you want to find the unique values of a key in some
+<a href="https://jsonlines.org/">JSON Lines</a> input using
+<a href="https://stedolan.github.io/jq/manual/"><code>jq</code></a>.</p>
 <p>JQ&rsquo;s <code>unique</code> function requires an array as input and so we must convert the
 separate JSON objects from the JSONL steam into an array. This is done using the
 <code>--slurp</code> option:</p>

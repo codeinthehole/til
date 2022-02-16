@@ -23,7 +23,7 @@ class Command(BaseCommand):
 
 but it does with error:
 
-```
+```txt
 Signature of "handle" incompatible with supertype "BaseCommand" [override]
 ```
 

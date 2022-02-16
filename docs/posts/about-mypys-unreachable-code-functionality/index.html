@@ -59,8 +59,10 @@
                 On <time>June 21th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>About <code>mypy</code>&rsquo;s unreachable code functionality</h1>
-        </header><p>Mypy <a href="https://mypy.readthedocs.io/en/stable/common_issues.html#unreachable-code">can be configured</a> to raise an error when it finds unreachable code.
-This is a useful check and can highlight several categories of bug.</p>
+        </header><p>Mypy
+<a href="https://mypy.readthedocs.io/en/stable/common_issues.html#unreachable-code">can be configured</a>
+to raise an error when it finds unreachable code. This is a useful check and can
+highlight several categories of bug.</p>
 <p>To enable, ensure your <code>setup.cfg</code> includes:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[mypy]</span>
 <span style="color:#a6e22e">warn_unreachable</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>

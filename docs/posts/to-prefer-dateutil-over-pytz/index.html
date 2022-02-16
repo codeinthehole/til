@@ -75,15 +75,17 @@ tzinfo <span style="color:#f92672">=</span> pytz<span style="color:#f92672">.</s
 datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2021</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">0</span>, tzinfo<span style="color:#f92672">=</span>tzinfo)
 </code></pre></div><p>Why? Because passing <code>pytz</code>&rsquo;s timezones to the <code>datetime.datetime</code> constructor
 can often lead to bugs after date arithmetic (i.e. computing new dates using
-<code>datetime.timedelta</code>). This is noted in the <a href="https://pythonhosted.org/pytz/"><code>pytz</code>
-docs</a>:</p>
+<code>datetime.timedelta</code>). This is noted in the
+<a href="https://pythonhosted.org/pytz/"><code>pytz</code> docs</a>:</p>
 <figure><img src="/images/pytz-docs.png"
          alt="pytz docs"/>
 </figure>
 
 <p>It&rsquo;s easy to be lulled into a false sense of security as such bugs don&rsquo;t affect
 timezones without daylight savings transitions, like UTC.</p>
-<p>See <a href="https://blog.ganssle.io/articles/2018/03/pytz-fastest-footgun.html"><code>pytz</code>: The Fastest Footgun in the West</a> for more details.</p>
+<p>See
+<a href="https://blog.ganssle.io/articles/2018/03/pytz-fastest-footgun.html"><code>pytz</code>: The Fastest Footgun in the West</a>
+for more details.</p>
 </article>
 
         </main>

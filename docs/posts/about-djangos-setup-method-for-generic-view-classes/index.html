@@ -59,9 +59,9 @@
                 On <time>December 14th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>About Django&rsquo;s <code>setup</code> method for generic view classes</h1>
-        </header><p>Django 2.2 (released in April 2019) <a href="https://docs.djangoproject.com/en/3.2/releases/2.2/#generic-views">introduced a <code>setup</code>
-method</a> to the
-<code>django.views.View</code> class, which is available to all generic views.</p>
+        </header><p>Django 2.2 (released in April 2019)
+<a href="https://docs.djangoproject.com/en/3.2/releases/2.2/#generic-views">introduced a <code>setup</code> method</a>
+to the <code>django.views.View</code> class, which is available to all generic views.</p>
 <p>This is intended to be overridden to assign instance attributes that other
 methods will need.</p>
 <p>For example, you would use this to load model instances identified in the URL
@@ -77,7 +77,8 @@ arguments:</p>
         self<span style="color:#f92672">.</span>frob <span style="color:#f92672">=</span> shortcuts<span style="color:#f92672">.</span>get_object_or_404(models<span style="color:#f92672">.</span>Frob, pk<span style="color:#f92672">=</span>kwargs[<span style="color:#e6db74">&#34;pk&#34;</span>])
 </code></pre></div><p>To date, I&rsquo;ve been overriding <code>dispatch</code> to do this - didn&rsquo;t realise there was a
 dedicated method.</p>
-<p>More in the <a href="https://docs.djangoproject.com/en/2.2/ref/class-based-views/base/#django.views.generic.base.View.setup">Django view docs</a></p>
+<p>More in the
+<a href="https://docs.djangoproject.com/en/2.2/ref/class-based-views/base/#django.views.generic.base.View.setup">Django view docs</a></p>
 </article>
 
         </main>

@@ -59,26 +59,25 @@
                 On <time>February 15th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>How to use custom functions with <code>:cdo</code></h1>
-        </header><p>Vim&rsquo;s <code>:cdo</code> command lets you run an Ex command in each entry in the quickfix list.
-This is useful for large-scale refactoring work.</p>
+        </header><p>Vim&rsquo;s <code>:cdo</code> command lets you run an Ex command in each entry in the quickfix
+list. This is useful for large-scale refactoring work.</p>
 <p>One way to leverage this is to write a macro to perform the required update then
 run it with <code>:cdo</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">cdo</span> <span style="color:#a6e22e">normal</span> @<span style="color:#a6e22e">q</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>Macros are powerful and many update operations can be done this way.
-However, sometimes the necessary update is too complex for a macro. This happens
-when there are several &ldquo;categories&rdquo; of update required and conditional logic is
+</span></code></pre></div><p>Macros are powerful and many update operations can be done this way. However,
+sometimes the necessary update is too complex for a macro. This happens when
+there are several &ldquo;categories&rdquo; of update required and conditional logic is
 required to determine the appropriate operation.</p>
 <p>For such circumstances you can write a custom Vim function and call that for
 each quickfix entry.</p>
 <p>For example, I used this technique to factor out around 1,400
-<a href="https://www.flake8rules.com/rules/F841.html">F841</a> <code>flake8</code> violations
-from a project today.</p>
-<p>For <code>flake8</code> work, the quickfix list can be populated by
-setting <code>makeprg=flake8</code> and running <code>:make</code>.</p>
+<a href="https://www.flake8rules.com/rules/F841.html">F841</a> <code>flake8</code> violations from a
+project today.</p>
+<p>For <code>flake8</code> work, the quickfix list can be populated by setting
+<code>makeprg=flake8</code> and running <code>:make</code>.</p>
 <p>As there were several distinct categories of violation that required a separate
-update operation to resolve, I created a <code>FixF841Error</code> function that
-inspected the line in question to determine the appropriate remedy. Something
-like this:</p>
+update operation to resolve, I created a <code>FixF841Error</code> function that inspected
+the line in question to determine the appropriate remedy. Something like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#66d9ef">function</span>! <span style="color:#a6e22e">FixF841Error</span>()<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34; Example the line of the error to determine what fix is required.</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">line</span> = <span style="color:#a6e22e">getline</span>(<span style="color:#e6db74">&#39;.&#39;</span>)<span style="color:#960050;background-color:#1e0010">

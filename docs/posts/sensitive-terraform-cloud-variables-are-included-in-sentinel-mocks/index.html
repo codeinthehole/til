@@ -79,7 +79,8 @@ downloaded from the run detail page on Terraform Cloud:</p>
 </ul>
 <p>What I only recently realised is that the <code>*-tfplan*</code> files include all your
 workspace variables in plaintext, including those marked as sensitive.</p>
-<p>To be fair <a href="https://learn.hashicorp.com/tutorials/terraform/sentinel-testing?in=terraform/policy">the Terraform docs do warn that mocks can contain sensitive state values</a>
+<p>To be fair
+<a href="https://learn.hashicorp.com/tutorials/terraform/sentinel-testing?in=terraform/policy">the Terraform docs do warn that mocks can contain sensitive state values</a>
 but I hadn&rsquo;t expected the wholespace variables to be included.</p>
 <figure><img src="/images/terraform-cloud-mocks-warning.png"
          alt="Terraform Cloud mocks warning"/>

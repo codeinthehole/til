@@ -8,7 +8,7 @@ Git's `merge-base` command can be used to find the common ancestor for two
 commits (or branches/references). From the
 [docs](https://git-scm.com/docs/git-merge-base#_discussion):
 
-```
+```txt
 Given two commits A and B, git merge-base A B will output a commit which is
 reachable from both A and B through the parent relationship.
 
@@ -36,13 +36,13 @@ If you often rebase commits to create a readable, self-contained history, this
 command is invaluable and I recommend you alias it to something easy to type. I
 have this in my `~/.bash_aliases` file:
 
-```
+```sh
 alias grb='git rebase -i `git merge-base head origin/$(git defaultbranch)`'
 ```
 
 where the `defaultbranch` alias is defined in `~/.gitconfig` as:
 
-```
+```dosini
 [alias]
 ...
 defaultbranch = "!f() { git symbolic-ref refs/remotes/origin/HEAD | cut -d/ -f4; }; f"

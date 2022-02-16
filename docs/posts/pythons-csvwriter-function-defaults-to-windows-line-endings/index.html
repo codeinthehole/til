@@ -59,8 +59,8 @@
                 On <time>April 20th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>Python&rsquo;s <code>csv.writer</code> function defaults to Windows line endings</h1>
-        </header><p>I was confused as to why <code>awk</code> wasn&rsquo;t matching the final element in a CSV
-stream from <code>csv.writer</code>. Example:</p>
+        </header><p>I was confused as to why <code>awk</code> wasn&rsquo;t matching the final element in a CSV stream
+from <code>csv.writer</code>. Example:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python -c <span style="color:#e6db74">&#34;
 </span><span style="color:#e6db74">&gt; import csv, sys
 </span><span style="color:#e6db74">&gt; w = csv.writer(sys.stdout, delimiter=&#39;\t&#39;)
@@ -68,8 +68,8 @@ stream from <code>csv.writer</code>. Example:</p>
 </span><span style="color:#e6db74">&gt; &#34;</span> | awk <span style="color:#e6db74">&#39;$2 == &#34;bar&#34; { print $1 }&#39;</span>
 </code></pre></div><p>This <em>should</em> print <code>foo</code> as the second element in the stream is <code>bar</code>. But it
 doesn&rsquo;t.</p>
-<p>This is because <code>csv.writer</code> <a href="https://docs.python.org/3/library/csv.html#csv.Dialect.lineterminator">defaults to using Windows-style line endings
-<code>\r\n</code></a>
+<p>This is because <code>csv.writer</code>
+<a href="https://docs.python.org/3/library/csv.html#csv.Dialect.lineterminator">defaults to using Windows-style line endings <code>\r\n</code></a>
 which prevents <code>awk</code> from matching the last field on each line.</p>
 <p>The fix is to use Posix-style line endings <code>\n</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ python -c <span style="color:#e6db74">&#34;

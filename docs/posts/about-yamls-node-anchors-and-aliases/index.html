@@ -61,16 +61,17 @@
             <h1>About YAML&rsquo;s node anchors and aliases</h1>
         </header><p>I&rsquo;ve seen these a few times but only today decided to actually work out how they
 worked.</p>
-<p>YAML lets you define an anchor (<code>&amp;name</code>) for a node, sequence or scalar that you can refer
-to later with an alias (<code>*name</code>). This lets you avoid duplication by extending or
-overriding objects</p>
+<p>YAML lets you define an anchor (<code>&amp;name</code>) for a node, sequence or scalar that you
+can refer to later with an alias (<code>*name</code>). This lets you avoid duplication by
+extending or overriding objects</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">twin1</span>: <span style="color:#75715e">&amp;person</span>
-    <span style="color:#f92672">first</span>: <span style="color:#ae81ff">Barry</span>
-    <span style="color:#f92672">last</span>: <span style="color:#ae81ff">Chuckle</span>
+  <span style="color:#f92672">first</span>: <span style="color:#ae81ff">Barry</span>
+  <span style="color:#f92672">last</span>: <span style="color:#ae81ff">Chuckle</span>
 <span style="color:#f92672">twin2</span>:
-    <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*person</span>
-    <span style="color:#f92672">first</span>: <span style="color:#ae81ff">Paul</span>
-</code></pre></div><p>For more, see <a href="http://blogs.perl.org/users/tinita/2019/05/reusing-data-with-yaml-anchors-aliases-and-merge-keys.html">http://blogs.perl.org/users/tinita/2019/05/reusing-data-with-yaml-anchors-aliases-and-merge-keys.html</a></p>
+  <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*person</span>
+  <span style="color:#f92672">first</span>: <span style="color:#ae81ff">Paul</span>
+</code></pre></div><p>For more, see
+<a href="http://blogs.perl.org/users/tinita/2019/05/reusing-data-with-yaml-anchors-aliases-and-merge-keys.html">http://blogs.perl.org/users/tinita/2019/05/reusing-data-with-yaml-anchors-aliases-and-merge-keys.html</a></p>
 </article>
 
         </main>

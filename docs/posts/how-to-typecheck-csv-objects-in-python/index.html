@@ -59,7 +59,8 @@
                 On <time>September 3th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>How to use type annotations with Python&rsquo;s <code>csv</code> module</h1>
-        </header><p>Adding a type annotation for a &ldquo;writer&rdquo; object created by <code>csv.writer(...)</code> is fiddlier than you might think.</p>
+        </header><p>Adding a type annotation for a &ldquo;writer&rdquo; object created by <code>csv.writer(...)</code> is
+fiddlier than you might think.</p>
 <p>The type of the writer object is <code>_csv.writer</code> which you verify with:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">import</span> csv<span style="color:#f92672">,</span> sys
 <span style="color:#f92672">&gt;&gt;&gt;</span> type(csv<span style="color:#f92672">.</span>writer(sys<span style="color:#f92672">.</span>stdout))
@@ -70,9 +71,10 @@
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_report</span>(writer: _csv<span style="color:#f92672">.</span>writer):
     <span style="color:#66d9ef">pass</span>
 </code></pre></div><p><code>mypy</code> complains that:</p>
-<pre tabindex="0"><code>Function &quot;_csv.writer&quot; is not valid as a type  [valid-type].
-</code></pre><p>The correct approach is to use <code>_csv._writer</code> as the type annotation.  A string literal is required
-otherwise you&rsquo;ll get a <code>AttributeError: module '_csv' has no attribute '_writer'</code> exception.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Function &#34;_csv.writer&#34; is not valid as a type  [valid-type].
+</code></pre></div><p>The correct approach is to use <code>_csv._writer</code> as the type annotation. A string
+literal is required otherwise you&rsquo;ll get a
+<code>AttributeError: module '_csv' has no attribute '_writer'</code> exception.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> _csv
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_report</span>(writer: <span style="color:#e6db74">&#39;_csv._writer&#39;</span>):

@@ -20,7 +20,7 @@ Better is to use `git diff` to generate patch files and apply these with
 
 Run this for each filepath modified in your PR but deleted in `master`:
 
-```
+```sh
 git show REBASE_HEAD $OLD_FILEPATH | patch $NEW_FILEPATH
 ```
 

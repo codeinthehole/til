@@ -37,8 +37,8 @@ timeout 60s slow_command
 timeout_res=$?
 
 # The exit code will be 124 if the timeout was reached but we need to be
-# careful of the scenario where the `slow_command` exited within 60 seconds with a
-# code of 124. We use the `$SECONDS` timer to do that.
+# careful of the scenario where the `slow_command` exited within 60 seconds
+# with a code of 124. We use the `$SECONDS` timer to do that.
 if [ "$SECONDS" -lt "60" ]; then
     # Command did not time out; the exit code is from `slow_command`.
     echo "The command did not time out; it returned after $SECONDS seconds."

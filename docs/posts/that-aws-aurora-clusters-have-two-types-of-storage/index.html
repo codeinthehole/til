@@ -70,18 +70,18 @@ Auto-scaling storage for persistent data (the “cluster volume”). ...
 <p>Local storage for temporary tables or files.</p>
 </li>
 </ul>
-<p>There&rsquo;s further information in the <a href="https://aws.amazon.com/premiumsupport/knowledge-center/postgresql-aurora-storage-issue/">AWS docs</a></p>
+<p>There&rsquo;s further information in the
+<a href="https://aws.amazon.com/premiumsupport/knowledge-center/postgresql-aurora-storage-issue/">AWS docs</a></p>
 <p>The amount of local storage space is tied to the instance class — more space can
 only be obtained by upgrading. The amount of local storage for each instance
 type doesn&rsquo;t seem to be published anywhere. Based on CloudWatch metric data, a
-<code>db.r6g.xlarge</code> instance has 50G; <a href="https://www.reddit.com/r/aws/comments/a0y3ib/aurora_db_how_much_local_instance_storage_for/">this Reddit thread has some values for
-instance classes in the <code>r4</code>
-series</a>.</p>
+<code>db.r6g.xlarge</code> instance has 50G;
+<a href="https://www.reddit.com/r/aws/comments/a0y3ib/aurora_db_how_much_local_instance_storage_for/">this Reddit thread has some values for instance classes in the <code>r4</code> series</a>.</p>
 <p>Beware that the relatively small amount of local storage can be a problem for
 large table operations like changing the type of a column. We found to our cost
 that 50G wasn&rsquo;t enough space to run a query like:</p>
-<pre tabindex="0"><code>ALTER TABLE some_large_table ALTER COLUMN id TYPE bigint;
-</code></pre><p>which was required as the table had exhausted all 2.7 billion IDs available to
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> some_large_table <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">COLUMN</span> id <span style="color:#66d9ef">TYPE</span> bigint;
+</code></pre></div><p>which was required as the table had exhausted all 2.7 billion IDs available to
 an <code>integer</code>-type primary key field.</p>
 </article>
 

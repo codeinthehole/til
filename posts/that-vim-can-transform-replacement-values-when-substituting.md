@@ -16,7 +16,7 @@ the pattern ends of `\E` is encountered). So running:
 
 on:
 
-```
+```txt
 name = "Alan"
 name = "Barry"
 name = "Callum"
@@ -24,7 +24,7 @@ name = "Callum"
 
 will result in:
 
-```
+```txt
 upper_case_name = "ALAN"
 upper_case_name = "BARRY"
 upper_case_name = "CALLUM"

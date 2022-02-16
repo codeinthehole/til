@@ -61,14 +61,15 @@ Processes will first be terminated via SIGTERM (unless the signal to send is cha
                 On <time>March 12th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>systemd sends SIGKILL signals after waiting for <code>TimeoutStopSec</code> seconds</h1>
-        </header><p>From <a href="https://www.freedesktop.org/software/systemd/man/systemd.kill.html"><code>man systemd.kill</code></a>:</p>
+        </header><p>From
+<a href="https://www.freedesktop.org/software/systemd/man/systemd.kill.html"><code>man systemd.kill</code></a>:</p>
 <blockquote>
 <p>Processes will first be terminated via SIGTERM (unless the signal to send is
-changed via KillSignal=). Optionally, this is immediately followed by a
-SIGHUP (if enabled with SendSIGHUP=). If then, after a delay (configured via
-the TimeoutStopSec= option), processes still remain, the termination request
-is repeated with the SIGKILL signal (unless this is disabled via the
-SendSIGKILL= option).</p>
+changed via KillSignal=). Optionally, this is immediately followed by a SIGHUP
+(if enabled with SendSIGHUP=). If then, after a delay (configured via the
+TimeoutStopSec= option), processes still remain, the termination request is
+repeated with the SIGKILL signal (unless this is disabled via the SendSIGKILL=
+option).</p>
 </blockquote>
 <p>The default for <code>TimeoutStopSec</code> is 90 seconds. You can check how a particular
 unit is configured with:</p>

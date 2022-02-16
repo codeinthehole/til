@@ -26,7 +26,7 @@ def generate_report(writer: _csv.writer):
 
 `mypy` complains that:
 
-```
+```txt
 Function "_csv.writer" is not valid as a type  [valid-type].
 ```
 

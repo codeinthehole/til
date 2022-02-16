@@ -71,8 +71,9 @@ returns the number of seconds since the script was started.</p>
   is always determined by querying the system clock. If SECONDS
   is unset, it loses its special properties, even if it is
   subsequently reset.
-</code></pre></div><p>Here&rsquo;s a neat way of employing it with the <a href="https://ss64.com/bash/timeout.html"><code>timeout</code></a> command, taking from <a href="https://www.oreilly.com/library/view/shell-scripting-expert/9781118166321/c03-anchor-3.xhtml">Shell Scripting: Expert Recipes
-for Linux, Bash and More</a></p>
+</code></pre></div><p>Here&rsquo;s a neat way of employing it with the
+<a href="https://ss64.com/bash/timeout.html"><code>timeout</code></a> command, taking from
+<a href="https://www.oreilly.com/library/view/shell-scripting-expert/9781118166321/c03-anchor-3.xhtml">Shell Scripting: Expert Recipes for Linux, Bash and More</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e"># Reset timer.</span>
@@ -84,8 +85,8 @@ timeout 60s slow_command
 timeout_res<span style="color:#f92672">=</span>$?
 
 <span style="color:#75715e"># The exit code will be 124 if the timeout was reached but we need to be</span>
-<span style="color:#75715e"># careful of the scenario where the `slow_command` exited within 60 seconds with a</span>
-<span style="color:#75715e"># code of 124. We use the `$SECONDS` timer to do that.</span>
+<span style="color:#75715e"># careful of the scenario where the `slow_command` exited within 60 seconds</span>
+<span style="color:#75715e"># with a code of 124. We use the `$SECONDS` timer to do that.</span>
 <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$SECONDS<span style="color:#e6db74">&#34;</span> -lt <span style="color:#e6db74">&#34;60&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
     <span style="color:#75715e"># Command did not time out; the exit code is from `slow_command`.</span>
     echo <span style="color:#e6db74">&#34;The command did not time out; it returned after </span>$SECONDS<span style="color:#e6db74"> seconds.&#34;</span>

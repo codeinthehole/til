@@ -23,7 +23,7 @@ Beware that the relatively small amount of local storage can be a problem for
 large table operations like changing the type of a column. We found to our cost
 that 50G wasn't enough space to run a query like:
 
-```
+```sql
 ALTER TABLE some_large_table ALTER COLUMN id TYPE bigint;
 ```
 

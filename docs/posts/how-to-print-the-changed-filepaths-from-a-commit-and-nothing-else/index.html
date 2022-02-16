@@ -59,9 +59,10 @@
                 On <time>October 15th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>How to find the files from a commit that deleted a given pattern</h1>
-        </header><p>The <a href="https://git-scm.com/docs/git-show#Documentation/git-show.txt---name-only"><code>--name-only</code></a> option for <code>git log</code>
-restricts the output to the changed file paths but not their full diffs.
-However, by default, the output still includes the commit
+        </header><p>The
+<a href="https://git-scm.com/docs/git-show#Documentation/git-show.txt---name-only"><code>--name-only</code></a>
+option for <code>git log</code> restricts the output to the changed file paths but not
+their full diffs. However, by default, the output still includes the commit
 subject and description which means the output can&rsquo;t be piped into commands that
 expect a list of file paths.</p>
 <p>To strip out everything except the changed paths, use:</p>
@@ -73,7 +74,8 @@ expect a list of file paths.</p>
 a given pattern:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git filepaths | xargs rg -l <span style="color:#e6db74">&#34;</span>$QUERY<span style="color:#e6db74">&#34;</span>
 </code></pre></div><p>Further, if you want to find all the changed files where a given pattern was
-<em>removed</em> in a commit, you can use the <a href="https://git-scm.com/docs/git-show#Documentation/git-show.txt--Sltstringgt"><code>-S</code></a>
+<em>removed</em> in a commit, you can use the
+<a href="https://git-scm.com/docs/git-show#Documentation/git-show.txt--Sltstringgt"><code>-S</code></a>
 option of <code>git log</code> to search the added and removed lines for a pattern:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git filepaths -S <span style="color:#e6db74">&#34;</span>$QUERY<span style="color:#e6db74">&#34;</span>
 </code></pre></div><p>Which we can pipe to Vim so we can edit the identified files:</p>

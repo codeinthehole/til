@@ -6,7 +6,7 @@ tags: ["Vim"]
 
 Which lets you search Vim's help files for a given pattern. For example:
 
-```
+```vim
 :helpgrep What is the meaning of life
 ```
 

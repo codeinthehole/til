@@ -11,7 +11,7 @@ are delimited with triple backticks ` ``` `.
 If your code block is a markdown snippet including triple backticks, then the
 solution is to delimit with a block of 4 (or more) backticks.
 
-`````
+`````markdown
 This is how you create code blocks in markdown:
 
 ````

@@ -59,11 +59,12 @@
                 On <time>November 12th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>How to continue a Git rebase and skip editing the commit message</h1>
-        </header><p>During an interactive rebase, when you&rsquo;ve fixed the conflicts or finished editing the
-commit you can run:</p>
+        </header><p>During an interactive rebase, when you&rsquo;ve fixed the conflicts or finished
+editing the commit you can run:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git rebase --continue
-</code></pre></div><p>to continue rebasing. Before proceeding, this will open the commit message in your
-configured editor so you can make any adjustments based on the changes you&rsquo;ve made.</p>
+</code></pre></div><p>to continue rebasing. Before proceeding, this will open the commit message in
+your configured editor so you can make any adjustments based on the changes
+you&rsquo;ve made.</p>
 <p>However, 90% of the time I don&rsquo;t want to edit the commit message as I&rsquo;m just
 fixing a minor issue and the existing commit message is still accurate. The
 editor step is superfluous and a waste of time.</p>
@@ -71,7 +72,8 @@ editor step is superfluous and a waste of time.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">GIT_EDITOR<span style="color:#f92672">=</span>true git rebase --continue
 </code></pre></div><p>which replaces the editor program with <code>true</code> which simply exits with a zero
 exit code.</p>
-<p>Source: <a href="https://stackoverflow.com/questions/43489971/how-to-suppress-the-editor-for-git-rebase-continue">&ldquo;How to suppress the editor for <code>git rebase --continue</code>?&quot;</a>
+<p>Source:
+<a href="https://stackoverflow.com/questions/43489971/how-to-suppress-the-editor-for-git-rebase-continue">&ldquo;How to suppress the editor for <code>git rebase --continue</code>?&quot;</a>
 on Stack Overflow.</p>
 </article>
 

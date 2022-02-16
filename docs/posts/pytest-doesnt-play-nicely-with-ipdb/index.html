@@ -59,13 +59,14 @@
                 On <time>March 2th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>Pytest doesn&rsquo;t play nicely with ipdb</h1>
-        </header><p>To ensure <code>breakpoint()</code> triggers <a href="https://github.com/gotcha/ipdb"><code>ipdb</code></a> as my default debugger, I used to set:</p>
+        </header><p>To ensure <code>breakpoint()</code> triggers <a href="https://github.com/gotcha/ipdb"><code>ipdb</code></a> as my
+default debugger, I used to set:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PYTHONBREAKPOINT<span style="color:#f92672">=</span>ipdb.set_trace<span style="color:#e6db74">`</span>
-</code></pre></div><p>in <code>~/.bash_profile</code> (following <a href="https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/">this advice</a>).
+</code></pre></div><p>in <code>~/.bash_profile</code> (following
+<a href="https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/">this advice</a>).
 However, this doesn&rsquo;t play nicely with pytest&rsquo;s output capturing.</p>
-<p>Pytest has a useful feature where <a href="https://docs.pytest.org/en/stable/usage.html#setting-breakpoints">it disables output capturing if <code>breakpoint</code>
-is called during test
-execution</a>,
+<p>Pytest has a useful feature where
+<a href="https://docs.pytest.org/en/stable/usage.html#setting-breakpoints">it disables output capturing if <code>breakpoint</code> is called during test execution</a>,
 which allows access to the debugger prompt. However, this only works if
 <code>PYTHONBREAKPOINT</code> is unset. If you have <code>PYTHONBREAKPOINT</code> set to a non-empty
 value, then you need to use pytest&rsquo;s

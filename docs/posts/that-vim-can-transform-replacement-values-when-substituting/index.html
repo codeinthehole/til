@@ -65,21 +65,23 @@ value when performing a search and replace.</p>
 the pattern ends of <code>\E</code> is encountered). So running:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:%<span style="color:#a6e22e">s</span><span style="color:#e6db74">/name = &#34;\(.*\)&#34;/</span><span style="color:#a6e22e">upper_case_name</span> = <span style="color:#e6db74">&#34;\U\1&#34;</span>/<span style="color:#a6e22e">g</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>on:</p>
-<pre tabindex="0"><code>name = &quot;Alan&quot;
-name = &quot;Barry&quot;
-name = &quot;Callum&quot;
-</code></pre><p>will result in:</p>
-<pre tabindex="0"><code>upper_case_name = &quot;ALAN&quot;
-upper_case_name = &quot;BARRY&quot;
-upper_case_name = &quot;CALLUM&quot;
-</code></pre><p>Some useful transformations to be aware of:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">name = &#34;Alan&#34;
+name = &#34;Barry&#34;
+name = &#34;Callum&#34;
+</code></pre></div><p>will result in:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">upper_case_name = &#34;ALAN&#34;
+upper_case_name = &#34;BARRY&#34;
+upper_case_name = &#34;CALLUM&#34;
+</code></pre></div><p>Some useful transformations to be aware of:</p>
 <ul>
 <li><code>\u</code>: Next character made upper case.</li>
 <li><code>\U</code>: Following characters made upper case (until <code>\E</code>).</li>
 <li><code>\l</code>: Next character made lower case.</li>
 <li><code>\L</code>: Following characters made lower case (until <code>\E</code>).</li>
 </ul>
-<p>See <a href="http://vimdoc.sourceforge.net/htmldoc/change.html#sub-replace-special"><code>:help sub-replace-special</code></a> for more.</p>
+<p>See
+<a href="http://vimdoc.sourceforge.net/htmldoc/change.html#sub-replace-special"><code>:help sub-replace-special</code></a>
+for more.</p>
 </article>
 
         </main>

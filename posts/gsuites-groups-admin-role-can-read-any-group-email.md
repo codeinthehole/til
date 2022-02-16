@@ -16,7 +16,7 @@ messages contain sensitive information (e.g. HR or payroll).
 A Groups Admin can browse group messages by visiting the appropriate
 conversation page:
 
-```
+```txt
 https://groups.google.com/a/$ORG_DOMAIN/g/$GROUP_NAME
 ```
 

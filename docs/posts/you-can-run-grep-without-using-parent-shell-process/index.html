@@ -59,7 +59,8 @@
                 On <time>November 4th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>You can run <code>:grep</code> without using parent shell process</h1>
-        </header><p>Using <a href="">ripgrep</a> as a <code>:grep</code> command can be configured with:</p>
+        </header><p>Using <a href="https://github.com/BurntSushi/ripgrep">ripgrep</a> as a <code>:grep</code> command can
+be configured with:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-viml" data-lang="viml"><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">grepprg</span>=<span style="color:#a6e22e">rg</span>\ --<span style="color:#a6e22e">vimgrep</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>This is a big upgrade in performance and functionality but it has a couple of
 downsides:</p>
@@ -68,8 +69,8 @@ downsides:</p>
 <li>Results are printed in the parent shell, clogging it up.</li>
 <li>Getting back to Vim requires hitting enter.</li>
 </ul>
-<p>These problems can be avoided by using <code>:cgetexpr</code> to populate the quickfix list via
-a command executed with <code>system</code>. Here&rsquo;s a custom <code>:Grep</code> command that does
+<p>These problems can be avoided by using <code>:cgetexpr</code> to populate the quickfix list
+via a command executed with <code>system</code>. Here&rsquo;s a custom <code>:Grep</code> command that does
 exactly that.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-viml" data-lang="viml"><span style="color:#66d9ef">function</span>! <span style="color:#a6e22e">Grep</span>(...)<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">return</span> <span style="color:#a6e22e">system</span>(<span style="color:#a6e22e">join</span>([&amp;<span style="color:#a6e22e">grepprg</span>] + [<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">a</span>:<span style="color:#ae81ff">000</span>, <span style="color:#e6db74">&#39; &#39;</span>)], <span style="color:#e6db74">&#39; &#39;</span>))<span style="color:#960050;background-color:#1e0010">
@@ -86,7 +87,8 @@ exactly that.</p>
 </span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">QuickFixCmdPost</span> <span style="color:#a6e22e">cgetexpr</span> <span style="color:#a6e22e">cwindow</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">QuickFixCmdPost</span> <span style="color:#a6e22e">lgetexpr</span> <span style="color:#a6e22e">lwindow</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">augroup</span> <span style="color:#a6e22e">END</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>Credit to Romain Lafourcade, who wrote this up in <a href="https://gist.github.com/romainl/56f0c28ef953ffc157f36cc495947ab3">&ldquo;Instant grep + quickfix&rdquo;</a>.
+</span></code></pre></div><p>Credit to Romain Lafourcade, who wrote this up in
+<a href="https://gist.github.com/romainl/56f0c28ef953ffc157f36cc495947ab3">&ldquo;Instant grep + quickfix&rdquo;</a>.
 The command I use is slightly different to his as:</p>
 <ul>
 <li>

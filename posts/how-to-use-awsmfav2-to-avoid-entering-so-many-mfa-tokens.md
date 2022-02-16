@@ -29,7 +29,7 @@ credentials fetched from AWS STS.
 
 In practice, this requires you to run:
 
-```
+```sh
 aws-mfa --mfa-profile parent-account --token $TOKEN
 ```
 

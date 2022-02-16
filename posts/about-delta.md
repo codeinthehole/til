@@ -16,7 +16,7 @@ in the terminal. It provides things like:
 After `brew install git-delta`, you can configure Git to use it via something
 like:
 
-```
+```dosini
 # ~/.gitconfig
 
 [delta]
