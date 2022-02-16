@@ -15,10 +15,7 @@ to see, for example, the best tweets from a given account. It works really well
 
 Examples:
 
-- https://twitter.com/search?q=from%3Afrankieboyle%20min_faves%3A10000
-- https://twitter.com/search?q=from%3Afesshole%20min_faves%3A400
+- <https://twitter.com/search?q=from%3Afrankieboyle%20min_faves%3A10000>
+- <https://twitter.com/search?q=from%3Afesshole%20min_faves%3A400>
 
 There's also a `min_retweets` filter which can be used for a similar purpose.
-
-
-

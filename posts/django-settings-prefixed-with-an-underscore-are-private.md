@@ -7,23 +7,22 @@ tags: ["Django", "Python"]
 As in: you can't access them from outside the settings module.
 
 If you have:
+
 ```py
 _FOO = 1
 ```
+
 in your settings module, then this test:
+
 ```py
 from django.conf import settings
 
 def test_private_settings_are_inaccessible():
     assert settings._FOO == 1
 ```
+
 will fail with error:
+
 ```text
 AttributeError: 'Settings' object has no attribute '_FOO'
 ```
-
-
-
-
-
-

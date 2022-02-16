@@ -11,5 +11,4 @@ For example:
 The `T` metaphor indicates expertise in a single field as well as the ability to
 collaborate across disciplines. Quite objectionable.
 
-More at: https://en.wikipedia.org/wiki/T-shaped_skills
-
+More at: <https://en.wikipedia.org/wiki/T-shaped_skills>

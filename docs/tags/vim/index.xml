@@ -83,7 +83,7 @@ This is a special form of the :N,Mbdelete ranged buffer delete command where % i
       
       <guid>https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/</guid>
       <description>Use something like:
-$ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits.</description>
+echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits.</description>
     </item>
     
     <item>
@@ -211,7 +211,7 @@ $ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev
       
       <guid>https://til.codeinthehole.com/posts/vim-recommends-using-emacsstyle-key-bindings-in-command-mode/</guid>
       <description>As in, using these command-mode maps:
-&amp;#34; start of line :cnoremap &amp;lt;C-A&amp;gt;	&amp;lt;Home&amp;gt; &amp;#34; back one character :cnoremap &amp;lt;C-B&amp;gt;	&amp;lt;Left&amp;gt; &amp;#34; delete character under cursor :cnoremap &amp;lt;C-D&amp;gt;	&amp;lt;Del&amp;gt; &amp;#34; end of line :cnoremap &amp;lt;C-E&amp;gt;	&amp;lt;End&amp;gt; &amp;#34; forward one character :cnoremap &amp;lt;C-F&amp;gt;	&amp;lt;Right&amp;gt; &amp;#34; recall newer command-line :cnoremap &amp;lt;C-N&amp;gt;	&amp;lt;Down&amp;gt; &amp;#34; recall previous (older) command-line :cnoremap &amp;lt;C-P&amp;gt;	&amp;lt;Up&amp;gt; &amp;#34; back one word :cnoremap &amp;lt;Esc&amp;gt;&amp;lt;C-B&amp;gt;	&amp;lt;S-Left&amp;gt; &amp;#34; forward one word :cnoremap &amp;lt;Esc&amp;gt;&amp;lt;C-F&amp;gt;	&amp;lt;S-Right&amp;gt; See http://vimdoc.</description>
+&amp;#34; start of line :cnoremap &amp;lt;C-A&amp;gt; &amp;lt;Home&amp;gt; &amp;#34; back one character :cnoremap &amp;lt;C-B&amp;gt; &amp;lt;Left&amp;gt; &amp;#34; delete character under cursor :cnoremap &amp;lt;C-D&amp;gt; &amp;lt;Del&amp;gt; &amp;#34; end of line :cnoremap &amp;lt;C-E&amp;gt; &amp;lt;End&amp;gt; &amp;#34; forward one character :cnoremap &amp;lt;C-F&amp;gt; &amp;lt;Right&amp;gt; &amp;#34; recall newer command-line :cnoremap &amp;lt;C-N&amp;gt; &amp;lt;Down&amp;gt; &amp;#34; recall previous (older) command-line :cnoremap &amp;lt;C-P&amp;gt; &amp;lt;Up&amp;gt; &amp;#34; back one word :cnoremap &amp;lt;Esc&amp;gt;&amp;lt;C-B&amp;gt; &amp;lt;S-Left&amp;gt; &amp;#34; forward one word :cnoremap &amp;lt;Esc&amp;gt;&amp;lt;C-F&amp;gt; &amp;lt;S-Right&amp;gt; See http://vimdoc.</description>
     </item>
     
     <item>

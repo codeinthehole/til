@@ -33,8 +33,3 @@ BOOLEAN_TRUE_STRINGS = ('true', 'on', 'ok', 'y', 'yes', '1')
 
 Since this differs from how Python casts strings to booleans, it is somewhat
 surprising.
-
-
-
-
-

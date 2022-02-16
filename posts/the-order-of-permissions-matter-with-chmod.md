@@ -7,7 +7,6 @@ tags: ["Unix"]
 As in these two commands behave differently:
 
 ```bash
-$ chmod -R g+X,g-wx .  # DOESN'T set group executable bit on folders
-$ chmod -R g-wx,g+X .  # DOES set group executable bit on folders
+chmod -R g+X,g-wx .  # DOESN'T set group executable bit on folders
+chmod -R g-wx,g+X .  # DOES set group executable bit on folders
 ```
-

@@ -24,4 +24,3 @@ Note, `:make` will pass on any command-line options so you can do
 things like `:make -t B112` to work though just one type of warning.
 
 You can do a similar thing for linting errors by setting `makeprg=flake8`.
-

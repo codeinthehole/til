@@ -7,7 +7,7 @@ tags: ["Vim", "ripgrep", "fd"]
 Use something like:
 
 ```bash
-$ echo file1 file2 | xargs -o vim
+echo file1 file2 | xargs -o vim
 ```
 
 The `-o` option for `xargs` re-opens `stdin` as `/dev/tty` (rather than the
@@ -29,4 +29,3 @@ This instructs Vim to open all Python files that create a `logger` instance but
 don't actually use it.
 
 [argument list]: https://vimhelp.org/editing.txt.html#argument-list
-

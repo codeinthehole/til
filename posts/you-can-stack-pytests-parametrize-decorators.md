@@ -29,7 +29,4 @@ test_parameterize.py::test_cartesian_product[6-2] PASSED
 test_parameterize.py::test_cartesian_product[6-3] PASSED
 ```
 
-See https://docs.pytest.org/en/stable/parametrize.html
-
-
-
+See <https://docs.pytest.org/en/stable/parametrize.html>

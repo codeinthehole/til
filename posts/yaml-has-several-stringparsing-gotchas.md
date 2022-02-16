@@ -45,4 +45,3 @@ high: 20:100
 Related:
 
 - [YAML 1.1 spec](https://yaml.org/type/float.html)
-

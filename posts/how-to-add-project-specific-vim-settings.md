@@ -32,4 +32,3 @@ source control). See:
 - [Vim tips wiki: Project specific settings](https://vim.fandom.com/wiki/Project_specific_settings)
 
 - [Hashrocket TIL: Matching on directories for Vim's autocmd](https://til.hashrocket.com/posts/720a6a05f9-matching-on-directories-for-vims-autocmd)
-

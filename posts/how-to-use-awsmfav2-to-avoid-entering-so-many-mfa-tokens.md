@@ -26,9 +26,11 @@ need to do this by using the `aws-mfa-v2` utility. This uses your long-lived AWS
 account to create temporary profiles with credentials fetched from AWS STS.
 
 In practice, this requires you to run:
+
 ```
-$ aws-mfa --mfa-profile parent-account --token $TOKEN
+aws-mfa --mfa-profile parent-account --token $TOKEN
 ```
+
 once a day to create/update a temporary AWS profile (called, in this example,
 `parent-account-mfa`).
 
@@ -47,5 +49,3 @@ source_profile = parent-account-mfa
 
 Note the updated `source_profile` value that refers to a profile only defined in
 `~/.aws/credentials`.
-
-

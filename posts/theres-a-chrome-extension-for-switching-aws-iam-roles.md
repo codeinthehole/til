@@ -12,4 +12,3 @@ this extension gives doesn't limit you.
 
 This is useful if you're using AWS Organizations and have lots of child AWS
 accounts that you need to assume roles into.
-

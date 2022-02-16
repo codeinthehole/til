@@ -7,7 +7,3 @@ tags: ["Chrome"]
 Find it at [chrome://flags](chrome://flags).
 
 {{< figure src="/images/chrome-flags.png" title="" caption="" alt="Chrome flags" >}}
-
-
-
-

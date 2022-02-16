@@ -19,7 +19,9 @@ class Command(BaseCommand):
     def handle(self, name: str, *args, **options) -> None:
         ...
 ```
+
 but it does with error:
+
 ```
 Signature of "handle" incompatible with supertype "BaseCommand" [override]
 ```
@@ -71,5 +73,3 @@ The former is slightly safer as the ignore approach may cause issues if the type
 signature of `BaseCommand.handle` changes in a future Django version.
 
 Accurate as of Django v3.1, Django-Stubs v1.8 and Mypy v0.812.
-
-

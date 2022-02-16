@@ -13,7 +13,7 @@ expect a list of file paths.
 To strip out everything except the changed paths, use:
 
 ```sh
-$ git log --name-only --pretty=format:
+git log --name-only --pretty=format:
 ```
 
 Which is useful enough to warrant an alias in `~/.gitconfig`:
@@ -27,7 +27,7 @@ Then you can do things like find all the files changed in a commit that contain
 a given pattern:
 
 ```sh
-$ git filepaths | xargs rg -l "$QUERY"
+git filepaths | xargs rg -l "$QUERY"
 ```
 
 Further, if you want to find all the changed files where a given pattern was
@@ -35,13 +35,13 @@ _removed_ in a commit, you can use the [`-S`](https://git-scm.com/docs/git-show#
 option of `git log` to search the added and removed lines for a pattern:
 
 ```sh
-$ git filepaths -S "$QUERY"
+git filepaths -S "$QUERY"
 ```
 
 Which we can pipe to Vim so we can edit the identified files:
 
 ```sh
-$ git filepaths -S "$QUERY" | xargs -o vim
+git filepaths -S "$QUERY" | xargs -o vim
 ```
 
 You could also do this without leaving Vim by loading the files into the
@@ -53,4 +53,3 @@ argument list:
 
 See my post on [Vim's lists](https://codeinthehole.com/tips/vim-lists/) if
 you're into this kind of thing.
-

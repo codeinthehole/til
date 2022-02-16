@@ -36,7 +36,3 @@ Terraform](https://z0mbix.io/2016/09/04/ctag-support-for-terraform/) although
 the snippet above is a slightly amended version from the
 [vim-terraform-completion](https://github.com/juliosueiras/vim-terraform-completion/blob/master/ctags/terraform.ctags)
 repo.
-
-
-
-

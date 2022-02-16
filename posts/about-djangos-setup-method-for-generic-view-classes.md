@@ -30,6 +30,3 @@ To date, I've been overriding `dispatch` to do this - didn't realise there was a
 dedicated method.
 
 More in the [Django view docs](https://docs.djangoproject.com/en/2.2/ref/class-based-views/base/#django.views.generic.base.View.setup)
-
-
-

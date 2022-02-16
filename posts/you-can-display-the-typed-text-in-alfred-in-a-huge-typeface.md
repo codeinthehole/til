@@ -6,10 +6,10 @@ tags: ["Alfred"]
 
 By pressing `cmd + L` after typing the text.
 
-The text is so large, someone across the room can read it. 
+The text is so large, someone across the room can read it.
 
 {{< figure src="/images/alfred-large-text.png" caption="" alt="Alfred\'s large text" >}}
 
 See?
 
-From https://news.ycombinator.com/item?id=24391899
+From <https://news.ycombinator.com/item?id=24391899>

@@ -13,6 +13,3 @@ As noted in [this Google Groups
 conversation](https://groups.google.com/g/iterm2-discuss/c/sVjKI3VqRcs), "Cursor
 Boost" could more accurately be called "Dim everything except the
 Cursor" and avoid this confusion.
-
-
-

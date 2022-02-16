@@ -67,7 +67,7 @@ a desktop notification when a long-running processes has completed:</p>
 </span><span style="color:#e6db74">    &#34;$(history | tail -n1 | sed -e &#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;s/^\s*[0-9]\+\s*//;s/[;&amp;|]\s*alert$//&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;)&#34;&#39;</span>
 </code></pre></div><p>(Command wrapped for clarity).</p>
 <p>Example usage:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ./run_test_suite.sh ; alert
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run_test_suite.sh ; alert
 </code></pre></div><p>It uses the exit code of the previous process <code>$?</code> to determine the message and
 icon displayed. As you can see, it uses <a href="notifysend"><code>notify-send</code></a> to create the alert — <a href="explanation">here&rsquo;s a more detailed explanation of how it works</a>.</p>
 <p>You can create a macOS equivalent with the Homebrew-installed <a href="https://formulae.brew.sh/formula/terminal-notifier"><code>terminal-notifier</code></a>:</p>

@@ -23,4 +23,3 @@ excluding the current post:
 ```
 
 Tested in Hugo v0.72.0.
-

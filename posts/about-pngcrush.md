@@ -8,10 +8,9 @@ It's an image optimizer for PNG files. It's available via Homebrew for MacOS and
 works like:
 
 ```bash
-$ pngcrush -ow screenshot.png
+pngcrush -ow screenshot.png
 ```
 
 where `-ow` means the original image file will be overwritten.
 
 I've integrated it into the `til_screenshot.sh` helper script used by this repo.
-

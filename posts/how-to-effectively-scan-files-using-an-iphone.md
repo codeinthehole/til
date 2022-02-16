@@ -12,16 +12,15 @@ be quite large, possibly too large for Gmail's 25Mb attachment limit. In that ca
 `ps2pdf` to reduce its file size:
 
 ```sh
-$ ps2pdf scanned-file.pdf smaller-file.pdf
+ps2pdf scanned-file.pdf smaller-file.pdf
 ```
 
 `ps2pdf` is provided by the [`ghostscript` Homebrew
 package](https://formulae.brew.sh/formula/ghostscript) installed with:
 
 ```
-$ brew install ghostscript
+brew install ghostscript
 ```
 
 This has worked well in my experience but there are alternatives on [this Stack
 Overflow page](https://askubuntu.com/questions/113544/how-can-i-reduce-the-file-size-of-a-scanned-pdf-file).
-

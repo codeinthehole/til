@@ -20,16 +20,10 @@ Better is to use `git diff` to generate patch files and apply these with `patch`
 Run this for each filepath modified in your PR but deleted in `master`:
 
 ```
-$ git show REBASE_HEAD $OLD_FILEPATH | patch $NEW_FILEPATH
+git show REBASE_HEAD $OLD_FILEPATH | patch $NEW_FILEPATH
 ```
 
 Note, `REBASE_HEAD` is a useful pseudo-ref for the conflicting commit from the
 ongoing rebase.
 
 If you're interested, I've written previously about [resolving Git conflicts during a Git rebase](https://codeinthehole.com/guides/resolving-conflicts-during-a-git-rebase/).
-
-
-
-
-
-

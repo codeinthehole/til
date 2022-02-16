@@ -41,17 +41,13 @@ The section number is in parentheses. These can be used to open a man page from
 a particular section. Use:
 
 ```bash
-$ man 1 passwd
+man 1 passwd
 ```
 
 to learn about how to use the `passwd` command and:
 
 ```bash
-$ man 5 passwd
+man 5 passwd
 ```
 
 to learn about the format of the password file.
-
-
-
-

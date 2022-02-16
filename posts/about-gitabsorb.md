@@ -9,14 +9,12 @@ changes, it automates the process of identifying which commit to squash each
 change into. The workflow is simply:
 
 ```bash
-$ vim  # address code-review feedback
-$ git add $CHANGED_FILES
-$ git absorb --and-rebase
+vim  # address code-review feedback
+git add $CHANGED_FILES
+git absorb --and-rebase
 ```
 
 There's an excellent [elevator pitch](https://github.com/tummychow/git-absorb#elevator-pitch) on
 the project README.
 
 Highly recommended.
-
-

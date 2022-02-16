@@ -14,5 +14,4 @@ installed with `pip`:
  ...
 ```
 
-See https://github.com/raimon49/pip-licenses
-
+See <https://github.com/raimon49/pip-licenses>

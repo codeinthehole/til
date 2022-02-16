@@ -17,5 +17,3 @@ warn_unreachable = true
 Further reading:
 
 - [Python Type Hints - How to use Mypy’s unreachable code detection](https://adamj.eu/tech/2021/05/19/python-type-hints-mypy-unreachable-code-detection/)
-
-

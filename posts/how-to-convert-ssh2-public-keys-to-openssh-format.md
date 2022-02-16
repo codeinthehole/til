@@ -22,12 +22,11 @@ could not find expected ':'
 To convert, use:
 
 ```bash
-$ ssh-keygen -i -f ssh2.pub > openssh.pub
+ssh-keygen -i -f ssh2.pub > openssh.pub
 ```
 
 For the record, to convert the other way, use:
+
 ```bash
-$ ssh-keygen -e -f openssh.pub > ssh2.pub
+ssh-keygen -e -f openssh.pub > ssh2.pub
 ```
-
-

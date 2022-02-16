@@ -6,7 +6,7 @@
 
         <meta name="description" content="
     Doing this:
-$ readonly myvar=1 means that $myvar can’t have its value changed within the global scope. ...
+readonly myvar=1 means that $myvar can’t have its value changed within the global scope. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +22,7 @@ $ readonly myvar=1 means that $myvar can’t have its value changed within the g
 <meta property="og:url" content="https://til.codeinthehole.com/posts/about-readonly-bash-variables/" />
 <meta property="og:title" content="TIL About &#39;readonly&#39; Bash variables — David Winterbottom" />
 <meta property="og:description" content="Doing this:
-$ readonly myvar=1 means that $myvar can&rsquo;t have its value changed within the global scope. [Reading time: 1 minute]" />
+readonly myvar=1 means that $myvar can&rsquo;t have its value changed within the global scope. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
@@ -62,7 +62,7 @@ $ readonly myvar=1 means that $myvar can&rsquo;t have its value changed within t
             </div>
             <h1>About <code>readonly</code> Bash variables</h1>
         </header><p>Doing this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ readonly myvar<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">readonly myvar<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 </code></pre></div><p>means that <code>$myvar</code> can&rsquo;t have its value changed within the global scope.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ myvar<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
 -bash: myvar: readonly variable

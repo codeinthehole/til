@@ -17,4 +17,3 @@ Further reading:
 
 - There's some useful info in the ["Comparing buffers with vimdiff"](http://vimcasts.org/episodes/comparing-buffers-with-vimdiff/) screencast.
 - [`:help :diffthis`](http://vimdoc.sourceforge.net/htmldoc/diff.html#:diffthis)
-

@@ -23,4 +23,3 @@ True
 ```
 
 See the [Python docs on comparisons for more details](https://docs.python.org/3/reference/expressions.html#comparisons).
-

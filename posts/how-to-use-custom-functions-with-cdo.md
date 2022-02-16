@@ -51,9 +51,11 @@ endfunction
 ```
 
 After `source`-ing the function I ran:
+
 ```vim
 :cdo call FixF841Error()
 ```
+
 to resolve the majority of the errors.
 
 Would have taken all day without this.

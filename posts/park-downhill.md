@@ -4,13 +4,13 @@ date = "2020-07-21"
 tags = ["Productivity"]
 +++
 
-From https://news.ycombinator.com/item?id=23118940
+From <https://news.ycombinator.com/item?id=23118940>
 
 > Before putting a project or incomplete task away, make notes of what the next
 > thing was that you were going to work on. This lets you bypass that 10 minute
 > orientation getting back into the project the next time you pick it up.
 
-This is something I've done for a while. 
+This is something I've done for a while.
 
 There's various other ways of doing the same thing, such as:
 

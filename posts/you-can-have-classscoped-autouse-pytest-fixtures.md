@@ -37,8 +37,4 @@ class TestSomethingAboutTimezones:
 You probably wouldn't use it for mocking since the `mock.patch` decorators
 already work on classes but there are use-cases where it would be helpful.
 
-Docs on the `autouse` option: https://docs.pytest.org/en/stable/fixture.html#autouse-fixtures-fixtures-you-don-t-have-to-request
-
-
-
-
+Docs on the `autouse` option: <https://docs.pytest.org/en/stable/fixture.html#autouse-fixtures-fixtures-you-don-t-have-to-request>

@@ -10,11 +10,10 @@ MacVim ships with its own help files, accessed via:
 :help macvim
 ```
 
-These provide lots of useful info on things like: 
+These provide lots of useful info on things like:
 
 - The differences between MacVim and other Vim variants
 - MacVim-specific preferences
 - The `macvim` color scheme
 
 and much more.
-

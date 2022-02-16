@@ -5,9 +5,11 @@ tags: ["Testing", "pytest", "Python"]
 ---
 
 To ensure `breakpoint()` triggers [`ipdb`](https://github.com/gotcha/ipdb) as my default debugger, I used to set:
+
 ```bash
 PYTHONBREAKPOINT=ipdb.set_trace`
 ```
+
 in `~/.bash_profile` (following [this advice](https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/)).
 However, this doesn't play nicely with pytest's output capturing.
 

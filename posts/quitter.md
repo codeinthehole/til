@@ -7,5 +7,3 @@ There's a MacOS app called [Quitter](https://marco.org/apps) which will automati
 some period of inactivity.
 
 {{< figure src="/images/quitter-app.png" caption="" alt="Quitter app" >}}
-
-

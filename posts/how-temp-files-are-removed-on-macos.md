@@ -40,4 +40,3 @@ Sources:
 - [Stack Overflow: "In MacOS, how often is `/tmp` deleted?"](https://superuser.com/a/187105)
 - [What is `/var/folders`?](http://www.magnusviri.com/what-is-var-folders.html)
 - [`periodic-wrapper` man page](https://www.unix.com/man-page/osx/8/periodic-wrapper)
-

@@ -14,4 +14,4 @@ Anything that you might want to insert into text regularly.
 
 {{< figure src="/images/alfreds-snippets-ui.png" title="" caption="" alt="alfreds snippets ui" >}}
 
-See https://www.alfredapp.com/help/features/snippets/
+See <https://www.alfredapp.com/help/features/snippets/>

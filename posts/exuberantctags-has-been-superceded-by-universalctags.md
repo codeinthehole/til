@@ -16,9 +16,3 @@ On MacOS, install Universal ctags with:
 ```bash
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 ```
-
-
-
-
-
-

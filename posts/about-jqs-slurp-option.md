@@ -21,6 +21,3 @@ $ cat workspaces.jsonl | jq --slurp '[.[].workspace_name] | unique'
 
 where `[.[].workspace_name]` creates an array of all `.workspace_name` keys from
 each object in the JSONL stream.
-
-
-

@@ -7,9 +7,8 @@ tags: ["Git"]
 For a given commit `$SHA`, use:
 
 ```sh
-$ git diff --shortstat `git hash-object -t tree /dev/null`..$SHA
+git diff --shortstat `git hash-object -t tree /dev/null`..$SHA
 ```
 
 which works as `git hash-object -t tree /dev/null` computes the hash of the
 empty tree.
-

@@ -14,11 +14,10 @@ Be careful though as this allows the person to read _any_ message sent to _any_ 
 messages contain sensitive information (e.g. HR or payroll).
 
 A Groups Admin can browse group messages by visiting the appropriate conversation page:
+
 ```
 https://groups.google.com/a/$ORG_DOMAIN/g/$GROUP_NAME
 ```
 
 A Groups Admin has access to such pages even if they aren't an
 owner/manager/member of the group.
-
-

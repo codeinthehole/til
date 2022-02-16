@@ -14,4 +14,3 @@ True
 
 Apparently, [this is not a bug](https://bugs.python.org/issue28878) but it is
 certainly confusing.
-

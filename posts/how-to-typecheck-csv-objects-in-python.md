@@ -38,4 +38,3 @@ import _csv
 def generate_report(writer: '_csv._writer'):
     pass
 ```
-

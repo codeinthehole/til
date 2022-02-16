@@ -7,4 +7,3 @@ tags: ["Slack"]
 For example: `/slackfont Comic Sans MS` or even `/slackfont Wingdings`.
 
 To reset to the default font, run `/slackfont` without an argument.
-

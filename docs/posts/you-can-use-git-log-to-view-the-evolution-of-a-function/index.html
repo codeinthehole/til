@@ -66,14 +66,14 @@ evolution of a line range or function:</p>
 </figure>
 
 <p>Usage is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git log -L :&lt;funcname&gt;:&lt;file&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log -L :&lt;funcname&gt;:&lt;file&gt;
 </code></pre></div><p>where:</p>
 <ul>
 <li><code>&lt;funcname&gt;</code> is a regular expression to match the function name.</li>
 <li><code>&lt;file&gt;</code> is the path to the file where the function lives.</li>
 </ul>
 <p>Example usage:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git log -L :get_locale:octoenergy/utils/workingdays.py
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log -L :get_locale:octoenergy/utils/workingdays.py
 </code></pre></div><p>Depending on what language you&rsquo;re working with, you may need to adjust you local
 <code>~/.gitattributes</code> file to ensure Git can determine the patch hunk headers.</p>
 <p>More in <a href="https://git-scm.com/docs/git-log/#Documentation/git-log.txt--Lltfuncnamegtltfilegt">the official git docs</a>.</p>

@@ -6,10 +6,10 @@ tags: ["OpenSSH"]
 
 From `man ssh_config`:
 
->  Host    Restricts the following declarations (up to the next Host or Match
->          keyword) to be only for those hosts that match one of the patterns
->          given after the keyword.  If more than one pattern is provided,
->          they should be separated by whitespace.
+> Host    Restricts the following declarations (up to the next Host or Match
+> keyword) to be only for those hosts that match one of the patterns
+> given after the keyword.  If more than one pattern is provided,
+> they should be separated by whitespace.
 
 and so you can do this:
 
@@ -23,6 +23,3 @@ Host 10.0.20.* 10.0.28.* 10.0.29.* 10.0.30.*
 ```
 
 where multiple host patterns are used for one block.
-
-
-

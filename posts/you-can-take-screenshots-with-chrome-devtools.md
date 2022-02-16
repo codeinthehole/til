@@ -17,5 +17,3 @@ screen but there's two new things that Chrome Commands can do:
 
 2. `Capture node screenshot` — Take a screenshot of the currently selected
    element in the DOM (i.e. selected in the "Elements" tab).
-
-

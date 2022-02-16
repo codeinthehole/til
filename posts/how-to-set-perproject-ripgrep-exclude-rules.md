@@ -12,6 +12,3 @@ This also works for [`fzf`](https://github.com/junegunn/fzf).
 
 This ensures Vim's `:grep` and `:Files` (via
 [`fzf.vim`](https://github.com/junegunn/fzf.vim)) commands don't find irrelevant files.
-
-
-

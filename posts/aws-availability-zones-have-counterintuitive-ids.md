@@ -23,6 +23,3 @@ eu-west-2c = euw2-az1
 ```
 
 As you can see `a,b,c` doesn't map onto `1,2,3`.
-
-
-

@@ -29,5 +29,3 @@ def main() -> None:
 
 Hence it's valuable to annotate `None` return types to ensure `mypy` type-checks
 them.
-
-

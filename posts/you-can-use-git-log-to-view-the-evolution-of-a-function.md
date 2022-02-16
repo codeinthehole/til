@@ -12,8 +12,9 @@ evolution of a line range or function:
 Usage is:
 
 ```bash
-$ git log -L :<funcname>:<file>
+git log -L :<funcname>:<file>
 ```
+
 where:
 
 - `<funcname>` is a regular expression to match the function name.
@@ -22,15 +23,10 @@ where:
 Example usage:
 
 ```bash
-$ git log -L :get_locale:octoenergy/utils/workingdays.py
+git log -L :get_locale:octoenergy/utils/workingdays.py
 ```
 
 Depending on what language you're working with, you may need to adjust you local
 `~/.gitattributes` file to ensure Git can determine the patch hunk headers.
 
 More in [the official git docs](https://git-scm.com/docs/git-log/#Documentation/git-log.txt--Lltfuncnamegtltfilegt).
-
-
-
-
-

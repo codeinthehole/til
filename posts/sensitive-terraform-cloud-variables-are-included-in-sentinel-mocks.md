@@ -31,8 +31,3 @@ but I hadn't expected the wholespace variables to be included.
 
 Moral of the story: don't naively commit a Sentinel mock file, downloaded from
 Terraform Cloud, into source control.
-
-
-
-
-

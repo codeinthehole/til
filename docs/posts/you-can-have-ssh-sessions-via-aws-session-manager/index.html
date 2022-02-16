@@ -63,13 +63,13 @@
 <pre tabindex="0"><code class="language-ssh" data-lang="ssh">host i-* mi-*
     ProxyCommand sh -c &quot;aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'&quot;
 </code></pre><p>This allows an SSH session to be started with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ssh $INSTANCE_ID
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh $INSTANCE_ID
 </code></pre></div><p>If you work with more than one AWS account, you can use a pseudo host string to
 indicate which AWS profile to use:</p>
 <pre tabindex="0"><code class="language-ssh" data-lang="ssh">Host i-*.*
     ProxyCommand sh -c &quot;aws --profile=$(echo %h | cut -d'.' -f2) ssm start-session --target $(echo %h | cut -d'.' -f1) --document-name AWS-StartSSHSession --parameters 'portNumber=%p'&quot;
 </code></pre><p>where we pass hosts in the form <code>$INSTANCE_ID.$PROFILE_NAME</code>. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ssh i-0c47f1891eb987860.staging
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh i-0c47f1891eb987860.staging
 </code></pre></div><p>Note that commands aren&rsquo;t logged for SSH sessions.</p>
 <p>For more see the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started-enable-ssh-connections.html">AWS SSM docs</a>.</p>
 </article>

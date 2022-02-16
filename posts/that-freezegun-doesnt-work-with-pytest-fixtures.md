@@ -54,7 +54,3 @@ def test_freezing_with_pytest_freezegun(current_date):
     today = datetime.date.today()
     assert today == current_date
 ```
-
-
-
-

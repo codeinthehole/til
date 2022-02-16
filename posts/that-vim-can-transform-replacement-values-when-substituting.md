@@ -13,13 +13,17 @@ the pattern ends of `\E` is encountered). So running:
 ```vim
 :%s/name = "\(.*\)"/upper_case_name = "\U\1"/g
 ```
+
 on:
+
 ```
 name = "Alan"
 name = "Barry"
 name = "Callum"
 ```
+
 will result in:
+
 ```
 upper_case_name = "ALAN"
 upper_case_name = "BARRY"
@@ -34,4 +38,3 @@ Some useful transformations to be aware of:
 - `\L`: Following characters made lower case (until `\E`).
 
 See [`:help sub-replace-special`](http://vimdoc.sourceforge.net/htmldoc/change.html#sub-replace-special) for more.
-

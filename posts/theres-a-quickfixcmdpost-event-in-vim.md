@@ -11,7 +11,4 @@ quickfix command populates the error list (e.g. `:make` or `:grep`):
 autocmd QuickFixCmdPost [^l]* cwindow
 ```
 
-Taken from https://gist.github.com/romainl/ce55ce6fdc1659c5fbc0f4224fd6ad29
-
-
-
+Taken from <https://gist.github.com/romainl/ce55ce6fdc1659c5fbc0f4224fd6ad29>

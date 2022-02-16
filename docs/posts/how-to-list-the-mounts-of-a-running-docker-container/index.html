@@ -6,7 +6,7 @@
 
         <meta name="description" content="
     Use docker inspect like so:
-$ docker inspect -f &amp;quot;{{ . ...
+docker inspect -f &amp;quot;{{ . ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +22,7 @@ $ docker inspect -f &amp;quot;{{ . ...
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-list-the-mounts-of-a-running-docker-container/" />
 <meta property="og:title" content="TIL How to list the mounts of a running Docker container — David Winterbottom" />
 <meta property="og:description" content="Use docker inspect like so:
-$ docker inspect -f &#34;{{ . [Reading time: 1 minute]" />
+docker inspect -f &#34;{{ . [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
@@ -62,7 +62,7 @@ $ docker inspect -f &#34;{{ . [Reading time: 1 minute]" />
             </div>
             <h1>How to list the mounts of a running Docker container</h1>
         </header><p>Use <code>docker inspect</code> like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker inspect -f <span style="color:#e6db74">&#34;{{ .Mounts }}&#34;</span> $CONTAINER_ID
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker inspect -f <span style="color:#e6db74">&#34;{{ .Mounts }}&#34;</span> $CONTAINER_ID
 </code></pre></div><p>I used this to determine where a <a href="https://github.com/discourse/discourse_docker">Discourse Docker</a> container was persisting its logs:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker inspect -f <span style="color:#e6db74">&#34;{{ .Mounts }}&#34;</span> <span style="color:#66d9ef">$(</span>docker ps -q --filter<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name=app&#34;</span><span style="color:#66d9ef">)</span>
 <span style="color:#f92672">[{</span>bind  /var/discourse/shared/standalone /shared   true rprivate<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>bind  /var/discourse/shared/standalone/log/var-log /var/log   true rprivate<span style="color:#f92672">}]</span>

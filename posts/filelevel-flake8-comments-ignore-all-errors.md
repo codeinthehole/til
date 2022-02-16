@@ -5,9 +5,11 @@ tags: ["Flake8", "Python"]
 ---
 
 Until today, I was under the impression that including:
+
 ```py
 # flake8: noqa: F401
 ```
+
 at the top of a Python module would ignore all F401 errors in the file.
 
 However that isn't true: the above directive ignores _all_ errors in the file,
@@ -22,4 +24,3 @@ Alternatively you can:
 Related:
 
 - [Flake8 docs on ignoring entire files](https://flake8.pycqa.org/en/3.1.1/user/ignoring-errors.html#ignoring-entire-files)
-

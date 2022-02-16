@@ -53,5 +53,3 @@ default privileges requires a reference to the "target role" that granted these
 permissions in the first place. That was the bit that was tripping me up.
 
 [PostgreSQL docs for `ALTER DEFAULT PRIVILEGES`](https://www.postgresql.org/docs/13/sql-alterdefaultprivileges.html)
-
-

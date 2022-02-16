@@ -32,4 +32,3 @@ $ python -c "
 > " | awk '$2 == "bar" { print $1 }'
 foo
 ```
-

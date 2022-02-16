@@ -74,19 +74,19 @@ Using the stack of error lists that Vim keeps, you can browse your files to
 look for functions and the functions they call.  For example, suppose that you
 have to add an argument to the read_file() function.  You enter this command: &gt;
 
-	:vimgrep /\&lt;read_file\&gt;/ *.c
+ :vimgrep /\&lt;read_file\&gt;/ *.c
 
 You use &#34;:cn&#34; to go along the list of matches and add the argument.  At one
 place you have to get the new argument from a higher level function msg(), and
 need to change that one too.  Thus you use: &gt;
 
-	:vimgrep /\&lt;msg\&gt;/ *.c
+ :vimgrep /\&lt;msg\&gt;/ *.c
 
 While changing the msg() functions, you find another function that needs to
 get the argument from a higher level.  You can again use &#34;:vimgrep&#34; to find
 these functions.  Once you are finished with one function, you can use &gt;
 
-	:colder
+ :colder
 
 to go back to the previous one.
 

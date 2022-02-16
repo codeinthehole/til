@@ -23,7 +23,7 @@ the merge base between A and B is 1.
 This is useful for [rebasing feature branches](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History). This command:
 
 ```sh
-$ git rebase -i `git merge-base head origin/master`
+git rebase -i `git merge-base head origin/master`
 ```
 
 will open the interactive rebase editor with every commit from your feature
@@ -44,6 +44,3 @@ where the `defaultbranch` alias is defined in `~/.gitconfig` as:
 ...
 defaultbranch = "!f() { git symbolic-ref refs/remotes/origin/HEAD | cut -d/ -f4; }; f"
 ```
-
-
-

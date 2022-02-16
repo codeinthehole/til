@@ -8,7 +8,7 @@ tags: ["Vim", "Git"]
 created from the command line. It does this by opening Vim like so:
 
 ```bash
-$ vim --cmd set ft=gitcommit tw=0 wrap lbr .git/PULLREQ_EDITMSG
+vim --cmd set ft=gitcommit tw=0 wrap lbr .git/PULLREQ_EDITMSG
 ```
 
 (As of Hub 2.14.2 at least).
@@ -18,11 +18,9 @@ pack assigns a file type of `pullrequest` to files named
 `PULLREQ_EDITMSG` and so the `gitcommit` file type that Hub specifies is ignored.
 
 This can be worked around by setting:
+
 ```vim
 let g:polyglot_disabled = ['pullrequest']
 ```
+
 before you load the `vim-polyglot` plugin in your `~/.vimrc` file.
-
-
-
-

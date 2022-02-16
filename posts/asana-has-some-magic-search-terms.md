@@ -12,7 +12,6 @@ side of the project view), you can search for:
 
 {{< figure src="/images/asana-unassigned-tasks.png" title="" caption="" alt="" >}}
 
-Found via https://forum.asana.com/t/search-for-unassigned-tasks/4770
+Found via <https://forum.asana.com/t/search-for-unassigned-tasks/4770>
 
 Quite basic functionality really but I almost gave up trying to find it.
-

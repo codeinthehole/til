@@ -127,7 +127,7 @@
       
       <guid>https://til.codeinthehole.com/posts/how-to-count-lines-of-code-in-a-git-repo/</guid>
       <description>For a given commit $SHA, use:
-$ git diff --shortstat `git hash-object -t tree /dev/null`.</description>
+git diff --shortstat `git hash-object -t tree /dev/null`.</description>
     </item>
     
 

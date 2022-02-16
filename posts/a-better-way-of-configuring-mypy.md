@@ -8,7 +8,7 @@ I didn't realise you can put _all_ your config into `setup.cfg` so that you can
 just run:
 
 ```bash
-$ mypy
+mypy
 ```
 
 with (no further options) to run the type checker.
@@ -27,6 +27,3 @@ ignore_missing_imports = True
 [mypy-structlog]
 ignore_missing_imports = True
 ```
-
-
-

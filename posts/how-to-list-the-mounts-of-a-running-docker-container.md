@@ -7,7 +7,7 @@ tags: ["Docker", "Discourse"]
 Use `docker inspect` like so:
 
 ```sh
-$ docker inspect -f "{{ .Mounts }}" $CONTAINER_ID
+docker inspect -f "{{ .Mounts }}" $CONTAINER_ID
 ```
 
 I used this to determine where a [Discourse Docker](https://github.com/discourse/discourse_docker) container was persisting its logs:
@@ -18,5 +18,3 @@ $ docker inspect -f "{{ .Mounts }}" $(docker ps -q --filter="name=app")
 ```
 
 Here you can see logs are mounted from `/var/discourse/shared/standalone/log/var-log`.
-
-

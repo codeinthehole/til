@@ -5,6 +5,7 @@ tags: ["Vim"]
 ---
 
 Vim remembers the previous ten quickfix lists; you can list them with:
+
 ```vim
 :chistory
   error list 1 of 3; 70 errors    :rg --vimgrep --smart-case search
@@ -25,19 +26,19 @@ Using the stack of error lists that Vim keeps, you can browse your files to
 look for functions and the functions they call.  For example, suppose that you
 have to add an argument to the read_file() function.  You enter this command: >
 
-	:vimgrep /\<read_file\>/ *.c
+ :vimgrep /\<read_file\>/ *.c
 
 You use ":cn" to go along the list of matches and add the argument.  At one
 place you have to get the new argument from a higher level function msg(), and
 need to change that one too.  Thus you use: >
 
-	:vimgrep /\<msg\>/ *.c
+ :vimgrep /\<msg\>/ *.c
 
 While changing the msg() functions, you find another function that needs to
 get the argument from a higher level.  You can again use ":vimgrep" to find
 these functions.  Once you are finished with one function, you can use >
 
-	:colder
+ :colder
 
 to go back to the previous one.
 
@@ -47,4 +48,3 @@ this use of ":vimgrep" and "colder" to browse all the locations in a tree-like
 way.  If you do this consistently, you will find all locations without the
 need to write down a "todo" list.
 ```
-

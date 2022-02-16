@@ -11,4 +11,3 @@ Run:
 ```
 
 where `@*` references the system clipboard register.
-

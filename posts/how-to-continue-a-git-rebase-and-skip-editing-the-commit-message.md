@@ -8,7 +8,7 @@ During an interactive rebase, when you've fixed the conflicts or finished editin
 commit you can run:
 
 ```sh
-$ git rebase --continue
+git rebase --continue
 ```
 
 to continue rebasing. Before proceeding, this will open the commit message in your
@@ -21,7 +21,7 @@ editor step is superfluous and a waste of time.
 To skip the editor step entirely you can use:
 
 ```sh
-$ GIT_EDITOR=true git rebase --continue
+GIT_EDITOR=true git rebase --continue
 ```
 
 which replaces the editor program with `true` which simply exits with a zero
@@ -30,4 +30,3 @@ exit code.
 Source: ["How to suppress the editor for `git rebase
 --continue`?"](https://stackoverflow.com/questions/43489971/how-to-suppress-the-editor-for-git-rebase-continue)
 on Stack Overflow.
-

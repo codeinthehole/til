@@ -24,4 +24,3 @@ resource "aws_security_group" "this" {
 
 where the `server-type-b` security group is only included the `security_groups`
 list if `var.include_server_type_b` is truthy.
-

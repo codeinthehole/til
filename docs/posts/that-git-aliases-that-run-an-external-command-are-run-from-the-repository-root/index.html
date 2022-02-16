@@ -77,7 +77,7 @@ directory where the alias was invoked. So my <code>prfiles</code> alias is now:<
 </code></pre></div><p>Note, we define a default value of <code>./</code> as <code>$GIT_PREFIX</code> isn&rsquo;t set when the
 alias is invoked from the repository root.</p>
 <p>Now I can run things like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git prfiles | xargs rg -l <span style="color:#e6db74">&#34;foo&#34;</span> | xargs -o vim
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git prfiles | xargs rg -l <span style="color:#e6db74">&#34;foo&#34;</span> | xargs -o vim
 </code></pre></div><p>to edit all files from my pull request that contain &ldquo;foo&rdquo;.</p>
 <p>The <code>$GIT_PREFIX</code> variable has been available since <a href="https://github.com/git/git/blob/77bd3ea9f54f1584147b594abc04c26ca516d987/Documentation/RelNotes/1.7.6.txt#L29-L31">v1.7.6</a>).
 It&rsquo;s a little hard to find as it isn&rsquo;t mentioned in the <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">current online docs on aliases</a> but is documented in the man pages (try <code>man -K GIT_PREFIX</code>).</p>

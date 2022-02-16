@@ -72,7 +72,7 @@ For example, with this topology:
 
 the merge base between A and B is 1.
 </code></pre><p>This is useful for <a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">rebasing feature branches</a>. This command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git rebase -i <span style="color:#e6db74">`</span>git merge-base head origin/master<span style="color:#e6db74">`</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git rebase -i <span style="color:#e6db74">`</span>git merge-base head origin/master<span style="color:#e6db74">`</span>
 </code></pre></div><p>will open the interactive rebase editor with every commit from your feature
 branch selected.</p>
 <p>If you often rebase commits to create a readable, self-contained history, this

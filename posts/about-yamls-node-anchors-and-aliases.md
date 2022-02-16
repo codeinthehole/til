@@ -20,7 +20,4 @@ twin2:
     first: Paul
 ```
 
-For more, see http://blogs.perl.org/users/tinita/2019/05/reusing-data-with-yaml-anchors-aliases-and-merge-keys.html
-
-
-
+For more, see <http://blogs.perl.org/users/tinita/2019/05/reusing-data-with-yaml-anchors-aliases-and-merge-keys.html>

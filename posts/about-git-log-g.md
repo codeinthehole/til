@@ -15,13 +15,13 @@ The `-G` option can be useful to add a word boundary character to a fixed
 string. So instead of:
 
 ```bash
-$ git log -S my_string
+git log -S my_string
 ```
 
 use:
 
 ```bash
-$ git log -G "\<my_string\>"
+git log -G "\<my_string\>"
 ```
 
 to avoid unwanted matches (like `my_string_with_extra_stuff`).

@@ -13,5 +13,3 @@ As in:
 
 which is different from `parseInt` or `parseFloat` which return `NaN` when given
 `null`.
-
-

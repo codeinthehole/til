@@ -6,5 +6,3 @@ tags: ["Unix"]
 
 Which echos the command to be executed to standard error immediately before it
 is executed.
-
-

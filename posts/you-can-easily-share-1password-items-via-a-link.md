@@ -15,6 +15,3 @@ To get the link from 1Password mini, use the "Pin on Screen" option for an item
 to get access to the share button.
 
 This feature only works with a Business 1Password plan.
-
-
-

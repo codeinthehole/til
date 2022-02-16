@@ -52,5 +52,3 @@ This is noted in the [YAML spec](https://yaml.org/spec/1.2/spec.html#id2759572):
 > human readability and a more complete information model. This is also the case
 > in practice; every JSON file is also a valid YAML file. This makes it easy to
 > migrate from JSON to YAML if/when the additional features are required.
-
-

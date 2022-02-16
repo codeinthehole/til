@@ -21,8 +21,6 @@ $ cat loggly_events.json | jq '.events[].event.json.object_id' \
 object_ids = [4,6,8,2,3,4]
 ```
 
-Here `jq` is used to extract a newline-separated stream of IDs which are 
+Here `jq` is used to extract a newline-separated stream of IDs which are
 joined into a CSV-string using `paste` before being formatted into a Python
 snippet with `printf`.
-
-

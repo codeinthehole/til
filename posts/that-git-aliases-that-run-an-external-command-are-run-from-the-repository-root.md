@@ -40,7 +40,7 @@ alias is invoked from the repository root.
 Now I can run things like:
 
 ```bash
-$ git prfiles | xargs rg -l "foo" | xargs -o vim
+git prfiles | xargs rg -l "foo" | xargs -o vim
 ```
 
 to edit all files from my pull request that contain "foo".

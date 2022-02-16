@@ -23,4 +23,3 @@ def reset_cache():
     assert settings.CACHES["default"]["BACKEND"] == "django.core.cache.backends.locmem.LocMemCache"
     cache.clear()
 ```
-

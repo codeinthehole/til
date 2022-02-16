@@ -22,15 +22,10 @@ series](https://www.reddit.com/r/aws/comments/a0y3ib/aurora_db_how_much_local_in
 Beware that the relatively small amount of local storage can be a problem for
 large table operations like changing the type of a column. We found to our cost
 that 50G wasn't enough space to run a query like:
+
 ```
 ALTER TABLE some_large_table ALTER COLUMN id TYPE bigint;
 ```
+
 which was required as the table had exhausted all 2.7 billion IDs available to
 an `integer`-type primary key field.
-
-
-
-
-
-
-

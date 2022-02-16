@@ -5,7 +5,7 @@ tags: ["Sentry"]
 ---
 
 If you want to manage how your event quota is consumed with Sentry, you can
-apply rate limits at the DSN level. 
+apply rate limits at the DSN level.
 
 {{< figure src="/images/sentry-dsn-editing.png" title="" caption="" alt="Sentry DSN editing" >}}
 
@@ -14,5 +14,3 @@ application by using separate DSNs.
 
 See [Sentry's docs](https://docs.sentry.io/accounts/quotas/manage-event-stream-guide/#6-rate-limiting)
 on the subject.
-
-

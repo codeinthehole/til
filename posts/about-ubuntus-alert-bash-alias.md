@@ -13,12 +13,13 @@ alias alert='notify-send
     -i "$([ $? = 0 ] && echo terminal || echo error)"
     "$(history | tail -n1 | sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 ```
+
 (Command wrapped for clarity).
 
 Example usage:
 
 ```bash
-$ ./run_test_suite.sh ; alert
+./run_test_suite.sh ; alert
 ```
 
 It uses the exit code of the previous process `$?` to determine the message and
@@ -31,6 +32,7 @@ alias alert='terminal-notifier
     -title "Process finished"
     -message "$([ $? = 0 ] && echo Success || echo Error)"'
 ```
+
 (Command wrapped for clarity again).
 
 This is a basic version: you can make use of `terminal-notifier`'s options to
@@ -40,7 +42,6 @@ The appearance of the `terminal-notifier` notifications can be configured in
 `System Preferences > Notifications`:
 
 {{< figure src="/images/terminalnotifier-preferences.png" title="" caption="" alt="terminal-notifier preferences" >}}
-
 
 [bashrc]: https://git.launchpad.net/ubuntu/+source/bash/tree/debian/skel.bashrc#n97
 [explanation]: https://saddlebackcss.github.io/tutorials/bash/2016/01/20/how-bash-alert-works

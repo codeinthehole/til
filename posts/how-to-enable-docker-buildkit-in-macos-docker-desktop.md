@@ -21,6 +21,7 @@ update the Docker daemon JSON config file to:
     }
 }
 ```
+
 This is done via the `Preferences > Docker Engine` menu option in the GUI.
 
 (This is accurate as of Docker Desktop v3.0.3)

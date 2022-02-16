@@ -14,4 +14,3 @@ names which makes them hard to find by searching. Their names are:
 - `⇧` - "UPWARDS WHITE ARROW"
 - `⇪` - "UPWARDS WHITE ARROW FROM BAR"
 - `⌃` - "UP ARROWHEAD"
-

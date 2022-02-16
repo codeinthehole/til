@@ -13,4 +13,3 @@ You can always get them from the `ctrl + cmd + space` character picker but good
 to know quicker alternatives.
 
 Don't seem to work in MacVim though.
-

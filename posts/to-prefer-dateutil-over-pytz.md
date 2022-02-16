@@ -16,7 +16,9 @@ from dateutil import tz
 tzinfo = tz.gettz("Europe/London")
 datetime.datetime(2021, 10, 30, 12, 0, tzinfo=tzinfo)
 ```
+
 to
+
 ```py
 import datetime
 import pytz
@@ -36,5 +38,3 @@ It's easy to be lulled into a false sense of security as such bugs don't affect
 timezones without daylight savings transitions, like UTC.
 
 See [`pytz`: The Fastest Footgun in the West](https://blog.ganssle.io/articles/2018/03/pytz-fastest-footgun.html) for more details.
-
-

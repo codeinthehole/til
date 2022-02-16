@@ -8,4 +8,4 @@ Basic stuff but I didn't realise that setting an uppercase mark (e.g. `mT`)
 creates a global bookmark that persists between sessions. I need to use this
 more.
 
-See https://vim.fandom.com/wiki/Using_marks
+See <https://vim.fandom.com/wiki/Using_marks>

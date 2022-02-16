@@ -24,4 +24,4 @@ Hiding:
 - Selecting application via the `⌘ + tab` application switcher restores
   window.
 
-A bit more info here: https://apple.stackexchange.com/questions/9048/what-are-the-differences-between-minimizing-and-hiding-an-application/9049
+A bit more info here: <https://apple.stackexchange.com/questions/9048/what-are-the-differences-between-minimizing-and-hiding-an-application/9049>

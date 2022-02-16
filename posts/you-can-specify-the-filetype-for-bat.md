@@ -13,6 +13,5 @@ commands. For example, the output of `helm install --dry-run` which prints the
 contents of the compiled YAML files:
 
 ```bash
-$ helm install --dry-run --generate-name . | cat -l yaml
+helm install --dry-run --generate-name . | cat -l yaml
 ```
-

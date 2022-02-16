@@ -41,6 +41,7 @@ i-0fe1eb8debbff316f  10.0.0.54
 i-0ed0af108b30084a2  10.0.20.202
 ...
 ```
+
 or `sed`:
 
 ```bash
@@ -56,7 +57,4 @@ i-0ed0af108b30084a2  10.0.20.202
 
 The `awk` version is easier to understand.
 
-See https://man.openbsd.org/column.1 for more.
-
-
-
+See <https://man.openbsd.org/column.1> for more.

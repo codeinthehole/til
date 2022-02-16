@@ -15,4 +15,3 @@ relative = true
 This is mentioned on the [diff
 options](https://git-scm.com/docs/diff-options#Documentation/diff-options.txt---relativeltpathgt)
 page in the Git online manual.
-

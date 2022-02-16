@@ -47,12 +47,15 @@ keyword as the first argument and opens the relevant page.
 
 For example, you can use the MacOS dictionary app to look-up work definitions
 when working in text and markdown buffers:
+
 ```vim
 " ~/.vim/after/ftplugin/markdown.vim
 " ~/.vim/after/ftplugin/text.vim
 setlocal keywordprg=open-dict
 ```
+
 where `open-dict` is on your `$PATH` and has contents:
+
 ```bash
 #!/usr/bin/env bash
 set -e
@@ -70,7 +73,9 @@ Here's a similar script for Terraform resources:
 " ~/.vim/after/ftplugin/terraform.vim
 setlocal keywordprg=terraform-docs
 ```
+
 where `terraform-docs` is:
+
 ```bash
 #!/usr/bin/env bash
 set -e

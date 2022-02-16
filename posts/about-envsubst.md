@@ -11,6 +11,7 @@ I stumbled upon the [`envsubst` utility](https://www.gnu.org/software/gettext/ma
 which will substitute in the value of environment variables to STDIN.
 
 Eg:
+
 ```bash
 > export foo=bar
 > echo '$foo'
@@ -29,7 +30,3 @@ by a environment variable instead of being hard-coded:
 
 I'm sure there are better ways of setting up Kubernetes deployment pipelines but
 this is a neat trick to know.
-
-
-
-

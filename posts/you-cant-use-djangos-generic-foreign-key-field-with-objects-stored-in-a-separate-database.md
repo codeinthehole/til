@@ -22,5 +22,3 @@ Since generic foreign keys use a cascading database reference between the
 table with the generic foreign key and the `django_content_types` table, it
 would be dangerous to have a separate `django_content_types` table in another
 database where the primary key is looked up.
-
-

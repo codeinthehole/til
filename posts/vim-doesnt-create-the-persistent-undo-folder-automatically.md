@@ -23,5 +23,3 @@ prevents the feature working.
 
 You can [create this automaticaly in `~/.vimrc`](https://vi.stackexchange.com/questions/6/how-can-i-use-the-undofile)
 if you like.
-
-

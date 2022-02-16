@@ -46,9 +46,3 @@ else
     echo "The command timed out."
 fi
 ```
-
-
-
-
-
-

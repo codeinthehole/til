@@ -18,5 +18,3 @@ see which field has the problem.
 It's hard to guard against this problem with static analysis in your codebase.
 But you can fix problems rapidly by setting up a alert that trips when new
 events match the above mapping conflict filter.
-
-

@@ -67,7 +67,7 @@ You&rsquo;ll see lots of conflicts of form:</p>
 but this is manual and error-prone.</p>
 <p>Better is to use <code>git diff</code> to generate patch files and apply these with <code>patch</code>.</p>
 <p>Run this for each filepath modified in your PR but deleted in <code>master</code>:</p>
-<pre tabindex="0"><code>$ git show REBASE_HEAD $OLD_FILEPATH | patch $NEW_FILEPATH
+<pre tabindex="0"><code>git show REBASE_HEAD $OLD_FILEPATH | patch $NEW_FILEPATH
 </code></pre><p>Note, <code>REBASE_HEAD</code> is a useful pseudo-ref for the conflicting commit from the
 ongoing rebase.</p>
 <p>If you&rsquo;re interested, I&rsquo;ve written previously about <a href="https://codeinthehole.com/guides/resolving-conflicts-during-a-git-rebase/">resolving Git conflicts during a Git rebase</a>.</p>

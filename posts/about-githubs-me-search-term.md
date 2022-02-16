@@ -10,5 +10,3 @@ author:@me` to show pull-requests authored by yourself:
 {{< figure src="/images/github-search-syntax.png" title="" caption="" alt="Github search syntax" >}}
 
 More in the [Github docs](https://docs.github.com/en/github/searching-for-information-on-github/understanding-the-search-syntax#queries-with-usernames).
-
-

@@ -14,6 +14,3 @@ provides an alternative deployment mechanism. In contrast to using Terraform's
 each deploy, this method would allow a single long-lived ASG to be used.
 
 Looks interesting.
-
-
-

@@ -47,9 +47,3 @@ The command I use is slightly different to his as:
 
 - I don't use the `-bar` option when declaring the command as I want to use
   double quotes to wrap multi-word queries.
-
-
-
-
-
-

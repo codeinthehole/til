@@ -57,5 +57,4 @@ test_predictions.py::test_world_did_not_end_on[date predicted by Mayans] PASSED
 test_predictions.py::test_world_did_not_end_on[date predicted by True Way] PASSED
 ```
 
-See https://docs.pytest.org/en/stable/reference.html#pytest.python.Metafunc.parametrize
-
+See <https://docs.pytest.org/en/stable/reference.html#pytest.python.Metafunc.parametrize>

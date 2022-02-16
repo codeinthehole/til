@@ -22,7 +22,3 @@ cur.execute("VACUUM FULL; SELECT 1")
 I lost an hour of my life this week tracking this down until I
 stumbled upon [this StackOverflow answer](https://stackoverflow.com/a/67418518) and
 [related `psycopg2` issue](https://github.com/psycopg/psycopg2/issues/1201).
-
-
-
-

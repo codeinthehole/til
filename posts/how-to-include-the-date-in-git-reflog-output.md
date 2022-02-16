@@ -12,10 +12,9 @@ means the date can be included by using the `--format` option.
 Here's a fancy version:
 
 ```bash
-$ git reflog --format="%C(yellow)%h%C(reset) %gs %C(green)%ad%C(reset) %C(blue)[%ar]%C(reset)"
+git reflog --format="%C(yellow)%h%C(reset) %gs %C(green)%ad%C(reset) %C(blue)[%ar]%C(reset)"
 ```
 
 which looks like:
 
 {{< figure src="/images/git-reflog-with-date.png" title="" caption="" alt="git reflog with date" >}}
-

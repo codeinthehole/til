@@ -36,4 +36,3 @@ Windows view.
 More:
 
 - [How to name your windows in Chrome](https://benjiwheeler.medium.com/how-to-name-your-windows-in-chrome-265aed900197)
-

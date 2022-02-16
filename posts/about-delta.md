@@ -29,4 +29,3 @@ like:
     file-decoration-style = red box
     hunk-header-decoration-style = ul
 ```
-

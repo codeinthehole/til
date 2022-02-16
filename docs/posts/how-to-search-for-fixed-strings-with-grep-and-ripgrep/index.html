@@ -60,9 +60,9 @@
             </div>
             <h1>How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></h1>
         </header><p>To search for a fixed string (i.e. not a regex), use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ grep -F -- <span style="color:#e6db74">&#34;</span>$query<span style="color:#e6db74">&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grep -F -- <span style="color:#e6db74">&#34;</span>$query<span style="color:#e6db74">&#34;</span>
 </code></pre></div><p>or, better:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rg -F -- <span style="color:#e6db74">&#34;</span>$query<span style="color:#e6db74">&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rg -F -- <span style="color:#e6db74">&#34;</span>$query<span style="color:#e6db74">&#34;</span>
 </code></pre></div><p>Note, the <code>--</code> tells Bash there are no more options and any further arguments are
 positional. This is required to search for queries that <em>look like</em> options, like
 <code>-v</code> or <code>-&gt;</code>. From <code>man bash</code>:</p>
@@ -71,15 +71,15 @@ positional. This is required to search for queries that <em>look like</em> optio
        argument of - is equivalent to --.
 </code></pre></div><p>I noticed this when doing a quick search for symlinks in my home directory. Using the
 incorrect:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls -la ~ | grep -F <span style="color:#e6db74">&#34;-&gt;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -la ~ | grep -F <span style="color:#e6db74">&#34;-&gt;&#34;</span>
 </code></pre></div><p>causes <code>grep</code> to complain about an unknown option.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">grep: invalid option -- &gt;
 usage: grep [-abcDEFGHhIiJLlmnOoqRSsUVvwxZ] [-A num] [-B num] [-C[num]]
-	[-e pattern] [-f file] [--binary-files=value] [--color=when]
-	[--context[=num]] [--directories=action] [--label] [--line-buffered]
-	[--null] [pattern] [file ...]
+ [-e pattern] [-f file] [--binary-files=value] [--color=when]
+ [--context[=num]] [--directories=action] [--label] [--line-buffered]
+ [--null] [pattern] [file ...]
 </code></pre></div><p>For the record, a more robust way of listing symlinks in a directory is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ find ~ -type l -maxdepth <span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find ~ -type l -maxdepth <span style="color:#ae81ff">1</span>
 </code></pre></div><p>although that doesn&rsquo;t show where they link to.</p>
 </article>
 

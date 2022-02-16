@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    For a given commit $SHA, use: $ git diff &amp;ndash;shortstat git hash-object -t tree /dev/null. ...
+    For a given commit $SHA, use: git diff &amp;ndash;shortstat git hash-object -t tree /dev/null. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-count-lines-of-code-in-a-git-repo/" />
 <meta property="og:title" content="TIL How to count lines of code in a Git repo for a given commit — David Winterbottom" />
 <meta property="og:description" content="For a given commit $SHA, use:
-$ git diff --shortstat `git hash-object -t tree /dev/null`. [Reading time: 1 minute]" />
+git diff --shortstat `git hash-object -t tree /dev/null`. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
@@ -61,7 +61,7 @@ $ git diff --shortstat `git hash-object -t tree /dev/null`. [Reading time: 1 min
             </div>
             <h1>How to count lines of code in a Git repo for a given commit</h1>
         </header><p>For a given commit <code>$SHA</code>, use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git diff --shortstat <span style="color:#e6db74">`</span>git hash-object -t tree /dev/null<span style="color:#e6db74">`</span>..$SHA
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git diff --shortstat <span style="color:#e6db74">`</span>git hash-object -t tree /dev/null<span style="color:#e6db74">`</span>..$SHA
 </code></pre></div><p>which works as <code>git hash-object -t tree /dev/null</code> computes the hash of the
 empty tree.</p>
 </article>

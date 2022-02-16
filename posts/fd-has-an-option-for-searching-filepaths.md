@@ -20,5 +20,3 @@ octoenergy/vendors/epex/parsers.py
 ```
 
 Very useful.
-
-

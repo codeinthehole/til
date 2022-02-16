@@ -41,7 +41,6 @@ Enter MFA code for arn:aws:iam::111111111111:mfa/david.winterbottom:
 }
 ```
 
-You can find your `mfa_serial` string in the IAM dashboard. 
+You can find your `mfa_serial` string in the IAM dashboard.
 
-More info: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html#cli-configure-role-mfa
-
+More info: <https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html#cli-configure-role-mfa>

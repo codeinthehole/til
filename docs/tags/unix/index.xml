@@ -47,7 +47,7 @@ MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 S
       
       <guid>https://til.codeinthehole.com/posts/the-order-of-permissions-matter-with-chmod/</guid>
       <description>As in these two commands behave differently:
-$ chmod -R g+X,g-wx .</description>
+chmod -R g+X,g-wx .</description>
     </item>
     
 
