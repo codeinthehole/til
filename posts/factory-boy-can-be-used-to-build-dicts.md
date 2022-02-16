@@ -1,20 +1,22 @@
 ---
 title: "Factory boy can be used to build dicts"
 date: "2021-09-30T13:56:48+01:00"
-tags: ["Python", "Testing"]
+tags: ["FactoryBoy", "Python", "Testing"]
 ---
 
-Conventionally subclasses of `factory.Factory` are used to build objects,
-often Django models that are persisted to some data store.
+Conventionally subclasses of `factory.Factory` are used to build objects, often
+Django models that are persisted to some data store.
 
 But they can also be used to build plain `dict`s, which can be useful for
 building complex `dict`s in tests.
 
-This is done via the [`Meta.model` field](https://factoryboy.readthedocs.io/en/stable/reference.html#factory.FactoryOptions.model) which specifies the
-class of object to create. There's also a convenient `factory.DictFactory`
-class.
+This is done via the
+[`Meta.model` field](https://factoryboy.readthedocs.io/en/stable/reference.html#factory.FactoryOptions.model)
+which specifies the class of object to create. There's also a convenient
+`factory.DictFactory` class.
 
-Here's an example using `factory.Factory` subclasses to create a nested `dict` fixture:
+Here's an example using `factory.Factory` subclasses to create a nested `dict`
+fixture:
 
 ```py
 import factory
@@ -59,3 +61,4 @@ def test_overriding_fields():
     }
 
 
+```
