@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Feb 2022 09:17:38 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Feb 2022 13:05:21 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://til.codeinthehole.com/tags/markdown/</link>
+      <pubDate>Wed, 16 Feb 2022 13:05:21 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://til.codeinthehole.com/tags/vim/</link>
+      <pubDate>Wed, 16 Feb 2022 13:05:21 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/vim/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>FactoryBoy</title>
@@ -99,15 +117,6 @@
       <pubDate>Fri, 26 Nov 2021 15:19:29 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vim</title>
-      <link>https://til.codeinthehole.com/tags/vim/</link>
-      <pubDate>Mon, 15 Nov 2021 10:46:34 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/vim/</guid>
       <description></description>
     </item>
     
@@ -468,15 +477,6 @@
       <pubDate>Thu, 10 Dec 2020 18:24:55 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/ctags/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Markdown</title>
-      <link>https://til.codeinthehole.com/tags/markdown/</link>
-      <pubDate>Mon, 07 Dec 2020 11:34:05 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/markdown/</guid>
       <description></description>
     </item>
     

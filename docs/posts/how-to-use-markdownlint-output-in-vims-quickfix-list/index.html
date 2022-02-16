@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which is a static analysis tool for shell scripts. ...
+    The output from markdownlint-cli has this form:
+path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] which doesn’t load correctly into Vim’s quickfix list (via :cfile or :cexpr). ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +19,17 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-shellcheck/" />
-<meta property="og:title" content="TIL About &#39;shellcheck&#39; — David Winterbottom" />
-<meta property="og:description" content="Which is a static analysis tool for shell scripts. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/" />
+<meta property="og:title" content="TIL How to use &#39;markdownlint&#39; output in Vim&#39;s quickfix list — David Winterbottom" />
+<meta property="og:description" content="The output from markdownlint-cli has this form:
+path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] which doesn&rsquo;t load correctly into Vim&rsquo;s quickfix list (via :cfile or :cexpr). [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;shellcheck&#39; — David Winterbottom
+    TIL How to use &#39;markdownlint&#39; output in Vim&#39;s quickfix list — David Winterbottom
 </title>
 
         
@@ -56,13 +58,20 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>October 12th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>February 16th, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>shellcheck</code></h1>
-        </header><p>Which is a static analysis tool for shell scripts. You can try it out by
-<a href="https://www.shellcheck.net/#">pasting a script into a form</a> and it is run
-automatically by Vim&rsquo;s <a href="https://github.com/dense-analysis/ale">Ale</a> plugin.</p>
-</article>
+            <h1>How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</h1>
+        </header><p>The output from <a href="https://github.com/igorshubovych/markdownlint-cli"><code>markdownlint-cli</code></a> has this form:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102]
+</code></pre></div><p>which doesn&rsquo;t load correctly into Vim&rsquo;s quickfix list (via <code>:cfile</code> or
+<code>:cexpr</code>).</p>
+<p>This is because the error format doesn&rsquo;t match any of the scanf-style format
+strings in the <code>errorformat</code> option.</p>
+<p>To remedy, add a new format pattern to the list:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">errorformat</span>+=%<span style="color:#a6e22e">f</span>:%<span style="color:#a6e22e">l</span>\ %<span style="color:#a6e22e">m</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>With this adjusted, you can work through the errors in a project using;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">cexpr</span> <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#39;markdownlint .&#39;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></article>
 
         </main>
 
@@ -77,20 +86,16 @@ automatically by Vim&rsquo;s <a href="https://github.com/dense-analysis/ale">Ale
 
             
                 
-                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/bash/">Bash</a>:</p>
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/markdown/">Markdown</a>:</p>
                     <ul>
                     
-                        <li><a href="/posts/about-bashs-seconds-shell-variable/">About Bash&rsquo;s <code>$SECONDS</code> shell variable</a></li>
+                        <li><a href="/posts/how-to-spellcheck-markdown-repos-on-circleci/">How to spell-check markdown repos on CircleCI</a></li>
                     
-                        <li><a href="/posts/about-ubuntus-alert-bash-alias/">About Ubuntu&rsquo;s <code>alert</code> Bash alias</a></li>
+                        <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
                     
-                        <li><a href="/posts/about-readonly-bash-variables/">About <code>readonly</code> Bash variables</a></li>
-                    
-                        <li><a href="/posts/about-bashs-debug-signal/">About Bash&rsquo;s DEBUG signal</a></li>
+                        <li><a href="/posts/how-to-embed-markdown-content-in-a-github-code-block/">How to embed markdown content in a Github code block</a></li>
                     
                     </ul>
-                    
-                        
                     
                         
                     
@@ -111,8 +116,6 @@ automatically by Vim&rsquo;s <a href="https://github.com/dense-analysis/ale">Ale
 
                 <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
                 <ul>
-                    
-                        <li><a href="/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/">How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</a></li>
                     
                         <li><a href="/posts/that-vim-can-transform-replacement-values-when-substituting/">That Vim can transform replacement values when substituting</a></li>
                     
@@ -136,8 +139,6 @@ automatically by Vim&rsquo;s <a href="https://github.com/dense-analysis/ale">Ale
                     
                         <li><a href="/posts/universal-ctags-can-index-more-things-than-i-realised/">Universal Ctags can index more things than I realised</a></li>
                     
-                        <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
-                    
                         <li><a href="/posts/about-how-to-use-keywordprg-effectively/">About how to use <code>keywordprg</code> effectively</a></li>
                     
                         <li><a href="/posts/how-to-configure-ctags-to-parse-terraform-files/">How to configure <code>ctags</code> to parse Terraform files</a></li>
@@ -149,6 +150,8 @@ automatically by Vim&rsquo;s <a href="https://github.com/dense-analysis/ale">Ale
                         <li><a href="/posts/theres-a-quickfixcmdpost-event-in-vim/">There&rsquo;s a <code>QuickFixCmdPost</code> event in Vim</a></li>
                     
                         <li><a href="/posts/you-can-jump-to-previous-quickfix-lists-in-vim/">You can jump to previous quickfix lists in Vim</a></li>
+                    
+                        <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
                     
                         <li><a href="/posts/how-to-read-from-one-buffer-to-another-in-vim/">How to read from one buffer to another in Vim</a></li>
                     
@@ -215,17 +218,15 @@ automatically by Vim&rsquo;s <a href="https://github.com/dense-analysis/ale">Ale
                     
                         
                     
-                        
-                    
                 </ul>
             
 
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -234,11 +235,9 @@ automatically by Vim&rsquo;s <a href="https://github.com/dense-analysis/ale">Ale
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-piplicenses\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-factory-boys-selfattribute-class\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-readonly-bash-variables\/"); })
         
     </script>
 
