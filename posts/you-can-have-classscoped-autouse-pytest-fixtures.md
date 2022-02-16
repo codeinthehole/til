@@ -4,9 +4,9 @@ date: "2021-03-16T17:36:21+00:00"
 tags: ["pytest", "Python", "Testing"]
 ---
 
-If you decorate a class instance method as an `autouse=True` pytest fixture, then it
-will be automatically applied for all test methods on that class. This is a
-useful pattern to remember.
+If you decorate a class instance method as an `autouse=True` pytest fixture,
+then it will be automatically applied for all test methods on that class. This
+is a useful pattern to remember.
 
 For example, it can be employed to apply the same context management for all
 tests in the class. For example, if you wanted to patch Django's settings for
@@ -37,4 +37,5 @@ class TestSomethingAboutTimezones:
 You probably wouldn't use it for mocking since the `mock.patch` decorators
 already work on classes but there are use-cases where it would be helpful.
 
-Docs on the `autouse` option: <https://docs.pytest.org/en/stable/fixture.html#autouse-fixtures-fixtures-you-don-t-have-to-request>
+Docs on the `autouse` option:
+<https://docs.pytest.org/en/stable/fixture.html#autouse-fixtures-fixtures-you-don-t-have-to-request>

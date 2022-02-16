@@ -18,8 +18,9 @@ not just F401: the `: F401` part of the comment is silently ignored.
 Alternatively you can:
 
 - append `# noqa: F401` to each offending line, or:
-- use the [`--per-file-ignores` configuration option](https://flake8.pycqa.org/en/latest/user/options.html#cmdoption-flake8-per-file-ignores) to ignore certain error
-  codes in files matching a set of globs.
+- use the
+  [`--per-file-ignores` configuration option](https://flake8.pycqa.org/en/latest/user/options.html#cmdoption-flake8-per-file-ignores)
+  to ignore certain error codes in files matching a set of globs.
 
 Related:
 

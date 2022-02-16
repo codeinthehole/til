@@ -26,7 +26,8 @@ def generate_report(writer: _csv._writer):
 
 and avoid using a string literal for the type annotation.
 
-This follows on from a [related TIL about how to specify type annotations for the `csv` module]({{< ref "posts/how-to-typecheck-csv-objects-in-python" >}}).
+This follows on from a [related TIL about how to specify type annotations for
+the `csv` module]({{< ref "posts/how-to-typecheck-csv-objects-in-python" >}}).
 
 Related:
 

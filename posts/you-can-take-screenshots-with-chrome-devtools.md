@@ -4,7 +4,8 @@ date: "2021-01-25T17:33:45+00:00"
 tags: ["Chrome"]
 ---
 
-Chrome DevTools can take screenshots via its [Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu)
+Chrome DevTools can take screenshots via its
+[Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu)
 (which can be opened with `cmd + shift + p`).
 
 {{< figure src="/images/chrome-command-menu.png" title="" caption="" alt="Chrome command menu" >}}

@@ -10,7 +10,8 @@ creates a lot of dead space:
 
 {{< figure src="/images/google-calendar-dead-space.png" title="" caption="" alt="Google Calendar dead space" >}}
 
-Fortunately, there's a [Google Calendar Plus](https://chrome.google.com/webstore/detail/google-calendar-plus/mjelhipeelammmhpghkpigkdonihkakj)
+Fortunately, there's a
+[Google Calendar Plus](https://chrome.google.com/webstore/detail/google-calendar-plus/mjelhipeelammmhpghkpigkdonihkakj)
 Chrome extension that has an option to limit the working hours that are shown.
 
 {{< figure src="/images/gcalplus-options.png" title="" caption="" alt="GCalPlus options" >}}

@@ -5,7 +5,8 @@ tags: ["AWS", "Terraform"]
 ---
 
 Which lets you replace all the instances in an auto-scaling group, possibly with
-a new AMI. See [the announcement](https://aws.amazon.com/blogs/compute/introducing-instance-refresh-for-ec2-auto-scaling/)
+a new AMI. See
+[the announcement](https://aws.amazon.com/blogs/compute/introducing-instance-refresh-for-ec2-auto-scaling/)
 from the AWS Compute Blog.
 
 If you use an immutable infrastructure approach and deploy using AMIs, this

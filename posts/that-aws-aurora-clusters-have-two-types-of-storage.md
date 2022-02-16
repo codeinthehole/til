@@ -10,14 +10,14 @@ Aurora PostgreSQL clusters have:
 
 - Local storage for temporary tables or files.
 
-There's further information in the [AWS docs](https://aws.amazon.com/premiumsupport/knowledge-center/postgresql-aurora-storage-issue/)
+There's further information in the
+[AWS docs](https://aws.amazon.com/premiumsupport/knowledge-center/postgresql-aurora-storage-issue/)
 
 The amount of local storage space is tied to the instance class — more space can
 only be obtained by upgrading. The amount of local storage for each instance
 type doesn't seem to be published anywhere. Based on CloudWatch metric data, a
-`db.r6g.xlarge` instance has 50G; [this Reddit thread has some values for
-instance classes in the `r4`
-series](https://www.reddit.com/r/aws/comments/a0y3ib/aurora_db_how_much_local_instance_storage_for/).
+`db.r6g.xlarge` instance has 50G;
+[this Reddit thread has some values for instance classes in the `r4` series](https://www.reddit.com/r/aws/comments/a0y3ib/aurora_db_how_much_local_instance_storage_for/).
 
 Beware that the relatively small amount of local storage can be a problem for
 large table operations like changing the type of a column. We found to our cost

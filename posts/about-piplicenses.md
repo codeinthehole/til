@@ -3,6 +3,7 @@ title: "About `pip-licenses`"
 date: "2020-10-08T14:56:38+01:00"
 tags: ["Python"]
 ---
+
 Which is a useful Python library that lists all the licenses of packages
 installed with `pip`:
 

@@ -5,7 +5,8 @@ tags: ["Vim"]
 ---
 
 A search with `/` or `?` can include an additional offset to position the cursor
-after jumping to the search match. From [the docs](http://vimdoc.sourceforge.net/htmldoc/pattern.html#search-offset):
+after jumping to the search match. From
+[the docs](http://vimdoc.sourceforge.net/htmldoc/pattern.html#search-offset):
 
 ```
 pattern   cursor position

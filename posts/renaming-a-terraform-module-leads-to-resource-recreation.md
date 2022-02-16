@@ -4,8 +4,9 @@ date = "2020-07-23"
 tags = ["Terraform"]
 +++
 
-As the state file uses the module name in identifiers and so a module rename causes
-Terraform to think all existing resources need to be destroyed and recreated.
+As the state file uses the module name in identifiers and so a module rename
+causes Terraform to think all existing resources need to be destroyed and
+recreated.
 
 You can avoid such needless destruction by editing the state file manually to
 correct the identifiers.

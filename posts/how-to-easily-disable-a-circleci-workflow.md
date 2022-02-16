@@ -38,4 +38,5 @@ workflows:
 Make sure you rebase out this commit before requesting review or merging the
 pull request; it's just a crutch to speed up development.
 
-See CircleCI's docs on [using `when` in workflows](https://circleci.com/docs/2.0/configuration-reference/#using-when-in-workflows).
+See CircleCI's docs on
+[using `when` in workflows](https://circleci.com/docs/2.0/configuration-reference/#using-when-in-workflows).

@@ -17,8 +17,8 @@ downsides:
 - Results are printed in the parent shell, clogging it up.
 - Getting back to Vim requires hitting enter.
 
-These problems can be avoided by using `:cgetexpr` to populate the quickfix list via
-a command executed with `system`. Here's a custom `:Grep` command that does
+These problems can be avoided by using `:cgetexpr` to populate the quickfix list
+via a command executed with `system`. Here's a custom `:Grep` command that does
 exactly that.
 
 ```viml
@@ -39,7 +39,8 @@ augroup quickfix
 augroup END
 ```
 
-Credit to Romain Lafourcade, who wrote this up in ["Instant grep + quickfix"](https://gist.github.com/romainl/56f0c28ef953ffc157f36cc495947ab3).
+Credit to Romain Lafourcade, who wrote this up in
+["Instant grep + quickfix"](https://gist.github.com/romainl/56f0c28ef953ffc157f36cc495947ab3).
 The command I use is slightly different to his as:
 
 - I don't use `expandcmd` as it prevents using regex special characters like

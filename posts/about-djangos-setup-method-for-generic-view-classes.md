@@ -4,9 +4,9 @@ date: "2021-12-14T15:55:28+00:00"
 tags: ["Django", "Python"]
 ---
 
-Django 2.2 (released in April 2019) [introduced a `setup`
-method](https://docs.djangoproject.com/en/3.2/releases/2.2/#generic-views) to the
-`django.views.View` class, which is available to all generic views.
+Django 2.2 (released in April 2019)
+[introduced a `setup` method](https://docs.djangoproject.com/en/3.2/releases/2.2/#generic-views)
+to the `django.views.View` class, which is available to all generic views.
 
 This is intended to be overridden to assign instance attributes that other
 methods will need.
@@ -29,4 +29,5 @@ class Frob(generic.TemplateView):
 To date, I've been overriding `dispatch` to do this - didn't realise there was a
 dedicated method.
 
-More in the [Django view docs](https://docs.djangoproject.com/en/2.2/ref/class-based-views/base/#django.views.generic.base.View.setup)
+More in the
+[Django view docs](https://docs.djangoproject.com/en/2.2/ref/class-based-views/base/#django.views.generic.base.View.setup)

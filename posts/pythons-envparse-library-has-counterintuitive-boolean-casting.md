@@ -4,8 +4,10 @@ date: "2021-10-14T14:14:59+01:00"
 tags: ["Python"]
 ---
 
-If you use `env.bool` from the [`envparse`](https://github.com/rconradharris/envparse) library to convert an
-environment variable into a boolean Python variable then only an allow-list of strings are considered truthy.
+If you use `env.bool` from the
+[`envparse`](https://github.com/rconradharris/envparse) library to convert an
+environment variable into a boolean Python variable then only an allow-list of
+strings are considered truthy.
 
 For example:
 
@@ -25,7 +27,8 @@ $ X="in Python this would cast to True" python -c "from envparse import env; pri
 False
 ```
 
-The [allow-list is](https://github.com/rconradharris/envparse/blob/e67e70307af19d925e194b2a163e0608dae7eb55/envparse.py#L54):
+The
+[allow-list is](https://github.com/rconradharris/envparse/blob/e67e70307af19d925e194b2a163e0608dae7eb55/envparse.py#L54):
 
 ```py
 BOOLEAN_TRUE_STRINGS = ('true', 'on', 'ok', 'y', 'yes', '1')

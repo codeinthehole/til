@@ -4,8 +4,8 @@ date: "2021-11-08T17:48:54+00:00"
 tags: ["AWS", "Python"]
 ---
 
-Prior to being told about [`aws-mfa-v2`](https://github.com/rkeiii/aws-mfa-v2) my `~/.aws/config` file looked
-like this:
+Prior to being told about [`aws-mfa-v2`](https://github.com/rkeiii/aws-mfa-v2)
+my `~/.aws/config` file looked like this:
 
 ```dosini
 [profile parent-account]
@@ -18,12 +18,14 @@ region = eu-west-1
 source_profile = parent-account
 ```
 
-which worked fine but meant `awscli` calls using the `child-account` profile prompted for an MFA
-token. Over the course of a day I would look up a token many times.
+which worked fine but meant `awscli` calls using the `child-account` profile
+prompted for an MFA token. Over the course of a day I would look up a token many
+times.
 
-But following a tip from [James Tunnicliffe](https://github.com/dooferlad) I greatly reduced how often I
-need to do this by using the `aws-mfa-v2` utility. This uses your long-lived AWS
-account to create temporary profiles with credentials fetched from AWS STS.
+But following a tip from [James Tunnicliffe](https://github.com/dooferlad) I
+greatly reduced how often I need to do this by using the `aws-mfa-v2` utility.
+This uses your long-lived AWS account to create temporary profiles with
+credentials fetched from AWS STS.
 
 In practice, this requires you to run:
 

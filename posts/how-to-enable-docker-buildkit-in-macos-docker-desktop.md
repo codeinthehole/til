@@ -5,20 +5,21 @@ tags: ["Docker"]
 ---
 
 Since Docker 18.09, you can the BuildKit feature to take advantages of improved
-performance and extra features when building images — see [Build images with
-Buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) from the Docker docs.
+performance and extra features when building images — see
+[Build images with Buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/)
+from the Docker docs.
 
-MacOS users using [Docker
-Desktop](https://www.docker.com/products/docker-desktop), can enable this be
-update the Docker daemon JSON config file to:
+MacOS users using
+[Docker Desktop](https://www.docker.com/products/docker-desktop), can enable
+this be update the Docker daemon JSON config file to:
 
 ```json
 {
-    "experimental": false,
-    "debug": true,
-    "features": {
-        "buildkit": true
-    }
+  "experimental": false,
+  "debug": true,
+  "features": {
+    "buildkit": true
+  }
 }
 ```
 

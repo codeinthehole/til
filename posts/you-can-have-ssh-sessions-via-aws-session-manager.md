@@ -35,4 +35,5 @@ Note that commands aren't logged for SSH sessions.
 
 For more see the [AWS SSM docs].
 
-[AWS SSM docs]: https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started-enable-ssh-connections.html
+[aws ssm docs]:
+  https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started-enable-ssh-connections.html

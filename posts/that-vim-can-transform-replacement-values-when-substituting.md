@@ -37,4 +37,6 @@ Some useful transformations to be aware of:
 - `\l`: Next character made lower case.
 - `\L`: Following characters made lower case (until `\E`).
 
-See [`:help sub-replace-special`](http://vimdoc.sourceforge.net/htmldoc/change.html#sub-replace-special) for more.
+See
+[`:help sub-replace-special`](http://vimdoc.sourceforge.net/htmldoc/change.html#sub-replace-special)
+for more.

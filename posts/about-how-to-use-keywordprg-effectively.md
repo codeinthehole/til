@@ -42,8 +42,8 @@ setlocal keywordprg=open\ https://developer.mozilla.org/search?topic=api\\&topic
 setlocal keywordprg=pydoc
 ```
 
-If it's awkward to craft an appropriate `keywordprg` snippet, write a script that takes the
-keyword as the first argument and opens the relevant page.
+If it's awkward to craft an appropriate `keywordprg` snippet, write a script
+that takes the keyword as the first argument and opens the relevant page.
 
 For example, you can use the MacOS dictionary app to look-up work definitions
 when working in text and markdown buffers:

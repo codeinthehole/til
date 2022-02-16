@@ -20,15 +20,16 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 ```
 
-Why? Because `plasticboy/vim-markdown` has better support for folding, front-matter
-and syntax highlighting.
+Why? Because `plasticboy/vim-markdown` has better support for folding,
+front-matter and syntax highlighting.
 
 Also, I spotted today that it defines several useful Ex commands:
 
 - `:HeaderIncrease` --- Increase the level of all headers in buffer/selection.
 
 - `:Toc` --- Populate the location list with a table of contents and open it in
-  a vertical window (you can use `:lnext` and `:lprev` to jump between headings).
+  a vertical window (you can use `:lnext` and `:lprev` to jump between
+  headings).
 
 - `:InsertToc` --- Insert a table of contents at the current line.
 

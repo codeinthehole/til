@@ -12,7 +12,8 @@ the `~/Desktop`.
 
 Prior to today, my workflow for this was:
 
-1. Use `⇧ + ⌘ + 4` to [take a screenshot of a portion of the screen](https://support.apple.com/en-gb/HT201361).
+1. Use `⇧ + ⌘ + 4` to
+   [take a screenshot of a portion of the screen](https://support.apple.com/en-gb/HT201361).
 2. Click the thumbnail in the bottom right to open the Markup editor.
 3. Mark up the screenshot.
 4. Use `⇧ + ⌃ + ⌘ + 4` to copy a screenshot of the Markup editor to the
@@ -24,8 +25,10 @@ Taking a screenshot of a screenshot editor never felt right.
 
 ### After today
 
-Today [I've learnt](https://apple.stackexchange.com/questions/367962/how-to-copy-an-image-from-screenshots-markup) that you can copy the marked up image to the clipboard using the conventional `⌘ + c` binding in the Markup editor. This simplifies the above
-workflow to:
+Today
+[I've learnt](https://apple.stackexchange.com/questions/367962/how-to-copy-an-image-from-screenshots-markup)
+that you can copy the marked up image to the clipboard using the conventional
+`⌘ + c` binding in the Markup editor. This simplifies the above workflow to:
 
 1. Use `⇧ + ⌘ + 4` to take a screenshot of a portion of the screen.
 2. Click the thumbnail in the bottom right to open the Markup editor.

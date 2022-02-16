@@ -11,5 +11,5 @@ You can set this flag from the `Get Info` Finder dialogue:
 
 {{< figure src="/images/stationery-pad-option.png" title="" caption="" alt="" >}}
 
-This only works when opening a file from Finder, so not that much use to
-people who live in iTerm (like me).
+This only works when opening a file from Finder, so not that much use to people
+who live in iTerm (like me).

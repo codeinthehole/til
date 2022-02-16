@@ -14,7 +14,8 @@ The `-o` option for `xargs` re-opens `stdin` as `/dev/tty` (rather than the
 default `/dev/null`) and is essential otherwise Vim will [break your terminal
 when it exits][xargs].
 
-[xargs]: https://superuser.com/questions/336016/invoking-vi-through-find-xargs-breaks-my-terminal-why
+[xargs]:
+  https://superuser.com/questions/336016/invoking-vi-through-find-xargs-breaks-my-terminal-why
 
 This is a useful way of populating Vim's [argument list]. It works especially
 well with modern search tools `fd` and `ripgrep`. For example:

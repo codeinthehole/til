@@ -21,5 +21,6 @@ working.
 The problem was that the `~/.vim_undo` folder didn't exist which silently
 prevents the feature working.
 
-You can [create this automaticaly in `~/.vimrc`](https://vi.stackexchange.com/questions/6/how-can-i-use-the-undofile)
+You can
+[create this automaticaly in `~/.vimrc`](https://vi.stackexchange.com/questions/6/how-can-i-use-the-undofile)
 if you like.

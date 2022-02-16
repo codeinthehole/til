@@ -29,12 +29,14 @@ datetime.datetime(2021, 10, 30, 12, 0, tzinfo=tzinfo)
 
 Why? Because passing `pytz`'s timezones to the `datetime.datetime` constructor
 can often lead to bugs after date arithmetic (i.e. computing new dates using
-`datetime.timedelta`). This is noted in the [`pytz`
-docs](https://pythonhosted.org/pytz/):
+`datetime.timedelta`). This is noted in the
+[`pytz` docs](https://pythonhosted.org/pytz/):
 
 {{< figure src="/images/pytz-docs.png" title="" caption="" alt="pytz docs" >}}
 
 It's easy to be lulled into a false sense of security as such bugs don't affect
 timezones without daylight savings transitions, like UTC.
 
-See [`pytz`: The Fastest Footgun in the West](https://blog.ganssle.io/articles/2018/03/pytz-fastest-footgun.html) for more details.
+See
+[`pytz`: The Fastest Footgun in the West](https://blog.ganssle.io/articles/2018/03/pytz-fastest-footgun.html)
+for more details.

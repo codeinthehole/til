@@ -11,4 +11,6 @@ expressions or local variables.
 Make sure you remove them before committing or the Python interpreter will
 complain.
 
-More at [displaying the type of an expression](https://mypy.readthedocs.io/en/latest/common_issues.html?highlight=reveal_type#reveal-type) in the `mypy` docs.
+More at
+[displaying the type of an expression](https://mypy.readthedocs.io/en/latest/common_issues.html?highlight=reveal_type#reveal-type)
+in the `mypy` docs.

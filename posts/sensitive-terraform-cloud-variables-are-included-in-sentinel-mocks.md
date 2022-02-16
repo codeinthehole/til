@@ -24,7 +24,8 @@ The tarball includes these files:
 What I only recently realised is that the `*-tfplan*` files include all your
 workspace variables in plaintext, including those marked as sensitive.
 
-To be fair [the Terraform docs do warn that mocks can contain sensitive state values](https://learn.hashicorp.com/tutorials/terraform/sentinel-testing?in=terraform/policy)
+To be fair
+[the Terraform docs do warn that mocks can contain sensitive state values](https://learn.hashicorp.com/tutorials/terraform/sentinel-testing?in=terraform/policy)
 but I hadn't expected the wholespace variables to be included.
 
 {{< figure src="/images/terraform-cloud-mocks-warning.png" title="" caption="" alt="Terraform Cloud mocks warning" >}}

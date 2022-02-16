@@ -7,7 +7,8 @@ tags: ["Command-line tools", "Kubernetes"]
 Am learning Kubernetes and was looking for ways to dynamically create YAML
 resource files.
 
-I stumbled upon the [`envsubst` utility](https://www.gnu.org/software/gettext/manual/html_node/envsubst-Invocation.html)
+I stumbled upon the
+[`envsubst` utility](https://www.gnu.org/software/gettext/manual/html_node/envsubst-Invocation.html)
 which will substitute in the value of environment variables to STDIN.
 
 Eg:

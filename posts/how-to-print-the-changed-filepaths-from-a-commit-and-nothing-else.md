@@ -4,9 +4,10 @@ date: "2021-10-15T16:54:35+01:00"
 tags: ["Git"]
 ---
 
-The [`--name-only`](https://git-scm.com/docs/git-show#Documentation/git-show.txt---name-only) option for `git log`
-restricts the output to the changed file paths but not their full diffs.
-However, by default, the output still includes the commit
+The
+[`--name-only`](https://git-scm.com/docs/git-show#Documentation/git-show.txt---name-only)
+option for `git log` restricts the output to the changed file paths but not
+their full diffs. However, by default, the output still includes the commit
 subject and description which means the output can't be piped into commands that
 expect a list of file paths.
 
@@ -31,7 +32,8 @@ git filepaths | xargs rg -l "$QUERY"
 ```
 
 Further, if you want to find all the changed files where a given pattern was
-_removed_ in a commit, you can use the [`-S`](https://git-scm.com/docs/git-show#Documentation/git-show.txt--Sltstringgt)
+_removed_ in a commit, you can use the
+[`-S`](https://git-scm.com/docs/git-show#Documentation/git-show.txt--Sltstringgt)
 option of `git log` to search the added and removed lines for a pattern:
 
 ```sh

@@ -5,9 +5,10 @@ tags: ["Django", "Testing", "Python"]
 ---
 
 This is slightly counter-intuitive as it's different to how databases are
-treated by the test runner. It is noted [in the
-docs](https://docs.djangoproject.com/en/3.2/topics/testing/overview/#other-test-conditions) and there's
-an [open ticket](https://code.djangoproject.com/ticket/11505) on the matter.
+treated by the test runner. It is noted
+[in the docs](https://docs.djangoproject.com/en/3.2/topics/testing/overview/#other-test-conditions)
+and there's an [open ticket](https://code.djangoproject.com/ticket/11505) on the
+matter.
 
 To work around, here's a Pytest fixture that flushes the cache after a test:
 

@@ -17,10 +17,10 @@ quickfix list by setting:
 set makeprg=bandit\ -r\ -f\ custom
 ```
 
-then you can run `:make` to work through any warnings with `:cwindow`,
-`:cnext` etc.
+then you can run `:make` to work through any warnings with `:cwindow`, `:cnext`
+etc.
 
-Note, `:make` will pass on any command-line options so you can do
-things like `:make -t B112` to work though just one type of warning.
+Note, `:make` will pass on any command-line options so you can do things like
+`:make -t B112` to work though just one type of warning.
 
 You can do a similar thing for linting errors by setting `makeprg=flake8`.

@@ -11,4 +11,5 @@ one). You can do this by adding them to a local `.ignore` file.
 This also works for [`fzf`](https://github.com/junegunn/fzf).
 
 This ensures Vim's `:grep` and `:Files` (via
-[`fzf.vim`](https://github.com/junegunn/fzf.vim)) commands don't find irrelevant files.
+[`fzf.vim`](https://github.com/junegunn/fzf.vim)) commands don't find irrelevant
+files.

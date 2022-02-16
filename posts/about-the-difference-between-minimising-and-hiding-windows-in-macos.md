@@ -17,11 +17,12 @@ Hiding:
 
 - `⌘ + h` hides _all_ windows of active application.
 
-- `⌘ + ⌥ + h` hides _all_ windows of all applications except the active one (useful).
+- `⌘ + ⌥ + h` hides _all_ windows of all applications except the active one
+  (useful).
 
 - Window icon not show in Dock.
 
-- Selecting application via the `⌘ + tab` application switcher restores
-  window.
+- Selecting application via the `⌘ + tab` application switcher restores window.
 
-A bit more info here: <https://apple.stackexchange.com/questions/9048/what-are-the-differences-between-minimizing-and-hiding-an-application/9049>
+A bit more info here:
+<https://apple.stackexchange.com/questions/9048/what-are-the-differences-between-minimizing-and-hiding-an-application/9049>

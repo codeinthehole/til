@@ -21,8 +21,9 @@ SECONDS
   subsequently reset.
 ```
 
-Here's a neat way of employing it with the [`timeout`](https://ss64.com/bash/timeout.html) command, taking from [Shell Scripting: Expert Recipes
-for Linux, Bash and More](https://www.oreilly.com/library/view/shell-scripting-expert/9781118166321/c03-anchor-3.xhtml)
+Here's a neat way of employing it with the
+[`timeout`](https://ss64.com/bash/timeout.html) command, taking from
+[Shell Scripting: Expert Recipes for Linux, Bash and More](https://www.oreilly.com/library/view/shell-scripting-expert/9781118166321/c03-anchor-3.xhtml)
 
 ```bash
 #!/bin/bash

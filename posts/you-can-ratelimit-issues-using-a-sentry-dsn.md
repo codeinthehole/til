@@ -12,5 +12,6 @@ apply rate limits at the DSN level.
 This lets you apply different rate limiting settings for different parts of your
 application by using separate DSNs.
 
-See [Sentry's docs](https://docs.sentry.io/accounts/quotas/manage-event-stream-guide/#6-rate-limiting)
+See
+[Sentry's docs](https://docs.sentry.io/accounts/quotas/manage-event-stream-guide/#6-rate-limiting)
 on the subject.

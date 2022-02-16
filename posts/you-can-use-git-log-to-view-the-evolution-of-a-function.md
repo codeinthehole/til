@@ -29,4 +29,5 @@ git log -L :get_locale:octoenergy/utils/workingdays.py
 Depending on what language you're working with, you may need to adjust you local
 `~/.gitattributes` file to ensure Git can determine the patch hunk headers.
 
-More in [the official git docs](https://git-scm.com/docs/git-log/#Documentation/git-log.txt--Lltfuncnamegtltfilegt).
+More in
+[the official git docs](https://git-scm.com/docs/git-log/#Documentation/git-log.txt--Lltfuncnamegtltfilegt).

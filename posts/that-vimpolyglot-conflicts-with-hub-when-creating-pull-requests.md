@@ -14,8 +14,8 @@ vim --cmd set ft=gitcommit tw=0 wrap lbr .git/PULLREQ_EDITMSG
 (As of Hub 2.14.2 at least).
 
 However, the [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) language
-pack assigns a file type of `pullrequest` to files named
-`PULLREQ_EDITMSG` and so the `gitcommit` file type that Hub specifies is ignored.
+pack assigns a file type of `pullrequest` to files named `PULLREQ_EDITMSG` and
+so the `gitcommit` file type that Hub specifies is ignored.
 
 This can be worked around by setting:
 

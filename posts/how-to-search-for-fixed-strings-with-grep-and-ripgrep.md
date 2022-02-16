@@ -16,9 +16,9 @@ or, better:
 rg -F -- "$query"
 ```
 
-Note, the `--` tells Bash there are no more options and any further arguments are
-positional. This is required to search for queries that _look like_ options, like
-`-v` or `->`. From `man bash`:
+Note, the `--` tells Bash there are no more options and any further arguments
+are positional. This is required to search for queries that _look like_ options,
+like `-v` or `->`. From `man bash`:
 
 ```txt
  --    A -- signals the end of options and disables further option processing.
@@ -26,8 +26,8 @@ positional. This is required to search for queries that _look like_ options, lik
        argument of - is equivalent to --.
 ```
 
-I noticed this when doing a quick search for symlinks in my home directory. Using the
-incorrect:
+I noticed this when doing a quick search for symlinks in my home directory.
+Using the incorrect:
 
 ```bash
 ls -la ~ | grep -F "->"

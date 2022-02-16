@@ -1,5 +1,6 @@
 ---
-title: "That `mypy` only type-checks functions that have at least one type annotation"
+title:
+  "That `mypy` only type-checks functions that have at least one type annotation"
 date: "2021-06-16T15:16:58+01:00"
 tags: ["Python", "mypy"]
 ---
@@ -7,7 +8,8 @@ tags: ["Python", "mypy"]
 This is noted in the [common issues and solutions][mypy_docs] documentation. For
 example `mypy` doesn't complain about this obviously wrong function call:
 
-[mypy_docs]: https://mypy.readthedocs.io/en/stable/common_issues.html#no-errors-reported-for-obviously-wrong-code
+[mypy_docs]:
+  https://mypy.readthedocs.io/en/stable/common_issues.html#no-errors-reported-for-obviously-wrong-code
 
 ```py
 def cast_int_to_string(x: int) -> str:

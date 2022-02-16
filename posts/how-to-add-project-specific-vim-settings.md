@@ -4,8 +4,8 @@ date: "2020-12-18T09:46:49+00:00"
 tags: ["Vim"]
 ---
 
-There's various ways to do this but I quite like using an  `autocmd` based on
-a buffer's filepath. For example:
+There's various ways to do this but I quite like using an `autocmd` based on a
+buffer's filepath. For example:
 
 ```vim
 " ~/.vim/vimrc
@@ -22,7 +22,8 @@ don't want indexing (as it takes ages). This is a preference particular to me so
 it would be inappropriate to hard-code configuration to the repo (via, say, a
 `.ctags.d/project.ctags` file).
 
-Note, we're `call`ing a function so it's easier to add new project-specific settings later on.
+Note, we're `call`ing a function so it's easier to add new project-specific
+settings later on.
 
 Another option is to `set exrc` and use a per-project `.vimrc` file (kept out of
 source control). See:

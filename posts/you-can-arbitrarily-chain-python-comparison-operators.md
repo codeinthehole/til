@@ -11,8 +11,8 @@ Which explains why:
 True
 ```
 
-This odd looking expression is equivalent to `(False == False) and (False in
-[False])`, hence why it evaluates to `True`.
+This odd looking expression is equivalent to
+`(False == False) and (False in [False])`, hence why it evaluates to `True`.
 
 And since there's no limit to how many comparisons can be chained together, this
 kind of thing is legal syntax:
@@ -22,4 +22,5 @@ kind of thing is legal syntax:
 True
 ```
 
-See the [Python docs on comparisons for more details](https://docs.python.org/3/reference/expressions.html#comparisons).
+See the
+[Python docs on comparisons for more details](https://docs.python.org/3/reference/expressions.html#comparisons).

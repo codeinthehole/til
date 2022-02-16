@@ -10,9 +10,10 @@ Was puzzled as to why:
 
 wasn't triggering the BBC Sounds skill on a new 4th Generation Echo.
 
-Turns out the problem was the default language was "English (US)" when it should have
-been "English (UK)".
+Turns out the problem was the default language was "English (US)" when it should
+have been "English (UK)".
 
-This is noted in [the BBC docs](https://www.bbc.co.uk/usingthebbc/account/the-bbc-on-voice-devices/).
+This is noted in
+[the BBC docs](https://www.bbc.co.uk/usingthebbc/account/the-bbc-on-voice-devices/).
 
 {{< figure src="/images/bbc-sounds-on-alexa.png" title="" caption="" alt="BBC Sounds on Alexa" >}}

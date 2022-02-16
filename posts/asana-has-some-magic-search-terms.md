@@ -4,8 +4,8 @@ date: "2020-08-12"
 tags: ["Asana"]
 ---
 
-If you use the "Search this project" widget (via the "..." link on the right-hand
-side of the project view), you can search for:
+If you use the "Search this project" widget (via the "..." link on the
+right-hand side of the project view), you can search for:
 
 - `"nobody"` to see unassigned tickets
 - `"not me"` to see tickets assigned to anyone but you

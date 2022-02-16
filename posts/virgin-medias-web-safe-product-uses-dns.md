@@ -1,5 +1,5 @@
 ---
-title: "Virgin Media's \"Web Safe\" product uses DNS"
+title: 'Virgin Media''s "Web Safe" product uses DNS'
 date: "2021-01-29T16:36:52+00:00"
 tags: ["Home networking", "Virgin Media"]
 ---

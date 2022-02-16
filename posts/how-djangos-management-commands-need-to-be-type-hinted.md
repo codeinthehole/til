@@ -5,7 +5,8 @@ tags: ["Django", "Mypy", "Python"]
 ---
 
 For Django management commands with arguments, you might not expect Mypy
-(configured with the [`django-stubs`](https://github.com/typeddjango/django-stubs) plugin) to
+(configured with the
+[`django-stubs`](https://github.com/typeddjango/django-stubs) plugin) to
 complain about this signature:
 
 ```py
@@ -27,13 +28,16 @@ Signature of "handle" incompatible with supertype "BaseCommand" [override]
 ```
 
 The problem is the `name` positional argument which makes the argument types
-_more specific_ than `BaseCommand.handle` which has [type signature](https://github.com/typeddjango/django-stubs/blob/d5e45db79bcea6d6f4f45eacca3a2fe6e125e2e3/django-stubs/core/management/base.pyi#L70) :
+_more specific_ than `BaseCommand.handle` which has
+[type signature](https://github.com/typeddjango/django-stubs/blob/d5e45db79bcea6d6f4f45eacca3a2fe6e125e2e3/django-stubs/core/management/base.pyi#L70)
+:
 
 ```py
 def handle(self, *args: Any, **options: Any) -> Optional[str]:
 ```
 
-This is well explained in the [Mypy docs](https://mypy.readthedocs.io/en/stable/common_issues.html#incompatible-overrides):
+This is well explained in the
+[Mypy docs](https://mypy.readthedocs.io/en/stable/common_issues.html#incompatible-overrides):
 
 > It's unsafe to override a method with a more specific argument type, as it
 > violates the Liskov substitution principle. For return types, it’s unsafe to

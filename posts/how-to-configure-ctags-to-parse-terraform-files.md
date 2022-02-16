@@ -4,8 +4,9 @@ date: "2020-11-26T16:09:12+00:00"
 tags: ["Ctags", "Vim"]
 ---
 
-If you're using [Universal Ctags](https://github.com/universal-ctags/ctags) (which you should be), you just need to add
-a `~/.ctags.d/terraform.ctags` with contents:
+If you're using [Universal Ctags](https://github.com/universal-ctags/ctags)
+(which you should be), you just need to add a `~/.ctags.d/terraform.ctags` with
+contents:
 
 ```txt
 --langdef=terraform
@@ -31,8 +32,8 @@ resource "aws_cloudwatch_log_group" "my-log-group" {
 will have `my-log-group` stored as an identifier so you can jump to its
 definition from other references.
 
-Inspiration taken from [ctag support for
-Terraform](https://z0mbix.io/2016/09/04/ctag-support-for-terraform/) although
-the snippet above is a slightly amended version from the
+Inspiration taken from
+[ctag support for Terraform](https://z0mbix.io/2016/09/04/ctag-support-for-terraform/)
+although the snippet above is a slightly amended version from the
 [vim-terraform-completion](https://github.com/juliosueiras/vim-terraform-completion/blob/master/ctags/terraform.ctags)
 repo.

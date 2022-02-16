@@ -9,12 +9,13 @@ folder specified by the `$TMPDIR` environment variable; this is normally a
 subfolder of `/var/folders/`.
 
 Temporary files are periodically removed by the `com.apple.periodic-daily`
-launch daemon (specified in `/System/Library/LaunchDaemons/com.apple.periodic-daily.plist`). This runs
-the `/usr/sbin/periodic` shell script (via `/usr/libexec/periodic-wrapper`).
-This runs all scripts in `/etc/periodic/daily/` including
-`/etc/periodic/daily/110.clean-tmps` which is responsible for removing old temporary files.
-The default configuration `/etc/defaults/periodic.conf` ensures any files
-in `/tmp` that haven't been accessed for 3 days are deleted.
+launch daemon (specified in
+`/System/Library/LaunchDaemons/com.apple.periodic-daily.plist`). This runs the
+`/usr/sbin/periodic` shell script (via `/usr/libexec/periodic-wrapper`). This
+runs all scripts in `/etc/periodic/daily/` including
+`/etc/periodic/daily/110.clean-tmps` which is responsible for removing old
+temporary files. The default configuration `/etc/defaults/periodic.conf` ensures
+any files in `/tmp` that haven't been accessed for 3 days are deleted.
 
 ```
 # /etc/defaults/periodic.conf

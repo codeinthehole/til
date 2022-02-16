@@ -1,11 +1,15 @@
 ---
-title: "That FreezeGun doesn't work with Pytest fixtures (unless you use `pytest-freezegun`)"
+title:
+  "That FreezeGun doesn't work with Pytest fixtures (unless you use
+  `pytest-freezegun`)"
 date: "2021-07-12T17:05:19+01:00"
 tags: ["Python", "Testing"]
 ---
 
-Wrapping tests classes with [FreezeGun](https://github.com/spulec/freezegun#decorator)'s `@freezegun.freeze_time` doesn't control calls to the
-system clock from fixtures. That is, this test fails when run on any date other than 2021-07-01:
+Wrapping tests classes with
+[FreezeGun](https://github.com/spulec/freezegun#decorator)'s
+`@freezegun.freeze_time` doesn't control calls to the system clock from
+fixtures. That is, this test fails when run on any date other than 2021-07-01:
 
 ```py
 import datetime
@@ -33,12 +37,12 @@ E     -datetime.date(2021, 7, 12)
 ```
 
 However, if you use the `pytest.mark.freeze_time` decorator provided by
-[`pytest-freezegun`](https://github.com/ktosiek/pytest-freezegun), then calls to the system clock in the fixture function
-_are_ controlled by FreezeGun.
+[`pytest-freezegun`](https://github.com/ktosiek/pytest-freezegun), then calls to
+the system clock in the fixture function _are_ controlled by FreezeGun.
 
-For example, if we replace
-`@freezegun.freeze_time` with `@pytest.mark.freeze_time` then the test always
-passes no matter what day it is run:
+For example, if we replace `@freezegun.freeze_time` with
+`@pytest.mark.freeze_time` then the test always passes no matter what day it is
+run:
 
 ```py
 import datetime

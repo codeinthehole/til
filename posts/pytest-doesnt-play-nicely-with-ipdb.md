@@ -4,18 +4,19 @@ date: "2021-03-02T12:30:06+00:00"
 tags: ["Testing", "pytest", "Python"]
 ---
 
-To ensure `breakpoint()` triggers [`ipdb`](https://github.com/gotcha/ipdb) as my default debugger, I used to set:
+To ensure `breakpoint()` triggers [`ipdb`](https://github.com/gotcha/ipdb) as my
+default debugger, I used to set:
 
 ```bash
 PYTHONBREAKPOINT=ipdb.set_trace`
 ```
 
-in `~/.bash_profile` (following [this advice](https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/)).
+in `~/.bash_profile` (following
+[this advice](https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/)).
 However, this doesn't play nicely with pytest's output capturing.
 
-Pytest has a useful feature where [it disables output capturing if `breakpoint`
-is called during test
-execution](https://docs.pytest.org/en/stable/usage.html#setting-breakpoints),
+Pytest has a useful feature where
+[it disables output capturing if `breakpoint` is called during test execution](https://docs.pytest.org/en/stable/usage.html#setting-breakpoints),
 which allows access to the debugger prompt. However, this only works if
 `PYTHONBREAKPOINT` is unset. If you have `PYTHONBREAKPOINT` set to a non-empty
 value, then you need to use pytest's
