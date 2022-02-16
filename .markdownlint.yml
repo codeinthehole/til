@@ -1,0 +1,7 @@
+default: true
+
+# Allow inline HTML
+MD033: false
+
+# Ignore line length rules (as Prettier will format for these).
+MD013: false
