@@ -59,14 +59,16 @@
                 On <time>September 30th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
             <h1>Factory boy can be used to build dicts</h1>
-        </header><p>Conventionally subclasses of <code>factory.Factory</code> are used to build objects,
-often Django models that are persisted to some data store.</p>
+        </header><p>Conventionally subclasses of <code>factory.Factory</code> are used to build objects, often
+Django models that are persisted to some data store.</p>
 <p>But they can also be used to build plain <code>dict</code>s, which can be useful for
 building complex <code>dict</code>s in tests.</p>
-<p>This is done via the <a href="https://factoryboy.readthedocs.io/en/stable/reference.html#factory.FactoryOptions.model"><code>Meta.model</code> field</a> which specifies the
-class of object to create. There&rsquo;s also a convenient <code>factory.DictFactory</code>
-class.</p>
-<p>Here&rsquo;s an example using <code>factory.Factory</code> subclasses to create a nested <code>dict</code> fixture:</p>
+<p>This is done via the
+<a href="https://factoryboy.readthedocs.io/en/stable/reference.html#factory.FactoryOptions.model"><code>Meta.model</code> field</a>
+which specifies the class of object to create. There&rsquo;s also a convenient
+<code>factory.DictFactory</code> class.</p>
+<p>Here&rsquo;s an example using <code>factory.Factory</code> subclasses to create a nested <code>dict</code>
+fixture:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> factory
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pet</span>(factory<span style="color:#f92672">.</span>DictFactory):
@@ -124,8 +126,28 @@ class.</p>
 
             
                 
-                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/factoryboy/">FactoryBoy</a>:</p>
                     <ul>
+                    
+                        <li><a href="/posts/about-factory-boys-selfattribute-class/">About Factory Boy&rsquo;s <code>SelfAttribute</code> class</a></li>
+                    
+                    </ul>
+                    
+                        
+                    
+                
+
+            
+
+        
+
+            
+
+            
+                
+
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                <ul>
                     
                         <li><a href="/posts/you-cant-use-djangos-generic-foreign-key-field-with-objects-stored-in-a-separate-database/">You can&rsquo;t use Django&rsquo;s generic foreign key field with objects stored in a separate database</a></li>
                     
@@ -181,7 +203,6 @@ class.</p>
                     
                         <li><a href="/posts/how-to-typecheck-csv-objects-in-python/">How to use type annotations with Python&rsquo;s <code>csv</code> module</a></li>
                     
-                    </ul>
                     
                         
                     
@@ -237,8 +258,7 @@ class.</p>
                     
                         
                     
-                
-
+                </ul>
             
 
         

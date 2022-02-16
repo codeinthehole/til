@@ -6,11 +6,38 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Feb 2022 11:01:19 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Feb 2022 09:17:38 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>FactoryBoy</title>
+      <link>https://til.codeinthehole.com/tags/factoryboy/</link>
+      <pubDate>Wed, 16 Feb 2022 09:17:38 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/factoryboy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://til.codeinthehole.com/tags/python/</link>
+      <pubDate>Wed, 16 Feb 2022 09:17:38 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://til.codeinthehole.com/tags/testing/</link>
+      <pubDate>Wed, 16 Feb 2022 09:17:38 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/testing/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Loggly</title>
@@ -36,15 +63,6 @@
       <pubDate>Wed, 02 Feb 2022 11:55:29 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/django/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Wed, 02 Feb 2022 11:55:29 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/python/</guid>
       <description></description>
     </item>
     
@@ -135,15 +153,6 @@
       <pubDate>Fri, 08 Oct 2021 21:05:16 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/ios/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Testing</title>
-      <link>https://til.codeinthehole.com/tags/testing/</link>
-      <pubDate>Thu, 30 Sep 2021 13:56:48 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/testing/</guid>
       <description></description>
     </item>
     

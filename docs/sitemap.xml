@@ -2,16 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://til.codeinthehole.com/tags/loggly/</loc>
-    <lastmod>2022-02-10T11:01:19+00:00</lastmod>
+    <loc>https://til.codeinthehole.com/posts/about-factory-boys-selfattribute-class/</loc>
+    <lastmod>2022-02-16T09:17:38+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/factoryboy/</loc>
+    <lastmod>2022-02-16T09:17:38+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2022-02-10T11:01:19+00:00</lastmod>
+    <lastmod>2022-02-16T09:17:38+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2022-02-16T09:17:38+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2022-02-10T11:01:19+00:00</lastmod>
+    <lastmod>2022-02-16T09:17:38+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/testing/</loc>
+    <lastmod>2022-02-16T09:17:38+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2022-02-16T09:17:38+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/loggly/</loc>
     <lastmod>2022-02-10T11:01:19+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-search-for-loggly-mapping-conflicts/</loc>
@@ -24,9 +36,6 @@
     <lastmod>2022-02-02T18:08:58+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/django/</loc>
-    <lastmod>2022-02-02T11:55:29+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
     <lastmod>2022-02-02T11:55:29+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/you-cant-use-djangos-generic-foreign-key-field-with-objects-stored-in-a-separate-database/</loc>
@@ -105,9 +114,6 @@
     <lastmod>2021-10-05T17:14:16+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/factory-boy-can-be-used-to-build-dicts/</loc>
-    <lastmod>2021-09-30T13:56:48+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/testing/</loc>
     <lastmod>2021-09-30T13:56:48+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/django-settings-prefixed-with-an-underscore-are-private/</loc>

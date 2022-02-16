@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Feb 2022 11:55:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Feb 2022 09:17:38 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About Factory Boy&#39;s `SelfAttribute` class</title>
+      <link>https://til.codeinthehole.com/posts/about-factory-boys-selfattribute-class/</link>
+      <pubDate>Wed, 16 Feb 2022 09:17:38 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-factory-boys-selfattribute-class/</guid>
+      <description>Factory Boy has a useful SelfAttribute class that lets a field reference another field of the object being constructed.</description>
+    </item>
     
     <item>
       <title>You can&#39;t use Django&#39;s generic foreign key field with objects stored in a separate database</title>
