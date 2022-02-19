@@ -21,7 +21,7 @@ booleans
 pastable
 subfolder
 filetype
-Mypy
+slugified
 
 # Software
 ripgrep
@@ -30,6 +30,7 @@ systemd
 pytz
 BuildKit
 Postgres
+Mypy
 
 # Applications
 Asana
