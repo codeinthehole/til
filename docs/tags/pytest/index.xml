@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pytest - Today I Learnt...</title>
+    <title>Pytest - Today I Learnt...</title>
     <link>https://til.codeinthehole.com/tags/pytest/</link>
-    <description>Recent content in pytest on Today I Learnt...</description>
+    <description>Recent content in Pytest on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 16 Jul 2021 15:17:08 +0100</lastBuildDate>
@@ -27,7 +27,7 @@
       <pubDate>Tue, 16 Mar 2021 17:36:21 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-have-classscoped-autouse-pytest-fixtures/</guid>
-      <description>If you decorate a class instance method as an autouse=True pytest fixture, then it will be automatically applied for all test methods on that class.</description>
+      <description>If you decorate a class instance method as an autouse=True Pytest fixture, then it will be automatically applied for all test methods on that class.</description>
     </item>
     
     <item>

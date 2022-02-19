@@ -4,8 +4,8 @@ date: "2020-08-14"
 tags: ["Command-line tools"]
 ---
 
-It's an image optimizer for PNG files. It's available via Homebrew for MacOS and
-works like:
+It's an image optimizer for `.png` files. It's available via Homebrew for MacOS
+and works like:
 
 ```bash
 pngcrush -ow screenshot.png

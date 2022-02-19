@@ -12,6 +12,6 @@ You can create "collections" of snippets in Alfred, such as:
 
 Anything that you might want to insert into text regularly.
 
-{{< figure src="/images/alfreds-snippets-ui.png" title="" caption="" alt="alfreds snippets ui" >}}
+{{< figure src="/images/alfreds-snippets-ui.png" title="" caption="" alt="Alfred's snippets UI" >}}
 
 See <https://www.alfredapp.com/help/features/snippets/>

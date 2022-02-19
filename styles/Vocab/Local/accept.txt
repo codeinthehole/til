@@ -1,0 +1,56 @@
+# Tech jargon
+src
+Footgun
+quickfix
+png
+filepaths
+config
+kwarg
+superset
+ing
+rebase
+reflog
+filepath
+repo
+truthy
+ctag
+ctags
+Ctags
+boolean
+booleans
+pastable
+subfolder
+filetype
+Mypy
+
+# Software
+ripgrep
+Pytest
+systemd
+pytz
+BuildKit
+Postgres
+
+# Applications
+Asana
+Trello
+Github
+Loggly
+Alexa
+Calendly
+
+# Names
+Magnus
+Carlsen
+Romain
+Lafourcade
+Tunnicliffe
+Maier
+Liskov
+
+# British
+onwards
+
+# Companies
+Hashicorp
+Hashrocket

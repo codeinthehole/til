@@ -56,8 +56,8 @@ For example:
 til that cows can't look up
 ```
 
-which will create a markdown file, named by slugifying the description (ie
-`that-cows-cant-look-up.md`), pre-populated with Hugo frontmatter:
+which will create a markdown file, named by slugifying the description (i.e.
+`that-cows-cant-look-up.md`), pre-populated with Hugo front matter:
 
 ```markdown
 ---

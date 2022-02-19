@@ -28,7 +28,7 @@ docker inspect -f &amp;#34;{{ .</description>
       <pubDate>Tue, 29 Dec 2020 15:55:34 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-enable-docker-buildkit-in-macos-docker-desktop/</guid>
-      <description>Since Docker 18.09, you can the BuildKit feature to take advantages of improved performance and extra features when building images — see Build images with Buildkit from the Docker docs.</description>
+      <description>Since Docker 18.09, you can the BuildKit feature to take advantages of improved performance and extra features when building images — see Build images with BuildKit from the Docker docs.</description>
     </item>
     
     <item>

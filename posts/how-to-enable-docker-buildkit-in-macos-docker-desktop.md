@@ -6,7 +6,7 @@ tags: ["Docker"]
 
 Since Docker 18.09, you can the BuildKit feature to take advantages of improved
 performance and extra features when building images — see
-[Build images with Buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/)
+[Build images with BuildKit](https://docs.docker.com/develop/develop-images/build_enhancements/)
 from the Docker docs.
 
 MacOS users using

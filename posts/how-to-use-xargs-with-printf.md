@@ -12,7 +12,7 @@ $ echo world | xargs printf "hello %s"
 hello world
 ```
 
-It's useful for building strings from streams of data. Today's usecase was
+It's useful for building strings from streams of data. Today's use case was
 building a pastable Python snippet from a JSON file containing object IDs:
 
 ```bash

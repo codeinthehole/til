@@ -12,7 +12,7 @@ JQ's `unique` function requires an array as input and so we must convert the
 separate JSON objects from the JSONL steam into an array. This is done using the
 `--slurp` option:
 
-{{< figure src="/images/jq-slurp-docs.png" title="" caption="" alt="jq slurp docs" >}}
+{{< figure src="/images/jq-slurp-docs.png" title="" caption="" alt="JQ slurp docs" >}}
 
 Example usage:
 

@@ -4,7 +4,7 @@ date: "2020-12-10T18:24:55+00:00"
 tags: ["Ctags", "Vim"]
 ---
 
-For instance, it can index make, markdown and ini files without custom
+For instance, it can index make, markdown and `.ini` files without custom
 configuration.
 
 List supported languages with:

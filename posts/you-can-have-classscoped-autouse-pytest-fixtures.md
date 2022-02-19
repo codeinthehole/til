@@ -4,7 +4,7 @@ date: "2021-03-16T17:36:21+00:00"
 tags: ["pytest", "Python", "Testing"]
 ---
 
-If you decorate a class instance method as an `autouse=True` pytest fixture,
+If you decorate a class instance method as an `autouse=True` Pytest fixture,
 then it will be automatically applied for all test methods on that class. This
 is a useful pattern to remember.
 

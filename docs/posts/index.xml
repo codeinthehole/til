@@ -409,7 +409,7 @@ This is a special form of the :N,Mbdelete ranged buffer delete command where % i
       <pubDate>Wed, 28 Apr 2021 17:09:21 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/sensitive-terraform-cloud-variables-are-included-in-sentinel-mocks/</guid>
-      <description>Hasicorp&amp;rsquo;s Sentinel framework allows you to write tests using a mock Terraform plan file.</description>
+      <description>Hashicorp&amp;rsquo;s Sentinel framework allows you to write tests using a mock Terraform plan file.</description>
     </item>
     
     <item>
@@ -518,7 +518,7 @@ MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 S
       <pubDate>Tue, 16 Mar 2021 17:36:21 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-have-classscoped-autouse-pytest-fixtures/</guid>
-      <description>If you decorate a class instance method as an autouse=True pytest fixture, then it will be automatically applied for all test methods on that class.</description>
+      <description>If you decorate a class instance method as an autouse=True Pytest fixture, then it will be automatically applied for all test methods on that class.</description>
     </item>
     
     <item>
@@ -724,7 +724,7 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       
       <guid>https://til.codeinthehole.com/posts/bbc-sounds-only-works-on-alexa-if-the-language-setting-is-uk-english/</guid>
       <description>Was puzzled as to why:
- alexa, play bbc radio four</description>
+ Alexa, play BBC radio four</description>
     </item>
     
     <item>
@@ -751,7 +751,7 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Tue, 29 Dec 2020 15:55:34 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-enable-docker-buildkit-in-macos-docker-desktop/</guid>
-      <description>Since Docker 18.09, you can the BuildKit feature to take advantages of improved performance and extra features when building images — see Build images with Buildkit from the Docker docs.</description>
+      <description>Since Docker 18.09, you can the BuildKit feature to take advantages of improved performance and extra features when building images — see Build images with BuildKit from the Docker docs.</description>
     </item>
     
     <item>
@@ -816,7 +816,7 @@ import pytest @pytest.mark.parametrize(&amp;#34;x&amp;#34;, [1,2,3]) @pytest.mar
       <pubDate>Thu, 10 Dec 2020 18:24:55 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/universal-ctags-can-index-more-things-than-i-realised/</guid>
-      <description>For instance, it can index make, markdown and ini files without custom configuration.</description>
+      <description>For instance, it can index make, markdown and .</description>
     </item>
     
     <item>
@@ -1343,7 +1343,7 @@ import _csv def generate_report(writer: &amp;#39;_csv.</description>
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-pngcrush/</guid>
-      <description>It&amp;rsquo;s an image optimizer for PNG files. It&amp;rsquo;s available via Homebrew for MacOS and works like:</description>
+      <description>It&amp;rsquo;s an image optimizer for .png files. It&amp;rsquo;s available via Homebrew for MacOS and works like:</description>
     </item>
     
     <item>

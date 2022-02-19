@@ -6,7 +6,7 @@ tags: ["Alexa"]
 
 Was puzzled as to why:
 
-> alexa, play bbc radio four
+> Alexa, play BBC radio four
 
 wasn't triggering the BBC Sounds skill on a new 4th Generation Echo.
 

@@ -17,7 +17,7 @@ $ myvar=2
 -bash: myvar: readonly variable
 ```
 
-You can use `declare -r` to enforce immutability within a _local_ scope (eg
+You can use `declare -r` to enforce immutability within a _local_ scope (e.g.
 within a function body).
 
 See

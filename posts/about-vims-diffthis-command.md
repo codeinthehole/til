@@ -11,11 +11,12 @@ You can manually compare two more open buffers by running:
 ```
 
 This is an alternative to opening the files with `vimdiff`. One advantage is
-that you compare buffers that aren't files (eg text pasted from the clipboard).
+that you compare buffers that aren't files (e.g. text pasted from the
+clipboard).
 
 Further reading:
 
 - There's some useful info in the
-  ["Comparing buffers with vimdiff"](http://vimcasts.org/episodes/comparing-buffers-with-vimdiff/)
+  ["Comparing buffers with `vimdiff`"](http://vimcasts.org/episodes/comparing-buffers-with-vimdiff/)
   screencast.
 - [`:help :diffthis`](http://vimdoc.sourceforge.net/htmldoc/diff.html#:diffthis)
