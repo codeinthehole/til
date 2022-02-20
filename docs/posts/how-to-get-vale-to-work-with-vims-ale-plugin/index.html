@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which lets you search Vim’s help files for a given pattern. ...
+    Vale is an extensible syntax aware linter. It can integrate with Vim via Ale although there’s a gotcha to be aware of. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-vims-helpgrep-command/" />
-<meta property="og:title" content="TIL About Vim&#39;s &#39;:helpgrep&#39; command — David Winterbottom" />
-<meta property="og:description" content="Which lets you search Vim&rsquo;s help files for a given pattern. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-get-vale-to-work-with-vims-ale-plugin/" />
+<meta property="og:title" content="TIL How to get Vale to work with Vim&#39;s Ale plugin — David Winterbottom" />
+<meta property="og:description" content="Vale is an extensible syntax aware linter. It can integrate with Vim via Ale although there&rsquo;s a gotcha to be aware of. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About Vim&#39;s &#39;:helpgrep&#39; command — David Winterbottom
+    TIL How to get Vale to work with Vim&#39;s Ale plugin — David Winterbottom
 </title>
 
         
@@ -56,16 +56,27 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>September 16th, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>February 20th, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About Vim&rsquo;s <code>:helpgrep</code> command</h1>
-        </header><p>Which lets you search Vim&rsquo;s help files for a given pattern. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">helpgrep</span> <span style="color:#a6e22e">What</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">meaning</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">life</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>Discovered via a
-<a href="https://til.hashrocket.com/posts/hdwqjbnl65-use-helpgrep-to-search-plugin-help-files-too">Hashrocket TIL</a>
-and an episode of Josh Branchaud&rsquo;s
-<a href="https://www.youtube.com/playlist?list=PL46-cKSxMYYCMpzXo6p0Cof8hJInYgohU">Vim Un-Alphabet</a>
-screencast series.</p>
+            <h1>How to get Vale to work with Vim&rsquo;s Ale plugin</h1>
+        </header><p><a href="https://github.com/errata-ai/vale">Vale</a> is an extensible syntax aware linter. It can integrate with Vim via
+<a href="https://github.com/dense-analysis/ale">Ale</a> although there&rsquo;s a gotcha to be aware of.</p>
+<p>Vale&rsquo;s config file uses globs to determine which formats to apply. E.g.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[posts/*.md]</span>
+<span style="color:#a6e22e">BasedOnStyles</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">Vale, write-good, proselint</span>
+</code></pre></div><p>However, by default, Ale lint files by running each linter on a temporary copy
+of the file which has a different path. This means the above glob doesn&rsquo;t match
+and Vale finds no errors.</p>
+<p>To work around this, it&rsquo;s best to avoid folders your <code>.vale.ini</code> globs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[*.md]</span>
+<span style="color:#a6e22e">BasedOnStyles</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">Vale, write-good, proselint</span>
+</code></pre></div><p>as this will match temporary files (that still have a <code>.md</code> extension).</p>
+<p>Further reading:</p>
+<ul>
+<li>There&rsquo;s a bit more discussion on <a href="https://github.com/dense-analysis/ale/issues/3363">this Github ticket</a>.</li>
+<li>The <code>:ALEInfo</code> command is very useful for debugging why Ale isn&rsquo;t doing what
+you expect it to.</li>
+</ul>
 </article>
 
         </main>
@@ -81,10 +92,17 @@ screencast series.</p>
 
             
                 
+
+            
+
+        
+
+            
+
+            
+                
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
                     <ul>
-                    
-                        <li><a href="/posts/how-to-get-vale-to-work-with-vims-ale-plugin/">How to get Vale to work with Vim&rsquo;s Ale plugin</a></li>
                     
                         <li><a href="/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/">How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</a></li>
                     
@@ -127,6 +145,8 @@ screencast series.</p>
                         <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
                     
                         <li><a href="/posts/how-to-read-from-one-buffer-to-another-in-vim/">How to read from one buffer to another in Vim</a></li>
+                    
+                        <li><a href="/posts/about-vims-helpgrep-command/">About Vim&rsquo;s <code>:helpgrep</code> command</a></li>
                     
                         <li><a href="/posts/vim-recommends-using-emacsstyle-key-bindings-in-command-mode/">Vim recommends using Emacs-style key bindings in command mode</a></li>
                     
@@ -201,9 +221,9 @@ screencast series.</p>
         
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -212,11 +232,9 @@ screencast series.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/vim-recommends-using-emacsstyle-key-bindings-in-command-mode\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-use-markdownlint-output-in-vims-quickfix-list\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-count-lines-of-code-in-a-git-repo\/"); })
         
     </script>
 

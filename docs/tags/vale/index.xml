@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vale - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/vale/</link>
+    <description>Recent content in Vale on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Feb 2022 18:54:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/vale/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to get Vale to work with Vim&#39;s Ale plugin</title>
+      <link>https://til.codeinthehole.com/posts/how-to-get-vale-to-work-with-vims-ale-plugin/</link>
+      <pubDate>Sun, 20 Feb 2022 18:54:33 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-get-vale-to-work-with-vims-ale-plugin/</guid>
+      <description>Vale is an extensible syntax aware linter. It can integrate with Vim via Ale although there&amp;rsquo;s a gotcha to be aware of.</description>
+    </item>
+    
+
+  </channel>
+</rss>
