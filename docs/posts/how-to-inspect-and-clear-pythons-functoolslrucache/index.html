@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Which can be used for debugging type annotation problems. ...
+    Python’s functools.lru_cache binds two additional functions to decorated functions: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-mypys-revealtype-and-reveallocals-functions/" />
-<meta property="og:title" content="TIL About &#39;mypy&#39;&#39;s &#39;reveal_type&#39; and &#39;reveal_locals&#39; functions — David Winterbottom" />
-<meta property="og:description" content="Which can be used for debugging type annotation problems. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-inspect-and-clear-pythons-functoolslrucache/" />
+<meta property="og:title" content="TIL How to inspect and clear Python&#39;s &#39;functools.lru_cache&#39; — David Winterbottom" />
+<meta property="og:description" content="Python&rsquo;s functools.lru_cache binds two additional functions to decorated functions: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;mypy&#39;&#39;s &#39;reveal_type&#39; and &#39;reveal_locals&#39; functions — David Winterbottom
+    TIL How to inspect and clear Python&#39;s &#39;functools.lru_cache&#39; — David Winterbottom
 </title>
 
         
@@ -56,18 +56,33 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>June 16th, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>February 21th, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>mypy</code>&rsquo;s <code>reveal_type</code> and <code>reveal_locals</code> functions</h1>
-        </header><p>Which can be used for debugging type annotation problems. Insert them liberally
-into your code before running <code>mypy</code> to see the inferred static types of
-expressions or local variables.</p>
-<p>Make sure you remove them before committing or the Python interpreter will
-complain.</p>
-<p>More at
-<a href="https://mypy.readthedocs.io/en/latest/common_issues.html?highlight=reveal_type#reveal-type">displaying the type of an expression</a>
-in the <code>mypy</code> docs.</p>
-</article>
+            <h1>How to inspect and clear Python&rsquo;s <code>functools.lru_cache</code></h1>
+        </header><p>Python&rsquo;s <a href="https://docs.python.org/3/library/functools.html#functools.lru_cache"><code>functools.lru_cache</code></a> binds two additional functions to
+decorated functions:</p>
+<ul>
+<li><code>cache_info</code> which returns statistics about cache hits and misses, and;</li>
+<li><code>cache_clear</code> which clears the cache.</li>
+</ul>
+<h2 id="flakey-tests">Flakey tests</h2>
+<p>I&rsquo;ve found <code>functools.lru_cache</code> use to be a common factor of flakey tests,
+where behaviour changes depending on the order in which tests run (which affects
+which value gets cached). The symptoms are often that a test passes when run on
+its own but intermittently fails when run as part of a larger group.</p>
+<p>Avoid this by clearing related LRU caches as part of each test&rsquo;s tear-down
+process:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> pytest
+<span style="color:#f92672">from</span> somemodule <span style="color:#f92672">import</span> cached_function
+
+<span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>fixture(autouse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">clear_lru_cache</span>():
+    <span style="color:#75715e"># Execute the test...</span>
+    <span style="color:#66d9ef">yield</span>
+
+    <span style="color:#75715e"># ...then clear the LRU cache.</span>
+    cached_function<span style="color:#f92672">.</span>cache_clear()
+</code></pre></div></article>
 
         </main>
 
@@ -84,8 +99,6 @@ in the <code>mypy</code> docs.</p>
                 
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
                     <ul>
-                    
-                        <li><a href="/posts/how-to-inspect-and-clear-pythons-functoolslrucache/">How to inspect and clear Python&rsquo;s <code>functools.lru_cache</code></a></li>
                     
                         <li><a href="/posts/about-factory-boys-selfattribute-class/">About Factory Boy&rsquo;s <code>SelfAttribute</code> class</a></li>
                     
@@ -114,6 +127,8 @@ in the <code>mypy</code> docs.</p>
                         <li><a href="/posts/that-freezegun-doesnt-work-with-pytest-fixtures/">That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</a></li>
                     
                         <li><a href="/posts/about-mypys-unreachable-code-functionality/">About <code>mypy</code>&rsquo;s unreachable code functionality</a></li>
+                    
+                        <li><a href="/posts/about-mypys-revealtype-and-reveallocals-functions/">About <code>mypy</code>&rsquo;s <code>reveal_type</code> and <code>reveal_locals</code> functions</a></li>
                     
                         <li><a href="/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/">That <code>mypy</code> only type-checks functions that have at least one type annotation</a></li>
                     
@@ -209,24 +224,10 @@ in the <code>mypy</code> docs.</p>
 
         
 
-            
-
-            
-                
-
-                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/mypy/">mypy</a>:</p>
-                <ul>
-                    
-                    
-                </ul>
-            
-
         
-
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-        
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -235,11 +236,9 @@ in the <code>mypy</code> docs.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-get-vale-to-work-with-vims-ale-plugin\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-jqs-slurp-option\/"); })
         
     </script>
 
