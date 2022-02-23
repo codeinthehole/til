@@ -37,7 +37,7 @@
 
         {{ range $tag_pages }}
 
-            {{ $related_tag_pages := where .Pages "Title" "!=" $.Title }}
+            {{ $related_tag_pages := first 10 ( where .Pages "Title" "!=" $.Title ) }}
 
             {{ if $listed }}
                 {{ $related_tag_pages := $related_tag_pages | intersect (where .Pages "Title" "not in" $listed) }}
@@ -47,10 +47,10 @@
                     {{ range $related_tag_pages }}
                         <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
                     {{ end }}
-                    {{ range $related_tag_pages }}
-                        {{ $listed = $listed | append .Title }}
-                    {{ end }}
                 </ul>
+                {{ range $related_tag_pages }}
+                    {{ $listed = $listed | append .Title }}
+                {{ end }}
             {{ else }}
                 {{ if $related_tag_pages }}
                     <p>Other things learnt about <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>:</p>
