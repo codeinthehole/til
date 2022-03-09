@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    All images and containers are stored in:
+~/Library/Containers/com.docker.docker/Data/vms/0/data/Docker.raw as opposed to Linux which uses the /var/lib/docker directory. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/docker-for-mac-stores-all-containers-and-images-in-a-single-disk-image/" />
+<meta property="og:title" content="TIL Docker for Mac stores all containers and images in a single disk image — David Winterbottom" />
+<meta property="og:description" content="All images and containers are stored in:
+~/Library/Containers/com.docker.docker/Data/vms/0/data/Docker.raw as opposed to Linux which uses the /var/lib/docker directory. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL Docker for Mac stores all containers and images in a single disk image — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>March 9th, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>Docker for Mac stores all containers and images in a single disk image</h1>
+        </header><p>All images and containers are stored in:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">~/Library/Containers/com.docker.docker/Data/vms/0/data/Docker.raw
+</code></pre></div><p>as opposed to Linux which uses the <code>/var/lib/docker</code> directory.</p>
+<p>The size of this image can be configured in the Docker for Mac system
+preferences:</p>
+<figure><img src="/images/docker-for-mac-resources.png"
+         alt="Docker for Mac resources"/>
+</figure>
+
+<p>If you find <code>docker build</code> is erroring with a &ldquo;No space left on device&rdquo; error,
+this is a likely cause. You can free up space in this disk image by running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker system prune
+</code></pre></div><p>There&rsquo;s more info in the <a href="https://docs.docker.com/desktop/mac/space/">Docker docs on disk utilization</a>.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+
+        
+
+            
+
+            
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/docker/">Docker</a>:</p>
+                    <ul>
+                    
+                        <li><a href="/posts/how-to-list-the-mounts-of-a-running-docker-container/">How to list the mounts of a running Docker container</a></li>
+                    
+                        <li><a href="/posts/how-to-enable-docker-buildkit-in-macos-docker-desktop/">How to enable Docker BuildKit in MacOS Docker Desktop</a></li>
+                    
+                        <li><a href="/posts/how-to-run-jekyll-in-a-docker-container/">How to run Jekyll in a Docker container</a></li>
+                    
+                    </ul>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                
+
+            
+
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-inspect-and-clear-pythons-functoolslrucache\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
