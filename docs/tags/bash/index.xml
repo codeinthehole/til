@@ -6,11 +6,20 @@
     <description>Recent content in Bash on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Nov 2021 15:19:29 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Mar 2022 17:27:59 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to join an array in Bash</title>
+      <link>https://til.codeinthehole.com/posts/how-to-join-an-array-in-bash/</link>
+      <pubDate>Tue, 29 Mar 2022 17:27:59 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-join-an-array-in-bash/</guid>
+      <description>Say you want to build an array of values then print them out as a tab-separated line:</description>
+    </item>
     
     <item>
       <title>About Bash&#39;s `$SECONDS` shell variable</title>

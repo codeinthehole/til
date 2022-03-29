@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/bash/</loc>
+    <lastmod>2022-03-29T17:27:59+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/how-to-join-an-array-in-bash/</loc>
+    <lastmod>2022-03-29T17:27:59+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2022-03-29T17:27:59+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2022-03-29T17:27:59+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2022-03-29T17:27:59+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/docker/</loc>
     <lastmod>2022-03-09T15:59:20+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/docker-for-mac-stores-all-containers-and-images-in-a-single-disk-image/</loc>
-    <lastmod>2022-03-09T15:59:20+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2022-03-09T15:59:20+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2022-03-09T15:59:20+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2022-03-09T15:59:20+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-inspect-and-clear-pythons-functoolslrucache/</loc>
@@ -81,9 +87,6 @@
     <lastmod>2021-12-07T10:42:03+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/about-bashs-seconds-shell-variable/</loc>
-    <lastmod>2021-11-26T15:19:29+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/bash/</loc>
     <lastmod>2021-11-26T15:19:29+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-vim-can-transform-replacement-values-when-substituting/</loc>
