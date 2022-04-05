@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/how-to-use-lookbehind-regex-assertions-with-ripgrep/</loc>
+    <lastmod>2022-04-05T15:44:13+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2022-04-05T15:44:13+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/regex/</loc>
+    <lastmod>2022-04-05T15:44:13+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/ripgrep/</loc>
+    <lastmod>2022-04-05T15:44:13+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2022-04-05T15:44:13+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2022-04-05T15:44:13+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/bash/</loc>
     <lastmod>2022-03-29T17:27:59+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-join-an-array-in-bash/</loc>
-    <lastmod>2022-03-29T17:27:59+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2022-03-29T17:27:59+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2022-03-29T17:27:59+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2022-03-29T17:27:59+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/docker/</loc>
@@ -384,9 +393,6 @@
     <lastmod>2021-01-15T09:45:07+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/</loc>
-    <lastmod>2021-01-15T09:45:07+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/ripgrep/</loc>
     <lastmod>2021-01-15T09:45:07+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/</loc>

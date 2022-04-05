@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    By default ripgrep uses Rust’s [regex] crate for parsing regular expressions which does not support look-ahead or look-behind assertions. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-lookbehind-regex-assertions-with-ripgrep/" />
+<meta property="og:title" content="TIL How to use look-behind regex assertions with ripgrep — David Winterbottom" />
+<meta property="og:description" content="By default ripgrep uses Rust&rsquo;s [regex] crate for parsing regular expressions which does not support look-ahead or look-behind assertions. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to use look-behind regex assertions with ripgrep — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>April 5th, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to use look-behind regex assertions with ripgrep</h1>
+        </header><p>By default <a href="https://github.com/BurntSushi/ripgrep"><code>ripgrep</code></a> uses Rust&rsquo;s
+[<code>regex</code>] crate for parsing regular expressions which does not support
+look-ahead or look-behind assertions.</p>
+<p>To use such zero width assertions, use the <code>--pcre2</code> option:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">rg --pcre2 <span style="color:#e6db74">&#39;A(?=B)&#39;</span>   <span style="color:#75715e"># look ahead positive</span>
+rg --pcre2 <span style="color:#e6db74">&#39;A(?!B)&#39;</span>   <span style="color:#75715e"># look ahead negative</span>
+rg --pcre2 <span style="color:#e6db74">&#39;A(?&lt;=B)&#39;</span>  <span style="color:#75715e"># look behind positive</span>
+rg --pcre2 <span style="color:#e6db74">&#39;A(?&lt;!B)&#39;</span>  <span style="color:#75715e"># look behind negative</span>
+</code></pre></div></article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+
+        
+
+            
+
+            
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/ripgrep/">ripgrep</a>:</p>
+                    <ul>
+                    
+                        <li><a href="/posts/how-to-pipe-an-argument-list-into-vim/">How to pipe an argument list into Vim</a></li>
+                    
+                        <li><a href="/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/">How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></a></li>
+                    
+                        <li><a href="/posts/you-can-define-custom-filetype-filters-in-ripgrep/">You can define custom file-type filters in <code>ripgrep</code></a></li>
+                    
+                        <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
+                    
+                        <li><a href="/posts/you-can-run-grep-without-using-parent-shell-process/">You can run <code>:grep</code> without using parent shell process</a></li>
+                    
+                    </ul>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                
+
+            
+
+        
+
+            
+
+            
+                
+
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/regex/">regex</a>:</p>
+                <ul>
+                    
+                </ul>
+                
+            
+
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-join-an-array-in-bash\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
