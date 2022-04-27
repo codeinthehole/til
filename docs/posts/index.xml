@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Apr 2022 15:44:13 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 27 Apr 2022 09:22:58 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>`dprint` can be used to speed up Prettier</title>
+      <link>https://til.codeinthehole.com/posts/dprint-can-be-used-to-speed-up-prettier/</link>
+      <pubDate>Wed, 27 Apr 2022 09:22:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/dprint-can-be-used-to-speed-up-prettier/</guid>
+      <description>dprint is a formatting platform written in Rust. It supports a Prettier plugin that can give a big performance increase via its incremental formatting functionality.</description>
+    </item>
     
     <item>
       <title>How to use look-behind regex assertions with ripgrep</title>

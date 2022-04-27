@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript - Today I Learnt...</title>
-    <link>https://til.codeinthehole.com/tags/javascript/</link>
-    <description>Recent content in Javascript on Today I Learnt...</description>
+    <title>Rust - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/rust/</link>
+    <description>Recent content in Rust on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 27 Apr 2022 09:22:58 +0100</lastBuildDate>
     
-	<atom:link href="https://til.codeinthehole.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://til.codeinthehole.com/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     
 
     
@@ -19,16 +19,6 @@
       
       <guid>https://til.codeinthehole.com/posts/dprint-can-be-used-to-speed-up-prettier/</guid>
       <description>dprint is a formatting platform written in Rust. It supports a Prettier plugin that can give a big performance increase via its incremental formatting functionality.</description>
-    </item>
-    
-    <item>
-      <title>Javascript&#39;s unary `&#43;` operator casts `null` to zero</title>
-      <link>https://til.codeinthehole.com/posts/javascripts-unary-plus-operator-casts-null-to-zero/</link>
-      <pubDate>Mon, 21 Sep 2020 10:24:01 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/posts/javascripts-unary-plus-operator-casts-null-to-zero/</guid>
-      <description>As in:
-&amp;gt; +null 0 which is different from parseInt or parseFloat which return NaN when given null.</description>
     </item>
     
 

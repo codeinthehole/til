@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    dprint is a formatting platform written in Rust. It supports a Prettier plugin that can give a big performance increase via its incremental formatting functionality. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/dprint-can-be-used-to-speed-up-prettier/" />
+<meta property="og:title" content="TIL &#39;dprint&#39; can be used to speed up Prettier — David Winterbottom" />
+<meta property="og:description" content="dprint is a formatting platform written in Rust. It supports a Prettier plugin that can give a big performance increase via its incremental formatting functionality. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL &#39;dprint&#39; can be used to speed up Prettier — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>April 27th, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1><code>dprint</code> can be used to speed up Prettier</h1>
+        </header><p><code>dprint</code> is a formatting platform written in Rust. It supports a Prettier plugin
+that can give a big performance increase via its incremental formatting
+functionality.</p>
+<p>See <a href="https://david.deno.dev/posts/faster-prettier-with-dprint/">this post</a> for
+how to set-up locally.</p>
+<p>Since I only use Prettier to format markdown, I have a <code>~/.dprint.json</code> file
+with contents:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;includes&#34;</span>: [<span style="color:#e6db74">&#34;**/*.{md,markdown}&#34;</span>],
+  <span style="color:#f92672">&#34;excludes&#34;</span>: [],
+  <span style="color:#f92672">&#34;plugins&#34;</span>: [
+    <span style="color:#e6db74">&#34;https://plugins.dprint.dev/prettier-0.7.0.json@4e846f43b32981258cef5095b3d732522947592e090ef52333801f9d6e8adb33&#34;</span>
+  ]
+}
+</code></pre></div><p>To use this as a formatter in Vim, I set <code>dprint</code> as an Ale fixer for markdown
+buffers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/markdown.vim</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span>:<span style="color:#a6e22e">ale_fixers</span> = [<span style="color:#e6db74">&#39;dprint&#39;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+
+        
+
+            
+
+            
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/javascript/">Javascript</a>:</p>
+                    <ul>
+                    
+                        <li><a href="/posts/javascripts-unary-plus-operator-casts-null-to-zero/">Javascript&rsquo;s unary <code>+</code> operator casts <code>null</code> to zero</a></li>
+                    
+                    </ul>
+                    
+                        
+                    
+                
+
+            
+
+        
+
+            
+
+            
+                
+
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/rust/">Rust</a>:</p>
+                <ul>
+                    
+                </ul>
+                
+            
+
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-use-lookbehind-regex-assertions-with-ripgrep\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

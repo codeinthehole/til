@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Apr 2022 15:44:13 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 27 Apr 2022 09:22:58 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://til.codeinthehole.com/tags/javascript/</link>
+      <pubDate>Wed, 27 Apr 2022 09:22:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://til.codeinthehole.com/tags/rust/</link>
+      <pubDate>Wed, 27 Apr 2022 09:22:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/rust/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>regex</title>
@@ -567,15 +585,6 @@
       <pubDate>Mon, 21 Sep 2020 12:33:56 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/gotchas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>https://til.codeinthehole.com/tags/javascript/</link>
-      <pubDate>Mon, 21 Sep 2020 10:24:01 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/javascript/</guid>
       <description></description>
     </item>
     
