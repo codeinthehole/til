@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jun 2022 10:24:44 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jun 2022 16:29:28 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That Python&#39;s `datetime` package doesn&#39;t support ordinal suffixes for the day of the month</title>
+      <link>https://til.codeinthehole.com/posts/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month/</link>
+      <pubDate>Wed, 01 Jun 2022 16:29:28 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month/</guid>
+      <description>Django&amp;rsquo;s date template filter (and underlying django.utils.dateformat module) support using S as a format character for the English ordinal suffix for the day of the month.</description>
+    </item>
     
     <item>
       <title>Some Markdown parsers support definition lists</title>

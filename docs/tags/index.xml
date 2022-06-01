@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jun 2022 10:24:44 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jun 2022 16:29:28 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Django</title>
+      <link>https://til.codeinthehole.com/tags/django/</link>
+      <pubDate>Wed, 01 Jun 2022 16:29:28 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://til.codeinthehole.com/tags/python/</link>
+      <pubDate>Wed, 01 Jun 2022 16:29:28 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Markdown</title>
@@ -76,15 +94,6 @@
     </item>
     
     <item>
-      <title>Python</title>
-      <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Mon, 21 Feb 2022 21:01:02 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Vale</title>
       <link>https://til.codeinthehole.com/tags/vale/</link>
       <pubDate>Sun, 20 Feb 2022 18:54:33 +0000</pubDate>
@@ -135,15 +144,6 @@
       <pubDate>Wed, 02 Feb 2022 18:08:58 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Django</title>
-      <link>https://til.codeinthehole.com/tags/django/</link>
-      <pubDate>Wed, 02 Feb 2022 11:55:29 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/django/</guid>
       <description></description>
     </item>
     

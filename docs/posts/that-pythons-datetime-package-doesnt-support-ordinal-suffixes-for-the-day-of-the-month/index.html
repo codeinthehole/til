@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Python’s functools.lru_cache binds two additional functions to decorated functions: ...
+    Django’s date template filter (and underlying django.utils.dateformat module) support using S as a format character for the English ordinal suffix for the day of the month. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-inspect-and-clear-pythons-functoolslrucache/" />
-<meta property="og:title" content="TIL How to inspect and clear Python&#39;s &#39;functools.lru_cache&#39; — David Winterbottom" />
-<meta property="og:description" content="Python&rsquo;s functools.lru_cache binds two additional functions to decorated functions: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month/" />
+<meta property="og:title" content="TIL That Python&#39;s &#39;datetime&#39; package doesn&#39;t support ordinal suffixes for the day of the month — David Winterbottom" />
+<meta property="og:description" content="Django&rsquo;s date template filter (and underlying django.utils.dateformat module) support using S as a format character for the English ordinal suffix for the day of the month. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL How to inspect and clear Python&#39;s &#39;functools.lru_cache&#39; — David Winterbottom
+    TIL That Python&#39;s &#39;datetime&#39; package doesn&#39;t support ordinal suffixes for the day of the month — David Winterbottom
 </title>
 
         
@@ -56,33 +56,31 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>February 21, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>June 1, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>How to inspect and clear Python&rsquo;s <code>functools.lru_cache</code></h1>
-        </header><p>Python&rsquo;s <a href="https://docs.python.org/3/library/functools.html#functools.lru_cache"><code>functools.lru_cache</code></a> binds two additional functions to
-decorated functions:</p>
-<ul>
-<li><code>cache_info</code> which returns statistics about cache hits and misses, and;</li>
-<li><code>cache_clear</code> which clears the cache.</li>
-</ul>
-<h2 id="flakey-tests">Flakey tests</h2>
-<p>I&rsquo;ve found <code>functools.lru_cache</code> use to be a common factor of flakey tests,
-where behaviour changes depending on the order in which tests run (which affects
-which value gets cached). The symptoms are often that a test passes when run on
-its own but intermittently fails when run as part of a larger group.</p>
-<p>Avoid this by clearing related LRU caches as part of each test&rsquo;s tear-down
-process:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> pytest
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> somemodule <span style="color:#f92672">import</span> cached_function
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>fixture(autouse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">clear_lru_cache</span>():
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Execute the test...</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ...then clear the LRU cache.</span>
-</span></span><span style="display:flex;"><span>    cached_function<span style="color:#f92672">.</span>cache_clear()
-</span></span></code></pre></div></article>
+            <h1>That Python&rsquo;s <code>datetime</code> package doesn&rsquo;t support ordinal suffixes for the day of the month</h1>
+        </header><p><a href="https://docs.djangoproject.com/en/4.0/ref/templates/builtins/#date">Django&rsquo;s <code>date</code> template filter</a> (and underlying
+<a href="https://github.com/django/django/blob/main/django/utils/dateformat.py"><code>django.utils.dateformat</code></a> module) support using <code>S</code> as a
+format character for the English ordinal suffix for the day of the month.</p>
+<figure><img src="/images/djangodatecodes.png"
+         alt="django-date-codes"/>
+</figure>
+
+<p>As in:</p>
+<pre tabindex="0"><code class="language-html+django" data-lang="html+django">{{ value|date:&#34;jS F Y&#34; }}
+</code></pre><p>will render as something like:</p>
+<pre tabindex="0"><code>2nd June 2022
+</code></pre><p>However the <code>S</code> format character is not supported by the <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes"><code>strftime</code> and
+<code>strptime</code> functions of the standard library</a>.</p>
+<p>This is true of other languages too. Ordinal suffixes are not supported
+by the standard libraries of Golang, Java, Rust or Ruby either.</p>
+<p>They <em>are</em> supported by PHP&rsquo;s <code>date</code> function though. Indeed, this was the
+motivation for Django&rsquo;s implementation.</p>
+<figure><img src="/images/djangodateformat.png"
+         alt="django-date-format"/>
+</figure>
+
+</article>
 
         </main>
 
@@ -100,7 +98,7 @@ process:</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
                     <ul>
                     
-                        <li><a href="/posts/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month/">That Python&rsquo;s <code>datetime</code> package doesn&rsquo;t support ordinal suffixes for the day of the month</a></li>
+                        <li><a href="/posts/how-to-inspect-and-clear-pythons-functoolslrucache/">How to inspect and clear Python&rsquo;s <code>functools.lru_cache</code></a></li>
                     
                         <li><a href="/posts/about-factory-boys-selfattribute-class/">About Factory Boy&rsquo;s <code>SelfAttribute</code> class</a></li>
                     
@@ -148,10 +146,28 @@ process:</p>
 
         
 
+            
+
+            
+                
+
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/django/">Django</a>:</p>
+                <ul>
+                    
+                        <li><a href="/posts/how-djangos-management-commands-need-to-be-type-hinted/">How Django&rsquo;s management commands need to be type hinted</a></li>
+                    
+                </ul>
+                
+                    
+                
+            
+
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-        
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -160,11 +176,9 @@ process:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-get-vale-to-work-with-vims-ale-plugin\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/some-markdown-parsers-support-definition-lists\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/docker-for-mac-stores-all-containers-and-images-in-a-single-disk-image\/"); })
         
     </script>
 
