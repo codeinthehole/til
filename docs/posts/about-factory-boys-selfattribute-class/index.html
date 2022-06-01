@@ -63,26 +63,26 @@
 reference another field of the object being constructed.</p>
 <p>It&rsquo;s particularly useful when used in a <code>SubFactory</code> as it lets you reference
 fields on the parent object. E.g.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> factory
-<span style="color:#f92672">from</span> django.utils <span style="color:#f92672">import</span> timezone
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Message</span>(factory<span style="color:#f92672">.</span>Factory):
-    sent_at <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span>LazyFunction(timezone<span style="color:#f92672">.</span>now)
-
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Event</span>(factory<span style="color:#f92672">.</span>Factory):
-    occurred_at <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span>LazyFunction(timezone<span style="color:#f92672">.</span>now)
-
-    message <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span>SubFactory(
-        Message,
-        <span style="color:#75715e"># Ensure the sent_at of the linked message matches the occurred_at field</span>
-        <span style="color:#75715e"># of the event.</span>
-        sent_at<span style="color:#f92672">=</span>factory<span style="color:#f92672">.</span>SelfAttribute(<span style="color:#e6db74">&#34;..occurred_at&#34;</span>)
-    )
-
-event <span style="color:#f92672">=</span> Event()
-<span style="color:#66d9ef">assert</span> event<span style="color:#f92672">.</span>occurred_at <span style="color:#f92672">==</span> event<span style="color:#f92672">.</span>message<span style="color:#f92672">.</span>sent_at  <span style="color:#75715e"># True</span>
-</code></pre></div></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> factory
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.utils <span style="color:#f92672">import</span> timezone
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Message</span>(factory<span style="color:#f92672">.</span>Factory):
+</span></span><span style="display:flex;"><span>    sent_at <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span>LazyFunction(timezone<span style="color:#f92672">.</span>now)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Event</span>(factory<span style="color:#f92672">.</span>Factory):
+</span></span><span style="display:flex;"><span>    occurred_at <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span>LazyFunction(timezone<span style="color:#f92672">.</span>now)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    message <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span>SubFactory(
+</span></span><span style="display:flex;"><span>        Message,
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Ensure the sent_at of the linked message matches the occurred_at field</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># of the event.</span>
+</span></span><span style="display:flex;"><span>        sent_at<span style="color:#f92672">=</span>factory<span style="color:#f92672">.</span>SelfAttribute(<span style="color:#e6db74">&#34;..occurred_at&#34;</span>)
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>event <span style="color:#f92672">=</span> Event()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> event<span style="color:#f92672">.</span>occurred_at <span style="color:#f92672">==</span> event<span style="color:#f92672">.</span>message<span style="color:#f92672">.</span>sent_at  <span style="color:#75715e"># True</span>
+</span></span></code></pre></div></article>
 
         </main>
 

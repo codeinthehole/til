@@ -66,16 +66,16 @@ to the <code>django.views.View</code> class, which is available to all generic v
 methods will need.</p>
 <p>For example, you would use this to load model instances identified in the URL
 arguments:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">from</span> django.views <span style="color:#f92672">import</span> generic
-<span style="color:#f92672">from</span> django <span style="color:#f92672">import</span> shortcuts
-<span style="color:#f92672">from</span> myapp <span style="color:#f92672">import</span> models
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Frob</span>(generic<span style="color:#f92672">.</span>TemplateView):
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setup</span>(self, request, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
-        super()<span style="color:#f92672">.</span>setup(request, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
-        self<span style="color:#f92672">.</span>frob <span style="color:#f92672">=</span> shortcuts<span style="color:#f92672">.</span>get_object_or_404(models<span style="color:#f92672">.</span>Frob, pk<span style="color:#f92672">=</span>kwargs[<span style="color:#e6db74">&#34;pk&#34;</span>])
-</code></pre></div><p>To date, I&rsquo;ve been overriding <code>dispatch</code> to do this - didn&rsquo;t realise there was a
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.views <span style="color:#f92672">import</span> generic
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django <span style="color:#f92672">import</span> shortcuts
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> myapp <span style="color:#f92672">import</span> models
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Frob</span>(generic<span style="color:#f92672">.</span>TemplateView):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setup</span>(self, request, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>setup(request, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>frob <span style="color:#f92672">=</span> shortcuts<span style="color:#f92672">.</span>get_object_or_404(models<span style="color:#f92672">.</span>Frob, pk<span style="color:#f92672">=</span>kwargs[<span style="color:#e6db74">&#34;pk&#34;</span>])
+</span></span></code></pre></div><p>To date, I&rsquo;ve been overriding <code>dispatch</code> to do this - didn&rsquo;t realise there was a
 dedicated method.</p>
 <p>More in the
 <a href="https://docs.djangoproject.com/en/2.2/ref/class-based-views/base/#django.views.generic.base.View.setup">Django view docs</a></p>

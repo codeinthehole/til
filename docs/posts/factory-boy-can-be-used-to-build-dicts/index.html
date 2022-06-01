@@ -69,49 +69,47 @@ which specifies the class of object to create. There&rsquo;s also a convenient
 <code>factory.DictFactory</code> class.</p>
 <p>Here&rsquo;s an example using <code>factory.Factory</code> subclasses to create a nested <code>dict</code>
 fixture:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> factory
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pet</span>(factory<span style="color:#f92672">.</span>DictFactory):
-    species <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dog&#34;</span>
-    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rover&#34;</span>
-
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>(factory<span style="color:#f92672">.</span>DictFactory):
-    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;barry&#34;</span>
-    age <span style="color:#f92672">=</span> <span style="color:#ae81ff">41</span>
-    pet <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span>SubFactory(Pet)
-    has_pet_insurance <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
-
-    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Meta</span>:
-        <span style="color:#75715e"># Ensure dict field uses hyphens not underscores.</span>
-        rename <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;has_pet_insurance&#34;</span>: <span style="color:#e6db74">&#34;has-pet-insurance&#34;</span>}
-
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_default_fields</span>():
-    <span style="color:#66d9ef">assert</span> Person() <span style="color:#f92672">==</span> {
-        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;barry&#34;</span>,
-        <span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#ae81ff">41</span>,
-        <span style="color:#e6db74">&#34;has-pet-insurance&#34;</span>: <span style="color:#66d9ef">False</span>,
-        <span style="color:#e6db74">&#34;pet&#34;</span>: {
-            <span style="color:#e6db74">&#34;species&#34;</span>: <span style="color:#e6db74">&#34;dog&#34;</span>,
-            <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;rover&#34;</span>
-        }
-    }
-
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_overriding_fields</span>():
-    <span style="color:#66d9ef">assert</span> Person(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alan&#34;</span>, pet__name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lassie&#34;</span>) <span style="color:#f92672">==</span> {
-        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;alan&#34;</span>,
-        <span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#ae81ff">41</span>,
-        <span style="color:#e6db74">&#34;has-pet-insurance&#34;</span>: <span style="color:#66d9ef">False</span>,
-        <span style="color:#e6db74">&#34;pet&#34;</span>: {
-            <span style="color:#e6db74">&#34;species&#34;</span>: <span style="color:#e6db74">&#34;dog&#34;</span>,
-            <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;lassie&#34;</span>
-        }
-    }
-
-
-</code></pre></div></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> factory
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Pet</span>(factory<span style="color:#f92672">.</span>DictFactory):
+</span></span><span style="display:flex;"><span>    species <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dog&#34;</span>
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rover&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>(factory<span style="color:#f92672">.</span>DictFactory):
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;barry&#34;</span>
+</span></span><span style="display:flex;"><span>    age <span style="color:#f92672">=</span> <span style="color:#ae81ff">41</span>
+</span></span><span style="display:flex;"><span>    pet <span style="color:#f92672">=</span> factory<span style="color:#f92672">.</span>SubFactory(Pet)
+</span></span><span style="display:flex;"><span>    has_pet_insurance <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Meta</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Ensure dict field uses hyphens not underscores.</span>
+</span></span><span style="display:flex;"><span>        rename <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;has_pet_insurance&#34;</span>: <span style="color:#e6db74">&#34;has-pet-insurance&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_default_fields</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> Person() <span style="color:#f92672">==</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;barry&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#ae81ff">41</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;has-pet-insurance&#34;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;pet&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;species&#34;</span>: <span style="color:#e6db74">&#34;dog&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;rover&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_overriding_fields</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> Person(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alan&#34;</span>, pet__name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lassie&#34;</span>) <span style="color:#f92672">==</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;alan&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#ae81ff">41</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;has-pet-insurance&#34;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;pet&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;species&#34;</span>: <span style="color:#e6db74">&#34;dog&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;lassie&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div></article>
 
         </main>
 

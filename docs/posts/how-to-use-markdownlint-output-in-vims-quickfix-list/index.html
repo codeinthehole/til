@@ -62,16 +62,16 @@ path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] 
             </div>
             <h1>How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</h1>
         </header><p>The output from <a href="https://github.com/igorshubovych/markdownlint-cli"><code>markdownlint-cli</code></a> has this form:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102]
-</code></pre></div><p>which doesn&rsquo;t load correctly into Vim&rsquo;s quickfix list (via <code>:cfile</code> or
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102]
+</span></span></code></pre></div><p>which doesn&rsquo;t load correctly into Vim&rsquo;s quickfix list (via <code>:cfile</code> or
 <code>:cexpr</code>).</p>
 <p>This is because the error format doesn&rsquo;t match any of the scanf-style format
 strings in the <code>errorformat</code> option.</p>
 <p>To remedy, add a new format pattern to the list:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">errorformat</span>+=%<span style="color:#a6e22e">f</span>:%<span style="color:#a6e22e">l</span>\ %<span style="color:#a6e22e">m</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>With this adjusted, you can work through the errors in a project using;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">cexpr</span> <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#39;markdownlint .&#39;</span>)<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">errorformat</span>+=%<span style="color:#a6e22e">f</span>:%<span style="color:#a6e22e">l</span>\ %<span style="color:#a6e22e">m</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>With this adjusted, you can work through the errors in a project using;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#a6e22e">cexpr</span> <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#39;markdownlint .&#39;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></article>
 
         </main>
 
@@ -89,6 +89,8 @@ strings in the <code>errorformat</code> option.</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/markdown/">Markdown</a>:</p>
                     <ul>
                     
+                        <li><a href="/posts/some-markdown-parsers-support-definition-lists/">Some Markdown parsers support definition lists</a></li>
+                    
                         <li><a href="/posts/how-to-spellcheck-markdown-repos-on-circleci/">How to spell-check markdown repos on CircleCI</a></li>
                     
                         <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
@@ -96,6 +98,8 @@ strings in the <code>errorformat</code> option.</p>
                         <li><a href="/posts/how-to-embed-markdown-content-in-a-github-code-block/">How to embed markdown content in a Github code block</a></li>
                     
                     </ul>
+                    
+                        
                     
                         
                     

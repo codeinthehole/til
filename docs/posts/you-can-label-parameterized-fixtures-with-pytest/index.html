@@ -62,42 +62,42 @@
             </div>
             <h1>You can label parameterized fixtures with pytest</h1>
         </header><p>For example, running this parameterized test:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>mark<span style="color:#f92672">.</span>parametrize(
-    <span style="color:#e6db74">&#34;date&#34;</span>,
-    (
-        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2012</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">21</span>),  <span style="color:#75715e"># Predicted by Mayans</span>
-        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">1988</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">25</span>),  <span style="color:#75715e"># Predicted by True Way</span>
-    ),
-)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_did_world_did_not_end_on</span>(date):
-    <span style="color:#66d9ef">pass</span>
-</code></pre></div><p>in verbose mode gives output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">$ pytest -v test_predictions.py
-============== test session starts ==============
-...
-test_predictions.py::test_did_world_did_not_end_on[date0] PASSED
-test_predictions.py::test_did_world_did_not_end_on[date1] PASSED
-</code></pre></div><p>As you can see, the tests are distinguished by the labels <code>date0</code> and <code>date1</code> —
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>mark<span style="color:#f92672">.</span>parametrize(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;date&#34;</span>,
+</span></span><span style="display:flex;"><span>    (
+</span></span><span style="display:flex;"><span>        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2012</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">21</span>),  <span style="color:#75715e"># Predicted by Mayans</span>
+</span></span><span style="display:flex;"><span>        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">1988</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">25</span>),  <span style="color:#75715e"># Predicted by True Way</span>
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_did_world_did_not_end_on</span>(date):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span></code></pre></div><p>in verbose mode gives output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>$ pytest -v test_predictions.py
+</span></span><span style="display:flex;"><span>============== test session starts ==============
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>test_predictions.py::test_did_world_did_not_end_on[date0] PASSED
+</span></span><span style="display:flex;"><span>test_predictions.py::test_did_world_did_not_end_on[date1] PASSED
+</span></span></code></pre></div><p>As you can see, the tests are distinguished by the labels <code>date0</code> and <code>date1</code> —
 not that informative.</p>
 <p>We can do better by using the <code>ids</code> kwarg to <code>pytest.mark.parametrize</code> to
 provide more useful labels.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>mark<span style="color:#f92672">.</span>parametrize(
-    <span style="color:#e6db74">&#34;date&#34;</span>,
-    (
-        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2012</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">21</span>),
-        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">1988</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">25</span>),
-    ),
-    ids<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#34;date predicted by Mayans&#34;</span>, <span style="color:#e6db74">&#34;date predicted by True Way&#34;</span>),
-)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_world_did_not_end_on</span>(date):
-    <span style="color:#66d9ef">pass</span>
-</code></pre></div><p>which leads to:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">$ pytest -v test_predictions.py
-============== test session starts ==============
-...
-test_predictions.py::test_world_did_not_end_on[date predicted by Mayans] PASSED
-test_predictions.py::test_world_did_not_end_on[date predicted by True Way] PASSED
-</code></pre></div><p>See
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>mark<span style="color:#f92672">.</span>parametrize(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;date&#34;</span>,
+</span></span><span style="display:flex;"><span>    (
+</span></span><span style="display:flex;"><span>        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2012</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">21</span>),
+</span></span><span style="display:flex;"><span>        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">1988</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">25</span>),
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>    ids<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#34;date predicted by Mayans&#34;</span>, <span style="color:#e6db74">&#34;date predicted by True Way&#34;</span>),
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_world_did_not_end_on</span>(date):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span></code></pre></div><p>which leads to:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>$ pytest -v test_predictions.py
+</span></span><span style="display:flex;"><span>============== test session starts ==============
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>test_predictions.py::test_world_did_not_end_on[date predicted by Mayans] PASSED
+</span></span><span style="display:flex;"><span>test_predictions.py::test_world_did_not_end_on[date predicted by True Way] PASSED
+</span></span></code></pre></div><p>See
 <a href="https://docs.pytest.org/en/stable/reference.html#pytest.python.Metafunc.parametrize">https://docs.pytest.org/en/stable/reference.html#pytest.python.Metafunc.parametrize</a></p>
 </article>
 

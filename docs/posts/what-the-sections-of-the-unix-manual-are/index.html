@@ -62,36 +62,36 @@ MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 S
             </div>
             <h1>What the sections of the Unix manual are</h1>
         </header><p>From <code>man man</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">MANUAL SECTIONS
-       The standard sections of the manual include:
-
-       1      User Commands
-
-       2      System Calls
-
-       3      C Library Functions
-
-       4      Devices and Special Files
-
-       5      File Formats and Conventions
-
-       6      Games et. Al.
-
-       7      Miscellanea
-
-       8      System Administration tools and Deamons
-</code></pre></div><p>You can see the sections that have pages for a given query with <code>man -f</code> or
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>MANUAL SECTIONS
+</span></span><span style="display:flex;"><span>       The standard sections of the manual include:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       1      User Commands
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       2      System Calls
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       3      C Library Functions
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       4      Devices and Special Files
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       5      File Formats and Conventions
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       6      Games et. Al.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       7      Miscellanea
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       8      System Administration tools and Deamons
+</span></span></code></pre></div><p>You can see the sections that have pages for a given query with <code>man -f</code> or
 <code>whatis</code>. E.g.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ man -f passwd
-passwd<span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>                   - modify a user<span style="color:#960050;background-color:#1e0010">&#39;</span>s password
-passwd<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span>, master.passwd<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span> - format of the password file
-slapd-passwd<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span>             - /etc/passwd backend to slapd
-</code></pre></div><p>The section number is in parentheses. These can be used to open a man page from
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ man -f passwd
+</span></span><span style="display:flex;"><span>passwd<span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>                   - modify a user<span style="color:#960050;background-color:#1e0010">&#39;</span>s password
+</span></span><span style="display:flex;"><span>passwd<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span>, master.passwd<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span> - format of the password file
+</span></span><span style="display:flex;"><span>slapd-passwd<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span>             - /etc/passwd backend to slapd
+</span></span></code></pre></div><p>The section number is in parentheses. These can be used to open a man page from
 a particular section. Use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">man <span style="color:#ae81ff">1</span> passwd
-</code></pre></div><p>to learn about how to use the <code>passwd</code> command and:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">man <span style="color:#ae81ff">5</span> passwd
-</code></pre></div><p>to learn about the format of the password file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>man <span style="color:#ae81ff">1</span> passwd
+</span></span></code></pre></div><p>to learn about how to use the <code>passwd</code> command and:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>man <span style="color:#ae81ff">5</span> passwd
+</span></span></code></pre></div><p>to learn about the format of the password file.</p>
 </article>
 
         </main>

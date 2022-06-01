@@ -22,7 +22,7 @@ Auto-scaling storage for persistent data (the “cluster volume”). ...
 <meta property="og:url" content="https://til.codeinthehole.com/posts/that-aws-aurora-clusters-have-two-types-of-storage/" />
 <meta property="og:title" content="TIL That AWS Aurora clusters have two types of storage — David Winterbottom" />
 <meta property="og:description" content="Aurora PostgreSQL clusters have:
-  Auto-scaling storage for persistent data (the &ldquo;cluster volume&rdquo;). [Reading time: 1 minute]" />
+Auto-scaling storage for persistent data (the &ldquo;cluster volume&rdquo;). [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
@@ -80,8 +80,8 @@ type doesn&rsquo;t seem to be published anywhere. Based on CloudWatch metric dat
 <p>Beware that the relatively small amount of local storage can be a problem for
 large table operations like changing the type of a column. We found to our cost
 that 50G wasn&rsquo;t enough space to run a query like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> some_large_table <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">COLUMN</span> id <span style="color:#66d9ef">TYPE</span> bigint;
-</code></pre></div><p>which was required as the table had exhausted all 2.7 billion IDs available to
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> some_large_table <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">COLUMN</span> id <span style="color:#66d9ef">TYPE</span> bigint;
+</span></span></code></pre></div><p>which was required as the table had exhausted all 2.7 billion IDs available to
 an <code>integer</code>-type primary key field.</p>
 </article>
 

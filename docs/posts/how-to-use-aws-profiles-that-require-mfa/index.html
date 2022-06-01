@@ -63,31 +63,31 @@
 assume-role into, you can work around MFA restrictions on the trust relationship
 using a <code>mfa_serial</code> setting in <code>~/.aws/config</code>.</p>
 <p>Example config:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[profile parent]</span>
-<span style="color:#75715e"># Account ID 111111111111</span>
-<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-2</span>
-
-<span style="color:#66d9ef">[profile child-account1]</span>
-<span style="color:#75715e"># Account ID 222222222222</span>
-<span style="color:#a6e22e">role_arn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::222222222222:role/OrganizationAccountAccessRole</span>
-<span style="color:#a6e22e">mfa_serial</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::111111111111:mfa/david.winterbottom</span>
-<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
-<span style="color:#a6e22e">source_profile</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">parent</span>
-
-<span style="color:#66d9ef">[profile child-account2]</span>
-<span style="color:#75715e"># Account ID 333333333333</span>
-<span style="color:#a6e22e">role_arn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::333333333333:role/OrganizationAccountAccessRole</span>
-<span style="color:#a6e22e">mfa_serial</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::111111111111:mfa/david.winterbottom</span>
-<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
-<span style="color:#a6e22e">source_profile</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">parent</span>
-</code></pre></div><p>Then you can make <code>aws</code> CLI calls into the child accounts and you&rsquo;ll be prompted
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[profile parent]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Account ID 111111111111</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[profile child-account1]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Account ID 222222222222</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">role_arn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::222222222222:role/OrganizationAccountAccessRole</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mfa_serial</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::111111111111:mfa/david.winterbottom</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">source_profile</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">parent</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[profile child-account2]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Account ID 333333333333</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">role_arn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::333333333333:role/OrganizationAccountAccessRole</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mfa_serial</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::111111111111:mfa/david.winterbottom</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">source_profile</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">parent</span>
+</span></span></code></pre></div><p>Then you can make <code>aws</code> CLI calls into the child accounts and you&rsquo;ll be prompted
 to enter your MFA code from your parent account IAM user.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws --profile<span style="color:#f92672">=</span>child-account1 ec2 describe-instances
-Enter MFA code <span style="color:#66d9ef">for</span> arn:aws:iam::111111111111:mfa/david.winterbottom:
-<span style="color:#f92672">{</span>
-    ...
-<span style="color:#f92672">}</span>
-</code></pre></div><p>You can find your <code>mfa_serial</code> string in the IAM dashboard.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ aws --profile<span style="color:#f92672">=</span>child-account1 ec2 describe-instances
+</span></span><span style="display:flex;"><span>Enter MFA code <span style="color:#66d9ef">for</span> arn:aws:iam::111111111111:mfa/david.winterbottom:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>You can find your <code>mfa_serial</code> string in the IAM dashboard.</p>
 <p>More info:
 <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html#cli-configure-role-mfa">https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html#cli-configure-role-mfa</a></p>
 </article>

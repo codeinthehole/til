@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Parsers like goldmark (the default parser for Hugo) support definition lists. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/some-markdown-parsers-support-definition-lists/" />
+<meta property="og:title" content="TIL Some Markdown parsers support definition lists — David Winterbottom" />
+<meta property="og:description" content="Parsers like goldmark (the default parser for Hugo) support definition lists. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL Some Markdown parsers support definition lists — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>June 1th, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>Some Markdown parsers support definition lists</h1>
+        </header><p>Parsers like <a href="https://github.com/yuin/goldmark/">goldmark</a> (the default parser
+for Hugo) support definition lists.</p>
+<p>Example syntax:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>Apple
+</span></span><span style="display:flex;"><span>:   Pomaceous fruit of plants of the genus Malus in 
+</span></span><span style="display:flex;"><span>    the family Rosaceae.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Orange
+</span></span><span style="display:flex;"><span>:   The fruit of an evergreen tree of the genus Citrus.
+</span></span></code></pre></div><p>which renders as:</p>
+<dl>
+<dt>Apple</dt>
+<dd>Pomaceous fruit of plants of the genus Malus in
+the family Rosaceae.</dd>
+<dt>Orange</dt>
+<dd>The fruit of an evergreen tree of the genus Citrus.</dd>
+</dl>
+<p>This isn&rsquo;t supported by Github flavoured Markdown yet.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+
+        
+
+            
+
+            
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/markdown/">Markdown</a>:</p>
+                    <ul>
+                    
+                        <li><a href="/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/">How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</a></li>
+                    
+                        <li><a href="/posts/how-to-spellcheck-markdown-repos-on-circleci/">How to spell-check markdown repos on CircleCI</a></li>
+                    
+                        <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
+                    
+                        <li><a href="/posts/how-to-embed-markdown-content-in-a-github-code-block/">How to embed markdown content in a Github code block</a></li>
+                    
+                    </ul>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                
+
+            
+
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/dprint-can-be-used-to-speed-up-prettier\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

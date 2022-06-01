@@ -6,7 +6,7 @@
 
         <meta name="description" content="
     To run the server, run:
-docker run &amp;ndash;rm \  &amp;ndash;volume=&amp;quot;${PWD}:/srv/jekyll&amp;quot; \  -p 4000:4000 \  -it jekyll/jekyll:3. ...
+docker run &amp;ndash;rm \ &amp;ndash;volume=&amp;quot;${PWD}:/srv/jekyll&amp;quot; \ -p 4000:4000 \ -it jekyll/jekyll:3. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +22,7 @@ docker run &amp;ndash;rm \  &amp;ndash;volume=&amp;quot;${PWD}:/srv/jekyll&amp;q
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-run-jekyll-in-a-docker-container/" />
 <meta property="og:title" content="TIL How to run Jekyll in a Docker container — David Winterbottom" />
 <meta property="og:description" content="To run the server, run:
-docker run --rm \  --volume=&#34;${PWD}:/srv/jekyll&#34; \  -p 4000:4000 \  -it jekyll/jekyll:3. [Reading time: 1 minute]" />
+docker run --rm \ --volume=&#34;${PWD}:/srv/jekyll&#34; \ -p 4000:4000 \ -it jekyll/jekyll:3. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
@@ -62,12 +62,12 @@ docker run --rm \  --volume=&#34;${PWD}:/srv/jekyll&#34; \  -p 4000:4000 \  -it 
             </div>
             <h1>How to run Jekyll in a Docker container</h1>
         </header><p>To run the server, run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --volume<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">:/srv/jekyll&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -p 4000:4000 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -it jekyll/jekyll:3.8 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    jekyll serve --incremental
-</code></pre></div><p>This will install your <code>Gemfile.lock</code> dependencies and run the local server on
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --volume<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">:/srv/jekyll&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -p 4000:4000 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -it jekyll/jekyll:3.8 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    jekyll serve --incremental
+</span></span></code></pre></div><p>This will install your <code>Gemfile.lock</code> dependencies and run the local server on
 port 4000.</p>
 <p>If your Jekyll site is published using Github Pages, you can pin your <code>jekyll</code>
 and <code>gh-pages</code> versions to

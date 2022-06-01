@@ -62,14 +62,14 @@
         </header><p>If there&rsquo;s been a large-scale renaming of files in <code>master</code> and you attempt to
 rebase your pull-request branch, the resulting conflicts can be tricky to
 resolve. You&rsquo;ll see lots of conflicts of form:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">CONFLICT (modify/delete): $FILEPATH deleted in HEAD and modified in $SHA... $COMMIT_MSG
-</code></pre></div><p>One resolution is to manually apply the changes in <code>$SHA</code> to the new filepaths
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>CONFLICT (modify/delete): $FILEPATH deleted in HEAD and modified in $SHA... $COMMIT_MSG
+</span></span></code></pre></div><p>One resolution is to manually apply the changes in <code>$SHA</code> to the new filepaths
 but this is manual and error-prone.</p>
 <p>Better is to use <code>git diff</code> to generate patch files and apply these with
 <code>patch</code>.</p>
 <p>Run this for each filepath modified in your PR but deleted in <code>master</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git show REBASE_HEAD $OLD_FILEPATH | patch $NEW_FILEPATH
-</code></pre></div><p>Note, <code>REBASE_HEAD</code> is a useful pseudo-ref for the conflicting commit from the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git show REBASE_HEAD $OLD_FILEPATH | patch $NEW_FILEPATH
+</span></span></code></pre></div><p>Note, <code>REBASE_HEAD</code> is a useful pseudo-ref for the conflicting commit from the
 ongoing rebase.</p>
 <p>If you&rsquo;re interested, I&rsquo;ve written previously about
 <a href="https://codeinthehole.com/guides/resolving-conflicts-during-a-git-rebase/">resolving Git conflicts during a Git rebase</a>.</p>

@@ -61,8 +61,8 @@ git diff --shortstat `git hash-object -t tree /dev/null`. [Reading time: 1 minut
             </div>
             <h1>How to count lines of code in a Git repo for a given commit</h1>
         </header><p>For a given commit <code>$SHA</code>, use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git diff --shortstat <span style="color:#e6db74">`</span>git hash-object -t tree /dev/null<span style="color:#e6db74">`</span>..$SHA
-</code></pre></div><p>which works as <code>git hash-object -t tree /dev/null</code> computes the hash of the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git diff --shortstat <span style="color:#e6db74">`</span>git hash-object -t tree /dev/null<span style="color:#e6db74">`</span>..$SHA
+</span></span></code></pre></div><p>which works as <code>git hash-object -t tree /dev/null</code> computes the hash of the
 empty tree.</p>
 </article>
 

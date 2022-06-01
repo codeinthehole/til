@@ -61,68 +61,68 @@
             <h1>About how to use <code>keywordprg</code> effectively</h1>
         </header><p>Hitting <code>K</code> in Vim opens the program specified by <code>keywordprg</code>, passing the
 keyword under the cursor as an argument — effectively executing this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:!{<span style="color:#a6e22e">keywordprg</span>} {<span style="color:#a6e22e">keyword</span>}<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>The default is <code>man -s</code> which is only useful if you&rsquo;re editing C- or
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:!{<span style="color:#a6e22e">keywordprg</span>} {<span style="color:#a6e22e">keyword</span>}<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>The default is <code>man -s</code> which is only useful if you&rsquo;re editing C- or
 Bash-filetype buffers.</p>
 <p>You can drastically improve this functionality by binding a more appropriate
 function for each filetype you work with. For example, I have the following
 scattered within my <code>~/.vim/after/ftplugin/</code> folder:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; Use built-in help when working on Vim files or browsing the help docs.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
-</span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/help.vim</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/vim.vim</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=:<span style="color:#a6e22e">help</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
-</span><span style="color:#75715e">&#34; Look-up HTML, CSS and Javascript keywords in the MDN docs.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
-</span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/html.vim</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">open</span>\ <span style="color:#a6e22e">https</span>:<span style="color:#e6db74">//</span><span style="color:#a6e22e">developer</span>.<span style="color:#a6e22e">mozilla</span>.<span style="color:#a6e22e">org</span>/<span style="color:#a6e22e">search</span>?<span style="color:#a6e22e">topic</span>=<span style="color:#a6e22e">api</span>\\&amp;<span style="color:#a6e22e">topic</span>=<span style="color:#a6e22e">html</span>\\&amp;<span style="color:#a6e22e">q</span>=\<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
-</span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/css.vim</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">open</span>\ <span style="color:#a6e22e">https</span>:<span style="color:#e6db74">//</span><span style="color:#a6e22e">developer</span>.<span style="color:#a6e22e">mozilla</span>.<span style="color:#a6e22e">org</span>/<span style="color:#a6e22e">search</span>?<span style="color:#a6e22e">topic</span>=<span style="color:#a6e22e">api</span>\\&amp;<span style="color:#a6e22e">topic</span>=<span style="color:#a6e22e">css</span>\\&amp;<span style="color:#a6e22e">q</span>=\<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
-</span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/javascript.vim</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">open</span>\ <span style="color:#a6e22e">https</span>:<span style="color:#e6db74">//</span><span style="color:#a6e22e">developer</span>.<span style="color:#a6e22e">mozilla</span>.<span style="color:#a6e22e">org</span>/<span style="color:#a6e22e">search</span>?<span style="color:#a6e22e">topic</span>=<span style="color:#a6e22e">api</span>\\&amp;<span style="color:#a6e22e">topic</span>=<span style="color:#a6e22e">js</span>\\&amp;<span style="color:#a6e22e">q</span>=\<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
-</span><span style="color:#75715e">&#34; Use PyDoc to look-up Python keywords.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
-</span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/python.vim</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">pydoc</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>If it&rsquo;s awkward to craft an appropriate <code>keywordprg</code> snippet, write a script
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#75715e">&#34; Use built-in help when working on Vim files or browsing the help docs.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/help.vim</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/vim.vim</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=:<span style="color:#a6e22e">help</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#34; Look-up HTML, CSS and Javascript keywords in the MDN docs.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/html.vim</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">open</span>\ <span style="color:#a6e22e">https</span>:<span style="color:#e6db74">//</span><span style="color:#a6e22e">developer</span>.<span style="color:#a6e22e">mozilla</span>.<span style="color:#a6e22e">org</span>/<span style="color:#a6e22e">search</span>?<span style="color:#a6e22e">topic</span>=<span style="color:#a6e22e">api</span>\\&amp;<span style="color:#a6e22e">topic</span>=<span style="color:#a6e22e">html</span>\\&amp;<span style="color:#a6e22e">q</span>=\<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/css.vim</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">open</span>\ <span style="color:#a6e22e">https</span>:<span style="color:#e6db74">//</span><span style="color:#a6e22e">developer</span>.<span style="color:#a6e22e">mozilla</span>.<span style="color:#a6e22e">org</span>/<span style="color:#a6e22e">search</span>?<span style="color:#a6e22e">topic</span>=<span style="color:#a6e22e">api</span>\\&amp;<span style="color:#a6e22e">topic</span>=<span style="color:#a6e22e">css</span>\\&amp;<span style="color:#a6e22e">q</span>=\<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/javascript.vim</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">open</span>\ <span style="color:#a6e22e">https</span>:<span style="color:#e6db74">//</span><span style="color:#a6e22e">developer</span>.<span style="color:#a6e22e">mozilla</span>.<span style="color:#a6e22e">org</span>/<span style="color:#a6e22e">search</span>?<span style="color:#a6e22e">topic</span>=<span style="color:#a6e22e">api</span>\\&amp;<span style="color:#a6e22e">topic</span>=<span style="color:#a6e22e">js</span>\\&amp;<span style="color:#a6e22e">q</span>=\<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#34; Use PyDoc to look-up Python keywords.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/python.vim</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">pydoc</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>If it&rsquo;s awkward to craft an appropriate <code>keywordprg</code> snippet, write a script
 that takes the keyword as the first argument and opens the relevant page.</p>
 <p>For example, you can use the MacOS dictionary app to look-up work definitions
 when working in text and markdown buffers:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/markdown.vim</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/text.vim</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">open</span>-<span style="color:#a6e22e">dict</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>where <code>open-dict</code> is on your <code>$PATH</code> and has contents:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
-</span><span style="color:#75715e"></span>set -e
-
-<span style="color:#66d9ef">function</span> main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    open <span style="color:#e6db74">&#34;dict://</span>$1<span style="color:#e6db74">&#34;</span>
-<span style="color:#f92672">}</span>
-
-main <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
-</code></pre></div><p>Here&rsquo;s a similar script for Terraform resources:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/terraform.vim</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">terraform</span>-<span style="color:#a6e22e">docs</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>where <code>terraform-docs</code> is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
-</span><span style="color:#75715e"></span>set -e
-
-<span style="color:#66d9ef">function</span> main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    open <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>docs_url <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#f92672">}</span>
-
-<span style="color:#66d9ef">function</span> docs_url<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    local provider<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1%%_*<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-    local resource<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1#*_<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-    echo <span style="color:#e6db74">&#34;https://registry.terraform.io/providers/hashicorp/</span><span style="color:#e6db74">${</span>provider<span style="color:#e6db74">}</span><span style="color:#e6db74">/latest/docs/resources/</span><span style="color:#e6db74">${</span>resource<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#f92672">}</span>
-
-main <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
-</code></pre></div><p>Ensuring <code>keywordprg</code> is mapped to something useful is a good thing to do when
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/markdown.vim</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/text.vim</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">open</span>-<span style="color:#a6e22e">dict</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>where <code>open-dict</code> is on your <code>$PATH</code> and has contents:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set -e
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    open <span style="color:#e6db74">&#34;dict://</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>main <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Here&rsquo;s a similar script for Terraform resources:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#75715e">&#34; ~/.vim/after/ftplugin/terraform.vim</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">setlocal</span> <span style="color:#a6e22e">keywordprg</span>=<span style="color:#a6e22e">terraform</span>-<span style="color:#a6e22e">docs</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>where <code>terraform-docs</code> is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set -e
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    open <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>docs_url <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> docs_url<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    local provider<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1%%_*<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    local resource<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1#*_<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;https://registry.terraform.io/providers/hashicorp/</span><span style="color:#e6db74">${</span>provider<span style="color:#e6db74">}</span><span style="color:#e6db74">/latest/docs/resources/</span><span style="color:#e6db74">${</span>resource<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>main <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Ensuring <code>keywordprg</code> is mapped to something useful is a good thing to do when
 starting to work with a new language.</p>
 </article>
 

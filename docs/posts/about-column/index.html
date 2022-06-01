@@ -62,41 +62,41 @@
         </header><p>Which formats input into columns. This is useful for formatting data into a
 table structure.</p>
 <p>Example usage: printing a table of running EC2 instances:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws ec2 describe-instances --filters<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name=instance-state-name,Values=running&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    | jq -r <span style="color:#e6db74">&#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&#34;|&#34;)&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    | column -t -s <span style="color:#e6db74">&#34;|&#34;</span>
-i-0fe1eb8debbff316f  10.0.0.54
-i-0ed0af108b30084a2  10.0.20.202
-i-0935f54b5a3002760  10.0.1.83
-i-063621cd0118bc69d  10.0.248.118
-i-0f11a4f1cea7d60da  10.0.238.126
-i-01bb8c6bf2a4109e5  10.0.234.252
-i-03e990e42886c2da3  10.0.237.103
-i-011e55d5fab3aad13  10.0.238.213
-i-02651b70f191f7068  10.0.29.221
-i-0b07423fbf8b79554  10.0.29.85
-i-04e5c99694eb27c92  10.0.29.7
-</code></pre></div><p>Here we use <code>jq</code> to build a pipe-separated stream of instance data which is
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ aws ec2 describe-instances --filters<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name=instance-state-name,Values=running&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    | jq -r <span style="color:#e6db74">&#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&#34;|&#34;)&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    | column -t -s <span style="color:#e6db74">&#34;|&#34;</span>
+</span></span><span style="display:flex;"><span>i-0fe1eb8debbff316f  10.0.0.54
+</span></span><span style="display:flex;"><span>i-0ed0af108b30084a2  10.0.20.202
+</span></span><span style="display:flex;"><span>i-0935f54b5a3002760  10.0.1.83
+</span></span><span style="display:flex;"><span>i-063621cd0118bc69d  10.0.248.118
+</span></span><span style="display:flex;"><span>i-0f11a4f1cea7d60da  10.0.238.126
+</span></span><span style="display:flex;"><span>i-01bb8c6bf2a4109e5  10.0.234.252
+</span></span><span style="display:flex;"><span>i-03e990e42886c2da3  10.0.237.103
+</span></span><span style="display:flex;"><span>i-011e55d5fab3aad13  10.0.238.213
+</span></span><span style="display:flex;"><span>i-02651b70f191f7068  10.0.29.221
+</span></span><span style="display:flex;"><span>i-0b07423fbf8b79554  10.0.29.85
+</span></span><span style="display:flex;"><span>i-04e5c99694eb27c92  10.0.29.7
+</span></span></code></pre></div><p>Here we use <code>jq</code> to build a pipe-separated stream of instance data which is
 tabulated by <code>column</code>.</p>
 <p>You can add a header row using either <code>awk</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws ec2 describe-instances --filters<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name=instance-state-name,Values=running&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    | jq -r <span style="color:#e6db74">&#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&#34;|&#34;)&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    | awk <span style="color:#e6db74">&#39;BEGIN { print &#34;Instance ID|Private IP address&#34; } { print }&#39;</span> |
-    | column -t -s <span style="color:#e6db74">&#34;|&#34;</span>
-Instance ID          Private IP address
-i-0fe1eb8debbff316f  10.0.0.54
-i-0ed0af108b30084a2  10.0.20.202
-...
-</code></pre></div><p>or <code>sed</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws ec2 describe-instances --filters<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name=instance-state-name,Values=running&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    | jq -r <span style="color:#e6db74">&#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&#34;|&#34;)&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    | sed -e <span style="color:#e6db74">$&#39;1i\\\nInstance ID|Private IP address&#39;</span>
-    | column -t -s <span style="color:#e6db74">&#34;|&#34;</span>
-Instance ID          Private IP address
-i-0fe1eb8debbff316f  10.0.0.54
-i-0ed0af108b30084a2  10.0.20.202
-...
-</code></pre></div><p>The <code>awk</code> version is easier to understand.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ aws ec2 describe-instances --filters<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name=instance-state-name,Values=running&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    | jq -r <span style="color:#e6db74">&#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&#34;|&#34;)&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    | awk <span style="color:#e6db74">&#39;BEGIN { print &#34;Instance ID|Private IP address&#34; } { print }&#39;</span> |
+</span></span><span style="display:flex;"><span>    | column -t -s <span style="color:#e6db74">&#34;|&#34;</span>
+</span></span><span style="display:flex;"><span>Instance ID          Private IP address
+</span></span><span style="display:flex;"><span>i-0fe1eb8debbff316f  10.0.0.54
+</span></span><span style="display:flex;"><span>i-0ed0af108b30084a2  10.0.20.202
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>or <code>sed</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ aws ec2 describe-instances --filters<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Name=instance-state-name,Values=running&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    | jq -r <span style="color:#e6db74">&#39;.Reservations[].Instances[] | [ .InstanceId, .PrivateIpAddress ] | join(&#34;|&#34;)&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    | sed -e <span style="color:#e6db74">$&#39;1i\\\nInstance ID|Private IP address&#39;</span>
+</span></span><span style="display:flex;"><span>    | column -t -s <span style="color:#e6db74">&#34;|&#34;</span>
+</span></span><span style="display:flex;"><span>Instance ID          Private IP address
+</span></span><span style="display:flex;"><span>i-0fe1eb8debbff316f  10.0.0.54
+</span></span><span style="display:flex;"><span>i-0ed0af108b30084a2  10.0.20.202
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>The <code>awk</code> version is easier to understand.</p>
 <p>See <a href="https://man.openbsd.org/column.1">https://man.openbsd.org/column.1</a> for more.</p>
 </article>
 

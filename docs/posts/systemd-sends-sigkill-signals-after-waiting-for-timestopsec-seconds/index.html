@@ -22,7 +22,7 @@ Processes will first be terminated via SIGTERM (unless the signal to send is cha
 <meta property="og:url" content="https://til.codeinthehole.com/posts/systemd-sends-sigkill-signals-after-waiting-for-timestopsec-seconds/" />
 <meta property="og:title" content="TIL systemd sends SIGKILL signals after waiting for &#39;TimeoutStopSec&#39; seconds — David Winterbottom" />
 <meta property="og:description" content="From man systemd.kill:
- Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=). [Reading time: 1 minute]" />
+Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=). [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
@@ -73,13 +73,13 @@ option).</p>
 </blockquote>
 <p>The default for <code>TimeoutStopSec</code> is 90 seconds. You can check how a particular
 unit is configured with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl $UNIT_NAME check | grep Timeout
-TimeoutStartUSec<span style="color:#f92672">=</span>infinity
-TimeoutStopUSec<span style="color:#f92672">=</span>1min 30s
-JobTimeoutUSec<span style="color:#f92672">=</span>infinity
-JobRunningTimeoutUSec<span style="color:#f92672">=</span>infinity
-JobTimeoutAction<span style="color:#f92672">=</span>none
-</code></pre></div><p>If you don&rsquo;t want <code>systemd</code> to forcibly kill your process, you might consider
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ systemctl $UNIT_NAME check | grep Timeout
+</span></span><span style="display:flex;"><span>TimeoutStartUSec<span style="color:#f92672">=</span>infinity
+</span></span><span style="display:flex;"><span>TimeoutStopUSec<span style="color:#f92672">=</span>1min 30s
+</span></span><span style="display:flex;"><span>JobTimeoutUSec<span style="color:#f92672">=</span>infinity
+</span></span><span style="display:flex;"><span>JobRunningTimeoutUSec<span style="color:#f92672">=</span>infinity
+</span></span><span style="display:flex;"><span>JobTimeoutAction<span style="color:#f92672">=</span>none
+</span></span></code></pre></div><p>If you don&rsquo;t want <code>systemd</code> to forcibly kill your process, you might consider
 setting <code>TimeoutStopSec=infinity</code>.</p>
 </article>
 

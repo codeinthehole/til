@@ -63,8 +63,8 @@
 list. This is useful for large-scale refactoring work.</p>
 <p>One way to leverage this is to write a macro to perform the required update then
 run it with <code>:cdo</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">cdo</span> <span style="color:#a6e22e">normal</span> @<span style="color:#a6e22e">q</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>Macros are powerful and many update operations can be done this way. However,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#a6e22e">cdo</span> <span style="color:#a6e22e">normal</span> @<span style="color:#a6e22e">q</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Macros are powerful and many update operations can be done this way. However,
 sometimes the necessary update is too complex for a macro. This happens when
 there are several &ldquo;categories&rdquo; of update required and conditional logic is
 required to determine the appropriate operation.</p>
@@ -78,22 +78,22 @@ project today.</p>
 <p>As there were several distinct categories of violation that required a separate
 update operation to resolve, I created a <code>FixF841Error</code> function that inspected
 the line in question to determine the appropriate remedy. Something like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#66d9ef">function</span>! <span style="color:#a6e22e">FixF841Error</span>()<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34; Example the line of the error to determine what fix is required.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">line</span> = <span style="color:#a6e22e">getline</span>(<span style="color:#e6db74">&#39;.&#39;</span>)<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">line</span> =~ <span style="color:#e6db74">&#39;as e:&#39;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">        &#34; Handle scenario of unused exception variable</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>        ...<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">elseif</span> <span style="color:#a6e22e">line</span> =~ <span style="color:#e6db74">&#39;^\s\+\w\+ = factory&#39;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">        &#34; Handle scenario of unused test factory variable</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>        ...<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">else</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>        <span style="color:#a6e22e">echom</span> <span style="color:#e6db74">&#34;Unable to fix&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">endif</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">endfunction</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>After <code>source</code>-ing the function I ran:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">cdo</span> <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">FixF841Error</span>()<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>to resolve the majority of the errors.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#66d9ef">function</span>! <span style="color:#a6e22e">FixF841Error</span>()<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34; Example the line of the error to determine what fix is required.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">line</span> = <span style="color:#a6e22e">getline</span>(<span style="color:#e6db74">&#39;.&#39;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">line</span> =~ <span style="color:#e6db74">&#39;as e:&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">        &#34; Handle scenario of unused exception variable</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        ...<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">elseif</span> <span style="color:#a6e22e">line</span> =~ <span style="color:#e6db74">&#39;^\s\+\w\+ = factory&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">        &#34; Handle scenario of unused test factory variable</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        ...<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">else</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>        <span style="color:#a6e22e">echom</span> <span style="color:#e6db74">&#34;Unable to fix&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#66d9ef">endif</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">endfunction</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>After <code>source</code>-ing the function I ran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#a6e22e">cdo</span> <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">FixF841Error</span>()<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>to resolve the majority of the errors.</p>
 <p>Would have taken all day without this.</p>
 </article>
 

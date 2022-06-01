@@ -73,11 +73,11 @@ Availability Zone (euw2-az2) in the EU-WEST-2 Region.</p>
 
 <p>Here &ldquo;euw2-az2&rdquo; is the &ldquo;Zone ID&rdquo; of the Availability Zone, and the mapping from
 Zone ID to the more familiar Zone Name is non-obvious. See, for example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws ec2 describe-availability-zones --region eu-west-2 | jq -r <span style="color:#e6db74">&#39;.AvailabilityZones[] | [ .ZoneName, .ZoneId ] | join(&#34; = &#34;)&#39;</span>
-eu-west-2a <span style="color:#f92672">=</span> euw2-az2
-eu-west-2b <span style="color:#f92672">=</span> euw2-az3
-eu-west-2c <span style="color:#f92672">=</span> euw2-az1
-</code></pre></div><p>As you can see <code>a,b,c</code> doesn&rsquo;t map onto <code>1,2,3</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ aws ec2 describe-availability-zones --region eu-west-2 | jq -r <span style="color:#e6db74">&#39;.AvailabilityZones[] | [ .ZoneName, .ZoneId ] | join(&#34; = &#34;)&#39;</span>
+</span></span><span style="display:flex;"><span>eu-west-2a <span style="color:#f92672">=</span> euw2-az2
+</span></span><span style="display:flex;"><span>eu-west-2b <span style="color:#f92672">=</span> euw2-az3
+</span></span><span style="display:flex;"><span>eu-west-2c <span style="color:#f92672">=</span> euw2-az1
+</span></span></code></pre></div><p>As you can see <code>a,b,c</code> doesn&rsquo;t map onto <code>1,2,3</code>.</p>
 </article>
 
         </main>

@@ -66,24 +66,24 @@ their full diffs. However, by default, the output still includes the commit
 subject and description which means the output can&rsquo;t be piped into commands that
 expect a list of file paths.</p>
 <p>To strip out everything except the changed paths, use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git log --name-only --pretty<span style="color:#f92672">=</span>format:
-</code></pre></div><p>Which is useful enough to warrant an alias in <code>~/.gitconfig</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[alias]</span>
-<span style="color:#a6e22e">filepaths</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">show --name-only --pretty=format:</span>
-</code></pre></div><p>Then you can do things like find all the files changed in a commit that contain
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git log --name-only --pretty<span style="color:#f92672">=</span>format:
+</span></span></code></pre></div><p>Which is useful enough to warrant an alias in <code>~/.gitconfig</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[alias]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">filepaths</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">show --name-only --pretty=format:</span>
+</span></span></code></pre></div><p>Then you can do things like find all the files changed in a commit that contain
 a given pattern:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git filepaths | xargs rg -l <span style="color:#e6db74">&#34;</span>$QUERY<span style="color:#e6db74">&#34;</span>
-</code></pre></div><p>Further, if you want to find all the changed files where a given pattern was
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git filepaths | xargs rg -l <span style="color:#e6db74">&#34;</span>$QUERY<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Further, if you want to find all the changed files where a given pattern was
 <em>removed</em> in a commit, you can use the
 <a href="https://git-scm.com/docs/git-show#Documentation/git-show.txt--Sltstringgt"><code>-S</code></a>
 option of <code>git log</code> to search the added and removed lines for a pattern:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git filepaths -S <span style="color:#e6db74">&#34;</span>$QUERY<span style="color:#e6db74">&#34;</span>
-</code></pre></div><p>Which we can pipe to Vim so we can edit the identified files:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git filepaths -S <span style="color:#e6db74">&#34;</span>$QUERY<span style="color:#e6db74">&#34;</span> | xargs -o vim
-</code></pre></div><p>You could also do this without leaving Vim by loading the files into the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git filepaths -S <span style="color:#e6db74">&#34;</span>$QUERY<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Which we can pipe to Vim so we can edit the identified files:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git filepaths -S <span style="color:#e6db74">&#34;</span>$QUERY<span style="color:#e6db74">&#34;</span> | xargs -o vim
+</span></span></code></pre></div><p>You could also do this without leaving Vim by loading the files into the
 argument list:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">args</span> `<span style="color:#a6e22e">git</span> <span style="color:#a6e22e">filepaths</span> -<span style="color:#a6e22e">S</span> <span style="color:#e6db74">&#34;$QUERY&#34;</span>`<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>See my post on <a href="https://codeinthehole.com/tips/vim-lists/">Vim&rsquo;s lists</a> if
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#a6e22e">args</span> `<span style="color:#a6e22e">git</span> <span style="color:#a6e22e">filepaths</span> -<span style="color:#a6e22e">S</span> <span style="color:#e6db74">&#34;$QUERY&#34;</span>`<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>See my post on <a href="https://codeinthehole.com/tips/vim-lists/">Vim&rsquo;s lists</a> if
 you&rsquo;re into this kind of thing.</p>
 </article>
 

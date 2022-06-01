@@ -62,27 +62,27 @@
         </header><p>YAML is a superset of JSON which means a YAML parser can parse JSON (but not
 necessarily the other way around).</p>
 <p>This test passes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> io
-<span style="color:#f92672">import</span> json
-<span style="color:#f92672">import</span> yaml
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_json_is_yaml</span>():
-    data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Jimmy&#34;</span>, <span style="color:#e6db74">&#34;attributes&#34;</span>: {<span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#ae81ff">35</span>, <span style="color:#e6db74">&#34;height&#34;</span>: <span style="color:#ae81ff">1.89</span>}}
-    f <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>StringIO(json<span style="color:#f92672">.</span>dumps(data))
-    from_json <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span>load(f, Loader<span style="color:#f92672">=</span>yaml<span style="color:#f92672">.</span>FullLoader)
-
-    f <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>StringIO(
-        <span style="color:#e6db74">&#34;&#34;&#34;---
-</span><span style="color:#e6db74">name: Jimmy
-</span><span style="color:#e6db74">attributes:
-</span><span style="color:#e6db74">    age: 35
-</span><span style="color:#e6db74">    height: 1.89
-</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-    )
-    from_yaml <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span>load(f, Loader<span style="color:#f92672">=</span>yaml<span style="color:#f92672">.</span>FullLoader)
-
-    <span style="color:#66d9ef">assert</span> from_json <span style="color:#f92672">==</span> from_yaml
-</code></pre></div><p>This is noted in the <a href="https://yaml.org/spec/1.2/spec.html#id2759572">YAML spec</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> io
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> yaml
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_json_is_yaml</span>():
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Jimmy&#34;</span>, <span style="color:#e6db74">&#34;attributes&#34;</span>: {<span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#ae81ff">35</span>, <span style="color:#e6db74">&#34;height&#34;</span>: <span style="color:#ae81ff">1.89</span>}}
+</span></span><span style="display:flex;"><span>    f <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>StringIO(json<span style="color:#f92672">.</span>dumps(data))
+</span></span><span style="display:flex;"><span>    from_json <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span>load(f, Loader<span style="color:#f92672">=</span>yaml<span style="color:#f92672">.</span>FullLoader)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    f <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>StringIO(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;---
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">name: Jimmy
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">attributes:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    age: 35
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    height: 1.89
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    from_yaml <span style="color:#f92672">=</span> yaml<span style="color:#f92672">.</span>load(f, Loader<span style="color:#f92672">=</span>yaml<span style="color:#f92672">.</span>FullLoader)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> from_json <span style="color:#f92672">==</span> from_yaml
+</span></span></code></pre></div><p>This is noted in the <a href="https://yaml.org/spec/1.2/spec.html#id2759572">YAML spec</a>:</p>
 <blockquote>
 <p>Both JSON and YAML aim to be human readable data interchange formats. However,
 JSON and YAML have different priorities. JSON’s foremost design goal is

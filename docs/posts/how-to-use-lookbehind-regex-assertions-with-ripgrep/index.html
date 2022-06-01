@@ -63,11 +63,11 @@
 [<code>regex</code>] crate for parsing regular expressions which does not support
 look-ahead or look-behind assertions.</p>
 <p>To use such zero width assertions, use the <code>--pcre2</code> option:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">rg --pcre2 <span style="color:#e6db74">&#39;A(?=B)&#39;</span>   <span style="color:#75715e"># look ahead positive</span>
-rg --pcre2 <span style="color:#e6db74">&#39;A(?!B)&#39;</span>   <span style="color:#75715e"># look ahead negative</span>
-rg --pcre2 <span style="color:#e6db74">&#39;A(?&lt;=B)&#39;</span>  <span style="color:#75715e"># look behind positive</span>
-rg --pcre2 <span style="color:#e6db74">&#39;A(?&lt;!B)&#39;</span>  <span style="color:#75715e"># look behind negative</span>
-</code></pre></div></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>rg --pcre2 <span style="color:#e6db74">&#39;A(?=B)&#39;</span>   <span style="color:#75715e"># look ahead positive</span>
+</span></span><span style="display:flex;"><span>rg --pcre2 <span style="color:#e6db74">&#39;A(?!B)&#39;</span>   <span style="color:#75715e"># look ahead negative</span>
+</span></span><span style="display:flex;"><span>rg --pcre2 <span style="color:#e6db74">&#39;A(?&lt;=B)&#39;</span>  <span style="color:#75715e"># look behind positive</span>
+</span></span><span style="display:flex;"><span>rg --pcre2 <span style="color:#e6db74">&#39;A(?&lt;!B)&#39;</span>  <span style="color:#75715e"># look behind negative</span>
+</span></span></code></pre></div></article>
 
         </main>
 

@@ -62,21 +62,21 @@
         </header><p>If you&rsquo;re using <a href="https://github.com/universal-ctags/ctags">Universal Ctags</a>
 (which you should be), you just need to add a <code>~/.ctags.d/terraform.ctags</code> with
 contents:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">--langdef=terraform
---langmap=terraform:.tf.tfvars
---regex-terraform=/^[[:space:]]*resource[[:space:]]*&#34;([^&#34;]*)&#34;[[:space:]]*&#34;([^&#34;]*)&#34;/\2/r,Resource/
---regex-terraform=/^[[:space:]]*data[[:space:]]*&#34;([^&#34;]*)&#34;[[:space:]]*&#34;([^&#34;]*)&#34;/\2/d,Data/
---regex-terraform=/^[[:space:]]*variable[[:space:]]*&#34;([^&#34;]*)&#34;/\1/v,Variable/
---regex-terraform=/^[[:space:]]*provider[[:space:]]*&#34;([^&#34;]*)&#34;/\1/p,Provider/
---regex-terraform=/^[[:space:]]*module[[:space:]]*&#34;([^&#34;]*)&#34;/\1/m,Module/
---regex-terraform=/^[[:space:]]*output[[:space:]]*&#34;([^&#34;]*)&#34;/\1/o,Output/
---regex-terraform=/^([a-z0-9_]+)[[:space:]]*=/\1/f,TFVar/
-</code></pre></div><p>Then, for example, a Terraform resource like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_cloudwatch_log_group&#34;</span> <span style="color:#e6db74">&#34;my-log-group&#34;</span> {
-  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;my-log-group&#34;</span>
-  ...
-}
-</code></pre></div><p>will have <code>my-log-group</code> stored as an identifier so you can jump to its
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>--langdef=terraform
+</span></span><span style="display:flex;"><span>--langmap=terraform:.tf.tfvars
+</span></span><span style="display:flex;"><span>--regex-terraform=/^[[:space:]]*resource[[:space:]]*&#34;([^&#34;]*)&#34;[[:space:]]*&#34;([^&#34;]*)&#34;/\2/r,Resource/
+</span></span><span style="display:flex;"><span>--regex-terraform=/^[[:space:]]*data[[:space:]]*&#34;([^&#34;]*)&#34;[[:space:]]*&#34;([^&#34;]*)&#34;/\2/d,Data/
+</span></span><span style="display:flex;"><span>--regex-terraform=/^[[:space:]]*variable[[:space:]]*&#34;([^&#34;]*)&#34;/\1/v,Variable/
+</span></span><span style="display:flex;"><span>--regex-terraform=/^[[:space:]]*provider[[:space:]]*&#34;([^&#34;]*)&#34;/\1/p,Provider/
+</span></span><span style="display:flex;"><span>--regex-terraform=/^[[:space:]]*module[[:space:]]*&#34;([^&#34;]*)&#34;/\1/m,Module/
+</span></span><span style="display:flex;"><span>--regex-terraform=/^[[:space:]]*output[[:space:]]*&#34;([^&#34;]*)&#34;/\1/o,Output/
+</span></span><span style="display:flex;"><span>--regex-terraform=/^([a-z0-9_]+)[[:space:]]*=/\1/f,TFVar/
+</span></span></code></pre></div><p>Then, for example, a Terraform resource like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-terraform" data-lang="terraform"><span style="display:flex;"><span><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_cloudwatch_log_group&#34;</span> <span style="color:#e6db74">&#34;my-log-group&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;my-log-group&#34;</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>will have <code>my-log-group</code> stored as an identifier so you can jump to its
 definition from other references.</p>
 <p>Inspiration taken from
 <a href="https://z0mbix.io/2016/09/04/ctag-support-for-terraform/">ctag support for Terraform</a>

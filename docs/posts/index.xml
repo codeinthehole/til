@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Apr 2022 09:22:58 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jun 2022 10:24:44 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Some Markdown parsers support definition lists</title>
+      <link>https://til.codeinthehole.com/posts/some-markdown-parsers-support-definition-lists/</link>
+      <pubDate>Wed, 01 Jun 2022 10:24:44 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/some-markdown-parsers-support-definition-lists/</guid>
+      <description>Parsers like goldmark (the default parser for Hugo) support definition lists.</description>
+    </item>
     
     <item>
       <title>`dprint` can be used to speed up Prettier</title>
@@ -175,7 +184,7 @@ docker inspect -f &amp;#34;{{ .</description>
       
       <guid>https://til.codeinthehole.com/posts/that-aws-aurora-clusters-have-two-types-of-storage/</guid>
       <description>Aurora PostgreSQL clusters have:
-  Auto-scaling storage for persistent data (the &amp;ldquo;cluster volume&amp;rdquo;).</description>
+Auto-scaling storage for persistent data (the &amp;ldquo;cluster volume&amp;rdquo;).</description>
     </item>
     
     <item>
@@ -592,7 +601,7 @@ MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 S
       
       <guid>https://til.codeinthehole.com/posts/systemd-sends-sigkill-signals-after-waiting-for-timestopsec-seconds/</guid>
       <description>From man systemd.kill:
- Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=).</description>
+Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=).</description>
     </item>
     
     <item>
@@ -655,8 +664,7 @@ MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 S
       <pubDate>Tue, 16 Feb 2021 09:01:38 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/chrome-has-a-flags-page-for-enabling-experimental-features/</guid>
-      <description>Find it at chrome://flags.
- </description>
+      <description>Find it at chrome://flags.</description>
     </item>
     
     <item>
@@ -694,7 +702,7 @@ chmod -R g+X,g-wx .</description>
       
       <guid>https://til.codeinthehole.com/posts/recruiters-talk-about-tshaped-leaders/</guid>
       <description>For example:
- The T metaphor indicates expertise in a single field as well as the ability to collaborate across disciplines.</description>
+The T metaphor indicates expertise in a single field as well as the ability to collaborate across disciplines.</description>
     </item>
     
     <item>
@@ -751,7 +759,7 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       
       <guid>https://til.codeinthehole.com/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/</guid>
       <description>Run:
-:let @* = expand(&amp;#34;%&amp;#34;)where @* references the system clipboard register.</description>
+:let @* = expand(&amp;#34;%&amp;#34;) where @* references the system clipboard register.</description>
     </item>
     
     <item>
@@ -779,7 +787,7 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       
       <guid>https://til.codeinthehole.com/posts/bbc-sounds-only-works-on-alexa-if-the-language-setting-is-uk-english/</guid>
       <description>Was puzzled as to why:
- Alexa, play BBC radio four</description>
+Alexa, play BBC radio four</description>
     </item>
     
     <item>
@@ -926,7 +934,7 @@ import pytest @pytest.mark.parametrize(&amp;#34;x&amp;#34;, [1,2,3]) @pytest.mar
       
       <guid>https://til.codeinthehole.com/posts/how-to-run-jekyll-in-a-docker-container/</guid>
       <description>To run the server, run:
-docker run --rm \  --volume=&amp;#34;${PWD}:/srv/jekyll&amp;#34; \  -p 4000:4000 \  -it jekyll/jekyll:3.</description>
+docker run --rm \ --volume=&amp;#34;${PWD}:/srv/jekyll&amp;#34; \ -p 4000:4000 \ -it jekyll/jekyll:3.</description>
     </item>
     
     <item>
@@ -1090,7 +1098,7 @@ docker run --rm \  --volume=&amp;#34;${PWD}:/srv/jekyll&amp;#34; \  -p 4000:4000
       
       <guid>https://til.codeinthehole.com/posts/about-the-difference-between-minimising-and-hiding-windows-in-macos/</guid>
       <description>Minimising:
-  ⌘ + m minimises the active application window.</description>
+⌘ + m minimises the active application window.</description>
     </item>
     
     <item>
@@ -1174,7 +1182,7 @@ Played by Magnus Carlsen recently: https://www.</description>
       
       <guid>https://til.codeinthehole.com/posts/the-macos-keybinds-for-en-and-emdashes/</guid>
       <description>Which are:
- alt + - for an en-dash (–); shift + alt + - for an em-dash (—);  You can always get them from the ctrl + cmd + space character picker but good to know quicker alternatives.</description>
+alt + - for an en-dash (–); shift + alt + - for an em-dash (—); You can always get them from the ctrl + cmd + space character picker but good to know quicker alternatives.</description>
     </item>
     
     <item>
@@ -1193,7 +1201,7 @@ Played by Magnus Carlsen recently: https://www.</description>
       
       <guid>https://til.codeinthehole.com/posts/ssh-config-supports-multiple-host-patterns-in-one-block/</guid>
       <description>From man ssh_config:
- Host Restricts the following declarations (up to the next Host or Match keyword) to be only for those hosts that match one of the patterns given after the keyword.</description>
+Host Restricts the following declarations (up to the next Host or Match keyword) to be only for those hosts that match one of the patterns given after the keyword.</description>
     </item>
     
     <item>
@@ -1213,7 +1221,7 @@ AWS&amp;rsquo;s Console only keeps your 5 most recent AWS accounts as quick link
       
       <guid>https://til.codeinthehole.com/posts/yaml-has-several-stringparsing-gotchas/</guid>
       <description>For instance, in YAML 1.1:
- Yes and No parse to true and false x:y is parsed as a base-60 number if y is less than 60  See for yourself with these Python tests:</description>
+Yes and No parse to true and false x:y is parsed as a base-60 number if y is less than 60 See for yourself with these Python tests:</description>
     </item>
     
     <item>
@@ -1299,7 +1307,7 @@ import _csv def generate_report(writer: &amp;#39;_csv.</description>
       
       <guid>https://til.codeinthehole.com/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/</guid>
       <description>I have this in ~/.vimrc:
-&amp;#34; Keep undo history between sessionsif has(&amp;#39;persistent_undo&amp;#39;) set undofile set undodir=~/.</description>
+&amp;#34; Keep undo history between sessions if has(&amp;#39;persistent_undo&amp;#39;) set undofile set undodir=~/.</description>
     </item>
     
     <item>
@@ -1453,7 +1461,7 @@ import _csv def generate_report(writer: &amp;#39;_csv.</description>
       
       <guid>https://til.codeinthehole.com/posts/park-downhill/</guid>
       <description>From https://news.ycombinator.com/item?id=23118940
- Before putting a project or incomplete task away, make notes of what the next thing was that you were going to work on.</description>
+Before putting a project or incomplete task away, make notes of what the next thing was that you were going to work on.</description>
     </item>
     
     <item>

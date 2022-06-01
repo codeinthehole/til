@@ -61,15 +61,15 @@
             <h1>How to use <code>aws-mfa-v2</code> to avoid entering so many MFA tokens</h1>
         </header><p>Prior to being told about <a href="https://github.com/rkeiii/aws-mfa-v2"><code>aws-mfa-v2</code></a>
 my <code>~/.aws/config</code> file looked like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dosini" data-lang="dosini"><span style="color:#66d9ef">[profile parent-account]</span>
-<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
-
-<span style="color:#66d9ef">[profile child-account]</span>
-<span style="color:#a6e22e">mfa_serial</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::$PARENT_AWS_ACCOUNT_ID:mfa/$USERNAME</span>
-<span style="color:#a6e22e">role_arn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::$CHILD_AWS_ACCOUNT_ID:role/$ROLE_NAME</span>
-<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
-<span style="color:#a6e22e">source_profile</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">parent-account</span>
-</code></pre></div><p>which worked fine but meant <code>awscli</code> calls using the <code>child-account</code> profile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dosini" data-lang="dosini"><span style="display:flex;"><span><span style="color:#66d9ef">[profile parent-account]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[profile child-account]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mfa_serial</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::$PARENT_AWS_ACCOUNT_ID:mfa/$USERNAME</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">role_arn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::$CHILD_AWS_ACCOUNT_ID:role/$ROLE_NAME</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">source_profile</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">parent-account</span>
+</span></span></code></pre></div><p>which worked fine but meant <code>awscli</code> calls using the <code>child-account</code> profile
 prompted for an MFA token. Over the course of a day I would look up a token many
 times.</p>
 <p>But following a tip from <a href="https://github.com/dooferlad">James Tunnicliffe</a> I
@@ -77,19 +77,19 @@ greatly reduced how often I need to do this by using the <code>aws-mfa-v2</code>
 This uses your long-lived AWS account to create temporary profiles with
 credentials fetched from AWS STS.</p>
 <p>In practice, this requires you to run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws-mfa --mfa-profile parent-account --token $TOKEN
-</code></pre></div><p>once a day to create/update a temporary AWS profile (called, in this example,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>aws-mfa --mfa-profile parent-account --token $TOKEN
+</span></span></code></pre></div><p>once a day to create/update a temporary AWS profile (called, in this example,
 <code>parent-account-mfa</code>).</p>
 <p>Plus I needed to rearrange <code>~/.aws/config</code> to have this structure:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dosini" data-lang="dosini"><span style="color:#66d9ef">[profile parent-account]</span>
-<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
-<span style="color:#a6e22e">mfa_serial</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::$PARENT_AWS_ACCOUNT_ID:mfa/$USERNAME</span>
-
-<span style="color:#66d9ef">[profile child-account]</span>
-<span style="color:#a6e22e">role_arn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::$CHILD_AWS_ACCOUNT_ID:role/$ROLE_NAME</span>
-<span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
-<span style="color:#a6e22e">source_profile</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">parent-account-mfa</span>
-</code></pre></div><p>Note the updated <code>source_profile</code> value that refers to a profile only defined in
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dosini" data-lang="dosini"><span style="display:flex;"><span><span style="color:#66d9ef">[profile parent-account]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mfa_serial</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::$PARENT_AWS_ACCOUNT_ID:mfa/$USERNAME</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[profile child-account]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">role_arn</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">arn:aws:iam::$CHILD_AWS_ACCOUNT_ID:role/$ROLE_NAME</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">source_profile</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">parent-account-mfa</span>
+</span></span></code></pre></div><p>Note the updated <code>source_profile</code> value that refers to a profile only defined in
 <code>~/.aws/credentials</code>.</p>
 </article>
 

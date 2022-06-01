@@ -66,25 +66,25 @@ only running the packaging jobs after each push.</p>
 <p>This can be done by adding a temporary commit that disables the main workflow
 and adds a custom one running only the jobs you care about.</p>
 <p>You can disable a CircleCI workflow using the <code>when</code> attribute:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># .circleci/config.yml</span>
-
-<span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
-
-<span style="color:#f92672">workflows</span>:
-
-    <span style="color:#75715e"># Define a custom workflow that only runs the jobs you&#39;re interested in.</span>
-    <span style="color:#f92672">temp_workflow</span>:
-        <span style="color:#f92672">jobs</span>:
-            - <span style="color:#ae81ff">build_job_1</span>
-            - <span style="color:#ae81ff">build_job_2</span>
-
-    <span style="color:#75715e"># The standard (but slow) workflow that normally runs on each push.</span>
-    <span style="color:#ae81ff">test_build_deploy;</span>
-        <span style="color:#75715e"># Temporarily disable this workflow</span>
-        <span style="color:#f92672">when</span>: <span style="color:#66d9ef">false</span>
-
-        <span style="color:#ae81ff">...</span>
-</code></pre></div><p>Make sure you rebase out this commit before requesting review or merging the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># .circleci/config.yml</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">workflows</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Define a custom workflow that only runs the jobs you&#39;re interested in.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">temp_workflow</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>            - <span style="color:#ae81ff">build_job_1</span>
+</span></span><span style="display:flex;"><span>            - <span style="color:#ae81ff">build_job_2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># The standard (but slow) workflow that normally runs on each push.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">test_build_deploy;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Temporarily disable this workflow</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">when</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">...</span>
+</span></span></code></pre></div><p>Make sure you rebase out this commit before requesting review or merging the
 pull request; it&rsquo;s just a crutch to speed up development.</p>
 <p>See CircleCI&rsquo;s docs on
 <a href="https://circleci.com/docs/2.0/configuration-reference/#using-when-in-workflows">using <code>when</code> in workflows</a>.</p>

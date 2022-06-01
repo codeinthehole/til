@@ -62,16 +62,16 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
             </div>
             <h1>How to pipe an argument list into Vim</h1>
         </header><p>Use something like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo file1 file2 | xargs -o vim
-</code></pre></div><p>The <code>-o</code> option for <code>xargs</code> re-opens <code>stdin</code> as <code>/dev/tty</code> (rather than the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo file1 file2 | xargs -o vim
+</span></span></code></pre></div><p>The <code>-o</code> option for <code>xargs</code> re-opens <code>stdin</code> as <code>/dev/tty</code> (rather than the
 default <code>/dev/null</code>) and is essential otherwise Vim will <a href="https://superuser.com/questions/336016/invoking-vi-through-find-xargs-breaks-my-terminal-why">break your terminal
 when it exits</a>.</p>
 <p>This is a useful way of populating Vim&rsquo;s <a href="https://vimhelp.org/editing.txt.html#argument-list">argument list</a>. It works especially
 well with modern search tools <code>fd</code> and <code>ripgrep</code>. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rg --type py --files-with-matches <span style="color:#e6db74">&#34;logger = .*getLogger*&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    | xargs rg --files-without-match <span style="color:#e6db74">&#34;logger\.&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    | xargs -o vim
-</code></pre></div><p>This instructs Vim to open all Python files that create a <code>logger</code> instance but
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ rg --type py --files-with-matches <span style="color:#e6db74">&#34;logger = .*getLogger*&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    | xargs rg --files-without-match <span style="color:#e6db74">&#34;logger\.&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    | xargs -o vim
+</span></span></code></pre></div><p>This instructs Vim to open all Python files that create a <code>logger</code> instance but
 don&rsquo;t actually use it.</p>
 </article>
 

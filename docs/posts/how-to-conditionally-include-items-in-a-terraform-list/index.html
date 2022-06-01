@@ -63,16 +63,16 @@
 some condition is met. One solution is to use <code>flatten</code> along with a conditional
 expression.</p>
 <p>Something like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_security_group&#34; &#34;this&#34;</span> {
-  ...
-  <span style="color:#66d9ef">ingress</span> {
-    ...
-    security_groups <span style="color:#f92672">=</span> <span style="color:#66d9ef">flatten</span>([
-      <span style="color:#66d9ef">aws_security_group</span>.<span style="color:#66d9ef">server</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#66d9ef">type</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#66d9ef">a</span>.<span style="color:#66d9ef">id</span>,
-      <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">include_server_type_b</span> <span style="color:#960050;background-color:#1e0010">?</span> <span style="color:#66d9ef">aws_security_group</span>.<span style="color:#66d9ef">server</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#66d9ef">type</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#66d9ef">b</span>[<span style="color:#960050;background-color:#1e0010">*</span>].<span style="color:#66d9ef">id</span> <span style="color:#960050;background-color:#1e0010">:</span> []
-    ])
-  }
-</code></pre></div><p>where the <code>server-type-b</code> security group is only included the <code>security_groups</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_security_group&#34; &#34;this&#34;</span> {
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ingress</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    security_groups <span style="color:#f92672">=</span> <span style="color:#66d9ef">flatten</span>([
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">aws_security_group</span>.<span style="color:#66d9ef">server</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#66d9ef">type</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#66d9ef">a</span>.<span style="color:#66d9ef">id</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span>.<span style="color:#66d9ef">include_server_type_b</span> <span style="color:#960050;background-color:#1e0010">?</span> <span style="color:#66d9ef">aws_security_group</span>.<span style="color:#66d9ef">server</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#66d9ef">type</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#66d9ef">b</span>[<span style="color:#960050;background-color:#1e0010">*</span>].<span style="color:#66d9ef">id</span> <span style="color:#960050;background-color:#1e0010">:</span> []
+</span></span><span style="display:flex;"><span>    ])
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>where the <code>server-type-b</code> security group is only included the <code>security_groups</code>
 list if <code>var.include_server_type_b</code> is truthy.</p>
 </article>
 

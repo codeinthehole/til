@@ -65,26 +65,26 @@ Docker image wraps
 <a href="https://github.com/lukeapage/node-markdown-spellcheck"><code>node-markdown-spellcheck</code></a>
 and can be used locally and on CircleCI to spell-check markdown files.</p>
 <p>Locally, run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run --rm -ti -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/workdir tmaier/markdown-spellcheck:latest <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --report --ignore-numbers --ignore-acronyms <span style="color:#e6db74">&#34;**/*.md&#34;</span>
-</code></pre></div><p>In your <code>.circleci/config.yml</code> file, use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
-
-<span style="color:#f92672">jobs</span>:
-  <span style="color:#f92672">spelling</span>:
-    <span style="color:#f92672">docker</span>:
-      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">tmaier/markdown-spellcheck:latest</span>
-    <span style="color:#f92672">steps</span>:
-      - <span style="color:#ae81ff">checkout</span>
-      - <span style="color:#f92672">run</span>:
-          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Check spelling</span>
-          <span style="color:#f92672">command</span>: <span style="color:#ae81ff">mdspell --report --ignore-numbers --ignore-acronyms &#34;**/*.md&#34;</span>
-
-<span style="color:#f92672">workflows</span>:
-  <span style="color:#f92672">static-analysis</span>:
-    <span style="color:#f92672">jobs</span>:
-      - <span style="color:#ae81ff">spelling</span>
-</code></pre></div><p>Thanks to <a href="https://github.com/lukeapage">Luke Page</a> for the node library and
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker run --rm -ti -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/workdir tmaier/markdown-spellcheck:latest <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --report --ignore-numbers --ignore-acronyms <span style="color:#e6db74">&#34;**/*.md&#34;</span>
+</span></span></code></pre></div><p>In your <code>.circleci/config.yml</code> file, use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#ae81ff">2.1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">spelling</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">docker</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">tmaier/markdown-spellcheck:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">checkout</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Check spelling</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">command</span>: <span style="color:#ae81ff">mdspell --report --ignore-numbers --ignore-acronyms &#34;**/*.md&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">workflows</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">static-analysis</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">spelling</span>
+</span></span></code></pre></div><p>Thanks to <a href="https://github.com/lukeapage">Luke Page</a> for the node library and
 <a href="https://tobiasmaier.info/">Tobias L. Maier</a> for the Docker wrapper.</p>
 </article>
 
@@ -104,6 +104,8 @@ and can be used locally and on CircleCI to spell-check markdown files.</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/markdown/">Markdown</a>:</p>
                     <ul>
                     
+                        <li><a href="/posts/some-markdown-parsers-support-definition-lists/">Some Markdown parsers support definition lists</a></li>
+                    
                         <li><a href="/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/">How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</a></li>
                     
                         <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
@@ -111,6 +113,8 @@ and can be used locally and on CircleCI to spell-check markdown files.</p>
                         <li><a href="/posts/how-to-embed-markdown-content-in-a-github-code-block/">How to embed markdown content in a Github code block</a></li>
                     
                     </ul>
+                    
+                        
                     
                         
                     

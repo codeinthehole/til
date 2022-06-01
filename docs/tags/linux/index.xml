@@ -28,7 +28,7 @@
       
       <guid>https://til.codeinthehole.com/posts/systemd-sends-sigkill-signals-after-waiting-for-timestopsec-seconds/</guid>
       <description>From man systemd.kill:
- Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=).</description>
+Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=).</description>
     </item>
     
     <item>

@@ -62,15 +62,15 @@
         </header><p><a href="https://github.com/errata-ai/vale">Vale</a> is an extensible syntax aware linter. It can integrate with Vim via
 <a href="https://github.com/dense-analysis/ale">Ale</a> although there&rsquo;s a gotcha to be aware of.</p>
 <p>Vale&rsquo;s config file uses globs to determine which formats to apply. E.g.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[posts/*.md]</span>
-<span style="color:#a6e22e">BasedOnStyles</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">Vale, write-good, proselint</span>
-</code></pre></div><p>However, by default, Ale lint files by running each linter on a temporary copy
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[posts/*.md]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">BasedOnStyles</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">Vale, write-good, proselint</span>
+</span></span></code></pre></div><p>However, by default, Ale lint files by running each linter on a temporary copy
 of the file which has a different path. This means the above glob doesn&rsquo;t match
 and Vale finds no errors.</p>
 <p>To work around this, it&rsquo;s best to avoid folders your <code>.vale.ini</code> globs:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[*.md]</span>
-<span style="color:#a6e22e">BasedOnStyles</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">Vale, write-good, proselint</span>
-</code></pre></div><p>as this will match temporary files (that still have a <code>.md</code> extension).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[*.md]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">BasedOnStyles</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">Vale, write-good, proselint</span>
+</span></span></code></pre></div><p>as this will match temporary files (that still have a <code>.md</code> extension).</p>
 <p>Further reading:</p>
 <ul>
 <li>There&rsquo;s a bit more discussion on <a href="https://github.com/dense-analysis/ale/issues/3363">this Github ticket</a>.</li>

@@ -70,22 +70,22 @@ runs all scripts in <code>/etc/periodic/daily/</code> including
 <code>/etc/periodic/daily/110.clean-tmps</code> which is responsible for removing old
 temporary files. The default configuration <code>/etc/defaults/periodic.conf</code> ensures
 any files in <code>/tmp</code> that haven&rsquo;t been accessed for 3 days are deleted.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># /etc/defaults/periodic.conf</span>
-
-...
-<span style="color:#75715e"># 110.clean-tmps</span>
-daily_clean_tmps_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>      <span style="color:#75715e"># Delete stuff daily</span>
-daily_clean_tmps_dirs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/tmp&#34;</span>       <span style="color:#75715e"># Delete under here</span>
-daily_clean_tmps_days<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span>          <span style="color:#75715e"># If not accessed for</span>
-...
-</code></pre></div><p>Output from this job is logged in <code>/var/log/daily.out</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># /etc/defaults/periodic.conf</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 110.clean-tmps</span>
+</span></span><span style="display:flex;"><span>daily_clean_tmps_enable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YES&#34;</span>      <span style="color:#75715e"># Delete stuff daily</span>
+</span></span><span style="display:flex;"><span>daily_clean_tmps_dirs<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/tmp&#34;</span>       <span style="color:#75715e"># Delete under here</span>
+</span></span><span style="display:flex;"><span>daily_clean_tmps_days<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span>          <span style="color:#75715e"># If not accessed for</span>
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Output from this job is logged in <code>/var/log/daily.out</code>.</p>
 <p>It&rsquo;s hard to determine exactly how stale files in <code>$TMPDIR</code> are removed. The
 folder appears to be flushed when a machine reboots but I can&rsquo;t tell if they are
 periodically removed as well.</p>
 <p>This is accurate as of MacOS 10.15.7</p>
 <p>Sources:</p>
 <ul>
-<li><a href="https://superuser.com/a/187105">Stack Overflow: &ldquo;In MacOS, how often is <code>/tmp</code> deleted?&quot;</a></li>
+<li><a href="https://superuser.com/a/187105">Stack Overflow: &ldquo;In MacOS, how often is <code>/tmp</code> deleted?&rdquo;</a></li>
 <li><a href="http://www.magnusviri.com/what-is-var-folders.html">What is <code>/var/folders</code>?</a></li>
 <li><a href="https://www.unix.com/man-page/osx/8/periodic-wrapper"><code>periodic-wrapper</code> man page</a></li>
 </ul>

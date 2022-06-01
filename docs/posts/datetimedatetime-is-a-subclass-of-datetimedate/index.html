@@ -62,10 +62,10 @@
             </div>
             <h1><code>datetime.datetime</code> is a subclass of <code>datetime.date</code></h1>
         </header><p>See for yourself:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">import</span> datetime
-<span style="color:#f92672">&gt;&gt;&gt;</span> isinstance(datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now(), datetime<span style="color:#f92672">.</span>date)
-<span style="color:#66d9ef">True</span>
-</code></pre></div><p>Apparently, <a href="https://bugs.python.org/issue28878">this is not a bug</a> but it is
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> isinstance(datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now(), datetime<span style="color:#f92672">.</span>date)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><p>Apparently, <a href="https://bugs.python.org/issue28878">this is not a bug</a> but it is
 certainly confusing.</p>
 </article>
 

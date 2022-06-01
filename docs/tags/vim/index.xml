@@ -112,7 +112,7 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       
       <guid>https://til.codeinthehole.com/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/</guid>
       <description>Run:
-:let @* = expand(&amp;#34;%&amp;#34;)where @* references the system clipboard register.</description>
+:let @* = expand(&amp;#34;%&amp;#34;) where @* references the system clipboard register.</description>
     </item>
     
     <item>
@@ -240,7 +240,7 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       
       <guid>https://til.codeinthehole.com/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/</guid>
       <description>I have this in ~/.vimrc:
-&amp;#34; Keep undo history between sessionsif has(&amp;#39;persistent_undo&amp;#39;) set undofile set undodir=~/.</description>
+&amp;#34; Keep undo history between sessions if has(&amp;#39;persistent_undo&amp;#39;) set undofile set undodir=~/.</description>
     </item>
     
     <item>

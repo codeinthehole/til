@@ -62,9 +62,9 @@ chmod -R g&#43;X,g-wx . [Reading time: 1 minute]" />
             </div>
             <h1>The order of permissions matters with <code>chmod</code></h1>
         </header><p>As in these two commands behave differently:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod -R g+X,g-wx .  <span style="color:#75715e"># DOESN&#39;T set group executable bit on folders</span>
-chmod -R g-wx,g+X .  <span style="color:#75715e"># DOES set group executable bit on folders</span>
-</code></pre></div></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod -R g+X,g-wx .  <span style="color:#75715e"># DOESN&#39;T set group executable bit on folders</span>
+</span></span><span style="display:flex;"><span>chmod -R g-wx,g+X .  <span style="color:#75715e"># DOES set group executable bit on folders</span>
+</span></span></code></pre></div></article>
 
         </main>
 

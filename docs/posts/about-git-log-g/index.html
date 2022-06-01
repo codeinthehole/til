@@ -70,10 +70,10 @@ for differences in the number of occurrences of a string in a file.</li>
 </ul>
 <p>The <code>-G</code> option can be useful to add a word boundary character to a fixed
 string. So instead of:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log -S my_string
-</code></pre></div><p>use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log -G <span style="color:#e6db74">&#34;\&lt;my_string\&gt;&#34;</span>
-</code></pre></div><p>to avoid unwanted matches (like <code>my_string_with_extra_stuff</code>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log -S my_string
+</span></span></code></pre></div><p>use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log -G <span style="color:#e6db74">&#34;\&lt;my_string\&gt;&#34;</span>
+</span></span></code></pre></div><p>to avoid unwanted matches (like <code>my_string_with_extra_stuff</code>).</p>
 <p>These filtering options are best used with the
 <a href="https://git-scm.com/docs/git-log#Documentation/git-log.txt---patch"><code>-p</code> or <code>--patch</code></a>
 option to show the commit diff of files that contain the searched-for
