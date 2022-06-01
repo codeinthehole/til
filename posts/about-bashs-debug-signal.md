@@ -15,4 +15,4 @@ trap '(read -p "[$BASH_SOURCE:$LINENO] $BASH_COMMAND ")' DEBUG
 
 Source:
 
-{{< tweet 1312413117436104705 >}}
+{{< tweet user="b0rk" id="1312413117436104705" >}}

@@ -9,4 +9,4 @@ app on most phones will recognise and prompt to join. Very slick.
 
 Source:
 
-{{< tweet 1320813528899411968 >}}
+{{< tweet user="codinghorror" id="1320813528899411968" >}}
