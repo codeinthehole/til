@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    If you install the pytest-monitor package, then PyTest invocations will collect test profiling information in a SQLite database (called . ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-profile-pytest-tests/" />
+<meta property="og:title" content="TIL How to profile Pytest tests — David Winterbottom" />
+<meta property="og:description" content="If you install the pytest-monitor package, then PyTest invocations will collect test profiling information in a SQLite database (called . [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to profile Pytest tests — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>June 23, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to profile Pytest tests</h1>
+        </header><p>If you install the <a href="https://pytest-monitor.readthedocs.io/"><code>pytest-monitor</code></a>
+package, then PyTest invocations will collect test profiling information in a
+SQLite database (called <code>.pymon</code> by default).</p>
+<p>The schema includes a <code>TEST_METRICS</code> table that has columns for:</p>
+<ul>
+<li>Time spent running the test (in seconds);</li>
+<li>CPU usage percentage;</li>
+<li>Maximum resident memory during test execution (in megabytes).</li>
+</ul>
+<p>More details in the
+<a href="https://pytest-monitor.readthedocs.io/en/latest/operating.html#execution-context-metrics-and-session">schema definition</a>.</p>
+<p>You can query these metrics from the CLI like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>QUERY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SELECT ITEM_PATH, ITEM_VARIANT, TOTAL_TIME, MEM_USAGE FROM TEST_METRICS&#34;</span>
+</span></span><span style="display:flex;"><span>sqlite3 -column .pymon <span style="color:#e6db74">&#34;</span>$QUERY<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>To house the data in a spreadsheet for sharing, format them as a tab-separated
+list which can be pasted in:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sqlite3 -noheader -csv -separator <span style="color:#e6db74">$&#39;\t&#39;</span> .pymon <span style="color:#e6db74">&#34;</span>$QUERY<span style="color:#e6db74">&#34;</span> | pbcopy
+</span></span></code></pre></div></article>
+
+        </main>
+
+        
+    <footer id="footer">
+        
+        
+
+        
+
+            
+
+            
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/testing/">Testing</a>:</p>
+                    <ul>
+                    
+                        <li><a href="/posts/about-factory-boys-selfattribute-class/">About Factory Boy&rsquo;s <code>SelfAttribute</code> class</a></li>
+                    
+                        <li><a href="/posts/factory-boy-can-be-used-to-build-dicts/">Factory boy can be used to build dicts</a></li>
+                    
+                        <li><a href="/posts/django-doesnt-flush-caches-between-tests/">Django doesn&rsquo;t flush caches between tests</a></li>
+                    
+                        <li><a href="/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/">That Pytest&rsquo;s &ldquo;keyword expression&rdquo; filtering supports Python conditionals</a></li>
+                    
+                        <li><a href="/posts/that-freezegun-doesnt-work-with-pytest-fixtures/">That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</a></li>
+                    
+                        <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
+                    
+                        <li><a href="/posts/pytest-doesnt-play-nicely-with-ipdb/">Pytest doesn&rsquo;t play nicely with ipdb</a></li>
+                    
+                        <li><a href="/posts/how-to-easily-disable-a-circleci-workflow/">How to easily disable a CircleCI workflow</a></li>
+                    
+                        <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
+                    
+                        <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
+                    
+                    </ul>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                
+
+            
+
+        
+
+            
+
+            
+                
+
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/pytest/">Pytest</a>:</p>
+                <ul>
+                    
+                </ul>
+                
+            
+
+        
+
+            
+
+            
+                
+
+                <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/profiling/">Profiling</a>:</p>
+                <ul>
+                    
+                </ul>
+                
+            
+
+        
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
