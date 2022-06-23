@@ -1,7 +1,7 @@
 ---
 title: "How to profile Pytest tests"
 date: "2022-06-23T10:36:09+01:00"
-tags: ["Testing", "Pytest", "Profiling"]
+tags: ["Pytest", "Profiling", "Testing"]
 ---
 
 If you install the [`pytest-monitor`](https://pytest-monitor.readthedocs.io/)

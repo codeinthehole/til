@@ -32,41 +32,52 @@
 
 {{ define "footer" }}
     <footer id="footer">
-        {{ $tag_pages := .GetTerms "tags" }}
+
+        {{/* Create a slice variable to keep track of which pages have been rendered */}}
         {{ $listed := slice }}
 
+        {{/* Loop over each tag page */}}
+        {{ $tag_pages := .GetTerms "tags" }}
         {{ range $tag_pages }}
 
+            {{/* Select first 10 page with same tag */}}
             {{ $related_tag_pages := first 10 ( where .Pages "Title" "!=" $.Title ) }}
 
             {{ if $listed }}
+                {{/* Pages have already been listed by a previous tag - filter down to those not listed*/}}
                 {{ $related_tag_pages := $related_tag_pages | intersect (where .Pages "Title" "not in" $listed) }}
 
-                <p>Other things learnt about <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>:</p>
-                <ul>
-                    {{ range $related_tag_pages }}
-                        <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
-                    {{ end }}
-                </ul>
-                {{ range $related_tag_pages }}
-                    {{ $listed = $listed | append .Title }}
-                {{ end }}
-            {{ else }}
                 {{ if $related_tag_pages }}
                     <p>Other things learnt about <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>:</p>
                     <ul>
-                    {{ range $related_tag_pages }}
-                        <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
-                    {{ end }}
+                        {{ range $related_tag_pages }}
+                            <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
+
+                            {{/* Add page to slice */}}
+                            {{ $listed = $listed | append .Title }}
+                        {{ end }}
                     </ul>
-                    {{ range $related_tag_pages }}
-                        {{ $listed = $listed | append .Title }}
-                    {{ end }}
+                {{ end }}
+            {{ else }}
+                {{/* No listed pages yet */}}
+
+                {{ if $related_tag_pages }}
+                    <p>Other things learnt about <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>:</p>
+                    <ul>
+                        {{ range $related_tag_pages }}
+                            <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
+
+                            {{/* Add page to slice */}}
+                            {{ $listed = $listed | append .Title }}
+                        {{ end }}
+                    </ul>
                 {{ end }}
 
             {{ end }}
 
         {{ end }}
+
+        <br/>
 
         {{ if and (.PrevPage) (not (.NextPage)) }}
             <p>Jump to the previous TIL using the left cursor key.</p>
