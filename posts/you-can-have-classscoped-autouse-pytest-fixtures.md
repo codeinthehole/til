@@ -1,7 +1,7 @@
 ---
 title: "You can have class-scoped autouse pytest fixtures"
 date: "2021-03-16T17:36:21+00:00"
-tags: ["pytest", "Python", "Testing"]
+tags: ["Pytest", "Python", "Testing"]
 ---
 
 If you decorate a class instance method as an `autouse=True` Pytest fixture,

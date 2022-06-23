@@ -1,7 +1,7 @@
 ---
 title: "You can stack `pytest`'s `parametrize` decorators"
 date: "2020-12-16T10:41:26+00:00"
-tags: ["Python", "Testing", "pytest"]
+tags: ["Python", "Testing", "Pytest"]
 ---
 
 As in:

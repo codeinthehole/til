@@ -2,7 +2,7 @@
 title:
   'That Pytest''s "keyword expression" filtering supports Python conditionals'
 date: "2021-07-16T15:17:08+01:00"
-tags: ["pytest", "Testing", "Python"]
+tags: ["Pytest", "Testing", "Python"]
 ---
 
 When using Pytest's `-k` filtering, you can use Python expressions to combine
