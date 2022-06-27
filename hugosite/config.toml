@@ -10,3 +10,9 @@ staticDir = ["../static/"]
 
 # Use really small summaries...
 summaryLength = 8
+
+# Allow HTML to be used in articles.
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
