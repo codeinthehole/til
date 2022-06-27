@@ -6,11 +6,20 @@
     <description>Recent content in Django on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jun 2022 16:29:28 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jun 2022 18:55:54 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/django/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to override Django&#39;s settings for every method in a test class</title>
+      <link>https://til.codeinthehole.com/posts/how-to-override-django-settings-for-every-method-in-a-test-class/</link>
+      <pubDate>Mon, 27 Jun 2022 18:55:54 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-override-django-settings-for-every-method-in-a-test-class/</guid>
+      <description>Django&amp;rsquo;s override_settings decorator only works on functions and methods in subclasses of unittest.</description>
+    </item>
     
     <item>
       <title>That Python&#39;s `datetime` package doesn&#39;t support ordinal suffixes for the day of the month</title>

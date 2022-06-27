@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Django’s override_settings decorator only works on functions and methods in subclasses of unittest. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-override-django-settings-for-every-method-in-a-test-class/" />
+<meta property="og:title" content="TIL How to override Django&#39;s settings for every method in a test class — David Winterbottom" />
+<meta property="og:description" content="Django&rsquo;s override_settings decorator only works on functions and methods in subclasses of unittest. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to override Django&#39;s settings for every method in a test class — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>June 27, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to override Django&rsquo;s settings for every method in a test class</h1>
+        </header><p>Django&rsquo;s <a href="https://docs.djangoproject.com/en/4.0/topics/testing/tools/#django.test.override_settings"><code>override_settings</code> decorator</a> only works on
+functions and methods in <a href="https://github.com/django/django/blob/b2eff16806057095c7dd3daa9402ad615e51627f/django/test/utils.py#L440">subclasses of <code>unittest.TestCase</code></a>.</p>
+<p>But it&rsquo;s common to group tests in plain Python classes when using Pytest, which
+means <code>override_settings</code> can&rsquo;t be used to decorate a class and override
+settings for every test method.</p>
+<p>Instead, do this with an <code>autouse=True</code> fixture and the <a href="https://pytest-django.readthedocs.io/en/latest/helpers.html#settings"><code>settings</code>
+fixture</a> provided by the <a href="https://pytest-django.readthedocs.io/en/latest/index.html"><code>pytest-django</code></a>
+package.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> pytest
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.conf <span style="color:#f92672">import</span> settings <span style="color:#66d9ef">as</span> django_settings
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestAutouseFixture</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>fixture(autouse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">configure_settings</span>(self, settings):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># The `settings` argument is a fixture provided by pytest-django.</span>
+</span></span><span style="display:flex;"><span>        settings<span style="color:#f92672">.</span>FOO <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bar&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_one</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> django_settings<span style="color:#f92672">.</span>FOO <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;bar&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_two</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> django_settings<span style="color:#f92672">.</span>FOO <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;bar&#34;</span>
+</span></span></code></pre></div><br/>
+<hr>
+<p>🤦‍♂️ Oops — turns out I learnt this
+<a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">last year too</a>,
+although my example then used <code>override_settings</code> as a context manager.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/pytest/">Pytest</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-profile-pytest-tests/">How to profile Pytest tests</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/">That Pytest&rsquo;s &ldquo;keyword expression&rdquo; filtering supports Python conditionals</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/pytest-doesnt-play-nicely-with-ipdb/">Pytest doesn&rsquo;t play nicely with ipdb</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/django/">Django</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month/">That Python&rsquo;s <code>datetime</code> package doesn&rsquo;t support ordinal suffixes for the day of the month</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-cant-use-djangos-generic-foreign-key-field-with-objects-stored-in-a-separate-database/">You can&rsquo;t use Django&rsquo;s generic foreign key field with objects stored in a separate database</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-djangos-setup-method-for-generic-view-classes/">About Django&rsquo;s <code>setup</code> method for generic view classes</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/django-settings-prefixed-with-an-underscore-are-private/">Django settings prefixed with an underscore are private</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/django-doesnt-flush-caches-between-tests/">Django doesn&rsquo;t flush caches between tests</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-djangos-management-commands-need-to-be-type-hinted/">How Django&rsquo;s management commands need to be type hinted</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/testing/">Testing</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/about-factory-boys-selfattribute-class/">About Factory Boy&rsquo;s <code>SelfAttribute</code> class</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/factory-boy-can-be-used-to-build-dicts/">Factory boy can be used to build dicts</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-freezegun-doesnt-work-with-pytest-fixtures/">That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-easily-disable-a-circleci-workflow/">How to easily disable a CircleCI workflow</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-profile-pytest-tests\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

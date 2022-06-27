@@ -6,25 +6,25 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jun 2022 10:36:09 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jun 2022 18:55:54 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
     
     <item>
-      <title>Profiling</title>
-      <link>https://til.codeinthehole.com/tags/profiling/</link>
-      <pubDate>Thu, 23 Jun 2022 10:36:09 +0100</pubDate>
+      <title>Django</title>
+      <link>https://til.codeinthehole.com/tags/django/</link>
+      <pubDate>Mon, 27 Jun 2022 18:55:54 +0100</pubDate>
       
-      <guid>https://til.codeinthehole.com/tags/profiling/</guid>
+      <guid>https://til.codeinthehole.com/tags/django/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pytest</title>
       <link>https://til.codeinthehole.com/tags/pytest/</link>
-      <pubDate>Thu, 23 Jun 2022 10:36:09 +0100</pubDate>
+      <pubDate>Mon, 27 Jun 2022 18:55:54 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/pytest/</guid>
       <description></description>
@@ -33,18 +33,18 @@
     <item>
       <title>Testing</title>
       <link>https://til.codeinthehole.com/tags/testing/</link>
-      <pubDate>Thu, 23 Jun 2022 10:36:09 +0100</pubDate>
+      <pubDate>Mon, 27 Jun 2022 18:55:54 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/testing/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Django</title>
-      <link>https://til.codeinthehole.com/tags/django/</link>
-      <pubDate>Wed, 01 Jun 2022 16:29:28 +0100</pubDate>
+      <title>Profiling</title>
+      <link>https://til.codeinthehole.com/tags/profiling/</link>
+      <pubDate>Thu, 23 Jun 2022 10:36:09 +0100</pubDate>
       
-      <guid>https://til.codeinthehole.com/tags/django/</guid>
+      <guid>https://til.codeinthehole.com/tags/profiling/</guid>
       <description></description>
     </item>
     
