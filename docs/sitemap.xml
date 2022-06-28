@@ -2,25 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/</loc>
+    <lastmod>2022-06-28T12:25:07+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2022-06-28T12:25:07+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/pytest/</loc>
+    <lastmod>2022-06-28T12:25:07+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2022-06-28T12:25:07+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/testing/</loc>
+    <lastmod>2022-06-28T12:25:07+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2022-06-28T12:25:07+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/django/</loc>
     <lastmod>2022-06-27T18:55:54+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-override-django-settings-for-every-method-in-a-test-class/</loc>
-    <lastmod>2022-06-27T18:55:54+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2022-06-27T18:55:54+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/pytest/</loc>
-    <lastmod>2022-06-27T18:55:54+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2022-06-27T18:55:54+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/testing/</loc>
-    <lastmod>2022-06-27T18:55:54+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2022-06-27T18:55:54+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-profile-pytest-tests/</loc>

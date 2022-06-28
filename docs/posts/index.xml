@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jun 2022 18:55:54 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jun 2022 12:25:07 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to use `xmllint` to extract the failing test filenames from a JUnit-XML file</title>
+      <link>https://til.codeinthehole.com/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/</link>
+      <pubDate>Tue, 28 Jun 2022 12:25:07 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/</guid>
+      <description>Pytest will generate a JUnit-XML result report when run with the --junitxml option.</description>
+    </item>
     
     <item>
       <title>How to override Django&#39;s settings for every method in a test class</title>

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    If you install the pytest-monitor package, then PyTest invocations will collect test profiling information in a SQLite database (called . ...
+    Pytest will generate a JUnit-XML result report when run with the &amp;ndash;junitxml option. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-profile-pytest-tests/" />
-<meta property="og:title" content="TIL How to profile Pytest tests — David Winterbottom" />
-<meta property="og:description" content="If you install the pytest-monitor package, then PyTest invocations will collect test profiling information in a SQLite database (called . [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/" />
+<meta property="og:title" content="TIL How to use &#39;xmllint&#39; to extract the failing test filenames from a JUnit-XML file — David Winterbottom" />
+<meta property="og:description" content="Pytest will generate a JUnit-XML result report when run with the --junitxml option. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL How to profile Pytest tests — David Winterbottom
+    TIL How to use &#39;xmllint&#39; to extract the failing test filenames from a JUnit-XML file — David Winterbottom
 </title>
 
         
@@ -56,27 +56,33 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>June 23, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>June 28, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>How to profile Pytest tests</h1>
-        </header><p>If you install the <a href="https://pytest-monitor.readthedocs.io/"><code>pytest-monitor</code></a>
-package, then PyTest invocations will collect test profiling information in a
-SQLite database (called <code>.pymon</code> by default).</p>
-<p>The schema includes a <code>TEST_METRICS</code> table that has columns for:</p>
+            <h1>How to use <code>xmllint</code> to extract the failing test filenames from a JUnit-XML file</h1>
+        </header><p>Pytest will generate a <a href="https://github.com/jenkinsci/xunit-plugin/blob/master/src/main/resources/org/jenkinsci/plugins/xunit/types/model/xsd/junit-10.xsd">JUnit-XML</a> result report when run with <a href="https://docs.pytest.org/en/latest/how-to/output.html#creating-junitxml-format-files">the
+<code>--junitxml</code> option</a>.</p>
+<p>To extract the names the files containing failing tests, this
+<a href="https://www.w3.org/TR/1999/REC-xpath-19991116://gnome.pages.gitlab.gnome.org/libxml2/xmllint.html"><code>xmllint</code></a> command can be used:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>xmllint --xpath <span style="color:#e6db74">&#39;//testcase[.//failure]/@file&#39;</span> results.xml | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    tr <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#e6db74">&#34;\n&#34;</span> | awk <span style="color:#e6db74">&#39;BEGIN { FS=&#34;\&#34;&#34; } { print $2 }&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    sort | uniq
+</span></span></code></pre></div><p>Here we:</p>
 <ul>
-<li>Time spent running the test (in seconds);</li>
-<li>CPU usage percentage;</li>
-<li>Maximum resident memory during test execution (in megabytes).</li>
+<li>
+<p>Use an <a href="https://www.w3.org/TR/1999/REC-xpath-19991116/">XPath</a> filter to select all <code>file</code> attributes from <code>&lt;testcase&gt;</code>
+elements containing a <code>&lt;failure&gt;</code> child element.</p>
+</li>
+<li>
+<p>Use <code>tr</code> and <code>awk</code> to convert the output into a list of filenames.</p>
+</li>
+<li>
+<p>Use <code>sort</code> and <code>uniq</code> to print a list of unique filenames.</p>
+</li>
 </ul>
-<p>More details in the
-<a href="https://pytest-monitor.readthedocs.io/en/latest/operating.html#execution-context-metrics-and-session">schema definition</a>.</p>
-<p>You can query these metrics from the CLI like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>QUERY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SELECT ITEM_PATH, ITEM_VARIANT, TOTAL_TIME, MEM_USAGE FROM TEST_METRICS&#34;</span>
-</span></span><span style="display:flex;"><span>sqlite3 -column .pymon <span style="color:#e6db74">&#34;</span>$QUERY<span style="color:#e6db74">&#34;</span>
-</span></span></code></pre></div><p>To house the data in a spreadsheet for sharing, format them as a tab-separated
-list which can be pasted in:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sqlite3 -noheader -csv -separator <span style="color:#e6db74">$&#39;\t&#39;</span> .pymon <span style="color:#e6db74">&#34;</span>$QUERY<span style="color:#e6db74">&#34;</span> | pbcopy
-</span></span></code></pre></div></article>
+<p>This is a little convoluted. XMLLint doesn&rsquo;t support using a <code>string</code> XPath
+function to print the attribute values of all matches (it only prints the first
+one) which is why we need to pipe out to standard Unix tools.</p>
+</article>
 
         </main>
 
@@ -100,12 +106,12 @@ list which can be pasted in:</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/pytest/">Pytest</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/">How to use <code>xmllint</code> to extract the failing test filenames from a JUnit-XML file</a></li>
+                            <li><a href="/posts/how-to-override-django-settings-for-every-method-in-a-test-class/">How to override Django&rsquo;s settings for every method in a test class</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/how-to-override-django-settings-for-every-method-in-a-test-class/">How to override Django&rsquo;s settings for every method in a test class</a></li>
+                            <li><a href="/posts/how-to-profile-pytest-tests/">How to profile Pytest tests</a></li>
 
                             
                             
@@ -138,18 +144,6 @@ list which can be pasted in:</p>
                     </ul>
                 
 
-            
-
-        
-
-            
-            
-
-            
-                
-                
-
-                
             
 
         
@@ -199,9 +193,9 @@ list which can be pasted in:</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -210,11 +204,9 @@ list which can be pasted in:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-override-django-settings-for-every-method-in-a-test-class\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-override-django-settings-for-every-method-in-a-test-class\/"); })
         
     </script>
 
