@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://til.codeinthehole.com/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/</loc>
-    <lastmod>2022-06-28T12:25:07+01:00</lastmod>
+    <loc>https://til.codeinthehole.com/posts/about-pycon-markdown-format/</loc>
+    <lastmod>2022-07-01T14:33:52+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/github/</loc>
+    <lastmod>2022-07-01T14:33:52+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/markdown/</loc>
+    <lastmod>2022-07-01T14:33:52+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2022-07-01T14:33:52+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2022-07-01T14:33:52+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2022-07-01T14:33:52+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/</loc>
     <lastmod>2022-06-28T12:25:07+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/pytest/</loc>
     <lastmod>2022-06-28T12:25:07+01:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2022-06-28T12:25:07+01:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/tags/testing/</loc>
-    <lastmod>2022-06-28T12:25:07+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2022-06-28T12:25:07+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/django/</loc>
@@ -37,9 +46,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month/</loc>
     <lastmod>2022-06-01T16:29:28+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/markdown/</loc>
-    <lastmod>2022-06-01T10:24:44+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/some-markdown-parsers-support-definition-lists/</loc>
     <lastmod>2022-06-01T10:24:44+01:00</lastmod>
@@ -102,9 +108,6 @@
     <lastmod>2022-02-10T11:01:19+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/about-githubs-involves-search-filter/</loc>
-    <lastmod>2022-02-02T18:08:58+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/github/</loc>
     <lastmod>2022-02-02T18:08:58+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/you-cant-use-djangos-generic-foreign-key-field-with-objects-stored-in-a-separate-database/</loc>

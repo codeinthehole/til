@@ -6,11 +6,20 @@
     <description>Recent content in Github on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Feb 2022 18:08:58 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jul 2022 14:33:52 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About `pycon` markdown format</title>
+      <link>https://til.codeinthehole.com/posts/about-pycon-markdown-format/</link>
+      <pubDate>Fri, 01 Jul 2022 14:33:52 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-pycon-markdown-format/</guid>
+      <description>Github-flavoured markdown uses Linguist for syntax highlighting, and Linguist supports &amp;ldquo;Python console&amp;rdquo; as a language.</description>
+    </item>
     
     <item>
       <title>About Github&#39;s `involves:$username` search filter</title>

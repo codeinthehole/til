@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Github-flavoured markdown uses Linguist for syntax highlighting, and Linguist supports “Python console” as a language. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-pycon-markdown-format/" />
+<meta property="og:title" content="TIL About &#39;pycon&#39; markdown format — David Winterbottom" />
+<meta property="og:description" content="Github-flavoured markdown uses Linguist for syntax highlighting, and Linguist supports &ldquo;Python console&rdquo; as a language. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL About &#39;pycon&#39; markdown format — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>July 1, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>About <code>pycon</code> markdown format</h1>
+        </header><p>Github-flavoured markdown <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks#syntax-highlighting">uses Linguist for syntax
+highlighting</a>, and Linguist supports <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml#L5121-L5129">&ldquo;Python console&rdquo;
+as a language</a>.</p>
+<p>You can use a <code>pycon</code> alias in your fenced code blocks:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#e6db74">```pycon
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span>&gt;&gt;&gt; from pprint import pprint as pp
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; from rich import inspect
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; import datetime
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; a = 1
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>
+</span></span></code></pre></div><p>Note that <a href="https://github.com/alecthomas/chroma">Chroma</a>, the syntax highlighting library used by Hugo (and
+this site), doesn&rsquo;t support it, which is why there&rsquo;s no syntax highlighting in
+the above code block.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/markdown/">Markdown</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/some-markdown-parsers-support-definition-lists/">Some Markdown parsers support definition lists</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/">How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-spellcheck-markdown-repos-on-circleci/">How to spell-check markdown repos on CircleCI</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-embed-markdown-content-in-a-github-code-block/">How to embed markdown content in a Github code block</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/github/">Github</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/about-githubs-involves-search-filter/">About Github&rsquo;s <code>involves:$username</code> search filter</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-githubs-me-search-term/">About Github&rsquo;s <code>@me</code> search term</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
