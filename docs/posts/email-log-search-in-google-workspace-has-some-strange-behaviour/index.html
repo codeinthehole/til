@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    You can do this from the “Add members” section of the Group detail page. ...
+    Google Workspace admins can use the Email Log Search feature to inspect emails sent and received by Gmail. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/google-groups-can-be-nested/" />
-<meta property="og:title" content="TIL Google Groups can be nested — David Winterbottom" />
-<meta property="og:description" content="You can do this from the &ldquo;Add members&rdquo; section of the Group detail page. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/email-log-search-in-google-workspace-has-some-strange-behaviour/" />
+<meta property="og:title" content="TIL Email Log Search in Google Workspace has some strange behaviour — David Winterbottom" />
+<meta property="og:description" content="Google Workspace admins can use the Email Log Search feature to inspect emails sent and received by Gmail. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL Google Groups can be nested — David Winterbottom
+    TIL Email Log Search in Google Workspace has some strange behaviour — David Winterbottom
 </title>
 
         
@@ -56,13 +56,25 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>January 31, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>July 20, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>Google Groups can be nested</h1>
-        </header><p>You can do this from the &ldquo;Add members&rdquo; section of the Group detail page. See the
-<a href="https://support.google.com/a/answer/167100?hl=en">official docs</a>.</p>
-<p>This provides a useful mechanism for organising groups once there&rsquo;s a large
-number of members.</p>
+            <h1>Email Log Search in Google Workspace has some strange behaviour</h1>
+        </header><p>Google Workspace admins can use the <a href="https://support.google.com/a/answer/2618874?hl=en">Email Log Search</a> feature to
+inspect emails sent and received by Gmail. However beware that the email detail
+page isn&rsquo;t consistent: it can change depending on which filters were used to
+find it.</p>
+<p>If you filter by sender email address, the email detail page shows the correct
+recipients (including those added by Gmail&rsquo;s default routing rules).</p>
+<p>However if you filter by recipient, the email detail page is the same except the
+additional recipients aren&rsquo;t shown.</p>
+<p>This is quite confusing.</p>
+<p>There is a note in the docs that describes something similar:</p>
+<figure><img src="/images/google-email-logs-note.png"
+         alt="Google Email Logs note"/>
+</figure>
+
+<p>Ultimately, if you&rsquo;re debugging routing rules then always search using the
+sender address, not the recipient.</p>
 </article>
 
         </main>
@@ -87,7 +99,7 @@ number of members.</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/g-suite/">G-Suite</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/email-log-search-in-google-workspace-has-some-strange-behaviour/">Email Log Search in Google Workspace has some strange behaviour</a></li>
+                            <li><a href="/posts/google-groups-can-be-nested/">Google Groups can be nested</a></li>
 
                             
                             
@@ -112,9 +124,9 @@ number of members.</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -123,11 +135,9 @@ number of members.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-djangos-setup-method-for-generic-view-classes\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-pycon-markdown-format\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/you-cant-use-djangos-generic-foreign-key-field-with-objects-stored-in-a-separate-database\/"); })
         
     </script>
 
