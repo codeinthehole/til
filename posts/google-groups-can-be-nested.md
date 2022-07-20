@@ -1,7 +1,7 @@
 ---
 title: "Google Groups can be nested"
 date: "2022-01-31T17:23:09+00:00"
-tags: ["G-Suite"]
+tags: ["Google Workspace"]
 ---
 
 You can do this from the "Add members" section of the Group detail page. See the

@@ -1,7 +1,7 @@
 ---
 title: 'GSuite''s "Groups Admin" role can read any group email'
 date: "2020-12-02T11:39:41+00:00"
-tags: ["G-Suite"]
+tags: ["Google Workspace"]
 ---
 
 If members of your Google org want to administer groups, it's tempting to make

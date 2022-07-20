@@ -1,7 +1,7 @@
 ---
 title: "Email Log Search in Google Workspace has some strange behaviour"
 date: "2022-07-20T15:20:35+01:00"
-tags: ["G-Suite"]
+tags: ["Google Workspace"]
 ---
 
 Google Workspace admins can use the [Email Log Search][email_logs] feature to

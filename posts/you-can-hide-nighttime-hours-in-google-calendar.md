@@ -1,7 +1,7 @@
 ---
 title: "You can hide night-time hours in Google calendar"
 date: "2020-11-06T11:22:02+00:00"
-tags: ["G-Suite"]
+tags: ["Google Workspace"]
 ---
 
 In the "Week" view of Google Calendar, it's annoying that each day is listed
