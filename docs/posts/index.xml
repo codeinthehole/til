@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Jul 2022 15:20:35 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 05 Aug 2022 12:36:04 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to create an RST table of contents for the current page only</title>
+      <link>https://til.codeinthehole.com/posts/how-to-create-an-rst-table-of-contents-for-the-sections-of-the-current-page/</link>
+      <pubDate>Fri, 05 Aug 2022 12:36:04 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-create-an-rst-table-of-contents-for-the-sections-of-the-current-page/</guid>
+      <description>To create a table of contents for the current page in reStructuredText, use the following:</description>
+    </item>
     
     <item>
       <title>Email Log Search in Google Workspace has some strange behaviour</title>

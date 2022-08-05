@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Jul 2022 15:20:35 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 05 Aug 2022 12:36:04 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>RST</title>
+      <link>https://til.codeinthehole.com/tags/rst/</link>
+      <pubDate>Fri, 05 Aug 2022 12:36:04 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/rst/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sphinx</title>
+      <link>https://til.codeinthehole.com/tags/sphinx/</link>
+      <pubDate>Fri, 05 Aug 2022 12:36:04 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/sphinx/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Google Workspace</title>
