@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Debian’s retry command allows you to repeatedly run a command until it succeeds. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-retry-captures-stdout/" />
+<meta property="og:title" content="TIL That Ubuntu&#39;s &#39;retry&#39; command captures STDOUT — David Winterbottom" />
+<meta property="og:description" content="Debian&rsquo;s retry command allows you to repeatedly run a command until it succeeds. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL That Ubuntu&#39;s &#39;retry&#39; command captures STDOUT — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>August 18, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>That Ubuntu&rsquo;s <code>retry</code> command captures STDOUT</h1>
+        </header><p>Debian&rsquo;s <a href="https://manpages.debian.org/testing/retry/retry.1.en.html"><code>retry</code></a> command allows you to repeatedly run a
+command until it succeeds. This is useful for running commands that
+intermittently fail.</p>
+<p>Example usage:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>retry --until<span style="color:#f92672">=</span>success --times<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> $FLAKEY_CMD
+</span></span></code></pre></div><p>But we discovered the hard way today that it captures the wrapped command&rsquo;s
+STDOUT until the command exits, which can be a problem in environments where
+commands are killed after a period of no output. This happens in CircleCI.</p>
+<p>To be fair, this is noted in <a href="https://github.com/minfrin/retry/blob/f6f1acd4b235e96dd9cb11263fb181ec44c3ece9/retry.c#L108-L111">the command&rsquo;s help text</a>:</p>
+<blockquote>
+<p>Retry captures stdout into memory, and if the command was successful stdout is
+passed on to stdout as normal, while if the command was repeated stdout is
+passed to stderr instead. This ensures that output is passed to stdout once
+and once only.</p>
+</blockquote>
+<p>The solution in our case was to extend Circle&rsquo;s timeout <a href="https://support.circleci.com/hc/en-us/articles/360045268074-Build-Fails-with-Too-long-with-no-output-exceeded-10m0s-context-deadline-exceeded-">using the
+<code>no_output_timeout</code> parameter</a>.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/ubuntu/">Ubuntu</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/about-ubuntus-alert-bash-alias/">About Ubuntu&rsquo;s <code>alert</code> Bash alias</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-passwordless-users-in-ec2/">Where authentication for the <code>ubuntu</code> user on a EC2 instance is defined</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-create-an-rst-table-of-contents-for-the-sections-of-the-current-page\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

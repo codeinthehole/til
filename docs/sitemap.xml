@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://til.codeinthehole.com/posts/how-to-create-an-rst-table-of-contents-for-the-sections-of-the-current-page/</loc>
-    <lastmod>2022-08-05T12:36:04+01:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2022-08-18T15:00:40+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2022-08-18T15:00:40+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/that-retry-captures-stdout/</loc>
+    <lastmod>2022-08-18T15:00:40+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2022-08-18T15:00:40+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/ubuntu/</loc>
+    <lastmod>2022-08-18T15:00:40+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/how-to-create-an-rst-table-of-contents-for-the-sections-of-the-current-page/</loc>
     <lastmod>2022-08-05T12:36:04+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/rst/</loc>
     <lastmod>2022-08-05T12:36:04+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/sphinx/</loc>
-    <lastmod>2022-08-05T12:36:04+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2022-08-05T12:36:04+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2022-08-05T12:36:04+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/email-log-search-in-google-workspace-has-some-strange-behaviour/</loc>
@@ -270,9 +276,6 @@
     <lastmod>2021-05-14T14:28:19+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/linux/</loc>
-    <lastmod>2021-05-14T14:28:19+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/ubuntu/</loc>
     <lastmod>2021-05-14T14:28:19+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/about-vims-semicolon-search-offset/</loc>

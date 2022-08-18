@@ -6,11 +6,20 @@
     <description>Recent content in Ubuntu on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 May 2021 14:28:19 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 18 Aug 2022 15:00:40 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That Ubuntu&#39;s `retry` command captures STDOUT</title>
+      <link>https://til.codeinthehole.com/posts/that-retry-captures-stdout/</link>
+      <pubDate>Thu, 18 Aug 2022 15:00:40 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-retry-captures-stdout/</guid>
+      <description>Debian&amp;rsquo;s retry command allows you to repeatedly run a command until it succeeds.</description>
+    </item>
     
     <item>
       <title>About Ubuntu&#39;s `alert` Bash alias</title>
