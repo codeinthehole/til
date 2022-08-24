@@ -2,16 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/about-indirect-parametrization-with-pytest/</loc>
+    <lastmod>2022-08-24T14:24:35+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2022-08-18T15:00:40+01:00</lastmod>
+    <lastmod>2022-08-24T14:24:35+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/pytest/</loc>
+    <lastmod>2022-08-24T14:24:35+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2022-08-24T14:24:35+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2022-08-18T15:00:40+01:00</lastmod>
+    <lastmod>2022-08-24T14:24:35+01:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/posts/that-retry-captures-stdout/</loc>
-    <lastmod>2022-08-18T15:00:40+01:00</lastmod>
+    <loc>https://til.codeinthehole.com/tags/testing/</loc>
+    <lastmod>2022-08-24T14:24:35+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2022-08-24T14:24:35+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/that-retry-captures-stdout/</loc>
     <lastmod>2022-08-18T15:00:40+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/ubuntu/</loc>
@@ -44,12 +56,6 @@
     <loc>https://til.codeinthehole.com/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/</loc>
     <lastmod>2022-06-28T12:25:07+01:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/tags/pytest/</loc>
-    <lastmod>2022-06-28T12:25:07+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/testing/</loc>
-    <lastmod>2022-06-28T12:25:07+01:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/tags/django/</loc>
     <lastmod>2022-06-27T18:55:54+01:00</lastmod>
   </url><url>
@@ -61,9 +67,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/tags/profiling/</loc>
     <lastmod>2022-06-23T10:36:09+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
-    <lastmod>2022-06-01T16:29:28+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month/</loc>
     <lastmod>2022-06-01T16:29:28+01:00</lastmod>

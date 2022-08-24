@@ -6,11 +6,38 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Aug 2022 15:00:40 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 24 Aug 2022 14:24:35 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Pytest</title>
+      <link>https://til.codeinthehole.com/tags/pytest/</link>
+      <pubDate>Wed, 24 Aug 2022 14:24:35 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/pytest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://til.codeinthehole.com/tags/python/</link>
+      <pubDate>Wed, 24 Aug 2022 14:24:35 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://til.codeinthehole.com/tags/testing/</link>
+      <pubDate>Wed, 24 Aug 2022 14:24:35 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/testing/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Ubuntu</title>
@@ -67,24 +94,6 @@
     </item>
     
     <item>
-      <title>Pytest</title>
-      <link>https://til.codeinthehole.com/tags/pytest/</link>
-      <pubDate>Tue, 28 Jun 2022 12:25:07 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/pytest/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Testing</title>
-      <link>https://til.codeinthehole.com/tags/testing/</link>
-      <pubDate>Tue, 28 Jun 2022 12:25:07 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/testing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Django</title>
       <link>https://til.codeinthehole.com/tags/django/</link>
       <pubDate>Mon, 27 Jun 2022 18:55:54 +0100</pubDate>
@@ -99,15 +108,6 @@
       <pubDate>Thu, 23 Jun 2022 10:36:09 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/profiling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Wed, 01 Jun 2022 16:29:28 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/python/</guid>
       <description></description>
     </item>
     

@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Aug 2022 15:00:40 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 24 Aug 2022 14:24:35 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About indirect parametrization with Pytest</title>
+      <link>https://til.codeinthehole.com/posts/about-indirect-parametrization-with-pytest/</link>
+      <pubDate>Wed, 24 Aug 2022 14:24:35 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-indirect-parametrization-with-pytest/</guid>
+      <description>Pytest&amp;rsquo;s pytest.mark.parametrize function supports an indirect argument that allows a parametrized test to have its parameter passed to a fixture function, rather than directly into the test function.</description>
+    </item>
     
     <item>
       <title>That Ubuntu&#39;s `retry` command captures STDOUT</title>

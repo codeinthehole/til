@@ -6,11 +6,20 @@
     <description>Recent content in Pytest on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jun 2022 12:25:07 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 24 Aug 2022 14:24:35 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/pytest/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About indirect parametrization with Pytest</title>
+      <link>https://til.codeinthehole.com/posts/about-indirect-parametrization-with-pytest/</link>
+      <pubDate>Wed, 24 Aug 2022 14:24:35 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-indirect-parametrization-with-pytest/</guid>
+      <description>Pytest&amp;rsquo;s pytest.mark.parametrize function supports an indirect argument that allows a parametrized test to have its parameter passed to a fixture function, rather than directly into the test function.</description>
+    </item>
     
     <item>
       <title>How to use `xmllint` to extract the failing test filenames from a JUnit-XML file</title>
