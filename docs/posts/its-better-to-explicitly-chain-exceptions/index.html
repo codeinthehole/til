@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    When converting one type of exception to another in an except block, it’s best to explicitly chain them using the from keyword. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/its-better-to-explicitly-chain-exceptions/" />
+<meta property="og:title" content="TIL It&#39;s better to explicitly chain Python exceptions — David Winterbottom" />
+<meta property="og:description" content="When converting one type of exception to another in an except block, it&rsquo;s best to explicitly chain them using the from keyword. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL It&#39;s better to explicitly chain Python exceptions — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>September 12, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>It&rsquo;s better to explicitly chain Python exceptions</h1>
+        </header><p>When converting one type of exception to another in an <code>except</code> block, it&rsquo;s best
+to <a href="https://docs.python.org/3/tutorial/errors.html#exception-chaining">explicitly chain them</a> using the <code>from</code> keyword.</p>
+<p>That is, prefer this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">eat_lunch</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        make_cheese_on_toast()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> NoCheese <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> UnableToEat(<span style="color:#e6db74">&#34;Need to go shopping&#34;</span>) <span style="color:#f92672">from</span> e
+</span></span></code></pre></div><p>to:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">eat_lunch</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        make_cheese_on_toast()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> NoCheese:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> UnableToEat(<span style="color:#e6db74">&#34;Need to go shopping&#34;</span>)
+</span></span></code></pre></div><p>The former will <a href="https://docs.python.org/3/library/exceptions.html#exception-context">set the <code>__cause__</code> attribute</a> on the newly
+raised <code>UnableToEat</code> exception, indicating that the <code>NoCheese</code> exception was a
+direct cause.</p>
+<p>This leads to a better stack trace message where the two stack traces are
+combined with a sentence indicating one was a &ldquo;direct cause&rdquo; of the other:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Traceback (most recent call last):
+</span></span><span style="display:flex;"><span>  File &#34;lunch.py&#34;, line 10, in eat_lunch
+</span></span><span style="display:flex;"><span>    make_cheese_on_toast()
+</span></span><span style="display:flex;"><span>  File &#34;lunch.py&#34;, line 5, in make_cheese_on_toast
+</span></span><span style="display:flex;"><span>    raise NoCheese
+</span></span><span style="display:flex;"><span>__main__.NoCheese
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The above exception was the direct cause of the following exception:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Traceback (most recent call last):
+</span></span><span style="display:flex;"><span>  File &#34;lunch.py&#34;, line 15, in &lt;module&gt;
+</span></span><span style="display:flex;"><span>    eat_lunch()
+</span></span><span style="display:flex;"><span>  File &#34;lunch.py&#34;, line 12, in eat_lunch
+</span></span><span style="display:flex;"><span>    raise UnableToEat(&#34;Need to go shopping&#34;) from e
+</span></span><span style="display:flex;"><span>__main__.UnableToEat: Need to go shopping
+</span></span></code></pre></div><p>Without the explicit chaining, the joining message would be:</p>
+<pre tabindex="0"><code>During handling of the above exception, another exception occurred
+</code></pre></article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/about-indirect-parametrization-with-pytest/">About indirect parametrization with Pytest</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month/">That Python&rsquo;s <code>datetime</code> package doesn&rsquo;t support ordinal suffixes for the day of the month</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-inspect-and-clear-pythons-functoolslrucache/">How to inspect and clear Python&rsquo;s <code>functools.lru_cache</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-factory-boys-selfattribute-class/">About Factory Boy&rsquo;s <code>SelfAttribute</code> class</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-cant-use-djangos-generic-foreign-key-field-with-objects-stored-in-a-separate-database/">You can&rsquo;t use Django&rsquo;s generic foreign key field with objects stored in a separate database</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-djangos-setup-method-for-generic-view-classes/">About Django&rsquo;s <code>setup</code> method for generic view classes</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-awsmfav2-to-avoid-entering-so-many-mfa-tokens/">How to use <code>aws-mfa-v2</code> to avoid entering so many MFA tokens</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-a-gotcha-with-psycopg2s-autocommit-handling/">About a gotcha with <code>psycopg2</code>&rsquo;s autocommit handling</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/pythons-envparse-library-has-counterintuitive-boolean-casting/">Python&rsquo;s <code>envparse</code> library has counter-intuitive boolean casting</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/factory-boy-can-be-used-to-build-dicts/">Factory boy can be used to build dicts</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-indirect-parametrization-with-pytest\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

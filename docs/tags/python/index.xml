@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Aug 2022 14:24:35 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 12 Sep 2022 18:16:01 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>It&#39;s better to explicitly chain Python exceptions</title>
+      <link>https://til.codeinthehole.com/posts/its-better-to-explicitly-chain-exceptions/</link>
+      <pubDate>Mon, 12 Sep 2022 18:16:01 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/its-better-to-explicitly-chain-exceptions/</guid>
+      <description>When converting one type of exception to another in an except block, it&amp;rsquo;s best to explicitly chain them using the from keyword.</description>
+    </item>
     
     <item>
       <title>About indirect parametrization with Pytest</title>
