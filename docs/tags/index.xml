@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Sep 2022 18:16:01 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 13 Sep 2022 17:25:58 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>ripgrep</title>
+      <link>https://til.codeinthehole.com/tags/ripgrep/</link>
+      <pubDate>Tue, 13 Sep 2022 17:25:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/ripgrep/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Python</title>
@@ -135,15 +144,6 @@
       <pubDate>Tue, 05 Apr 2022 15:44:13 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/regex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ripgrep</title>
-      <link>https://til.codeinthehole.com/tags/ripgrep/</link>
-      <pubDate>Tue, 05 Apr 2022 15:44:13 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/ripgrep/</guid>
       <description></description>
     </item>
     

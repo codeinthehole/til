@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Consider this dummy static site structure:
+$ mkdir -p docs/_build/ $ echo &amp;quot;&amp;lt;h1&amp;gt;hello&amp;lt;/h1&amp;gt;&amp;quot; &amp;gt; docs/_build/index. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-ripgrep-interprets-gitignore-rules-changes-when-a-filepath-argument-is-used/" />
+<meta property="og:title" content="TIL How Ripgrep interprets &#39;.gitignore&#39; rules changes when a filepath argument is used — David Winterbottom" />
+<meta property="og:description" content="Consider this dummy static site structure:
+$ mkdir -p docs/_build/ $ echo &#34;&lt;h1&gt;hello&lt;/h1&gt;&#34; &gt; docs/_build/index. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How Ripgrep interprets &#39;.gitignore&#39; rules changes when a filepath argument is used — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>September 13, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How Ripgrep interprets <code>.gitignore</code> rules changes when a filepath argument is used</h1>
+        </header><p>Consider this dummy static site structure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ mkdir -p docs/_build/
+</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;&lt;h1&gt;hello&lt;/h1&gt;&#34;</span> &gt; docs/_build/index.html
+</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;# hello&#34;</span> &gt; docs/index.md
+</span></span></code></pre></div><p>A Ripgrep search for &ldquo;hello&rdquo; matches both files:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ rg hello
+</span></span><span style="display:flex;"><span>docs/index.md
+</span></span><span style="display:flex;"><span>1:# hello
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docs/_build/index.html
+</span></span><span style="display:flex;"><span>1:&lt;h1&gt;hello&lt;/h1&gt;
+</span></span></code></pre></div><p>Suppose we want to ignore generated HTML files in <code>docs/_build/</code>. We could add
+<code>docs/_build/</code> to a <code>.gitignore</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;docs/_build/&#34;</span> &gt; .gitignore
+</span></span></code></pre></div><p>and searches ignore that folder:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ rg hello
+</span></span><span style="display:flex;"><span>docs/index.md
+</span></span><span style="display:flex;"><span>1:# hello
+</span></span></code></pre></div><p>But explicitly searching the <code>docs</code> folder matches files that we want ignored:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ rg hello docs/
+</span></span><span style="display:flex;"><span>docs/_build/index.html
+</span></span><span style="display:flex;"><span>1:&lt;h1&gt;hello&lt;/h1&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docs/index.md
+</span></span><span style="display:flex;"><span>1:# hello
+</span></span></code></pre></div><p>From <code>man rg</code>:</p>
+<blockquote>
+<p>Paths specified explicitly on the command line override glob and ignore rules.</p>
+</blockquote>
+<p>which, in practice, seems to mean that the <code>.gitignore</code> rules are applied
+against filepaths <em>relative</em> to the filepath argument.</p>
+<p>So in the above example, we can get the behaviour we want by changing the
+<code>.gitignore</code> rule to <code>**/_build</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;**/_build/&#34;</span> &gt; .gitignore
+</span></span><span style="display:flex;"><span>$ rg hello docs/
+</span></span><span style="display:flex;"><span>docs/index.md
+</span></span><span style="display:flex;"><span>1:# hello
+</span></span></code></pre></div><p>For a deeper discussion, see
+<a href="https://github.com/BurntSushi/ripgrep/issues/829">this ticket</a>.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/ripgrep/">ripgrep</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-use-lookbehind-regex-assertions-with-ripgrep/">How to use look-behind regex assertions with ripgrep</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-pipe-an-argument-list-into-vim/">How to pipe an argument list into Vim</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/">How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-define-custom-filetype-filters-in-ripgrep/">You can define custom file-type filters in <code>ripgrep</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-run-grep-without-using-parent-shell-process/">You can run <code>:grep</code> without using parent shell process</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/its-better-to-explicitly-chain-exceptions\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
