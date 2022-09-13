@@ -1,7 +1,7 @@
 ---
 title:
-  "How Ripgrep interprets `.gitignore` rules changes when a filepath argument is
-  used"
+  "How `ripgrep` interprets `.gitignore` rules changes when a filepath argument
+  is used"
 date: "2022-09-13T17:25:58+01:00"
 tags: ["ripgrep"]
 ---
@@ -14,7 +14,8 @@ $ echo "<h1>hello</h1>" > docs/_build/index.html
 $ echo "# hello" > docs/index.md
 ```
 
-A Ripgrep search for "hello" matches both files:
+A [`ripgrep`](https://github.com/BurntSushi/ripgrep) search for "hello" matches
+both files:
 
 ```sh
 $ rg hello

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    By default ripgrep uses Rust’s [regex] crate for parsing regular expressions which does not support look-ahead or look-behind assertions. ...
+    By default ripgrep uses Rust’s regex crate for parsing regular expressions which does not support look-ahead or look-behind assertions. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -19,15 +19,15 @@
         
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-lookbehind-regex-assertions-with-ripgrep/" />
-<meta property="og:title" content="TIL How to use look-behind regex assertions with ripgrep — David Winterbottom" />
-<meta property="og:description" content="By default ripgrep uses Rust&rsquo;s [regex] crate for parsing regular expressions which does not support look-ahead or look-behind assertions. [Reading time: 1 minute]" />
+<meta property="og:title" content="TIL How to use look-behind regex assertions with &#39;ripgrep&#39; — David Winterbottom" />
+<meta property="og:description" content="By default ripgrep uses Rust&rsquo;s regex crate for parsing regular expressions which does not support look-ahead or look-behind assertions. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL How to use look-behind regex assertions with ripgrep — David Winterbottom
+    TIL How to use look-behind regex assertions with &#39;ripgrep&#39; — David Winterbottom
 </title>
 
         
@@ -58,10 +58,10 @@
             <div id="date_sentence">
                 On <time>April 5, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>How to use look-behind regex assertions with ripgrep</h1>
+            <h1>How to use look-behind regex assertions with <code>ripgrep</code></h1>
         </header><p>By default <a href="https://github.com/BurntSushi/ripgrep"><code>ripgrep</code></a> uses Rust&rsquo;s
-[<code>regex</code>] crate for parsing regular expressions which does not support
-look-ahead or look-behind assertions.</p>
+<a href="https://crates.io/crates/regex"><code>regex</code></a> crate for parsing regular expressions
+which does not support look-ahead or look-behind assertions.</p>
 <p>To use such zero width assertions, use the <code>--pcre2</code> option:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>rg --pcre2 <span style="color:#e6db74">&#39;A(?=B)&#39;</span>   <span style="color:#75715e"># look ahead positive</span>
 </span></span><span style="display:flex;"><span>rg --pcre2 <span style="color:#e6db74">&#39;A(?!B)&#39;</span>   <span style="color:#75715e"># look ahead negative</span>
@@ -91,7 +91,7 @@ look-ahead or look-behind assertions.</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/ripgrep/">ripgrep</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/how-ripgrep-interprets-gitignore-rules-changes-when-a-filepath-argument-is-used/">How Ripgrep interprets <code>.gitignore</code> rules changes when a filepath argument is used</a></li>
+                            <li><a href="/posts/how-ripgrep-interprets-gitignore-rules-changes-when-a-filepath-argument-is-used/">How <code>ripgrep</code> interprets <code>.gitignore</code> rules changes when a filepath argument is used</a></li>
 
                             
                             

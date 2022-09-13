@@ -4,7 +4,7 @@ date: "2020-11-04T16:56:20+00:00"
 tags: ["Vim", "ripgrep"]
 ---
 
-Using [ripgrep](https://github.com/BurntSushi/ripgrep) as a `:grep` command can
+Using [`ripgrep`](https://github.com/BurntSushi/ripgrep) as a `:grep` command can
 be configured with:
 
 ```viml

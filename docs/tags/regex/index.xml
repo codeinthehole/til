@@ -13,12 +13,12 @@
 
     
     <item>
-      <title>How to use look-behind regex assertions with ripgrep</title>
+      <title>How to use look-behind regex assertions with `ripgrep`</title>
       <link>https://til.codeinthehole.com/posts/how-to-use-lookbehind-regex-assertions-with-ripgrep/</link>
       <pubDate>Tue, 05 Apr 2022 15:44:13 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-lookbehind-regex-assertions-with-ripgrep/</guid>
-      <description>By default ripgrep uses Rust&amp;rsquo;s [regex] crate for parsing regular expressions which does not support look-ahead or look-behind assertions.</description>
+      <description>By default ripgrep uses Rust&amp;rsquo;s regex crate for parsing regular expressions which does not support look-ahead or look-behind assertions.</description>
     </item>
     
 
