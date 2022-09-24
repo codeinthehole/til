@@ -1,17 +1,18 @@
-# TIL
+# Today I Learnt
 
-A Hugo-built static site of TIL posts, designed to make it as easy as possible
-to publish a new post.
+A Hugo-built static site of Today-I-Learnt (TIL) posts, designed to make it as
+easy as possible to publish a new post.
 
 ## Scripts
 
-This repo provides two Bash scripts for writing a TIL post and creating images
-to include.
+This repo provides two Bash scripts for writing a TIL post and capturing
+screenshots to include in a post.
 
 ## Publication
 
 The TIL posts are built into a static HTML site using [Hugo](https://gohugo.io/)
-and are published via Github pages.
+and are published via Github pages. The final site is available at:
+https://til.codeinthehole.com
 
 ## Hugo theme
 
@@ -53,7 +54,7 @@ til $description
 For example:
 
 ```sh
-til that cows can't look up
+til that cows cant look up
 ```
 
 which will create a markdown file, named by slugifying the description (i.e.
@@ -77,10 +78,10 @@ To add screenshots, `CTRL+Z` to background Vim and use the screenshot helper:
 til_screenshot $description
 ```
 
-Eg
+E.g.
 
 ```sh
-til_screenshot Alfred's preferences UI
+til_screenshot Alfred preferences UI
 ```
 
 which will trigger MacOS's `screencapture` utility to capture a selected portion
