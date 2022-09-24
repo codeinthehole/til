@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Aurora PostgreSQL clusters have:
-Auto-scaling storage for persistent data (the “cluster volume”). ...
+    In normal conditions, an AWS load balancer will only route requests to healthy instances in its linked target group. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -19,17 +18,16 @@ Auto-scaling storage for persistent data (the “cluster volume”). ...
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/that-aws-aurora-clusters-have-two-types-of-storage/" />
-<meta property="og:title" content="TIL That AWS Aurora clusters have two types of storage — David Winterbottom" />
-<meta property="og:description" content="Aurora PostgreSQL clusters have:
-Auto-scaling storage for persistent data (the &ldquo;cluster volume&rdquo;). [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/aws-target-groups-fail-open-when-all-instances-are-unhealthy/" />
+<meta property="og:title" content="TIL AWS target groups fail open when all instances are unhealthy — David Winterbottom" />
+<meta property="og:description" content="In normal conditions, an AWS load balancer will only route requests to healthy instances in its linked target group. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL That AWS Aurora clusters have two types of storage — David Winterbottom
+    TIL AWS target groups fail open when all instances are unhealthy — David Winterbottom
 </title>
 
         
@@ -58,31 +56,25 @@ Auto-scaling storage for persistent data (the &ldquo;cluster volume&rdquo;). [Re
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>November 9, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>September 24, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>That AWS Aurora clusters have two types of storage</h1>
-        </header><p>Aurora PostgreSQL clusters have:</p>
-<ul>
-<li>
-<p>Auto-scaling storage for persistent data (the &ldquo;cluster volume&rdquo;).</p>
-</li>
-<li>
-<p>Local storage for temporary tables or files.</p>
-</li>
-</ul>
-<p>There&rsquo;s further information in the
-<a href="https://aws.amazon.com/premiumsupport/knowledge-center/postgresql-aurora-storage-issue/">AWS docs</a></p>
-<p>The amount of local storage space is tied to the instance class — more space can
-only be obtained by upgrading. The amount of local storage for each instance
-type doesn&rsquo;t seem to be published anywhere. Based on CloudWatch metric data, a
-<code>db.r6g.xlarge</code> instance has 50G;
-<a href="https://www.reddit.com/r/aws/comments/a0y3ib/aurora_db_how_much_local_instance_storage_for/">this Reddit thread has some values for instance classes in the <code>r4</code> series</a>.</p>
-<p>Beware that the relatively small amount of local storage can be a problem for
-large table operations like changing the type of a column. We found to our cost
-that 50G wasn&rsquo;t enough space to run a query like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> some_large_table <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">COLUMN</span> id <span style="color:#66d9ef">TYPE</span> bigint;
-</span></span></code></pre></div><p>which was required as the table had exhausted all 2.7 billion IDs available to
-an <code>integer</code>-type primary key field.</p>
+            <h1>AWS target groups fail open when all instances are unhealthy</h1>
+        </header><p>In normal conditions, an AWS load balancer will only route requests to healthy
+instances in its linked target group. But a &ldquo;fail open&rdquo; policy is applied if all
+targets in the target group are unhealthy. From the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">AWS ELB docs</a>:</p>
+<blockquote>
+<p>If a target group contains only unhealthy registered targets, the load
+balancer routes requests to all those targets, regardless of their health
+status. This means that if all targets fail health checks at the same time in
+all enabled Availability Zones, the load balancer fails open. The effect of
+the fail-open is to allow traffic to all targets in all enabled Availability
+Zones, regardless of their health status, based on the load balancing
+algorithm.</p>
+</blockquote>
+<p>This came up at Kraken Tech where an unusual misconfiguration caused all
+instances in a target group to become unhealthy, and I was initially puzzled as
+to why new instances — which had never passed their health checks — were serving
+production traffic.</p>
 </article>
 
         </main>
@@ -107,7 +99,7 @@ an <code>integer</code>-type primary key field.</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/aws/">AWS</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/aws-target-groups-fail-open-when-all-instances-are-unhealthy/">AWS target groups fail open when all instances are unhealthy</a></li>
+                            <li><a href="/posts/that-aws-aurora-clusters-have-two-types-of-storage/">That AWS Aurora clusters have two types of storage</a></li>
 
                             
                             
@@ -154,24 +146,12 @@ an <code>integer</code>-type primary key field.</p>
 
         
 
-            
-            
-
-            
-                
-                
-
-                
-            
-
-        
-
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -180,11 +160,9 @@ an <code>integer</code>-type primary key field.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-use-awsmfav2-to-avoid-entering-so-many-mfa-tokens\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-ripgrep-interprets-gitignore-rules-changes-when-a-filepath-argument-is-used\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-continue-a-git-rebase-and-skip-editing-the-commit-message\/"); })
         
     </script>
 

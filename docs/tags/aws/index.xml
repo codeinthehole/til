@@ -6,11 +6,20 @@
     <description>Recent content in AWS on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Nov 2021 20:37:53 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 24 Sep 2022 13:44:07 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>AWS target groups fail open when all instances are unhealthy</title>
+      <link>https://til.codeinthehole.com/posts/aws-target-groups-fail-open-when-all-instances-are-unhealthy/</link>
+      <pubDate>Sat, 24 Sep 2022 13:44:07 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/aws-target-groups-fail-open-when-all-instances-are-unhealthy/</guid>
+      <description>In normal conditions, an AWS load balancer will only route requests to healthy instances in its linked target group.</description>
+    </item>
     
     <item>
       <title>That AWS Aurora clusters have two types of storage</title>
