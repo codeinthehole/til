@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    which is a command used to identify the location of executables; however it behaves differently on Zsh compared to Bash. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/which-behaves-diffferently-in-zsh-compared-to-bash/" />
+<meta property="og:title" content="TIL &#39;which&#39; behaves diffferently in Zsh compared to Bash — David Winterbottom" />
+<meta property="og:description" content="which is a command used to identify the location of executables; however it behaves differently on Zsh compared to Bash. [Reading time: 2 minutes]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL &#39;which&#39; behaves diffferently in Zsh compared to Bash — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>September 29, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1><code>which</code> behaves diffferently in Zsh compared to Bash</h1>
+        </header><p><code>which</code> is a command used to identify the location of executables; however it
+behaves differently on Zsh compared to Bash.</p>
+<p>In Bash, <code>which</code> is an executable file, normally found in <code>/usr/bin/which</code>. It
+has a <code>man</code> page like other commands.</p>
+<p>In Zsh, <code>which</code> is an alias of the <code>whence</code> builtin. From <code>man zshbuiltins</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>whence [ -vcwfpamsS ] [ -x num ] name ...
+</span></span><span style="display:flex;"><span>       For each name, indicate how it would be interpreted if used as a
+</span></span><span style="display:flex;"><span>       command name.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       If name is not an alias, built-in command, external command, shell
+</span></span><span style="display:flex;"><span>       function, hashed command, or a reserved word, the exit status
+</span></span><span style="display:flex;"><span>       shall be non-zero, and -- if -v, -c, or -w was passed -- a message
+</span></span><span style="display:flex;"><span>       will be written to standard output.  (This is different from other
+</span></span><span style="display:flex;"><span>       shells that write that message to standard error.)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       -c     Print the results in a csh-like format.  This takes
+</span></span><span style="display:flex;"><span>              precedence over -v.
+</span></span><span style="display:flex;"><span>       ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>which [ -wpamsS ] [ -x num ] name ...
+</span></span><span style="display:flex;"><span>       Equivalent to whence -c.
+</span></span></code></pre></div><h2 id="what-difference-does-it-make">What difference does it make?</h2>
+<p>A notable difference is that, in Zsh, if the passed name is a shell function,
+<code>which</code> will print its implementation.</p>
+<h2 id="pyenv-example">Pyenv example</h2>
+<p>This is apparent with <code>pyenv</code> which declares a shell function called <code>pyenv</code>
+when its <code>init</code> function is called:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pyenv init -<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>In Bash, <code>which</code> shows the location where Homebrew has installed it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ which pyenv
+</span></span><span style="display:flex;"><span>/usr/local/bin/pyenv
+</span></span></code></pre></div><p>But in Zsh we see its function implementation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pyenv <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	local command
+</span></span><span style="display:flex;"><span>	command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#66d9ef">:-</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$#<span style="color:#e6db74">&#34;</span> -gt <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>		shift
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$command<span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">(</span>rehash | shell | virtualenvwrapper | virtualenvwrapper_lazy<span style="color:#f92672">)</span> eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pyenv <span style="color:#e6db74">&#34;sh-</span>$command<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">(</span>*<span style="color:#f92672">)</span> command pyenv <span style="color:#e6db74">&#34;</span>$command<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>This caught us out in trying to write Python upgrade instructions that worked in
+both Bash and Zsh.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/bash/">Bash</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-join-an-array-in-bash/">How to join an array in Bash</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-bashs-seconds-shell-variable/">About Bash&rsquo;s <code>$SECONDS</code> shell variable</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-ubuntus-alert-bash-alias/">About Ubuntu&rsquo;s <code>alert</code> Bash alias</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-readonly-bash-variables/">About <code>readonly</code> Bash variables</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-bashs-debug-signal/">About Bash&rsquo;s DEBUG signal</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/unix/">Unix</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/you-can-shuf-to-take-random-samples-of-lines/">You can use <code>shuf</code> to take random samples of lines</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-xargs-t/">About <code>xargs -t</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/what-the-sections-of-the-unix-manual-are/">What the sections of the Unix manual are</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/the-order-of-permissions-matter-with-chmod/">The order of permissions matters with <code>chmod</code></a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/aws-target-groups-fail-open-when-all-instances-are-unhealthy\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
