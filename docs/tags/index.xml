@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Oct 2022 15:42:26 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 04 Oct 2022 20:46:26 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Slack</title>
+      <link>https://til.codeinthehole.com/tags/slack/</link>
+      <pubDate>Tue, 04 Oct 2022 20:46:26 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/slack/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>AWS</title>
@@ -576,15 +585,6 @@
       <pubDate>Mon, 23 Nov 2020 17:25:36 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/1password/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Slack</title>
-      <link>https://til.codeinthehole.com/tags/slack/</link>
-      <pubDate>Fri, 20 Nov 2020 14:32:18 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/slack/</guid>
       <description></description>
     </item>
     

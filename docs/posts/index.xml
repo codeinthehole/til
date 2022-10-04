@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Oct 2022 15:42:26 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 04 Oct 2022 20:46:26 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can search Slack by emoji reactions</title>
+      <link>https://til.codeinthehole.com/posts/you-can-search-slack-by-emoji-reactions/</link>
+      <pubDate>Tue, 04 Oct 2022 20:46:26 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-search-slack-by-emoji-reactions/</guid>
+      <description>Slack&amp;rsquo;s lets you search for messages that have had a particular emoji reaction using a has: filter.</description>
+    </item>
     
     <item>
       <title>Python tests using `moto` should be explicit about AWS regions</title>
