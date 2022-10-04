@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Consider this test that creates an S3 bucket using moto: ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/python-tests-using-moto-should-be-explicit-about-aws-regions/" />
+<meta property="og:title" content="TIL Python tests using &#39;moto&#39; should be explicit about AWS regions — David Winterbottom" />
+<meta property="og:description" content="Consider this test that creates an S3 bucket using moto: [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL Python tests using &#39;moto&#39; should be explicit about AWS regions — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>October 4, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>Python tests using <code>moto</code> should be explicit about AWS regions</h1>
+        </header><p>Consider this test that creates an S3 bucket using <code>moto</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> moto
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_s3_bucket_creation</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> moto<span style="color:#f92672">.</span>mock_s3():
+</span></span><span style="display:flex;"><span>        boto3<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#34;s3&#34;</span>)<span style="color:#f92672">.</span>create_bucket(Bucket<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MyBucket&#34;</span>)
+</span></span></code></pre></div><p>This was failing locally for me with a <code>botocore.exceptions.ClientError</code>
+exception:</p>
+<pre tabindex="0"><code>An error occurred (IllegalLocationConstraintException) when calling the
+CreateBucket operation: The unspecified location constraint is incompatible for
+the region specific endpoint this request was sent to.
+</code></pre><p>but was passing in a remote CI environment and on other people&rsquo;s machines.</p>
+<h2 id="why">Why?</h2>
+<p>The problem is that <code>boto3</code> will take its <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html#overview">default AWS region from your
+<code>~/.aws/config</code> file</a> and mine was set to Dublin:</p>
+<pre tabindex="0"><code>[default]
+region = eu-west-1
+</code></pre><p>Remove this and the test passes.</p>
+<h2 id="default-aws-regions">Default AWS regions</h2>
+<p>If there is no default region configured then <code>boto3</code> will default to
+<code>us-east-1</code> when creating S3 buckets which, crucially, <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-example-creating-buckets.html#create-an-amazon-s3-bucket">allows buckets to be
+created in a simpler process</a>.</p>
+<p>For other regions, S3 buckets need to be created with explicit location
+constraint configuration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>region <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;eu-west-1&#34;</span>
+</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#39;s3&#39;</span>, region_name<span style="color:#f92672">=</span>region)
+</span></span><span style="display:flex;"><span>client<span style="color:#f92672">.</span>create_bucket(
+</span></span><span style="display:flex;"><span>    Bucket<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MyBucket&#34;</span>,
+</span></span><span style="display:flex;"><span>    CreateBucketConfiguration<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;LocationConstraint&#34;</span>: region}
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>When creating S3 buckets in tests, it&rsquo;s better to use this formulation where the
+region is explicitly specified.</p>
+<h2 id="moral-of-the-story">Moral of the story</h2>
+<p>Beware of <code>boto3</code> as it can take configuration from outside of your project
+boundaries.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/testing/">Testing</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/about-indirect-parametrization-with-pytest/">About indirect parametrization with Pytest</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/">How to use <code>xmllint</code> to extract the failing test filenames from a JUnit-XML file</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-override-django-settings-for-every-method-in-a-test-class/">How to override Django&rsquo;s settings for every method in a test class</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-profile-pytest-tests/">How to profile Pytest tests</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-factory-boys-selfattribute-class/">About Factory Boy&rsquo;s <code>SelfAttribute</code> class</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/factory-boy-can-be-used-to-build-dicts/">Factory boy can be used to build dicts</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/django-doesnt-flush-caches-between-tests/">Django doesn&rsquo;t flush caches between tests</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/">That Pytest&rsquo;s &ldquo;keyword expression&rdquo; filtering supports Python conditionals</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-freezegun-doesnt-work-with-pytest-fixtures/">That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/aws/">AWS</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/aws-target-groups-fail-open-when-all-instances-are-unhealthy/">AWS target groups fail open when all instances are unhealthy</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-aws-aurora-clusters-have-two-types-of-storage/">That AWS Aurora clusters have two types of storage</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-awsmfav2-to-avoid-entering-so-many-mfa-tokens/">How to use <code>aws-mfa-v2</code> to avoid entering so many MFA tokens</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-have-ssh-sessions-via-aws-session-manager/">You can have SSH sessions via AWS Session Manager</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-aws-profiles-that-require-mfa/">How to use AWS profiles that require MFA</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/aws-asgs-have-an-instance-refresh-feature/">AWS ASGs have an &lsquo;instance refresh&rsquo; feature</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/theres-a-chrome-extension-for-switching-aws-iam-roles/">There&rsquo;s a Chrome extension for switching AWS IAM roles</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/aws-availability-zones-have-counterintuitive-ids/">AWS Availability Zones have counter-intuitive IDs</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-passwordless-users-in-ec2/">Where authentication for the <code>ubuntu</code> user on a EC2 instance is defined</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/which-behaves-diffferently-in-zsh-compared-to-bash\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

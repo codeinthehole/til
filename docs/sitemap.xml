@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/aws/</loc>
+    <lastmod>2022-10-04T15:42:26+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2022-10-04T15:42:26+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/python-tests-using-moto-should-be-explicit-about-aws-regions/</loc>
+    <lastmod>2022-10-04T15:42:26+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2022-10-04T15:42:26+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/testing/</loc>
+    <lastmod>2022-10-04T15:42:26+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2022-10-04T15:42:26+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/which-behaves-diffferently-in-zsh-compared-to-bash/</loc>
     <lastmod>2022-09-29T19:21:45+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/bash/</loc>
-    <lastmod>2022-09-29T19:21:45+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2022-09-29T19:21:45+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2022-09-29T19:21:45+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2022-09-29T19:21:45+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/unix/</loc>
@@ -22,9 +31,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/tags/zsh/</loc>
     <lastmod>2022-09-29T19:21:45+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/aws/</loc>
-    <lastmod>2022-09-24T13:44:07+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/aws-target-groups-fail-open-when-all-instances-are-unhealthy/</loc>
     <lastmod>2022-09-24T13:44:07+01:00</lastmod>
@@ -45,9 +51,6 @@
     <lastmod>2022-08-24T14:24:35+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/pytest/</loc>
-    <lastmod>2022-08-24T14:24:35+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/testing/</loc>
     <lastmod>2022-08-24T14:24:35+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-retry-captures-stdout/</loc>
