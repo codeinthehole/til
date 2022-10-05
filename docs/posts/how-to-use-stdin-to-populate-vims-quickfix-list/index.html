@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    One way to populate Vim’s quickfix list is by running :make which runs the program specified by the makeprg setting. ...
+    Vim can be opened in quickfix mode by specifying an error file with the -q option: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-bandit-with-vims-quickfix-list/" />
-<meta property="og:title" content="TIL How to use Bandit with Vim&#39;s quickfix list — David Winterbottom" />
-<meta property="og:description" content="One way to populate Vim&rsquo;s quickfix list is by running :make which runs the program specified by the makeprg setting. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-stdin-to-populate-vims-quickfix-list/" />
+<meta property="og:title" content="TIL How to use STDIN to populate Vim&#39;s quickfix list — David Winterbottom" />
+<meta property="og:description" content="Vim can be opened in quickfix mode by specifying an error file with the -q option: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL How to use Bandit with Vim&#39;s quickfix list — David Winterbottom
+    TIL How to use STDIN to populate Vim&#39;s quickfix list — David Winterbottom
 </title>
 
         
@@ -56,22 +56,30 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>November 19, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>October 5, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>How to use Bandit with Vim&rsquo;s quickfix list</h1>
-        </header><p>One way to populate Vim&rsquo;s quickfix list is by running <code>:make</code> which runs the
-program specified by the <code>makeprg</code> setting. Due to Vim&rsquo;s C heritage, the default
-behaviour is to run the <code>make</code> command-line tool but there are many other useful
-programs that print locations to STDOUT.</p>
-<p><a href="https://bandit.readthedocs.io/en/latest/">Bandit</a> is a Python static analysis
-tool that looks for common security issues. You can use it to populate the
-quickfix list by setting:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">makeprg</span>=<span style="color:#a6e22e">bandit</span>\ -<span style="color:#a6e22e">r</span>\ -<span style="color:#a6e22e">f</span>\ <span style="color:#a6e22e">custom</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>then you can run <code>:make</code> to work through any warnings with <code>:cwindow</code>, <code>:cnext</code>
-etc.</p>
-<p>Note, <code>:make</code> will pass on any command-line options so you can do things like
-<code>:make -t B112</code> to work though just one type of warning.</p>
-<p>You can do a similar thing for linting errors by setting <code>makeprg=flake8</code>.</p>
+            <h1>How to use STDIN to populate Vim&rsquo;s quickfix list</h1>
+        </header><p>Vim can be opened in quickfix mode by specifying an error file with the <code>-q</code>
+option:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>vim -q $ERROR_FILE
+</span></span></code></pre></div><p>From <code>man vim</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>  -q [errorfile]
+</span></span><span style="display:flex;"><span>       Start in quickFix mode.  The file [errorfile] is read and the first error
+</span></span><span style="display:flex;"><span>       is displayed.  If [errorfile] is omitted, the filename is obtained from
+</span></span><span style="display:flex;"><span>       the &#39;errorfile&#39; option (defaults to &#34;AztecC.Err&#34; for the Amiga,
+</span></span><span style="display:flex;"><span>       &#34;errors.err&#34; on other systems). Further errors can be jumped to with the
+</span></span><span style="display:flex;"><span>       &#34;:cn&#34; command.  See &#34;:help quickfix&#34;.
+</span></span></code></pre></div><p>Hence you can use process substitution to populate the quickfix from STDIN. For
+example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>vim -q &lt;<span style="color:#f92672">(</span>flake8 $PATH_TO_FILES<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>Something I wanted to do today was run <code>flake8</code> over a list of modified files,
+that I knew would have errors, and open Vim in quickfix mode to resolve. This
+can be done with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>vim -q &lt;<span style="color:#f92672">(</span>git status -s | awk <span style="color:#e6db74">&#39;$1 == &#34;M&#34; {print $2}&#39;</span> | xargs flake8<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>An even neater trick is if you run a command that generates quickfix-compatible
+output but forget to wrap it in <code>vim -q</code>. Then you can use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>vim -q &lt;<span style="color:#f92672">(</span>!!<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>Thanks to <code>/r/vim</code> legend &ldquo;romainl&rdquo; for <a href="https://www.reddit.com/r/vim/comments/7ieb3p/comment/dqy2vww/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">that tip</a>.</p>
 </article>
 
         </main>
@@ -95,11 +103,6 @@ etc.</p>
                 
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
                     <ul>
-                        
-                            <li><a href="/posts/how-to-use-stdin-to-populate-vims-quickfix-list/">How to use STDIN to populate Vim&rsquo;s quickfix list</a></li>
-
-                            
-                            
                         
                             <li><a href="/posts/how-to-get-vale-to-work-with-vims-ale-plugin/">How to get Vale to work with Vim&rsquo;s Ale plugin</a></li>
 
@@ -146,31 +149,14 @@ etc.</p>
                             
                             
                         
-                    </ul>
-                
-
-            
-
-        
-
-            
-            
-
-            
-                
-                
-
-                
-                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/security/">Security</a>:</p>
-                    <ul>
-                        
-                            <li><a href="/posts/sensitive-terraform-cloud-variables-are-included-in-sentinel-mocks/">Sensitive Terraform Cloud variables are included in Sentinel mocks</a></li>
+                            <li><a href="/posts/how-to-pipe-an-argument-list-into-vim/">How to pipe an argument list into Vim</a></li>
 
                             
                             
                         
                     </ul>
                 
+
             
 
         
@@ -178,9 +164,9 @@ etc.</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -189,11 +175,9 @@ etc.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/exuberantctags-has-been-superceded-by-universalctags\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-search-slack-by-emoji-reactions\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/you-can-convert-a-slack-group-direct-message-chat-into-a-private-channel\/"); })
         
     </script>
 

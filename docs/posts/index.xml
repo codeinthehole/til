@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Oct 2022 20:46:26 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 05 Oct 2022 15:11:57 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to use STDIN to populate Vim&#39;s quickfix list</title>
+      <link>https://til.codeinthehole.com/posts/how-to-use-stdin-to-populate-vims-quickfix-list/</link>
+      <pubDate>Wed, 05 Oct 2022 15:11:57 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-use-stdin-to-populate-vims-quickfix-list/</guid>
+      <description>Vim can be opened in quickfix mode by specifying an error file with the -q option:</description>
+    </item>
     
     <item>
       <title>You can search Slack by emoji reactions</title>
