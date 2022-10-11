@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Sep 2022 18:16:01 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 11 Oct 2022 09:56:57 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Mypy skips empty functions</title>
+      <link>https://til.codeinthehole.com/posts/mypy-skips-empty-functions/</link>
+      <pubDate>Tue, 11 Oct 2022 09:56:57 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/mypy-skips-empty-functions/</guid>
+      <description>Mypy doesn&amp;rsquo;t check types of empty functions, such as those whose implementation is pass, .</description>
+    </item>
     
     <item>
       <title>It&#39;s better to explicitly chain Python exceptions</title>

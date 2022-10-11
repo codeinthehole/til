@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Mypy can be configured to raise an error when it finds unreachable code. ...
+    Mypy doesn’t check types of empty functions, such as those whose implementation is pass, . ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-mypys-unreachable-code-functionality/" />
-<meta property="og:title" content="TIL About &#39;mypy&#39;&#39;s unreachable code functionality — David Winterbottom" />
-<meta property="og:description" content="Mypy can be configured to raise an error when it finds unreachable code. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/mypy-skips-empty-functions/" />
+<meta property="og:title" content="TIL Mypy skips empty functions — David Winterbottom" />
+<meta property="og:description" content="Mypy doesn&rsquo;t check types of empty functions, such as those whose implementation is pass, . [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;mypy&#39;&#39;s unreachable code functionality — David Winterbottom
+    TIL Mypy skips empty functions — David Winterbottom
 </title>
 
         
@@ -56,20 +56,48 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>June 21, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>October 11, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>mypy</code>&rsquo;s unreachable code functionality</h1>
-        </header><p>Mypy
-<a href="https://mypy.readthedocs.io/en/stable/common_issues.html#unreachable-code">can be configured</a>
-to raise an error when it finds unreachable code. This is a useful check and can
-highlight several categories of bug.</p>
-<p>To enable, ensure your <code>setup.cfg</code> includes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[mypy]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">warn_unreachable</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
-</span></span></code></pre></div><p>Further reading:</p>
-<ul>
-<li><a href="https://adamj.eu/tech/2021/05/19/python-type-hints-mypy-unreachable-code-detection/">Python Type Hints - How to use Mypy’s unreachable code detection</a></li>
-</ul>
+            <h1>Mypy skips empty functions</h1>
+        </header><p>Mypy doesn&rsquo;t check types of empty functions, such as those whose implementation
+is <code>pass</code>, <code>...</code> or only a docstring.</p>
+<p>For example, running <code>mypy</code> on this class:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pass_only</span>(self) <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">elipsis_only</span>(self) <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">docstring_only</span>(self) <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Just a docstring, which implicitly returns `None`.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">docstring_and_none_return_type</span>(self) <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Now explicitly retiurn `None.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">incorrect_return_type</span>(self) <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;x&#34;</span>
+</span></span></code></pre></div><p>only picks up errors on the latter two methods where there is an explicit return
+value:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>$ mypy --strict types_empty_methods.py
+</span></span><span style="display:flex;"><span>example.py:17: error: Incompatible return value type (got &#34;None&#34;, expected &#34;int&#34;)  [return-value]
+</span></span><span style="display:flex;"><span>example.py:20: error: Incompatible return value type (got &#34;str&#34;, expected &#34;int&#34;)  [return-value]
+</span></span><span style="display:flex;"><span>Found 2 errors in 1 file (checked 1 source file)
+</span></span></code></pre></div><p>Such empty functions are normally used to indicate that a subclass should
+provide a concrete implementation. However, real errors can occur if this is
+omitted:</p>
+<pre tabindex="0"><code class="language-pycon" data-lang="pycon">&gt;&gt;&gt; C().pass_only() + 1
+Traceback (most recent call last):
+  File &#34;&lt;stdin&gt;&#34;, line 1, in &lt;module&gt;
+TypeError: unsupported operand type(s) for +: &#39;NoneType&#39; and &#39;int&#39;
+</code></pre><p>This is true as of Mypy v0.982 and below, but looks like <a href="https://github.com/python/mypy/issues/2350">it will be fixed in a
+upcoming release</a>.</p>
+<p>Thanks to <a href="https://samueljsb.co.uk/">Sam Searles-Bryant</a>, who showed this to me.</p>
 </article>
 
         </main>
@@ -94,12 +122,12 @@ highlight several categories of bug.</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/mypy/">mypy</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/mypy-skips-empty-functions/">Mypy skips empty functions</a></li>
+                            <li><a href="/posts/how-djangos-management-commands-need-to-be-type-hinted/">How Django&rsquo;s management commands need to be type hinted</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/how-djangos-management-commands-need-to-be-type-hinted/">How Django&rsquo;s management commands need to be type hinted</a></li>
+                            <li><a href="/posts/about-mypys-unreachable-code-functionality/">About <code>mypy</code>&rsquo;s unreachable code functionality</a></li>
 
                             
                             
@@ -187,6 +215,11 @@ highlight several categories of bug.</p>
                             
                             
                         
+                            <li><a href="/posts/pythons-envparse-library-has-counterintuitive-boolean-casting/">Python&rsquo;s <code>envparse</code> library has counter-intuitive boolean casting</a></li>
+
+                            
+                            
+                        
                     </ul>
                 
             
@@ -196,9 +229,9 @@ highlight several categories of bug.</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -207,11 +240,9 @@ highlight several categories of bug.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-jqs-slurp-option\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-use-stdin-to-populate-vims-quickfix-list\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-chromes-named-windows\/"); })
         
     </script>
 
