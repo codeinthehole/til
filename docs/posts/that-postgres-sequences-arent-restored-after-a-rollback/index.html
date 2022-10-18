@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Verify by creating a table and inserting a single row ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-postgres-sequences-arent-restored-after-a-rollback/" />
+<meta property="og:title" content="TIL That Postgres sequences aren&#39;t restored after a transaction rollback — David Winterbottom" />
+<meta property="og:description" content="Verify by creating a table and inserting a single row [Reading time: 3 minutes]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL That Postgres sequences aren&#39;t restored after a transaction rollback — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>October 18, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>That Postgres sequences aren&rsquo;t restored after a transaction rollback</h1>
+        </header><p>Verify by creating a table and inserting a single row</p>
+<pre tabindex="0"><code class="language-psql" data-lang="psql"># create table people ( id SERIAL, name TEXT );
+# \d people
+                             Table &#34;public.people&#34;
+┌────────┬─────────┬──────────┬────────────────────────────────────┐
+│ Column │  Type   │ Nullable │              Default               │
+├────────┼─────────┼──────────┼────────────────────────────────────┤
+│ id     │ integer │ not null │ nextval(&#39;people_id_seq&#39;::regclass) │
+│ name   │ text    │          │                                    │
+└────────┴─────────┴──────────┴────────────────────────────────────┘
+# insert into people (name) values (&#39;Alan&#39;);
+</code></pre><p>then the next <code>id</code> to be allocated will be <code>2</code>:</p>
+<pre tabindex="0"><code class="language-psql" data-lang="psql"># select currval(&#39;people_id_seq&#39;) + 1 as next_val;
+┌──────────┐
+│ next_val │
+├──────────┤
+│        2 │
+└──────────┘
+</code></pre><p>Now open a transaction and insert a new row, which increments the
+<code>people_id_seq</code> sequence, then roll back:</p>
+<pre tabindex="0"><code class="language-psql" data-lang="psql"># start transaction;
+# insert into people (name) values (&#39;Barry&#39;);
+# rollback;
+</code></pre><p>There&rsquo;s still only one row in the table, but the next available <code>id</code> is now <code>3</code>:</p>
+<pre tabindex="0"><code class="language-psql" data-lang="psql"># table people;
+┌────┬──────┐
+│ id │ name │
+├────┼──────┤
+│  1 │ Alan │
+└────┴──────┘
+(1 row)
+# select currval(&#39;people_id_seq&#39;) + 1 as next_val;
+┌──────────┐
+│ next_val │
+├──────────┤
+│        3 │
+└──────────┘
+</code></pre><p>Hence rolling back a transaction does not restore the sequence associated with
+its primary key.</p>
+<p>There&rsquo;s a cautionary note about this in the <a href="https://www.postgresql.org/docs/current/functions-sequence.html">Postgres docs on sequence
+manipulation functions</a>:</p>
+<figure><img src="/images/postgres-docs-on-sequences.png"
+         alt="postgres docs on sequences"/>
+</figure>
+
+<h2 id="flakey-tests">Flakey tests</h2>
+<p>This phenomena can cause flakey tests, which is how I became aware of it.</p>
+<p>By default, Django executes tests in a transaction that&rsquo;s rolled back as part of
+the test&rsquo;s tear-down phase. This means that any data inserted into a test
+database isn&rsquo;t readable to subsequent tests (and can&rsquo;t pollute them).</p>
+<p>But, as per the above, sequences <em>are mutated</em> and so tests do affect the
+primary keys allocated in subsequent tests. This is a subtle form of test
+pollution.</p>
+<p>The flakiness occurs when a test hard-codes the value of a primary key. For
+example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># Some factory class that inserts rows into a Postgres table.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> factories <span style="color:#f92672">import</span> FrobFactory
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_create_frobs</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Insert a row into a table using the default sequence to provide the ID.</span>
+</span></span><span style="display:flex;"><span>    FrobFactory()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Insert a second row but hard-code the ID.</span>
+</span></span><span style="display:flex;"><span>    FrobFactory(id<span style="color:#f92672">=</span><span style="color:#ae81ff">123</span>)
+</span></span></code></pre></div><p>This test can fail if the first <code>FrobFactory</code> instance is allocated a primary
+key of <code>123</code>, meaning the second <code>FrobFactory</code> call will error on a uniqueness
+constraint.</p>
+<p>Whether this happens depends on the tests that run beforehand. If the prior
+tests insert 122 rows to the table then the first <code>FrobFactory</code> call in this
+test will be given an <code>id</code> of <code>123</code>.</p>
+<p>This fails intermittently as it depends on the order and constituents of your
+test suite, which will change as new tests are added.</p>
+<p>Rule-of-thumb? Avoid hard-coding primary keys in your test fixtures.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/postgresql/">PostgreSQL</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/about-a-gotcha-with-psycopg2s-autocommit-handling/">About a gotcha with <code>psycopg2</code>&rsquo;s autocommit handling</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/the-correct-sequence-of-sql-statements-for-dropping-a-role/">The correct sequence of SQL statements for dropping a role</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/testing/">Testing</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/python-tests-using-moto-should-be-explicit-about-aws-regions/">Python tests using <code>moto</code> should be explicit about AWS regions</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-indirect-parametrization-with-pytest/">About indirect parametrization with Pytest</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/">How to use <code>xmllint</code> to extract the failing test filenames from a JUnit-XML file</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-override-django-settings-for-every-method-in-a-test-class/">How to override Django&rsquo;s settings for every method in a test class</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-profile-pytest-tests/">How to profile Pytest tests</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-factory-boys-selfattribute-class/">About Factory Boy&rsquo;s <code>SelfAttribute</code> class</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/factory-boy-can-be-used-to-build-dicts/">Factory boy can be used to build dicts</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/django-doesnt-flush-caches-between-tests/">Django doesn&rsquo;t flush caches between tests</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/">That Pytest&rsquo;s &ldquo;keyword expression&rdquo; filtering supports Python conditionals</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-freezegun-doesnt-work-with-pytest-fixtures/">That FreezeGun doesn&rsquo;t work with Pytest fixtures (unless you use <code>pytest-freezegun</code>)</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/mypy-skips-empty-functions\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

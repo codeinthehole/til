@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/postgresql/</loc>
+    <lastmod>2022-10-18T17:43:06+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2022-10-18T17:43:06+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2022-10-18T17:43:06+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/testing/</loc>
+    <lastmod>2022-10-18T17:43:06+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/that-postgres-sequences-arent-restored-after-a-rollback/</loc>
+    <lastmod>2022-10-18T17:43:06+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2022-10-18T17:43:06+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/mypy/</loc>
     <lastmod>2022-10-11T09:56:57+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/mypy-skips-empty-functions/</loc>
     <lastmod>2022-10-11T09:56:57+01:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2022-10-11T09:56:57+01:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/tags/python/</loc>
-    <lastmod>2022-10-11T09:56:57+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2022-10-11T09:56:57+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2022-10-11T09:56:57+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-use-stdin-to-populate-vims-quickfix-list/</loc>
@@ -36,9 +45,6 @@
     <lastmod>2022-10-04T15:42:26+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/python-tests-using-moto-should-be-explicit-about-aws-regions/</loc>
-    <lastmod>2022-10-04T15:42:26+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/testing/</loc>
     <lastmod>2022-10-04T15:42:26+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/which-behaves-diffferently-in-zsh-compared-to-bash/</loc>
@@ -210,9 +216,6 @@
     <lastmod>2021-11-08T17:48:54+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/about-a-gotcha-with-psycopg2s-autocommit-handling/</loc>
-    <lastmod>2021-11-05T16:54:26+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/postgresql/</loc>
     <lastmod>2021-11-05T16:54:26+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-print-the-changed-filepaths-from-a-commit-and-nothing-else/</loc>

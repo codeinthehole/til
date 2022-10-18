@@ -6,11 +6,20 @@
     <description>Recent content in Testing on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Oct 2022 15:42:26 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 18 Oct 2022 17:43:06 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That Postgres sequences aren&#39;t restored after a transaction rollback</title>
+      <link>https://til.codeinthehole.com/posts/that-postgres-sequences-arent-restored-after-a-rollback/</link>
+      <pubDate>Tue, 18 Oct 2022 17:43:06 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-postgres-sequences-arent-restored-after-a-rollback/</guid>
+      <description>Verify by creating a table and inserting a single row</description>
+    </item>
     
     <item>
       <title>Python tests using `moto` should be explicit about AWS regions</title>
