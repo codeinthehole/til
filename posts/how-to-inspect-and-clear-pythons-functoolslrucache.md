@@ -1,7 +1,7 @@
 ---
 title: "How to inspect and clear Python's `functools.lru_cache`"
 date: "2022-02-21T21:01:02+00:00"
-tags: ["Python"]
+tags: ["Python", "Flakey tests"]
 ---
 
 Python's [`functools.lru_cache`][python_docs] binds two additional functions to

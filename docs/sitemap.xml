@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/flakey-tests/</loc>
+    <lastmod>2022-11-08T18:16:53+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-the-new-argument-to-mockpatch-is-shared-between-parameterized-tests/</loc>
     <lastmod>2022-11-08T18:16:53+00:00</lastmod>
   </url><url>

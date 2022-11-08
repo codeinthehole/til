@@ -13,6 +13,15 @@
 
     
     <item>
+      <title>Flakey tests</title>
+      <link>https://til.codeinthehole.com/tags/flakey-tests/</link>
+      <pubDate>Tue, 08 Nov 2022 18:16:53 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/flakey-tests/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Pytest</title>
       <link>https://til.codeinthehole.com/tags/pytest/</link>
       <pubDate>Tue, 08 Nov 2022 18:16:53 +0000</pubDate>

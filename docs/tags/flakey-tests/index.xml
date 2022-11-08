@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flakey tests - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/flakey-tests/</link>
+    <description>Recent content in Flakey tests on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 08 Nov 2022 18:16:53 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/flakey-tests/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How the `new` argument to `mock.patch` is shared between parameterized tests</title>
+      <link>https://til.codeinthehole.com/posts/how-the-new-argument-to-mockpatch-is-shared-between-parameterized-tests/</link>
+      <pubDate>Tue, 08 Nov 2022 18:16:53 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-the-new-argument-to-mockpatch-is-shared-between-parameterized-tests/</guid>
+      <description>Consider this contrived test:
+from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp;#34;Return a config object with a &amp;#39;salutation&amp;#39; attribute.</description>
+    </item>
+    
+    <item>
+      <title>That Postgres sequences aren&#39;t restored after a transaction rollback</title>
+      <link>https://til.codeinthehole.com/posts/that-postgres-sequences-arent-restored-after-a-rollback/</link>
+      <pubDate>Tue, 18 Oct 2022 17:43:06 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-postgres-sequences-arent-restored-after-a-rollback/</guid>
+      <description>Verify by creating a table and inserting a single row</description>
+    </item>
+    
+    <item>
+      <title>How to inspect and clear Python&#39;s `functools.lru_cache`</title>
+      <link>https://til.codeinthehole.com/posts/how-to-inspect-and-clear-pythons-functoolslrucache/</link>
+      <pubDate>Mon, 21 Feb 2022 21:01:02 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-inspect-and-clear-pythons-functoolslrucache/</guid>
+      <description>Python&amp;rsquo;s functools.lru_cache binds two additional functions to decorated functions:</description>
+    </item>
+    
+
+  </channel>
+</rss>

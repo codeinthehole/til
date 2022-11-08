@@ -2,7 +2,7 @@
 title:
   "How the `new` argument to `mock.patch` is shared between parameterized tests"
 date: "2022-11-08T18:16:53+00:00"
-tags: ["Pytest", "Testing"]
+tags: ["Pytest", "Flakey tests", "Testing"]
 ---
 
 Consider this contrived test:

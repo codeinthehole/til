@@ -1,7 +1,7 @@
 ---
 title: "That Postgres sequences aren't restored after a transaction rollback"
 date: "2022-10-18T17:43:06+01:00"
-tags: ["PostgreSQL", "Testing"]
+tags: ["PostgreSQL", "Flakey tests", "Testing"]
 ---
 
 Verify by creating a table and inserting a single row
