@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Oct 2022 17:43:06 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 08 Nov 2022 18:16:53 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Pytest</title>
+      <link>https://til.codeinthehole.com/tags/pytest/</link>
+      <pubDate>Tue, 08 Nov 2022 18:16:53 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/pytest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://til.codeinthehole.com/tags/testing/</link>
+      <pubDate>Tue, 08 Nov 2022 18:16:53 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/testing/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>PostgreSQL</title>
@@ -18,15 +36,6 @@
       <pubDate>Tue, 18 Oct 2022 17:43:06 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Testing</title>
-      <link>https://til.codeinthehole.com/tags/testing/</link>
-      <pubDate>Tue, 18 Oct 2022 17:43:06 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/testing/</guid>
       <description></description>
     </item>
     
@@ -108,15 +117,6 @@
       <pubDate>Tue, 13 Sep 2022 17:25:58 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/ripgrep/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pytest</title>
-      <link>https://til.codeinthehole.com/tags/pytest/</link>
-      <pubDate>Wed, 24 Aug 2022 14:24:35 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/pytest/</guid>
       <description></description>
     </item>
     

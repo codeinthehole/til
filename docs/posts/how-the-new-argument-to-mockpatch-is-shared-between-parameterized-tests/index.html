@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Consider this contrived test:
+from unittest import mock import pytest def get_config(): &amp;quot;&amp;quot;&amp;quot;Return a config object with a &#39;salutation&#39; attribute. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-the-new-argument-to-mockpatch-is-shared-between-parameterized-tests/" />
+<meta property="og:title" content="TIL How the &#39;new&#39; argument to &#39;mock.patch&#39; is shared between parameterized tests — David Winterbottom" />
+<meta property="og:description" content="Consider this contrived test:
+from unittest import mock import pytest def get_config(): &#34;&#34;&#34;Return a config object with a &#39;salutation&#39; attribute. [Reading time: 2 minutes]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How the &#39;new&#39; argument to &#39;mock.patch&#39; is shared between parameterized tests — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>November 8, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How the <code>new</code> argument to <code>mock.patch</code> is shared between parameterized tests</h1>
+        </header><p>Consider this contrived test:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> unittest <span style="color:#f92672">import</span> mock
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pytest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_config</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Return a config object with a &#39;salutation&#39; attribute.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say_hello</span>(name):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Return a greeting.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> get_config()<span style="color:#f92672">.</span>salutation <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@mock</span><span style="color:#f92672">.</span>patch(
+</span></span><span style="display:flex;"><span>    __name__ <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.get_config&#34;</span>,
+</span></span><span style="display:flex;"><span>    new<span style="color:#f92672">=</span>mock<span style="color:#f92672">.</span>Mock(return_value<span style="color:#f92672">=</span>mock<span style="color:#f92672">.</span>Mock(salutation<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello&#34;</span>))
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>mark<span style="color:#f92672">.</span>parametrize(<span style="color:#e6db74">&#34;name&#34;</span>, (<span style="color:#e6db74">&#34;Alan&#34;</span>, <span style="color:#e6db74">&#34;Barry&#34;</span>, <span style="color:#e6db74">&#34;Calum&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_say_hello</span>(name):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> say_hello(name) <span style="color:#f92672">==</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Hello </span><span style="color:#e6db74">{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>We are testing the <code>say_hello</code> function three times with different arguments and
+use <code>mock.patch</code> to stub the response of the <code>get_config</code> function, passing in
+the replacement version <em>at compile/collection time</em> using the <code>new</code> parameter.</p>
+<p>All three tests pass:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>test_patch_state.py::test_say_hello[Alan] PASSED
+</span></span><span style="display:flex;"><span>test_patch_state.py::test_say_hello[Barry] PASSED
+</span></span><span style="display:flex;"><span>test_patch_state.py::test_say_hello[Calum] PASSED
+</span></span></code></pre></div><h2 id="test-pollution-via-shared-state">Test pollution via shared state</h2>
+<p>But there is potential test pollution as the same <code>mock.Mock</code> instance is used
+to replace the <code>get_config</code> function in each parameterised test.</p>
+<p>To see this, consider mutating the <code>get_config</code> mock in the test body:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#a6e22e">@mock</span><span style="color:#f92672">.</span>patch(
+</span></span><span style="display:flex;"><span>    __name__ <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.get_config&#34;</span>, new<span style="color:#f92672">=</span>mock<span style="color:#f92672">.</span>Mock(return_value<span style="color:#f92672">=</span>mock<span style="color:#f92672">.</span>Mock(salutation<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello&#34;</span>))
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>mark<span style="color:#f92672">.</span>parametrize(<span style="color:#e6db74">&#34;name&#34;</span>, (<span style="color:#e6db74">&#34;Alan&#34;</span>, <span style="color:#e6db74">&#34;Barry&#34;</span>, <span style="color:#e6db74">&#34;Calum&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_say_hello</span>(name):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> say_hello(name) <span style="color:#f92672">==</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Hello </span><span style="color:#e6db74">{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Mutate the `get_config` return value.</span>
+</span></span><span style="display:flex;"><span>    get_config<span style="color:#f92672">.</span>return_value<span style="color:#f92672">.</span>salutation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hi&#34;</span>
+</span></span></code></pre></div><p>Now we see two failures:</p>
+<pre tabindex="0"><code>test_patch_state.py::test_say_hello_1[Alan] PASSED
+test_patch_state.py::test_say_hello_1[Barry] FAILED
+test_patch_state.py::test_say_hello_1[Calum] FAILED
+
+...
+E AssertionError: assert &#39;Hi Barry&#39; == &#39;Hello Barry&#39;
+
+...
+E AssertionError: assert &#39;Hi Calum&#39; == &#39;Hello Calum&#39;
+</code></pre><p>The latter two tests fail as the change to the return value of <code>get_config</code> in
+the first test pollutes the second and third tests.</p>
+<p>This is a potential cause of flakey tests.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/pytest/">Pytest</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/about-indirect-parametrization-with-pytest/">About indirect parametrization with Pytest</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/">How to use <code>xmllint</code> to extract the failing test filenames from a JUnit-XML file</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-override-django-settings-for-every-method-in-a-test-class/">How to override Django&rsquo;s settings for every method in a test class</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-profile-pytest-tests/">How to profile Pytest tests</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/">That Pytest&rsquo;s &ldquo;keyword expression&rdquo; filtering supports Python conditionals</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/pytest-doesnt-play-nicely-with-ipdb/">Pytest doesn&rsquo;t play nicely with ipdb</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/testing/">Testing</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/that-postgres-sequences-arent-restored-after-a-rollback/">That Postgres sequences aren&rsquo;t restored after a transaction rollback</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/python-tests-using-moto-should-be-explicit-about-aws-regions/">Python tests using <code>moto</code> should be explicit about AWS regions</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-factory-boys-selfattribute-class/">About Factory Boy&rsquo;s <code>SelfAttribute</code> class</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/factory-boy-can-be-used-to-build-dicts/">Factory boy can be used to build dicts</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/django-doesnt-flush-caches-between-tests/">Django doesn&rsquo;t flush caches between tests</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-postgres-sequences-arent-restored-after-a-rollback\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
