@@ -6,11 +6,20 @@
     <description>Recent content in JQ on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Jun 2021 11:15:08 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 18 Nov 2022 19:24:31 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/jq/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can use JQ to build JSON payloads</title>
+      <link>https://til.codeinthehole.com/posts/you-can-use-jq-to-build-json-payloads/</link>
+      <pubDate>Fri, 18 Nov 2022 19:24:31 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-use-jq-to-build-json-payloads/</guid>
+      <description>It&amp;rsquo;s possible to use JQ to build JSON payloads as well as filter them.</description>
+    </item>
     
     <item>
       <title>About `jq`&#39;s `--slurp` option</title>

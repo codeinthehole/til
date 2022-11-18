@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Nov 2022 17:09:21 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Nov 2022 19:24:31 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>JQ</title>
+      <link>https://til.codeinthehole.com/tags/jq/</link>
+      <pubDate>Fri, 18 Nov 2022 19:24:31 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/jq/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Django</title>
@@ -333,15 +342,6 @@
       <pubDate>Wed, 30 Jun 2021 14:35:17 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/chrome/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JQ</title>
-      <link>https://til.codeinthehole.com/tags/jq/</link>
-      <pubDate>Thu, 17 Jun 2021 11:15:08 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/jq/</guid>
       <description></description>
     </item>
     
