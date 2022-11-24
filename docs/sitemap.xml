@@ -2,16 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://til.codeinthehole.com/tags/jq/</loc>
-    <lastmod>2022-11-18T19:24:31+00:00</lastmod>
+    <loc>https://til.codeinthehole.com/posts/how-to-handle-convenience-imports-with-mypy/</loc>
+    <lastmod>2022-11-23T17:24:46+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/mypy/</loc>
+    <lastmod>2022-11-23T17:24:46+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2022-11-18T19:24:31+00:00</lastmod>
+    <lastmod>2022-11-23T17:24:46+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2022-11-23T17:24:46+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2022-11-18T19:24:31+00:00</lastmod>
+    <lastmod>2022-11-23T17:24:46+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2022-11-23T17:24:46+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/jq/</loc>
     <lastmod>2022-11-18T19:24:31+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/you-can-use-jq-to-build-json-payloads/</loc>
@@ -24,9 +33,6 @@
     <lastmod>2022-11-13T17:09:21+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-djangos-overridesettings-decorator-causes-flakey-tests/</loc>
-    <lastmod>2022-11-13T17:09:21+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
     <lastmod>2022-11-13T17:09:21+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/testing/</loc>
@@ -43,9 +49,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-postgres-sequences-arent-restored-after-a-rollback/</loc>
     <lastmod>2022-10-18T17:43:06+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/mypy/</loc>
-    <lastmod>2022-10-11T09:56:57+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/mypy-skips-empty-functions/</loc>
     <lastmod>2022-10-11T09:56:57+01:00</lastmod>
