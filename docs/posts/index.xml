@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Nov 2022 17:24:46 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Dec 2022 11:46:25 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Django&#39;s JSON encoder rounds `datetime`s down to the nearest millisecond</title>
+      <link>https://til.codeinthehole.com/posts/djangos-json-encoder-rounds-datetimes-down-to-the-nearest-millisecond/</link>
+      <pubDate>Thu, 01 Dec 2022 11:46:25 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/djangos-json-encoder-rounds-datetimes-down-to-the-nearest-millisecond/</guid>
+      <description>Django provides a custom DjangoJSONEncoder class that can encode datetime.</description>
+    </item>
     
     <item>
       <title>How to handle convenience imports with Mypy</title>
