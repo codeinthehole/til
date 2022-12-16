@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    One way to populate Vim’s quickfix list is by running :make which runs the program specified by the makeprg setting. ...
+    I use Github’s hub library to create pull requests with a command similar to: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-bandit-with-vims-quickfix-list/" />
-<meta property="og:title" content="TIL How to use Bandit with Vim&#39;s quickfix list — David Winterbottom" />
-<meta property="og:description" content="One way to populate Vim&rsquo;s quickfix list is by running :make which runs the program specified by the makeprg setting. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-hub-clashes-with-vimpolyglot/" />
+<meta property="og:title" content="TIL That &#39;hub&#39; clashes with &#39;vim-polyglot&#39; — David Winterbottom" />
+<meta property="og:description" content="I use Github&rsquo;s hub library to create pull requests with a command similar to: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL How to use Bandit with Vim&#39;s quickfix list — David Winterbottom
+    TIL That &#39;hub&#39; clashes with &#39;vim-polyglot&#39; — David Winterbottom
 </title>
 
         
@@ -56,22 +56,22 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>November 19, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>December 16, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>How to use Bandit with Vim&rsquo;s quickfix list</h1>
-        </header><p>One way to populate Vim&rsquo;s quickfix list is by running <code>:make</code> which runs the
-program specified by the <code>makeprg</code> setting. Due to Vim&rsquo;s C heritage, the default
-behaviour is to run the <code>make</code> command-line tool but there are many other useful
-programs that print locations to STDOUT.</p>
-<p><a href="https://bandit.readthedocs.io/en/latest/">Bandit</a> is a Python static analysis
-tool that looks for common security issues. You can use it to populate the
-quickfix list by setting:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">makeprg</span>=<span style="color:#a6e22e">bandit</span>\ -<span style="color:#a6e22e">r</span>\ -<span style="color:#a6e22e">f</span>\ <span style="color:#a6e22e">custom</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>then you can run <code>:make</code> to work through any warnings with <code>:cwindow</code>, <code>:cnext</code>
-etc.</p>
-<p>Note, <code>:make</code> will pass on any command-line options so you can do things like
-<code>:make -t B112</code> to work though just one type of warning.</p>
-<p>You can do a similar thing for linting errors by setting <code>makeprg=flake8</code>.</p>
+            <h1>That <code>hub</code> clashes with <code>vim-polyglot</code></h1>
+        </header><p>I use <a href="https://hub.github.com/">Github&rsquo;s <code>hub</code> library</a> to create pull requests with a command
+similar to:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ hub pull-request --edit ...
+</span></span></code></pre></div><p>The <code>--edit</code> option instructs <code>hub</code> to open a <code>.git/PULLREQ_EDITMSG</code> file in Vim
+where the pull request title and description can be edited.</p>
+<p>Unlike commit messages, pull request descriptions shouldn&rsquo;t be hard-wrapped, and
+<a href="https://github.com/github/hub/blob/38bcd4ae469e5f53f01901340b715c7658ab417a/github/editor.go#L148-L149">hub sets <code>textwidth=0</code> when opening Vim</a> to achieve this.</p>
+<p>However this wasn&rsquo;t in effect for me as it clashed with <code>vim-polyglot</code> with sets
+<code>textwidth=72</code> as part of <a href="https://github.com/sheerun/vim-polyglot/blob/master/ftplugin/gitcommit.vim#L17">its <code>ftcommit</code> file-type plugin</a>.</p>
+<p>You can see which file last set this option with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#a6e22e">verbose</span> <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">textwidth</span>?<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>See my <a href="https://codeinthehole.com/tips/debugging-vim-by-example/">&ldquo;Debugging Vim by example&rdquo;</a> blog post for more tips on debugging minor Vim
+issues like this one.</p>
 </article>
 
         </main>
@@ -95,11 +95,6 @@ etc.</p>
                 
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
                     <ul>
-                        
-                            <li><a href="/posts/that-hub-clashes-with-vimpolyglot/">That <code>hub</code> clashes with <code>vim-polyglot</code></a></li>
-
-                            
-                            
                         
                             <li><a href="/posts/how-to-use-stdin-to-populate-vims-quickfix-list/">How to use STDIN to populate Vim&rsquo;s quickfix list</a></li>
 
@@ -146,6 +141,11 @@ etc.</p>
                             
                             
                         
+                            <li><a href="/posts/how-to-use-custom-functions-with-cdo/">How to use custom functions with <code>:cdo</code></a></li>
+
+                            
+                            
+                        
                     </ul>
                 
 
@@ -161,10 +161,25 @@ etc.</p>
                 
 
                 
-                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/security/">Security</a>:</p>
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/github/">Github</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/sensitive-terraform-cloud-variables-are-included-in-sentinel-mocks/">Sensitive Terraform Cloud variables are included in Sentinel mocks</a></li>
+                            <li><a href="/posts/about-pycon-markdown-format/">About <code>pycon</code> markdown format</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-githubs-involves-search-filter/">About Github&rsquo;s <code>involves:$username</code> search filter</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-githubs-me-search-term/">About Github&rsquo;s <code>@me</code> search term</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-embed-markdown-content-in-a-github-code-block/">How to embed markdown content in a Github code block</a></li>
 
                             
                             
@@ -178,9 +193,9 @@ etc.</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -189,11 +204,9 @@ etc.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/exuberantctags-has-been-superceded-by-universalctags\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/djangos-json-encoder-rounds-datetimes-down-to-the-nearest-millisecond\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/you-can-convert-a-slack-group-direct-message-chat-into-a-private-channel\/"); })
         
     </script>
 
