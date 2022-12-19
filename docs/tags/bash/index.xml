@@ -6,11 +6,20 @@
     <description>Recent content in Bash on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Sep 2022 19:21:45 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 19 Dec 2022 13:38:43 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to make Homebrew-installed Bash your default shell</title>
+      <link>https://til.codeinthehole.com/posts/how-to-make-homebrewinstalled-bash-your-default-shell/</link>
+      <pubDate>Mon, 19 Dec 2022 13:38:43 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-make-homebrewinstalled-bash-your-default-shell/</guid>
+      <description>I realised today that despite having installed a modern version of Bash (via brew install bash), I was still running Bash v3.</description>
+    </item>
     
     <item>
       <title>`which` behaves diffferently in Zsh compared to Bash</title>

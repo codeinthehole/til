@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    I realised today that despite having installed a modern version of Bash (via brew install bash), I was still running Bash v3. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-make-homebrewinstalled-bash-your-default-shell/" />
+<meta property="og:title" content="TIL How to make Homebrew-installed Bash your default shell — David Winterbottom" />
+<meta property="og:description" content="I realised today that despite having installed a modern version of Bash (via brew install bash), I was still running Bash v3. [Reading time: 2 minutes]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to make Homebrew-installed Bash your default shell — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>December 19, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to make Homebrew-installed Bash your default shell</h1>
+        </header><p>I realised today that despite having installed a modern version of Bash (via
+<code>brew install bash</code>), I was still running Bash v3.2.57&mdash;the system version of
+MacOS&mdash;as my default login shell.</p>
+<pre tabindex="0"><code>$ bash --version
+GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin21)
+Copyright (C) 2007 Free Software Foundation, Inc.
+</code></pre><p>This is because there are some post-installation steps that need to be followed,
+and these aren&rsquo;t mentioned in the <a href="https://formulae.brew.sh/formula/bash">Homebrew formulae notes</a>.</p>
+<p>Specifically you need to allow-list the Homebrew-installed version so it can be
+used as a login shell by adding the path to <code>/etc/shells</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo <span style="color:#66d9ef">$(</span>brew --prefix<span style="color:#66d9ef">)</span>/bin/bash | sudo tee -a /etc/shells
+</span></span></code></pre></div><p>Then configure MacOS to use the Homebrew Bash as your user&rsquo;s default login
+shell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>chsh -s <span style="color:#66d9ef">$(</span>brew --prefix<span style="color:#66d9ef">)</span>/bin/bash
+</span></span></code></pre></div><p>It&rsquo;s also possible to change a user&rsquo;s default login shell from the &ldquo;Users and
+Groups&rdquo; section of system preferences. To do this, CTRL-click on your user and
+use the &ldquo;advanced options&rdquo; pop-up.</p>
+<p>Verify this has worked by starting a new shell session and running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo $BASH_VERSION
+</span></span><span style="display:flex;"><span>5.2.12<span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>-release
+</span></span></code></pre></div><h1 id="autocomplete-woes">Autocomplete woes</h1>
+<p>This was a yak-shave TIL shaken out of debugging why Git autocomplete wasn&rsquo;t
+working. As part of the investigation, I realised the <a href="https://formulae.brew.sh/formula/bash-completion@2"><code>bash-completion@2</code>
+Homebrew package</a> script wasn&rsquo;t sourcing each
+package&rsquo;s autocomplete files as <a href="https://github.com/scop/bash-completion/blob/master/bash_completion.sh.in#L5-L7">the Bash version test</a> wasn&rsquo;t
+passing.</p>
+<p>As it turns out, upgrading Bash and getting <code>bash-completion@2</code> to work didn&rsquo;t
+fix the Git issue as the root cause was a <a href="https://formulae.brew.sh/formula/bash-completion@2">incompatibility between <code>hub</code> and
+modern Git versions</a>.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/bash/">Bash</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/which-behaves-diffferently-in-zsh-compared-to-bash/"><code>which</code> behaves diffferently in Zsh compared to Bash</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-join-an-array-in-bash/">How to join an array in Bash</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-bashs-seconds-shell-variable/">About Bash&rsquo;s <code>$SECONDS</code> shell variable</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-ubuntus-alert-bash-alias/">About Ubuntu&rsquo;s <code>alert</code> Bash alias</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-readonly-bash-variables/">About <code>readonly</code> Bash variables</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-bashs-debug-signal/">About Bash&rsquo;s DEBUG signal</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-hub-clashes-with-vimpolyglot\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

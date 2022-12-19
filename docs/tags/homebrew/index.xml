@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homebrew - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/homebrew/</link>
+    <description>Recent content in Homebrew on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Dec 2022 13:38:43 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to make Homebrew-installed Bash your default shell</title>
+      <link>https://til.codeinthehole.com/posts/how-to-make-homebrewinstalled-bash-your-default-shell/</link>
+      <pubDate>Mon, 19 Dec 2022 13:38:43 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-make-homebrewinstalled-bash-your-default-shell/</guid>
+      <description>I realised today that despite having installed a modern version of Bash (via brew install bash), I was still running Bash v3.</description>
+    </item>
+    
+
+  </channel>
+</rss>

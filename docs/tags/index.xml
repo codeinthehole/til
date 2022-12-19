@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Dec 2022 21:17:06 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Dec 2022 13:38:43 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Bash</title>
+      <link>https://til.codeinthehole.com/tags/bash/</link>
+      <pubDate>Mon, 19 Dec 2022 13:38:43 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Homebrew</title>
+      <link>https://til.codeinthehole.com/tags/homebrew/</link>
+      <pubDate>Mon, 19 Dec 2022 13:38:43 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/homebrew/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Github</title>
@@ -126,15 +144,6 @@
       <pubDate>Tue, 04 Oct 2022 15:42:26 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bash</title>
-      <link>https://til.codeinthehole.com/tags/bash/</link>
-      <pubDate>Thu, 29 Sep 2022 19:21:45 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/bash/</guid>
       <description></description>
     </item>
     
