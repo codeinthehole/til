@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    You can create tabular data from JSON using jq to generate tab-separated output and column to format. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-format-json-into-a-table-with-jq-and-column/" />
+<meta property="og:title" content="TIL How to format JSON into a table with &#39;jq&#39; and &#39;column&#39; — David Winterbottom" />
+<meta property="og:description" content="You can create tabular data from JSON using jq to generate tab-separated output and column to format. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to format JSON into a table with &#39;jq&#39; and &#39;column&#39; — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>January 5, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to format JSON into a table with <code>jq</code> and <code>column</code></h1>
+        </header><p>You can create tabular data from JSON using <code>jq</code> to generate tab-separated
+output and <code>column</code> to format.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ echo sample.json | jq -r <span style="color:#e6db74">&#39;.[] | [.name, .age] | @tsv&#39;</span> | column -t -s <span style="color:#e6db74">$&#39;\t&#39;</span>
+</span></span></code></pre></div><p>Here&rsquo;s a more involved example using Github&rsquo;s <a href="https://cli.github.com/"><code>gh</code> tool</a> to fetch a list of
+open pull requests:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ gh pr list --json number,title,author <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    | jq -r <span style="color:#e6db74">&#39;.[] | [ .author.login, &#34;#&#34; + (.number|tostring) + &#34; &#34; + .title] | @tsv&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    | column -t -s<span style="color:#e6db74">$&#39;\t&#39;</span>
+</span></span><span style="display:flex;"><span>codeinthehole   <span style="color:#75715e">#450 Add convention on accessing environment variables</span>
+</span></span><span style="display:flex;"><span>LomaxOnTheRun   <span style="color:#75715e">#449 Move info from Github wiki</span>
+</span></span><span style="display:flex;"><span>codeinthehole   <span style="color:#75715e">#443 Format all files with `proseWrap=always`</span>
+</span></span><span style="display:flex;"><span>datur           <span style="color:#75715e">#428 Refactor GraphQL versioning and deprecation Conventions</span>
+</span></span><span style="display:flex;"><span>Dotrar          <span style="color:#75715e">#427 Add next-page template information</span>
+</span></span><span style="display:flex;"><span>cloverlime      <span style="color:#75715e">#425 Add advice for creating indexes on big tables</span>
+</span></span><span style="display:flex;"><span>zero4994        <span style="color:#75715e">#419 Add notes to pycharm guide</span>
+</span></span></code></pre></div><p>I spotted the <code>column</code> tip in <a href="https://stackoverflow.com/a/39144364">this Stack Overflow answer</a>.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/jq/">JQ</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/you-can-use-jq-to-build-json-payloads/">You can use JQ to build JSON payloads</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-jqs-slurp-option/">About <code>jq</code>&rsquo;s <code>--slurp</code> option</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-shuf-to-take-random-samples-of-lines/">You can use <code>shuf</code> to take random samples of lines</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/aws-availability-zones-have-counterintuitive-ids/">AWS Availability Zones have counter-intuitive IDs</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-make-homebrewinstalled-bash-your-default-shell\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

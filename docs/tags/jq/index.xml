@@ -6,11 +6,20 @@
     <description>Recent content in JQ on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Nov 2022 19:24:31 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Jan 2023 11:19:09 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/jq/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to format JSON into a table with `jq` and `column`</title>
+      <link>https://til.codeinthehole.com/posts/how-to-format-json-into-a-table-with-jq-and-column/</link>
+      <pubDate>Thu, 05 Jan 2023 11:19:09 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-format-json-into-a-table-with-jq-and-column/</guid>
+      <description>You can create tabular data from JSON using jq to generate tab-separated output and column to format.</description>
+    </item>
     
     <item>
       <title>You can use JQ to build JSON payloads</title>
