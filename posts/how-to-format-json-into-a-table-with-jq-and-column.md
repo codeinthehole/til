@@ -1,7 +1,7 @@
 ---
 title: "How to format JSON into a table with `jq` and `column`"
 date: "2023-01-05T11:19:09+00:00"
-tags: ["JQ"]
+tags: ["JQ", "Command-line tools"]
 ---
 
 You can create tabular data from JSON using `jq` to generate tab-separated
@@ -29,5 +29,23 @@ zero4994        #419 Add notes to pycharm guide
 
 I spotted the `column` tip in [this Stack Overflow answer][so_answer].
 
+## Shell alias
+
+The `column` command is a little awkward due to the way the tab character needs
+to be escaped. You can create a shell alias to aid future use:
+
+```sh
+alias tabcolumns='column -t -s$'\''\t'\'''
+```
+
+Here the escaping is even worse but at least you don't have to type it in every
+time.
+
+---
+
+<small>Update: just discovered [this isn't the first time I've learnt
+this...][previous_post]</small>
+
 [so_answer]: https://stackoverflow.com/a/39144364
 [gh]: https://cli.github.com/
+[previous_post]: /posts/about-column/

@@ -75,6 +75,15 @@ open pull requests:</p>
 </span></span><span style="display:flex;"><span>cloverlime      <span style="color:#75715e">#425 Add advice for creating indexes on big tables</span>
 </span></span><span style="display:flex;"><span>zero4994        <span style="color:#75715e">#419 Add notes to pycharm guide</span>
 </span></span></code></pre></div><p>I spotted the <code>column</code> tip in <a href="https://stackoverflow.com/a/39144364">this Stack Overflow answer</a>.</p>
+<h2 id="shell-alias">Shell alias</h2>
+<p>The <code>column</code> command is a little awkward due to the way the tab character needs
+to be escaped. You can create a shell alias to aid future use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>alias tabcolumns<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;column -t -s$&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;\t&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;&#39;</span>
+</span></span></code></pre></div><p>Here the escaping is even worse but at least you don&rsquo;t have to type it in every
+time.</p>
+<hr>
+<p><small>Update: just discovered <a href="/posts/about-column/">this isn&rsquo;t the first time I&rsquo;ve learnt
+this&hellip;</a></small></p>
 </article>
 
         </main>
@@ -122,6 +131,73 @@ open pull requests:</p>
                     </ul>
                 
 
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/about-delta/">About delta, a viewer for Git and diff output</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/">How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-define-custom-filetype-filters-in-ripgrep/">You can define custom file-type filters in <code>ripgrep</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-specify-the-filetype-for-bat/">You can specify the file-type for <code>bat</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-envsubst/">About <code>envsubst</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/exuberantctags-has-been-superceded-by-universalctags/">Exuberant-ctags has been superceded by Universal-ctags</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-column/">About <code>column</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/fd-has-an-option-for-searching-filepaths/"><code>fd</code> has an option for searching filepaths</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-xargs-with-printf/">How to use <code>xargs</code> with <code>printf</code></a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
             
 
         
