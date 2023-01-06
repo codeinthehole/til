@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/github-copilot/</loc>
+    <lastmod>2023-01-06T09:21:18+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/how-to-automatically-disable-github-copilot-in-vim-when-editing-large-files/</loc>
+    <lastmod>2023-01-06T09:21:18+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2023-01-06T09:21:18+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2023-01-06T09:21:18+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2023-01-06T09:21:18+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/vim/</loc>
+    <lastmod>2023-01-06T09:21:18+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/command-line-tools/</loc>
     <lastmod>2023-01-05T11:19:09+00:00</lastmod>
   </url><url>
@@ -9,15 +27,6 @@
     <lastmod>2023-01-05T11:19:09+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/jq/</loc>
-    <lastmod>2023-01-05T11:19:09+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2023-01-05T11:19:09+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2023-01-05T11:19:09+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2023-01-05T11:19:09+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/bash/</loc>
@@ -33,9 +42,6 @@
     <lastmod>2022-12-16T21:17:06+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-hub-clashes-with-vimpolyglot/</loc>
-    <lastmod>2022-12-16T21:17:06+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/vim/</loc>
     <lastmod>2022-12-16T21:17:06+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/django/</loc>

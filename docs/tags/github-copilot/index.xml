@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github Copilot - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/github-copilot/</link>
+    <description>Recent content in Github Copilot on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Jan 2023 09:21:18 +0000</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/github-copilot/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to automatically disable Github Copilot in Vim when editing large files</title>
+      <link>https://til.codeinthehole.com/posts/how-to-automatically-disable-github-copilot-in-vim-when-editing-large-files/</link>
+      <pubDate>Fri, 06 Jan 2023 09:21:18 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-automatically-disable-github-copilot-in-vim-when-editing-large-files/</guid>
+      <description>Since installing vim-copilot, editing large files had become noticeably slow.</description>
+    </item>
+    
+
+  </channel>
+</rss>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Since installing vim-copilot, editing large files had become noticeably slow. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-automatically-disable-github-copilot-in-vim-when-editing-large-files/" />
+<meta property="og:title" content="TIL How to automatically disable Github Copilot in Vim when editing large files — David Winterbottom" />
+<meta property="og:description" content="Since installing vim-copilot, editing large files had become noticeably slow. [Reading time: 2 minutes]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to automatically disable Github Copilot in Vim when editing large files — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>January 6, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to automatically disable Github Copilot in Vim when editing large files</h1>
+        </header><p>Since installing <a href="https://github.com/github/copilot.vim"><code>vim-copilot</code></a>, editing large files had become
+noticeably slow. Profiling<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> a simple insert-mode operation confirmed my
+suspicions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>FUNCTIONS SORTED ON TOTAL TIME
+</span></span><span style="display:flex;"><span>count  total (s)   self (s)  function
+</span></span><span style="display:flex;"><span>    3   4.460965   0.000162  &lt;SNR&gt;36_Trigger()
+</span></span><span style="display:flex;"><span>    3   4.460803   0.000084  copilot#Suggest()
+</span></span><span style="display:flex;"><span>    3   4.460719   0.000295  copilot#Complete()
+</span></span><span style="display:flex;"><span>    3   4.451540   0.000058  copilot#Request()
+</span></span><span style="display:flex;"><span>    3   4.451375   0.000092  &lt;SNR&gt;71_AgentRequest()
+</span></span><span style="display:flex;"><span>    6   4.451242   4.451096  &lt;SNR&gt;71_Send()
+</span></span><span style="display:flex;"><span>    3   0.008823   0.001926  copilot#doc#Params()
+</span></span><span style="display:flex;"><span>    5   0.007114   0.000107  &lt;SNR&gt;35_Event()
+</span></span><span style="display:flex;"><span>    3   0.006897   0.006475  copilot#doc#Get()
+</span></span><span style="display:flex;"><span>    5   0.005713   0.000291  copilot#Clear()
+</span></span><span style="display:flex;"><span>    4   0.005379   0.000175  copilot#Schedule()
+</span></span><span style="display:flex;"><span>    5   0.005045   0.000761  &lt;SNR&gt;36_UpdatePreview()
+</span></span><span style="display:flex;"><span>    5   0.003847             &lt;SNR&gt;36_ClearPreview()
+</span></span><span style="display:flex;"><span>   17   0.003622   0.003201  &lt;SNR&gt;61_Highlight_Matching_Pair()
+</span></span><span style="display:flex;"><span>    3   0.003612   0.000022  copilot#OnCursorMovedI()
+</span></span><span style="display:flex;"><span>    1   0.002370   0.000531  copilot#OnInsertEnter()
+</span></span><span style="display:flex;"><span>    1   0.001025   0.000005  copilot#OnInsertLeave()
+</span></span><span style="display:flex;"><span>    3   0.000961   0.000036  &lt;lambda&gt;15()
+</span></span><span style="display:flex;"><span>    3   0.000925             &lt;SNR&gt;71_OnOut()
+</span></span><span style="display:flex;"><span>    4   0.000511   0.000120  copilot#Enabled()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>FUNCTIONS SORTED ON SELF TIME
+</span></span><span style="display:flex;"><span>count  total (s)   self (s)  function
+</span></span><span style="display:flex;"><span>    6   4.451242   4.451096  &lt;SNR&gt;71_Send()
+</span></span><span style="display:flex;"><span>    3   0.006897   0.006475  copilot#doc#Get()
+</span></span><span style="display:flex;"><span>    5              0.003847  &lt;SNR&gt;36_ClearPreview()
+</span></span><span style="display:flex;"><span>   17   0.003622   0.003201  &lt;SNR&gt;61_Highlight_Matching_Pair()
+</span></span><span style="display:flex;"><span>    3   0.008823   0.001926  copilot#doc#Params()
+</span></span><span style="display:flex;"><span>    3              0.000925  &lt;SNR&gt;71_OnOut()
+</span></span><span style="display:flex;"><span>    5   0.005045   0.000761  &lt;SNR&gt;36_UpdatePreview()
+</span></span><span style="display:flex;"><span>    1   0.002370   0.000531  copilot#OnInsertEnter()
+</span></span><span style="display:flex;"><span>   17              0.000421  &lt;SNR&gt;61_Remove_Matches()
+</span></span><span style="display:flex;"><span>    5   0.000437   0.000421  &lt;SNR&gt;36_SuggestionTextWithAdjustments()
+</span></span><span style="display:flex;"><span>    3   4.460719   0.000295  copilot#Complete()
+</span></span><span style="display:flex;"><span>    5   0.005713   0.000291  copilot#Clear()
+</span></span><span style="display:flex;"><span>    3              0.000280  &lt;SNR&gt;94_RelativePath()
+</span></span><span style="display:flex;"><span>    4              0.000236  &lt;SNR&gt;36_BufferDisabled()
+</span></span><span style="display:flex;"><span>    3              0.000183  &lt;SNR&gt;71_SetUpRequest()
+</span></span><span style="display:flex;"><span>    4   0.005379   0.000175  copilot#Schedule()
+</span></span><span style="display:flex;"><span>    3   0.000400   0.000171  &lt;SNR&gt;71_OnMessage()
+</span></span><span style="display:flex;"><span>    3   4.460965   0.000162  &lt;SNR&gt;36_Trigger()
+</span></span><span style="display:flex;"><span>    3              0.000156  &lt;SNR&gt;71_OnResponse()
+</span></span><span style="display:flex;"><span>    9              0.000133  copilot#logger#Raw()j
+</span></span></code></pre></div><p>As you can see, around 4 seconds was spent fetching Copilot suggestions in the
+<code>copilot#Suggest()</code> call, which is unacceptably slow.</p>
+<p>To remedy, I added an autocommand to disable Copilot for large files:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#75715e">&#34; (Line-wrapped for legibility)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">BufReadPre</span> *<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    \ <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">f</span>=<span style="color:#a6e22e">getfsize</span>(<span style="color:#a6e22e">expand</span>(<span style="color:#e6db74">&#34;&lt;afile&gt;&#34;</span>))<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    \ | <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">f</span> &gt; <span style="color:#ae81ff">100000</span> || <span style="color:#a6e22e">f</span> == <span style="color:#ae81ff">-2</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    \ | <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span>:<span style="color:#a6e22e">copilot_enabled</span> = <span style="color:#a6e22e">v</span>:<span style="color:#a6e22e">false</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    \ | <span style="color:#66d9ef">endif</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>This autocommand runs when loading a new buffer. It fetches the file size and
+disables Copilot for the buffer if the file size is greater than 100kb.</p>
+<p>This autocommand was adapted from a similar one in the <a href="https://vim.fandom.com/wiki/Faster_loading_of_large_files">Vim tips
+wiki</a>.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>See my <a href="https://codeinthehole.com/tips/debugging-vim-by-example/#why-is-action-slow">debugging Vim by example</a> blog post for more info on how
+to debug performance problems.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/that-hub-clashes-with-vimpolyglot/">That <code>hub</code> clashes with <code>vim-polyglot</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-stdin-to-populate-vims-quickfix-list/">How to use STDIN to populate Vim&rsquo;s quickfix list</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-get-vale-to-work-with-vims-ale-plugin/">How to get Vale to work with Vim&rsquo;s Ale plugin</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/">How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-vim-can-transform-replacement-values-when-substituting/">That Vim can transform replacement values when substituting</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-delete-all-buffers-in-vim/">How to delete all buffers in Vim</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-the-aleinfo-command/">About the <code>:ALEInfo</code> command</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-vims-semicolon-search-offset/">About Vim&rsquo;s semi-colon search offset</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-vims-uppercase-marks-are-global-and-persistent/">That Vim&rsquo;s uppercase marks are global and persistent</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/">That <code>vim-polyglot</code> conflicts with Hub when creating pull requests</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-format-json-into-a-table-with-jq-and-column\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
