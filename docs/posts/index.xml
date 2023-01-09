@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Jan 2023 09:21:18 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jan 2023 13:50:19 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>A better technique for roasting chicken</title>
+      <link>https://til.codeinthehole.com/posts/a-better-technique-for-cooking-roast-chicken/</link>
+      <pubDate>Mon, 09 Jan 2023 13:50:19 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/a-better-technique-for-cooking-roast-chicken/</guid>
+      <description>There&amp;rsquo;s a great article on cooking chicken by ThermoWorks, from which I learnt a few things.</description>
+    </item>
     
     <item>
       <title>How to automatically disable Github Copilot in Vim when editing large files</title>

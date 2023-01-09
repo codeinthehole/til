@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Jan 2023 09:21:18 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jan 2023 13:50:19 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Chicken</title>
+      <link>https://til.codeinthehole.com/tags/chicken/</link>
+      <pubDate>Mon, 09 Jan 2023 13:50:19 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/chicken/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Food</title>
+      <link>https://til.codeinthehole.com/tags/food/</link>
+      <pubDate>Mon, 09 Jan 2023 13:50:19 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/food/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Github Copilot</title>
