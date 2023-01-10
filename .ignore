@@ -3,3 +3,6 @@ docs/
 
 # Lock files
 *.lock
+
+# Image files
+*.png
