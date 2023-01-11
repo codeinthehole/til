@@ -19,7 +19,7 @@ $ git log --patch --follow -- LICENSE
 
 which reveals:
 
-{{< figure src="/images/history-of-django-license-file.png" title="" caption="" alt="History of Django LICENSE file" >}}
+{{< figure src="/images/history-of-django-license-file.png" link="/images/history-of-django-license-file.png" title="" caption="" alt="History of Django LICENSE file" >}}
 
 ## Not possible in Github
 
@@ -33,4 +33,4 @@ This works nicely with `vim-fugitive`. Running `:Git log -p --follow %` opens
 the history for the current file in a split with all of Fugitive's helpful
 key-binds available for traversing the commits.
 
-{{< figure src="/images/history-of-a-file-in-vim.png" title="" caption="" alt="History of a file in Vim" >}}
+{{< figure src="/images/history-of-a-file-in-vim.png" link="/images/history-of-a-file-in-vim.png" title="" caption="" alt="History of a file in Vim" >}}
