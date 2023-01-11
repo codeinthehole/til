@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Jan 2023 13:50:19 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jan 2023 15:41:02 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to show the history of a file with `git log --patch`</title>
+      <link>https://til.codeinthehole.com/posts/how-to-show-the-history-of-a-file-with-git-log-patch/</link>
+      <pubDate>Wed, 11 Jan 2023 15:41:02 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-show-the-history-of-a-file-with-git-log-patch/</guid>
+      <description>Am slightly embarrassed to admit it but I&amp;rsquo;ve only just discovered the --patch option to git log which shows diff information for each commit.</description>
+    </item>
     
     <item>
       <title>A better technique for roasting chicken</title>

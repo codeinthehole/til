@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    delta provides much improved diff views in the terminal. ...
+    Am slightly embarrassed to admit it but I’ve only just discovered the &amp;ndash;patch option to git log which shows diff information for each commit. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-delta/" />
-<meta property="og:title" content="TIL About delta, a viewer for Git and diff output — David Winterbottom" />
-<meta property="og:description" content="delta provides much improved diff views in the terminal. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-show-the-history-of-a-file-with-git-log-patch/" />
+<meta property="og:title" content="TIL How to show the history of a file with &#39;git log --patch&#39; — David Winterbottom" />
+<meta property="og:description" content="Am slightly embarrassed to admit it but I&rsquo;ve only just discovered the --patch option to git log which shows diff information for each commit. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About delta, a viewer for Git and diff output — David Winterbottom
+    TIL How to show the history of a file with &#39;git log --patch&#39; — David Winterbottom
 </title>
 
         
@@ -56,36 +56,34 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>March 19, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>January 11, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About delta, a viewer for Git and diff output</h1>
-        </header><p><a href="https://github.com/dandavison/delta"><code>delta</code></a> provides much improved diff views
-in the terminal. It provides things like:</p>
-<ul>
-<li>
-<p>Syntax highlighting with color themes</p>
-</li>
-<li>
-<p>Within-line highlights</p>
-</li>
-<li>
-<p>Side-by-side view</p>
-</li>
-</ul>
-<p>After <code>brew install git-delta</code>, you can configure Git to use it via something
-like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dosini" data-lang="dosini"><span style="display:flex;"><span><span style="color:#75715e"># ~/.gitconfig</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[delta]</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">features</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">decorations
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    whitespace-error-style = 22 reverse</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[delta &#34;decorations&#34;]</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">commit-decoration-style</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">bold yellow box ul
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    file-style = bold
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    file-decoration-style = red box
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    hunk-header-decoration-style = ul</span>
-</span></span></code></pre></div></article>
+            <h1>How to show the history of a file with <code>git log --patch</code></h1>
+        </header><p>Am slightly embarrassed to admit it but I&rsquo;ve only just discovered the <code>--patch</code>
+option to <code>git log</code> which shows diff information for each commit.</p>
+<h2 id="history-of-a-file">History of a file</h2>
+<p>It&rsquo;s particular useful for inspecting the history of a single file, showing the
+the change that each commit made. For example, here&rsquo;s how to example the changes
+to Django&rsquo;s <code>LICENSE</code> file over the years:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ git log --patch --follow -- LICENSE
+</span></span></code></pre></div><p>which reveals:</p>
+<figure><img src="/images/history-of-django-license-file.png"
+         alt="History of Django LICENSE file"/>
+</figure>
+
+<h2 id="not-possible-in-github">Not possible in Github</h2>
+<p>There&rsquo;s no equivalent feature to this in Github&rsquo;s UI. While the &ldquo;history&rdquo; page
+for a file shows the commits that have touched it, there&rsquo;s no easy way to see
+the diff for that file in each commit.</p>
+<h2 id="in-vim">In Vim</h2>
+<p>This works nicely with <code>vim-fugitive</code>. Running <code>:Git log -p --follow %</code> opens
+the history for the current file in a split with all of Fugitive&rsquo;s helpful
+key-binds available for traversing the commits.</p>
+<figure><img src="/images/history-of-a-file-in-vim.png"
+         alt="History of a file in Vim"/>
+</figure>
+
+</article>
 
         </main>
 
@@ -108,11 +106,6 @@ like:</p>
                 
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
                     <ul>
-                        
-                            <li><a href="/posts/how-to-show-the-history-of-a-file-with-git-log-patch/">How to show the history of a file with <code>git log --patch</code></a></li>
-
-                            
-                            
                         
                             <li><a href="/posts/how-to-continue-a-git-rebase-and-skip-editing-the-commit-message/">How to continue a Git rebase and skip editing the commit message</a></li>
 
@@ -159,6 +152,11 @@ like:</p>
                             
                             
                         
+                            <li><a href="/posts/about-delta/">About delta, a viewer for Git and diff output</a></li>
+
+                            
+                            
+                        
                     </ul>
                 
 
@@ -174,55 +172,55 @@ like:</p>
                 
 
                 
-                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/how-to-format-json-into-a-table-with-jq-and-column/">How to format JSON into a table with <code>jq</code> and <code>column</code></a></li>
+                            <li><a href="/posts/how-to-automatically-disable-github-copilot-in-vim-when-editing-large-files/">How to automatically disable Github Copilot in Vim when editing large files</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/">How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></a></li>
+                            <li><a href="/posts/that-hub-clashes-with-vimpolyglot/">That <code>hub</code> clashes with <code>vim-polyglot</code></a></li>
 
                             
                             
                         
-                            <li><a href="/posts/you-can-define-custom-filetype-filters-in-ripgrep/">You can define custom file-type filters in <code>ripgrep</code></a></li>
+                            <li><a href="/posts/how-to-use-stdin-to-populate-vims-quickfix-list/">How to use STDIN to populate Vim&rsquo;s quickfix list</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/you-can-specify-the-filetype-for-bat/">You can specify the file-type for <code>bat</code></a></li>
+                            <li><a href="/posts/how-to-get-vale-to-work-with-vims-ale-plugin/">How to get Vale to work with Vim&rsquo;s Ale plugin</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/about-envsubst/">About <code>envsubst</code></a></li>
+                            <li><a href="/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/">How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
+                            <li><a href="/posts/that-vim-can-transform-replacement-values-when-substituting/">That Vim can transform replacement values when substituting</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/exuberantctags-has-been-superceded-by-universalctags/">Exuberant-ctags has been superceded by Universal-ctags</a></li>
+                            <li><a href="/posts/how-to-delete-all-buffers-in-vim/">How to delete all buffers in Vim</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/about-column/">About <code>column</code></a></li>
+                            <li><a href="/posts/about-the-aleinfo-command/">About the <code>:ALEInfo</code> command</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/fd-has-an-option-for-searching-filepaths/"><code>fd</code> has an option for searching filepaths</a></li>
+                            <li><a href="/posts/about-vims-semicolon-search-offset/">About Vim&rsquo;s semi-colon search offset</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/how-to-use-xargs-with-printf/">How to use <code>xargs</code> with <code>printf</code></a></li>
+                            <li><a href="/posts/that-vims-uppercase-marks-are-global-and-persistent/">That Vim&rsquo;s uppercase marks are global and persistent</a></li>
 
                             
                             
@@ -236,9 +234,9 @@ like:</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -247,11 +245,9 @@ like:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-have-classscoped-autouse-pytest-fixtures\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/a-better-technique-for-cooking-roast-chicken\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/what-the-sections-of-the-unix-manual-are\/"); })
         
     </script>
 

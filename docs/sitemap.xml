@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/git/</loc>
+    <lastmod>2023-01-11T15:41:02+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/how-to-show-the-history-of-a-file-with-git-log-patch/</loc>
+    <lastmod>2023-01-11T15:41:02+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2023-01-11T15:41:02+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2023-01-11T15:41:02+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2023-01-11T15:41:02+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/vim/</loc>
+    <lastmod>2023-01-11T15:41:02+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/a-better-technique-for-cooking-roast-chicken/</loc>
     <lastmod>2023-01-09T13:50:19+00:00</lastmod>
   </url><url>
@@ -11,22 +29,10 @@
     <loc>https://til.codeinthehole.com/tags/food/</loc>
     <lastmod>2023-01-09T13:50:19+00:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2023-01-09T13:50:19+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2023-01-09T13:50:19+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
-    <lastmod>2023-01-09T13:50:19+00:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/tags/github-copilot/</loc>
     <lastmod>2023-01-06T09:21:18+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-automatically-disable-github-copilot-in-vim-when-editing-large-files/</loc>
-    <lastmod>2023-01-06T09:21:18+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/vim/</loc>
     <lastmod>2023-01-06T09:21:18+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/command-line-tools/</loc>
@@ -253,9 +259,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-vim-can-transform-replacement-values-when-substituting/</loc>
     <lastmod>2021-11-15T10:46:34+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/git/</loc>
-    <lastmod>2021-11-12T11:37:54+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-continue-a-git-rebase-and-skip-editing-the-commit-message/</loc>
     <lastmod>2021-11-12T11:37:54+00:00</lastmod>
