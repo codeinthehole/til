@@ -31,8 +31,8 @@ function main() {
     echo "Select portion of screen to copy"
     screencapture -i "$filepath"
 
-    # Shrink image so it's no wider than 700px.
-    mogrify -resize '700x700^' "$filepath" 
+    # Shrink wide images so they are no wider than 700px.
+    mogrify -resize '700^' "$filepath" 
 
     # Compress image
     pngcrush -ow "$filepath" 2> /dev/null
