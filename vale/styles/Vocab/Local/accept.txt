@@ -51,7 +51,11 @@ Liskov
 
 # British
 onwards
+foodborne
 
 # Companies
 Hashicorp
 Hashrocket
+
+# Product names
+thermapen
