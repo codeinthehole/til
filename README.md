@@ -90,4 +90,17 @@ of the screen. After selection, the resulting PNG image will be saved to
 markdown to include in the post will be added to the system clipboard.
 
 After saving and exiting Vim, the markdown file and any new images will be
-committed to the repo.
+committed to the repo and published to Github Pages.
+
+## Linting and fixing
+
+Config files are provided for:
+
+- [Vale](https://vale.sh/) (`.vale.ini` and `vale/`) - a custom dictionary is
+  kept in `vale/styles/Vocab/Local/accept.txt`.
+- [MarkdownLint](https://github.com/DavidAnson/markdownlint) (`.markdownlint.yml`).
+- [Prettier](https://prettier.io/) (`.prettierrc.yaml` and `.prettierignore`).
+
+It is recommended that `vale` and `markdownlint` are as used as linters, and
+`prettier` is used as pre-save fixer.
+
