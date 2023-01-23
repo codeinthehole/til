@@ -60,9 +60,10 @@
             </div>
             <h1>How to easily disable a CircleCI workflow</h1>
         </header><p>Sometimes it&rsquo;s useful to only run a subset of CircleCI jobs after each commit to
-a pull request branch. For instance, if you&rsquo;re working on packaging step of your
-test-package-deploy pipeline, it&rsquo;s helpful to create a faster feedback loop by
-only running the packaging jobs after each push.</p>
+a pull request branch.</p>
+<p>For instance, if you&rsquo;re working on the packaging step of your
+test-package-deploy pipeline, speed up your feedback loop by only running the
+packaging jobs after each push.</p>
 <p>This can be done by adding a temporary commit that disables the main workflow
 and adds a custom one running only the jobs you care about.</p>
 <p>You can disable a CircleCI workflow using the <code>when</code> attribute:</p>

@@ -5,9 +5,11 @@ tags: ["CircleCI", "Testing"]
 ---
 
 Sometimes it's useful to only run a subset of CircleCI jobs after each commit to
-a pull request branch. For instance, if you're working on packaging step of your
-test-package-deploy pipeline, it's helpful to create a faster feedback loop by
-only running the packaging jobs after each push.
+a pull request branch.
+
+For instance, if you're working on the packaging step of your
+test-package-deploy pipeline, speed up your feedback loop by only running the
+packaging jobs after each push.
 
 This can be done by adding a temporary commit that disables the main workflow
 and adds a custom one running only the jobs you care about.
