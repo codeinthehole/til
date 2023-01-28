@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Jan 2023 15:41:02 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Jan 2023 11:21:10 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Not to union Python list types</title>
+      <link>https://til.codeinthehole.com/posts/not-to-union-python-list-types/</link>
+      <pubDate>Sat, 28 Jan 2023 11:21:10 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/not-to-union-python-list-types/</guid>
+      <description>Consider this contrived function which either returns a list of tuples or a list of dicts depending on an argument value:</description>
+    </item>
     
     <item>
       <title>How to show the history of a file with `git log --patch`</title>
