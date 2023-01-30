@@ -77,7 +77,7 @@ hard-coded list of tuples:</p>
 <p>Mypy can be placated by rewriting the return type as
 <code>list[tuple[Any, ...], dict[str, Any]]</code> where the list item types are <code>Union</code>ed
 instead.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(q: str, return_dict: bool) <span style="color:#f92672">-&gt;</span> list[tuple[Any, <span style="color:#f92672">...</span>] <span style="color:#f92672">|</span> [dict[str, Any]]:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(q: str, return_dict: bool) <span style="color:#f92672">-&gt;</span> list[tuple[Any, <span style="color:#f92672">...</span>] <span style="color:#f92672">|</span> dict[str, Any]]:
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> q:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> []
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> return_dict:

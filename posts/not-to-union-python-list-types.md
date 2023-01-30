@@ -33,7 +33,7 @@ Mypy can be placated by rewriting the return type as
 instead.
 
 ```py
-def f(q: str, return_dict: bool) -> list[tuple[Any, ...] | [dict[str, Any]]:
+def f(q: str, return_dict: bool) -> list[tuple[Any, ...] | dict[str, Any]]:
     if not q:
         return []
     if return_dict:
