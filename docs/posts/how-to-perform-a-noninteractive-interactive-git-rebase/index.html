@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    During an interactive rebase, when you’ve fixed the conflicts or finished editing the commit you can run: ...
+    If you create a load of fix-up commits using: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-continue-a-git-rebase-and-skip-editing-the-commit-message/" />
-<meta property="og:title" content="TIL How to continue a Git rebase and skip editing the commit message — David Winterbottom" />
-<meta property="og:description" content="During an interactive rebase, when you&rsquo;ve fixed the conflicts or finished editing the commit you can run: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-perform-a-noninteractive-interactive-git-rebase/" />
+<meta property="og:title" content="TIL How to perform a non-interactive, interactive Git rebase — David Winterbottom" />
+<meta property="og:description" content="If you create a load of fix-up commits using: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL How to continue a Git rebase and skip editing the commit message — David Winterbottom
+    TIL How to perform a non-interactive, interactive Git rebase — David Winterbottom
 </title>
 
         
@@ -56,25 +56,23 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>November 12, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>February 15, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>How to continue a Git rebase and skip editing the commit message</h1>
-        </header><p>During an interactive rebase, when you&rsquo;ve fixed the conflicts or finished
-editing the commit you can run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git rebase --continue
-</span></span></code></pre></div><p>to continue rebasing. Before proceeding, this will open the commit message in
-your configured editor so you can make any adjustments based on the changes
-you&rsquo;ve made.</p>
-<p>However, 90% of the time I don&rsquo;t want to edit the commit message as I&rsquo;m just
-fixing a minor issue and the existing commit message is still accurate. The
-editor step is superfluous and a waste of time.</p>
-<p>To skip the editor step entirely you can use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>GIT_EDITOR<span style="color:#f92672">=</span>true git rebase --continue
-</span></span></code></pre></div><p>which replaces the editor program with <code>true</code> which simply exits with a zero
-exit code.</p>
-<p>Source:
-<a href="https://stackoverflow.com/questions/43489971/how-to-suppress-the-editor-for-git-rebase-continue">&ldquo;How to suppress the editor for <code>git rebase --continue</code>?&rdquo;</a>
-on Stack Overflow.</p>
+            <h1>How to perform a non-interactive, interactive Git rebase</h1>
+        </header><p>If you create a load of fix-up commits using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit --fixup $COMMIT_HASH
+</span></span></code></pre></div><p>then you don&rsquo;t necessarily want to run <code>git rebase</code> in interactive mode to fold
+these commits into the branch history.</p>
+<p>The <code>--autosquash</code> option is sufficient as it re-orders the rebase todo list to
+squash the fix-up commits into their biological parents.</p>
+<p>In such cases, opening and closing an editor is a waste of time.</p>
+<p>Instead, use the <code>GIT_SEQUENCE_EDITOR</code> environment variable to specify a
+non-interactive no-op &ldquo;editor&rdquo; like <code>true</code> (or even merely <code>:</code>). E.g.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GIT_SEQUENCE_EDITOR<span style="color:#f92672">=</span>true git rebase --autosquash -i origin/master
+</span></span></code></pre></div><p>This will fold the fix-up commits into your branch history in one command.</p>
+<h3 id="source">Source</h3>
+<p>Tip found in <a href="https://stackoverflow.com/a/29094904">this StackOverflow answer</a> and <a href="https://www.reddit.com/r/git/comments/uzh2no/what_is_the_utility_of_noninteractive_rebase/">this Reddit
+thread</a></p>
 </article>
 
         </main>
@@ -99,12 +97,12 @@ on Stack Overflow.</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/how-to-perform-a-noninteractive-interactive-git-rebase/">How to perform a non-interactive, interactive Git rebase</a></li>
+                            <li><a href="/posts/how-to-show-the-history-of-a-file-with-git-log-patch/">How to show the history of a file with <code>git log --patch</code></a></li>
 
                             
                             
                         
-                            <li><a href="/posts/how-to-show-the-history-of-a-file-with-git-log-patch/">How to show the history of a file with <code>git log --patch</code></a></li>
+                            <li><a href="/posts/how-to-continue-a-git-rebase-and-skip-editing-the-commit-message/">How to continue a Git rebase and skip editing the commit message</a></li>
 
                             
                             
@@ -159,9 +157,9 @@ on Stack Overflow.</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -170,11 +168,9 @@ on Stack Overflow.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-aws-aurora-clusters-have-two-types-of-storage\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-write-vimscript-functions-that-operate-on-a-visually-selected-area\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/that-vim-can-transform-replacement-values-when-substituting\/"); })
         
     </script>
 
