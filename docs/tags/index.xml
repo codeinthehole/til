@@ -6,11 +6,38 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Feb 2023 14:49:51 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Feb 2023 21:13:57 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Command-line tools</title>
+      <link>https://til.codeinthehole.com/tags/command-line-tools/</link>
+      <pubDate>Wed, 22 Feb 2023 21:13:57 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/command-line-tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://til.codeinthehole.com/tags/rust/</link>
+      <pubDate>Wed, 22 Feb 2023 21:13:57 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://til.codeinthehole.com/tags/vim/</link>
+      <pubDate>Wed, 22 Feb 2023 21:13:57 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/vim/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Git</title>
@@ -18,15 +45,6 @@
       <pubDate>Wed, 15 Feb 2023 14:49:51 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vim</title>
-      <link>https://til.codeinthehole.com/tags/vim/</link>
-      <pubDate>Sat, 28 Jan 2023 11:57:30 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/vim/</guid>
       <description></description>
     </item>
     
@@ -72,15 +90,6 @@
       <pubDate>Fri, 06 Jan 2023 09:21:18 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/github-copilot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Command-line tools</title>
-      <link>https://til.codeinthehole.com/tags/command-line-tools/</link>
-      <pubDate>Thu, 05 Jan 2023 11:19:09 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/command-line-tools/</guid>
       <description></description>
     </item>
     
@@ -279,15 +288,6 @@
       <pubDate>Wed, 27 Apr 2022 09:22:58 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rust</title>
-      <link>https://til.codeinthehole.com/tags/rust/</link>
-      <pubDate>Wed, 27 Apr 2022 09:22:58 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/rust/</guid>
       <description></description>
     </item>
     

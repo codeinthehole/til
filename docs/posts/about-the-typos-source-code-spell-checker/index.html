@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    typos is a source code spell checker written Rust that’s useful for finding typos in code comments and variable names. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-the-typos-source-code-spell-checker/" />
+<meta property="og:title" content="TIL About the &#39;typos&#39; source code spell checker — David Winterbottom" />
+<meta property="og:description" content="typos is a source code spell checker written Rust that&rsquo;s useful for finding typos in code comments and variable names. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL About the &#39;typos&#39; source code spell checker — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>February 22, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>About the <code>typos</code> source code spell checker</h1>
+        </header><p><a href="https://github.com/crate-ci/typos"><code>typos</code></a> is a source code spell checker written Rust that&rsquo;s
+useful for finding typos in code comments and variable names.</p>
+<p>On MacOS you can install from Homebrew:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>brew install typos-cli
+</span></span></code></pre></div><p>and run with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>typos
+</span></span></code></pre></div><p>It does tend to yield some false positives but it&rsquo;s still useful.</p>
+<h2 id="fixing-typos-in-a-project">Fixing typos in a project</h2>
+<p>I use it to populate Vim&rsquo;s quickfix list via:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-viml" data-lang="viml"><span style="display:flex;"><span>:<span style="color:#a6e22e">cexpr</span> <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#39;typos --format=brief&#39;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>then use <code>,z</code> to replace the word under cursor with the top spelling suggestion,
+which is usually right:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-viml" data-lang="viml"><span style="display:flex;"><span><span style="color:#75715e">&#34; ~/.vimrc</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#34; Replace word under cursor with top spelling suggestion</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">nnoremap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">z</span> <span style="color:#ae81ff">1</span>z=<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Haven&rsquo;t tried it as a pre-commit hook or CI step yet but will investigate.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-format-json-into-a-table-with-jq-and-column/">How to format JSON into a table with <code>jq</code> and <code>column</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-delta/">About delta, a viewer for Git and diff output</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/">How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-define-custom-filetype-filters-in-ripgrep/">You can define custom file-type filters in <code>ripgrep</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-specify-the-filetype-for-bat/">You can specify the file-type for <code>bat</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-envsubst/">About <code>envsubst</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/exuberantctags-has-been-superceded-by-universalctags/">Exuberant-ctags has been superceded by Universal-ctags</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-column/">About <code>column</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/fd-has-an-option-for-searching-filepaths/"><code>fd</code> has an option for searching filepaths</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/rust/">Rust</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/dprint-can-be-used-to-speed-up-prettier/"><code>dprint</code> can be used to speed up Prettier</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-write-vimscript-functions-that-operate-on-a-visually-selected-area/">How to write Vimscript functions that operate on a visually selected area</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-show-the-history-of-a-file-with-git-log-patch/">How to show the history of a file with <code>git log --patch</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-automatically-disable-github-copilot-in-vim-when-editing-large-files/">How to automatically disable Github Copilot in Vim when editing large files</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-hub-clashes-with-vimpolyglot/">That <code>hub</code> clashes with <code>vim-polyglot</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-stdin-to-populate-vims-quickfix-list/">How to use STDIN to populate Vim&rsquo;s quickfix list</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-get-vale-to-work-with-vims-ale-plugin/">How to get Vale to work with Vim&rsquo;s Ale plugin</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/">How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-vim-can-transform-replacement-values-when-substituting/">That Vim can transform replacement values when substituting</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-delete-all-buffers-in-vim/">How to delete all buffers in Vim</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-the-aleinfo-command/">About the <code>:ALEInfo</code> command</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-perform-a-noninteractive-interactive-git-rebase\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

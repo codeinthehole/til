@@ -2,25 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/about-the-typos-source-code-spell-checker/</loc>
+    <lastmod>2023-02-22T21:13:57+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/command-line-tools/</loc>
+    <lastmod>2023-02-22T21:13:57+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2023-02-22T21:13:57+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/rust/</loc>
+    <lastmod>2023-02-22T21:13:57+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2023-02-22T21:13:57+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2023-02-22T21:13:57+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/vim/</loc>
+    <lastmod>2023-02-22T21:13:57+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/git/</loc>
     <lastmod>2023-02-15T14:49:51+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-perform-a-noninteractive-interactive-git-rebase/</loc>
     <lastmod>2023-02-15T14:49:51+00:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2023-02-15T14:49:51+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2023-02-15T14:49:51+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
-    <lastmod>2023-02-15T14:49:51+00:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-write-vimscript-functions-that-operate-on-a-visually-selected-area/</loc>
-    <lastmod>2023-01-28T11:57:30+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/vim/</loc>
     <lastmod>2023-01-28T11:57:30+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/mypy/</loc>
@@ -49,9 +58,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-automatically-disable-github-copilot-in-vim-when-editing-large-files/</loc>
     <lastmod>2023-01-06T09:21:18+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/command-line-tools/</loc>
-    <lastmod>2023-01-05T11:19:09+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-format-json-into-a-table-with-jq-and-column/</loc>
     <lastmod>2023-01-05T11:19:09+00:00</lastmod>
@@ -201,9 +207,6 @@
     <lastmod>2022-04-27T09:22:58+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/javascript/</loc>
-    <lastmod>2022-04-27T09:22:58+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/rust/</loc>
     <lastmod>2022-04-27T09:22:58+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-use-lookbehind-regex-assertions-with-ripgrep/</loc>

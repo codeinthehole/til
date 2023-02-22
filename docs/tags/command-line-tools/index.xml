@@ -6,11 +6,20 @@
     <description>Recent content in Command-line tools on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Jan 2023 11:19:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Feb 2023 21:13:57 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/command-line-tools/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About the `typos` source code spell checker</title>
+      <link>https://til.codeinthehole.com/posts/about-the-typos-source-code-spell-checker/</link>
+      <pubDate>Wed, 22 Feb 2023 21:13:57 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-the-typos-source-code-spell-checker/</guid>
+      <description>typos is a source code spell checker written Rust that&amp;rsquo;s useful for finding typos in code comments and variable names.</description>
+    </item>
     
     <item>
       <title>How to format JSON into a table with `jq` and `column`</title>
