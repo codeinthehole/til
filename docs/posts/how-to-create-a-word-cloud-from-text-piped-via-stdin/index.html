@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    There’s a word_cloud generator package available from PyPI that can take its source text from STDIN: ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-create-a-word-cloud-from-text-piped-via-stdin/" />
+<meta property="og:title" content="TIL How to create a word cloud from text piped via STDIN — David Winterbottom" />
+<meta property="og:description" content="There&rsquo;s a word_cloud generator package available from PyPI that can take its source text from STDIN: [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to create a word cloud from text piped via STDIN — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>March 1, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to create a word cloud from text piped via STDIN</h1>
+        </header><p>There&rsquo;s a <a href="https://github.com/amueller/word_cloud"><code>word_cloud</code> generator package</a> available from PyPI
+that can take its source text from STDIN:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cat the-bible.txt | wordcloud_cli --imagefile bible.png
+</span></span></code></pre></div><p>For fun, you can create a word cloud of all your commit subjects from a repo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git log --author<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$AUTHOR<span style="color:#e6db74">&#34;</span> --no-merges --format<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;%s&#34;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    wordcloud_cli --background<span style="color:#f92672">=</span>white --imagefile<span style="color:#f92672">=</span>commits.png
+</span></span></code></pre></div><p>which, for this repo, yields:</p>
+<figure><img src="/images/wordcloud-commits.png"
+         alt="A word cloud of commits."/>
+</figure>
+
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/about-the-typos-source-code-spell-checker/">About the <code>typos</code> source code spell checker</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-format-json-into-a-table-with-jq-and-column/">How to format JSON into a table with <code>jq</code> and <code>column</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-delta/">About delta, a viewer for Git and diff output</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/">How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-define-custom-filetype-filters-in-ripgrep/">You can define custom file-type filters in <code>ripgrep</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-specify-the-filetype-for-bat/">You can specify the file-type for <code>bat</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-envsubst/">About <code>envsubst</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/exuberantctags-has-been-superceded-by-universalctags/">Exuberant-ctags has been superceded by Universal-ctags</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-column/">About <code>column</code></a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/not-to-union-python-list-types/">Not to union Python list types</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-handle-convenience-imports-with-mypy/">How to handle convenience imports with Mypy</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-djangos-overridesettings-decorator-causes-flakey-tests/">How Django&rsquo;s <code>override_settings</code> decorator causes flakey tests</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/mypy-skips-empty-functions/">Mypy skips empty functions</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/its-better-to-explicitly-chain-exceptions/">It&rsquo;s better to explicitly chain Python exceptions</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-indirect-parametrization-with-pytest/">About indirect parametrization with Pytest</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month/">That Python&rsquo;s <code>datetime</code> package doesn&rsquo;t support ordinal suffixes for the day of the month</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-inspect-and-clear-pythons-functoolslrucache/">How to inspect and clear Python&rsquo;s <code>functools.lru_cache</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-factory-boys-selfattribute-class/">About Factory Boy&rsquo;s <code>SelfAttribute</code> class</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-cant-use-djangos-generic-foreign-key-field-with-objects-stored-in-a-separate-database/">You can&rsquo;t use Django&rsquo;s generic foreign key field with objects stored in a separate database</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-the-typos-source-code-spell-checker\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

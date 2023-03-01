@@ -6,11 +6,20 @@
     <description>Recent content in Command-line tools on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Feb 2023 21:13:57 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Mar 2023 21:36:32 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/command-line-tools/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to create a word cloud from text piped via STDIN</title>
+      <link>https://til.codeinthehole.com/posts/how-to-create-a-word-cloud-from-text-piped-via-stdin/</link>
+      <pubDate>Wed, 01 Mar 2023 21:36:32 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-create-a-word-cloud-from-text-piped-via-stdin/</guid>
+      <description>There&amp;rsquo;s a word_cloud generator package available from PyPI that can take its source text from STDIN:</description>
+    </item>
     
     <item>
       <title>About the `typos` source code spell checker</title>
