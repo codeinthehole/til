@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Mar 2023 21:36:32 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Mar 2023 11:23:32 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to use `ripgrep` in `while read` loops</title>
+      <link>https://til.codeinthehole.com/posts/how-to-use-ripgrep-in-while-read-loops/</link>
+      <pubDate>Fri, 03 Mar 2023 11:23:32 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-use-ripgrep-in-while-read-loops/</guid>
+      <description>Beware of using rg in a while read block when there&amp;rsquo;s no path argument.</description>
+    </item>
     
     <item>
       <title>How to create a word cloud from text piped via STDIN</title>

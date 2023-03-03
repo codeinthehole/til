@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Beware of using rg in a while read block when there’s no path argument. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-ripgrep-in-while-read-loops/" />
+<meta property="og:title" content="TIL How to use &#39;ripgrep&#39; in &#39;while read&#39; loops — David Winterbottom" />
+<meta property="og:description" content="Beware of using rg in a while read block when there&rsquo;s no path argument. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to use &#39;ripgrep&#39; in &#39;while read&#39; loops — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>March 3, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to use <code>ripgrep</code> in <code>while read</code> loops</h1>
+        </header><p>Beware of using <code>rg</code> in a <code>while read</code> block when there&rsquo;s no path argument.</p>
+<p>For example, this loop:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>print_search_patterns | <span style="color:#66d9ef">while</span> read pattern; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Print a warning if this pattern isn&#39;t found in a HTML file.</span>
+</span></span><span style="display:flex;"><span>    matches<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>rg <span style="color:#e6db74">&#34;</span>$pattern<span style="color:#e6db74">&#34;</span> -thtml<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[[</span> $matches -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;Warning: </span>$pattern<span style="color:#e6db74"> not found in any HTML files&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>will only search the <em>first line</em> of the <code>print_search_patterns</code> output. This
+happens as <code>rg</code> will consume all of STDIN if no path argument is given.</p>
+<p>To avoid this problem either specify a path argument to <code>rg</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>print_search_patterns | <span style="color:#66d9ef">while</span> read pattern; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    matches<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>rg <span style="color:#e6db74">&#34;</span>$pattern<span style="color:#e6db74">&#34;</span> -thtml .<span style="color:#66d9ef">)</span>  <span style="color:#75715e"># Note dot argument</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[[</span> $matches -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;Warning: </span>$pattern<span style="color:#e6db74"> not found in any HTML files&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>or explicitly close STDIN:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>print_search_patterns | <span style="color:#66d9ef">while</span> read pattern; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    matches<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>rg <span style="color:#e6db74">&#34;</span>$pattern<span style="color:#e6db74">&#34;</span> -thtml &lt;/dev/null<span style="color:#66d9ef">)</span>  <span style="color:#75715e"># Note input redirection</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[[</span> $matches -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;Warning: </span>$pattern<span style="color:#e6db74"> not found in any HTML files&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>More info in this <a href="https://github.com/BurntSushi/ripgrep/issues/1219"><code>rg</code> issue</a>.</p>
+<p>A similar problem exists when using <code>ssh</code> in a <code>while read</code> loop (for which it
+has the <code>-n</code> option).</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/ripgrep/">ripgrep</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-ripgrep-interprets-gitignore-rules-changes-when-a-filepath-argument-is-used/">How <code>ripgrep</code> interprets <code>.gitignore</code> rules changes when a filepath argument is used</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-lookbehind-regex-assertions-with-ripgrep/">How to use look-behind regex assertions with <code>ripgrep</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-pipe-an-argument-list-into-vim/">How to pipe an argument list into Vim</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/">How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-define-custom-filetype-filters-in-ripgrep/">You can define custom file-type filters in <code>ripgrep</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-run-grep-without-using-parent-shell-process/">You can run <code>:grep</code> without using parent shell process</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-create-a-word-cloud-from-text-piped-via-stdin\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
