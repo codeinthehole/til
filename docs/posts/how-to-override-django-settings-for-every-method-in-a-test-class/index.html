@@ -72,7 +72,7 @@ package.</p>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.conf <span style="color:#f92672">import</span> settings <span style="color:#66d9ef">as</span> django_settings
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestAutouseFixture</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>fixture(autouse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@pytest.fixture</span>(autouse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">configure_settings</span>(self, settings):
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e"># The `settings` argument is a fixture provided by pytest-django.</span>
 </span></span><span style="display:flex;"><span>        settings<span style="color:#f92672">.</span>FOO <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bar&#34;</span>

@@ -62,7 +62,7 @@
             </div>
             <h1>You can label parameterized fixtures with pytest</h1>
         </header><p>For example, running this parameterized test:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>mark<span style="color:#f92672">.</span>parametrize(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.mark.parametrize</span>(
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;date&#34;</span>,
 </span></span><span style="display:flex;"><span>    (
 </span></span><span style="display:flex;"><span>        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2012</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">21</span>),  <span style="color:#75715e"># Predicted by Mayans</span>
@@ -81,7 +81,7 @@
 not that informative.</p>
 <p>We can do better by using the <code>ids</code> kwarg to <code>pytest.mark.parametrize</code> to
 provide more useful labels.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#a6e22e">@pytest</span><span style="color:#f92672">.</span>mark<span style="color:#f92672">.</span>parametrize(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.mark.parametrize</span>(
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;date&#34;</span>,
 </span></span><span style="display:flex;"><span>    (
 </span></span><span style="display:flex;"><span>        datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2012</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">21</span>),

@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Mar 2023 11:23:32 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Apr 2023 21:12:02 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Github actions need a shell specified to avoid silent pipeline failures</title>
+      <link>https://til.codeinthehole.com/posts/github-actions-need-a-shell-specified-to-avoid-silent-pipeline-failures/</link>
+      <pubDate>Wed, 19 Apr 2023 21:12:02 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/github-actions-need-a-shell-specified-to-avoid-silent-pipeline-failures/</guid>
+      <description>I learnt the hard way that the default shell settings for Github actions don&amp;rsquo;t catch command pipeline failures.</description>
+    </item>
     
     <item>
       <title>How to use `ripgrep` in `while read` loops</title>
