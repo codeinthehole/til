@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    git log supports two options for searching the contents of each commit’s patch: ...
+    Git’s for-each-ref command allows you to iterate over refs and print them according to the &amp;ndash;format option. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-git-log-g/" />
-<meta property="og:title" content="TIL About &#39;git log -G&#39; — David Winterbottom" />
-<meta property="og:description" content="git log supports two options for searching the contents of each commit&rsquo;s patch: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-git-foreachref-support-conditional-logic-in-its-format/" />
+<meta property="og:title" content="TIL That &#39;git for-each-ref&#39; support conditional logic in its format — David Winterbottom" />
+<meta property="og:description" content="Git&rsquo;s for-each-ref command allows you to iterate over refs and print them according to the --format option. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;git log -G&#39; — David Winterbottom
+    TIL That &#39;git for-each-ref&#39; support conditional logic in its format — David Winterbottom
 </title>
 
         
@@ -56,30 +56,17 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>June 2, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>April 28, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>git log -G</code></h1>
-        </header><p><code>git log</code> supports two options for searching the contents of each commit&rsquo;s
-patch:</p>
-<ul>
-<li><a href="https://git-scm.com/docs/git-log#Documentation/git-log.txt--Sltstringgt"><code>-S&lt;string&gt;</code></a>
-— look for patches containing a fixed string. Technically, this option looks
-for differences in the number of occurrences of a string in a file.</li>
-<li><a href="https://git-scm.com/docs/git-log#Documentation/git-log.txt--Gltregexgt"><code>-G&lt;regex&gt;</code></a>
-— look for patches matching a regex.</li>
-</ul>
-<p>The <code>-G</code> option can be useful to add a word boundary character to a fixed
-string. So instead of:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log -S my_string
-</span></span></code></pre></div><p>use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log -G <span style="color:#e6db74">&#34;\&lt;my_string\&gt;&#34;</span>
-</span></span></code></pre></div><p>to avoid unwanted matches (like <code>my_string_with_extra_stuff</code>).</p>
-<p>These filtering options are best used with the
-<a href="https://git-scm.com/docs/git-log#Documentation/git-log.txt---patch"><code>-p</code> or <code>--patch</code></a>
-option to show the commit diff of files that contain the searched-for
-string/regex. To see the diff of <em>all</em> files in each matching commit, use the
-<a href="https://git-scm.com/docs/git-log#Documentation/git-log.txt---pickaxe-all"><code>--pickaxe-all</code></a>
-option too.</p>
+            <h1>That <code>git for-each-ref</code> support conditional logic in its format</h1>
+        </header><p>Git&rsquo;s <a href="https://git-scm.com/docs/git-for-each-ref"><code>for-each-ref</code></a> command allows you to iterate over refs and print them
+according to the <code>--format</code> option.</p>
+<p>The format options are different to those for <code>git log</code>. In particular, they
+allow conditional logic using <a href="https://git-scm.com/docs/git-for-each-ref#Documentation/git-for-each-ref.txt-if"><code>%(if)%(then)%(else)%(end)</code></a> syntax.</p>
+<p>Here&rsquo;s some example usage where we print your local branches in different
+colours depending on whether they have an upstream tracking branch.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git branch --format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%(if)%(upstream)%(then)%(else)%(color:dim)%(end)%(refname:short)%(color:reset)&#39;</span>
+</span></span></code></pre></div><p>Hat-tip to <a href="https://samueljsb.co.uk/">Sam Searles-Bryant</a> for this tip.</p>
 </article>
 
         </main>
@@ -103,11 +90,6 @@ option too.</p>
                 
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
                     <ul>
-                        
-                            <li><a href="/posts/that-git-foreachref-support-conditional-logic-in-its-format/">That <code>git for-each-ref</code> support conditional logic in its format</a></li>
-
-                            
-                            
                         
                             <li><a href="/posts/how-to-perform-a-noninteractive-interactive-git-rebase/">How to perform a non-interactive, interactive Git rebase</a></li>
 
@@ -144,6 +126,11 @@ option too.</p>
                             
                             
                         
+                            <li><a href="/posts/about-git-log-g/">About <code>git log -G</code></a></li>
+
+                            
+                            
+                        
                             <li><a href="/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/">That <code>vim-polyglot</code> conflicts with Hub when creating pull requests</a></li>
 
                             
@@ -164,9 +151,9 @@ option too.</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -175,11 +162,9 @@ option too.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-the-aleinfo-command\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/github-actions-need-a-shell-specified-to-avoid-silent-pipeline-failures\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation\/"); })
         
     </script>
 

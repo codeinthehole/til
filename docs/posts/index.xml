@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Apr 2023 21:12:02 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 28 Apr 2023 20:11:32 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That `git for-each-ref` support conditional logic in its format</title>
+      <link>https://til.codeinthehole.com/posts/that-git-foreachref-support-conditional-logic-in-its-format/</link>
+      <pubDate>Fri, 28 Apr 2023 20:11:32 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-git-foreachref-support-conditional-logic-in-its-format/</guid>
+      <description>Git&amp;rsquo;s for-each-ref command allows you to iterate over refs and print them according to the --format option.</description>
+    </item>
     
     <item>
       <title>Github actions need a shell specified to avoid silent pipeline failures</title>
