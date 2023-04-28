@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Apr 2023 20:11:32 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 28 Apr 2023 20:20:10 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That macOS Ventura and iOS 15 can play background rain noise</title>
+      <link>https://til.codeinthehole.com/posts/that-macos-ventura-and-ios-15-can-play-background-rain-noise/</link>
+      <pubDate>Fri, 28 Apr 2023 20:20:10 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-macos-ventura-and-ios-15-can-play-background-rain-noise/</guid>
+      <description>For years, I&amp;rsquo;ve been using https://rain.today for background rain noise, but I recently discovered that macOS Ventura and iOS 15 can play rain noise too.</description>
+    </item>
     
     <item>
       <title>That `git for-each-ref` support conditional logic in its format</title>
