@@ -5,10 +5,11 @@ tags: ["Markdown"]
 ---
 
 Parsers like [goldmark](https://github.com/yuin/goldmark/) (the default parser
-for Hugo) support definition lists. 
+for Hugo) support definition lists.
 
 Example syntax:
 
+<!-- prettier-ignore -->
 ```md
 Apple
 :   Pomaceous fruit of plants of the genus Malus in 
@@ -20,11 +21,12 @@ Orange
 
 which renders as:
 
-
+<!-- prettier-ignore -->
 Apple
 :   Pomaceous fruit of plants of the genus Malus in 
     the family Rosaceae.
 
+<!-- prettier-ignore -->
 Orange
 :   The fruit of an evergreen tree of the genus Citrus.
 
