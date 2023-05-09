@@ -21,4 +21,5 @@ instances in a target group to become unhealthy, and I was initially puzzled as
 to why new instances — which had never passed their health checks — were serving
 production traffic.
 
-[aws_docs]:https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html
+[aws_docs]:
+  https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html

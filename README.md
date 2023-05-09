@@ -98,9 +98,9 @@ Config files are provided for:
 
 - [Vale](https://vale.sh/) (`.vale.ini` and `vale/`) - a custom dictionary is
   kept in `vale/styles/Vocab/Local/accept.txt`.
-- [MarkdownLint](https://github.com/DavidAnson/markdownlint) (`.markdownlint.yml`).
+- [MarkdownLint](https://github.com/DavidAnson/markdownlint)
+  (`.markdownlint.yml`).
 - [Prettier](https://prettier.io/) (`.prettierrc.yaml` and `.prettierignore`).
 
 It is recommended that `vale` and `markdownlint` are as used as linters, and
 `prettier` is used as pre-save fixer.
-
