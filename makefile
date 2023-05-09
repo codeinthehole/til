@@ -23,4 +23,5 @@ markdownlint_fix:
 
 prettier_fix:
 	prettier --write posts/
+	prettier --write *.md
 
