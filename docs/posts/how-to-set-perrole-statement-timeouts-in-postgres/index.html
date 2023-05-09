@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Postgres has a statement_timeout setting that will abort statements that run longer than the specified number of milliseconds. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-set-perrole-statement-timeouts-in-postgres/" />
+<meta property="og:title" content="TIL How to set per-role statement timeouts in Postgres — David Winterbottom" />
+<meta property="og:description" content="Postgres has a statement_timeout setting that will abort statements that run longer than the specified number of milliseconds. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to set per-role statement timeouts in Postgres — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>May 9, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to set per-role statement timeouts in Postgres</h1>
+        </header><p>Postgres has a <a href="https://www.postgresql.org/docs/current/runtime-config-client.html"><code>statement_timeout</code> setting</a> that will
+abort statements that run longer than the specified number of milliseconds.</p>
+<p>This can be set globally in <code>postgresql.conf</code> but, perhaps more usefully, can be
+set on a per-role basis via:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">ROLE</span> webserver <span style="color:#66d9ef">SET</span> statement_timeout <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;50s&#39;</span>;
+</span></span></code></pre></div><p>You can check what a role&rsquo;s config is with e.g.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">SELECT</span> rolname, rolconfig <span style="color:#66d9ef">FROM</span> pg_roles <span style="color:#66d9ef">WHERE</span> rolname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;webserver&#39;</span>;
+</span></span><span style="display:flex;"><span>    rolname    <span style="color:#f92672">|</span>        rolconfig
+</span></span><span style="display:flex;"><span><span style="color:#75715e">---------------+-------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> webserver     <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">{</span>statement_timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>s<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span> (<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">row</span>)
+</span></span></code></pre></div><h2 id="http-servers">HTTP servers</h2>
+<p>If you&rsquo;re using uWSGI, a useful pattern is to set a statement timeout slightly
+higher than your <a href="https://uwsgi-docs.readthedocs.io/en/latest/Options.html#harakiri"><code>harakiri</code> timeout value</a> so long-running
+queries from HTTP servers will be aborted shortly after the uWSGI worker is
+killed.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/postgresql/">PostgreSQL</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/that-postgres-sequences-arent-restored-after-a-rollback/">That Postgres sequences aren&rsquo;t restored after a transaction rollback</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-a-gotcha-with-psycopg2s-autocommit-handling/">About a gotcha with <code>psycopg2</code>&rsquo;s autocommit handling</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/the-correct-sequence-of-sql-statements-for-dropping-a-role/">The correct sequence of SQL statements for dropping a role</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-macos-ventura-and-ios-15-can-play-background-rain-noise\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

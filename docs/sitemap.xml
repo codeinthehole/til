@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/how-to-set-perrole-statement-timeouts-in-postgres/</loc>
+    <lastmod>2023-05-09T16:52:32+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/postgresql/</loc>
+    <lastmod>2023-05-09T16:52:32+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2023-05-09T16:52:32+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2023-05-09T16:52:32+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2023-05-09T16:52:32+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/ios/</loc>
     <lastmod>2023-04-28T20:20:10+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/macos/</loc>
     <lastmod>2023-04-28T20:20:10+01:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2023-04-28T20:20:10+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2023-04-28T20:20:10+01:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/posts/that-macos-ventura-and-ios-15-can-play-background-rain-noise/</loc>
-    <lastmod>2023-04-28T20:20:10+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2023-04-28T20:20:10+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/git/</loc>
@@ -136,9 +142,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/tags/pytest/</loc>
     <lastmod>2022-11-08T18:16:53+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/postgresql/</loc>
-    <lastmod>2022-10-18T17:43:06+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-postgres-sequences-arent-restored-after-a-rollback/</loc>
     <lastmod>2022-10-18T17:43:06+01:00</lastmod>
