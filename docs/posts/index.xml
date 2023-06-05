@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 May 2023 16:52:32 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jun 2023 13:42:03 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can search Slack by custom channel section</title>
+      <link>https://til.codeinthehole.com/posts/you-can-search-slack-by-custom-channel-section/</link>
+      <pubDate>Mon, 05 Jun 2023 13:42:03 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-search-slack-by-custom-channel-section/</guid>
+      <description>Slack provides an in: search modifier to narrow the scope of results to a given channel.</description>
+    </item>
     
     <item>
       <title>How to set per-role statement timeouts in Postgres</title>

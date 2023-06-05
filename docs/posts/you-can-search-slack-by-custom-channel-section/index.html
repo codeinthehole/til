@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Slack’s lets you search for messages that have had a particular emoji reaction using a has: filter. ...
+    Slack provides an in: search modifier to narrow the scope of results to a given channel. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-search-slack-by-emoji-reactions/" />
-<meta property="og:title" content="TIL You can search Slack by emoji reactions — David Winterbottom" />
-<meta property="og:description" content="Slack&rsquo;s lets you search for messages that have had a particular emoji reaction using a has: filter. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-search-slack-by-custom-channel-section/" />
+<meta property="og:title" content="TIL You can search Slack by custom channel section — David Winterbottom" />
+<meta property="og:description" content="Slack provides an in: search modifier to narrow the scope of results to a given channel. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL You can search Slack by emoji reactions — David Winterbottom
+    TIL You can search Slack by custom channel section — David Winterbottom
 </title>
 
         
@@ -56,13 +56,19 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>October 4, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>June 5, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>You can search Slack by emoji reactions</h1>
-        </header><p>Slack&rsquo;s lets you <a href="https://slack.com/intl/en-gb/help/articles/202528808-Search-in-Slack">search for messages that have had a particular emoji
-reaction</a> using a <code>has:</code> filter. Further you can search for
-messages that <em>you&rsquo;ve</em> reacted to with the <code>hasmy:</code> filter.</p>
-<p>E.g. <code>hasmy::eyes:</code></p>
+            <h1>You can search Slack by custom channel section</h1>
+        </header><p>Slack provides an <a href="https://slack.com/intl/en-gb/help/articles/202528808-Search-in-Slack"><code>in:</code> search modifier</a> to narrow the scope of
+results to a given channel. Further, multiple <code>in:</code> modifiers will filter
+results to a set of channels.</p>
+<p>The problem I was trying to solve was to search within a large set of channels;
+too many to bother typing into a single search query.</p>
+<p>All the channel names followed a pattern so I was hoping I could use a wildcard
+filter like <code>in:tech-guild-*</code> but alas no.</p>
+<p>However it turns out the <code>in:</code> modifier can act on a custom channel section, and
+I happened to have a &ldquo;Tech Guilds&rdquo; section including all the relevant channels.
+So <code>in:Tech Guilds</code> was the filter I needed.</p>
 </article>
 
         </main>
@@ -87,7 +93,7 @@ messages that <em>you&rsquo;ve</em> reacted to with the <code>hasmy:</code> filt
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/slack/">Slack</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/you-can-search-slack-by-custom-channel-section/">You can search Slack by custom channel section</a></li>
+                            <li><a href="/posts/you-can-search-slack-by-emoji-reactions/">You can search Slack by emoji reactions</a></li>
 
                             
                             
@@ -112,9 +118,9 @@ messages that <em>you&rsquo;ve</em> reacted to with the <code>hasmy:</code> filt
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -123,11 +129,9 @@ messages that <em>you&rsquo;ve</em> reacted to with the <code>hasmy:</code> filt
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/python-tests-using-moto-should-be-explicit-about-aws-regions\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-set-perrole-statement-timeouts-in-postgres\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-use-stdin-to-populate-vims-quickfix-list\/"); })
         
     </script>
 
