@@ -6,11 +6,20 @@
     <description>Recent content in Git on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Apr 2023 20:11:32 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 09 Jun 2023 16:06:55 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to avoid committing Jupyter Notebook output to Git</title>
+      <link>https://til.codeinthehole.com/posts/how-to-avoid-committing-jupyter-notebook-output-to-git/</link>
+      <pubDate>Fri, 09 Jun 2023 16:06:55 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-avoid-committing-jupyter-notebook-output-to-git/</guid>
+      <description>When working with Jupyter Notebooks, the output of each cell does not need to be committed as:</description>
+    </item>
     
     <item>
       <title>That `git for-each-ref` support conditional logic in its format</title>

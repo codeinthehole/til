@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jupyter Notebook - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/jupyter-notebook/</link>
+    <description>Recent content in Jupyter Notebook on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Jun 2023 16:06:55 +0100</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/jupyter-notebook/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to avoid committing Jupyter Notebook output to Git</title>
+      <link>https://til.codeinthehole.com/posts/how-to-avoid-committing-jupyter-notebook-output-to-git/</link>
+      <pubDate>Fri, 09 Jun 2023 16:06:55 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-avoid-committing-jupyter-notebook-output-to-git/</guid>
+      <description>When working with Jupyter Notebooks, the output of each cell does not need to be committed as:</description>
+    </item>
+    
+
+  </channel>
+</rss>

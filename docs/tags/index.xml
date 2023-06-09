@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jun 2023 13:42:03 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 09 Jun 2023 16:06:55 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Git</title>
+      <link>https://til.codeinthehole.com/tags/git/</link>
+      <pubDate>Fri, 09 Jun 2023 16:06:55 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jupyter Notebook</title>
+      <link>https://til.codeinthehole.com/tags/jupyter-notebook/</link>
+      <pubDate>Fri, 09 Jun 2023 16:06:55 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/jupyter-notebook/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Slack</title>
@@ -45,15 +63,6 @@
       <pubDate>Fri, 28 Apr 2023 20:20:10 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/macos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://til.codeinthehole.com/tags/git/</link>
-      <pubDate>Fri, 28 Apr 2023 20:11:32 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/git/</guid>
       <description></description>
     </item>
     
