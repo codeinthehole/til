@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Until today, I had Vimium disabled for Github as I believed Github’s keyboard shortcuts where useful enough to warrant losing Vimium’s. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-vimium-has-shortcuts-for-following-pagination-links/" />
+<meta property="og:title" content="TIL That Vimium has shortcuts for following pagination links — David Winterbottom" />
+<meta property="og:description" content="Until today, I had Vimium disabled for Github as I believed Github&rsquo;s keyboard shortcuts where useful enough to warrant losing Vimium&rsquo;s. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL That Vimium has shortcuts for following pagination links — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>June 21, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>That Vimium has shortcuts for following pagination links</h1>
+        </header><p>Until today, I had Vimium disabled for Github as I believed <a href="https://docs.github.com/en/get-started/using-github/keyboard-shortcuts">Github&rsquo;s keyboard
+shortcuts</a> where useful enough to warrant losing
+<a href="https://vimium.github.io/">Vimium&rsquo;s</a>.</p>
+<p>Particularly:</p>
+<ul>
+<li><code>n</code> and <code>p</code> — navigate to the next or parent commit when reviewing a pull
+request. Very convenient for code review.</li>
+<li><code>Y</code> — <a href="https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files">expand the current URL to its canonical, permalink</a>.
+Essential for sharing URLs to file content (as otherwise the page content can
+change over time).</li>
+</ul>
+<p>But I discovered Vimium can be enabled for Github without losing the above
+functionality.</p>
+<ul>
+<li>
+<p>Vimium provides <code>[[</code> and <code>]]</code> to navigate to the next and previous commit when
+reviewing a pull request. These shadow the quickfix navigation mappings from
+<a href="https://github.com/tpope/vim-unimpaired"><code>vim-unimpaired</code></a>. More broadly, these work with various
+forms of &ldquo;previous&rdquo; or &ldquo;next&rdquo; pagination links.</p>
+</li>
+<li>
+<p>Github&rsquo;s <code>Y</code> shortcut can still be accessed by entering &ldquo;insert mode&rdquo; first.
+So use <code>iY</code> instead.</p>
+</li>
+</ul>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/github/">Github</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/that-hub-clashes-with-vimpolyglot/">That <code>hub</code> clashes with <code>vim-polyglot</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-pycon-markdown-format/">About <code>pycon</code> markdown format</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-githubs-involves-search-filter/">About Github&rsquo;s <code>involves:$username</code> search filter</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-githubs-me-search-term/">About Github&rsquo;s <code>@me</code> search term</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-embed-markdown-content-in-a-github-code-block/">How to embed markdown content in a Github code block</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-avoid-committing-jupyter-notebook-output-to-git\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

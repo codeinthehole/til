@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/github/</loc>
+    <lastmod>2023-06-21T15:08:24+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2023-06-21T15:08:24+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2023-06-21T15:08:24+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/that-vimium-has-shortcuts-for-following-pagination-links/</loc>
+    <lastmod>2023-06-21T15:08:24+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2023-06-21T15:08:24+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/vimium/</loc>
+    <lastmod>2023-06-21T15:08:24+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/git/</loc>
     <lastmod>2023-06-09T16:06:55+01:00</lastmod>
   </url><url>
@@ -9,15 +27,6 @@
     <lastmod>2023-06-09T16:06:55+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/jupyter-notebook/</loc>
-    <lastmod>2023-06-09T16:06:55+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2023-06-09T16:06:55+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2023-06-09T16:06:55+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2023-06-09T16:06:55+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/slack/</loc>
@@ -118,9 +127,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-make-homebrewinstalled-bash-your-default-shell/</loc>
     <lastmod>2022-12-19T13:38:43+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/github/</loc>
-    <lastmod>2022-12-16T21:17:06+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-hub-clashes-with-vimpolyglot/</loc>
     <lastmod>2022-12-16T21:17:06+00:00</lastmod>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vimium - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/vimium/</link>
+    <description>Recent content in Vimium on Today I Learnt...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Jun 2023 15:08:24 +0100</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/vimium/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>That Vimium has shortcuts for following pagination links</title>
+      <link>https://til.codeinthehole.com/posts/that-vimium-has-shortcuts-for-following-pagination-links/</link>
+      <pubDate>Wed, 21 Jun 2023 15:08:24 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-vimium-has-shortcuts-for-following-pagination-links/</guid>
+      <description>Until today, I had Vimium disabled for Github as I believed Github&amp;rsquo;s keyboard shortcuts where useful enough to warrant losing Vimium&amp;rsquo;s.</description>
+    </item>
+    
+
+  </channel>
+</rss>
