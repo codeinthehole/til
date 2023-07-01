@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Github-flavoured markdown uses Linguist for syntax highlighting, and Linguist supports “Python console” as a language. ...
+    Not sure how I’ve never come across this before, but Markdown supports hard line breaks by ending a line with two spaces. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-pycon-markdown-format/" />
-<meta property="og:title" content="TIL About &#39;pycon&#39; markdown format — David Winterbottom" />
-<meta property="og:description" content="Github-flavoured markdown uses Linguist for syntax highlighting, and Linguist supports &ldquo;Python console&rdquo; as a language. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-two-trailing-spaces-indicates-a-line-break-in-markdown/" />
+<meta property="og:title" content="TIL That two trailing spaces indicates a line break in Markdown — David Winterbottom" />
+<meta property="og:description" content="Not sure how I&rsquo;ve never come across this before, but Markdown supports hard line breaks by ending a line with two spaces. [Reading time: 2 minutes]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;pycon&#39; markdown format — David Winterbottom
+    TIL That two trailing spaces indicates a line break in Markdown — David Winterbottom
 </title>
 
         
@@ -56,22 +56,44 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>July 1, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>July 1, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About <code>pycon</code> markdown format</h1>
-        </header><p>Github-flavoured markdown <a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks#syntax-highlighting">uses Linguist for syntax
-highlighting</a>, and Linguist supports <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml#L5121-L5129">&ldquo;Python console&rdquo;
-as a language</a>.</p>
-<p>You can use a <code>pycon</code> alias in your fenced code blocks:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#e6db74">```pycon
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span>&gt;&gt;&gt; from pprint import pprint as pp
-</span></span><span style="display:flex;"><span>&gt;&gt;&gt; from rich import inspect
-</span></span><span style="display:flex;"><span>&gt;&gt;&gt; import datetime
-</span></span><span style="display:flex;"><span>&gt;&gt;&gt; a = 1
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>
-</span></span></code></pre></div><p>Note that <a href="https://github.com/alecthomas/chroma">Chroma</a>, the syntax highlighting library used by Hugo (and
-this site), doesn&rsquo;t support it, which is why there&rsquo;s no syntax highlighting in
-the above code block.</p>
+            <h1>That two trailing spaces indicates a line break in Markdown</h1>
+        </header><p>Not sure how I&rsquo;ve never come across this before, but Markdown supports hard line
+breaks by ending a line with two spaces. Don&rsquo;t strip trailing whitespace in your
+Markdown editor pre-save hooks.</p>
+<p>From the original <a href="https://daringfireball.net/projects/markdown/syntax#p">Markdown spec</a>:</p>
+<blockquote>
+<p>A paragraph is simply one or more consecutive lines of text, separated by one
+or more blank lines. (A blank line is any line that looks like a blank
+line — a line containing nothing but spaces or tabs is considered blank.)
+Normal paragraphs should not be indented with spaces or tabs.</p>
+<p>The implication of the “one or more consecutive lines of text” rule is that
+Markdown supports “hard-wrapped” text paragraphs. This differs significantly
+from most other text-to-HTML formatters (including Movable Type’s “Convert
+Line Breaks” option) which translate every line break character in a paragraph
+into a <code>&lt;br /&gt;</code> tag.</p>
+<p>When you do want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you end a line
+with two or more spaces, then type return.</p>
+</blockquote>
+<p>I&rsquo;ve never found a need for this, but you might if you were writing poetry or
+other text that doesn&rsquo;t conform to the usual paragraph structure.</p>
+<h2 id="quoting-poetry-in-github-comments">Quoting poetry in Github comments</h2>
+<p>Oddly, consecutive lines of block quoted text aren&rsquo;t joined together in Github&rsquo;s
+flavour of Markdown (GFM) so people quoting poets don&rsquo;t need to add trailing
+spaces there.</p>
+<p>That is:</p>
+<pre tabindex="0"><code>&gt; On the Ning Nang Nong
+&gt; Where the Cows go Bong!
+</code></pre><p>converts the new line character into a <code>&lt;br /&gt;</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>  On the Ning Nang Nong&lt;<span style="color:#f92672">br</span> /&gt;
+</span></span><span style="display:flex;"><span>  Where the Cows go Bong!
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>This seems at odds with <a href="https://github.github.com/gfm/#example-206">the GFM spec</a> which indicates it should
+render as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;On the Ning Nang Nong Where the Cows go Bong!&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>Hugo&rsquo;s Goldmark Markdown library does join the quoted lines together.</p>
 </article>
 
         </main>
@@ -96,7 +118,7 @@ the above code block.</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/markdown/">Markdown</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/that-two-trailing-spaces-indicates-a-line-break-in-markdown/">That two trailing spaces indicates a line break in Markdown</a></li>
+                            <li><a href="/posts/about-pycon-markdown-format/">About <code>pycon</code> markdown format</a></li>
 
                             
                             
@@ -173,9 +195,9 @@ the above code block.</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -184,11 +206,9 @@ the above code block.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-vimium-has-shortcuts-for-following-pagination-links\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/email-log-search-in-google-workspace-has-some-strange-behaviour\/"); })
         
     </script>
 

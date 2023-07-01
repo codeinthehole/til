@@ -6,11 +6,20 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jun 2023 15:08:24 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jul 2023 18:57:50 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That two trailing spaces indicates a line break in Markdown</title>
+      <link>https://til.codeinthehole.com/posts/that-two-trailing-spaces-indicates-a-line-break-in-markdown/</link>
+      <pubDate>Sat, 01 Jul 2023 18:57:50 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-two-trailing-spaces-indicates-a-line-break-in-markdown/</guid>
+      <description>Not sure how I&amp;rsquo;ve never come across this before, but Markdown supports hard line breaks by ending a line with two spaces.</description>
+    </item>
     
     <item>
       <title>That Vimium has shortcuts for following pagination links</title>
