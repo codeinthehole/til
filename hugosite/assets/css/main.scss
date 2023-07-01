@@ -260,6 +260,9 @@ main#content {
         a code {
             color: $color-link;
         }
+        blockquote p code {
+            color: $color-grey;
+        }
 
         /* Block code snippets */
         pre {
