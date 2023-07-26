@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kubernetes - Today I Learnt...</title>
-    <link>https://til.codeinthehole.com/tags/kubernetes/</link>
-    <description>Recent content in Kubernetes on Today I Learnt...</description>
+    <title>Bat - Today I Learnt...</title>
+    <link>https://til.codeinthehole.com/tags/bat/</link>
+    <description>Recent content in Bat on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Jul 2023 09:48:58 +0100</lastBuildDate>
     
-	<atom:link href="https://til.codeinthehole.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://til.codeinthehole.com/tags/bat/index.xml" rel="self" type="application/rss+xml" />
     
 
     
@@ -20,15 +20,6 @@
       <guid>https://til.codeinthehole.com/posts/how-to-syntaxhighlight-kubectl-yaml-output/</guid>
       <description>By default, the output of:
 kubectl describe pod $POD_ID is a hard-to-read YAML blob.</description>
-    </item>
-    
-    <item>
-      <title>About `envsubst`</title>
-      <link>https://til.codeinthehole.com/posts/about-envsubst/</link>
-      <pubDate>Sat, 19 Dec 2020 22:49:55 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/posts/about-envsubst/</guid>
-      <description>Am learning Kubernetes and was looking for ways to dynamically create YAML resource files.</description>
     </item>
     
 
