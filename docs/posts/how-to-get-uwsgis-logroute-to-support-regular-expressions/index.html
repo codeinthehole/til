@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    I was trying to get uWSGI to log in JSON, following this nicely laid-out guide; but it wasn’t working. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-get-uwsgis-logroute-to-support-regular-expressions/" />
+<meta property="og:title" content="TIL How to get uWSGI&#39;s &#39;log-route&#39; to support regular expressions — David Winterbottom" />
+<meta property="og:description" content="I was trying to get uWSGI to log in JSON, following this nicely laid-out guide; but it wasn&rsquo;t working. [Reading time: 2 minutes]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to get uWSGI&#39;s &#39;log-route&#39; to support regular expressions — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>July 28, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to get uWSGI&rsquo;s <code>log-route</code> to support regular expressions</h1>
+        </header><p>I was trying to get uWSGI to log in JSON, following <a href="https://blog.rama.io/json-logging-with-uwsgi">this nicely laid-out
+guide</a>; but it wasn&rsquo;t working.</p>
+<p>This is the <code>uwsgi.ini</code> file I was using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dosini" data-lang="dosini"><span style="display:flex;"><span><span style="color:#75715e"># Define a logger for application messages. These will be in JSON already and so</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># we use a regex to route lines that start with a `{` and simply print the</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># message as is.</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">logger</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">djangologger stdio</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log-route</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">djangologger ^{.*$</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log-encoder</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">format:djangologger ${msg}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define a logger for uWSGI *server* logs. We use a regex to route lines</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># that don&#39;t start with a `{`. We format them as JSON using the `json` encoder.</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">logger</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">uwsgilogger stdio</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log-route</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">uwsgilogger ^((?!\{).)*$</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log-encoder</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">json:uwsgilogger {&#34;time&#34;: &#34;${micros}&#34;, &#34;message&#34;: &#34;${msg}&#34;}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define a logger for uWSGI *request* logs.</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">logger-req</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">stdio</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log-format</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">{&#34;source&#34;: &#34;uwsgi&#34;, &#34;type&#34;: &#34;request&#34;, &#34;method&#34;: &#34;%(method)&#34;, &#34;path&#34;: &#34;%(uri)&#34;, &#34;user_agent&#34;: &#34;%(uagent)&#34;, &#34;duration_in_ms&#34;: %(msecs), &#34;referer&#34;: &#34;%(referer)&#34;, &#34;host&#34;: &#34;%(host)&#34;, &#34;time&#34;: %(time), &#34;remote_ip&#34;: &#34;%(addr)&#34;}</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">log-encoder</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">nl</span>
+</span></span></code></pre></div><p>The request logs would be JSON formatted but not the server logs you see at
+start-up and shutdown.</p>
+<p>The clue was there in the output though:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>!!! no internal routing support, rebuild with pcre support !!!
+</span></span></code></pre></div><p>So, for the record, the appropriate system packages required to install uWSGI
+with PCRE support are:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>apt-get install gcc libpcre3-dev
+</span></span></code></pre></div><p>Running the above then</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pip install uwsgi
+</span></span></code></pre></div><p>will ensure your uWSGI server logs are JSON encoded (after the initial
+<code>[log-encoder]</code> lines at least):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>[uWSGI] getting INI configuration from uwsgi.ini
+</span></span><span style="display:flex;"><span>2023-07-28T15:42:32 - [log-encoder] registered format:applogger ${msg}
+</span></span><span style="display:flex;"><span>2023-07-28T15:42:32 - [log-encoder] registered nl:applogger
+</span></span><span style="display:flex;"><span>2023-07-28T15:42:32 - [log-encoder] registered json:uwsgilogger {&#34;time&#34;:&#34;${strftime:%Y-%m-%dT%H:%M:%S}&#34;, &#34;event&#34;: &#34;uwsgi.system&#34;, &#34;message&#34;:&#34;${msg}&#34;}
+</span></span><span style="display:flex;"><span>2023-07-28T15:42:32 - [log-encoder] registered nl
+</span></span><span style="display:flex;"><span>{&#34;time&#34;:&#34;2023-07-28T15:42:32&#34;, &#34;message&#34;:&#34;*** Starting uWSGI 2.0.21 (64bit) on [Fri Jul 28 15:42:32 2023] ***&#34;}
+</span></span><span style="display:flex;"><span>{&#34;time&#34;:&#34;2023-07-28T15:42:32&#34;, &#34;message&#34;:&#34;compiled with version: 12.2.0 on 28 July 2023 09:13:25&#34;}
+</span></span><span style="display:flex;"><span>{&#34;time&#34;:&#34;2023-07-28T15:42:32&#34;, &#34;message&#34;:&#34;os: Linux-5.10.76-linuxkit #1 SMP Mon Nov 8 10:21:19 UTC 2021&#34;}
+</span></span></code></pre></div></article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-syntaxhighlight-kubectl-yaml-output\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

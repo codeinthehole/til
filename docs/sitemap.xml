@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/how-to-get-uwsgis-logroute-to-support-regular-expressions/</loc>
+    <lastmod>2023-07-28T12:26:19+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2023-07-28T12:26:19+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2023-07-28T12:26:19+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2023-07-28T12:26:19+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/uwsgi/</loc>
+    <lastmod>2023-07-28T12:26:19+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/bat/</loc>
     <lastmod>2023-07-26T09:48:58+01:00</lastmod>
   </url><url>
@@ -9,15 +24,6 @@
     <lastmod>2023-07-26T09:48:58+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/kubernetes/</loc>
-    <lastmod>2023-07-26T09:48:58+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2023-07-26T09:48:58+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2023-07-26T09:48:58+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2023-07-26T09:48:58+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/github/</loc>
