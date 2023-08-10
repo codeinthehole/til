@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://til.codeinthehole.com/posts/how-to-get-uwsgis-logroute-to-support-regular-expressions/</loc>
-    <lastmod>2023-07-28T12:26:19+01:00</lastmod>
+    <loc>https://til.codeinthehole.com/posts/how-to-use-jq-to-only-parse-valid-json-lines/</loc>
+    <lastmod>2023-08-10T15:44:41+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/jq/</loc>
+    <lastmod>2023-08-10T15:44:41+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2023-07-28T12:26:19+01:00</lastmod>
+    <lastmod>2023-08-10T15:44:41+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2023-07-28T12:26:19+01:00</lastmod>
+    <lastmod>2023-08-10T15:44:41+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2023-08-10T15:44:41+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/how-to-get-uwsgis-logroute-to-support-regular-expressions/</loc>
     <lastmod>2023-07-28T12:26:19+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/uwsgi/</loc>
@@ -135,9 +141,6 @@
     <lastmod>2023-01-06T09:21:18+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-format-json-into-a-table-with-jq-and-column/</loc>
-    <lastmod>2023-01-05T11:19:09+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/jq/</loc>
     <lastmod>2023-01-05T11:19:09+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/bash/</loc>

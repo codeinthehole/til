@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Suppose you have a stream of text comprising JSON and non-JSON lines — e. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-jq-to-only-parse-valid-json-lines/" />
+<meta property="og:title" content="TIL How to use &#39;jq&#39; to only parse valid JSON lines — David Winterbottom" />
+<meta property="og:description" content="Suppose you have a stream of text comprising JSON and non-JSON lines — e. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to use &#39;jq&#39; to only parse valid JSON lines — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>August 10, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to use <code>jq</code> to only parse valid JSON lines</h1>
+        </header><p>Suppose you have a stream of text comprising JSON and non-JSON lines — e.g:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ cat example.txt
+</span></span><span style="display:flex;"><span>This is plain text
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;This is JSON&#34;</span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>and you want to pretty-print the JSON lines to make the stream more readable.</p>
+<p>Piping this into <code>jq</code> fails because the first line is not valid JSON:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ cat example.txt | jq
+</span></span><span style="display:flex;"><span>parse error: Invalid numeric literal at line 1, column <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><p>But you use <code>jq</code>&rsquo;s <code>fromjson</code> filter in a <code>try/catch</code> block to format the JSON
+lines and ignore the others:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ cat example.txt | jq -R <span style="color:#e6db74">&#39;. as $line | try (fromjson) catch $line&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;This is plain text&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;This is JSON&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>This works well when <a href="/posts/how-to-get-uwsgis-logroute-to-support-regular-expressions/">running uWSGI with JSON logging enabled</a>,
+where the initial log lines are not JSON formatted.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/jq/">JQ</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-format-json-into-a-table-with-jq-and-column/">How to format JSON into a table with <code>jq</code> and <code>column</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-use-jq-to-build-json-payloads/">You can use JQ to build JSON payloads</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-jqs-slurp-option/">About <code>jq</code>&rsquo;s <code>--slurp</code> option</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-shuf-to-take-random-samples-of-lines/">You can use <code>shuf</code> to take random samples of lines</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/aws-availability-zones-have-counterintuitive-ids/">AWS Availability Zones have counter-intuitive IDs</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-get-uwsgis-logroute-to-support-regular-expressions\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

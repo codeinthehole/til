@@ -6,11 +6,20 @@
     <description>Recent content in JQ on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Jan 2023 11:19:09 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Aug 2023 15:44:41 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/jq/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to use `jq` to only parse valid JSON lines</title>
+      <link>https://til.codeinthehole.com/posts/how-to-use-jq-to-only-parse-valid-json-lines/</link>
+      <pubDate>Thu, 10 Aug 2023 15:44:41 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-use-jq-to-only-parse-valid-json-lines/</guid>
+      <description>Suppose you have a stream of text comprising JSON and non-JSON lines — e.</description>
+    </item>
     
     <item>
       <title>How to format JSON into a table with `jq` and `column`</title>
