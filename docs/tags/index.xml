@@ -6,11 +6,47 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Aug 2023 15:44:41 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2023 22:28:13 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Gunicorn</title>
+      <link>https://til.codeinthehole.com/tags/gunicorn/</link>
+      <pubDate>Mon, 11 Sep 2023 22:28:13 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/gunicorn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JSON</title>
+      <link>https://til.codeinthehole.com/tags/json/</link>
+      <pubDate>Mon, 11 Sep 2023 22:28:13 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logging</title>
+      <link>https://til.codeinthehole.com/tags/logging/</link>
+      <pubDate>Mon, 11 Sep 2023 22:28:13 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/logging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://til.codeinthehole.com/tags/python/</link>
+      <pubDate>Mon, 11 Sep 2023 22:28:13 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>JQ</title>
@@ -157,15 +193,6 @@
     </item>
     
     <item>
-      <title>Python</title>
-      <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Wed, 01 Mar 2023 21:36:32 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Rust</title>
       <link>https://til.codeinthehole.com/tags/rust/</link>
       <pubDate>Wed, 22 Feb 2023 21:13:57 +0000</pubDate>
@@ -243,15 +270,6 @@
       <pubDate>Thu, 01 Dec 2022 11:46:25 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/django/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JSON</title>
-      <link>https://til.codeinthehole.com/tags/json/</link>
-      <pubDate>Thu, 01 Dec 2022 11:46:25 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/json/</guid>
       <description></description>
     </item>
     
