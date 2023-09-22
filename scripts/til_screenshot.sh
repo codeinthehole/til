@@ -32,7 +32,7 @@ function main() {
     screencapture -i "$filepath"
 
     # Shrink wide images so they are no wider than 700px.
-    mogrify -resize '700^' "$filepath" 
+    mogrify -resize '700x' "$filepath" 
 
     # Compress image
     pngcrush -ow "$filepath" 2> /dev/null
