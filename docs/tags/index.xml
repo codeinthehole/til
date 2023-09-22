@@ -6,11 +6,38 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Sep 2023 22:28:13 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 22 Sep 2023 10:20:58 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Alfred</title>
+      <link>https://til.codeinthehole.com/tags/alfred/</link>
+      <pubDate>Fri, 22 Sep 2023 10:20:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/alfred/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google</title>
+      <link>https://til.codeinthehole.com/tags/google/</link>
+      <pubDate>Fri, 22 Sep 2023 10:20:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MacOS</title>
+      <link>https://til.codeinthehole.com/tags/macos/</link>
+      <pubDate>Fri, 22 Sep 2023 10:20:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/macos/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Gunicorn</title>
@@ -153,15 +180,6 @@
       <pubDate>Fri, 28 Apr 2023 20:20:10 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/ios/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MacOS</title>
-      <link>https://til.codeinthehole.com/tags/macos/</link>
-      <pubDate>Fri, 28 Apr 2023 20:20:10 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/macos/</guid>
       <description></description>
     </item>
     
@@ -729,15 +747,6 @@
       <pubDate>Mon, 21 Sep 2020 12:33:56 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/gotchas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Alfred</title>
-      <link>https://til.codeinthehole.com/tags/alfred/</link>
-      <pubDate>Mon, 07 Sep 2020 10:37:57 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/alfred/</guid>
       <description></description>
     </item>
     

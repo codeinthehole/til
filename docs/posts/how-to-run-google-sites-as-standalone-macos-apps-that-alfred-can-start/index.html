@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    I had inadvertently moved the “Cursor Boost” slider to a high level and the terminal became very dim and hard to read. ...
+    Many Google sites such as Meet, Drive and Youtube can be run as Progressive Web Apps (PWAs), which means they run in their own Chrome application and are treated as separate apps in MacOS. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/iterm2s-cursor-boost-feature-will-cause-everything-to-appear-dimmed/" />
-<meta property="og:title" content="TIL iTerm2&#39;s &#34;Cursor boost&#34; feature will cause everything to appear dimmed — David Winterbottom" />
-<meta property="og:description" content="I had inadvertently moved the &ldquo;Cursor Boost&rdquo; slider to a high level and the terminal became very dim and hard to read. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-run-google-sites-as-standalone-macos-apps-that-alfred-can-start/" />
+<meta property="og:title" content="TIL How to run Google sites as standalone MacOS apps that Alfred can start — David Winterbottom" />
+<meta property="og:description" content="Many Google sites such as Meet, Drive and Youtube can be run as Progressive Web Apps (PWAs), which means they run in their own Chrome application and are treated as separate apps in MacOS. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL iTerm2&#39;s &#34;Cursor boost&#34; feature will cause everything to appear dimmed — David Winterbottom
+    TIL How to run Google sites as standalone MacOS apps that Alfred can start — David Winterbottom
 </title>
 
         
@@ -56,22 +56,27 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>March 12, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>September 22, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>iTerm2&rsquo;s &ldquo;Cursor boost&rdquo; feature will cause everything to appear dimmed</h1>
-        </header><p>I had inadvertently moved the &ldquo;Cursor Boost&rdquo; slider to a high level and the
-terminal became very dim and hard to read. Resetting the slider to zero fixed
-the issue.</p>
-<figure><img src="/images/iterm2-cursor-boost.png"
-         alt="iTerm2 Cursor Boost"/><figcaption>
-            <p>The &lsquo;Cursor Boost&rsquo; slider is at the bottom of the &lsquo;Colors&rsquo; tab.</p>
-        </figcaption>
+            <h1>How to run Google sites as standalone MacOS apps that Alfred can start</h1>
+        </header><p>Many Google sites such as Meet, Drive and Youtube can be run as <a href="https://support.google.com/chrome/answer/9658361">Progressive Web
+Apps (PWAs)</a>, which means they run in their own Chrome application
+and are treated as separate apps in MacOS.</p>
+<figure><a href="/images/google-meet-pwa.png"><img src="/images/google-meet-pwa.png"
+         alt="Google Meet PWA."/></a>
 </figure>
 
-<p>As noted in
-<a href="https://groups.google.com/g/iterm2-discuss/c/sVjKI3VqRcs">this Google Groups conversation</a>,
-&ldquo;Cursor Boost&rdquo; could more accurately be called &ldquo;Dim everything except the
-Cursor&rdquo; and avoid this confusion.</p>
+<p>You can <code>cmd+tab</code> to switch to them and open them with Alfred.</p>
+<figure><a href="/images/alfred-google-meet.png"><img src="/images/alfred-google-meet.png"
+         alt="Starting Google Meet from Alfred."/></a>
+</figure>
+
+<p>To install a PWA, click the install icon in the site&rsquo;s address bar in Chrome.
+This will add the app to an <code>~/Applications/Chrome Apps.localized/</code> folder.</p>
+<p>In addition to inspecting the above folder, you can view and manage your
+installed PWAs by visiting <code>chrome://apps</code> in Chrome.</p>
+<p>To get Alfred to find and launch your PWAs, you need to add the above folder to
+the &ldquo;Search Scope&rdquo; list in Alfred&rsquo;s &ldquo;Features &gt; Default Results&rdquo; settings.</p>
 </article>
 
         </main>
@@ -105,13 +110,46 @@ Cursor&rdquo; and avoid this confusion.</p>
                 
 
                 
-                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/macos/">MacOS</a>:</p>
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/alfred/">Alfred</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/how-to-run-google-sites-as-standalone-macos-apps-that-alfred-can-start/">How to run Google sites as standalone MacOS apps that Alfred can start</a></li>
+                            <li><a href="/posts/you-can-display-the-typed-text-in-alfred-in-a-huge-typeface/">You can display the typed text in Alfred in a huge typeface</a></li>
 
                             
                             
+                        
+                            <li><a href="/posts/how-to-configure-alfreds-bear-workflow-to-open-notes-in-the-main-window/">How to configure Alfred&rsquo;s Bear workflow to open notes in the main window</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/alfred-clipboard-history/">About Alfred&rsquo;s clipboard history feature</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/alfred-snippet-collections/">About Alfred&rsquo;s snippet collections</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/macos/">MacOS</a>:</p>
+                    <ul>
                         
                             <li><a href="/posts/that-macos-ventura-and-ios-15-can-play-background-rain-noise/">That macOS Ventura and iOS 15 can play background rain noise</a></li>
 
@@ -129,6 +167,11 @@ Cursor&rdquo; and avoid this confusion.</p>
                             
                         
                             <li><a href="/posts/about-chromes-named-windows/">About Chrome&rsquo;s named windows</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/iterm2s-cursor-boost-feature-will-cause-everything-to-appear-dimmed/">iTerm2&rsquo;s &ldquo;Cursor boost&rdquo; feature will cause everything to appear dimmed</a></li>
 
                             
                             
@@ -160,7 +203,6 @@ Cursor&rdquo; and avoid this confusion.</p>
                         
                     </ul>
                 
-
             
 
         
@@ -168,9 +210,9 @@ Cursor&rdquo; and avoid this confusion.</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -179,11 +221,9 @@ Cursor&rdquo; and avoid this confusion.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/pdbpp-has-a-useful-sticky-mode\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-get-gunicorn-to-log-as-json\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/systemd-sends-sigkill-signals-after-waiting-for-timestopsec-seconds\/"); })
         
     </script>
 

@@ -6,11 +6,20 @@
     <description>Recent content in MacOS on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Apr 2023 20:20:10 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 22 Sep 2023 10:20:58 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/macos/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to run Google sites as standalone MacOS apps that Alfred can start</title>
+      <link>https://til.codeinthehole.com/posts/how-to-run-google-sites-as-standalone-macos-apps-that-alfred-can-start/</link>
+      <pubDate>Fri, 22 Sep 2023 10:20:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-run-google-sites-as-standalone-macos-apps-that-alfred-can-start/</guid>
+      <description>Many Google sites such as Meet, Drive and Youtube can be run as Progressive Web Apps (PWAs), which means they run in their own Chrome application and are treated as separate apps in MacOS.</description>
+    </item>
     
     <item>
       <title>That macOS Ventura and iOS 15 can play background rain noise</title>
