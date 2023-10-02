@@ -8,7 +8,7 @@
 
 set -eu -o pipefail
 
-PROJECT_ROOT=$(dirname $(dirname "$0"))
+PROJECT_ROOT="$(dirname $(dirname "$0"))"
 
 # Source functions
 . $PROJECT_ROOT/scripts/til_utils.sh
@@ -28,11 +28,15 @@ function main() {
     fi
 
     # Capture image
-    echo "Select portion of screen to copy"
+    echo "Select portion of screen to copy" >&2
     screencapture -i "$filepath"
 
     # Shrink wide images so they are no wider than 700px.
-    mogrify -resize '700x' "$filepath" 
+    if [[ "$(identify -format "%w" "$filepath")" -gt 700 ]]
+    then
+        echo "Resizing to 700px wide" >&2
+        mogrify -resize '700x' "$filepath" 
+    fi
 
     # Compress image
     pngcrush -ow "$filepath" 2> /dev/null
@@ -41,14 +45,14 @@ function main() {
     filename=$(basename "$filepath")
     echo "{{< figure src=\"/images/$filename\" link=\"/images/$filename\" title=\"\" caption=\"\" alt=\"$description\" >}}" | pbcopy
 
-    echo "Image markdown snippet added to clipboard"
+    echo "Image markdown snippet added to clipboard" >&2
 }
 
 function generate_image_filepath() {
-    echo static/images/$(slugify "$1").png
+    echo "static/images/$(slugify "$1").png"
 }
 
-if [[ $_ != $0 ]]
+if [[ $_ != "$0" ]]
 then
     if [ $# -eq 0 ]
     then
