@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Until today, I was under the impression that including: ...
+    Many projects I work on maintain two requirements lock files: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/filelevel-flake8-comments-ignore-all-errors/" />
-<meta property="og:title" content="TIL File-level flake8 comments ignore all errors — David Winterbottom" />
-<meta property="og:description" content="Until today, I was under the impression that including: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-avoid-version-conflicts-in-lock-files-compiled-with-piptools/" />
+<meta property="og:title" content="TIL How to avoid version conflicts in lock files compiled with &#39;pip-tools&#39; — David Winterbottom" />
+<meta property="og:description" content="Many projects I work on maintain two requirements lock files: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL File-level flake8 comments ignore all errors — David Winterbottom
+    TIL How to avoid version conflicts in lock files compiled with &#39;pip-tools&#39; — David Winterbottom
 </title>
 
         
@@ -56,25 +56,28 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>July 21, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>October 2, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>File-level flake8 comments ignore all errors</h1>
-        </header><p>Until today, I was under the impression that including:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># flake8: noqa: F401</span>
-</span></span></code></pre></div><p>at the top of a Python module would ignore all F401 errors in the file.</p>
-<p>However that isn&rsquo;t true: the above directive ignores <em>all</em> errors in the file,
-not just F401: the <code>: F401</code> part of the comment is silently ignored.</p>
-<p>Alternatively you can:</p>
+            <h1>How to avoid version conflicts in lock files compiled with <code>pip-tools</code></h1>
+        </header><p>Many projects I work on maintain two requirements lock files:</p>
 <ul>
-<li>append <code># noqa: F401</code> to each offending line, or:</li>
-<li>use the
-<a href="https://flake8.pycqa.org/en/latest/user/options.html#cmdoption-flake8-per-file-ignores"><code>--per-file-ignores</code> configuration option</a>
-to ignore certain error codes in files matching a set of globs.</li>
+<li><code>requirements.txt</code> for remote, production-like environments;</li>
+<li><code>requirements.dev.txt</code> for development and testing environments;</li>
 </ul>
-<p>Related:</p>
-<ul>
-<li><a href="https://flake8.pycqa.org/en/3.1.1/user/ignoring-errors.html#ignoring-entire-files">Flake8 docs on ignoring entire files</a></li>
-</ul>
+<p>compiled using <code>pip-compile</code> from <a href="https://github.com/jazzband/pip-tools"><code>pip-tools</code></a>.</p>
+<p>The development requirements should always be a superset of the production ones
+but it&rsquo;s possible for them to fall out of sync if you&rsquo;re not careful in updating
+both lock files at the same time.</p>
+<h2 id="in-files"><code>.in</code> files</h2>
+<p>If you declare packages in <code>requirements.in</code> and <code>requirements.dev.in</code> files
+then starting <code>requirements.dev.in</code> with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>-r requirements.txt
+</span></span></code></pre></div><p>will avoid conflicts when compiling.</p>
+<h2 id="pyprojecttoml"><code>pyproject.toml</code></h2>
+<p>If you declare packages in a <code>pyproject.toml</code> file then it&rsquo;s best to always
+install both lock files in development or testing environments:</p>
+<pre tabindex="0"><code>pip install -r requirements.txt -r requirements.dev.txt
+</code></pre><p>Hat-tip to <a href="https://hynek.me/til/pip-tools-and-pyproject-toml/">Hynek Schlawack</a> for this tip.</p>
 </article>
 
         </main>
@@ -110,11 +113,6 @@ to ignore certain error codes in files matching a set of globs.</li>
                 
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
                     <ul>
-                        
-                            <li><a href="/posts/how-to-avoid-version-conflicts-in-lock-files-compiled-with-piptools/">How to avoid version conflicts in lock files compiled with <code>pip-tools</code></a></li>
-
-                            
-                            
                         
                             <li><a href="/posts/how-to-get-gunicorn-to-log-as-json/">How to get Gunicorn to log as JSON</a></li>
 
@@ -161,6 +159,11 @@ to ignore certain error codes in files matching a set of globs.</li>
                             
                             
                         
+                            <li><a href="/posts/how-to-inspect-and-clear-pythons-functoolslrucache/">How to inspect and clear Python&rsquo;s <code>functools.lru_cache</code></a></li>
+
+                            
+                            
+                        
                     </ul>
                 
 
@@ -171,9 +174,9 @@ to ignore certain error codes in files matching a set of globs.</li>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -182,11 +185,9 @@ to ignore certain error codes in files matching a set of globs.</li>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-git-aliases-that-run-an-external-command-are-run-from-the-repository-root\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-run-google-sites-as-standalone-macos-apps-that-alfred-can-start\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-djangos-management-commands-need-to-be-type-hinted\/"); })
         
     </script>
 

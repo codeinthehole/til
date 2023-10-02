@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Sep 2023 22:28:13 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 02 Oct 2023 21:59:28 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to avoid version conflicts in lock files compiled with `pip-tools`</title>
+      <link>https://til.codeinthehole.com/posts/how-to-avoid-version-conflicts-in-lock-files-compiled-with-piptools/</link>
+      <pubDate>Mon, 02 Oct 2023 21:59:28 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-avoid-version-conflicts-in-lock-files-compiled-with-piptools/</guid>
+      <description>Many projects I work on maintain two requirements lock files:</description>
+    </item>
     
     <item>
       <title>How to get Gunicorn to log as JSON</title>
