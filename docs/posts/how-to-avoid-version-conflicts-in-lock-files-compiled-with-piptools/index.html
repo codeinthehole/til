@@ -74,10 +74,21 @@ then starting <code>requirements.dev.in</code> with:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>-r requirements.txt
 </span></span></code></pre></div><p>will avoid conflicts when compiling.</p>
 <h2 id="pyprojecttoml"><code>pyproject.toml</code></h2>
-<p>If you declare packages in a <code>pyproject.toml</code> file then it&rsquo;s best to always
-install both lock files in development or testing environments:</p>
-<pre tabindex="0"><code>pip install -r requirements.txt -r requirements.dev.txt
-</code></pre><p>Hat-tip to <a href="https://hynek.me/til/pip-tools-and-pyproject-toml/">Hynek Schlawack</a> for this tip.</p>
+<p>If you declare packages in a <code>pyproject.toml</code> file then it&rsquo;s best to install
+both lock files in development environments:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pip-sync requirements.txt requirements.dev.txt
+</span></span></code></pre></div><p>If there&rsquo;s a conflict between the two lock files then <code>pip-sync</code> will error.</p>
+<p><code>pip-sync</code> doesn&rsquo;t support installing packages in editable directly - you can&rsquo;t
+run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pip-sync requirements.txt requirements.dev.txt -e .
+</span></span></code></pre></div><p>but you can work around this by creating a <code>requirements.local.txt</code> file with
+contents:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>-e .
+</span></span></code></pre></div><p>and then install your development packages with:</p>
+<pre tabindex="0"><code>pip-sync requirements.txt requirements.dev.txt requirements.local.txt
+</code></pre><p>to ensure all packages are installed in one invocation and any conflicts are
+brought to light.</p>
+<p>Hat-tip to <a href="https://hynek.me/til/pip-tools-and-pyproject-toml/">Hynek Schlawack</a> for a useful post on this topic.</p>
 </article>
 
         </main>

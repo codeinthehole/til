@@ -28,14 +28,39 @@ will avoid conflicts when compiling.
 
 ## `pyproject.toml`
 
-If you declare packages in a `pyproject.toml` file then it's best to always
-install both lock files in development or testing environments:
+If you declare packages in a `pyproject.toml` file then it's best to install
+both lock files in development environments:
+
+```sh
+pip-sync requirements.txt requirements.dev.txt
+```
+
+If there's a conflict between the two lock files then `pip-sync` will error.
+
+`pip-sync` doesn't support installing packages in editable directly - you can't
+run:
+
+```sh
+pip-sync requirements.txt requirements.dev.txt -e .
+```
+
+but you can work around this by creating a `requirements.local.txt` file with
+contents:
+
+```txt
+-e .
+```
+
+and then install your development packages with:
 
 ```
-pip install -r requirements.txt -r requirements.dev.txt
+pip-sync requirements.txt requirements.dev.txt requirements.local.txt
 ```
 
-Hat-tip to [Hynek Schlawack][hynek_post] for this tip.
+to ensure all packages are installed in one invocation and any conflicts are
+brought to light.
+
+Hat-tip to [Hynek Schlawack][hynek_post] for a useful post on this topic.
 
 [`pip-tools`]: https://github.com/jazzband/pip-tools
 [hynek_post]: https://hynek.me/til/pip-tools-and-pyproject-toml/
