@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    The osascript command can run JavaScript as well as AppleScript for interacting with MacOS. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-javascript-to-control-macos/" />
+<meta property="og:title" content="TIL How to use JavaScript to control MacOS — David Winterbottom" />
+<meta property="og:description" content="The osascript command can run JavaScript as well as AppleScript for interacting with MacOS. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to use JavaScript to control MacOS — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>October 12, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How to use JavaScript to control MacOS</h1>
+        </header><p>The <code>osascript</code> command can run JavaScript as well as AppleScript for
+interacting with MacOS.</p>
+<p>For example, a <code>script.js</code> JavaScript file can be run with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>osascript -l JavaScript script.js
+</span></span></code></pre></div><p>or use a hashbang of:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env osascript -l JavaScript
+</span></span></span></code></pre></div><p>Running Javascript scripts with <code>osascript</code> will invoke a <code>run</code> function (if one
+exists).</p>
+<p>The JavaScript environment will have additional global objects for interacting
+with MacOS. You can identify them through comparison with a Node (v20.5.1)
+environment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>&gt; cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;console.log(Object.getOwnPropertyNames(this).join(&#39;\n&#39;))&#34;</span>
+</span></span><span style="display:flex;"><span>&gt; osascript -l JavaScript -e <span style="color:#e6db74">&#34;</span>$cmd<span style="color:#e6db74">&#34;</span> 2&gt;&amp;<span style="color:#ae81ff">1</span> | sort &gt; osascript.txt
+</span></span><span style="display:flex;"><span>&gt; node -e <span style="color:#e6db74">&#34;</span>$cmd<span style="color:#e6db74">&#34;</span> | sort &gt; node.txt
+</span></span><span style="display:flex;"><span>&gt; comm -23 osascript.txt node.txt
+</span></span><span style="display:flex;"><span>$
+</span></span><span style="display:flex;"><span>Application
+</span></span><span style="display:flex;"><span>Automation
+</span></span><span style="display:flex;"><span>Library
+</span></span><span style="display:flex;"><span>ObjC
+</span></span><span style="display:flex;"><span>ObjectSpecifier
+</span></span><span style="display:flex;"><span>Path
+</span></span><span style="display:flex;"><span>Progress
+</span></span><span style="display:flex;"><span>Ref
+</span></span><span style="display:flex;"><span>__private__
+</span></span><span style="display:flex;"><span>delay
+</span></span></code></pre></div><p>It&rsquo;s not particularly easy to find documentation for these APIs but here&rsquo;s a few
+examples.</p>
+<h2 id="examples">Examples</h2>
+<p>The <code>Application</code> object allows you to open and manipulate MacOS applications -
+e.g.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env osascript -l JavaScript
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">chrome</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Application</span>(<span style="color:#e6db74">&#34;Google Chrome&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">chrome</span>.<span style="color:#a6e22e">running</span>()) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">chrome</span>.<span style="color:#a6e22e">activate</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>as well as create notifications:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env osascript -l JavaScript
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Application</span>.<span style="color:#a6e22e">currentApplication</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">includeStandardAdditions</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">displayNotification</span>(<span style="color:#e6db74">&#34;Hello, Notification&#34;</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">withTitle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Notification Title&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">subtitle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Subtitle&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">soundName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;default&#34;</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>The <code>ObjC</code> object allows you to interact with Objective-C objects to do things
+like access environment variables:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env osascript -l JavaScript
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">args</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ObjC</span>.<span style="color:#66d9ef">import</span>(<span style="color:#e6db74">&#34;stdlib&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">browser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">getenv</span>(<span style="color:#e6db74">&#34;BROWSER&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/javascript/">Javascript</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/dprint-can-be-used-to-speed-up-prettier/"><code>dprint</code> can be used to speed up Prettier</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/javascripts-unary-plus-operator-casts-null-to-zero/">Javascript&rsquo;s unary <code>+</code> operator casts <code>null</code> to zero</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/macos/">MacOS</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-run-google-sites-as-standalone-macos-apps-that-alfred-can-start/">How to run Google sites as standalone MacOS apps that Alfred can start</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-macos-ventura-and-ios-15-can-play-background-rain-noise/">That macOS Ventura and iOS 15 can play background rain noise</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-easily-copy-annotated-screenshots-to-the-clipboard-on-macos/">How to easily copy annotated screenshots to the clipboard on macOS</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/the-names-for-macos-keyboard-metacharacters/">The names for macOS keyboard meta-characters</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-chromes-named-windows/">About Chrome&rsquo;s named windows</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/iterm2s-cursor-boost-feature-will-cause-everything-to-appear-dimmed/">iTerm2&rsquo;s &ldquo;Cursor boost&rdquo; feature will cause everything to appear dimmed</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-scroll-horizontally-with-a-mouse/">How to scroll horizontally with a mouse</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-temp-files-are-removed-on-macos/">How temporary files are removed on MacOS</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-the-difference-between-minimising-and-hiding-windows-in-macos/">About the difference between minimising and hiding windows in MacOS</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/the-macos-keybinds-for-en-and-emdashes/">The MacOS keybinds for en- and em-dashes</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/github-supports-a-markdown-extension-for-creating-alert-blocks\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

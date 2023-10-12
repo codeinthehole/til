@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/how-to-use-javascript-to-control-macos/</loc>
+    <lastmod>2023-10-12T21:36:24+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/javascript/</loc>
+    <lastmod>2023-10-12T21:36:24+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/macos/</loc>
+    <lastmod>2023-10-12T21:36:24+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2023-10-12T21:36:24+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2023-10-12T21:36:24+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2023-10-12T21:36:24+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/github/</loc>
     <lastmod>2023-10-12T13:58:00+01:00</lastmod>
   </url><url>
@@ -9,15 +27,6 @@
     <lastmod>2023-10-12T13:58:00+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/markdown/</loc>
-    <lastmod>2023-10-12T13:58:00+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2023-10-12T13:58:00+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2023-10-12T13:58:00+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2023-10-12T13:58:00+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-avoid-version-conflicts-in-lock-files-compiled-with-piptools/</loc>
@@ -36,9 +45,6 @@
     <lastmod>2023-09-22T10:20:58+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-run-google-sites-as-standalone-macos-apps-that-alfred-can-start/</loc>
-    <lastmod>2023-09-22T10:20:58+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/macos/</loc>
     <lastmod>2023-09-22T10:20:58+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/gunicorn/</loc>
@@ -294,9 +300,6 @@
     <lastmod>2022-06-01T10:24:44+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/dprint-can-be-used-to-speed-up-prettier/</loc>
-    <lastmod>2022-04-27T09:22:58+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/javascript/</loc>
     <lastmod>2022-04-27T09:22:58+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-use-lookbehind-regex-assertions-with-ripgrep/</loc>
