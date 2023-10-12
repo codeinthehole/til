@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Oct 2023 21:59:28 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 12 Oct 2023 13:58:00 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Github</title>
+      <link>https://til.codeinthehole.com/tags/github/</link>
+      <pubDate>Thu, 12 Oct 2023 13:58:00 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://til.codeinthehole.com/tags/markdown/</link>
+      <pubDate>Thu, 12 Oct 2023 13:58:00 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/markdown/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Pip-tools</title>
@@ -117,24 +135,6 @@
       <pubDate>Wed, 26 Jul 2023 09:48:58 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Github</title>
-      <link>https://til.codeinthehole.com/tags/github/</link>
-      <pubDate>Sat, 01 Jul 2023 18:57:50 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Markdown</title>
-      <link>https://til.codeinthehole.com/tags/markdown/</link>
-      <pubDate>Sat, 01 Jul 2023 18:57:50 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/markdown/</guid>
       <description></description>
     </item>
     

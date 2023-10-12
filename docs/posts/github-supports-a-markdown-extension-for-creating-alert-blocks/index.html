@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Until today, I had Vimium disabled for Github as I believed Github’s keyboard shortcuts where useful enough to warrant losing Vimium’s. ...
+    The syntax is:
+&amp;gt; [!NOTE] &amp;gt; This is a note. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +19,17 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/that-vimium-has-shortcuts-for-following-pagination-links/" />
-<meta property="og:title" content="TIL That Vimium has shortcuts for following pagination links — David Winterbottom" />
-<meta property="og:description" content="Until today, I had Vimium disabled for Github as I believed Github&rsquo;s keyboard shortcuts where useful enough to warrant losing Vimium&rsquo;s. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/github-supports-a-markdown-extension-for-creating-alert-blocks/" />
+<meta property="og:title" content="TIL Github supports a Markdown extension for creating alert blocks — David Winterbottom" />
+<meta property="og:description" content="The syntax is:
+&gt; [!NOTE] &gt; This is a note. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL That Vimium has shortcuts for following pagination links — David Winterbottom
+    TIL Github supports a Markdown extension for creating alert blocks — David Winterbottom
 </title>
 
         
@@ -56,34 +58,19 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>June 21, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>October 12, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>That Vimium has shortcuts for following pagination links</h1>
-        </header><p>Until today, I had Vimium disabled for Github as I believed <a href="https://docs.github.com/en/get-started/using-github/keyboard-shortcuts">Github&rsquo;s keyboard
-shortcuts</a> where useful enough to warrant losing
-<a href="https://vimium.github.io/">Vimium&rsquo;s</a>.</p>
-<p>Particularly:</p>
-<ul>
-<li><code>n</code> and <code>p</code> — navigate to the next or parent commit when reviewing a pull
-request. Very convenient for code review.</li>
-<li><code>Y</code> — <a href="https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files">expand the current URL to its canonical, permalink</a>.
-Essential for sharing URLs to file content (as otherwise the page content can
-change over time).</li>
-</ul>
-<p>But I discovered Vimium can be enabled for Github without losing the above
-functionality.</p>
-<ul>
-<li>
-<p>Vimium provides <code>[[</code> and <code>]]</code> to navigate to the next and previous commit when
-reviewing a pull request. These shadow the quickfix navigation mappings from
-<a href="https://github.com/tpope/vim-unimpaired"><code>vim-unimpaired</code></a>. More broadly, these work with various
-forms of &ldquo;previous&rdquo; or &ldquo;next&rdquo; pagination links.</p>
-</li>
-<li>
-<p>Github&rsquo;s <code>Y</code> shortcut can still be accessed by entering &ldquo;insert mode&rdquo; first.
-So use <code>iY</code> instead.</p>
-</li>
-</ul>
+            <h1>Github supports a Markdown extension for creating alert blocks</h1>
+        </header><p>The syntax is:</p>
+<pre tabindex="0"><code>&gt; [!NOTE]
+&gt; This is a note.
+</code></pre><p>which renders as:</p>
+<figure><a href="/images/github-note-block.png"><img src="/images/github-note-block.png"
+         alt="Github note block"/></a>
+</figure>
+
+<p>Two other block-types are supported: <code>[!IMPORTANT]</code> and <code>[!WARNING]</code>.</p>
+<p>See the <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts">official docs</a> for more.</p>
 </article>
 
         </main>
@@ -105,27 +92,15 @@ So use <code>iY</code> instead.</p>
                 
 
                 
-
-            
-
-        
-
-            
-            
-
-            
-                
-
-                
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/github/">Github</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/github-supports-a-markdown-extension-for-creating-alert-blocks/">Github supports a Markdown extension for creating alert blocks</a></li>
+                            <li><a href="/posts/that-two-trailing-spaces-indicates-a-line-break-in-markdown/">That two trailing spaces indicates a line break in Markdown</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/that-two-trailing-spaces-indicates-a-line-break-in-markdown/">That two trailing spaces indicates a line break in Markdown</a></li>
+                            <li><a href="/posts/that-vimium-has-shortcuts-for-following-pagination-links/">That Vimium has shortcuts for following pagination links</a></li>
 
                             
                             
@@ -162,12 +137,49 @@ So use <code>iY</code> instead.</p>
 
         
 
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/markdown/">Markdown</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/some-markdown-parsers-support-definition-lists/">Some Markdown parsers support definition lists</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/">How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-spellcheck-markdown-repos-on-circleci/">How to spell-check markdown repos on CircleCI</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/vimmarkdown-has-some-useful-commands/">Vim-markdown has some useful commands</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -176,11 +188,9 @@ So use <code>iY</code> instead.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-avoid-committing-jupyter-notebook-output-to-git\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-avoid-version-conflicts-in-lock-files-compiled-with-piptools\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/that-two-trailing-spaces-indicates-a-line-break-in-markdown\/"); })
         
     </script>
 
