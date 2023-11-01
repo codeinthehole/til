@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    I was trying to work out why this psql command wasn’t printing results in tab-separated format: ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-psqlrc-options-can-override-commandline-options/" />
+<meta property="og:title" content="TIL That &#39;~/.psqlrc&#39; options can override command-line options — David Winterbottom" />
+<meta property="og:description" content="I was trying to work out why this psql command wasn&rsquo;t printing results in tab-separated format: [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL That &#39;~/.psqlrc&#39; options can override command-line options — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>November 1, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>That <code>~/.psqlrc</code> options can override command-line options</h1>
+        </header><p>I was trying to work out why this <code>psql</code> command wasn&rsquo;t printing results in
+tab-separated format:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>psql -d $DATABASE -AF <span style="color:#e6db74">$&#39;\t&#39;</span> -c <span style="color:#e6db74">&#34;</span>$SQL<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>This should work as:</p>
+<ul>
+<li><code>-A</code> (or <code>--no-align</code>) disables aligned output.</li>
+<li><code>-F $'\t'</code> indicates a tab character should be used as a field separator.</li>
+</ul>
+<p>But it wasn&rsquo;t working.</p>
+<p>Turns out that a setting in my <code>~/.psqlrc</code> was overriding the <code>-A</code> option:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\</span>pset format wrap
+</span></span></code></pre></div><p>To get the above command to work, the <code>--no-psqlrc</code> option was needed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>psql -d $DATABASE --no-psqlrc -AF <span style="color:#e6db74">$&#39;\t&#39;</span> -c <span style="color:#e6db74">&#34;</span>$SQL<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div></article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/postgresql/">PostgreSQL</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-set-perrole-statement-timeouts-in-postgres/">How to set per-role statement timeouts in Postgres</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-postgres-sequences-arent-restored-after-a-rollback/">That Postgres sequences aren&rsquo;t restored after a transaction rollback</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-a-gotcha-with-psycopg2s-autocommit-handling/">About a gotcha with <code>psycopg2</code>&rsquo;s autocommit handling</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/the-correct-sequence-of-sql-statements-for-dropping-a-role/">The correct sequence of SQL statements for dropping a role</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-use-javascript-to-control-macos\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

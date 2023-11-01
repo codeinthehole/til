@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/postgresql/</loc>
+    <lastmod>2023-11-01T21:36:51+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2023-11-01T21:36:51+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2023-11-01T21:36:51+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/that-psqlrc-options-can-override-commandline-options/</loc>
+    <lastmod>2023-11-01T21:36:51+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2023-11-01T21:36:51+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-use-javascript-to-control-macos/</loc>
     <lastmod>2023-10-12T21:36:24+01:00</lastmod>
   </url><url>
@@ -9,15 +24,6 @@
     <lastmod>2023-10-12T21:36:24+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/macos/</loc>
-    <lastmod>2023-10-12T21:36:24+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2023-10-12T21:36:24+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2023-10-12T21:36:24+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2023-10-12T21:36:24+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/github/</loc>
@@ -105,9 +111,6 @@
     <lastmod>2023-06-05T13:42:03+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-set-perrole-statement-timeouts-in-postgres/</loc>
-    <lastmod>2023-05-09T16:52:32+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/postgresql/</loc>
     <lastmod>2023-05-09T16:52:32+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/ios/</loc>
