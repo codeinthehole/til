@@ -48,7 +48,7 @@
 
     {{ $num_recent_tag_pages := len $recent_tag_pages }}
     <p>
-        There have been <strong>{{ len $posts }}</strong> TILs so far —
+        There have been <strong>{{ len $posts }}</strong> posts so far —
         recent topics include 
         {{ range $i, $p := $recent_tag_pages }}{{ if eq $i (sub $num_recent_tag_pages 1) }} and {{ else if $i }}, {{ end -}}<a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ end }}.
     </p>
@@ -67,6 +67,8 @@
         Other people making public notes on what they are learning:
     </p>
     <ul>
+        <li><a href="https://samueljsb.co.uk/til/">Sam Searles-Bryant</a></li>
+        <li><a href="https://flagzeta.org/til/">Federico Marani</a></li>
         <li><a href="https://github.com/jbranchaud/til">Josh Branchaud</a></li>
         <li><a href="https://til.simonwillison.net/">Simon Willison</a></li>
         <li><a href="https://github.com/jwworth/til">Jake Worth</a></li>
