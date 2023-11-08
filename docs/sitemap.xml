@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/about-bashs-pipestatus-variable/</loc>
+    <lastmod>2023-11-07T14:57:35+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/bash/</loc>
+    <lastmod>2023-11-07T14:57:35+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2023-11-07T14:57:35+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2023-11-07T14:57:35+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2023-11-07T14:57:35+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/postgresql/</loc>
     <lastmod>2023-11-01T21:36:51+00:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2023-11-01T21:36:51+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2023-11-01T21:36:51+00:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/posts/that-psqlrc-options-can-override-commandline-options/</loc>
-    <lastmod>2023-11-01T21:36:51+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2023-11-01T21:36:51+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-use-javascript-to-control-macos/</loc>
@@ -181,9 +187,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-format-json-into-a-table-with-jq-and-column/</loc>
     <lastmod>2023-01-05T11:19:09+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/bash/</loc>
-    <lastmod>2022-12-19T13:38:43+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/homebrew/</loc>
     <lastmod>2022-12-19T13:38:43+00:00</lastmod>

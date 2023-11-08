@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Nov 2023 21:36:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Nov 2023 14:57:35 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Bash</title>
+      <link>https://til.codeinthehole.com/tags/bash/</link>
+      <pubDate>Tue, 07 Nov 2023 14:57:35 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/bash/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>PostgreSQL</title>
@@ -279,15 +288,6 @@
       <pubDate>Fri, 06 Jan 2023 09:21:18 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/github-copilot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bash</title>
-      <link>https://til.codeinthehole.com/tags/bash/</link>
-      <pubDate>Mon, 19 Dec 2022 13:38:43 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/bash/</guid>
       <description></description>
     </item>
     

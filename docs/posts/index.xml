@@ -6,11 +6,21 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Nov 2023 21:36:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Nov 2023 14:57:35 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About Bash&#39;s `$PIPESTATUS` variable</title>
+      <link>https://til.codeinthehole.com/posts/about-bashs-pipestatus-variable/</link>
+      <pubDate>Tue, 07 Nov 2023 14:57:35 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-bashs-pipestatus-variable/</guid>
+      <description>Problem: you have a pipeline like so:
+$cmd1 | $cmd2 | $cmd3 and you want to detect if $cmd1 exits with a exit code greater than 1.</description>
+    </item>
     
     <item>
       <title>That `~/.psqlrc` options can override command-line options</title>
