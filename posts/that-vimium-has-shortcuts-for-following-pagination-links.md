@@ -5,10 +5,10 @@ tags: ["Vimium", "Github"]
 ---
 
 Until today, I had Vimium disabled for Github as I believed [Github's keyboard
-shortcuts][github_keyboard_shortcuts] where useful enough to warrant losing
+shortcuts][github_keyboard_shortcuts] were useful enough to warrant losing
 [Vimium's][vimium].
 
-Particularly:
+These Github shortcuts in particular:
 
 - `n` and `p` — navigate to the next or parent commit when reviewing a pull
   request. Very convenient for code review.
@@ -16,8 +16,7 @@ Particularly:
   Essential for sharing URLs to file content (as otherwise the page content can
   change over time).
 
-But I discovered Vimium can be enabled for Github without losing the above
-functionality.
+But Vimium can be enabled for Github without losing the above functionality.
 
 - Vimium provides `[[` and `]]` to navigate to the next and previous commit when
   reviewing a pull request. These shadow the quickfix navigation mappings from
