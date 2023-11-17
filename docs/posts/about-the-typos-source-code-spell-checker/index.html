@@ -68,14 +68,14 @@ useful for finding typos in code comments and variable names.</p>
 </span></span></code></pre></div><p>It does tend to yield some false positives but it&rsquo;s still useful.</p>
 <h2 id="fixing-typos-in-a-project">Fixing typos in a project</h2>
 <p>I use it to populate Vim&rsquo;s quickfix list via:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-viml" data-lang="viml"><span style="display:flex;"><span>:<span style="color:#a6e22e">cexpr</span> <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#39;typos --format=brief&#39;</span>)<span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>then use <code>,z</code> to replace the word under cursor with the top spelling suggestion,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-viml" data-lang="viml"><span style="display:flex;"><span>:<span style="color:#a6e22e">cexpr</span> <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#39;typos --format=brief&#39;</span>)
+</span></span></code></pre></div><p>then use <code>,z</code> to replace the word under cursor with the top spelling suggestion,
 which is usually right:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-viml" data-lang="viml"><span style="display:flex;"><span><span style="color:#75715e">&#34; ~/.vimrc</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#34; Replace word under cursor with top spelling suggestion</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">nnoremap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">z</span> <span style="color:#ae81ff">1</span>z=<span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>Haven&rsquo;t tried it as a pre-commit hook or CI step yet but will investigate.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-viml" data-lang="viml"><span style="display:flex;"><span><span style="color:#75715e">&#34; ~/.vimrc</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#34; Replace word under cursor with top spelling suggestion</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">nnoremap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">z</span> <span style="color:#ae81ff">1</span>z=
+</span></span></code></pre></div><p>Haven&rsquo;t tried it as a pre-commit hook or CI step yet but will investigate.</p>
 </article>
 
         </main>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    pipx is a tool for installing standalone Python packages in isolated environments. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="https://til.codeinthehole.com/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-pipx-choose-which-python-to-install-a-package-with/" />
+<meta property="og:title" content="TIL How &#39;pipx&#39; chooses which Python to install a package with — David Winterbottom" />
+<meta property="og:description" content="pipx is a tool for installing standalone Python packages in isolated environments. [Reading time: 2 minutes]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How &#39;pipx&#39; chooses which Python to install a package with — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>November 17, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+            </div>
+            <h1>How <code>pipx</code> chooses which Python to install a package with</h1>
+        </header><p><a href="https://pypa.github.io/pipx/"><code>pipx</code></a> is a tool for installing standalone Python packages in isolated
+environments. It&rsquo;s useful for managing Python CLI tools that you want available
+globally and not confined to one virtualenv. Things like:</p>
+<ul>
+<li><a href="https://pypi.org/project/aws-mfa-v2/"><code>aws-mfa-v2</code></a> &mdash; temporary AWS
+sessions using MFA</li>
+<li><a href="https://llm.datasette.io/en/stable/"><code>llm</code></a> &mdash; CLI access to Large Language
+Models</li>
+<li><a href="https://pypi.org/project/yamllint/"><code>yamllint</code></a> &mdash; YAML linting</li>
+</ul>
+<p>Syntax for installing a package is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pipx install $package
+</span></span></code></pre></div><h2 id="package-installation-problem">Package installation problem?</h2>
+<p>After switching to a new laptop, <code>llm</code> wouldn&rsquo;t install:</p>
+<pre tabindex="0"><code>&gt; pipx install llm
+Fatal error from pip prevented installation. Full pip output in file:
+    ~.local/pipx/logs/cmd_2023-11-17_11.07.16_pip_errors.log
+
+pip failed to build package:
+    aiohttp
+
+Some possibly relevant errors from pip install:
+    error: subprocess-exited-with-error
+    aiohttp/_websocket.c:3042:55: error: no member named &#39;ob_digit&#39; in &#39;struct _longobject&#39;
+    aiohttp/_websocket.c:3097:55: error: no member named &#39;ob_digit&#39; in &#39;struct _longobject&#39;
+    aiohttp/_websocket.c:3238:55: error: no member named &#39;ob_digit&#39; in &#39;struct _longobject&#39;
+    aiohttp/_websocket.c:3293:55: error: no member named &#39;ob_digit&#39; in &#39;struct _longobject&#39;
+    aiohttp/_websocket.c:3744:47: error: no member named &#39;ob_digit&#39; in &#39;struct _longobject&#39;
+    error: command &#39;/usr/bin/clang&#39; failed with exit code 1
+
+Error installing llm.
+</code></pre><p>A little digging revealed the latest version of <code>aiohttp</code> didn&rsquo;t support Python
+3.12, hence the compilation error. So <code>pipx</code> must be using Python 3.12 to
+install packages.</p>
+<h2 id="how-does-pipx-choose-which-python-to-use">How does <code>pipx</code> choose which Python to use?</h2>
+<p>From <a href="https://pypa.github.io/pipx/docs/">the docs</a>:</p>
+<blockquote>
+<p>The default python executable used to install a package is typically the
+python used to execute pipx and can be overridden by setting the environment
+variable <code>PIPX_DEFAULT_PYTHON</code>.</p>
+</blockquote>
+<p>I installed <code>pipx</code> from Homebrew and the relevant Python can be seen in the
+package info:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>&gt; brew info pipx | rg <span style="color:#e6db74">&#34;Required.*python&#34;</span>
+</span></span><span style="display:flex;"><span>Required: python-argcomplete, python-packaging, python@3.12
+</span></span></code></pre></div><p>As suspected: <code>python@3.12</code>.</p>
+<h2 id="how-to-install-packages-with-a-different-python-version">How to install packages with a different Python version?</h2>
+<p><code>pipx install</code> supports a <code>--python</code> flag that can be used to specify a
+different Python. I&rsquo;m using <code>pyenv</code> to marshall local Python versions; you can
+determine the path to a given version like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>&gt; cd /tmp
+</span></span><span style="display:flex;"><span>&gt; pyenv local 3.11.6
+</span></span><span style="display:flex;"><span>&gt; PYTHON_PATH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>pyenv which python<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>then <code>llm</code> can be installed:</p>
+<pre tabindex="0"><code>pipx install --python $PYTHON_PATH llm
+</code></pre></article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/python/">Python</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-avoid-version-conflicts-in-lock-files-compiled-with-piptools/">How to avoid version conflicts in lock files compiled with <code>pip-tools</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-get-gunicorn-to-log-as-json/">How to get Gunicorn to log as JSON</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-create-a-word-cloud-from-text-piped-via-stdin/">How to create a word cloud from text piped via STDIN</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/not-to-union-python-list-types/">Not to union Python list types</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-handle-convenience-imports-with-mypy/">How to handle convenience imports with Mypy</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-djangos-overridesettings-decorator-causes-flakey-tests/">How Django&rsquo;s <code>override_settings</code> decorator causes flakey tests</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/mypy-skips-empty-functions/">Mypy skips empty functions</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/its-better-to-explicitly-chain-exceptions/">It&rsquo;s better to explicitly chain Python exceptions</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-indirect-parametrization-with-pytest/">About indirect parametrization with Pytest</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month/">That Python&rsquo;s <code>datetime</code> package doesn&rsquo;t support ordinal suffixes for the day of the month</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-bashs-pipestatus-variable\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

@@ -68,10 +68,10 @@ path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] 
 <p>This is because the error format doesn&rsquo;t match any of the scanf-style format
 strings in the <code>errorformat</code> option.</p>
 <p>To remedy, add a new format pattern to the list:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">errorformat</span>+=%<span style="color:#a6e22e">f</span>:%<span style="color:#a6e22e">l</span>\ %<span style="color:#a6e22e">m</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>With this adjusted, you can work through the errors in a project using;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#a6e22e">cexpr</span> <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#39;markdownlint .&#39;</span>)<span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#66d9ef">set</span> <span style="color:#a6e22e">errorformat</span>+=%<span style="color:#a6e22e">f</span>:%<span style="color:#a6e22e">l</span>\ %<span style="color:#a6e22e">m</span>
+</span></span></code></pre></div><p>With this adjusted, you can work through the errors in a project using;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#a6e22e">cexpr</span> <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#39;markdownlint .&#39;</span>)
+</span></span></code></pre></div></article>
 
         </main>
 

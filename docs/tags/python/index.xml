@@ -6,11 +6,20 @@
     <description>Recent content in Python on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Oct 2023 21:59:28 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 17 Nov 2023 11:14:27 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How `pipx` chooses which Python to install a package with</title>
+      <link>https://til.codeinthehole.com/posts/how-pipx-choose-which-python-to-install-a-package-with/</link>
+      <pubDate>Fri, 17 Nov 2023 11:14:27 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-pipx-choose-which-python-to-install-a-package-with/</guid>
+      <description>pipx is a tool for installing standalone Python packages in isolated environments.</description>
+    </item>
     
     <item>
       <title>How to avoid version conflicts in lock files compiled with `pip-tools`</title>

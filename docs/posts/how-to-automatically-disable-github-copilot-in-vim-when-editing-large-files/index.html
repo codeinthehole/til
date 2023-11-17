@@ -110,13 +110,13 @@ suspicions:</p>
 </span></span></code></pre></div><p>As you can see, around 4 seconds was spent fetching Copilot suggestions in the
 <code>copilot#Suggest()</code> call, which is unacceptably slow.</p>
 <p>To remedy, I added an autocommand to disable Copilot for large files:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#75715e">&#34; (Line-wrapped for legibility)</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">BufReadPre</span> *<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    \ <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">f</span>=<span style="color:#a6e22e">getfsize</span>(<span style="color:#a6e22e">expand</span>(<span style="color:#e6db74">&#34;&lt;afile&gt;&#34;</span>))<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    \ | <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">f</span> &gt; <span style="color:#ae81ff">100000</span> || <span style="color:#a6e22e">f</span> == <span style="color:#ae81ff">-2</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    \ | <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span>:<span style="color:#a6e22e">copilot_enabled</span> = <span style="color:#a6e22e">v</span>:<span style="color:#a6e22e">false</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    \ | <span style="color:#66d9ef">endif</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>This autocommand runs when loading a new buffer. It fetches the file size and
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#75715e">&#34; (Line-wrapped for legibility)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">autocmd</span> <span style="color:#a6e22e">BufReadPre</span> *
+</span></span><span style="display:flex;"><span>    \ <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">f</span>=<span style="color:#a6e22e">getfsize</span>(<span style="color:#a6e22e">expand</span>(<span style="color:#e6db74">&#34;&lt;afile&gt;&#34;</span>))
+</span></span><span style="display:flex;"><span>    \ | <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">f</span> &gt; <span style="color:#ae81ff">100000</span> || <span style="color:#a6e22e">f</span> == <span style="color:#ae81ff">-2</span>
+</span></span><span style="display:flex;"><span>    \ | <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span>:<span style="color:#a6e22e">copilot_enabled</span> = <span style="color:#a6e22e">v</span>:<span style="color:#a6e22e">false</span>
+</span></span><span style="display:flex;"><span>    \ | <span style="color:#66d9ef">endif</span>
+</span></span></code></pre></div><p>This autocommand runs when loading a new buffer. It fetches the file size and
 disables Copilot for the buffer if the file size is greater than 100kb.</p>
 <p>This autocommand was adapted from a similar one in the <a href="https://vim.fandom.com/wiki/Faster_loading_of_large_files">Vim tips
 wiki</a>.</p>
