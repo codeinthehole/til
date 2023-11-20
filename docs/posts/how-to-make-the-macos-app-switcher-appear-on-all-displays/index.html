@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    You can insert a ⌘ character using the Character Viewer pop-up. ...
+    If you have multiple displays connected to your Mac, you may have noticed that the app switcher (cmd&#43;tab) only appears on the display where the Dock is located. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/the-names-for-macos-keyboard-metacharacters/" />
-<meta property="og:title" content="TIL The names for macOS keyboard meta-characters — David Winterbottom" />
-<meta property="og:description" content="You can insert a ⌘ character using the Character Viewer pop-up. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-make-the-macos-app-switcher-appear-on-all-displays/" />
+<meta property="og:title" content="TIL How to make the MacOS app switcher appear on all displays — David Winterbottom" />
+<meta property="og:description" content="If you have multiple displays connected to your Mac, you may have noticed that the app switcher (cmd&#43;tab) only appears on the display where the Dock is located. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL The names for macOS keyboard meta-characters — David Winterbottom
+    TIL How to make the MacOS app switcher appear on all displays — David Winterbottom
 </title>
 
         
@@ -56,20 +56,19 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>September 10, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>November 20, 2023</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>The names for macOS keyboard meta-characters</h1>
-        </header><p>You can insert a <code>⌘</code> character using the
-<a href="https://support.apple.com/en-gb/guide/mac-help/mchlp1560/mac">Character Viewer</a>
-pop-up.</p>
-<p>But the characters for macOS meta-keys like command and option have unusual
-names which makes them hard to find by searching. Their names are:</p>
-<ul>
-<li><code>⌘</code> - &ldquo;PLACE OF INTEREST&rdquo;</li>
-<li><code>⇧</code> - &ldquo;UPWARDS WHITE ARROW&rdquo;</li>
-<li><code>⇪</code> - &ldquo;UPWARDS WHITE ARROW FROM BAR&rdquo;</li>
-<li><code>⌃</code> - &ldquo;UP ARROWHEAD&rdquo;</li>
-</ul>
+            <h1>How to make the MacOS app switcher appear on all displays</h1>
+        </header><p>If you have multiple displays connected to your Mac, you may have noticed that
+the app switcher (<code>cmd+tab</code>) only appears on the display where the Dock is
+located. This is mildly annoying if you happen to be looking at the other
+display.</p>
+<p>But it&rsquo;s possible to have the app switcher appear on all displays, so it&rsquo;s
+always visible in the display you&rsquo;re looking at:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>defaults write com.apple.dock appswitcher-all-displays -bool true
+</span></span></code></pre></div><p>You&rsquo;ll need to restart the Docker for this change to be picked up:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>killall Dock
+</span></span></code></pre></div><p>Found this tip on <a href="https://superuser.com/questions/670252/cmdtab-app-switcher-is-on-the-wrong-monitor">this StackOverflow answer</a>.</p>
 </article>
 
         </main>
@@ -94,11 +93,6 @@ names which makes them hard to find by searching. Their names are:</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/macos/">MacOS</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/how-to-make-the-macos-app-switcher-appear-on-all-displays/">How to make the MacOS app switcher appear on all displays</a></li>
-
-                            
-                            
-                        
                             <li><a href="/posts/how-to-use-javascript-to-control-macos/">How to use JavaScript to control MacOS</a></li>
 
                             
@@ -115,6 +109,11 @@ names which makes them hard to find by searching. Their names are:</p>
                             
                         
                             <li><a href="/posts/how-to-easily-copy-annotated-screenshots-to-the-clipboard-on-macos/">How to easily copy annotated screenshots to the clipboard on macOS</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/the-names-for-macos-keyboard-metacharacters/">The names for macOS keyboard meta-characters</a></li>
 
                             
                             
@@ -154,9 +153,9 @@ names which makes them hard to find by searching. Their names are:</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -165,11 +164,9 @@ names which makes them hard to find by searching. Their names are:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-git-mergebase\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-pipx-choose-which-python-to-install-a-package-with\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-easily-copy-annotated-screenshots-to-the-clipboard-on-macos\/"); })
         
     </script>
 
