@@ -7,7 +7,7 @@ tags: ["Vim", "Security"]
 One way to populate Vim's quickfix list is by running `:make` which runs the
 program specified by the `makeprg` setting. Due to Vim's C heritage, the default
 behaviour is to run the `make` command-line tool but there are many other useful
-programs that print locations to STDOUT.
+programs that print locations to `stdout`.
 
 [Bandit](https://bandit.readthedocs.io/en/latest/) is a Python static analysis
 tool that looks for common security issues. You can use it to populate the

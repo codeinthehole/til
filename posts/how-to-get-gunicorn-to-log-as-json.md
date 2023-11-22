@@ -22,7 +22,7 @@ import json_log_formatter
 
 bind = "0.0.0.0:8000"
 
-# Log to STDOUT.
+# Log to stdout.
 accesslog = "-"
 errorlog = "-"
 

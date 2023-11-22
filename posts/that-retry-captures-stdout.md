@@ -1,5 +1,5 @@
 ---
-title: "That Ubuntu's `retry` command captures STDOUT"
+title: "That Ubuntu's `retry` command captures `stdout`"
 date: "2022-08-18T15:00:40+01:00"
 tags: ["Ubuntu"]
 ---
@@ -15,7 +15,7 @@ retry --until=success --times=3 $FLAKEY_CMD
 ```
 
 But we discovered the hard way today that it captures the wrapped command's
-STDOUT until the command exits, which can be a problem in environments where
+`stdout` until the command exits, which can be a problem in environments where
 commands are killed after a period of no output. This happens in CircleCI.
 
 To be fair, this is noted in [the command's help text][github_help_source]:

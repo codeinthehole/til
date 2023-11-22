@@ -19,7 +19,7 @@
         
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/that-retry-captures-stdout/" />
-<meta property="og:title" content="TIL That Ubuntu&#39;s &#39;retry&#39; command captures STDOUT — David Winterbottom" />
+<meta property="og:title" content="TIL That Ubuntu&#39;s &#39;retry&#39; command captures &#39;stdout&#39; — David Winterbottom" />
 <meta property="og:description" content="Debian&rsquo;s retry command allows you to repeatedly run a command until it succeeds. [Reading time: 1 minute]" />
 
 
@@ -27,7 +27,7 @@
 
 
         <title>
-    TIL That Ubuntu&#39;s &#39;retry&#39; command captures STDOUT — David Winterbottom
+    TIL That Ubuntu&#39;s &#39;retry&#39; command captures &#39;stdout&#39; — David Winterbottom
 </title>
 
         
@@ -58,14 +58,14 @@
             <div id="date_sentence">
                 On <time>August 18, 2022</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>That Ubuntu&rsquo;s <code>retry</code> command captures STDOUT</h1>
+            <h1>That Ubuntu&rsquo;s <code>retry</code> command captures <code>stdout</code></h1>
         </header><p>Debian&rsquo;s <a href="https://manpages.debian.org/testing/retry/retry.1.en.html"><code>retry</code></a> command allows you to repeatedly run a
 command until it succeeds. This is useful for running commands that
 intermittently fail.</p>
 <p>Example usage:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>retry --until<span style="color:#f92672">=</span>success --times<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> $FLAKEY_CMD
 </span></span></code></pre></div><p>But we discovered the hard way today that it captures the wrapped command&rsquo;s
-STDOUT until the command exits, which can be a problem in environments where
+<code>stdout</code> until the command exits, which can be a problem in environments where
 commands are killed after a period of no output. This happens in CircleCI.</p>
 <p>To be fair, this is noted in <a href="https://github.com/minfrin/retry/blob/f6f1acd4b235e96dd9cb11263fb181ec44c3ece9/retry.c#L108-L111">the command&rsquo;s help text</a>:</p>
 <blockquote>
