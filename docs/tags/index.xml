@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Nov 2023 14:59:48 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jan 2024 12:07:20 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Bear</title>
+      <link>https://til.codeinthehole.com/tags/bear/</link>
+      <pubDate>Wed, 31 Jan 2024 12:07:20 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/bear/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MacOS</title>
+      <link>https://til.codeinthehole.com/tags/macos/</link>
+      <pubDate>Wed, 31 Jan 2024 12:07:20 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/macos/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Markdown</title>
@@ -27,15 +45,6 @@
       <pubDate>Mon, 27 Nov 2023 14:59:48 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MacOS</title>
-      <link>https://til.codeinthehole.com/tags/macos/</link>
-      <pubDate>Mon, 20 Nov 2023 12:44:04 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/macos/</guid>
       <description></description>
     </item>
     
@@ -774,15 +783,6 @@
       <pubDate>Mon, 21 Sep 2020 12:33:56 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/gotchas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bear</title>
-      <link>https://til.codeinthehole.com/tags/bear/</link>
-      <pubDate>Wed, 02 Sep 2020 11:34:04 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/bear/</guid>
       <description></description>
     </item>
     

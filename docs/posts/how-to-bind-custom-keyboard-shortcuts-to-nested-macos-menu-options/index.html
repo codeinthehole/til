@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    If you use Finder to mark a file as a “stationery pad” then apps will open a copy of the file. ...
+    MacOS allows you to override and bind new keyboard shortcuts for an app. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-the-stationery-pad-feature-in-finder/" />
-<meta property="og:title" content="TIL About the stationery pad feature in Finder — David Winterbottom" />
-<meta property="og:description" content="If you use Finder to mark a file as a &ldquo;stationery pad&rdquo; then apps will open a copy of the file. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-bind-custom-keyboard-shortcuts-to-nested-macos-menu-options/" />
+<meta property="og:title" content="TIL How to bind custom keyboard shortcuts to nested MacOS menu options — David Winterbottom" />
+<meta property="og:description" content="MacOS allows you to override and bind new keyboard shortcuts for an app. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About the stationery pad feature in Finder — David Winterbottom
+    TIL How to bind custom keyboard shortcuts to nested MacOS menu options — David Winterbottom
 </title>
 
         
@@ -56,17 +56,31 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>August 14, 2020</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>January 31, 2024</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About the stationery pad feature in Finder</h1>
-        </header><p>If you use Finder to mark a file as a &ldquo;stationery pad&rdquo; then apps will open a
-copy of the file. The original file will effectively act as a template.</p>
-<p>You can set this flag from the <code>Get Info</code> Finder dialogue:</p>
-<figure><img src="/images/stationery-pad-option.png"/>
+            <h1>How to bind custom keyboard shortcuts to nested MacOS menu options</h1>
+        </header><p>MacOS allows you to <a href="https://support.apple.com/en-gb/guide/mac-help/mchlp2271/mac">override and bind new keyboard shortcuts for an
+app</a>.</p>
+<p>This is done via the <code>System Settings &gt; Keyboard &gt; Keyboard Shortcuts...</code> UI, in
+the <code>App Shortcuts</code> section of the left-hand nav, where you can define custom
+mappings for any menu item.</p>
+<figure><a href="/images/customkeyboardshortcutsforapp.png"><img src="/images/customkeyboardshortcutsforapp.png"
+         alt="custom-keyboard-shortcuts-for-app"/></a>
 </figure>
 
-<p>This only works when opening a file from Finder, so not that much use to people
-who live in iTerm (like me).</p>
+<p>Today I discovered the syntax for adding mappings for <em>nested</em> menu options:</p>
+<pre tabindex="0"><code>${top_level_menu_name}-&gt;${nested_menu_name}
+</code></pre><h1 id="stop-pasting-rich-text">Stop pasting rich text!</h1>
+<p>I&rsquo;ve used this in <a href="https://bear.app/">Bear</a> to add custom shortcuts for:</p>
+<ul>
+<li>Archiving a note</li>
+<li>Ensuring paste-from-plaintext is the default</li>
+<li>Opening a note in a new window</li>
+</ul>
+<figure><a href="/images/bear-custom-shortcuts.png"><img src="/images/bear-custom-shortcuts.png"
+         alt="bear custom shortcuts"/></a>
+</figure>
+
 </article>
 
         </main>
@@ -90,11 +104,6 @@ who live in iTerm (like me).</p>
                 
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/macos/">MacOS</a>:</p>
                     <ul>
-                        
-                            <li><a href="/posts/how-to-bind-custom-keyboard-shortcuts-to-nested-macos-menu-options/">How to bind custom keyboard shortcuts to nested MacOS menu options</a></li>
-
-                            
-                            
                         
                             <li><a href="/posts/how-to-make-the-macos-app-switcher-appear-on-all-displays/">How to make the MacOS app switcher appear on all displays</a></li>
 
@@ -141,6 +150,11 @@ who live in iTerm (like me).</p>
                             
                             
                         
+                            <li><a href="/posts/how-temp-files-are-removed-on-macos/">How temporary files are removed on MacOS</a></li>
+
+                            
+                            
+                        
                     </ul>
                 
 
@@ -148,12 +162,34 @@ who live in iTerm (like me).</p>
 
         
 
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/bear/">Bear</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-configure-alfreds-bear-workflow-to-open-notes-in-the-main-window/">How to configure Alfred&rsquo;s Bear workflow to open notes in the main window</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -162,11 +198,9 @@ who live in iTerm (like me).</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-pngcrush\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-create-custom-replacements-for-vimsurround\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-vims-diffthis-command\/"); })
         
     </script>
 

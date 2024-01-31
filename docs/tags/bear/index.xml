@@ -6,11 +6,20 @@
     <description>Recent content in Bear on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Sep 2020 11:34:04 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jan 2024 12:07:20 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/bear/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to bind custom keyboard shortcuts to nested MacOS menu options</title>
+      <link>https://til.codeinthehole.com/posts/how-to-bind-custom-keyboard-shortcuts-to-nested-macos-menu-options/</link>
+      <pubDate>Wed, 31 Jan 2024 12:07:20 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-bind-custom-keyboard-shortcuts-to-nested-macos-menu-options/</guid>
+      <description>MacOS allows you to override and bind new keyboard shortcuts for an app.</description>
+    </item>
     
     <item>
       <title>How to configure Alfred&#39;s Bear workflow to open notes in the main window</title>
