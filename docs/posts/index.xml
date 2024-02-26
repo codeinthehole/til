@@ -6,11 +6,21 @@
     <description>Recent content in Posts on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 Jan 2024 12:07:20 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Feb 2024 21:18:31 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can run `ruff` on Jupyter notebooks</title>
+      <link>https://til.codeinthehole.com/posts/you-can-run-ruff-on-jupyter-notebooks/</link>
+      <pubDate>Mon, 26 Feb 2024 21:18:31 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-run-ruff-on-jupyter-notebooks/</guid>
+      <description>If you ensure your pyproject.toml contains::
+[tool.ruff] extend-include = [&amp;#34;*.</description>
+    </item>
     
     <item>
       <title>How to bind custom keyboard shortcuts to nested MacOS menu options</title>

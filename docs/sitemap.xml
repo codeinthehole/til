@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/jupyter-notebook/</loc>
+    <lastmod>2024-02-26T21:18:31+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2024-02-26T21:18:31+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/ruff/</loc>
+    <lastmod>2024-02-26T21:18:31+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2024-02-26T21:18:31+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2024-02-26T21:18:31+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/you-can-run-ruff-on-jupyter-notebooks/</loc>
+    <lastmod>2024-02-26T21:18:31+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/bear/</loc>
     <lastmod>2024-01-31T12:07:20+00:00</lastmod>
   </url><url>
@@ -9,15 +27,6 @@
     <lastmod>2024-01-31T12:07:20+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/macos/</loc>
-    <lastmod>2024-01-31T12:07:20+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2024-01-31T12:07:20+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2024-01-31T12:07:20+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2024-01-31T12:07:20+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-create-custom-replacements-for-vimsurround/</loc>
@@ -129,9 +138,6 @@
     <lastmod>2023-06-09T16:06:55+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-avoid-committing-jupyter-notebook-output-to-git/</loc>
-    <lastmod>2023-06-09T16:06:55+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/jupyter-notebook/</loc>
     <lastmod>2023-06-09T16:06:55+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/slack/</loc>

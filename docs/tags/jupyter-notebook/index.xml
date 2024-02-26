@@ -6,11 +6,21 @@
     <description>Recent content in Jupyter Notebook on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jun 2023 16:06:55 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 26 Feb 2024 21:18:31 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/jupyter-notebook/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>You can run `ruff` on Jupyter notebooks</title>
+      <link>https://til.codeinthehole.com/posts/you-can-run-ruff-on-jupyter-notebooks/</link>
+      <pubDate>Mon, 26 Feb 2024 21:18:31 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/you-can-run-ruff-on-jupyter-notebooks/</guid>
+      <description>If you ensure your pyproject.toml contains::
+[tool.ruff] extend-include = [&amp;#34;*.</description>
+    </item>
     
     <item>
       <title>How to avoid committing Jupyter Notebook output to Git</title>
