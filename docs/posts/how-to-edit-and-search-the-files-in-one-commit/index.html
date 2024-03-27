@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    delta provides much improved diff views in the terminal. ...
+    When interactive rebasing, it’s useful to be able to edit all the files in one particular commit. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-delta/" />
-<meta property="og:title" content="TIL About delta, a viewer for Git and diff output — David Winterbottom" />
-<meta property="og:description" content="delta provides much improved diff views in the terminal. [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-edit-and-search-the-files-in-one-commit/" />
+<meta property="og:title" content="TIL How to edit and search the files in one commit — David Winterbottom" />
+<meta property="og:description" content="When interactive rebasing, it&rsquo;s useful to be able to edit all the files in one particular commit. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About delta, a viewer for Git and diff output — David Winterbottom
+    TIL How to edit and search the files in one commit — David Winterbottom
 </title>
 
         
@@ -56,36 +56,33 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>March 19, 2021</time>, <a href="https://codeinthehole.com">I</a> learnt ...
+                On <time>March 27, 2024</time>, <a href="https://codeinthehole.com">I</a> learnt ...
             </div>
-            <h1>About delta, a viewer for Git and diff output</h1>
-        </header><p><a href="https://github.com/dandavison/delta"><code>delta</code></a> provides much improved diff views
-in the terminal. It provides things like:</p>
-<ul>
-<li>
-<p>Syntax highlighting with color themes</p>
-</li>
-<li>
-<p>Within-line highlights</p>
-</li>
-<li>
-<p>Side-by-side view</p>
-</li>
-</ul>
-<p>After <code>brew install git-delta</code>, you can configure Git to use it via something
-like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dosini" data-lang="dosini"><span style="display:flex;"><span><span style="color:#75715e"># ~/.gitconfig</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[delta]</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">features</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">decorations
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    whitespace-error-style = 22 reverse</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[delta &#34;decorations&#34;]</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">commit-decoration-style</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">bold yellow box ul
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    file-style = bold
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    file-decoration-style = red box
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    hunk-header-decoration-style = ul</span>
-</span></span></code></pre></div></article>
+            <h1>How to edit and search the files in one commit</h1>
+        </header><p>When interactive rebasing, it&rsquo;s useful to be able to edit all the files in one
+particular commit. Here&rsquo;s how you can do that.</p>
+<h2 id="select-a-commit-to-edit">Select a commit to edit</h2>
+<p>First, mark the commit you want to edit with an <code>e</code> in the <code>git-rebase-todo</code>
+buffer that Git presents when you start an interactive rebase:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>e 68704c08a008 Make the change easy
+</span></span><span style="display:flex;"><span>pick a6d294d39d5e Make the easy change
+</span></span></code></pre></div><h2 id="opening-the-commits-files-in-vim">Opening the commit&rsquo;s files in Vim</h2>
+<p>Open the files changed in the <code>HEAD</code> commit (i.e. the one being edited):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#a6e22e">args</span> `<span style="color:#a6e22e">git</span> <span style="color:#a6e22e">commitfiles</span>`
+</span></span></code></pre></div><p>where <code>git commitfiles</code> is aliased as:</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">commitfiles = &#34;!f() {
+    cd ${GIT_PREFIX:-./};
+    git diff --relative --name-only ${1:-HEAD}^ ${1:-HEAD};
+}; f&#34;
+</code></pre><p>in <code>~/.gitconfig</code> (all on one line - line breaks here are for readability).</p>
+<h2 id="search-the-commits-files">Search the commit&rsquo;s files</h2>
+<p>You can search only the current buffers with this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#a6e22e">noautocmd</span> <span style="color:#a6e22e">bufdo</span> <span style="color:#a6e22e">vimgrepadd</span> <span style="color:#e6db74">&#34;foo&#34;</span> % | <span style="color:#a6e22e">copen</span>
+</span></span></code></pre></div><p>This runs the <code>vimgrepadd</code> command on each buffer and appends results to the
+quickfix list, which is opened at the end with <code>copen</code>. The <code>noautocmd</code> prefix
+is a speed optimisation.</p>
+<!-- https://stackoverflow.com/questions/11975174/how-do-i-search-the-open-buffers-in-vim -->
+</article>
 
         </main>
 
@@ -108,11 +105,6 @@ like:</p>
                 
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/git/">Git</a>:</p>
                     <ul>
-                        
-                            <li><a href="/posts/how-to-edit-and-search-the-files-in-one-commit/">How to edit and search the files in one commit</a></li>
-
-                            
-                            
                         
                             <li><a href="/posts/how-to-avoid-committing-jupyter-notebook-output-to-git/">How to avoid committing Jupyter Notebook output to Git</a></li>
 
@@ -159,6 +151,11 @@ like:</p>
                             
                             
                         
+                            <li><a href="/posts/about-git-log-g/">About <code>git log -G</code></a></li>
+
+                            
+                            
+                        
                     </ul>
                 
 
@@ -174,10 +171,10 @@ like:</p>
                 
 
                 
-                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/command-line-tools/">Command-line tools</a>:</p>
+                    <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/vim/">Vim</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/how-to-create-a-word-cloud-from-text-piped-via-stdin/">How to create a word cloud from text piped via STDIN</a></li>
+                            <li><a href="/posts/how-to-create-custom-replacements-for-vimsurround/">How to create custom replacements for <code>vim-surround</code></a></li>
 
                             
                             
@@ -187,42 +184,37 @@ like:</p>
                             
                             
                         
-                            <li><a href="/posts/how-to-format-json-into-a-table-with-jq-and-column/">How to format JSON into a table with <code>jq</code> and <code>column</code></a></li>
+                            <li><a href="/posts/how-to-write-vimscript-functions-that-operate-on-a-visually-selected-area/">How to write Vimscript functions that operate on a visually selected area</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/">How to search for fixed strings with <code>grep</code> and <code>ripgrep</code></a></li>
+                            <li><a href="/posts/how-to-automatically-disable-github-copilot-in-vim-when-editing-large-files/">How to automatically disable Github Copilot in Vim when editing large files</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/you-can-define-custom-filetype-filters-in-ripgrep/">You can define custom file-type filters in <code>ripgrep</code></a></li>
+                            <li><a href="/posts/that-hub-clashes-with-vimpolyglot/">That <code>hub</code> clashes with <code>vim-polyglot</code></a></li>
 
                             
                             
                         
-                            <li><a href="/posts/you-can-specify-the-filetype-for-bat/">You can specify the file-type for <code>bat</code></a></li>
+                            <li><a href="/posts/how-to-use-stdin-to-populate-vims-quickfix-list/">How to use STDIN to populate Vim&rsquo;s quickfix list</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/about-envsubst/">About <code>envsubst</code></a></li>
+                            <li><a href="/posts/how-to-get-vale-to-work-with-vims-ale-plugin/">How to get Vale to work with Vim&rsquo;s Ale plugin</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/how-to-set-perproject-ripgrep-exclude-rules/">How to set per-project <code>ripgrep</code> and <code>fzf</code> exclude rules</a></li>
+                            <li><a href="/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/">How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</a></li>
 
                             
                             
                         
-                            <li><a href="/posts/exuberantctags-has-been-superceded-by-universalctags/">Exuberant-ctags has been superceded by Universal-ctags</a></li>
-
-                            
-                            
-                        
-                            <li><a href="/posts/about-column/">About <code>column</code></a></li>
+                            <li><a href="/posts/that-vim-can-transform-replacement-values-when-substituting/">That Vim can transform replacement values when substituting</a></li>
 
                             
                             
@@ -236,9 +228,9 @@ like:</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -247,11 +239,9 @@ like:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-have-classscoped-autouse-pytest-fixtures\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-run-ruff-on-jupyter-notebooks\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/what-the-sections-of-the-unix-manual-are\/"); })
         
     </script>
 
