@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Command-line tools - Today I Learnt...</title>
+    <title>Command-Line Tools - Today I Learnt...</title>
     <link>https://til.codeinthehole.com/tags/command-line-tools/</link>
-    <description>Recent content in Command-line tools on Today I Learnt...</description>
+    <description>Recent content in Command-Line Tools on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Mar 2023 21:36:32 +0000</lastBuildDate>

@@ -11,14 +11,14 @@
 
     <div id="tagcloud">
         {{ range $tags }}
-        <a href="{{ .Page.Permalink }}" class="font_size_{{ .Count }}" >{{ replace .Page.Title " " "&nbsp;" | markdownify }}</a>
+        <a href="{{ .Page.Permalink }}" class="font_size_{{ .Count }}" >{{ replace .Page.Data.Term " " "&nbsp;" | markdownify }}</a>
         {{ end }}
     </div>
 
     <p>And here's all posts broken down by tag:</p>
 
     {{ range $tags }}
-        <h3>{{ .Page.Title | markdownify }}</h3>
+        <h3>{{ .Page.Data.Term | markdownify }}</h3>
         {{ partial "posts.html" .Pages }}
     {{ end }}
 

@@ -1,9 +1,9 @@
 {{ define "title" }}
-    {{ .Title }} — Today I Learnt — David Winterbottom
+    {{ .Data.Term }} — Today I Learnt — David Winterbottom
 {{ end }}
 
 {{ define "main" }}
-    <h1>Things learnt about {{ .Title }}</h1>
+    <h1>Things learnt about {{ .Data.Term }}</h1>
 
     {{ .Content }}
 

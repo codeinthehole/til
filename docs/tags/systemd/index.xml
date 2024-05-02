@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>systemd - Today I Learnt...</title>
+    <title>Systemd - Today I Learnt...</title>
     <link>https://til.codeinthehole.com/tags/systemd/</link>
-    <description>Recent content in systemd on Today I Learnt...</description>
+    <description>Recent content in Systemd on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 12 Mar 2021 15:28:38 +0000</lastBuildDate>
