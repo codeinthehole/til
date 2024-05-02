@@ -6,11 +6,29 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Mar 2024 14:56:20 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 May 2024 17:50:21 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Pip-Tools</title>
+      <link>https://til.codeinthehole.com/tags/pip-tools/</link>
+      <pubDate>Wed, 01 May 2024 17:50:21 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/pip-tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://til.codeinthehole.com/tags/python/</link>
+      <pubDate>Wed, 01 May 2024 17:50:21 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Git</title>
@@ -94,15 +112,6 @@
     </item>
     
     <item>
-      <title>Python</title>
-      <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Fri, 17 Nov 2023 11:14:27 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Bash</title>
       <link>https://til.codeinthehole.com/tags/bash/</link>
       <pubDate>Tue, 07 Nov 2023 14:57:35 +0000</pubDate>
@@ -135,15 +144,6 @@
       <pubDate>Thu, 12 Oct 2023 13:58:00 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pip-Tools</title>
-      <link>https://til.codeinthehole.com/tags/pip-tools/</link>
-      <pubDate>Mon, 02 Oct 2023 21:59:28 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/pip-tools/</guid>
       <description></description>
     </item>
     
