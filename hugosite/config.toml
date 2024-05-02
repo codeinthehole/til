@@ -16,3 +16,8 @@ summaryLength = 8
     [markup.goldmark]
         [markup.goldmark.renderer]
             unsafe = true
+
+[module]
+    [[module.mounts]]
+        source = "../posts"
+        target = "content/posts"
