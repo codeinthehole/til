@@ -8,6 +8,9 @@ publishDir = "../docs"
 # Serve statics from above Hugosite root.
 staticDir = ["../static/"]
 
+# Enable emoji
+enableEmoji = true
+
 # Use really small summaries...
 summaryLength = 8
 
