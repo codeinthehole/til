@@ -6,11 +6,38 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 May 2024 17:50:21 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 04 May 2024 14:29:31 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Coverage</title>
+      <link>https://til.codeinthehole.com/tags/coverage/</link>
+      <pubDate>Sat, 04 May 2024 14:29:31 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/coverage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mypy</title>
+      <link>https://til.codeinthehole.com/tags/mypy/</link>
+      <pubDate>Sat, 04 May 2024 14:29:31 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/mypy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://til.codeinthehole.com/tags/python/</link>
+      <pubDate>Sat, 04 May 2024 14:29:31 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Pip-Tools</title>
@@ -18,15 +45,6 @@
       <pubDate>Wed, 01 May 2024 17:50:21 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/pip-tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Wed, 01 May 2024 17:50:21 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/python/</guid>
       <description></description>
     </item>
     
@@ -288,15 +306,6 @@
       <pubDate>Wed, 22 Feb 2023 21:13:57 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/rust/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mypy</title>
-      <link>https://til.codeinthehole.com/tags/mypy/</link>
-      <pubDate>Sat, 28 Jan 2023 11:21:10 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/mypy/</guid>
       <description></description>
     </item>
     

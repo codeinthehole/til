@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Consider this contrived function which either returns a list of tuples or a list of dicts depending on an argument value: ...
+    Mypy has options for generating coverage reports. From the &amp;ndash;help output: ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/not-to-union-python-list-types/" />
-<meta property="og:title" content="TIL Not to union Python list types — David Winterbottom" />
-<meta property="og:description" content="Consider this contrived function which either returns a list of tuples or a list of dicts depending on an argument value: [Reading time: 1 minute]" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-mypy-can-generate-coverage-reports/" />
+<meta property="og:title" content="TIL That Mypy can generate coverage reports — David Winterbottom" />
+<meta property="og:description" content="Mypy has options for generating coverage reports. From the --help output: [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL Not to union Python list types — David Winterbottom
+    TIL That Mypy can generate coverage reports — David Winterbottom
 </title>
 
         
@@ -56,38 +56,33 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>January 28, 2023</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+                On <time>May 4, 2024</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
             </div>
-            <h1>Not to union Python list types</h1>
-        </header><p>Consider this contrived function which either returns a list of tuples or a list
-of dicts depending on an argument value:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(q: str, return_dict: bool) <span style="color:#f92672">-&gt;</span> list[tuple[Any, <span style="color:#f92672">...</span>]] <span style="color:#f92672">|</span> list[dict[str, Any]]:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> q:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> []
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> return_dict:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> [{<span style="color:#e6db74">&#34;a&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;b&#34;</span>: <span style="color:#ae81ff">2</span>}]
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)]
-</span></span></code></pre></div><p>Mypy (as of v0.991) complains about the empty list return value and the
-hard-coded list of tuples:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Incompatible return value type (got &#34;List[&lt;nothing&gt;]&#34;,
-</span></span><span style="display:flex;"><span>    expected &#34;Union[List[Tuple[Any, ...]], List[Dict[str, Any]]]&#34;)  [return-value]
-</span></span><span style="display:flex;"><span>Incompatible return value type (got &#34;List[Tuple[int, int]]&#34;,
-</span></span><span style="display:flex;"><span>    expected &#34;Union[List[Tuple[Any, ...]], List[Dict[str, Any]]]&#34;)  [return-value]
-</span></span></code></pre></div><p>Seems a bit odd.</p>
-<p>Mypy can be placated by rewriting the return type as
-<code>list[tuple[Any, ...], dict[str, Any]]</code> where the list item types are <code>Union</code>ed
-instead.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(q: str, return_dict: bool) <span style="color:#f92672">-&gt;</span> list[tuple[Any, <span style="color:#f92672">...</span>] <span style="color:#f92672">|</span> dict[str, Any]]:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> q:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> []
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> return_dict:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> [{<span style="color:#e6db74">&#34;a&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;b&#34;</span>: <span style="color:#ae81ff">2</span>}]
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)]
-</span></span></code></pre></div><p>The broader rule seems to be to avoid <code>Union</code>ing list types and prefer to
-extract the list type and use the union for the list item type.</p>
-<p>That is, prefer <code>list[X | Y]</code> over <code>list[X] | list[Y]</code>.</p>
-<p>Will update this post when I understand the underlying cause (i.e. generics)
-better.</p>
+            <h1>That Mypy can generate coverage reports</h1>
+        </header><p>Mypy has options for generating coverage reports. From the <code>--help</code> output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Report generation:
+</span></span><span style="display:flex;"><span>  Generate a report in the specified format.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  --any-exprs-report DIR
+</span></span><span style="display:flex;"><span>  --cobertura-xml-report DIR
+</span></span><span style="display:flex;"><span>  --html-report DIR
+</span></span><span style="display:flex;"><span>  --linecount-report DIR
+</span></span><span style="display:flex;"><span>  --linecoverage-report DIR
+</span></span><span style="display:flex;"><span>  --lineprecision-report DIR
+</span></span><span style="display:flex;"><span>  --txt-report DIR
+</span></span><span style="display:flex;"><span>  --xml-report DIR
+</span></span><span style="display:flex;"><span>  --xslt-html-report DIR
+</span></span><span style="display:flex;"><span>  --xslt-txt-report DIR
+</span></span></code></pre></div><p>The HTML report looks something like this:</p>
+<figure><a href="/images/mypy-coverage-home.png"><img src="/images/mypy-coverage-home.png"
+    alt="mypy coverage home"></a>
+</figure>
+
+<p>and:</p>
+<figure><a href="/images/mypy-coverage-detail.png"><img src="/images/mypy-coverage-detail.png"
+    alt="mypy coverage detail"></a>
+</figure>
+
 </article>
 
         </main>
@@ -112,7 +107,7 @@ better.</p>
                     <p>Other things learnt about <a href="https://til.codeinthehole.com/tags/mypy/">Mypy</a>:</p>
                     <ul>
                         
-                            <li><a href="/posts/that-mypy-can-generate-coverage-reports/">That Mypy can generate coverage reports</a></li>
+                            <li><a href="/posts/not-to-union-python-list-types/">Not to union Python list types</a></li>
 
                             
                             
@@ -216,12 +211,24 @@ better.</p>
 
         
 
+            
+            
+
+            
+                
+                
+
+                
+            
+
+        
+
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -230,11 +237,9 @@ better.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-show-the-history-of-a-file-with-git-log-patch\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-install-a-vendored-wheel-when-using-piptools-and-pyprojecttoml\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/how-to-write-vimscript-functions-that-operate-on-a-visually-selected-area\/"); })
         
     </script>
 
