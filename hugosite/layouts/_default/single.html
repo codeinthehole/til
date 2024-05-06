@@ -1,6 +1,6 @@
 {{ define "head" }}
 <meta property="og:type" content="article" />
-<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:url" content="{{ .RelPermalink }}" />
 <meta property="og:title" content="TIL {{ replace .Title "`" "'" }} — David Winterbottom" />
 <meta property="og:description" content="{{ .Summary }} [Reading time: {{ .ReadingTime }} {{ cond (eq .ReadingTime 1) "minute" "minutes" }}]" />
 
@@ -48,7 +48,7 @@
                 {{ $related_tag_pages := $related_tag_pages | intersect (where .Pages "Title" "not in" $listed) }}
 
                 {{ if $related_tag_pages }}
-                    <p>Other things learnt about <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>:</p>
+                    <p>Other things learnt about <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>:</p>
                     <ul>
                         {{ range $related_tag_pages }}
                             <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
@@ -62,7 +62,7 @@
                 {{/* No listed pages yet */}}
 
                 {{ if $related_tag_pages }}
-                    <p>Other things learnt about <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>:</p>
+                    <p>Other things learnt about <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>:</p>
                     <ul>
                         {{ range $related_tag_pages }}
                             <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>

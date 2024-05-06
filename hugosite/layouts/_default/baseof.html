@@ -12,12 +12,12 @@
             <link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="Today I Learnt...">
         {{ else }}
             {{ with .OutputFormats.Get "rss" }}
-                {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+                {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
             {{ end -}}
         {{ end }}
 
         {{ $style := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify }}
-        <link rel="stylesheet" href="{{ $style.Permalink }}">
+        <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
         {{ block "head" . }}{{ end }}
 
