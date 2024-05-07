@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    The problem After running brew upgrade and upgrading Hugo from v0. ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/hugo-v01230-changed-the-default-rendering-mode-of-hugo-server/" />
+<meta property="og:title" content="TIL Hugo v0.123.0 changed the default rendering mode of &#39;hugo server&#39; — David Winterbottom" />
+<meta property="og:description" content="The problem After running brew upgrade and upgrading Hugo from v0. [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL Hugo v0.123.0 changed the default rendering mode of &#39;hugo server&#39; — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt...</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>May 7, 2024</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+            </div>
+            <h1>Hugo v0.123.0 changed the default rendering mode of <code>hugo server</code></h1>
+        </header><h2 id="the-problem">The problem</h2>
+<p>After running <code>brew upgrade</code> and upgrading Hugo from v0.121.1 to v0.125.4, I
+found that <code>hugo server</code> was rewriting all the permalinks in my site to use
+<code>localhost:1313</code>. These changes would persist after <code>hugo server</code> was stopped
+and I accidentally committed them and broke the production version of this site.</p>
+<h2 id="the-cause">The cause</h2>
+<p>Hugo <a href="https://github.com/gohugoio/hugo/releases/tag/v0.123.0">v1.123.0</a> shipped a number of breaking changes, including
+changing the default render mode of <code>hugo server</code> from <code>--renderToMemory</code> to
+<code>--renderToDisk</code> (<a href="https://github.com/gohugoio/hugo/issues/11987">issue #11987</a>).</p>
+<p>Hence running <code>hugo server</code> locally would modify my production build on disk,
+using <code>localhost:1313</code> as the base URL instead of the configured <code>baseURL</code> from
+<code>hugo.toml</code>.</p>
+<h2 id="the-fix">The fix</h2>
+<p>Specify <code>--renderToMemory</code> flag when running <code>hugo server</code> locally.</p>
+<h2 id="also">Also</h2>
+<p>It was tricky to determine what version of Hugo I had installed before running
+<code>brew upgrade</code>. I eventually found it in the Hugo HTML metadata. Not sure if
+there a method that works for any package.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/hugo/">Hugo</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-list-pages-with-matching-tag-in-hugo/">How to list pages with matching tag in Hugo</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-have-sass-asset-pipelines-in-hugo/">You can have SASS asset pipelines in Hugo</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-mypy-can-generate-coverage-reports\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Today I Learnt...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 May 2024 14:29:31 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2024 10:37:10 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://til.codeinthehole.com/tags/hugo/</link>
+      <pubDate>Tue, 07 May 2024 10:37:10 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/hugo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Coverage</title>
@@ -819,15 +828,6 @@
       <pubDate>Mon, 24 Aug 2020 16:19:10 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/sentry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://til.codeinthehole.com/tags/hugo/</link>
-      <pubDate>Mon, 17 Aug 2020 14:32:50 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/hugo/</guid>
       <description></description>
     </item>
     
