@@ -1,5 +1,5 @@
 server:
-	cd hugosite && hugo server
+	cd hugosite && hugo server --renderToMemory
 
 build:
 	rm -rf docs
