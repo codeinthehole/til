@@ -1,3 +1,5 @@
+# See https://gohugo.io/getting-started/configuration/
+
 baseURL = "https://til.codeinthehole.com/"
 languageCode = "en-us"
 title = "Today I Learnt..."
