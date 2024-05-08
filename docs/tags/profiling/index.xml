@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Profiling - Today I Learnt...</title>
+      <title>Profiling - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/profiling/</link>
-    <description>Recent content in Profiling on Today I Learnt...</description>
+    <description>Profiling TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 23 Jun 2022 10:36:09 +0100</lastBuildDate>

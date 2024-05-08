@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fd - Today I Learnt...</title>
+      <title>Fd - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/fd/</link>
-    <description>Recent content in Fd on Today I Learnt...</description>
+    <description>Fd TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Jan 2021 09:45:07 +0000</lastBuildDate>

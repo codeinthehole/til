@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home Networking - Today I Learnt...</title>
+      <title>Home Networking - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/home-networking/</link>
-    <description>Recent content in Home Networking on Today I Learnt...</description>
+    <description>Home Networking TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 29 Jan 2021 16:36:52 +0000</lastBuildDate>

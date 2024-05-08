@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Github Copilot - Today I Learnt...</title>
+      <title>Github Copilot - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/github-copilot/</link>
-    <description>Recent content in Github Copilot on Today I Learnt...</description>
+    <description>Github Copilot TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 06 Jan 2023 09:21:18 +0000</lastBuildDate>

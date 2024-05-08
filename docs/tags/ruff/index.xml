@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ruff - Today I Learnt...</title>
+      <title>Ruff - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/ruff/</link>
-    <description>Recent content in Ruff on Today I Learnt...</description>
+    <description>Ruff TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 26 Feb 2024 21:18:31 +0000</lastBuildDate>

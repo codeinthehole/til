@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ruby - Today I Learnt...</title>
+      <title>Ruby - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/ruby/</link>
-    <description>Recent content in Ruby on Today I Learnt...</description>
+    <description>Ruby TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 30 Nov 2020 11:28:09 +0000</lastBuildDate>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>IOS - Today I Learnt...</title>
+      <title>IOS - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/ios/</link>
-    <description>Recent content in IOS on Today I Learnt...</description>
+    <description>IOS TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 28 Apr 2023 20:20:10 +0100</lastBuildDate>

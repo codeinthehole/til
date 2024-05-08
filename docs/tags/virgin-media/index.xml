@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Virgin Media - Today I Learnt...</title>
+      <title>Virgin Media - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/virgin-media/</link>
-    <description>Recent content in Virgin Media on Today I Learnt...</description>
+    <description>Virgin Media TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 29 Jan 2021 16:36:52 +0000</lastBuildDate>

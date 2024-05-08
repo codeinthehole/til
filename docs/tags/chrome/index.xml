@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Chrome - Today I Learnt...</title>
+      <title>Chrome - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/chrome/</link>
-    <description>Recent content in Chrome on Today I Learnt...</description>
+    <description>Chrome TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Jun 2021 14:35:17 +0100</lastBuildDate>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ripgrep - Today I Learnt...</title>
+      <title>Ripgrep - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/ripgrep/</link>
-    <description>Recent content in Ripgrep on Today I Learnt...</description>
+    <description>Ripgrep TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 03 Mar 2023 11:23:32 +0000</lastBuildDate>

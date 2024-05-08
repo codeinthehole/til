@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AWS - Today I Learnt...</title>
+      <title>AWS - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/aws/</link>
-    <description>Recent content in AWS on Today I Learnt...</description>
+    <description>AWS TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Oct 2022 15:42:26 +0100</lastBuildDate>

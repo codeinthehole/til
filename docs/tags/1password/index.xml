@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>1Password - Today I Learnt...</title>
+      <title>1Password - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/1password/</link>
-    <description>Recent content in 1Password on Today I Learnt...</description>
+    <description>1Password TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Nov 2020 17:25:36 +0000</lastBuildDate>

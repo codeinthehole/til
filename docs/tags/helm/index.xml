@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Helm - Today I Learnt...</title>
+      <title>Helm - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/helm/</link>
-    <description>Recent content in Helm on Today I Learnt...</description>
+    <description>Helm TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 21 Dec 2020 10:33:25 +0000</lastBuildDate>

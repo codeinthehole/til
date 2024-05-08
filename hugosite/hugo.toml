@@ -2,7 +2,7 @@
 
 baseURL = "https://til.codeinthehole.com/"
 languageCode = "en-us"
-title = "Today I Learnt..."
+title = "Today I Learnt — David Winterbottom"
 
 # Build static site to /docs folder so Github pages can serve it.
 publishDir = "../docs"

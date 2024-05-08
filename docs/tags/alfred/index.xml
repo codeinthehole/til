@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Alfred - Today I Learnt...</title>
+      <title>Alfred - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/alfred/</link>
-    <description>Recent content in Alfred on Today I Learnt...</description>
+    <description>Alfred TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Sep 2023 10:20:58 +0100</lastBuildDate>

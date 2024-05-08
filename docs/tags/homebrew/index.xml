@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homebrew - Today I Learnt...</title>
+      <title>Homebrew - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/homebrew/</link>
-    <description>Recent content in Homebrew on Today I Learnt...</description>
+    <description>Homebrew TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Dec 2022 13:38:43 +0000</lastBuildDate>

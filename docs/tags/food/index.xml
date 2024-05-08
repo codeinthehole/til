@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Food - Today I Learnt...</title>
+      <title>Food - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/food/</link>
-    <description>Recent content in Food on Today I Learnt...</description>
+    <description>Food TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Jan 2023 13:50:19 +0000</lastBuildDate>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Alexa - Today I Learnt...</title>
+      <title>Alexa - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/alexa/</link>
-    <description>Recent content in Alexa on Today I Learnt...</description>
+    <description>Alexa TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 Jan 2021 15:47:57 +0000</lastBuildDate>

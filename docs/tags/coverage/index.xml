@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Coverage - Today I Learnt...</title>
+      <title>Coverage - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/coverage/</link>
-    <description>Recent content in Coverage on Today I Learnt...</description>
+    <description>Coverage TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 04 May 2024 14:29:31 +0100</lastBuildDate>

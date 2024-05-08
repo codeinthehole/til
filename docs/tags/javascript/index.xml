@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript - Today I Learnt...</title>
+      <title>Javascript - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/javascript/</link>
-    <description>Recent content in Javascript on Today I Learnt...</description>
+    <description>Javascript TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 12 Oct 2023 21:36:24 +0100</lastBuildDate>

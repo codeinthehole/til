@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pytest - Today I Learnt...</title>
+      <title>Pytest - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/pytest/</link>
-    <description>Recent content in Pytest on Today I Learnt...</description>
+    <description>Pytest TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 08 Nov 2022 18:16:53 +0000</lastBuildDate>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Recruitment - Today I Learnt...</title>
+      <title>Recruitment - Today I Learnt — David Winterbottom</title>
     <link>https://til.codeinthehole.com/tags/recruitment/</link>
-    <description>Recent content in Recruitment on Today I Learnt...</description>
+    <description>Recruitment TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 03 Feb 2021 16:15:10 +0000</lastBuildDate>
