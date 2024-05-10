@@ -6,11 +6,20 @@
     <description>All TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 May 2024 10:37:10 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 10 May 2024 15:47:17 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>About Bash&#39;s `compgen` built-in</title>
+      <link>https://til.codeinthehole.com/posts/about-bashs-compgen-builtin/</link>
+      <pubDate>Fri, 10 May 2024 15:47:17 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/about-bashs-compgen-builtin/</guid>
+      <description>Bash includes a built-in compgen command that can list all the commands available in the current shell:</description>
+    </item>
     
     <item>
       <title>Hugo v0.123.0 changed the default rendering mode of `hugo server`</title>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Bash includes a built-in compgen command that can list all the commands available in the current shell: ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/about-bashs-compgen-builtin/" />
+<meta property="og:title" content="TIL About Bash&#39;s &#39;compgen&#39; built-in — David Winterbottom" />
+<meta property="og:description" content="Bash includes a built-in compgen command that can list all the commands available in the current shell: [Reading time: 1 minute]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL About Bash&#39;s &#39;compgen&#39; built-in — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt&hellip;</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>May 10, 2024</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+            </div>
+            <h1>About Bash&rsquo;s <code>compgen</code> built-in</h1>
+        </header><p>Bash includes a built-in <code>compgen</code> command that can list all the commands
+available in the current shell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>compgen -c  <span style="color:#75715e"># List all commands</span>
+</span></span></code></pre></div><p>It can do other useful things too:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>compgen -a  <span style="color:#75715e"># List all aliases</span>
+</span></span><span style="display:flex;"><span>compgen -b  <span style="color:#75715e"># List all Bash built-ins</span>
+</span></span><span style="display:flex;"><span>compgen -k  <span style="color:#75715e"># List all Bash keywords</span>
+</span></span><span style="display:flex;"><span>compgen -A <span style="color:#66d9ef">function</span>   <span style="color:#75715e"># List all Bash functions</span>
+</span></span></code></pre></div><h3 id="inspecting-docker-images">Inspecting Docker images</h3>
+<p>I stumbled on this while trying to see which Python versions were included in a
+<code>cimg/python</code> Docker image. That can be done with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ docker run -t cimg/python:3.11 /bin/bash -c <span style="color:#e6db74">&#34;compgen -c&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    | grep python3 | sort | uniq
+</span></span><span style="display:flex;"><span>python3
+</span></span><span style="display:flex;"><span>python3-config
+</span></span><span style="display:flex;"><span>python3.10
+</span></span><span style="display:flex;"><span>python3.11
+</span></span><span style="display:flex;"><span>python3.11-config
+</span></span><span style="display:flex;"><span>python3.11-gdb.py
+</span></span></code></pre></div><p>We need to use <code>/bin/bash -c</code> as the default shell for the <code>cimg/python</code> image
+is <code>/bin/sh</code>, which doesn&rsquo;t support the <code>compgen</code> command.</p>
+<h3 id="more-information">More information</h3>
+<p>Help for <code>compgen</code> can be found in the <code>man bash</code> page. See also
+<a href="https://www.cyberciti.biz/open-source/command-line-hacks/compgen-linux-command/">this useful overview</a>.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/bash/">Bash</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/about-bashs-pipestatus-variable/">About Bash&rsquo;s <code>$PIPESTATUS</code> variable</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-make-homebrewinstalled-bash-your-default-shell/">How to make Homebrew-installed Bash your default shell</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/which-behaves-diffferently-in-zsh-compared-to-bash/"><code>which</code> behaves diffferently in Zsh compared to Bash</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-join-an-array-in-bash/">How to join an array in Bash</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-bashs-seconds-shell-variable/">About Bash&rsquo;s <code>$SECONDS</code> shell variable</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-ubuntus-alert-bash-alias/">About Ubuntu&rsquo;s <code>alert</code> Bash alias</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-readonly-bash-variables/">About <code>readonly</code> Bash variables</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-bashs-debug-signal/">About Bash&rsquo;s DEBUG signal</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/docker/">Docker</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/docker-for-mac-stores-all-containers-and-images-in-a-single-disk-image/">Docker for Mac stores all containers and images in a single disk image</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-list-the-mounts-of-a-running-docker-container/">How to list the mounts of a running Docker container</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-enable-docker-buildkit-in-macos-docker-desktop/">How to enable Docker BuildKit in MacOS Docker Desktop</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-run-jekyll-in-a-docker-container/">How to run Jekyll in a Docker container</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/hugo-v01230-changed-the-default-rendering-mode-of-hugo-server\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

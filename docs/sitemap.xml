@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/about-bashs-compgen-builtin/</loc>
+    <lastmod>2024-05-10T15:47:17+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/bash/</loc>
+    <lastmod>2024-05-10T15:47:17+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/docker/</loc>
+    <lastmod>2024-05-10T15:47:17+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2024-05-10T15:47:17+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2024-05-10T15:47:17+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2024-05-10T15:47:17+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/hugo/</loc>
     <lastmod>2024-05-07T10:37:10+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/hugo-v01230-changed-the-default-rendering-mode-of-hugo-server/</loc>
-    <lastmod>2024-05-07T10:37:10+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2024-05-07T10:37:10+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2024-05-07T10:37:10+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2024-05-07T10:37:10+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/coverage/</loc>
@@ -81,9 +90,6 @@
     <lastmod>2023-11-17T11:14:27+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/about-bashs-pipestatus-variable/</loc>
-    <lastmod>2023-11-07T14:57:35+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/bash/</loc>
     <lastmod>2023-11-07T14:57:35+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/postgresql/</loc>
@@ -361,9 +367,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-join-an-array-in-bash/</loc>
     <lastmod>2022-03-29T17:27:59+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/docker/</loc>
-    <lastmod>2022-03-09T15:59:20+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/docker-for-mac-stores-all-containers-and-images-in-a-single-disk-image/</loc>
     <lastmod>2022-03-09T15:59:20+00:00</lastmod>
