@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    git-absorb is a great tool for crafting atomic commits. ...
+    Just putting this here as I always forget. ...
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/about-gitabsorb/" />
-<meta property="og:title" content="TIL About &#39;git-absorb&#39; — David Winterbottom" />
-<meta property="og:description" content="git-absorb is a great tool for crafting atomic commits. [Reading time: 1 minute]" />
+<meta property="og:url" content="/posts/how-to-set-the-default-branch-for-a-git-remote/" />
+<meta property="og:title" content="TIL How to set the default branch for a Git remote — David Winterbottom" />
+<meta property="og:description" content="Just putting this here as I always forget. [Reading time: 1 minute]" />
 
 
 <meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
 
 
         <title>
-    TIL About &#39;git-absorb&#39; — David Winterbottom
+    TIL How to set the default branch for a Git remote — David Winterbottom
 </title>
 
         
@@ -56,21 +56,22 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>March 28, 2021</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+                On <time>May 10, 2024</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
             </div>
-            <h1>About <code>git-absorb</code></h1>
-        </header><p><a href="https://github.com/tummychow/git-absorb"><code>git-absorb</code></a> is a great tool for
-crafting atomic commits. Given some uncommitted changes, it automates the
-process of identifying which commit to squash each change into. The workflow is
-simply:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim  <span style="color:#75715e"># address code-review feedback</span>
-</span></span><span style="display:flex;"><span>git add $CHANGED_FILES
-</span></span><span style="display:flex;"><span>git absorb --and-rebase
-</span></span></code></pre></div><p>There&rsquo;s an excellent
-<a href="https://github.com/tummychow/git-absorb#elevator-pitch">elevator pitch</a> on the
-project README.</p>
-<p>Highly recommended.</p>
-</article>
+            <h1>How to set the default branch for a Git remote</h1>
+        </header><p><em>Just putting this here as I always forget.</em></p>
+<p>I have a Git alias for determining the default branch of a repo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dosini" data-lang="dosini"><span style="display:flex;"><span><span style="color:#a6e22e">defaultbranch</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;!f() { git symbolic-ref refs/remotes/origin/HEAD | cut -d/ -f4; }; f&#34;</span>
+</span></span></code></pre></div><p>It&rsquo;s used in other aliases and commands for things like creating pull requests.</p>
+<p>Sometimes though, it errors when used in a newly cloned repository:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ git defaultbranch
+</span></span><span style="display:flex;"><span>fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+</span></span></code></pre></div><p>Here <code>origin/HEAD</code> is a symbolic ref that points to the default branch of the
+<code>origin</code> remote. It&rsquo;s normally set automatically after cloning but this can fail
+if your permissions don&rsquo;t allow write access for the repo (I think).</p>
+<p>Easily fixed with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git remote set-head origin --auto
+</span></span></code></pre></div></article>
 
         </main>
 
@@ -93,11 +94,6 @@ project README.</p>
                 
                     <p>Other things learnt about <a href="/tags/git/">Git</a>:</p>
                     <ul>
-                        
-                            <li><a href="/posts/how-to-set-the-default-branch-for-a-git-remote/">How to set the default branch for a Git remote</a></li>
-
-                            
-                            
                         
                             <li><a href="/posts/how-to-edit-and-search-the-files-in-one-commit/">How to edit and search the files in one commit</a></li>
 
@@ -144,6 +140,11 @@ project README.</p>
                             
                             
                         
+                            <li><a href="/posts/that-git-aliases-that-run-an-external-command-are-run-from-the-repository-root/">Git aliases that run an external command are run from the repository root</a></li>
+
+                            
+                            
+                        
                     </ul>
                 
 
@@ -154,9 +155,9 @@ project README.</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -165,11 +166,9 @@ project README.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/json-is-valid-yaml\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-bashs-compgen-builtin\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests\/"); })
         
     </script>
 

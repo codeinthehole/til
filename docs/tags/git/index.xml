@@ -6,11 +6,20 @@
     <description>Git TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Mar 2024 14:56:20 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 May 2024 21:59:31 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to set the default branch for a Git remote</title>
+      <link>https://til.codeinthehole.com/posts/how-to-set-the-default-branch-for-a-git-remote/</link>
+      <pubDate>Fri, 10 May 2024 21:59:31 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-set-the-default-branch-for-a-git-remote/</guid>
+      <description>Just putting this here as I always forget.</description>
+    </item>
     
     <item>
       <title>How to edit and search the files in one commit</title>

@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/git/</loc>
+    <lastmod>2024-05-10T21:59:31+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/how-to-set-the-default-branch-for-a-git-remote/</loc>
+    <lastmod>2024-05-10T21:59:31+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2024-05-10T21:59:31+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2024-05-10T21:59:31+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2024-05-10T21:59:31+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/about-bashs-compgen-builtin/</loc>
     <lastmod>2024-05-10T15:47:17+01:00</lastmod>
   </url><url>
@@ -9,15 +24,6 @@
     <lastmod>2024-05-10T15:47:17+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/docker/</loc>
-    <lastmod>2024-05-10T15:47:17+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2024-05-10T15:47:17+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2024-05-10T15:47:17+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2024-05-10T15:47:17+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/hugo/</loc>
@@ -43,9 +49,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/tags/pip-tools/</loc>
     <lastmod>2024-05-01T17:50:21+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/git/</loc>
-    <lastmod>2024-03-27T14:56:20+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-edit-and-search-the-files-in-one-commit/</loc>
     <lastmod>2024-03-27T14:56:20+00:00</lastmod>
