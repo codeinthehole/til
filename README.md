@@ -17,7 +17,7 @@ https://til.codeinthehole.com
 ## Hugo theme
 
 The theme for the site is a customised version of
-[Etch](https://themes.gohugo.io/etch/).
+[Etch](https://github.com/LukasJoswiak/etch).
 
 ## Code structure
 
