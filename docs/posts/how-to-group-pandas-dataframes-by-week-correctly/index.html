@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    Consider this toy dataframe which defines some meal events over a few weeks: ...
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/how-to-group-pandas-dataframes-by-week-correctly/" />
+<meta property="og:title" content="TIL How to group Pandas dataframes by week correctly — David Winterbottom" />
+<meta property="og:description" content="Consider this toy dataframe which defines some meal events over a few weeks: [Reading time: 2 minutes]" />
+
+
+<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+
+
+        <title>
+    TIL How to group Pandas dataframes by week correctly — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt&hellip;</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>May 22, 2024</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+            </div>
+            <h1>How to group Pandas dataframes by week correctly</h1>
+        </header><p>Consider this toy dataframe which defines some meal events over a few weeks:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tz <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Europe/London&#34;</span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;eaten_at&#39;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># -- Week 1 --</span>
+</span></span><span style="display:flex;"><span>        pd<span style="color:#f92672">.</span>Timestamp(<span style="color:#e6db74">&#39;2024-04-07 20:00&#39;</span>, tz<span style="color:#f92672">=</span>tz),  <span style="color:#75715e"># Sunday</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># -- Week 2 --</span>
+</span></span><span style="display:flex;"><span>        pd<span style="color:#f92672">.</span>Timestamp(<span style="color:#e6db74">&#39;2024-04-08 20:00&#39;</span>, tz<span style="color:#f92672">=</span>tz),  <span style="color:#75715e"># Monday</span>
+</span></span><span style="display:flex;"><span>        pd<span style="color:#f92672">.</span>Timestamp(<span style="color:#e6db74">&#39;2024-04-09 20:00&#39;</span>, tz<span style="color:#f92672">=</span>tz),  <span style="color:#75715e"># Tuesday</span>
+</span></span><span style="display:flex;"><span>        pd<span style="color:#f92672">.</span>Timestamp(<span style="color:#e6db74">&#39;2024-04-10 20:00&#39;</span>, tz<span style="color:#f92672">=</span>tz),  <span style="color:#75715e"># Wednesday</span>
+</span></span><span style="display:flex;"><span>        pd<span style="color:#f92672">.</span>Timestamp(<span style="color:#e6db74">&#39;2024-04-11 20:00&#39;</span>, tz<span style="color:#f92672">=</span>tz),  <span style="color:#75715e"># Thursday</span>
+</span></span><span style="display:flex;"><span>        pd<span style="color:#f92672">.</span>Timestamp(<span style="color:#e6db74">&#39;2024-04-14 20:00&#39;</span>, tz<span style="color:#f92672">=</span>tz),  <span style="color:#75715e"># Sunday</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># -- Week 3 --</span>
+</span></span><span style="display:flex;"><span>        pd<span style="color:#f92672">.</span>Timestamp(<span style="color:#e6db74">&#39;2024-04-15 20:00&#39;</span>, tz<span style="color:#f92672">=</span>tz),  <span style="color:#75715e"># Monday</span>
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;food&#39;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;bacon&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;eggs&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;chips&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;peas&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;beans&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;pizza&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;curry&#39;</span>
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data)
+</span></span></code></pre></div><p>I want to:</p>
+<ul>
+<li>Count the number of meals eaten each week (where a week is Monday to Sunday).</li>
+<li>Use the datetime of the start of the week (i.e. Monday) as the group label.</li>
+</ul>
+<p>The result <em>should</em> be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>eaten_at
+</span></span><span style="display:flex;"><span>2024-04-01 00:00:00+01:00    1
+</span></span><span style="display:flex;"><span>2024-04-08 00:00:00+01:00    5
+</span></span><span style="display:flex;"><span>2024-04-15 00:00:00+01:00    1
+</span></span></code></pre></div><h3 id="incorrect-attempt-1">Incorrect attempt 1</h3>
+<p>Use <code>freq=&quot;W-MON&quot;</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>groupby(
+</span></span><span style="display:flex;"><span>    by<span style="color:#f92672">=</span>pd<span style="color:#f92672">.</span>Grouper(key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eaten_at&#34;</span>, freq<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;W-MON&#34;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;left&#34;</span>)
+</span></span><span style="display:flex;"><span>)[<span style="color:#e6db74">&#34;food&#34;</span>]<span style="color:#f92672">.</span>count()
+</span></span></code></pre></div><p>which gives:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>eaten_at
+</span></span><span style="display:flex;"><span>2024-04-01 00:00:00+01:00    2
+</span></span><span style="display:flex;"><span>2024-04-08 00:00:00+01:00    5
+</span></span></code></pre></div><p>which is grouping over a Tuesday-to-Monday week (❌), using the start of the
+preceding Monday as the label (✅).</p>
+<h3 id="incorrect-attempt-2">Incorrect attempt 2</h3>
+<p>Use <code>freq=&quot;W-SUN&quot;</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>groupby(
+</span></span><span style="display:flex;"><span>    by<span style="color:#f92672">=</span>pd<span style="color:#f92672">.</span>Grouper(key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eaten_at&#34;</span>, freq<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;W-SUN&#34;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;left&#34;</span>)
+</span></span><span style="display:flex;"><span>)[<span style="color:#e6db74">&#34;food&#34;</span>]<span style="color:#f92672">.</span>count()
+</span></span></code></pre></div><p>which gives:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>eaten_at
+</span></span><span style="display:flex;"><span>2024-03-31 00:00:00+00:00    1
+</span></span><span style="display:flex;"><span>2024-04-07 00:00:00+01:00    5
+</span></span><span style="display:flex;"><span>2024-04-14 00:00:00+01:00    1
+</span></span></code></pre></div><p>which is grouping over a Monday-to-Sunday week (✅) but the labels are from the
+start of the preceding Sunday (❌).</p>
+<h3 id="correct-solution">Correct solution</h3>
+<p>Use <code>freq=&quot;W-MON&quot;</code> and also pass <code>closed=&quot;left&quot;</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>df<span style="color:#f92672">.</span>groupby(
+</span></span><span style="display:flex;"><span>    by<span style="color:#f92672">=</span>pd<span style="color:#f92672">.</span>Grouper(key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eaten_at&#34;</span>, freq<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;W-MON&#34;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;left&#34;</span>, closed<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;left&#34;</span>)
+</span></span><span style="display:flex;"><span>)[<span style="color:#e6db74">&#34;food&#34;</span>]<span style="color:#f92672">.</span>count()
+</span></span></code></pre></div><p>which gives the desired:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>eaten_at
+</span></span><span style="display:flex;"><span>2024-04-01 00:00:00+01:00    1
+</span></span><span style="display:flex;"><span>2024-04-08 00:00:00+01:00    5
+</span></span><span style="display:flex;"><span>2024-04-15 00:00:00+01:00    1
+</span></span></code></pre></div><p>When <code>freq</code> is passed to <code>pd.Grouper</code>, both <code>closed</code> and <code>label</code> default to
+<code>&quot;right&quot;</code> and so the <code>W-MON</code> frequency is interpreted as Tuesday-to-Monday (as
+it includes the end day inclusively).</p>
+<p>Similarly <code>W-SUN</code> (with <code>closed=&quot;right&quot;</code>) is interpreted as Monday-to-Sunday,
+the period we want, but it uses the start of the preceding Sunday as its label
+(as Sunday is the exclusive start date of the period).</p>
+<p>Using <code>closed=&quot;left&quot;</code> with <code>freq=&quot;W-MON&quot;</code> is correct as it ensures the period is
+Monday-to-Sunday and the starting Monday is included in the period, hence the
+label is the start of the week.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Trying to group a datetime field by a Monday-to-Sunday week is quite
+counter-intuitive.</p>
+<p>Further reading:</p>
+<ul>
+<li>
+<p>There&rsquo;s a useful explanation of this in <a href="https://stackoverflow.com/a/66772221">this Stack Overflow</a> answer.</p>
+</li>
+<li>
+<p>See also the <a href="https://pandas.pydata.org/docs/reference/api/pandas.Grouper.html"><code>pandas.Grouper</code> docs</a>.</p>
+</li>
+</ul>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/python/">Python</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/that-mypy-can-generate-coverage-reports/">That Mypy can generate coverage reports</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-install-a-vendored-wheel-when-using-piptools-and-pyprojecttoml/">How to install a vendored wheel when using <code>pip-tools</code> and <code>pyproject.toml</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-pipx-choose-which-python-to-install-a-package-with/">How <code>pipx</code> chooses which Python to install a package with</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-avoid-version-conflicts-in-lock-files-compiled-with-piptools/">How to avoid version conflicts in lock files compiled with <code>pip-tools</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-get-gunicorn-to-log-as-json/">How to get Gunicorn to log as JSON</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-create-a-word-cloud-from-text-piped-via-stdin/">How to create a word cloud from text piped via STDIN</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/not-to-union-python-list-types/">Not to union Python list types</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-handle-convenience-imports-with-mypy/">How to handle convenience imports with Mypy</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-djangos-overridesettings-decorator-causes-flakey-tests/">How Django&rsquo;s <code>override_settings</code> decorator causes flakey tests</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/mypy-skips-empty-functions/">Mypy skips empty functions</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+
+        
+            <p>Jump to the previous TIL using the left cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-set-the-default-branch-for-a-git-remote\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

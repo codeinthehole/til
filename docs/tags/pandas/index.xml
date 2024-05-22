@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Pandas - Today I Learnt — David Winterbottom</title>
+    <link>https://til.codeinthehole.com/tags/pandas/</link>
+    <description>Pandas TILs - David Winterbottom</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 May 2024 15:36:20 +0100</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to group Pandas dataframes by week correctly</title>
+      <link>https://til.codeinthehole.com/posts/how-to-group-pandas-dataframes-by-week-correctly/</link>
+      <pubDate>Wed, 22 May 2024 15:36:20 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-group-pandas-dataframes-by-week-correctly/</guid>
+      <description>Consider this toy dataframe which defines some meal events over a few weeks:</description>
+    </item>
+    
+
+  </channel>
+</rss>

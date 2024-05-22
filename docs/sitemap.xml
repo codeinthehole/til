@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/how-to-group-pandas-dataframes-by-week-correctly/</loc>
+    <lastmod>2024-05-22T15:36:20+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/pandas/</loc>
+    <lastmod>2024-05-22T15:36:20+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2024-05-22T15:36:20+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2024-05-22T15:36:20+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2024-05-22T15:36:20+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2024-05-22T15:36:20+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/git/</loc>
     <lastmod>2024-05-10T21:59:31+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-set-the-default-branch-for-a-git-remote/</loc>
-    <lastmod>2024-05-10T21:59:31+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2024-05-10T21:59:31+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2024-05-10T21:59:31+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2024-05-10T21:59:31+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/about-bashs-compgen-builtin/</loc>
@@ -36,9 +45,6 @@
     <lastmod>2024-05-04T14:29:31+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/mypy/</loc>
-    <lastmod>2024-05-04T14:29:31+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
     <lastmod>2024-05-04T14:29:31+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-mypy-can-generate-coverage-reports/</loc>
