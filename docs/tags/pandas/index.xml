@@ -18,7 +18,7 @@
       <pubDate>Wed, 22 May 2024 15:36:20 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-group-pandas-dataframes-by-week-correctly/</guid>
-      <description>Consider this toy dataframe which defines some meal events over a few weeks:</description>
+      <description>TLDR: pass closed=&#39;left&#39; to pd.Grouper when grouping by a Monday-to-Sunday week.</description>
     </item>
     
 
