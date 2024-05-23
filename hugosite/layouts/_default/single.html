@@ -1,11 +1,11 @@
 {{ define "head" }}
 <meta property="og:type" content="article" />
-<meta property="og:url" content="{{ .RelPermalink }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:title" content="TIL {{ replace .Title "`" "'" }} — David Winterbottom" />
 <meta property="og:description" content="{{ .Summary }} — can be read in {{ .ReadingTime }} {{ cond (eq .ReadingTime 1) "minute" "minutes" }}" />
 
 <!-- Screenshot of homepage from Nov 2020 -->
-<meta property="og:image" content="https://i.imgur.com/buBLoi9.png" />
+<meta property="og:image" content="{{ .Site.BaseURL }}images/site.png" />
 {{ end }}
 
 {{ define "title" }}
