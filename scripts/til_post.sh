@@ -29,7 +29,8 @@ function main() {
     local description="$1"
     filepath=$(generate_filepath "$description")
 
-    # Open file pre-populated with Hugo frontmatter
+    # Open file pre-populated with Hugo frontmatter.
+    # The `<!--more-->` tag is used to indicate where the summary should end.
     local title="$(tr '[:lower:]' '[:upper:]' <<< ${description:0:1})${description:1}"
     date=$(date --iso-8601=seconds)
     cat >"$filepath" <<- CONTENT
@@ -37,7 +38,12 @@ function main() {
 title: "$title"
 date: "$date"
 tags: []
+summary: ""
 ---
+
+First sentence...
+
+<!--more-->
 
 CONTENT
 
