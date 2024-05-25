@@ -16,7 +16,7 @@ always visible in the display you're looking at:
 defaults write com.apple.dock appswitcher-all-displays -bool true
 ```
 
-You'll need to restart the Docker for this change to be picked up:
+You'll need to restart the Dock for this change to be picked up:
 
 ```bash
 killall Dock
