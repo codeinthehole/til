@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2024-06-05T19:33:09+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2024-06-05T19:33:09+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2024-06-05T19:33:09+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/testing/</loc>
+    <lastmod>2024-06-05T19:33:09+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/that-timemachine-package-starts-ticking-after-the-first-call/</loc>
+    <lastmod>2024-06-05T19:33:09+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2024-06-05T19:33:09+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-group-pandas-dataframes-by-week-correctly/</loc>
     <lastmod>2024-05-22T15:36:20+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/pandas/</loc>
-    <lastmod>2024-05-22T15:36:20+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2024-05-22T15:36:20+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
-    <lastmod>2024-05-22T15:36:20+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2024-05-22T15:36:20+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2024-05-22T15:36:20+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/git/</loc>
@@ -273,9 +279,6 @@
     <lastmod>2022-11-13T17:09:21+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-djangos-overridesettings-decorator-causes-flakey-tests/</loc>
-    <lastmod>2022-11-13T17:09:21+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/testing/</loc>
     <lastmod>2022-11-13T17:09:21+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-the-new-argument-to-mockpatch-is-shared-between-parameterized-tests/</loc>

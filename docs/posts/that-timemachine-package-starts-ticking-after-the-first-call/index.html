@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    To ensure breakpoint() triggers ipdb as my default debugger, I used to set:
+    I was surprised to learn today that this test passes:
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/pytest-doesnt-play-nicely-with-ipdb/" />
-<meta property="og:title" content="TIL Pytest doesn&#39;t play nicely with ipdb — David Winterbottom" />
-<meta property="og:description" content="To ensure breakpoint() triggers ipdb as my default debugger, I used to set: — can be read in 1 minute" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-timemachine-package-starts-ticking-after-the-first-call/" />
+<meta property="og:title" content="TIL That &#39;time_machine&#39; starts ticking after the first call — David Winterbottom" />
+<meta property="og:description" content="I was surprised to learn today that this test passes: — can be read in 2 minutes" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
 
 
         <title>
-    TIL Pytest doesn&#39;t play nicely with ipdb — David Winterbottom
+    TIL That &#39;time_machine&#39; starts ticking after the first call — David Winterbottom
 </title>
 
         
@@ -56,33 +56,51 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>March 2, 2021</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+                On <time>June 5, 2024</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
             </div>
-            <h1>Pytest doesn&rsquo;t play nicely with ipdb</h1>
-        </header><p>To ensure <code>breakpoint()</code> triggers <a href="https://github.com/gotcha/ipdb"><code>ipdb</code></a> as my
-default debugger, I used to set:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PYTHONBREAKPOINT<span style="color:#f92672">=</span>ipdb.set_trace<span style="color:#e6db74">`</span>
-</span></span></code></pre></div><p>in <code>~/.bash_profile</code> (following
-<a href="https://www.andreagrandi.it/2018/10/16/using-ipdb-with-python-37-breakpoint/">this advice</a>).
-However, this doesn&rsquo;t play nicely with Pytest&rsquo;s output capturing.</p>
-<p>Pytest has a useful feature where
-<a href="https://docs.pytest.org/en/stable/usage.html#setting-breakpoints">it disables output capturing if <code>breakpoint</code> is called during test execution</a>,
-which allows access to the debugger prompt. However, this only works if
-<code>PYTHONBREAKPOINT</code> is unset. If you have <code>PYTHONBREAKPOINT</code> set to a non-empty
-value, then you need to use Pytest&rsquo;s
-<a href="https://docs.pytest.org/en/reorganize-docs/new-docs/user/commandlineuseful.html#s-capture-no"><code>-s</code></a>
-option to disable all output capturing. But this isn&rsquo;t generally desirable as it
-can lead to lots of unnecessary output being printed to your terminal during
-test runs.</p>
-<p>Specifying <code>--pdbcls=IPython.terminal.debugger:Pdb</code> doesn&rsquo;t make any difference
-if <code>PYTHONBREAKPOINT</code> is set.</p>
-<p>A decent work-around is to not set <code>PYTHONBREAKPOINT</code> globally and install
-<a href="https://pypi.org/project/pdbpp/"><code>pdb++</code></a> which provides much of the benefit of
-<code>ipdb</code> (e.g. syntax highlighting, tab completion) but doesn&rsquo;t suffer from the
-above problem; you can access the debugger without using the <code>-s</code> option.</p>
-<p>For projects that use <code>ipdb</code>, you can set <code>PYTHONBREAKPOINT</code> on a per-project
-basis.</p>
-</article>
+            <h1>That <code>time_machine</code> starts ticking after the first call</h1>
+        </header><p>I was surprised to learn today that this test passes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> time_machine
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_ticking_behaviour</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> time_machine<span style="color:#f92672">.</span>travel(<span style="color:#e6db74">&#34;2020-06-10T14:00:00&#34;</span>, tick<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Let some time pass.</span>
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Time should now be around 14:00:01, right? Wrong!</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">assert</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now() <span style="color:#f92672">==</span> datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div><p>This is because <code>time_machine.travel</code> starts ticking after the <em>first call to
+the system clock</em>, not from when the context manager is entered. This <a href="https://github.com/adamchainz/time-machine?tab=readme-ov-file#traveldestination--ticktrue">is
+documented</a> but is quite counter intuitive.</p>
+<h2 id="antipattern-using-time_machine-to-set-auto_now_addtrue-django-field-values">Antipattern: using <code>time_machine</code> to set <code>auto_now_add=True</code> Django field values</h2>
+<p>I stumbled upon this when debugging a failing test. The test was using
+<code>time_machine</code> to specify a value for a Django model field declared with
+<code>auto_now_add=True</code>. Something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> time_machine
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Import some factory-boy factory classes.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> factories
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_frob_creation</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> time_machine<span style="color:#f92672">.</span>travel(<span style="color:#e6db74">&#34;2020-06-10T14:00:00&#34;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Frob&#39;s have a `created_at` field declared with `auto_now_add=True`.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Since this is the first system clock call in this `time_machine`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># block, the `created_at` field will be set to *exactly* the above time.</span>
+</span></span><span style="display:flex;"><span>        frob <span style="color:#f92672">=</span> factories<span style="color:#f92672">.</span>FrobFactory()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> frob<span style="color:#f92672">.</span>created_at <span style="color:#f92672">==</span> datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div><p>This test was passing until I wrapped one of the <code>FrobFactory</code> fields with
+<code>factory.LazyFunction</code> to ensure the system clock was only called during test
+execution time (not test collection). This caused the test to fail as (the
+equivalent of) <code>frob.created_at</code> now had a microsecond component.</p>
+<p>This was because the first system clock call was now in computing a factory
+field value, and hence some time had ticked by before the model was saved (and
+the <code>created_at</code> value computed).</p>
+<p>I wouldn&rsquo;t recommend using <code>time_machine</code> to set <code>auto_now_add=True</code> fields in
+this way — it&rsquo;s better to pass them inexplicitly. But, if you do, ensure you
+pass <code>tick=False</code> to avoid this problem.</p>
+<!--links--></article>
 
         </main>
 
@@ -105,11 +123,6 @@ basis.</p>
                 
                     <p>Other things learnt about <a href="/tags/testing/">Testing</a>:</p>
                     <ul>
-                        
-                            <li><a href="/posts/that-timemachine-package-starts-ticking-after-the-first-call/">That <code>time_machine</code> starts ticking after the first call</a></li>
-
-                            
-                            
                         
                             <li><a href="/posts/how-djangos-overridesettings-decorator-causes-flakey-tests/">How Django&rsquo;s <code>override_settings</code> decorator causes flakey tests</a></li>
 
@@ -156,46 +169,14 @@ basis.</p>
                             
                             
                         
-                    </ul>
-                
-
-            
-
-        
-
-            
-            
-
-            
-                
-                
-
-                
-                    <p>Other things learnt about <a href="/tags/pytest/">Pytest</a>:</p>
-                    <ul>
-                        
-                            <li><a href="/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/">That Pytest&rsquo;s &ldquo;keyword expression&rdquo; filtering supports Python conditionals</a></li>
-
-                            
-                            
-                        
-                            <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
-
-                            
-                            
-                        
-                            <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
-
-                            
-                            
-                        
-                            <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
+                            <li><a href="/posts/factory-boy-can-be-used-to-build-dicts/">Factory boy can be used to build dicts</a></li>
 
                             
                             
                         
                     </ul>
                 
+
             
 
         
@@ -265,9 +246,9 @@ basis.</p>
         <br/>
 
         
+            <p>Jump to the previous TIL using the left cursor key.</p>
         
         
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
         
     </footer>
 
@@ -276,11 +257,9 @@ basis.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/chrome-has-a-flags-page-for-enabling-experimental-features\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-group-pandas-dataframes-by-week-correctly\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/to-prefer-dateutil-over-pytz\/"); })
         
     </script>
 
