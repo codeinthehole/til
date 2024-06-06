@@ -6,7 +6,7 @@
     <description>Tags TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jun 2024 19:33:09 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 05 Jun 2024 20:11:52 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Python</title>
       <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Wed, 05 Jun 2024 19:33:09 +0100</pubDate>
+      <pubDate>Wed, 05 Jun 2024 20:11:52 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/python/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Testing</title>
       <link>https://til.codeinthehole.com/tags/testing/</link>
-      <pubDate>Wed, 05 Jun 2024 19:33:09 +0100</pubDate>
+      <pubDate>Wed, 05 Jun 2024 20:11:52 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/testing/</guid>
       <description></description>
