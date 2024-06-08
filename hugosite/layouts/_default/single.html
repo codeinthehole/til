@@ -78,15 +78,16 @@
         {{ end }}
 
         <br/>
+        <hr color="#eee"/>
 
         {{ if and (.PrevPage) (not (.NextPage)) }}
-            <p>Jump to the previous TIL using the left cursor key.</p>
+            <p>⌨️ Jump to the previous TIL using the ◀️ cursor key.</p>
         {{ end }}
         {{ if and (not (.PrevPage)) (.NextPage) }}
-            <p>Jump to the next TIL using the right cursor key.</p>
+            <p>⌨️ Jump to the next TIL using the ▶️ cursor key.</p>
         {{ end }}
         {{ if and (.PrevPage) (.NextPage) }}
-            <p>Jump to the previous/next TIL using the left/right cursor keys.</p>
+            <p>⌨️ Jump to the previous/next TIL using the ◀️ or ▶️ cursor keys.</p>
         {{ end }}
     </footer>
 {{ end }}
