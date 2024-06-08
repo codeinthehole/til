@@ -5,24 +5,32 @@ easy as possible to publish a new post.
 
 ## Scripts
 
-This repo provides two Bash scripts for writing a TIL post and capturing
-screenshots to include in a post.
+This repo provides two Bash scripts:
+
+- `scripts/til_post.sh` - Create a new TIL post with a pre-populated markdown
+  file and open Vim in insert mode.
+
+- `scripts/til_screenshot.sh` - Capture a screenshot of a selected portion of
+  the screen and save it to the repo's `static/images` directory. The markdown
+  to include in the post will be added to the system clipboard.
 
 ## Publication
 
 The TIL posts are built into a static HTML site using [Hugo](https://gohugo.io/)
-and are published via Github pages. The final site is available at:
-https://til.codeinthehole.com
+and published via Github pages. The compiled static site is in the `docs/`
+folder.
+
+The published site has URL: https://til.codeinthehole.com
 
 ## Hugo theme
 
 The theme for the site is a customised version of
 [Etch](https://github.com/LukasJoswiak/etch).
 
-## Code structure
+## Repo structure
 
-The repo is structured to keep the TIL content separate from Hugo - all
-Hugo-related content is in `/hugosite`.
+The repo is structured to keep the TIL content separate from Hugo - all posts
+live in `posts/` while all Hugo-related content is in `/hugosite`.
 
 ## Installation
 
@@ -33,11 +41,11 @@ Checkout the repo and create shell aliases for the two helper scripts:
 source /path/to/repo/install.sh
 ```
 
-Consider adding this `source`ing to your Bash start-up script.
+Consider adding this snippet to your Bash start-up script.
 
 Note, the `til_screenshot.sh` script requires
 [`pngcrush`](https://pmt.sourceforge.io/pngcrush/) and `imagemagick`; both of
-which can be installed from Homebrew:
+which can be installed from Homebrew on MacOS:
 
 ```sh
 brew install pngcrush imagemagick
@@ -58,19 +66,20 @@ til that cows cant look up
 ```
 
 which will create a markdown file, named by slugifying the description (i.e.
-`that-cows-cant-look-up.md`), pre-populated with Hugo front matter:
+`posts/that-cows-cant-look-up.md`), pre-populated with Hugo front matter:
 
 ```markdown
 ---
 title: "TIL that cows can't look-up"
 date: "2020-07-24"
 tags: []
+description: ""
 ---
 ```
 
 and open Vim in insert mode with the cursor in the appropriate place.
 
-You then add the TIL text.
+You then add the TIL content.
 
 To add screenshots, `CTRL+Z` to background Vim and use the screenshot helper:
 
