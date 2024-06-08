@@ -379,3 +379,14 @@ footer#footer {
         padding: 1.5rem 2.2rem;
     }
 }
+
+/* Fixes iOS font sizing anomaly 
+ *
+ * See https://stackoverflow.com/questions/20924039/wrong-font-size-when-using-float-right-in-css-on-mobile-safari/22417120#22417120
+ * */
+code {
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
