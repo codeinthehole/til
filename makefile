@@ -25,7 +25,7 @@ vale:
 fix: markdownlint_fix prettier_fix
 
 markdownlint_fix:
-	markdownlint --fix .
+	markdownlint --fix posts/ *.md
 
 prettier_fix:
 	prettier --write posts/
