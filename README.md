@@ -20,7 +20,7 @@ The TIL posts are built into a static HTML site using [Hugo](https://gohugo.io/)
 and published via Github pages. The compiled static site is in the `docs/`
 folder.
 
-The published site has URL: https://til.codeinthehole.com
+The published site has URL: <https://til.codeinthehole.com>
 
 ## Hugo theme
 

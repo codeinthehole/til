@@ -8,7 +8,7 @@ You can create tabular data from JSON using `jq` to generate tab-separated
 output and `column` to format.
 
 ```sh
-$ echo sample.json | jq -r '.[] | [.name, .age] | @tsv' | column -t -s $'\t'
+echo sample.json | jq -r '.[] | [.name, .age] | @tsv' | column -t -s $'\t'
 ```
 
 Here's a more involved example using Github's [`gh` tool][gh] to fetch a list of

@@ -17,7 +17,7 @@ def test_s3_bucket_creation():
 This was failing locally for me with a `botocore.exceptions.ClientError`
 exception:
 
-```
+```txt
 An error occurred (IllegalLocationConstraintException) when calling the
 CreateBucket operation: The unspecified location constraint is incompatible for
 the region specific endpoint this request was sent to.
@@ -30,7 +30,7 @@ but was passing in a remote CI environment and on other people's machines.
 The problem is that `boto3` will take its [default AWS region from your
 `~/.aws/config` file][boto3_config] and mine was set to Dublin:
 
-```
+```dosini
 [default]
 region = eu-west-1
 ```

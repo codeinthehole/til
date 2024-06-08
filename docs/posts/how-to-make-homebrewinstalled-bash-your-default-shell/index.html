@@ -62,10 +62,10 @@
         </header><p>I realised today that despite having installed a modern version of Bash (via
 <code>brew install bash</code>), I was still running Bash v3.2.57&mdash;the system version of
 MacOS&mdash;as my default login shell.</p>
-<pre tabindex="0"><code>$ bash --version
-GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin21)
-Copyright (C) 2007 Free Software Foundation, Inc.
-</code></pre><p>This is because there are some post-installation steps that need to be followed,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ bash --version
+</span></span><span style="display:flex;"><span>GNU bash, version 3.2.57<span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>-release <span style="color:#f92672">(</span>x86_64-apple-darwin21<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2007</span> Free Software Foundation, Inc.
+</span></span></code></pre></div><p>This is because there are some post-installation steps that need to be followed,
 and these aren&rsquo;t mentioned in the <a href="https://formulae.brew.sh/formula/bash">Homebrew formulae notes</a>.</p>
 <p>Specifically you need to allow-list the Homebrew-installed version so it can be
 used as a login shell by adding the path to <code>/etc/shells</code>:</p>
@@ -79,7 +79,7 @@ use the &ldquo;advanced options&rdquo; pop-up.</p>
 <p>Verify this has worked by starting a new shell session and running:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo $BASH_VERSION
 </span></span><span style="display:flex;"><span>5.2.12<span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>-release
-</span></span></code></pre></div><h1 id="autocomplete-woes">Autocomplete woes</h1>
+</span></span></code></pre></div><h2 id="autocomplete-woes">Autocomplete woes</h2>
 <p>This was a yak-shave TIL shaken out of debugging why Git autocomplete wasn&rsquo;t
 working. As part of the investigation, I realised the <a href="https://formulae.brew.sh/formula/bash-completion@2"><code>bash-completion@2</code>
 Homebrew package</a> script wasn&rsquo;t sourcing each

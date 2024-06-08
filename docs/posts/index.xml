@@ -530,7 +530,7 @@ from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp
       
       <guid>https://til.codeinthehole.com/posts/how-ripgrep-interprets-gitignore-rules-changes-when-a-filepath-argument-is-used/</guid>
       <description>Consider this dummy static site structure:
-$ mkdir -p docs/_build/ $ echo &amp;#34;&amp;lt;h1&amp;gt;hello&amp;lt;/h1&amp;gt;&amp;#34; &amp;gt; docs/_build/index.</description>
+mkdir -p docs/_build/ echo &amp;#34;&amp;lt;h1&amp;gt;hello&amp;lt;/h1&amp;gt;&amp;#34; &amp;gt; docs/_build/index.</description>
     </item>
     
     <item>

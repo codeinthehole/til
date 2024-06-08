@@ -6,7 +6,7 @@
 
         <meta name="description" content="
     Consider this dummy static site structure:
-$ mkdir -p docs/_build/ $ echo &amp;quot;&amp;lt;h1&amp;gt;hello&amp;lt;/h1&amp;gt;&amp;quot; &amp;gt; docs/_build/index.
+mkdir -p docs/_build/ echo &amp;quot;&amp;lt;h1&amp;gt;hello&amp;lt;/h1&amp;gt;&amp;quot; &amp;gt; docs/_build/index.
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +22,7 @@ $ mkdir -p docs/_build/ $ echo &amp;quot;&amp;lt;h1&amp;gt;hello&amp;lt;/h1&amp;
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-ripgrep-interprets-gitignore-rules-changes-when-a-filepath-argument-is-used/" />
 <meta property="og:title" content="TIL How &#39;ripgrep&#39; interprets &#39;.gitignore&#39; rules changes when a filepath argument is used — David Winterbottom" />
 <meta property="og:description" content="Consider this dummy static site structure:
-$ mkdir -p docs/_build/ $ echo &#34;&lt;h1&gt;hello&lt;/h1&gt;&#34; &gt; docs/_build/index. — can be read in 1 minute" />
+mkdir -p docs/_build/ echo &#34;&lt;h1&gt;hello&lt;/h1&gt;&#34; &gt; docs/_build/index. — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
@@ -62,9 +62,9 @@ $ mkdir -p docs/_build/ $ echo &#34;&lt;h1&gt;hello&lt;/h1&gt;&#34; &gt; docs/_b
             </div>
             <h1>How <code>ripgrep</code> interprets <code>.gitignore</code> rules changes when a filepath argument is used</h1>
         </header><p>Consider this dummy static site structure:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ mkdir -p docs/_build/
-</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;&lt;h1&gt;hello&lt;/h1&gt;&#34;</span> &gt; docs/_build/index.html
-</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;# hello&#34;</span> &gt; docs/index.md
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mkdir -p docs/_build/
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&lt;h1&gt;hello&lt;/h1&gt;&#34;</span> &gt; docs/_build/index.html
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# hello&#34;</span> &gt; docs/index.md
 </span></span></code></pre></div><p>A <a href="https://github.com/BurntSushi/ripgrep"><code>ripgrep</code></a> search for &ldquo;hello&rdquo; matches
 both files:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ rg hello
@@ -75,7 +75,7 @@ both files:</p>
 </span></span><span style="display:flex;"><span>1:&lt;h1&gt;hello&lt;/h1&gt;
 </span></span></code></pre></div><p>Suppose we want to ignore generated HTML files in <code>docs/_build/</code>. We could add
 <code>docs/_build/</code> to a <code>.gitignore</code> file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;docs/_build/&#34;</span> &gt; .gitignore
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;docs/_build/&#34;</span> &gt; .gitignore
 </span></span></code></pre></div><p>and searches ignore that folder:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ rg hello
 </span></span><span style="display:flex;"><span>docs/index.md

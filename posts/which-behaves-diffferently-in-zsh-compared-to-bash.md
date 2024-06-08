@@ -58,16 +58,16 @@ But in Zsh we see its function implementation:
 
 ```sh
 pyenv () {
-	local command
-	command="${1:-}"
-	if [ "$#" -gt 0 ]
-	then
-		shift
-	fi
-	case "$command" in
-		(rehash | shell | virtualenvwrapper | virtualenvwrapper_lazy) eval "$(pyenv "sh-$command" "$@")" ;;
-		(*) command pyenv "$command" "$@" ;;
-	esac
+    local command
+    command="${1:-}"
+    if [ "$#" -gt 0 ]
+    then
+        shift
+    fi
+    case "$command" in
+        (rehash | shell | virtualenvwrapper | virtualenvwrapper_lazy) eval "$(pyenv "sh-$command" "$@")" ;;
+        (*) command pyenv "$command" "$@" ;;
+    esac
 }
 ```
 

@@ -67,16 +67,16 @@
 </span></span><span style="display:flex;"><span>        boto3<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#34;s3&#34;</span>)<span style="color:#f92672">.</span>create_bucket(Bucket<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MyBucket&#34;</span>)
 </span></span></code></pre></div><p>This was failing locally for me with a <code>botocore.exceptions.ClientError</code>
 exception:</p>
-<pre tabindex="0"><code>An error occurred (IllegalLocationConstraintException) when calling the
-CreateBucket operation: The unspecified location constraint is incompatible for
-the region specific endpoint this request was sent to.
-</code></pre><p>but was passing in a remote CI environment and on other people&rsquo;s machines.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>An error occurred (IllegalLocationConstraintException) when calling the
+</span></span><span style="display:flex;"><span>CreateBucket operation: The unspecified location constraint is incompatible for
+</span></span><span style="display:flex;"><span>the region specific endpoint this request was sent to.
+</span></span></code></pre></div><p>but was passing in a remote CI environment and on other people&rsquo;s machines.</p>
 <h2 id="why">Why?</h2>
 <p>The problem is that <code>boto3</code> will take its <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html#overview">default AWS region from your
 <code>~/.aws/config</code> file</a> and mine was set to Dublin:</p>
-<pre tabindex="0"><code>[default]
-region = eu-west-1
-</code></pre><p>Remove this and the test passes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dosini" data-lang="dosini"><span style="display:flex;"><span><span style="color:#66d9ef">[default]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">region</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">eu-west-1</span>
+</span></span></code></pre></div><p>Remove this and the test passes.</p>
 <h2 id="default-aws-regions">Default AWS regions</h2>
 <p>If there is no default region configured then <code>boto3</code> will default to
 <code>us-east-1</code> when creating S3 buckets which, crucially, <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-example-creating-buckets.html#create-an-amazon-s3-bucket">allows buckets to be

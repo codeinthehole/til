@@ -15,11 +15,11 @@ mappings for any menu item.
 
 Today I discovered the syntax for adding mappings for _nested_ menu options:
 
-```
+```txt
 ${top_level_menu_name}->${nested_menu_name}
 ```
 
-# Stop pasting rich text!
+## Stop pasting rich text
 
 I've used this in [Bear][bear_home] to add custom shortcuts for:
 

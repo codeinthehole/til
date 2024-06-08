@@ -35,7 +35,7 @@ spaces there.
 
 That is:
 
-```
+```txt
 > On the Ning Nang Nong
 > Where the Cows go Bong!
 ```
@@ -59,6 +59,4 @@ render as:
 Hugo's Goldmark Markdown library does join the quoted lines together.
 
 [daringfireball]: https://daringfireball.net/projects/markdown/syntax#p
-[github_footnotes]:
-  https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#footnotes
 [gfm_spec]: https://github.github.com/gfm/#example-206

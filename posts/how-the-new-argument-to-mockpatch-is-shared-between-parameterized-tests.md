@@ -61,7 +61,7 @@ def test_say_hello(name):
 
 Now we see two failures:
 
-```
+```txt
 test_patch_state.py::test_say_hello_1[Alan] PASSED
 test_patch_state.py::test_say_hello_1[Barry] FAILED
 test_patch_state.py::test_say_hello_1[Calum] FAILED

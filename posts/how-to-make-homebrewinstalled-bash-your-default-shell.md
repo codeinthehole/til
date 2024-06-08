@@ -8,7 +8,7 @@ I realised today that despite having installed a modern version of Bash (via
 `brew install bash`), I was still running Bash v3.2.57---the system version of
 MacOS---as my default login shell.
 
-```
+```sh
 $ bash --version
 GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin21)
 Copyright (C) 2007 Free Software Foundation, Inc.
@@ -42,7 +42,7 @@ echo $BASH_VERSION
 5.2.12(1)-release
 ```
 
-# Autocomplete woes
+## Autocomplete woes
 
 This was a yak-shave TIL shaken out of debugging why Git autocomplete wasn't
 working. As part of the investigation, I realised the [`bash-completion@2`

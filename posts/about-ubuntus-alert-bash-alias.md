@@ -23,8 +23,8 @@ Example usage:
 ```
 
 It uses the exit code of the previous process `$?` to determine the message and
-icon displayed. As you can see, it uses [`notify-send`](notifysend) to create
-the alert — [here's a more detailed explanation of how it works](explanation).
+icon displayed. As you can see, it uses [`notify-send`][notifysend] to create
+the alert — [here's a more detailed explanation of how it works][explanation].
 
 You can create a macOS equivalent with the Homebrew-installed
 [`terminal-notifier`][terminalnotifier]:

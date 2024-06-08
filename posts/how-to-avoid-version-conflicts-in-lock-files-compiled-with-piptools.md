@@ -53,7 +53,7 @@ contents:
 
 and then install your development packages with:
 
-```
+```sh
 pip-sync requirements.txt requirements.dev.txt requirements.local.txt
 ```
 

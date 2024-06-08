@@ -14,7 +14,7 @@ the change that each commit made. For example, here's how to example the changes
 to Django's `LICENSE` file over the years:
 
 ```sh
-$ git log --patch --follow -- LICENSE
+git log --patch --follow -- LICENSE
 ```
 
 which reveals:

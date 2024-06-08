@@ -9,9 +9,9 @@ tags: ["ripgrep"]
 Consider this dummy static site structure:
 
 ```sh
-$ mkdir -p docs/_build/
-$ echo "<h1>hello</h1>" > docs/_build/index.html
-$ echo "# hello" > docs/index.md
+mkdir -p docs/_build/
+echo "<h1>hello</h1>" > docs/_build/index.html
+echo "# hello" > docs/index.md
 ```
 
 A [`ripgrep`](https://github.com/BurntSushi/ripgrep) search for "hello" matches
@@ -30,7 +30,7 @@ Suppose we want to ignore generated HTML files in `docs/_build/`. We could add
 `docs/_build/` to a `.gitignore` file:
 
 ```sh
-$ echo "docs/_build/" > .gitignore
+echo "docs/_build/" > .gitignore
 ```
 
 and searches ignore that folder:

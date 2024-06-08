@@ -14,7 +14,5 @@ extend-include = ["*.ipynb"]
 then `ruff` can be used to lint Jupyter notebooks (source: the [Ruff
 docs][ruff_docs]).
 
-
-[ruff_docs]: https://docs.astral.sh/ruff/faq/#does-ruff-support-jupyter-notebooks
-
-
+[ruff_docs]:
+  https://docs.astral.sh/ruff/faq/#does-ruff-support-jupyter-notebooks

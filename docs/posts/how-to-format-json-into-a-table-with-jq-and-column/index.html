@@ -61,7 +61,7 @@
             <h1>How to format JSON into a table with <code>jq</code> and <code>column</code></h1>
         </header><p>You can create tabular data from JSON using <code>jq</code> to generate tab-separated
 output and <code>column</code> to format.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ echo sample.json | jq -r <span style="color:#e6db74">&#39;.[] | [.name, .age] | @tsv&#39;</span> | column -t -s <span style="color:#e6db74">$&#39;\t&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo sample.json | jq -r <span style="color:#e6db74">&#39;.[] | [.name, .age] | @tsv&#39;</span> | column -t -s <span style="color:#e6db74">$&#39;\t&#39;</span>
 </span></span></code></pre></div><p>Here&rsquo;s a more involved example using Github&rsquo;s <a href="https://cli.github.com/"><code>gh</code> tool</a> to fetch a list of
 open pull requests:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ gh pr list --json number,title,author <span style="color:#ae81ff">\

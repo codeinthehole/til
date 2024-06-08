@@ -6,7 +6,7 @@ tags: ["Github", "Markdown"]
 
 The syntax is:
 
-```
+```txt
 > [!NOTE]
 > This is a note.
 ```

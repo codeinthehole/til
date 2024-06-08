@@ -26,7 +26,7 @@ pipx install $package
 
 After switching to a new laptop, `llm` wouldn't install:
 
-```
+```sh
 > pipx install llm
 Fatal error from pip prevented installation. Full pip output in file:
     ~.local/pipx/logs/cmd_2023-11-17_11.07.16_pip_errors.log
@@ -84,6 +84,6 @@ determine the path to a given version like so:
 
 then `llm` can be installed:
 
-```
+```sh
 pipx install --python $PYTHON_PATH llm
 ```

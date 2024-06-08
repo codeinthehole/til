@@ -73,24 +73,24 @@ Models</li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pipx install $package
 </span></span></code></pre></div><h2 id="package-installation-problem">Package installation problem?</h2>
 <p>After switching to a new laptop, <code>llm</code> wouldn&rsquo;t install:</p>
-<pre tabindex="0"><code>&gt; pipx install llm
-Fatal error from pip prevented installation. Full pip output in file:
-    ~.local/pipx/logs/cmd_2023-11-17_11.07.16_pip_errors.log
-
-pip failed to build package:
-    aiohttp
-
-Some possibly relevant errors from pip install:
-    error: subprocess-exited-with-error
-    aiohttp/_websocket.c:3042:55: error: no member named &#39;ob_digit&#39; in &#39;struct _longobject&#39;
-    aiohttp/_websocket.c:3097:55: error: no member named &#39;ob_digit&#39; in &#39;struct _longobject&#39;
-    aiohttp/_websocket.c:3238:55: error: no member named &#39;ob_digit&#39; in &#39;struct _longobject&#39;
-    aiohttp/_websocket.c:3293:55: error: no member named &#39;ob_digit&#39; in &#39;struct _longobject&#39;
-    aiohttp/_websocket.c:3744:47: error: no member named &#39;ob_digit&#39; in &#39;struct _longobject&#39;
-    error: command &#39;/usr/bin/clang&#39; failed with exit code 1
-
-Error installing llm.
-</code></pre><p>A little digging revealed the latest version of <code>aiohttp</code> didn&rsquo;t support Python
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>&gt; pipx install llm
+</span></span><span style="display:flex;"><span>Fatal error from pip prevented installation. Full pip output in file:
+</span></span><span style="display:flex;"><span>    ~.local/pipx/logs/cmd_2023-11-17_11.07.16_pip_errors.log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pip failed to build package:
+</span></span><span style="display:flex;"><span>    aiohttp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Some possibly relevant errors from pip install:
+</span></span><span style="display:flex;"><span>    error: subprocess-exited-with-error
+</span></span><span style="display:flex;"><span>    aiohttp/_websocket.c:3042:55: error: no member named <span style="color:#e6db74">&#39;ob_digit&#39;</span> in <span style="color:#e6db74">&#39;struct _longobject&#39;</span>
+</span></span><span style="display:flex;"><span>    aiohttp/_websocket.c:3097:55: error: no member named <span style="color:#e6db74">&#39;ob_digit&#39;</span> in <span style="color:#e6db74">&#39;struct _longobject&#39;</span>
+</span></span><span style="display:flex;"><span>    aiohttp/_websocket.c:3238:55: error: no member named <span style="color:#e6db74">&#39;ob_digit&#39;</span> in <span style="color:#e6db74">&#39;struct _longobject&#39;</span>
+</span></span><span style="display:flex;"><span>    aiohttp/_websocket.c:3293:55: error: no member named <span style="color:#e6db74">&#39;ob_digit&#39;</span> in <span style="color:#e6db74">&#39;struct _longobject&#39;</span>
+</span></span><span style="display:flex;"><span>    aiohttp/_websocket.c:3744:47: error: no member named <span style="color:#e6db74">&#39;ob_digit&#39;</span> in <span style="color:#e6db74">&#39;struct _longobject&#39;</span>
+</span></span><span style="display:flex;"><span>    error: command <span style="color:#e6db74">&#39;/usr/bin/clang&#39;</span> failed with exit code <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Error installing llm.
+</span></span></code></pre></div><p>A little digging revealed the latest version of <code>aiohttp</code> didn&rsquo;t support Python
 3.12, hence the compilation error. So <code>pipx</code> must be using Python 3.12 to
 install packages.</p>
 <h2 id="how-does-pipx-choose-which-python-to-use">How does <code>pipx</code> choose which Python to use?</h2>
@@ -113,8 +113,8 @@ determine the path to a given version like so:</p>
 </span></span><span style="display:flex;"><span>&gt; pyenv local 3.11.6
 </span></span><span style="display:flex;"><span>&gt; PYTHON_PATH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>pyenv which python<span style="color:#66d9ef">)</span>
 </span></span></code></pre></div><p>then <code>llm</code> can be installed:</p>
-<pre tabindex="0"><code>pipx install --python $PYTHON_PATH llm
-</code></pre></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pipx install --python $PYTHON_PATH llm
+</span></span></code></pre></div></article>
 
         </main>
 

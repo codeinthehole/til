@@ -54,7 +54,7 @@ __main__.UnableToEat: Need to go shopping
 
 Without the explicit chaining, the joining message would be:
 
-```
+```txt
 During handling of the above exception, another exception occurred
 ```
 

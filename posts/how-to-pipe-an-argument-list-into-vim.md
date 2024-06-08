@@ -17,8 +17,8 @@ when it exits][xargs].
 [xargs]:
   https://superuser.com/questions/336016/invoking-vi-through-find-xargs-breaks-my-terminal-why
 
-This is a useful way of populating Vim's [argument list]. It works especially
-well with modern search tools `fd` and `ripgrep`. For example:
+This is a useful way of populating Vim's [argument list]. It works especially well
+with modern search tools `fd` and `ripgrep`. For example:
 
 ```bash
 $ rg --type py --files-with-matches "logger = .*getLogger*" \

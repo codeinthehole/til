@@ -20,7 +20,7 @@ As in:
 
 will render as something like:
 
-```
+```txt
 2nd June 2022
 ```
 
@@ -41,5 +41,3 @@ motivation for Django's implementation.
   https://github.com/django/django/blob/main/django/utils/dateformat.py
 [format_codes]:
   https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
-[php_date]: https://www.php.net/manual/en/function.date.php
-[php_format_codes]: https://www.php.net/manual/en/datetime.format.php

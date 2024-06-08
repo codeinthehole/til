@@ -23,7 +23,7 @@ which renders as:
 
 <!-- prettier-ignore -->
 Apple
-:   Pomaceous fruit of plants of the genus Malus in 
+:   Pomaceous fruit of plants of the genus Malus in
     the family Rosaceae.
 
 <!-- prettier-ignore -->

@@ -8,7 +8,7 @@ I use [Github's `hub` library][hub_site] to create pull requests with a command
 similar to:
 
 ```sh
-$ hub pull-request --edit ...
+hub pull-request --edit ...
 ```
 
 The `--edit` option instructs `hub` to open a `.git/PULLREQ_EDITMSG` file in Vim
