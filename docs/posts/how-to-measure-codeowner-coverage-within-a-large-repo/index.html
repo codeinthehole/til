@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    In a large monorepo, it&amp;rsquo;s helpful to have a .github/CODEOWNERS file that maps filepaths to owning teams, covering as much of the codebase as possible.
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-measure-codeowner-coverage-within-a-large-repo/" />
+<meta property="og:title" content="TIL How to measure codeowner coverage within a large repo — David Winterbottom" />
+<meta property="og:description" content="In a large monorepo, it&rsquo;s helpful to have a .github/CODEOWNERS file that maps
+filepaths to owning teams, covering as much of the codebase as possible. — can be read in 1 minute" />
+
+
+<meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
+
+
+        <title>
+    TIL How to measure codeowner coverage within a large repo — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt&hellip;</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>June 24, 2024</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+            </div>
+            <h1>How to measure codeowner coverage within a large repo</h1>
+        </header><p>In a large monorepo, it&rsquo;s helpful to have a <code>.github/CODEOWNERS</code> file that maps
+filepaths to owning teams, covering as much of the codebase as possible.</p>
+<p>But how do you measure how much of the codebase is covered by the codeowners
+file?</p>
+<p>There&rsquo;s <a href="https://github.com/hmarr/codeowners">a useful tool for computing codeowner coverage</a> but it
+includes all files beneath the current folder and there&rsquo;s no option to only
+analyse those Git&rsquo;s index. Thus the results need some filtering to be useful.</p>
+<p>You can compute an ownership mapping for files in Git&rsquo;s index by running this
+command from repo root:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>join -1 <span style="color:#ae81ff">1</span> -2 <span style="color:#ae81ff">1</span> &lt;<span style="color:#f92672">(</span>git ls-files | sort<span style="color:#f92672">)</span> &lt;<span style="color:#f92672">(</span>codeowners | sort<span style="color:#f92672">)</span> &gt; owners.txt
+</span></span></code></pre></div><p>Here we compute two temporary files:</p>
+<ol>
+<li>A list of all tracked files (<code>git ls-files</code>) and</li>
+<li>The owners for every file in the repo (<code>codeowners</code>),</li>
+</ol>
+<p>and inner-<code>join</code> them on their first field (the file path).</p>
+<p>You can now compute the percentage of unowned files using <code>bc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>calc<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scale=2; `cat owners.txt | rg -F &#39;(unowned)&#39; | wc -l` / `wc -l &lt; owners.txt`&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span>$calc<span style="color:#e6db74">&#34;</span> | bc
+</span></span></code></pre></div></article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/unix/">Unix</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/which-behaves-diffferently-in-zsh-compared-to-bash/"><code>which</code> behaves diffferently in Zsh compared to Bash</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-shuf-to-take-random-samples-of-lines/">You can use <code>shuf</code> to take random samples of lines</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-xargs-t/">About <code>xargs -t</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/what-the-sections-of-the-unix-manual-are/">What the sections of the Unix manual are</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/the-order-of-permissions-matter-with-chmod/">The order of permissions matters with <code>chmod</code></a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/github/">Github</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/github-supports-a-markdown-extension-for-creating-alert-blocks/">Github supports a Markdown extension for creating alert blocks</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-two-trailing-spaces-indicates-a-line-break-in-markdown/">That two trailing spaces indicates a line break in Markdown</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-vimium-has-shortcuts-for-following-pagination-links/">That Vimium has shortcuts for following pagination links</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-hub-clashes-with-vimpolyglot/">That <code>hub</code> clashes with <code>vim-polyglot</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-pycon-markdown-format/">About <code>pycon</code> markdown format</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-githubs-involves-search-filter/">About Github&rsquo;s <code>involves:$username</code> search filter</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-githubs-me-search-term/">About Github&rsquo;s <code>@me</code> search term</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-embed-markdown-content-in-a-github-code-block/">How to embed markdown content in a Github code block</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/git/">Git</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-set-the-default-branch-for-a-git-remote/">How to set the default branch for a Git remote</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-edit-and-search-the-files-in-one-commit/">How to edit and search the files in one commit</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-avoid-committing-jupyter-notebook-output-to-git/">How to avoid committing Jupyter Notebook output to Git</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-git-foreachref-support-conditional-logic-in-its-format/">That <code>git for-each-ref</code> support conditional logic in its format</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-perform-a-noninteractive-interactive-git-rebase/">How to perform a non-interactive, interactive Git rebase</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-show-the-history-of-a-file-with-git-log-patch/">How to show the history of a file with <code>git log --patch</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-continue-a-git-rebase-and-skip-editing-the-commit-message/">How to continue a Git rebase and skip editing the commit message</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-print-the-changed-filepaths-from-a-commit-and-nothing-else/">How to find the files from a commit that deleted a given pattern</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-gits-diffrelative-config-option/">About Git&rsquo;s <code>diff.relative</code> config option</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-git-mergebase/">About <code>git merge-base</code></a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+        <hr color="#eee"/>
+
+        
+            <p>⌨️ Jump to the previous TIL using the ◀️ cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-create-a-wrapping-mock-with-custom-behaviour\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://til.codeinthehole.com/posts/how-to-create-a-wrapping-mock-with-custom-behaviour/</loc>
-    <lastmod>2024-06-05T20:11:52+01:00</lastmod>
+    <loc>https://til.codeinthehole.com/tags/git/</loc>
+    <lastmod>2024-06-24T11:45:01+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/github/</loc>
+    <lastmod>2024-06-24T11:45:01+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/how-to-measure-codeowner-coverage-within-a-large-repo/</loc>
+    <lastmod>2024-06-24T11:45:01+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2024-06-24T11:45:01+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2024-06-24T11:45:01+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2024-06-24T11:45:01+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/unix/</loc>
+    <lastmod>2024-06-24T11:45:01+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/how-to-create-a-wrapping-mock-with-custom-behaviour/</loc>
     <lastmod>2024-06-05T20:11:52+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/python/</loc>
     <lastmod>2024-06-05T20:11:52+01:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2024-06-05T20:11:52+01:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/tags/testing/</loc>
-    <lastmod>2024-06-05T20:11:52+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2024-06-05T20:11:52+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/that-timemachine-package-starts-ticking-after-the-first-call/</loc>
@@ -28,9 +40,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/tags/pandas/</loc>
     <lastmod>2024-05-22T15:36:20+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/git/</loc>
-    <lastmod>2024-05-10T21:59:31+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-set-the-default-branch-for-a-git-remote/</loc>
     <lastmod>2024-05-10T21:59:31+01:00</lastmod>
@@ -121,9 +130,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/tags/javascript/</loc>
     <lastmod>2023-10-12T21:36:24+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/github/</loc>
-    <lastmod>2023-10-12T13:58:00+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/github-supports-a-markdown-extension-for-creating-alert-blocks/</loc>
     <lastmod>2023-10-12T13:58:00+01:00</lastmod>
@@ -309,9 +315,6 @@
     <lastmod>2022-10-04T15:42:26+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/which-behaves-diffferently-in-zsh-compared-to-bash/</loc>
-    <lastmod>2022-09-29T19:21:45+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/unix/</loc>
     <lastmod>2022-09-29T19:21:45+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/zsh/</loc>

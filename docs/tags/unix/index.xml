@@ -6,11 +6,21 @@
     <description>Unix TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Sep 2022 19:21:45 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jun 2024 11:45:01 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/unix/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to measure codeowner coverage within a large repo</title>
+      <link>https://til.codeinthehole.com/posts/how-to-measure-codeowner-coverage-within-a-large-repo/</link>
+      <pubDate>Mon, 24 Jun 2024 11:45:01 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-measure-codeowner-coverage-within-a-large-repo/</guid>
+      <description>In a large monorepo, it&amp;rsquo;s helpful to have a .github/CODEOWNERS file that maps filepaths to owning teams, covering as much of the codebase as possible.
+</description>
+    </item>
     
     <item>
       <title>`which` behaves diffferently in Zsh compared to Bash</title>
