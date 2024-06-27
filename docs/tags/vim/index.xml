@@ -6,11 +6,21 @@
     <description>Vim TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Mar 2024 14:56:20 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2024 16:25:27 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to use `llm` to act on visual selections in Vim</title>
+      <link>https://til.codeinthehole.com/posts/how-to-use-llm-to-act-on-visual-selections-in-vim/</link>
+      <pubDate>Thu, 27 Jun 2024 16:25:27 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-use-llm-to-act-on-visual-selections-in-vim/</guid>
+      <description>You can use Simon Willison&amp;rsquo;s excellent llm tool to query or edit Vim buffers by piping the contents of a visual selection to the llm.
+</description>
+    </item>
     
     <item>
       <title>How to edit and search the files in one commit</title>

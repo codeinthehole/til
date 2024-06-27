@@ -6,11 +6,29 @@
     <description>Tags TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Jun 2024 11:45:01 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2024 16:25:27 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>LLM</title>
+      <link>https://til.codeinthehole.com/tags/llm/</link>
+      <pubDate>Thu, 27 Jun 2024 16:25:27 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/llm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://til.codeinthehole.com/tags/vim/</link>
+      <pubDate>Thu, 27 Jun 2024 16:25:27 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/vim/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Git</title>
@@ -121,15 +139,6 @@
     </item>
     
     <item>
-      <title>Vim</title>
-      <link>https://til.codeinthehole.com/tags/vim/</link>
-      <pubDate>Wed, 27 Mar 2024 14:56:20 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Jupyter Notebook</title>
       <link>https://til.codeinthehole.com/tags/jupyter-notebook/</link>
       <pubDate>Mon, 26 Feb 2024 21:18:31 +0000</pubDate>
@@ -171,15 +180,6 @@
       <pubDate>Mon, 27 Nov 2023 14:59:48 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LLM</title>
-      <link>https://til.codeinthehole.com/tags/llm/</link>
-      <pubDate>Fri, 17 Nov 2023 11:14:27 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/llm/</guid>
       <description></description>
     </item>
     

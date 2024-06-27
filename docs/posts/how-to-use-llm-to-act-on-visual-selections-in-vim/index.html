@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    You can use Simon Willison&amp;rsquo;s excellent llm tool to query or edit Vim buffers by piping the contents of a visual selection to the llm.
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-use-llm-to-act-on-visual-selections-in-vim/" />
+<meta property="og:title" content="TIL How to use &#39;llm&#39; to act on visual selections in Vim — David Winterbottom" />
+<meta property="og:description" content="You can use Simon Willison&rsquo;s excellent llm tool to query or edit Vim
+buffers by piping the contents of a visual selection to the llm. — can be read in 1 minute" />
+
+
+<meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
+
+
+        <title>
+    TIL How to use &#39;llm&#39; to act on visual selections in Vim — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt&hellip;</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>June 27, 2024</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+            </div>
+            <h1>How to use <code>llm</code> to act on visual selections in Vim</h1>
+        </header><p>You can use Simon Willison&rsquo;s excellent <a href="https://llm.datasette.io/en/stable/"><code>llm</code> tool</a> to query or edit Vim
+buffers by piping the contents of a visual selection to the <code>llm</code>.</p>
+<p>Select some text in visual mode then hit <code>:</code> to enter command mode with range
+selected (<code>:'&lt;,'&gt;</code>). Then you can do things like:</p>
+<ul>
+<li>
+<p>Ask a question about the selected text and see the output in Vim&rsquo;s status bar</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#e6db74">&#39;&lt;,&#39;</span>&gt;:<span style="color:#a6e22e">w</span> !<span style="color:#a6e22e">llm</span> <span style="color:#e6db74">&#34;Explain what this function does&#34;</span>
+</span></span></code></pre></div><p>The <code>:w</code> ensures output is displayed in the status bar rather than replacing
+the selected text.</p>
+</li>
+<li>
+<p>Edit the selected text in place. E.g.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#e6db74">&#39;&lt;,&#39;</span>&gt;!<span style="color:#a6e22e">llm</span> <span style="color:#e6db74">&#34;Add a docstring to this function&#34;</span>
+</span></span><span style="display:flex;"><span>:<span style="color:#e6db74">&#39;&lt;,&#39;</span>&gt;!<span style="color:#a6e22e">llm</span> <span style="color:#e6db74">&#34;Add type hints to this function&#34;</span>
+</span></span><span style="display:flex;"><span>:<span style="color:#e6db74">&#39;&lt;,&#39;</span>&gt;!<span style="color:#a6e22e">llm</span> <span style="color:#e6db74">&#34;Improve the grammar of this paragraph&#34;</span>
+</span></span></code></pre></div><p>It&rsquo;s early days but I haven&rsquo;t found this to work <em>particularly</em> well yet. I
+suspect a better model is required than GPT3.5.</p>
+</li>
+<li>
+<p>Use the <code>llm</code> output to create other files:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:<span style="color:#e6db74">&#39;&lt;,&#39;</span>&gt;!<span style="color:#a6e22e">llm</span> <span style="color:#e6db74">&#34;Write unit tests for this function using Pytest&#34;</span> &gt; <span style="color:#a6e22e">tests</span>/<span style="color:#a6e22e">test_foo</span>.<span style="color:#a6e22e">py</span>
+</span></span></code></pre></div></li>
+</ul>
+<p>Seems quite promising.</p>
+<p>While <a href="https://github.com/github/copilot.vim">Github CoPilot</a> provides useful(ish) suggestions when composing,
+an LLM tool that can effectively <em>edit</em> the current buffer (or generate new
+files) would be very powerful.</p>
+<p>&ndash;</p>
+<p>Hat-tip to my colleague <a href="https://www.samuelliedtke.com/about/">Samuel Liedtke</a> for <a href="https://www.samuelliedtke.com/blog/using-llms-on-the-command-line">a really useful
+blog</a> post that sent me off in this direction.</p></article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/llm/">LLM</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-pipx-choose-which-python-to-install-a-package-with/">How <code>pipx</code> chooses which Python to install a package with</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/vim/">Vim</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-edit-and-search-the-files-in-one-commit/">How to edit and search the files in one commit</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-create-custom-replacements-for-vimsurround/">How to create custom replacements for <code>vim-surround</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-the-typos-source-code-spell-checker/">About the <code>typos</code> source code spell checker</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-write-vimscript-functions-that-operate-on-a-visually-selected-area/">How to write Vimscript functions that operate on a visually selected area</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-show-the-history-of-a-file-with-git-log-patch/">How to show the history of a file with <code>git log --patch</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-automatically-disable-github-copilot-in-vim-when-editing-large-files/">How to automatically disable Github Copilot in Vim when editing large files</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-hub-clashes-with-vimpolyglot/">That <code>hub</code> clashes with <code>vim-polyglot</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-stdin-to-populate-vims-quickfix-list/">How to use STDIN to populate Vim&rsquo;s quickfix list</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-get-vale-to-work-with-vims-ale-plugin/">How to get Vale to work with Vim&rsquo;s Ale plugin</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/">How to use <code>markdownlint</code> output in Vim&rsquo;s quickfix list</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+        <hr color="#eee"/>
+
+        
+            <p>⌨️ Jump to the previous TIL using the ◀️ cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-measure-codeowner-coverage-within-a-large-repo\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
