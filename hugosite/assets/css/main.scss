@@ -16,6 +16,7 @@ html {
     font-size: 62.5%;
 }
 
+/* Base body styles */
 body {
     font-size: 1.6rem;
     font-family: $font-text;
@@ -283,6 +284,7 @@ main#content {
             code {
                 padding: 0;
                 font-family: $font-code;
+                color: white;
             }    
         }
 
