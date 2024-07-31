@@ -6,11 +6,29 @@
     <description>Tags TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Jun 2024 16:25:27 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jul 2024 13:50:58 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Command-Line Tools</title>
+      <link>https://til.codeinthehole.com/tags/command-line-tools/</link>
+      <pubDate>Wed, 31 Jul 2024 13:50:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/command-line-tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Eza</title>
+      <link>https://til.codeinthehole.com/tags/eza/</link>
+      <pubDate>Wed, 31 Jul 2024 13:50:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/eza/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>LLM</title>
@@ -333,15 +351,6 @@
       <pubDate>Fri, 03 Mar 2023 11:23:32 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/ripgrep/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Command-Line Tools</title>
-      <link>https://til.codeinthehole.com/tags/command-line-tools/</link>
-      <pubDate>Wed, 01 Mar 2023 21:36:32 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/command-line-tools/</guid>
       <description></description>
     </item>
     

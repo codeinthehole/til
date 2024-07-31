@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Eza - Today I Learnt — David Winterbottom</title>
+    <link>https://til.codeinthehole.com/tags/eza/</link>
+    <description>Eza TILs - David Winterbottom</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Jul 2024 13:50:58 +0100</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/eza/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to configure the coloured output of `eza`</title>
+      <link>https://til.codeinthehole.com/posts/how-to-configure-the-coloured-output-of-eza/</link>
+      <pubDate>Wed, 31 Jul 2024 13:50:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-configure-the-coloured-output-of-eza/</guid>
+      <description>After a recent brew upgrade I discovered that exa, the modern replacement for ls, had stopped being maintained and had been replaced by eza.
+</description>
+    </item>
+    
+
+  </channel>
+</rss>

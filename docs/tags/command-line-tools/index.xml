@@ -6,11 +6,21 @@
     <description>Command-Line Tools TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Mar 2023 21:36:32 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jul 2024 13:50:58 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/command-line-tools/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to configure the coloured output of `eza`</title>
+      <link>https://til.codeinthehole.com/posts/how-to-configure-the-coloured-output-of-eza/</link>
+      <pubDate>Wed, 31 Jul 2024 13:50:58 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-configure-the-coloured-output-of-eza/</guid>
+      <description>After a recent brew upgrade I discovered that exa, the modern replacement for ls, had stopped being maintained and had been replaced by eza.
+</description>
+    </item>
     
     <item>
       <title>How to create a word cloud from text piped via STDIN</title>

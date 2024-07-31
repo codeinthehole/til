@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/tags/command-line-tools/</loc>
+    <lastmod>2024-07-31T13:50:58+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/eza/</loc>
+    <lastmod>2024-07-31T13:50:58+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/how-to-configure-the-coloured-output-of-eza/</loc>
+    <lastmod>2024-07-31T13:50:58+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2024-07-31T13:50:58+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2024-07-31T13:50:58+01:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2024-07-31T13:50:58+01:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-use-llm-to-act-on-visual-selections-in-vim/</loc>
     <lastmod>2024-06-27T16:25:27+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/llm/</loc>
-    <lastmod>2024-06-27T16:25:27+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2024-06-27T16:25:27+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2024-06-27T16:25:27+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
     <lastmod>2024-06-27T16:25:27+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/vim/</loc>
@@ -223,9 +232,6 @@
   </url><url>
     <loc>https://til.codeinthehole.com/tags/ripgrep/</loc>
     <lastmod>2023-03-03T11:23:32+00:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/command-line-tools/</loc>
-    <lastmod>2023-03-01T21:36:32+00:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-create-a-word-cloud-from-text-piped-via-stdin/</loc>
     <lastmod>2023-03-01T21:36:32+00:00</lastmod>
