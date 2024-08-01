@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    There&amp;rsquo;s several gotchas to be aware of when using time_machine with Pytest fixtures.
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-wrapping-pytest-fixtures-with-timemachine-needs-care/" />
+<meta property="og:title" content="TIL That wrapping Pytest fixtures with &#39;time_machine&#39; needs care — David Winterbottom" />
+<meta property="og:description" content="There&rsquo;s several gotchas to be aware of when using time_machine
+with Pytest fixtures. — can be read in 2 minutes" />
+
+
+<meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
+
+
+        <title>
+    TIL That wrapping Pytest fixtures with &#39;time_machine&#39; needs care — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt&hellip;</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>August 1, 2024</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+            </div>
+            <h1>That wrapping Pytest fixtures with <code>time_machine</code> needs care</h1>
+        </header><p>There&rsquo;s several gotchas to be aware of when using <a href="https://github.com/adamchainz/time-machine"><code>time_machine</code></a>
+with <a href="https://docs.pytest.org/en/6.2.x/fixture.html">Pytest fixtures</a>.</p>
+<p>For one, <code>time_machine</code>&rsquo;s control of the system clock does not apply to fixture
+functions included in a test&rsquo;s signature.</p>
+<p>E.g. this test will fail:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.fixture</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">now</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@time_machine.travel</span>(<span style="color:#e6db74">&#34;2020-06-10T14:00&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_now_fixture</span>(now):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># The date of the injected value isn&#39;t controlled by `time_machine` so this</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># assertion will fail.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> now<span style="color:#f92672">.</span>date() <span style="color:#f92672">==</span> datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">10</span>)
+</span></span></code></pre></div><p>Further, you can&rsquo;t fix this test by also wrapping the <code>now</code> function with
+<code>@time_machine</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@time_machine.travel</span>(<span style="color:#e6db74">&#34;2020-06-10T14:00&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.fixture</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">now</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@time_machine.travel</span>(<span style="color:#e6db74">&#34;2020-06-10T14:00&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_now_fixture</span>(now):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># The date of the injected value STILL isn&#39;t controlled by `time_machine` so</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># this assertion will fail again.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> now<span style="color:#f92672">.</span>date() <span style="color:#f92672">==</span> datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">10</span>)
+</span></span></code></pre></div><p>That&rsquo;s a bit surprising.</p>
+<p>But the test does pass if you re-order the decorators to ensure
+<code>@pytest.fixture</code> is outermost:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.fixture</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@time_machine.travel</span>(<span style="color:#e6db74">&#34;2020-06-10T14:00&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">now</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@time_machine.travel</span>(<span style="color:#e6db74">&#34;2020-06-10T14:00&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_now_fixture</span>(now):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># The date of the injected value is now controlled by `time_machine` so</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># this assertion will pass.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> now<span style="color:#f92672">.</span>date() <span style="color:#f92672">==</span> datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">10</span>)
+</span></span></code></pre></div><p>These are contrived examples but illustrate the point.</p>
+<h2 id="dont-use-fixtures-to-create-test-objects">Don&rsquo;t use fixtures to create test objects</h2>
+<p>In general, I would avoid using Pytest fixtures to create test objects. The are
+indirect, suffer from gotchas such as the above, and generally make tests harder
+to understand and maintain.</p>
+<p>Better to explicitly create the objects you need in the test body itself; using
+factories or builders if necessary.</p>
+<p>If you do really want to use Pytest fixtures for set-up, prefer to inject
+<em>factories</em> instead, that aren&rsquo;t executed until the test body is run.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@pytest.fixture</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">now_fn</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Return a datetime factory function, not the datetime itself.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@time_machine.travel</span>(<span style="color:#e6db74">&#34;2020-06-10T14:00&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_now_fixture</span>(now_fn):
+</span></span><span style="display:flex;"><span>    now <span style="color:#f92672">=</span> now_fn()
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Since the clock was called within the test body, the expected date was</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># returned.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> now<span style="color:#f92672">.</span>date() <span style="color:#f92672">==</span> datetime<span style="color:#f92672">.</span>date(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">10</span>)
+</span></span></code></pre></div></article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/testing/">Testing</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-create-a-wrapping-mock-with-custom-behaviour/">How to create a wrapping mock with custom behaviour</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-timemachine-package-starts-ticking-after-the-first-call/">That <code>time_machine</code> starts ticking after the first call</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-djangos-overridesettings-decorator-causes-flakey-tests/">How Django&rsquo;s <code>override_settings</code> decorator causes flakey tests</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-the-new-argument-to-mockpatch-is-shared-between-parameterized-tests/">How the <code>new</code> argument to <code>mock.patch</code> is shared between parameterized tests</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-postgres-sequences-arent-restored-after-a-rollback/">That Postgres sequences aren&rsquo;t restored after a transaction rollback</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/python-tests-using-moto-should-be-explicit-about-aws-regions/">Python tests using <code>moto</code> should be explicit about AWS regions</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-indirect-parametrization-with-pytest/">About indirect parametrization with Pytest</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/">How to use <code>xmllint</code> to extract the failing test filenames from a JUnit-XML file</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-override-django-settings-for-every-method-in-a-test-class/">How to override Django&rsquo;s settings for every method in a test class</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-profile-pytest-tests/">How to profile Pytest tests</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/python/">Python</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/how-to-group-pandas-dataframes-by-week-correctly/">How to group Pandas dataframes by week correctly</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-mypy-can-generate-coverage-reports/">That Mypy can generate coverage reports</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-install-a-vendored-wheel-when-using-piptools-and-pyprojecttoml/">How to install a vendored wheel when using <code>pip-tools</code> and <code>pyproject.toml</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-pipx-choose-which-python-to-install-a-package-with/">How <code>pipx</code> chooses which Python to install a package with</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-avoid-version-conflicts-in-lock-files-compiled-with-piptools/">How to avoid version conflicts in lock files compiled with <code>pip-tools</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-get-gunicorn-to-log-as-json/">How to get Gunicorn to log as JSON</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-create-a-word-cloud-from-text-piped-via-stdin/">How to create a word cloud from text piped via STDIN</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/not-to-union-python-list-types/">Not to union Python list types</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/pytest/">Pytest</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/">That Pytest&rsquo;s &ldquo;keyword expression&rdquo; filtering supports Python conditionals</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-have-classscoped-autouse-pytest-fixtures/">You can have class-scoped autouse pytest fixtures</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/pytest-doesnt-play-nicely-with-ipdb/">Pytest doesn&rsquo;t play nicely with ipdb</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-stack-pytests-parametrize-decorators/">You can stack <code>pytest</code>&rsquo;s <code>parametrize</code> decorators</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/you-can-label-parameterized-fixtures-with-pytest/">You can label parameterized fixtures with pytest</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+        <hr color="#eee"/>
+
+        
+            <p>⌨️ Jump to the previous TIL using the ◀️ cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-configure-the-coloured-output-of-eza\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

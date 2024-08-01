@@ -6,11 +6,38 @@
     <description>Tags TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 Jul 2024 13:50:58 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2024 19:47:05 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Pytest</title>
+      <link>https://til.codeinthehole.com/tags/pytest/</link>
+      <pubDate>Thu, 01 Aug 2024 19:47:05 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/pytest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://til.codeinthehole.com/tags/python/</link>
+      <pubDate>Thu, 01 Aug 2024 19:47:05 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://til.codeinthehole.com/tags/testing/</link>
+      <pubDate>Thu, 01 Aug 2024 19:47:05 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/testing/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Command-Line Tools</title>
@@ -72,24 +99,6 @@
       <pubDate>Mon, 24 Jun 2024 11:45:01 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/unix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://til.codeinthehole.com/tags/python/</link>
-      <pubDate>Wed, 05 Jun 2024 20:11:52 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Testing</title>
-      <link>https://til.codeinthehole.com/tags/testing/</link>
-      <pubDate>Wed, 05 Jun 2024 20:11:52 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/testing/</guid>
       <description></description>
     </item>
     
@@ -414,15 +423,6 @@
       <pubDate>Sun, 13 Nov 2022 17:09:21 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/flakey-tests/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pytest</title>
-      <link>https://til.codeinthehole.com/tags/pytest/</link>
-      <pubDate>Tue, 08 Nov 2022 18:16:53 +0000</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/pytest/</guid>
       <description></description>
     </item>
     

@@ -6,11 +6,21 @@
     <description>Pytest TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Nov 2022 18:16:53 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2024 19:47:05 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/pytest/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That wrapping Pytest fixtures with `time_machine` needs care</title>
+      <link>https://til.codeinthehole.com/posts/that-wrapping-pytest-fixtures-with-timemachine-needs-care/</link>
+      <pubDate>Thu, 01 Aug 2024 19:47:05 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-wrapping-pytest-fixtures-with-timemachine-needs-care/</guid>
+      <description>There&amp;rsquo;s several gotchas to be aware of when using time_machine with Pytest fixtures.
+</description>
+    </item>
     
     <item>
       <title>How the `new` argument to `mock.patch` is shared between parameterized tests</title>
