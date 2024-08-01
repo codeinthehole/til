@@ -80,13 +80,13 @@
         <br/>
         <hr color="#eee"/>
 
-        {{ if and (.PrevPage) (not (.NextPage)) }}
+        {{ if and (.Prev) (not (.Next)) }}
             <p>⌨️ Jump to the previous TIL using the ◀️ cursor key.</p>
         {{ end }}
-        {{ if and (not (.PrevPage)) (.NextPage) }}
+        {{ if and (not (.Prev)) (.Next) }}
             <p>⌨️ Jump to the next TIL using the ▶️ cursor key.</p>
         {{ end }}
-        {{ if and (.PrevPage) (.NextPage) }}
+        {{ if and (.Prev) (.Next) }}
             <p>⌨️ Jump to the previous/next TIL using the ◀️ or ▶️ cursor keys.</p>
         {{ end }}
     </footer>
@@ -95,12 +95,12 @@
 {{ define "scripts" }}
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
-        {{ if .PrevPage }}
-            Mousetrap.bind("left", function() { window.location.replace("{{ .PrevPage.RelPermalink }}"); })
+        {{ if .Prev}}
+            Mousetrap.bind("left", function() { window.location.replace("{{ .Prev.RelPermalink }}"); })
         {{ end }}
 
-        {{ if .NextPage }}
-            Mousetrap.bind("right", function() { window.location.replace("{{ .NextPage.RelPermalink }}"); })
+        {{ if .Next}}
+            Mousetrap.bind("right", function() { window.location.replace("{{ .Next.RelPermalink }}"); })
         {{ end }}
     </script>
 {{ end }}
