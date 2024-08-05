@@ -6,11 +6,20 @@
     <description>Git TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Jun 2024 11:45:01 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 05 Aug 2024 18:42:43 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>How to add commit sizes to `git log` output</title>
+      <link>https://til.codeinthehole.com/posts/how-to-add-commit-sizes-to-git-log-output/</link>
+      <pubDate>Mon, 05 Aug 2024 18:42:43 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-add-commit-sizes-to-git-log-output/</guid>
+      <description>It&amp;rsquo;s sometimes useful to see the sizes of each Git commit — &amp;ldquo;size&amp;rdquo; as in the number of line additions and deletions.</description>
+    </item>
     
     <item>
       <title>How to measure codeowner coverage within a large repo</title>

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Modern versions of git log provide a -L option which lets you trace the evolution of a line range or function:
+    It’s sometimes useful to see the sizes of each Git commit — “size” as in the number of line additions and deletions.
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,16 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-use-git-log-to-view-the-evolution-of-a-function/" />
-<meta property="og:title" content="TIL You can use Git log to view the evolution of a function — David Winterbottom" />
-<meta property="og:description" content="Modern versions of git log provide a -L option which lets you trace the evolution of a line range or function: — can be read in 1 minute" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-add-commit-sizes-to-git-log-output/" />
+<meta property="og:title" content="TIL How to add commit sizes to &#39;git log&#39; output — David Winterbottom" />
+<meta property="og:description" content="It&rsquo;s sometimes useful to see the sizes of each Git commit — &ldquo;size&rdquo; as in the number of line additions and deletions. — can be read in 2 minutes" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
 
 
         <title>
-    TIL You can use Git log to view the evolution of a function — David Winterbottom
+    TIL How to add commit sizes to &#39;git log&#39; output — David Winterbottom
 </title>
 
         
@@ -56,28 +56,42 @@
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>March 5, 2021</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+                On <time>August 5, 2024</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
             </div>
-            <h1>You can use Git log to view the evolution of a function</h1>
-        </header><p>Modern versions of <code>git log</code> provide a <code>-L</code> option which lets you trace the
-evolution of a line range or function:</p>
-<figure><img src="/images/git-log-function-evolution.png"
-    alt="git log function evolution">
-</figure>
-
-<p>Usage is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log -L :&lt;funcname&gt;:&lt;file&gt;
+            <h1>How to add commit sizes to <code>git log</code> output</h1>
+        </header><p>It&rsquo;s <em>sometimes</em> useful to see the sizes of each Git commit — &ldquo;size&rdquo; as in the
+number of line additions and deletions.</p>
+<p>I needed this recently when looking to break up a Github pull request into
+smaller, easier-to-review pull requests. I wanted to split a 15 commit pull
+request into 3 or 4 smaller pull requests that would require a similar amount of
+cognitive effort to review. Here the number of additions and deletions was a
+reasonable proxy for &ldquo;review effort&rdquo;; but that won&rsquo;t always be true.</p>
+<p>Anyway, <code>git log --shortstat</code> has all the information you need but I wanted a
+prettier, one-line version.</p>
+<p>There&rsquo;s no <code>git log</code> format placeholders for additions/deletions so I needed to
+use <code>awk</code> to parse the output out of <code>git log --shortstat</code> then prepend it to my
+normal <code>git log</code> command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git hist --oneline --shortstat <span style="color:#e6db74">&#34;origin/</span><span style="color:#66d9ef">$(</span>git defaultbranch<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>.. | awk <span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    $1 ~ /[a-z0-9]{12}/ {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        logline=$0;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    $2 ~ /files?/ {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        print &#34;\033[32m+&#34; $4 &#34; \033[31m-&#34; $6, logline;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        logline=&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }&#39;</span>
 </span></span></code></pre></div><p>where:</p>
 <ul>
-<li><code>&lt;funcname&gt;</code> is a regular expression to match the function name.</li>
-<li><code>&lt;file&gt;</code> is the path to the file where the function lives.</li>
+<li><code>git hist</code> is my customised one-line version of <code>git log</code>.</li>
+<li><code>git defaultbranch</code> is a custom alias that returns the default branch name.</li>
+<li>the <code>awk</code> program captures the main log line in a <code>logline</code> variable then
+prints it along with additions and deletions (in green and red respectively)
+when it parses the appropriate <code>--shortstat</code> output.</li>
 </ul>
-<p>Example usage:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log -L :get_locale:octoenergy/utils/workingdays.py
-</span></span></code></pre></div><p>Depending on what language you&rsquo;re working with, you may need to adjust you local
-<code>~/.gitattributes</code> file to ensure Git can determine the patch hunk headers.</p>
-<p>More in
-<a href="https://git-scm.com/docs/git-log/#Documentation/git-log.txt--Lltfuncnamegtltfilegt">the official git docs</a>.</p>
+<p>The output is like this:</p>
+<figure><a href="/images/git-log-with-commit-sizes.png"><img src="/images/git-log-with-commit-sizes.png"
+    alt="git log with commit sizes"></a>
+</figure>
+
 </article>
 
         </main>
@@ -101,11 +115,6 @@ evolution of a line range or function:</p>
                 
                     <p>Other things learnt about <a href="/tags/git/">Git</a>:</p>
                     <ul>
-                        
-                            <li><a href="/posts/how-to-add-commit-sizes-to-git-log-output/">How to add commit sizes to <code>git log</code> output</a></li>
-
-                            
-                            
                         
                             <li><a href="/posts/how-to-measure-codeowner-coverage-within-a-large-repo/">How to measure codeowner coverage within a large repo</a></li>
 
@@ -152,6 +161,11 @@ evolution of a line range or function:</p>
                             
                             
                         
+                            <li><a href="/posts/about-gits-diffrelative-config-option/">About Git&rsquo;s <code>diff.relative</code> config option</a></li>
+
+                            
+                            
+                        
                     </ul>
                 
 
@@ -163,9 +177,9 @@ evolution of a line range or function:</p>
         <hr color="#eee"/>
 
         
+            <p>⌨️ Jump to the previous TIL using the ◀️ cursor key.</p>
         
         
-            <p>⌨️ Jump to the previous/next TIL using the ◀️ or ▶️ cursor keys.</p>
         
     </footer>
 
@@ -174,11 +188,9 @@ evolution of a line range or function:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/to-prefer-dateutil-over-pytz\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-wrapping-pytest-fixtures-with-timemachine-needs-care\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/systemd-timers-can-be-stopped\/"); })
         
     </script>
 
