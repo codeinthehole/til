@@ -6,11 +6,21 @@
     <description>Python TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Aug 2024 19:47:05 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2024 15:51:31 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That `requests` supports automatic retries with exponential back-off</title>
+      <link>https://til.codeinthehole.com/posts/that-requests-supports-exponential-backoff/</link>
+      <pubDate>Wed, 27 Nov 2024 15:51:31 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-requests-supports-exponential-backoff/</guid>
+      <description>It&amp;rsquo;s possible to define a retry strategy for a requests.Session instance by mounting a customised adapter:
+</description>
+    </item>
     
     <item>
       <title>That wrapping Pytest fixtures with `time_machine` needs care</title>

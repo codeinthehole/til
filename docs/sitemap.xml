@@ -2,25 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://til.codeinthehole.com/posts/</loc>
+    <lastmod>2024-11-27T15:51:31+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/python/</loc>
+    <lastmod>2024-11-27T15:51:31+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/tags/</loc>
+    <lastmod>2024-11-27T15:51:31+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/posts/that-requests-supports-exponential-backoff/</loc>
+    <lastmod>2024-11-27T15:51:31+00:00</lastmod>
+  </url><url>
+    <loc>https://til.codeinthehole.com/</loc>
+    <lastmod>2024-11-27T15:51:31+00:00</lastmod>
+  </url><url>
     <loc>https://til.codeinthehole.com/tags/git/</loc>
     <lastmod>2024-08-05T18:42:43+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/posts/how-to-add-commit-sizes-to-git-log-output/</loc>
     <lastmod>2024-08-05T18:42:43+01:00</lastmod>
   </url><url>
-    <loc>https://til.codeinthehole.com/posts/</loc>
-    <lastmod>2024-08-05T18:42:43+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/</loc>
-    <lastmod>2024-08-05T18:42:43+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/</loc>
-    <lastmod>2024-08-05T18:42:43+01:00</lastmod>
-  </url><url>
     <loc>https://til.codeinthehole.com/tags/pytest/</loc>
-    <lastmod>2024-08-01T19:47:05+01:00</lastmod>
-  </url><url>
-    <loc>https://til.codeinthehole.com/tags/python/</loc>
     <lastmod>2024-08-01T19:47:05+01:00</lastmod>
   </url><url>
     <loc>https://til.codeinthehole.com/tags/testing/</loc>

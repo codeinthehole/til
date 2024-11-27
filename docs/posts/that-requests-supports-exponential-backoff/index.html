@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    It&rsquo;s possible to define a retry strategy for a requests.Session instance by mounting a customised adapter:
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-requests-supports-exponential-backoff/" />
+<meta property="og:title" content="TIL That &#39;requests&#39; supports automatic retries with exponential back-off — David Winterbottom" />
+<meta property="og:description" content="It&rsquo;s possible to define a retry strategy for a requests.Session instance by
+mounting a customised adapter: — can be read in 1 minute" />
+
+
+<meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
+
+
+        <title>
+    TIL That &#39;requests&#39; supports automatic retries with exponential back-off — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt&hellip;</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>November 27, 2024</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+            </div>
+            <h1>That <code>requests</code> supports automatic retries with exponential back-off</h1>
+        </header><p>It&rsquo;s possible to define a retry strategy for a <code>requests.Session</code> instance by
+mounting a customised adapter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> requests <span style="color:#f92672">import</span> adapters
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> urllib3.util <span style="color:#f92672">import</span> Retry
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a transport adapter with a custom retry strategy.</span>
+</span></span><span style="display:flex;"><span>retries <span style="color:#f92672">=</span> Retry(
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Max retries.</span>
+</span></span><span style="display:flex;"><span>    total<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Exponential backoff factor.</span>
+</span></span><span style="display:flex;"><span>    backoff_factor<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Which HTTP status codes to retry on.</span>
+</span></span><span style="display:flex;"><span>    status_forcelist<span style="color:#f92672">=</span>[<span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">502</span>, <span style="color:#ae81ff">503</span>, <span style="color:#ae81ff">504</span>]
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>adapter <span style="color:#f92672">=</span> adapters<span style="color:#f92672">.</span>HTTPAdapter(max_retries<span style="color:#f92672">=</span>retries)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ensure adapter is used for both HTTP and HTTPS requests.</span>
+</span></span><span style="display:flex;"><span>session <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>Session()
+</span></span><span style="display:flex;"><span>session<span style="color:#f92672">.</span>mount(<span style="color:#e6db74">&#39;https://&#39;</span>, adapter)
+</span></span><span style="display:flex;"><span>session<span style="color:#f92672">.</span>mount(<span style="color:#e6db74">&#39;http://&#39;</span>, adapter)
+</span></span></code></pre></div><p>Now all requests will employ an automatic retry-with-backoff strategy. If the
+max retries are exceeded, a <code>requests.exceptions.RetryError</code> is raised.
+Something like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>requests.exceptions.RetryError: HTTPConnectionPool(...): Max retries exceeded
+</span></span><span style="display:flex;"><span>with url: ... (Caused by ResponseError(&#39;too many 429 error responses&#39;))
+</span></span></code></pre></div><p>Related docs:</p>
+<ul>
+<li><a href="https://urllib3.readthedocs.io/en/latest/reference/urllib3.util.html#urllib3.util.Retry"><code>urllib3.util.Retry</code></a></li>
+<li><a href="https://requests.readthedocs.io/en/latest/api/#requests.adapters.HTTPAdapter"><code>requests.adapters.HTTPAdapter</code></a></li>
+<li><a href="https://requests.readthedocs.io/en/latest/api/#requests.Session"><code>requests.Session</code></a></li>
+</ul></article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/python/">Python</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/that-wrapping-pytest-fixtures-with-timemachine-needs-care/">That wrapping Pytest fixtures with <code>time_machine</code> needs care</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-create-a-wrapping-mock-with-custom-behaviour/">How to create a wrapping mock with custom behaviour</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-timemachine-package-starts-ticking-after-the-first-call/">That <code>time_machine</code> starts ticking after the first call</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-group-pandas-dataframes-by-week-correctly/">How to group Pandas dataframes by week correctly</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-mypy-can-generate-coverage-reports/">That Mypy can generate coverage reports</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-install-a-vendored-wheel-when-using-piptools-and-pyprojecttoml/">How to install a vendored wheel when using <code>pip-tools</code> and <code>pyproject.toml</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-pipx-choose-which-python-to-install-a-package-with/">How <code>pipx</code> chooses which Python to install a package with</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-avoid-version-conflicts-in-lock-files-compiled-with-piptools/">How to avoid version conflicts in lock files compiled with <code>pip-tools</code></a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-get-gunicorn-to-log-as-json/">How to get Gunicorn to log as JSON</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-create-a-word-cloud-from-text-piped-via-stdin/">How to create a word cloud from text piped via STDIN</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+        <hr color="#eee"/>
+
+        
+            <p>⌨️ Jump to the previous TIL using the ◀️ cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-add-commit-sizes-to-git-log-output\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
