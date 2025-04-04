@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Doing this:
-readonly myvar=1 means that $myvar can’t have its value changed within the global scope.
+    I recently gained a deeper understanding of when to use stdout and stderr in shell scripts. The definitions in Wikipedia are:
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -19,17 +18,17 @@ readonly myvar=1 means that $myvar can’t have its value changed within the glo
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-readonly-bash-variables/" />
-<meta property="og:title" content="TIL About &#39;readonly&#39; Bash variables — David Winterbottom" />
-<meta property="og:description" content="Doing this:
-readonly myvar=1 means that $myvar can&rsquo;t have its value changed within the global scope. — can be read in 1 minute" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/when-to-use-stdout-and-stderr-in-shell-scripts/" />
+<meta property="og:title" content="TIL When to use stdout and stderr in shell scripts — David Winterbottom" />
+<meta property="og:description" content="I recently gained a deeper understanding of when to use stdout and stderr in
+shell scripts. The definitions in Wikipedia are: — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
 
 
         <title>
-    TIL About &#39;readonly&#39; Bash variables — David Winterbottom
+    TIL When to use stdout and stderr in shell scripts — David Winterbottom
 </title>
 
         
@@ -58,22 +57,33 @@ readonly myvar=1 means that $myvar can&rsquo;t have its value changed within the
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>October 13, 2020</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+                On <time>March 19, 2025</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
             </div>
-            <h1>About <code>readonly</code> Bash variables</h1>
-        </header><p>Doing this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>readonly myvar<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</span></span></code></pre></div><p>means that <code>$myvar</code> can&rsquo;t have its value changed within the global scope.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ myvar<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>-bash: myvar: readonly variable
-</span></span></code></pre></div><p>You can use <code>declare -r</code> to enforce immutability within a <em>local</em> scope (e.g.
-within a function body).</p>
-<p>See
-<a href="https://bash.cyberciti.biz/guide/Readonly_command">the Linux Shell Scripting Tutorial wiki</a>
-for basic examples. See
-<a href="https://stackoverflow.com/a/30362832">this Stack Overflow answer</a> for more
-details on the differences between <code>readonly</code> and <code>declare -r</code>.</p>
-</article>
+            <h1>When to use stdout and stderr in shell scripts</h1>
+        </header><p>I recently gained a deeper understanding of when to use stdout and stderr in
+shell scripts. The <a href="https://en.wikipedia.org/wiki/Standard_streams">definitions in Wikipedia</a> are:</p>
+<p><em>Standard output (stdout)</em>:</p>
+<blockquote>
+<p>Standard output is a stream to which a program writes its output data.</p>
+</blockquote>
+<p><em>Standard error (stderr)</em>:</p>
+<blockquote>
+<p>Standard error is another output stream typically used by programs to output
+error messages or diagnostics. It is a stream independent of standard output
+and can be redirected separately.</p>
+</blockquote>
+<p>I had been following these guidelines but was missing some subtleties.</p>
+<h2 id="write---help-output-to-stdout">Write <code>--help</code> output to stdout</h2>
+<p>When you run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>&gt; $command --help
+</span></span></code></pre></div><p>you&rsquo;re explicitly asking for help so the output should be written to stdout; the
+help output is the data.</p>
+<p>This is documented in the <a href="https://www.gnu.org/prep/standards/html_node/_002d_002dhelp.html">GNU coding standards</a> and discussed in
+<a href="https://news.ycombinator.com/item?id=37682859">this Hacker News thread</a>.</p>
+<p>However, if you include the <code>--help</code> content or usage instructions in an error
+message, then it should be written to stderr. E.g. if you run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>&gt; $command --bad-option
+</span></span></code></pre></div><p>then the error message should be written to stderr instead.</p></article>
 
         </main>
 
@@ -96,11 +106,6 @@ details on the differences between <code>readonly</code> and <code>declare -r</c
                 
                     <p>Other things learnt about <a href="/tags/bash/">Bash</a>:</p>
                     <ul>
-                        
-                            <li><a href="/posts/when-to-use-stdout-and-stderr-in-shell-scripts/">When to use stdout and stderr in shell scripts</a></li>
-
-                            
-                            
                         
                             <li><a href="/posts/about-bashs-compgen-builtin/">About Bash&rsquo;s <code>compgen</code> built-in</a></li>
 
@@ -137,6 +142,11 @@ details on the differences between <code>readonly</code> and <code>declare -r</c
                             
                             
                         
+                            <li><a href="/posts/about-readonly-bash-variables/">About <code>readonly</code> Bash variables</a></li>
+
+                            
+                            
+                        
                             <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
 
                             
@@ -158,9 +168,9 @@ details on the differences between <code>readonly</code> and <code>declare -r</c
         <hr color="#eee"/>
 
         
+            <p>⌨️ Jump to the previous TIL using the ◀️ cursor key.</p>
         
         
-            <p>⌨️ Jump to the previous/next TIL using the ◀️ or ▶️ cursor keys.</p>
         
     </footer>
 
@@ -169,11 +179,9 @@ details on the differences between <code>readonly</code> and <code>declare -r</c
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-shellcheck\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-requests-supports-exponential-backoff\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/about-the-difference-between-minimising-and-hiding-windows-in-macos\/"); })
         
     </script>
 

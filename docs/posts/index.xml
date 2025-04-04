@@ -6,11 +6,21 @@
     <description>All TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2024 15:51:31 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Mar 2025 09:42:43 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>When to use stdout and stderr in shell scripts</title>
+      <link>https://til.codeinthehole.com/posts/when-to-use-stdout-and-stderr-in-shell-scripts/</link>
+      <pubDate>Wed, 19 Mar 2025 09:42:43 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/when-to-use-stdout-and-stderr-in-shell-scripts/</guid>
+      <description>I recently gained a deeper understanding of when to use stdout and stderr in shell scripts. The definitions in Wikipedia are:
+</description>
+    </item>
     
     <item>
       <title>That `requests` supports automatic retries with exponential back-off</title>

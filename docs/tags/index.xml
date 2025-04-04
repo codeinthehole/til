@@ -6,11 +6,20 @@
     <description>Tags TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2024 15:51:31 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Mar 2025 09:42:43 +0000</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>Bash</title>
+      <link>https://til.codeinthehole.com/tags/bash/</link>
+      <pubDate>Wed, 19 Mar 2025 09:42:43 +0000</pubDate>
+      
+      <guid>https://til.codeinthehole.com/tags/bash/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Python</title>
@@ -108,15 +117,6 @@
       <pubDate>Wed, 22 May 2024 15:36:20 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/pandas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bash</title>
-      <link>https://til.codeinthehole.com/tags/bash/</link>
-      <pubDate>Fri, 10 May 2024 15:47:17 +0100</pubDate>
-      
-      <guid>https://til.codeinthehole.com/tags/bash/</guid>
       <description></description>
     </item>
     
