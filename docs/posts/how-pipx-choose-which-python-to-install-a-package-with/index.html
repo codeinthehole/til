@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    pipx is a tool for installing standalone Python packages in isolated environments.
+    pipx is a tool for installing standalone Python packages in isolated environments. It&rsquo;s useful for managing Python CLI tools that you want available globally and not confined to one virtualenv. Things like:
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -20,7 +20,9 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-pipx-choose-which-python-to-install-a-package-with/" />
 <meta property="og:title" content="TIL How &#39;pipx&#39; chooses which Python to install a package with — David Winterbottom" />
-<meta property="og:description" content="pipx is a tool for installing standalone Python packages in isolated environments. — can be read in 2 minutes" />
+<meta property="og:description" content="pipx is a tool for installing standalone Python packages in isolated
+environments. It&rsquo;s useful for managing Python CLI tools that you want available
+globally and not confined to one virtualenv. Things like: — can be read in 2 minutes" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
@@ -98,8 +100,7 @@ install packages.</p>
 <blockquote>
 <p>The default python executable used to install a package is typically the
 python used to execute pipx and can be overridden by setting the environment
-variable <code>PIPX_DEFAULT_PYTHON</code>.</p>
-</blockquote>
+variable <code>PIPX_DEFAULT_PYTHON</code>.</p></blockquote>
 <p>I installed <code>pipx</code> from Homebrew and the relevant Python can be seen in the
 package info:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>&gt; brew info pipx | rg <span style="color:#e6db74">&#34;Required.*python&#34;</span>

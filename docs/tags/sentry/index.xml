@@ -18,7 +18,8 @@
       <pubDate>Mon, 24 Aug 2020 16:19:10 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-ratelimit-issues-using-a-sentry-dsn/</guid>
-      <description>If you want to manage how your event quota is consumed with Sentry, you can apply rate limits at the DSN level.</description>
+      <description>If you want to manage how your event quota is consumed with Sentry, you can apply rate limits at the DSN level.
+</description>
     </item>
     
 

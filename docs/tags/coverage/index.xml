@@ -18,7 +18,8 @@
       <pubDate>Sat, 04 May 2024 14:29:31 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-mypy-can-generate-coverage-reports/</guid>
-      <description>Mypy has options for generating coverage reports. From the --help output:</description>
+      <description>Mypy has options for generating coverage reports. From the --help output:
+</description>
     </item>
     
 

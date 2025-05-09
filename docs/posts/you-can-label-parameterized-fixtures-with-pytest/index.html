@@ -6,7 +6,8 @@
 
         <meta name="description" content="
     For example, running this parameterized test:
-@pytest.mark.parametrize( &quot;date&quot;, ( datetime.
+@pytest.mark.parametrize( &#34;date&#34;, ( datetime.date(2012, 12, 21), # Predicted by Mayans datetime.date(1988, 3, 25), # Predicted by True Way ), ) def test_did_world_did_not_end_on(date): pass in verbose mode gives output:
+
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +23,16 @@
 <meta property="og:url" content="https://til.codeinthehole.com/posts/you-can-label-parameterized-fixtures-with-pytest/" />
 <meta property="og:title" content="TIL You can label parameterized fixtures with pytest — David Winterbottom" />
 <meta property="og:description" content="For example, running this parameterized test:
-@pytest.mark.parametrize( &#34;date&#34;, ( datetime. — can be read in 1 minute" />
+@pytest.mark.parametrize(
+    &#34;date&#34;,
+    (
+        datetime.date(2012, 12, 21),  # Predicted by Mayans
+        datetime.date(1988, 3, 25),  # Predicted by True Way
+    ),
+)
+def test_did_world_did_not_end_on(date):
+    pass
+in verbose mode gives output: — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />

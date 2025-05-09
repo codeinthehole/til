@@ -18,7 +18,8 @@
       <pubDate>Fri, 28 Jul 2023 12:26:19 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-get-uwsgis-logroute-to-support-regular-expressions/</guid>
-      <description>I was trying to get uWSGI to log in JSON, following this nicely laid-out guide; but it wasn&amp;rsquo;t working.</description>
+      <description>I was trying to get uWSGI to log in JSON, following this nicely laid-out guide; but it wasn&amp;rsquo;t working.
+</description>
     </item>
     
 

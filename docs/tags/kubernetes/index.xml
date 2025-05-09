@@ -19,7 +19,8 @@
       
       <guid>https://til.codeinthehole.com/posts/how-to-syntaxhighlight-kubectl-yaml-output/</guid>
       <description>By default, the output of:
-kubectl describe pod $POD_ID is a hard-to-read YAML blob.</description>
+kubectl describe pod $POD_ID is a hard-to-read YAML blob. To make it more readable, pipe it through bat:
+</description>
     </item>
     
     <item>
@@ -28,7 +29,8 @@ kubectl describe pod $POD_ID is a hard-to-read YAML blob.</description>
       <pubDate>Sat, 19 Dec 2020 22:49:55 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-envsubst/</guid>
-      <description>Am learning Kubernetes and was looking for ways to dynamically create YAML resource files.</description>
+      <description>Am learning Kubernetes and was looking for ways to dynamically create YAML resource files.
+</description>
     </item>
     
 

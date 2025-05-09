@@ -18,7 +18,8 @@
       <pubDate>Mon, 19 Dec 2022 13:38:43 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-make-homebrewinstalled-bash-your-default-shell/</guid>
-      <description>I realised today that despite having installed a modern version of Bash (via brew install bash), I was still running Bash v3.</description>
+      <description>I realised today that despite having installed a modern version of Bash (via brew install bash), I was still running Bash v3.2.57&amp;mdash;the system version of MacOS&amp;mdash;as my default login shell.
+</description>
     </item>
     
 

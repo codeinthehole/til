@@ -18,7 +18,8 @@
       <pubDate>Thu, 11 Mar 2021 13:34:25 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/pdbpp-has-a-useful-sticky-mode/</guid>
-      <description>pdbpp provides some additional interactive commands to pdb. One such command is sticky which toggles &amp;ldquo;sticky mode&amp;rdquo;:</description>
+      <description>pdbpp provides some additional interactive commands to pdb. One such command is sticky which toggles &amp;ldquo;sticky mode&amp;rdquo;:
+</description>
     </item>
     
 

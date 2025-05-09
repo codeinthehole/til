@@ -19,7 +19,8 @@
       
       <guid>https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/</guid>
       <description>Use something like:
-echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits.</description>
+echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits.
+</description>
     </item>
     
     <item>
@@ -28,7 +29,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Fri, 23 Oct 2020 17:35:10 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/fd-has-an-option-for-searching-filepaths/</guid>
-      <description>If you pass -p, then the fd will retrieve all filepaths matching $PATTERN:</description>
+      <description>If you pass -p, then the fd will retrieve all filepaths matching $PATTERN:
+</description>
     </item>
     
 

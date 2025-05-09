@@ -28,7 +28,8 @@
       <pubDate>Wed, 27 Mar 2024 14:56:20 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-edit-and-search-the-files-in-one-commit/</guid>
-      <description>When interactive rebasing, it&amp;rsquo;s useful to be able to edit all the files in one particular commit.</description>
+      <description>When interactive rebasing, it&amp;rsquo;s useful to be able to edit all the files in one particular commit. Here&amp;rsquo;s how you can do that.
+</description>
     </item>
     
     <item>
@@ -37,7 +38,8 @@
       <pubDate>Mon, 27 Nov 2023 14:59:48 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-create-custom-replacements-for-vimsurround/</guid>
-      <description>Problem I forgot my notepad and was editing a todo.</description>
+      <description>Problem I forgot my notepad and was editing a todo.md buffer in Vim as a replacement checklist.
+</description>
     </item>
     
     <item>
@@ -46,7 +48,8 @@
       <pubDate>Wed, 22 Feb 2023 21:13:57 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-the-typos-source-code-spell-checker/</guid>
-      <description>typos is a source code spell checker written Rust that&amp;rsquo;s useful for finding typos in code comments and variable names.</description>
+      <description>typos is a source code spell checker written Rust that&amp;rsquo;s useful for finding typos in code comments and variable names.
+</description>
     </item>
     
     <item>
@@ -55,7 +58,8 @@
       <pubDate>Sat, 28 Jan 2023 11:57:30 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-write-vimscript-functions-that-operate-on-a-visually-selected-area/</guid>
-      <description>I was trying to write a Vim function that would act on a visual selection but found it surprisingly difficult.</description>
+      <description>I was trying to write a Vim function that would act on a visual selection but found it surprisingly difficult.
+</description>
     </item>
     
     <item>
@@ -64,7 +68,8 @@
       <pubDate>Wed, 11 Jan 2023 15:41:02 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-show-the-history-of-a-file-with-git-log-patch/</guid>
-      <description>Am slightly embarrassed to admit it but I&amp;rsquo;ve only just discovered the --patch option to git log which shows diff information for each commit.</description>
+      <description>Am slightly embarrassed to admit it but I&amp;rsquo;ve only just discovered the --patch option to git log which shows diff information for each commit.
+</description>
     </item>
     
     <item>
@@ -73,7 +78,8 @@
       <pubDate>Fri, 06 Jan 2023 09:21:18 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-automatically-disable-github-copilot-in-vim-when-editing-large-files/</guid>
-      <description>Since installing vim-copilot, editing large files had become noticeably slow.</description>
+      <description>Since installing vim-copilot, editing large files had become noticeably slow. Profiling1 a simple insert-mode operation confirmed my suspicions:
+</description>
     </item>
     
     <item>
@@ -82,7 +88,8 @@
       <pubDate>Fri, 16 Dec 2022 21:17:06 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-hub-clashes-with-vimpolyglot/</guid>
-      <description>I use Github&amp;rsquo;s hub library to create pull requests with a command similar to:</description>
+      <description>I use Github&amp;rsquo;s hub library to create pull requests with a command similar to:
+</description>
     </item>
     
     <item>
@@ -91,7 +98,8 @@
       <pubDate>Wed, 05 Oct 2022 15:11:57 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-stdin-to-populate-vims-quickfix-list/</guid>
-      <description>Vim can be opened in quickfix mode by specifying an error file with the -q option:</description>
+      <description>Vim can be opened in quickfix mode by specifying an error file with the -q option:
+</description>
     </item>
     
     <item>
@@ -100,7 +108,8 @@
       <pubDate>Sun, 20 Feb 2022 18:54:33 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-get-vale-to-work-with-vims-ale-plugin/</guid>
-      <description>Vale is an extensible syntax aware linter. It can integrate with Vim via Ale although there&amp;rsquo;s a gotcha to be aware of.</description>
+      <description>Vale is an extensible syntax aware linter. It can integrate with Vim via Ale although there&amp;rsquo;s a gotcha to be aware of.
+</description>
     </item>
     
     <item>
@@ -110,7 +119,8 @@
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/</guid>
       <description>The output from markdownlint-cli has this form:
-path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] which doesn&amp;rsquo;t load correctly into Vim&amp;rsquo;s quickfix list (via :cfile or :cexpr).</description>
+path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] which doesn&amp;rsquo;t load correctly into Vim&amp;rsquo;s quickfix list (via :cfile or :cexpr).
+</description>
     </item>
     
     <item>
@@ -119,7 +129,8 @@ path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] 
       <pubDate>Mon, 15 Nov 2021 10:46:34 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-vim-can-transform-replacement-values-when-substituting/</guid>
-      <description>Vim supports a range of special patterns that can transform the replacement value when performing a search and replace.</description>
+      <description>Vim supports a range of special patterns that can transform the replacement value when performing a search and replace.
+</description>
     </item>
     
     <item>
@@ -129,7 +140,8 @@ path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] 
       
       <guid>https://til.codeinthehole.com/posts/how-to-delete-all-buffers-in-vim/</guid>
       <description>You can use :%bd (or :%bdelete).
-This is a special form of the :N,Mbdelete ranged buffer delete command where % indicates all buffers rather than a numbered range.</description>
+This is a special form of the :N,Mbdelete ranged buffer delete command where % indicates all buffers rather than a numbered range.
+</description>
     </item>
     
     <item>
@@ -138,7 +150,8 @@ This is a special form of the :N,Mbdelete ranged buffer delete command where % i
       <pubDate>Tue, 25 May 2021 10:59:39 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-the-aleinfo-command/</guid>
-      <description>The ALE plugin for Vim includes a :ALEInfo command that shows how ALE is configured for the current file and the output of any commands that have run.</description>
+      <description>The ALE plugin for Vim includes a :ALEInfo command that shows how ALE is configured for the current file and the output of any commands that have run. This is useful for debugging if your linters or fixers aren&amp;rsquo;t behaving. https://github.com/dense-analysis/ale#5ii-how-can-i-see-what-ale-has-configured-for-the-current-file
+</description>
     </item>
     
     <item>
@@ -147,7 +160,8 @@ This is a special form of the :N,Mbdelete ranged buffer delete command where % i
       <pubDate>Fri, 14 May 2021 12:46:44 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-vims-semicolon-search-offset/</guid>
-      <description>A search with / or ? can include an additional offset to position the cursor after jumping to the search match.</description>
+      <description>A search with / or ? can include an additional offset to position the cursor after jumping to the search match. From the docs:
+</description>
     </item>
     
     <item>
@@ -156,7 +170,8 @@ This is a special form of the :N,Mbdelete ranged buffer delete command where % i
       <pubDate>Thu, 06 May 2021 15:42:04 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-vims-uppercase-marks-are-global-and-persistent/</guid>
-      <description>Basic stuff but I didn&amp;rsquo;t realise that setting an uppercase mark (e.</description>
+      <description>Basic stuff but I didn&amp;rsquo;t realise that setting an uppercase mark (e.g. mT) creates a global bookmark that persists between sessions. I need to use this more.
+</description>
     </item>
     
     <item>
@@ -165,7 +180,8 @@ This is a special form of the :N,Mbdelete ranged buffer delete command where % i
       <pubDate>Tue, 30 Mar 2021 16:46:39 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/</guid>
-      <description>Hub, the Github CLI tool, allows a pull request to be created from the command line.</description>
+      <description>Hub, the Github CLI tool, allows a pull request to be created from the command line. It does this by opening Vim like so:
+</description>
     </item>
     
     <item>
@@ -174,7 +190,8 @@ This is a special form of the :N,Mbdelete ranged buffer delete command where % i
       <pubDate>Mon, 15 Feb 2021 14:36:46 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-custom-functions-with-cdo/</guid>
-      <description>Vim&amp;rsquo;s :cdo command lets you run an Ex command in each entry in the quickfix list.</description>
+      <description>Vim&amp;rsquo;s :cdo command lets you run an Ex command in each entry in the quickfix list. This is useful for large-scale refactoring work.
+</description>
     </item>
     
     <item>
@@ -184,7 +201,8 @@ This is a special form of the :N,Mbdelete ranged buffer delete command where % i
       
       <guid>https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/</guid>
       <description>Use something like:
-echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits.</description>
+echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits.
+</description>
     </item>
     
     <item>
@@ -194,7 +212,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       
       <guid>https://til.codeinthehole.com/posts/how-to-copy-the-current-filepath-to-the-system-clipboard-in-vim/</guid>
       <description>Run:
-:let @* = expand(&amp;#34;%&amp;#34;) where @* references the system clipboard register.</description>
+:let @* = expand(&amp;#34;%&amp;#34;) where @* references the system clipboard register.
+</description>
     </item>
     
     <item>
@@ -203,7 +222,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Fri, 18 Dec 2020 09:46:49 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-add-project-specific-vim-settings/</guid>
-      <description>There&amp;rsquo;s various ways to do this but I quite like using an autocmd based on a buffer&amp;rsquo;s filepath.</description>
+      <description>There&amp;rsquo;s various ways to do this but I quite like using an autocmd based on a buffer&amp;rsquo;s filepath. For example:
+</description>
     </item>
     
     <item>
@@ -212,7 +232,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Thu, 10 Dec 2020 18:24:55 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/universal-ctags-can-index-more-things-than-i-realised/</guid>
-      <description>For instance, it can index make, markdown and .</description>
+      <description>For instance, it can index make, markdown and .ini files without custom configuration.
+</description>
     </item>
     
     <item>
@@ -221,7 +242,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Fri, 04 Dec 2020 17:19:14 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/vimmarkdown-has-some-useful-commands/</guid>
-      <description>I use sheerun/vim-polyglot but disable its markdown support in favour of plasticboy/vim-markdown.</description>
+      <description>I use sheerun/vim-polyglot but disable its markdown support in favour of plasticboy/vim-markdown.
+</description>
     </item>
     
     <item>
@@ -230,7 +252,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Fri, 27 Nov 2020 11:42:44 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-how-to-use-keywordprg-effectively/</guid>
-      <description>Hitting K in Vim opens the program specified by keywordprg, passing the keyword under the cursor as an argument — effectively executing this:</description>
+      <description>Hitting K in Vim opens the program specified by keywordprg, passing the keyword under the cursor as an argument — effectively executing this:
+</description>
     </item>
     
     <item>
@@ -239,7 +262,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Thu, 26 Nov 2020 16:09:12 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-configure-ctags-to-parse-terraform-files/</guid>
-      <description>If you&amp;rsquo;re using Universal Ctags (which you should be), you just need to add a ~/.</description>
+      <description>If you&amp;rsquo;re using Universal Ctags (which you should be), you just need to add a ~/.ctags.d/terraform.ctags with contents:
+</description>
     </item>
     
     <item>
@@ -248,7 +272,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Thu, 19 Nov 2020 10:54:49 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-bandit-with-vims-quickfix-list/</guid>
-      <description>One way to populate Vim&amp;rsquo;s quickfix list is by running :make which runs the program specified by the makeprg setting.</description>
+      <description>One way to populate Vim&amp;rsquo;s quickfix list is by running :make which runs the program specified by the makeprg setting. Due to Vim&amp;rsquo;s C heritage, the default behaviour is to run the make command-line tool but there are many other useful programs that print locations to stdout.
+</description>
     </item>
     
     <item>
@@ -257,7 +282,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Wed, 04 Nov 2020 16:56:20 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-run-grep-without-using-parent-shell-process/</guid>
-      <description>Using ripgrep as a :grep command can be configured with:</description>
+      <description>Using ripgrep as a :grep command can be configured with:
+</description>
     </item>
     
     <item>
@@ -266,7 +292,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Wed, 04 Nov 2020 11:55:58 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/theres-a-quickfixcmdpost-event-in-vim/</guid>
-      <description>Which you can target in an autocmd to open the quickfix window whenever a quickfix command populates the error list (e.</description>
+      <description>Which you can target in an autocmd to open the quickfix window whenever a quickfix command populates the error list (e.g. :make or :grep):
+</description>
     </item>
     
     <item>
@@ -275,7 +302,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Sat, 31 Oct 2020 11:39:36 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-jump-to-previous-quickfix-lists-in-vim/</guid>
-      <description>Vim remembers the previous ten quickfix lists; you can list them with:</description>
+      <description>Vim remembers the previous ten quickfix lists; you can list them with:
+</description>
     </item>
     
     <item>
@@ -284,7 +312,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Mon, 12 Oct 2020 10:30:00 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-shellcheck/</guid>
-      <description>Which is a static analysis tool for shell scripts.</description>
+      <description>Which is a static analysis tool for shell scripts. You can try it out by pasting a script into a form and it is run automatically by Vim&amp;rsquo;s Ale plugin.
+</description>
     </item>
     
     <item>
@@ -293,7 +322,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Wed, 23 Sep 2020 16:00:09 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-read-from-one-buffer-to-another-in-vim/</guid>
-      <description>Refer to the buffer&amp;rsquo;s number using a hash. For example, run:</description>
+      <description>Refer to the buffer&amp;rsquo;s number using a hash. For example, run:
+</description>
     </item>
     
     <item>
@@ -302,7 +332,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Wed, 16 Sep 2020 14:27:56 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-vims-helpgrep-command/</guid>
-      <description>Which lets you search Vim&amp;rsquo;s help files for a given pattern.</description>
+      <description>Which lets you search Vim&amp;rsquo;s help files for a given pattern. For example:
+</description>
     </item>
     
     <item>
@@ -312,7 +343,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       
       <guid>https://til.codeinthehole.com/posts/vim-recommends-using-emacsstyle-key-bindings-in-command-mode/</guid>
       <description>As in, using these command-mode maps:
-&amp;#34; start of line :cnoremap &amp;lt;C-A&amp;gt; &amp;lt;Home&amp;gt; &amp;#34; back one character :cnoremap &amp;lt;C-B&amp;gt; &amp;lt;Left&amp;gt; &amp;#34; delete character under cursor :cnoremap &amp;lt;C-D&amp;gt; &amp;lt;Del&amp;gt; &amp;#34; end of line :cnoremap &amp;lt;C-E&amp;gt; &amp;lt;End&amp;gt; &amp;#34; forward one character :cnoremap &amp;lt;C-F&amp;gt; &amp;lt;Right&amp;gt; &amp;#34; recall newer command-line :cnoremap &amp;lt;C-N&amp;gt; &amp;lt;Down&amp;gt; &amp;#34; recall previous (older) command-line :cnoremap &amp;lt;C-P&amp;gt; &amp;lt;Up&amp;gt; &amp;#34; back one word :cnoremap &amp;lt;Esc&amp;gt;&amp;lt;C-B&amp;gt; &amp;lt;S-Left&amp;gt; &amp;#34; forward one word :cnoremap &amp;lt;Esc&amp;gt;&amp;lt;C-F&amp;gt; &amp;lt;S-Right&amp;gt; See http://vimdoc.</description>
+&amp;#34; start of line :cnoremap &amp;lt;C-A&amp;gt; &amp;lt;Home&amp;gt; &amp;#34; back one character :cnoremap &amp;lt;C-B&amp;gt; &amp;lt;Left&amp;gt; &amp;#34; delete character under cursor :cnoremap &amp;lt;C-D&amp;gt; &amp;lt;Del&amp;gt; &amp;#34; end of line :cnoremap &amp;lt;C-E&amp;gt; &amp;lt;End&amp;gt; &amp;#34; forward one character :cnoremap &amp;lt;C-F&amp;gt; &amp;lt;Right&amp;gt; &amp;#34; recall newer command-line :cnoremap &amp;lt;C-N&amp;gt; &amp;lt;Down&amp;gt; &amp;#34; recall previous (older) command-line :cnoremap &amp;lt;C-P&amp;gt; &amp;lt;Up&amp;gt; &amp;#34; back one word :cnoremap &amp;lt;Esc&amp;gt;&amp;lt;C-B&amp;gt; &amp;lt;S-Left&amp;gt; &amp;#34; forward one word :cnoremap &amp;lt;Esc&amp;gt;&amp;lt;C-F&amp;gt; &amp;lt;S-Right&amp;gt; See http://vimdoc.sourceforge.net/htmldoc/tips.html#emacs-keys
+</description>
     </item>
     
     <item>
@@ -322,7 +354,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       
       <guid>https://til.codeinthehole.com/posts/vim-doesnt-create-the-persistent-undo-folder-automatically/</guid>
       <description>I have this in ~/.vimrc:
-&amp;#34; Keep undo history between sessions if has(&amp;#39;persistent_undo&amp;#39;) set undofile set undodir=~/.</description>
+&amp;#34; Keep undo history between sessions if has(&amp;#39;persistent_undo&amp;#39;) set undofile set undodir=~/.vim_undo set undolevels=2000 endif but, after switching laptops, I noticed the persistent undo feature wasn&amp;rsquo;t working.
+</description>
     </item>
     
     <item>
@@ -331,7 +364,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Fri, 28 Aug 2020 18:36:09 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-better-yaml-file-folding-in-vim/</guid>
-      <description>Using foldmethod=indent is ok but it&amp;rsquo;s better to use the pedrohdz/vim-yaml-folds plugin.</description>
+      <description>Using foldmethod=indent is ok but it&amp;rsquo;s better to use the pedrohdz/vim-yaml-folds plugin. The author gives more detail in Vim folding rules for YAML.
+</description>
     </item>
     
     <item>
@@ -340,7 +374,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Mon, 17 Aug 2020 11:53:31 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-help-macvim/</guid>
-      <description>MacVim ships with its own help files, accessed via:</description>
+      <description>MacVim ships with its own help files, accessed via:
+</description>
     </item>
     
     <item>
@@ -349,7 +384,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Mon, 17 Aug 2020 09:28:52 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-vims-diffthis-command/</guid>
-      <description>You can manually compare two more open buffers by running:</description>
+      <description>You can manually compare two more open buffers by running:
+</description>
     </item>
     
 

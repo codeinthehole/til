@@ -18,7 +18,8 @@
       <pubDate>Thu, 04 Mar 2021 16:09:11 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/to-prefer-dateutil-over-pytz/</guid>
-      <description>When constructing datetime.datetime instances, it&amp;rsquo;s better to use dateutil to provide the tzinfo argument — avoid using pytz.</description>
+      <description>When constructing datetime.datetime instances, it&amp;rsquo;s better to use dateutil to provide the tzinfo argument — avoid using pytz.
+</description>
     </item>
     
 

@@ -18,7 +18,8 @@
       <pubDate>Thu, 12 Oct 2023 21:36:24 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-javascript-to-control-macos/</guid>
-      <description>The osascript command can run JavaScript as well as AppleScript for interacting with MacOS.</description>
+      <description>The osascript command can run JavaScript as well as AppleScript for interacting with MacOS.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Wed, 27 Apr 2022 09:22:58 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/dprint-can-be-used-to-speed-up-prettier/</guid>
-      <description>dprint is a formatting platform written in Rust. It supports a Prettier plugin that can give a big performance increase via its incremental formatting functionality.</description>
+      <description>dprint is a formatting platform written in Rust. It supports a Prettier plugin that can give a big performance increase via its incremental formatting functionality.
+</description>
     </item>
     
     <item>
@@ -37,7 +39,8 @@
       
       <guid>https://til.codeinthehole.com/posts/javascripts-unary-plus-operator-casts-null-to-zero/</guid>
       <description>As in:
-&amp;gt; +null 0 which is different from parseInt or parseFloat which return NaN when given null.</description>
+&amp;gt; +null 0 which is different from parseInt or parseFloat which return NaN when given null.
+</description>
     </item>
     
 

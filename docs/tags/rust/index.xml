@@ -18,7 +18,8 @@
       <pubDate>Wed, 22 Feb 2023 21:13:57 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-the-typos-source-code-spell-checker/</guid>
-      <description>typos is a source code spell checker written Rust that&amp;rsquo;s useful for finding typos in code comments and variable names.</description>
+      <description>typos is a source code spell checker written Rust that&amp;rsquo;s useful for finding typos in code comments and variable names.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Wed, 27 Apr 2022 09:22:58 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/dprint-can-be-used-to-speed-up-prettier/</guid>
-      <description>dprint is a formatting platform written in Rust. It supports a Prettier plugin that can give a big performance increase via its incremental formatting functionality.</description>
+      <description>dprint is a formatting platform written in Rust. It supports a Prettier plugin that can give a big performance increase via its incremental formatting functionality.
+</description>
     </item>
     
 

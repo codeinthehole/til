@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    In a detail template, you can grab a post’s tags with {{ .
+    In a detail template, you can grab a post&rsquo;s tags with {{ .GetTerms &quot;tags&quot; }}. You can then loop over this and fetch a list of pages with each tag, excluding the current post:
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -20,7 +20,9 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-list-pages-with-matching-tag-in-hugo/" />
 <meta property="og:title" content="TIL How to list pages with matching tag in Hugo — David Winterbottom" />
-<meta property="og:description" content="In a detail template, you can grab a post&rsquo;s tags with {{ . — can be read in 1 minute" />
+<meta property="og:description" content="In a detail template, you can grab a post&rsquo;s tags with {{ .GetTerms &quot;tags&quot; }}.
+You can then loop over this and fetch a list of pages with each tag, excluding
+the current post: — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />

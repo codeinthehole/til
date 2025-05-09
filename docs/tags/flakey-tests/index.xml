@@ -19,7 +19,8 @@
       
       <guid>https://til.codeinthehole.com/posts/how-djangos-overridesettings-decorator-causes-flakey-tests/</guid>
       <description>This form can cause flakey tests:
-from django import forms from django.</description>
+from django import forms from django.conf import settings class IceCreamForm(forms.Form): flavour = forms.ChoiceField(choices=settings.FLAVOURS) The critical detail is that the ChoiceField choices are computed at import-time using settings.
+</description>
     </item>
     
     <item>
@@ -29,7 +30,8 @@ from django import forms from django.</description>
       
       <guid>https://til.codeinthehole.com/posts/how-the-new-argument-to-mockpatch-is-shared-between-parameterized-tests/</guid>
       <description>Consider this contrived test:
-from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp;#34;Return a config object with a &amp;#39;salutation&amp;#39; attribute.</description>
+from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp;#34;Return a config object with a &amp;#39;salutation&amp;#39; attribute.&amp;#34;&amp;#34;&amp;#34; pass def say_hello(name): &amp;#34;&amp;#34;&amp;#34;Return a greeting.&amp;#34;&amp;#34;&amp;#34; return get_config().salutation + &amp;#34; &amp;#34; + name @mock.patch( __name__ + &amp;#34;.get_config&amp;#34;, new=mock.Mock(return_value=mock.Mock(salutation=&amp;#34;Hello&amp;#34;)) ) @pytest.mark.parametrize(&amp;#34;name&amp;#34;, (&amp;#34;Alan&amp;#34;, &amp;#34;Barry&amp;#34;, &amp;#34;Calum&amp;#34;)) def test_say_hello(name): assert say_hello(name) == f&amp;#34;Hello {name}&amp;#34; We are testing the say_hello function three times with different arguments and use mock.patch to stub the response of the get_config function, passing in the replacement version at compile/collection time using the new parameter.
+</description>
     </item>
     
     <item>
@@ -38,7 +40,8 @@ from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp
       <pubDate>Tue, 18 Oct 2022 17:43:06 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-postgres-sequences-arent-restored-after-a-rollback/</guid>
-      <description>Verify by creating a table and inserting a single row</description>
+      <description>Verify by creating a table and inserting a single row
+</description>
     </item>
     
     <item>
@@ -47,7 +50,8 @@ from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp
       <pubDate>Mon, 21 Feb 2022 21:01:02 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-inspect-and-clear-pythons-functoolslrucache/</guid>
-      <description>Python&amp;rsquo;s functools.lru_cache binds two additional functions to decorated functions:</description>
+      <description>Python&amp;rsquo;s functools.lru_cache binds two additional functions to decorated functions:
+</description>
     </item>
     
 

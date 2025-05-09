@@ -18,7 +18,8 @@
       <pubDate>Fri, 05 Aug 2022 12:36:04 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-create-an-rst-table-of-contents-for-the-sections-of-the-current-page/</guid>
-      <description>To create a table of contents for the current page in reStructuredText, use the following:</description>
+      <description>To create a table of contents for the current page in reStructuredText, use the following:
+</description>
     </item>
     
 

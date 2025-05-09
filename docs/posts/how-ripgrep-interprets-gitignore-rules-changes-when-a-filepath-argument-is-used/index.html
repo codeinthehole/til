@@ -6,7 +6,8 @@
 
         <meta name="description" content="
     Consider this dummy static site structure:
-mkdir -p docs/_build/ echo &quot;&lt;h1&gt;hello&lt;/h1&gt;&quot; &gt; docs/_build/index.
+mkdir -p docs/_build/ echo &#34;&lt;h1&gt;hello&lt;/h1&gt;&#34; &gt; docs/_build/index.html echo &#34;# hello&#34; &gt; docs/index.md A ripgrep search for &ldquo;hello&rdquo; matches both files:
+
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +23,11 @@ mkdir -p docs/_build/ echo &quot;&lt;h1&gt;hello&lt;/h1&gt;&quot; &gt; docs/_bui
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-ripgrep-interprets-gitignore-rules-changes-when-a-filepath-argument-is-used/" />
 <meta property="og:title" content="TIL How &#39;ripgrep&#39; interprets &#39;.gitignore&#39; rules changes when a filepath argument is used — David Winterbottom" />
 <meta property="og:description" content="Consider this dummy static site structure:
-mkdir -p docs/_build/ echo &#34;&lt;h1&gt;hello&lt;/h1&gt;&#34; &gt; docs/_build/index. — can be read in 1 minute" />
+mkdir -p docs/_build/
+echo &#34;&lt;h1&gt;hello&lt;/h1&gt;&#34; &gt; docs/_build/index.html
+echo &#34;# hello&#34; &gt; docs/index.md
+A ripgrep search for &ldquo;hello&rdquo; matches
+both files: — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
@@ -89,8 +94,7 @@ both files:</p>
 </span></span><span style="display:flex;"><span>1:# hello
 </span></span></code></pre></div><p>From <code>man rg</code>:</p>
 <blockquote>
-<p>Paths specified explicitly on the command line override glob and ignore rules.</p>
-</blockquote>
+<p>Paths specified explicitly on the command line override glob and ignore rules.</p></blockquote>
 <p>which, in practice, seems to mean that the <code>.gitignore</code> rules are applied
 against filepaths <em>relative</em> to the filepath argument.</p>
 <p>So in the above example, we can get the behaviour we want by changing the

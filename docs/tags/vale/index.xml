@@ -18,7 +18,8 @@
       <pubDate>Sun, 20 Feb 2022 18:54:33 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-get-vale-to-work-with-vims-ale-plugin/</guid>
-      <description>Vale is an extensible syntax aware linter. It can integrate with Vim via Ale although there&amp;rsquo;s a gotcha to be aware of.</description>
+      <description>Vale is an extensible syntax aware linter. It can integrate with Vim via Ale although there&amp;rsquo;s a gotcha to be aware of.
+</description>
     </item>
     
 

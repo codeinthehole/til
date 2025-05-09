@@ -6,7 +6,8 @@
 
         <meta name="description" content="
     Use docker inspect like so:
-docker inspect -f &quot;{{ .
+docker inspect -f &#34;{{ .Mounts }}&#34; $CONTAINER_ID I used this to determine where a Discourse Docker container was persisting its logs:
+
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +23,10 @@ docker inspect -f &quot;{{ .
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-list-the-mounts-of-a-running-docker-container/" />
 <meta property="og:title" content="TIL How to list the mounts of a running Docker container — David Winterbottom" />
 <meta property="og:description" content="Use docker inspect like so:
-docker inspect -f &#34;{{ . — can be read in 1 minute" />
+docker inspect -f &#34;{{ .Mounts }}&#34; $CONTAINER_ID
+I used this to determine where a
+Discourse Docker container was
+persisting its logs: — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />

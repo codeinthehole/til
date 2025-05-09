@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    In normal conditions, an AWS load balancer will only route requests to healthy instances in its linked target group.
+    In normal conditions, an AWS load balancer will only route requests to healthy instances in its linked target group. But a &ldquo;fail open&rdquo; policy is applied if all targets in the target group are unhealthy. From the AWS ELB docs:
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -20,7 +20,9 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/aws-target-groups-fail-open-when-all-instances-are-unhealthy/" />
 <meta property="og:title" content="TIL AWS target groups fail open when all instances are unhealthy — David Winterbottom" />
-<meta property="og:description" content="In normal conditions, an AWS load balancer will only route requests to healthy instances in its linked target group. — can be read in 1 minute" />
+<meta property="og:description" content="In normal conditions, an AWS load balancer will only route requests to healthy
+instances in its linked target group. But a &ldquo;fail open&rdquo; policy is applied if all
+targets in the target group are unhealthy. From the AWS ELB docs: — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
@@ -69,8 +71,7 @@ status. This means that if all targets fail health checks at the same time in
 all enabled Availability Zones, the load balancer fails open. The effect of
 the fail-open is to allow traffic to all targets in all enabled Availability
 Zones, regardless of their health status, based on the load balancing
-algorithm.</p>
-</blockquote>
+algorithm.</p></blockquote>
 <p>This came up at Kraken Tech where an unusual misconfiguration caused all
 instances in a target group to become unhealthy, and I was initially puzzled as
 to why new instances — which had never passed their health checks — were serving

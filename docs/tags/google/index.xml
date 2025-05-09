@@ -18,7 +18,8 @@
       <pubDate>Fri, 22 Sep 2023 10:20:58 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-run-google-sites-as-standalone-macos-apps-that-alfred-can-start/</guid>
-      <description>Many Google sites such as Meet, Drive and Youtube can be run as Progressive Web Apps (PWAs), which means they run in their own Chrome application and are treated as separate apps in MacOS.</description>
+      <description>Many Google sites such as Meet, Drive and Youtube can be run as Progressive Web Apps (PWAs), which means they run in their own Chrome application and are treated as separate apps in MacOS.
+</description>
     </item>
     
 

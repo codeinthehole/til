@@ -19,7 +19,8 @@
       
       <guid>https://til.codeinthehole.com/posts/about-twitters-minfaves-search-filter/</guid>
       <description>You can do searches like:
-from:frankieboyle min_faves:10000 to see, for example, the best tweets from a given account.</description>
+from:frankieboyle min_faves:10000 to see, for example, the best tweets from a given account. It works really well &amp;ndash; you just need to pick an appropriate minimum value for the account.
+</description>
     </item>
     
 

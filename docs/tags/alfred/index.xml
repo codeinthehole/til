@@ -18,7 +18,8 @@
       <pubDate>Fri, 22 Sep 2023 10:20:58 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-run-google-sites-as-standalone-macos-apps-that-alfred-can-start/</guid>
-      <description>Many Google sites such as Meet, Drive and Youtube can be run as Progressive Web Apps (PWAs), which means they run in their own Chrome application and are treated as separate apps in MacOS.</description>
+      <description>Many Google sites such as Meet, Drive and Youtube can be run as Progressive Web Apps (PWAs), which means they run in their own Chrome application and are treated as separate apps in MacOS.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Mon, 07 Sep 2020 10:37:57 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-display-the-typed-text-in-alfred-in-a-huge-typeface/</guid>
-      <description>By pressing cmd + L after typing the text.</description>
+      <description>By pressing cmd + L after typing the text.
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Wed, 02 Sep 2020 11:34:04 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-configure-alfreds-bear-workflow-to-open-notes-in-the-main-window/</guid>
-      <description>This applies to the Bear workflow written in Go whose default behaviour (in v1.</description>
+      <description>This applies to the Bear workflow written in Go whose default behaviour (in v1.1.6) is to open notes in a new window rather than the main Bear application window.
+</description>
     </item>
     
     <item>
@@ -45,7 +48,8 @@
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/alfred-clipboard-history/</guid>
-      <description>Alfred has a clipboard history feature which lets you easily pluck out previous values from your system clipboard.</description>
+      <description>Alfred has a clipboard history feature which lets you easily pluck out previous values from your system clipboard.
+</description>
     </item>
     
     <item>
@@ -54,7 +58,8 @@
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/alfred-snippet-collections/</guid>
-      <description>You can create &amp;ldquo;collections&amp;rdquo; of snippets in Alfred, such as:</description>
+      <description>You can create &amp;ldquo;collections&amp;rdquo; of snippets in Alfred, such as:
+</description>
     </item>
     
 

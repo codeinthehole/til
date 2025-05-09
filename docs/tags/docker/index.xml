@@ -18,7 +18,8 @@
       <pubDate>Fri, 10 May 2024 15:47:17 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-bashs-compgen-builtin/</guid>
-      <description>Bash includes a built-in compgen command that can list all the commands available in the current shell:</description>
+      <description>Bash includes a built-in compgen command that can list all the commands available in the current shell:
+</description>
     </item>
     
     <item>
@@ -28,7 +29,8 @@
       
       <guid>https://til.codeinthehole.com/posts/docker-for-mac-stores-all-containers-and-images-in-a-single-disk-image/</guid>
       <description>All images and containers are stored in:
-~/Library/Containers/com.docker.docker/Data/vms/0/data/Docker.raw as opposed to Linux which uses the /var/lib/docker directory.</description>
+~/Library/Containers/com.docker.docker/Data/vms/0/data/Docker.raw as opposed to Linux which uses the /var/lib/docker directory.
+</description>
     </item>
     
     <item>
@@ -38,7 +40,8 @@
       
       <guid>https://til.codeinthehole.com/posts/how-to-list-the-mounts-of-a-running-docker-container/</guid>
       <description>Use docker inspect like so:
-docker inspect -f &amp;#34;{{ .</description>
+docker inspect -f &amp;#34;{{ .Mounts }}&amp;#34; $CONTAINER_ID I used this to determine where a Discourse Docker container was persisting its logs:
+</description>
     </item>
     
     <item>
@@ -47,7 +50,8 @@ docker inspect -f &amp;#34;{{ .</description>
       <pubDate>Tue, 29 Dec 2020 15:55:34 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-enable-docker-buildkit-in-macos-docker-desktop/</guid>
-      <description>Since Docker 18.09, you can the BuildKit feature to take advantages of improved performance and extra features when building images — see Build images with BuildKit from the Docker docs.</description>
+      <description>Since Docker 18.09, you can the BuildKit feature to take advantages of improved performance and extra features when building images — see Build images with BuildKit from the Docker docs.
+</description>
     </item>
     
     <item>
@@ -57,7 +61,8 @@ docker inspect -f &amp;#34;{{ .</description>
       
       <guid>https://til.codeinthehole.com/posts/how-to-run-jekyll-in-a-docker-container/</guid>
       <description>To run the server, run:
-docker run --rm \ --volume=&amp;#34;${PWD}:/srv/jekyll&amp;#34; \ -p 4000:4000 \ -it jekyll/jekyll:3.</description>
+docker run --rm \ --volume=&amp;#34;${PWD}:/srv/jekyll&amp;#34; \ -p 4000:4000 \ -it jekyll/jekyll:3.8 \ jekyll serve --incremental This will install your Gemfile.lock dependencies and run the local server on port 4000.
+</description>
     </item>
     
 

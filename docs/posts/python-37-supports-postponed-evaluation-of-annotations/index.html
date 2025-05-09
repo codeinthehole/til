@@ -6,7 +6,8 @@
 
         <meta name="description" content="
     For example, instead of:
-import _csv def generate_report(writer: &#39;_csv.
+import _csv def generate_report(writer: &#39;_csv._writer&#39;): pass you can use:
+
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +23,11 @@ import _csv def generate_report(writer: &#39;_csv.
 <meta property="og:url" content="https://til.codeinthehole.com/posts/python-37-supports-postponed-evaluation-of-annotations/" />
 <meta property="og:title" content="TIL Python 3.7 supports postponed evaluation of annotations — David Winterbottom" />
 <meta property="og:description" content="For example, instead of:
-import _csv def generate_report(writer: &#39;_csv. — can be read in 1 minute" />
+import _csv
+
+def generate_report(writer: &#39;_csv._writer&#39;):
+    pass
+you can use: — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />

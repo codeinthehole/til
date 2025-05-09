@@ -18,7 +18,8 @@
       <pubDate>Wed, 31 Jan 2024 12:07:20 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-bind-custom-keyboard-shortcuts-to-nested-macos-menu-options/</guid>
-      <description>MacOS allows you to override and bind new keyboard shortcuts for an app.</description>
+      <description>MacOS allows you to override and bind new keyboard shortcuts for an app.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Mon, 20 Nov 2023 12:44:04 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-make-the-macos-app-switcher-appear-on-all-displays/</guid>
-      <description>If you have multiple displays connected to your Mac, you may have noticed that the app switcher (cmd+tab) only appears on the display where the Dock is located.</description>
+      <description>If you have multiple displays connected to your Mac, you may have noticed that the app switcher (cmd+tab) only appears on the display where the Dock is located. This is mildly annoying if you happen to be looking at the other display.
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Thu, 12 Oct 2023 21:36:24 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-javascript-to-control-macos/</guid>
-      <description>The osascript command can run JavaScript as well as AppleScript for interacting with MacOS.</description>
+      <description>The osascript command can run JavaScript as well as AppleScript for interacting with MacOS.
+</description>
     </item>
     
     <item>
@@ -45,7 +48,8 @@
       <pubDate>Fri, 22 Sep 2023 10:20:58 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-run-google-sites-as-standalone-macos-apps-that-alfred-can-start/</guid>
-      <description>Many Google sites such as Meet, Drive and Youtube can be run as Progressive Web Apps (PWAs), which means they run in their own Chrome application and are treated as separate apps in MacOS.</description>
+      <description>Many Google sites such as Meet, Drive and Youtube can be run as Progressive Web Apps (PWAs), which means they run in their own Chrome application and are treated as separate apps in MacOS.
+</description>
     </item>
     
     <item>
@@ -54,7 +58,8 @@
       <pubDate>Fri, 28 Apr 2023 20:20:10 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-macos-ventura-and-ios-15-can-play-background-rain-noise/</guid>
-      <description>For years, I&amp;rsquo;ve been using https://rain.today for background rain noise, but I recently discovered that macOS Ventura and iOS 15 can play rain noise too.</description>
+      <description>For years, I&amp;rsquo;ve been using https://rain.today for background rain noise, but I recently discovered that macOS Ventura and iOS 15 can play rain noise too.
+</description>
     </item>
     
     <item>
@@ -63,7 +68,8 @@
       <pubDate>Mon, 13 Sep 2021 14:26:37 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-easily-copy-annotated-screenshots-to-the-clipboard-on-macos/</guid>
-      <description>I frequently want to take screenshots, annotate them, then paste the marked up image into an application like Slack or Github; I don&amp;rsquo;t want to save a file to the ~/Desktop.</description>
+      <description>I frequently want to take screenshots, annotate them, then paste the marked up image into an application like Slack or Github; I don&amp;rsquo;t want to save a file to the ~/Desktop.
+</description>
     </item>
     
     <item>
@@ -72,7 +78,8 @@
       <pubDate>Fri, 10 Sep 2021 09:28:14 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/the-names-for-macos-keyboard-metacharacters/</guid>
-      <description>You can insert a ⌘ character using the Character Viewer pop-up.</description>
+      <description>You can insert a ⌘ character using the Character Viewer pop-up.
+</description>
     </item>
     
     <item>
@@ -81,7 +88,8 @@
       <pubDate>Wed, 30 Jun 2021 14:35:17 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-chromes-named-windows/</guid>
-      <description>Since Google Chrome v88 (Jan 2021), browser windows can be given a name via the .</description>
+      <description>Since Google Chrome v88 (Jan 2021), browser windows can be given a name via the ... &amp;gt; More Tools &amp;gt; Name Window... menu item.
+</description>
     </item>
     
     <item>
@@ -90,7 +98,8 @@
       <pubDate>Fri, 12 Mar 2021 11:31:35 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/iterm2s-cursor-boost-feature-will-cause-everything-to-appear-dimmed/</guid>
-      <description>I had inadvertently moved the &amp;ldquo;Cursor Boost&amp;rdquo; slider to a high level and the terminal became very dim and hard to read.</description>
+      <description>I had inadvertently moved the &amp;ldquo;Cursor Boost&amp;rdquo; slider to a high level and the terminal became very dim and hard to read. Resetting the slider to zero fixed the issue.
+</description>
     </item>
     
     <item>
@@ -99,7 +108,8 @@
       <pubDate>Tue, 26 Jan 2021 10:19:42 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-scroll-horizontally-with-a-mouse/</guid>
-      <description>If you hold shift while using the mouse wheel then you can scroll horizontally.</description>
+      <description>If you hold shift while using the mouse wheel then you can scroll horizontally. This is useful for wide programs like Asana and Trello.
+</description>
     </item>
     
     <item>
@@ -108,7 +118,8 @@
       <pubDate>Thu, 07 Jan 2021 10:51:08 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-temp-files-are-removed-on-macos/</guid>
-      <description>On MacOS, temporary files are stored in either /tmp/ or a per-user temporary folder specified by the $TMPDIR environment variable; this is normally a subfolder of /var/folders/.</description>
+      <description>On MacOS, temporary files are stored in either /tmp/ or a per-user temporary folder specified by the $TMPDIR environment variable; this is normally a subfolder of /var/folders/.
+</description>
     </item>
     
     <item>
@@ -118,7 +129,8 @@
       
       <guid>https://til.codeinthehole.com/posts/about-the-difference-between-minimising-and-hiding-windows-in-macos/</guid>
       <description>Minimising:
-⌘ + m minimises the active application window.</description>
+⌘ + m minimises the active application window.
+</description>
     </item>
     
     <item>
@@ -128,7 +140,8 @@
       
       <guid>https://til.codeinthehole.com/posts/the-macos-keybinds-for-en-and-emdashes/</guid>
       <description>Which are:
-alt + - for an en-dash (–); shift + alt + - for an em-dash (—); You can always get them from the ctrl + cmd + space character picker but good to know quicker alternatives.</description>
+alt + - for an en-dash (–); shift + alt + - for an em-dash (—); You can always get them from the ctrl + cmd + space character picker but good to know quicker alternatives.
+</description>
     </item>
     
     <item>
@@ -137,7 +150,8 @@ alt + - for an en-dash (–); shift + alt + - for an em-dash (—); You can alwa
       <pubDate>Fri, 14 Aug 2020 10:30:00 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-the-stationery-pad-feature-in-finder/</guid>
-      <description>If you use Finder to mark a file as a &amp;ldquo;stationery pad&amp;rdquo; then apps will open a copy of the file.</description>
+      <description>If you use Finder to mark a file as a &amp;ldquo;stationery pad&amp;rdquo; then apps will open a copy of the file. The original file will effectively act as a template.
+</description>
     </item>
     
     <item>
@@ -146,7 +160,8 @@ alt + - for an en-dash (–); shift + alt + - for an em-dash (—); You can alwa
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/quitter/</guid>
-      <description>There&amp;rsquo;s a MacOS app called Quitter which will automatically quit applications after some period of inactivity.</description>
+      <description>There&amp;rsquo;s a MacOS app called Quitter which will automatically quit applications after some period of inactivity.
+</description>
     </item>
     
     <item>
@@ -155,7 +170,8 @@ alt + - for an en-dash (–); shift + alt + - for an em-dash (—); You can alwa
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-the-screencapture-bsd-util/</guid>
-      <description>It&amp;rsquo;s what MacOS uses for its shortcuts but can be called from the command-line:</description>
+      <description>It&amp;rsquo;s what MacOS uses for its shortcuts but can be called from the command-line:
+</description>
     </item>
     
 

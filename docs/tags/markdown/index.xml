@@ -18,7 +18,8 @@
       <pubDate>Mon, 27 Nov 2023 14:59:48 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-create-custom-replacements-for-vimsurround/</guid>
-      <description>Problem I forgot my notepad and was editing a todo.</description>
+      <description>Problem I forgot my notepad and was editing a todo.md buffer in Vim as a replacement checklist.
+</description>
     </item>
     
     <item>
@@ -28,7 +29,8 @@
       
       <guid>https://til.codeinthehole.com/posts/github-supports-a-markdown-extension-for-creating-alert-blocks/</guid>
       <description>The syntax is:
-&amp;gt; [!NOTE] &amp;gt; This is a note.</description>
+&amp;gt; [!NOTE] &amp;gt; This is a note. which renders as:
+</description>
     </item>
     
     <item>
@@ -37,7 +39,8 @@
       <pubDate>Sat, 01 Jul 2023 18:57:50 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-two-trailing-spaces-indicates-a-line-break-in-markdown/</guid>
-      <description>Not sure how I&amp;rsquo;ve never come across this before, but Markdown supports hard line breaks by ending a line with two spaces.</description>
+      <description>Not sure how I&amp;rsquo;ve never come across this before, but Markdown supports hard line breaks by ending a line with two spaces. Don&amp;rsquo;t strip trailing whitespace in your Markdown editor pre-save hooks.
+</description>
     </item>
     
     <item>
@@ -46,7 +49,8 @@
       <pubDate>Fri, 01 Jul 2022 14:33:52 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-pycon-markdown-format/</guid>
-      <description>Github-flavoured markdown uses Linguist for syntax highlighting, and Linguist supports &amp;ldquo;Python console&amp;rdquo; as a language.</description>
+      <description>Github-flavoured markdown uses Linguist for syntax highlighting, and Linguist supports &amp;ldquo;Python console&amp;rdquo; as a language.
+</description>
     </item>
     
     <item>
@@ -55,7 +59,8 @@
       <pubDate>Wed, 01 Jun 2022 10:24:44 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/some-markdown-parsers-support-definition-lists/</guid>
-      <description>Parsers like goldmark (the default parser for Hugo) support definition lists.</description>
+      <description>Parsers like goldmark (the default parser for Hugo) support definition lists.
+</description>
     </item>
     
     <item>
@@ -65,7 +70,8 @@
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-markdownlint-output-in-vims-quickfix-list/</guid>
       <description>The output from markdownlint-cli has this form:
-path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] which doesn&amp;rsquo;t load correctly into Vim&amp;rsquo;s quickfix list (via :cfile or :cexpr).</description>
+path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] which doesn&amp;rsquo;t load correctly into Vim&amp;rsquo;s quickfix list (via :cfile or :cexpr).
+</description>
     </item>
     
     <item>
@@ -74,7 +80,8 @@ path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] 
       <pubDate>Mon, 07 Dec 2020 11:34:05 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-spellcheck-markdown-repos-on-circleci/</guid>
-      <description>The tmaier/markdown-spellcheck Docker image wraps node-markdown-spellcheck and can be used locally and on CircleCI to spell-check markdown files.</description>
+      <description>The tmaier/markdown-spellcheck Docker image wraps node-markdown-spellcheck and can be used locally and on CircleCI to spell-check markdown files.
+</description>
     </item>
     
     <item>
@@ -83,7 +90,8 @@ path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] 
       <pubDate>Fri, 04 Dec 2020 17:19:14 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/vimmarkdown-has-some-useful-commands/</guid>
-      <description>I use sheerun/vim-polyglot but disable its markdown support in favour of plasticboy/vim-markdown.</description>
+      <description>I use sheerun/vim-polyglot but disable its markdown support in favour of plasticboy/vim-markdown.
+</description>
     </item>
     
     <item>
@@ -92,7 +100,8 @@ path/to/file.md:13:81 MD013/line-length Line length [Expected: 80; Actual: 102] 
       <pubDate>Tue, 27 Oct 2020 16:39:43 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-embed-markdown-content-in-a-github-code-block/</guid>
-      <description>Normally, fenced code blocks are delimited with triple backticks ```.</description>
+      <description>Normally, fenced code blocks are delimited with triple backticks ```.
+</description>
     </item>
     
 

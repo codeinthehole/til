@@ -18,7 +18,8 @@
       <pubDate>Sat, 04 May 2024 14:29:31 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-mypy-can-generate-coverage-reports/</guid>
-      <description>Mypy has options for generating coverage reports. From the --help output:</description>
+      <description>Mypy has options for generating coverage reports. From the --help output:
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Sat, 28 Jan 2023 11:21:10 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/not-to-union-python-list-types/</guid>
-      <description>Consider this contrived function which either returns a list of tuples or a list of dicts depending on an argument value:</description>
+      <description>Consider this contrived function which either returns a list of tuples or a list of dicts depending on an argument value:
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Wed, 23 Nov 2022 17:24:46 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-handle-convenience-imports-with-mypy/</guid>
-      <description>Python convenience imports are where objects are imported into a package&amp;rsquo;s __init__.</description>
+      <description>Python convenience imports are where objects are imported into a package&amp;rsquo;s __init__.py module so client code has a simple, easy-to-remember location to import objects from.
+</description>
     </item>
     
     <item>
@@ -45,7 +48,8 @@
       <pubDate>Tue, 11 Oct 2022 09:56:57 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/mypy-skips-empty-functions/</guid>
-      <description>Mypy doesn&amp;rsquo;t check types of empty functions, such as those whose implementation is pass, .</description>
+      <description>Mypy doesn&amp;rsquo;t check types of empty functions, such as those whose implementation is pass, ... or only a docstring.
+</description>
     </item>
     
     <item>
@@ -54,7 +58,8 @@
       <pubDate>Thu, 22 Jul 2021 17:31:28 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-djangos-management-commands-need-to-be-type-hinted/</guid>
-      <description>For Django management commands with arguments, you might not expect Mypy (configured with the django-stubs plugin) to complain about this signature:</description>
+      <description>For Django management commands with arguments, you might not expect Mypy (configured with the django-stubs plugin) to complain about this signature:
+</description>
     </item>
     
     <item>
@@ -63,7 +68,8 @@
       <pubDate>Mon, 21 Jun 2021 14:54:25 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-mypys-unreachable-code-functionality/</guid>
-      <description>Mypy can be configured to raise an error when it finds unreachable code.</description>
+      <description>Mypy can be configured to raise an error when it finds unreachable code. This is a useful check and can highlight several categories of bug.
+</description>
     </item>
     
     <item>
@@ -72,7 +78,8 @@
       <pubDate>Wed, 16 Jun 2021 17:33:21 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-mypys-revealtype-and-reveallocals-functions/</guid>
-      <description>Which can be used for debugging type annotation problems.</description>
+      <description>Which can be used for debugging type annotation problems. Insert them liberally into your code before running mypy to see the inferred static types of expressions or local variables.
+</description>
     </item>
     
     <item>
@@ -81,7 +88,8 @@
       <pubDate>Wed, 16 Jun 2021 15:16:58 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-mypy-only-typechecks-functions-that-have-at-least-one-type-annotation/</guid>
-      <description>This is noted in the common issues and solutions documentation.</description>
+      <description>This is noted in the common issues and solutions documentation. For example mypy doesn&amp;rsquo;t complain about this obviously wrong function call:
+</description>
     </item>
     
     <item>
@@ -90,7 +98,8 @@
       <pubDate>Thu, 10 Dec 2020 15:51:44 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/a-better-way-of-configuring-mypy/</guid>
-      <description>I didn&amp;rsquo;t realise you can put all your config into setup.</description>
+      <description>I didn&amp;rsquo;t realise you can put all your config into setup.cfg so that you can just run:
+</description>
     </item>
     
     <item>
@@ -99,7 +108,8 @@
       <pubDate>Thu, 03 Sep 2020 17:13:22 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-typecheck-csv-objects-in-python/</guid>
-      <description>Adding a type annotation for a &amp;ldquo;writer&amp;rdquo; object created by csv.</description>
+      <description>Adding a type annotation for a &amp;ldquo;writer&amp;rdquo; object created by csv.writer(...) is fiddlier than you might think.
+</description>
     </item>
     
 

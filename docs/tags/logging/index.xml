@@ -18,7 +18,8 @@
       <pubDate>Mon, 11 Sep 2023 22:28:13 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-get-gunicorn-to-log-as-json/</guid>
-      <description>It&amp;rsquo;s oddly hard to get popular Python HTTP servers to log as JSON.</description>
+      <description>It&amp;rsquo;s oddly hard to get popular Python HTTP servers to log as JSON. A few weeks ago, I spent a few hours convincing uWSGI to do so and I&amp;rsquo;ve been through the same process today but with Gunicorn.
+</description>
     </item>
     
 

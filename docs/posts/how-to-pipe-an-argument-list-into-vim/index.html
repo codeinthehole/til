@@ -7,6 +7,7 @@
         <meta name="description" content="
     Use something like:
 echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits.
+
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +23,10 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/" />
 <meta property="og:title" content="TIL How to pipe an argument list into Vim — David Winterbottom" />
 <meta property="og:description" content="Use something like:
-echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits. — can be read in 1 minute" />
+echo file1 file2 | xargs -o vim
+The -o option for xargs re-opens stdin as /dev/tty (rather than the
+default /dev/null) and is essential otherwise Vim will break your terminal
+when it exits. — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />

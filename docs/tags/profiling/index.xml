@@ -18,7 +18,8 @@
       <pubDate>Thu, 23 Jun 2022 10:36:09 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-profile-pytest-tests/</guid>
-      <description>If you install the pytest-monitor package, then PyTest invocations will collect test profiling information in a SQLite database (called .</description>
+      <description>If you install the pytest-monitor package, then PyTest invocations will collect test profiling information in a SQLite database (called .pymon by default).
+</description>
     </item>
     
 

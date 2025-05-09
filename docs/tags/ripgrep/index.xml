@@ -18,7 +18,8 @@
       <pubDate>Fri, 03 Mar 2023 11:23:32 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-ripgrep-in-while-read-loops/</guid>
-      <description>Beware of using rg in a while read block when there&amp;rsquo;s no path argument.</description>
+      <description>Beware of using rg in a while read block when there&amp;rsquo;s no path argument.
+</description>
     </item>
     
     <item>
@@ -28,7 +29,8 @@
       
       <guid>https://til.codeinthehole.com/posts/how-ripgrep-interprets-gitignore-rules-changes-when-a-filepath-argument-is-used/</guid>
       <description>Consider this dummy static site structure:
-mkdir -p docs/_build/ echo &amp;#34;&amp;lt;h1&amp;gt;hello&amp;lt;/h1&amp;gt;&amp;#34; &amp;gt; docs/_build/index.</description>
+mkdir -p docs/_build/ echo &amp;#34;&amp;lt;h1&amp;gt;hello&amp;lt;/h1&amp;gt;&amp;#34; &amp;gt; docs/_build/index.html echo &amp;#34;# hello&amp;#34; &amp;gt; docs/index.md A ripgrep search for &amp;ldquo;hello&amp;rdquo; matches both files:
+</description>
     </item>
     
     <item>
@@ -37,7 +39,8 @@ mkdir -p docs/_build/ echo &amp;#34;&amp;lt;h1&amp;gt;hello&amp;lt;/h1&amp;gt;&a
       <pubDate>Tue, 05 Apr 2022 15:44:13 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-lookbehind-regex-assertions-with-ripgrep/</guid>
-      <description>By default ripgrep uses Rust&amp;rsquo;s regex crate for parsing regular expressions which does not support look-ahead or look-behind assertions.</description>
+      <description>By default ripgrep uses Rust&amp;rsquo;s regex crate for parsing regular expressions which does not support look-ahead or look-behind assertions.
+</description>
     </item>
     
     <item>
@@ -47,7 +50,8 @@ mkdir -p docs/_build/ echo &amp;#34;&amp;lt;h1&amp;gt;hello&amp;lt;/h1&amp;gt;&a
       
       <guid>https://til.codeinthehole.com/posts/how-to-pipe-an-argument-list-into-vim/</guid>
       <description>Use something like:
-echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits.</description>
+echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/tty (rather than the default /dev/null) and is essential otherwise Vim will break your terminal when it exits.
+</description>
     </item>
     
     <item>
@@ -56,7 +60,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Tue, 12 Jan 2021 09:37:14 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/</guid>
-      <description>To search for a fixed string (i.e. not a regex), use:</description>
+      <description>To search for a fixed string (i.e. not a regex), use:
+</description>
     </item>
     
     <item>
@@ -65,7 +70,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Tue, 29 Dec 2020 16:23:12 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-define-custom-filetype-filters-in-ripgrep/</guid>
-      <description>ripgrep lets you filter files by their language type — e.</description>
+      <description>ripgrep lets you filter files by their language type — e.g. search only C-related files:
+</description>
     </item>
     
     <item>
@@ -74,7 +80,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Fri, 04 Dec 2020 21:38:22 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-set-perproject-ripgrep-exclude-rules/</guid>
-      <description>In some projects, you want ripgrep to ignore some files that aren&amp;rsquo;t in .</description>
+      <description>In some projects, you want ripgrep to ignore some files that aren&amp;rsquo;t in .gitignore — things like statically generated files in a Hugo site (like this one). You can do this by adding them to a local .ignore file.
+</description>
     </item>
     
     <item>
@@ -83,7 +90,8 @@ echo file1 file2 | xargs -o vim The -o option for xargs re-opens stdin as /dev/t
       <pubDate>Wed, 04 Nov 2020 16:56:20 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-run-grep-without-using-parent-shell-process/</guid>
-      <description>Using ripgrep as a :grep command can be configured with:</description>
+      <description>Using ripgrep as a :grep command can be configured with:
+</description>
     </item>
     
 

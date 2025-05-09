@@ -18,7 +18,8 @@
       <pubDate>Wed, 01 May 2024 17:50:21 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-install-a-vendored-wheel-when-using-piptools-and-pyprojecttoml/</guid>
-      <description>I had been under the impression that it was very awkward (if not impossible) to have an application&amp;rsquo;s pyproject.</description>
+      <description>I had been under the impression that it was very awkward (if not impossible) to have an application&amp;rsquo;s pyproject.toml reference a vendored dependency (i.e., where the package&amp;rsquo;s wheel file is committed to the repository) and work with pip-tools.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Mon, 02 Oct 2023 21:59:28 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-avoid-version-conflicts-in-lock-files-compiled-with-piptools/</guid>
-      <description>Many projects I work on maintain two requirements lock files:</description>
+      <description>Many projects I work on maintain two requirements lock files:
+</description>
     </item>
     
 

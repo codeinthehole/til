@@ -16,7 +16,7 @@
             {{ end -}}
         {{ end }}
 
-        {{ $style := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify }}
+        {{ $style := resources.Get "css/main.scss" | css.Sass | resources.Minify }}
         <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
         {{ block "head" . }}{{ end }}

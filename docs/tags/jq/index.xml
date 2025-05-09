@@ -18,7 +18,8 @@
       <pubDate>Thu, 10 Aug 2023 15:44:41 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-jq-to-only-parse-valid-json-lines/</guid>
-      <description>Suppose you have a stream of text comprising JSON and non-JSON lines — e.</description>
+      <description>Suppose you have a stream of text comprising JSON and non-JSON lines — e.g:
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Thu, 05 Jan 2023 11:19:09 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-format-json-into-a-table-with-jq-and-column/</guid>
-      <description>You can create tabular data from JSON using jq to generate tab-separated output and column to format.</description>
+      <description>You can create tabular data from JSON using jq to generate tab-separated output and column to format.
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Fri, 18 Nov 2022 19:24:31 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-use-jq-to-build-json-payloads/</guid>
-      <description>It&amp;rsquo;s possible to use JQ to build JSON payloads as well as filter them.</description>
+      <description>It&amp;rsquo;s possible to use JQ to build JSON payloads as well as filter them.
+</description>
     </item>
     
     <item>
@@ -45,7 +48,8 @@
       <pubDate>Thu, 17 Jun 2021 11:15:08 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-jqs-slurp-option/</guid>
-      <description>Problem: you want to find the unique values of a key in some JSON Lines input using jq.</description>
+      <description>Problem: you want to find the unique values of a key in some JSON Lines input using jq.
+</description>
     </item>
     
     <item>
@@ -54,7 +58,8 @@
       <pubDate>Wed, 14 Apr 2021 12:09:31 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-shuf-to-take-random-samples-of-lines/</guid>
-      <description>For example, I wanted to share a random sample of accounts affected by some issue based on a Loggly event export.</description>
+      <description>For example, I wanted to share a random sample of accounts affected by some issue based on a Loggly event export. This can be done with:
+</description>
     </item>
     
     <item>
@@ -63,7 +68,8 @@
       <pubDate>Tue, 25 Aug 2020 22:18:32 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/aws-availability-zones-have-counterintuitive-ids/</guid>
-      <description>Today, the AWS Service Health Dashboard referred to an Availability Zone in a way I wasn&amp;rsquo;t familiar with:</description>
+      <description>Today, the AWS Service Health Dashboard referred to an Availability Zone in a way I wasn&amp;rsquo;t familiar with:
+</description>
     </item>
     
 

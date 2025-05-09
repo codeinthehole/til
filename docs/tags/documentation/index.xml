@@ -19,7 +19,8 @@
       
       <guid>https://til.codeinthehole.com/posts/what-the-sections-of-the-unix-manual-are/</guid>
       <description>From man man:
-MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 System Calls 3 C Library Functions 4 Devices and Special Files 5 File Formats and Conventions 6 Games et.</description>
+MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 System Calls 3 C Library Functions 4 Devices and Special Files 5 File Formats and Conventions 6 Games et. Al. 7 Miscellanea 8 System Administration tools and Deamons You can see the sections that have pages for a given query with man -f or whatis. E.g.
+</description>
     </item>
     
 

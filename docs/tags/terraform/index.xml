@@ -18,7 +18,8 @@
       <pubDate>Wed, 28 Apr 2021 17:09:21 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/sensitive-terraform-cloud-variables-are-included-in-sentinel-mocks/</guid>
-      <description>Hashicorp&amp;rsquo;s Sentinel framework allows you to write tests using a mock Terraform plan file.</description>
+      <description>Hashicorp&amp;rsquo;s Sentinel framework allows you to write tests using a mock Terraform plan file. A tarball of mock files can be downloaded from the run detail page on Terraform Cloud:
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Mon, 28 Sep 2020 16:02:44 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/aws-asgs-have-an-instance-refresh-feature/</guid>
-      <description>Which lets you replace all the instances in an auto-scaling group, possibly with a new AMI.</description>
+      <description>Which lets you replace all the instances in an auto-scaling group, possibly with a new AMI. See the announcement from the AWS Compute Blog.
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Tue, 15 Sep 2020 11:49:53 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-conditionally-include-items-in-a-terraform-list/</guid>
-      <description>It&amp;rsquo;s not obvious how to build a Terraform list where an item is only included if some condition is met.</description>
+      <description>It&amp;rsquo;s not obvious how to build a Terraform list where an item is only included if some condition is met. One solution is to use flatten along with a conditional expression.
+</description>
     </item>
     
     <item>
@@ -45,7 +48,8 @@
       <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/renaming-a-terraform-module-leads-to-resource-recreation/</guid>
-      <description>As the state file uses the module name in identifiers and so a module rename causes Terraform to think all existing resources need to be destroyed and recreated.</description>
+      <description>As the state file uses the module name in identifiers and so a module rename causes Terraform to think all existing resources need to be destroyed and recreated.
+</description>
     </item>
     
 

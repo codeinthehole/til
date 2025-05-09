@@ -6,7 +6,8 @@
 
         <meta name="description" content="
     Consider this contrived test:
-from unittest import mock import pytest def get_config(): &quot;&quot;&quot;Return a config object with a &#39;salutation&#39; attribute.
+from unittest import mock import pytest def get_config(): &#34;&#34;&#34;Return a config object with a &#39;salutation&#39; attribute.&#34;&#34;&#34; pass def say_hello(name): &#34;&#34;&#34;Return a greeting.&#34;&#34;&#34; return get_config().salutation &#43; &#34; &#34; &#43; name @mock.patch( __name__ &#43; &#34;.get_config&#34;, new=mock.Mock(return_value=mock.Mock(salutation=&#34;Hello&#34;)) ) @pytest.mark.parametrize(&#34;name&#34;, (&#34;Alan&#34;, &#34;Barry&#34;, &#34;Calum&#34;)) def test_say_hello(name): assert say_hello(name) == f&#34;Hello {name}&#34; We are testing the say_hello function three times with different arguments and use mock.patch to stub the response of the get_config function, passing in the replacement version at compile/collection time using the new parameter.
+
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +23,27 @@ from unittest import mock import pytest def get_config(): &quot;&quot;&quot;Retu
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-the-new-argument-to-mockpatch-is-shared-between-parameterized-tests/" />
 <meta property="og:title" content="TIL How the &#39;new&#39; argument to &#39;mock.patch&#39; is shared between parameterized tests — David Winterbottom" />
 <meta property="og:description" content="Consider this contrived test:
-from unittest import mock import pytest def get_config(): &#34;&#34;&#34;Return a config object with a &#39;salutation&#39; attribute. — can be read in 2 minutes" />
+from unittest import mock
+import pytest
+
+def get_config():
+    &#34;&#34;&#34;Return a config object with a &#39;salutation&#39; attribute.&#34;&#34;&#34;
+    pass
+
+def say_hello(name):
+    &#34;&#34;&#34;Return a greeting.&#34;&#34;&#34;
+    return get_config().salutation &#43; &#34; &#34; &#43; name
+
+@mock.patch(
+    __name__ &#43; &#34;.get_config&#34;,
+    new=mock.Mock(return_value=mock.Mock(salutation=&#34;Hello&#34;))
+)
+@pytest.mark.parametrize(&#34;name&#34;, (&#34;Alan&#34;, &#34;Barry&#34;, &#34;Calum&#34;))
+def test_say_hello(name):
+    assert say_hello(name) == f&#34;Hello {name}&#34;
+We are testing the say_hello function three times with different arguments and
+use mock.patch to stub the response of the get_config function, passing in
+the replacement version at compile/collection time using the new parameter. — can be read in 2 minutes" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />

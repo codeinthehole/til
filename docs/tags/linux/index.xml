@@ -18,7 +18,8 @@
       <pubDate>Fri, 14 May 2021 14:28:19 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-ubuntus-alert-bash-alias/</guid>
-      <description>Ubuntu&amp;rsquo;s default ~/.bashrc includes an alert alias for triggering a desktop notification when a long-running processes has completed:</description>
+      <description>Ubuntu&amp;rsquo;s default ~/.bashrc includes an alert alias for triggering a desktop notification when a long-running processes has completed:
+</description>
     </item>
     
     <item>
@@ -28,7 +29,8 @@
       
       <guid>https://til.codeinthehole.com/posts/systemd-sends-sigkill-signals-after-waiting-for-timestopsec-seconds/</guid>
       <description>From man systemd.kill:
-Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=).</description>
+Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=). Optionally, this is immediately followed by a SIGHUP (if enabled with SendSIGHUP=). If then, after a delay (configured via the TimeoutStopSec= option), processes still remain, the termination request is repeated with the SIGKILL signal (unless this is disabled via the SendSIGKILL= option).
+</description>
     </item>
     
     <item>
@@ -37,7 +39,8 @@ Processes will first be terminated via SIGTERM (unless the signal to send is cha
       <pubDate>Tue, 09 Mar 2021 13:54:04 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/systemd-timers-can-be-stopped/</guid>
-      <description>Timers are systemd unit files that control services. I didn&amp;rsquo;t realise until today that, when disabling a timer, it also needs to be stopped too.</description>
+      <description>Timers are systemd unit files that control services. I didn&amp;rsquo;t realise until today that, when disabling a timer, it also needs to be stopped too. This can be done with the --now option:
+</description>
     </item>
     
 

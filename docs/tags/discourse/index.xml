@@ -19,7 +19,8 @@
       
       <guid>https://til.codeinthehole.com/posts/how-to-list-the-mounts-of-a-running-docker-container/</guid>
       <description>Use docker inspect like so:
-docker inspect -f &amp;#34;{{ .</description>
+docker inspect -f &amp;#34;{{ .Mounts }}&amp;#34; $CONTAINER_ID I used this to determine where a Discourse Docker container was persisting its logs:
+</description>
     </item>
     
 

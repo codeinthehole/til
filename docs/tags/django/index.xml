@@ -18,7 +18,8 @@
       <pubDate>Thu, 01 Dec 2022 11:46:25 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/djangos-json-encoder-rounds-datetimes-down-to-the-nearest-millisecond/</guid>
-      <description>Django provides a custom DjangoJSONEncoder class that can encode datetime.</description>
+      <description>Django provides a custom DjangoJSONEncoder class that can encode datetime.date, datetime.datetime, decimal.Decimal and uuid.UUID types.
+</description>
     </item>
     
     <item>
@@ -28,7 +29,8 @@
       
       <guid>https://til.codeinthehole.com/posts/how-djangos-overridesettings-decorator-causes-flakey-tests/</guid>
       <description>This form can cause flakey tests:
-from django import forms from django.</description>
+from django import forms from django.conf import settings class IceCreamForm(forms.Form): flavour = forms.ChoiceField(choices=settings.FLAVOURS) The critical detail is that the ChoiceField choices are computed at import-time using settings.
+</description>
     </item>
     
     <item>
@@ -37,7 +39,8 @@ from django import forms from django.</description>
       <pubDate>Mon, 27 Jun 2022 18:55:54 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-override-django-settings-for-every-method-in-a-test-class/</guid>
-      <description>Django&amp;rsquo;s override_settings decorator only works on functions and methods in subclasses of unittest.</description>
+      <description>Django&amp;rsquo;s override_settings decorator only works on functions and methods in subclasses of unittest.TestCase.
+</description>
     </item>
     
     <item>
@@ -46,7 +49,8 @@ from django import forms from django.</description>
       <pubDate>Wed, 01 Jun 2022 16:29:28 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-pythons-datetime-package-doesnt-support-ordinal-suffixes-for-the-day-of-the-month/</guid>
-      <description>Django&amp;rsquo;s date template filter (and underlying django.utils.dateformat module) support using S as a format character for the English ordinal suffix for the day of the month.</description>
+      <description>Django&amp;rsquo;s date template filter (and underlying django.utils.dateformat module) support using S as a format character for the English ordinal suffix for the day of the month.
+</description>
     </item>
     
     <item>
@@ -55,7 +59,8 @@ from django import forms from django.</description>
       <pubDate>Wed, 02 Feb 2022 11:55:29 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-cant-use-djangos-generic-foreign-key-field-with-objects-stored-in-a-separate-database/</guid>
-      <description>Django supports using separate databases for specified models or apps.</description>
+      <description>Django supports using separate databases for specified models or apps. This is done using custom database routers.
+</description>
     </item>
     
     <item>
@@ -64,7 +69,8 @@ from django import forms from django.</description>
       <pubDate>Tue, 14 Dec 2021 15:55:28 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-djangos-setup-method-for-generic-view-classes/</guid>
-      <description>Django 2.2 (released in April 2019) introduced a setup method to the django.</description>
+      <description>Django 2.2 (released in April 2019) introduced a setup method to the django.views.View class, which is available to all generic views.
+</description>
     </item>
     
     <item>
@@ -73,7 +79,8 @@ from django import forms from django.</description>
       <pubDate>Mon, 20 Sep 2021 15:04:15 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/django-settings-prefixed-with-an-underscore-are-private/</guid>
-      <description>As in: you can&amp;rsquo;t access them from outside the settings module.</description>
+      <description>As in: you can&amp;rsquo;t access them from outside the settings module.
+</description>
     </item>
     
     <item>
@@ -82,7 +89,8 @@ from django import forms from django.</description>
       <pubDate>Fri, 23 Jul 2021 15:03:26 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/django-doesnt-flush-caches-between-tests/</guid>
-      <description>This is slightly counter-intuitive as it&amp;rsquo;s different to how databases are treated by the test runner.</description>
+      <description>This is slightly counter-intuitive as it&amp;rsquo;s different to how databases are treated by the test runner. It is noted in the docs and there&amp;rsquo;s an open ticket on the matter.
+</description>
     </item>
     
     <item>
@@ -91,7 +99,8 @@ from django import forms from django.</description>
       <pubDate>Thu, 22 Jul 2021 17:31:28 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-djangos-management-commands-need-to-be-type-hinted/</guid>
-      <description>For Django management commands with arguments, you might not expect Mypy (configured with the django-stubs plugin) to complain about this signature:</description>
+      <description>For Django management commands with arguments, you might not expect Mypy (configured with the django-stubs plugin) to complain about this signature:
+</description>
     </item>
     
 

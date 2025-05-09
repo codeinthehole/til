@@ -18,7 +18,8 @@
       <pubDate>Thu, 10 Feb 2022 11:01:19 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-search-for-loggly-mapping-conflicts/</guid>
-      <description>Loggly stores your JSON event data in a single ElasticSearch schema.</description>
+      <description>Loggly stores your JSON event data in a single ElasticSearch schema. As such, you need to be careful about using consistent types within your JSON payloads.
+</description>
     </item>
     
 

@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    To create a table of contents for the current page in reStructuredText, use the following:
+    To create a table of contents for the current page in reStructuredText, use the
+following:
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -20,7 +21,8 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-create-an-rst-table-of-contents-for-the-sections-of-the-current-page/" />
 <meta property="og:title" content="TIL How to create an RST table of contents for the current page only — David Winterbottom" />
-<meta property="og:description" content="To create a table of contents for the current page in reStructuredText, use the following: — can be read in 1 minute" />
+<meta property="og:description" content="To create a table of contents for the current page in reStructuredText, use the
+following: — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
@@ -64,9 +66,9 @@ following:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rst" data-lang="rst"><span style="display:flex;"><span>.. <span style="color:#f92672">contents</span>::<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">:local:</span>
 </span></span></code></pre></div><p>Or, in <a href="https://myst-parser.readthedocs.io/en/latest/index.html">MyST</a>-flavour Markdown:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>```{contents}
-</span></span><span style="display:flex;"><span>    :local:
-</span></span><span style="display:flex;"><span>```
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>``<span style="color:#e6db74">`{contents}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :local:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">`</span>``
 </span></span></code></pre></div><p>This will include links to the headings of the page only. See the <a href="https://docutils.sourceforge.io/docs/ref/rst/directives.html#table-of-contents"><code>docutils</code>
 docs</a> for other available options.</p>
 <p>Note, this doesn&rsquo;t interfere with Sphinx&rsquo;s <a href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents"><code>{toctree}</code> directives</a>

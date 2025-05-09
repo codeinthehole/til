@@ -6,7 +6,8 @@
 
         <meta name="description" content="
     From man ssh_config:
-Host Restricts the following declarations (up to the next Host or Match keyword) to be only for those hosts that match one of the patterns given after the keyword.
+Host Restricts the following declarations (up to the next Host or Match keyword) to be only for those hosts that match one of the patterns given after the keyword. If more than one pattern is provided, they should be separated by whitespace.
+
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +23,11 @@ Host Restricts the following declarations (up to the next Host or Match keyword)
 <meta property="og:url" content="https://til.codeinthehole.com/posts/ssh-config-supports-multiple-host-patterns-in-one-block/" />
 <meta property="og:title" content="TIL SSH config supports multiple host patterns in one block — David Winterbottom" />
 <meta property="og:description" content="From man ssh_config:
-Host Restricts the following declarations (up to the next Host or Match keyword) to be only for those hosts that match one of the patterns given after the keyword. — can be read in 1 minute" />
+
+Host Restricts the following declarations (up to the next Host or Match
+keyword) to be only for those hosts that match one of the patterns given after
+the keyword. If more than one pattern is provided, they should be separated by
+whitespace. — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
@@ -66,8 +71,7 @@ Host Restricts the following declarations (up to the next Host or Match keyword)
 <p>Host Restricts the following declarations (up to the next Host or Match
 keyword) to be only for those hosts that match one of the patterns given after
 the keyword. If more than one pattern is provided, they should be separated by
-whitespace.</p>
-</blockquote>
+whitespace.</p></blockquote>
 <p>and so you can do this:</p>
 <pre tabindex="0"><code class="language-ssh" data-lang="ssh">Host 10.0.20.* 10.0.28.* 10.0.29.* 10.0.30.*
     User ubuntu

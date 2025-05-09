@@ -18,7 +18,8 @@
       <pubDate>Fri, 08 Jan 2021 12:32:30 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-easily-disable-a-circleci-workflow/</guid>
-      <description>Sometimes it&amp;rsquo;s useful to only run a subset of CircleCI jobs after each commit to a pull request branch.</description>
+      <description>Sometimes it&amp;rsquo;s useful to only run a subset of CircleCI jobs after each commit to a pull request branch.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Mon, 07 Dec 2020 11:34:05 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-spellcheck-markdown-repos-on-circleci/</guid>
-      <description>The tmaier/markdown-spellcheck Docker image wraps node-markdown-spellcheck and can be used locally and on CircleCI to spell-check markdown files.</description>
+      <description>The tmaier/markdown-spellcheck Docker image wraps node-markdown-spellcheck and can be used locally and on CircleCI to spell-check markdown files.
+</description>
     </item>
     
 

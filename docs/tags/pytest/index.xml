@@ -29,7 +29,8 @@
       
       <guid>https://til.codeinthehole.com/posts/how-the-new-argument-to-mockpatch-is-shared-between-parameterized-tests/</guid>
       <description>Consider this contrived test:
-from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp;#34;Return a config object with a &amp;#39;salutation&amp;#39; attribute.</description>
+from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp;#34;Return a config object with a &amp;#39;salutation&amp;#39; attribute.&amp;#34;&amp;#34;&amp;#34; pass def say_hello(name): &amp;#34;&amp;#34;&amp;#34;Return a greeting.&amp;#34;&amp;#34;&amp;#34; return get_config().salutation + &amp;#34; &amp;#34; + name @mock.patch( __name__ + &amp;#34;.get_config&amp;#34;, new=mock.Mock(return_value=mock.Mock(salutation=&amp;#34;Hello&amp;#34;)) ) @pytest.mark.parametrize(&amp;#34;name&amp;#34;, (&amp;#34;Alan&amp;#34;, &amp;#34;Barry&amp;#34;, &amp;#34;Calum&amp;#34;)) def test_say_hello(name): assert say_hello(name) == f&amp;#34;Hello {name}&amp;#34; We are testing the say_hello function three times with different arguments and use mock.patch to stub the response of the get_config function, passing in the replacement version at compile/collection time using the new parameter.
+</description>
     </item>
     
     <item>
@@ -38,7 +39,8 @@ from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp
       <pubDate>Wed, 24 Aug 2022 14:24:35 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-indirect-parametrization-with-pytest/</guid>
-      <description>Pytest&amp;rsquo;s pytest.mark.parametrize function supports an indirect argument that allows a parametrized test to have its parameter passed to a fixture function, rather than directly into the test function.</description>
+      <description>Pytest&amp;rsquo;s pytest.mark.parametrize function supports an indirect argument that allows a parametrized test to have its parameter passed to a fixture function, rather than directly into the test function.
+</description>
     </item>
     
     <item>
@@ -47,7 +49,8 @@ from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp
       <pubDate>Tue, 28 Jun 2022 12:25:07 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-xmllint-to-extract-the-failing-test-filenames-from-a-junitxml-file/</guid>
-      <description>Pytest will generate a JUnit-XML result report when run with the --junitxml option.</description>
+      <description>Pytest will generate a JUnit-XML result report when run with the --junitxml option.
+</description>
     </item>
     
     <item>
@@ -56,7 +59,8 @@ from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp
       <pubDate>Mon, 27 Jun 2022 18:55:54 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-override-django-settings-for-every-method-in-a-test-class/</guid>
-      <description>Django&amp;rsquo;s override_settings decorator only works on functions and methods in subclasses of unittest.</description>
+      <description>Django&amp;rsquo;s override_settings decorator only works on functions and methods in subclasses of unittest.TestCase.
+</description>
     </item>
     
     <item>
@@ -65,7 +69,8 @@ from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp
       <pubDate>Thu, 23 Jun 2022 10:36:09 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-profile-pytest-tests/</guid>
-      <description>If you install the pytest-monitor package, then PyTest invocations will collect test profiling information in a SQLite database (called .</description>
+      <description>If you install the pytest-monitor package, then PyTest invocations will collect test profiling information in a SQLite database (called .pymon by default).
+</description>
     </item>
     
     <item>
@@ -74,7 +79,8 @@ from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp
       <pubDate>Fri, 16 Jul 2021 15:17:08 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-pytests-keyword-expression-filtering-supports-python-conditionals/</guid>
-      <description>When using Pytest&amp;rsquo;s -k filtering, you can use Python expressions to combine separate search terms.</description>
+      <description>When using Pytest&amp;rsquo;s -k filtering, you can use Python expressions to combine separate search terms. For example:
+</description>
     </item>
     
     <item>
@@ -83,7 +89,8 @@ from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp
       <pubDate>Tue, 16 Mar 2021 17:36:21 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-have-classscoped-autouse-pytest-fixtures/</guid>
-      <description>If you decorate a class instance method as an autouse=True Pytest fixture, then it will be automatically applied for all test methods on that class.</description>
+      <description>If you decorate a class instance method as an autouse=True Pytest fixture, then it will be automatically applied for all test methods on that class. This is a useful pattern to remember.
+</description>
     </item>
     
     <item>
@@ -92,7 +99,8 @@ from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp
       <pubDate>Tue, 02 Mar 2021 12:30:06 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/pytest-doesnt-play-nicely-with-ipdb/</guid>
-      <description>To ensure breakpoint() triggers ipdb as my default debugger, I used to set:</description>
+      <description>To ensure breakpoint() triggers ipdb as my default debugger, I used to set:
+</description>
     </item>
     
     <item>
@@ -102,7 +110,8 @@ from unittest import mock import pytest def get_config(): &amp;#34;&amp;#34;&amp
       
       <guid>https://til.codeinthehole.com/posts/you-can-stack-pytests-parametrize-decorators/</guid>
       <description>As in:
-import pytest @pytest.mark.parametrize(&amp;#34;x&amp;#34;, [1,2,3]) @pytest.mark.parametrize(&amp;#34;y&amp;#34;, [4,5,6]) def test_cartesian_product(x, y): pass which will run the test for all combinations of the two input lists:</description>
+import pytest @pytest.mark.parametrize(&amp;#34;x&amp;#34;, [1,2,3]) @pytest.mark.parametrize(&amp;#34;y&amp;#34;, [4,5,6]) def test_cartesian_product(x, y): pass which will run the test for all combinations of the two input lists:
+</description>
     </item>
     
     <item>
@@ -112,7 +121,8 @@ import pytest @pytest.mark.parametrize(&amp;#34;x&amp;#34;, [1,2,3]) @pytest.mar
       
       <guid>https://til.codeinthehole.com/posts/you-can-label-parameterized-fixtures-with-pytest/</guid>
       <description>For example, running this parameterized test:
-@pytest.mark.parametrize( &amp;#34;date&amp;#34;, ( datetime.</description>
+@pytest.mark.parametrize( &amp;#34;date&amp;#34;, ( datetime.date(2012, 12, 21), # Predicted by Mayans datetime.date(1988, 3, 25), # Predicted by True Way ), ) def test_did_world_did_not_end_on(date): pass in verbose mode gives output:
+</description>
     </item>
     
 

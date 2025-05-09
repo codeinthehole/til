@@ -19,7 +19,8 @@
       
       <guid>https://til.codeinthehole.com/posts/you-can-run-ruff-on-jupyter-notebooks/</guid>
       <description>If you ensure your pyproject.toml contains::
-[tool.ruff] extend-include = [&amp;#34;*.</description>
+[tool.ruff] extend-include = [&amp;#34;*.ipynb&amp;#34;] then ruff can be used to lint Jupyter notebooks (source: the Ruff docs).
+</description>
     </item>
     
 

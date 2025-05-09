@@ -28,7 +28,8 @@
       <pubDate>Fri, 10 May 2024 15:47:17 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-bashs-compgen-builtin/</guid>
-      <description>Bash includes a built-in compgen command that can list all the commands available in the current shell:</description>
+      <description>Bash includes a built-in compgen command that can list all the commands available in the current shell:
+</description>
     </item>
     
     <item>
@@ -38,7 +39,8 @@
       
       <guid>https://til.codeinthehole.com/posts/about-bashs-pipestatus-variable/</guid>
       <description>Problem: you have a pipeline like so:
-$cmd1 | $cmd2 | $cmd3 and you want to detect if $cmd1 exits with a exit code greater than 1.</description>
+$cmd1 | $cmd2 | $cmd3 and you want to detect if $cmd1 exits with a exit code greater than 1.
+</description>
     </item>
     
     <item>
@@ -47,7 +49,8 @@ $cmd1 | $cmd2 | $cmd3 and you want to detect if $cmd1 exits with a exit code gre
       <pubDate>Mon, 19 Dec 2022 13:38:43 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-make-homebrewinstalled-bash-your-default-shell/</guid>
-      <description>I realised today that despite having installed a modern version of Bash (via brew install bash), I was still running Bash v3.</description>
+      <description>I realised today that despite having installed a modern version of Bash (via brew install bash), I was still running Bash v3.2.57&amp;mdash;the system version of MacOS&amp;mdash;as my default login shell.
+</description>
     </item>
     
     <item>
@@ -56,7 +59,8 @@ $cmd1 | $cmd2 | $cmd3 and you want to detect if $cmd1 exits with a exit code gre
       <pubDate>Thu, 29 Sep 2022 19:21:45 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/which-behaves-diffferently-in-zsh-compared-to-bash/</guid>
-      <description>which is a command used to identify the location of executables; however it behaves differently on Zsh compared to Bash.</description>
+      <description>which is a command used to identify the location of executables; however it behaves differently on Zsh compared to Bash.
+</description>
     </item>
     
     <item>
@@ -65,7 +69,8 @@ $cmd1 | $cmd2 | $cmd3 and you want to detect if $cmd1 exits with a exit code gre
       <pubDate>Tue, 29 Mar 2022 17:27:59 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-join-an-array-in-bash/</guid>
-      <description>Say you want to build an array of values then print them out as a tab-separated line:</description>
+      <description>Say you want to build an array of values then print them out as a tab-separated line:
+</description>
     </item>
     
     <item>
@@ -74,7 +79,8 @@ $cmd1 | $cmd2 | $cmd3 and you want to detect if $cmd1 exits with a exit code gre
       <pubDate>Fri, 26 Nov 2021 15:19:29 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-bashs-seconds-shell-variable/</guid>
-      <description>Bash provides a $SECONDS environment variable which, if used in a script, returns the number of seconds since the script was started.</description>
+      <description>Bash provides a $SECONDS environment variable which, if used in a script, returns the number of seconds since the script was started.
+</description>
     </item>
     
     <item>
@@ -83,7 +89,8 @@ $cmd1 | $cmd2 | $cmd3 and you want to detect if $cmd1 exits with a exit code gre
       <pubDate>Fri, 14 May 2021 14:28:19 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-ubuntus-alert-bash-alias/</guid>
-      <description>Ubuntu&amp;rsquo;s default ~/.bashrc includes an alert alias for triggering a desktop notification when a long-running processes has completed:</description>
+      <description>Ubuntu&amp;rsquo;s default ~/.bashrc includes an alert alias for triggering a desktop notification when a long-running processes has completed:
+</description>
     </item>
     
     <item>
@@ -93,7 +100,8 @@ $cmd1 | $cmd2 | $cmd3 and you want to detect if $cmd1 exits with a exit code gre
       
       <guid>https://til.codeinthehole.com/posts/about-readonly-bash-variables/</guid>
       <description>Doing this:
-readonly myvar=1 means that $myvar can&amp;rsquo;t have its value changed within the global scope.</description>
+readonly myvar=1 means that $myvar can&amp;rsquo;t have its value changed within the global scope.
+</description>
     </item>
     
     <item>
@@ -102,7 +110,8 @@ readonly myvar=1 means that $myvar can&amp;rsquo;t have its value changed within
       <pubDate>Mon, 12 Oct 2020 10:30:00 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-shellcheck/</guid>
-      <description>Which is a static analysis tool for shell scripts.</description>
+      <description>Which is a static analysis tool for shell scripts. You can try it out by pasting a script into a form and it is run automatically by Vim&amp;rsquo;s Ale plugin.
+</description>
     </item>
     
     <item>
@@ -111,7 +120,8 @@ readonly myvar=1 means that $myvar can&amp;rsquo;t have its value changed within
       <pubDate>Wed, 07 Oct 2020 11:15:11 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-bashs-debug-signal/</guid>
-      <description>Bash has a DEBUG signal that you can register a handler for using trap.</description>
+      <description>Bash has a DEBUG signal that you can register a handler for using trap.
+</description>
     </item>
     
 

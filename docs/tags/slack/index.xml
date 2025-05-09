@@ -18,7 +18,8 @@
       <pubDate>Mon, 05 Jun 2023 13:42:03 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-search-slack-by-custom-channel-section/</guid>
-      <description>Slack provides an in: search modifier to narrow the scope of results to a given channel.</description>
+      <description>Slack provides an in: search modifier to narrow the scope of results to a given channel. Further, multiple in: modifiers will filter results to a set of channels.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Tue, 04 Oct 2022 20:46:26 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-search-slack-by-emoji-reactions/</guid>
-      <description>Slack&amp;rsquo;s lets you search for messages that have had a particular emoji reaction using a has: filter.</description>
+      <description>Slack&amp;rsquo;s lets you search for messages that have had a particular emoji reaction using a has: filter. Further you can search for messages that you&amp;rsquo;ve reacted to with the hasmy: filter.
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Fri, 20 Nov 2020 14:32:18 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-convert-a-slack-group-direct-message-chat-into-a-private-channel/</guid>
-      <description>See https://slack.com/intl/en-gb/help/articles/217555437-Move-group-direct-messages-to-a-private-channel</description>
+      <description>See https://slack.com/intl/en-gb/help/articles/217555437-Move-group-direct-messages-to-a-private-channel
+</description>
     </item>
     
     <item>
@@ -45,7 +48,8 @@
       <pubDate>Sat, 12 Sep 2020 21:22:44 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-change-the-font-in-slack-with-slackfont-font/</guid>
-      <description>For example: /slackfont Comic Sans MS or even /slackfont Wingdings.</description>
+      <description>For example: /slackfont Comic Sans MS or even /slackfont Wingdings.
+</description>
     </item>
     
 

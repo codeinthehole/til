@@ -6,7 +6,8 @@
 
         <meta name="description" content="
     This form can cause flakey tests:
-from django import forms from django.
+from django import forms from django.conf import settings class IceCreamForm(forms.Form): flavour = forms.ChoiceField(choices=settings.FLAVOURS) The critical detail is that the ChoiceField choices are computed at import-time using settings.
+
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +23,13 @@ from django import forms from django.
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-djangos-overridesettings-decorator-causes-flakey-tests/" />
 <meta property="og:title" content="TIL How Django&#39;s &#39;override_settings&#39; decorator causes flakey tests — David Winterbottom" />
 <meta property="og:description" content="This form can cause flakey tests:
-from django import forms from django. — can be read in 2 minutes" />
+from django import forms
+from django.conf import settings
+
+class IceCreamForm(forms.Form):
+     flavour = forms.ChoiceField(choices=settings.FLAVOURS)
+The critical detail is that the ChoiceField choices are computed at
+import-time using settings. — can be read in 2 minutes" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />

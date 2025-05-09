@@ -18,7 +18,8 @@
       <pubDate>Fri, 06 Jan 2023 09:21:18 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-automatically-disable-github-copilot-in-vim-when-editing-large-files/</guid>
-      <description>Since installing vim-copilot, editing large files had become noticeably slow.</description>
+      <description>Since installing vim-copilot, editing large files had become noticeably slow. Profiling1 a simple insert-mode operation confirmed my suspicions:
+</description>
     </item>
     
 

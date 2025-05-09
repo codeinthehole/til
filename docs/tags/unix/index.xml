@@ -28,7 +28,8 @@
       <pubDate>Thu, 29 Sep 2022 19:21:45 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/which-behaves-diffferently-in-zsh-compared-to-bash/</guid>
-      <description>which is a command used to identify the location of executables; however it behaves differently on Zsh compared to Bash.</description>
+      <description>which is a command used to identify the location of executables; however it behaves differently on Zsh compared to Bash.
+</description>
     </item>
     
     <item>
@@ -37,7 +38,8 @@
       <pubDate>Wed, 14 Apr 2021 12:09:31 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-shuf-to-take-random-samples-of-lines/</guid>
-      <description>For example, I wanted to share a random sample of accounts affected by some issue based on a Loggly event export.</description>
+      <description>For example, I wanted to share a random sample of accounts affected by some issue based on a Loggly event export. This can be done with:
+</description>
     </item>
     
     <item>
@@ -46,7 +48,8 @@
       <pubDate>Mon, 22 Mar 2021 16:14:23 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-xargs-t/</guid>
-      <description>Which echos the command to be executed to standard error immediately before it is executed.</description>
+      <description>Which echos the command to be executed to standard error immediately before it is executed.
+</description>
     </item>
     
     <item>
@@ -56,7 +59,8 @@
       
       <guid>https://til.codeinthehole.com/posts/what-the-sections-of-the-unix-manual-are/</guid>
       <description>From man man:
-MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 System Calls 3 C Library Functions 4 Devices and Special Files 5 File Formats and Conventions 6 Games et.</description>
+MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 System Calls 3 C Library Functions 4 Devices and Special Files 5 File Formats and Conventions 6 Games et. Al. 7 Miscellanea 8 System Administration tools and Deamons You can see the sections that have pages for a given query with man -f or whatis. E.g.
+</description>
     </item>
     
     <item>
@@ -66,7 +70,7 @@ MANUAL SECTIONS The standard sections of the manual include: 1 User Commands 2 S
       
       <guid>https://til.codeinthehole.com/posts/the-order-of-permissions-matter-with-chmod/</guid>
       <description>As in these two commands behave differently:
-chmod -R g+X,g-wx .</description>
+chmod -R g+X,g-wx . # DOESN&amp;#39;T set group executable bit on folders chmod -R g-wx,g+X . # DOES set group executable bit on folders </description>
     </item>
     
 

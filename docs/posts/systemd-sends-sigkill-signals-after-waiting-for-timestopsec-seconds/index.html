@@ -6,7 +6,8 @@
 
         <meta name="description" content="
     From man systemd.kill:
-Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=).
+Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=). Optionally, this is immediately followed by a SIGHUP (if enabled with SendSIGHUP=). If then, after a delay (configured via the TimeoutStopSec= option), processes still remain, the termination request is repeated with the SIGKILL signal (unless this is disabled via the SendSIGKILL= option).
+
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -21,8 +22,15 @@ Processes will first be terminated via SIGTERM (unless the signal to send is cha
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/systemd-sends-sigkill-signals-after-waiting-for-timestopsec-seconds/" />
 <meta property="og:title" content="TIL systemd sends SIGKILL signals after waiting for &#39;TimeoutStopSec&#39; seconds — David Winterbottom" />
-<meta property="og:description" content="From man systemd.kill:
-Processes will first be terminated via SIGTERM (unless the signal to send is changed via KillSignal=). — can be read in 1 minute" />
+<meta property="og:description" content="From
+man systemd.kill:
+
+Processes will first be terminated via SIGTERM (unless the signal to send is
+changed via KillSignal=). Optionally, this is immediately followed by a SIGHUP
+(if enabled with SendSIGHUP=). If then, after a delay (configured via the
+TimeoutStopSec= option), processes still remain, the termination request is
+repeated with the SIGKILL signal (unless this is disabled via the SendSIGKILL=
+option). — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
@@ -69,8 +77,7 @@ changed via KillSignal=). Optionally, this is immediately followed by a SIGHUP
 (if enabled with SendSIGHUP=). If then, after a delay (configured via the
 TimeoutStopSec= option), processes still remain, the termination request is
 repeated with the SIGKILL signal (unless this is disabled via the SendSIGKILL=
-option).</p>
-</blockquote>
+option).</p></blockquote>
 <p>The default for <code>TimeoutStopSec</code> is 90 seconds. You can check how a particular
 unit is configured with:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ systemctl $UNIT_NAME check | grep Timeout

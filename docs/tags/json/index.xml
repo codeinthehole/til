@@ -18,7 +18,8 @@
       <pubDate>Mon, 11 Sep 2023 22:28:13 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-get-gunicorn-to-log-as-json/</guid>
-      <description>It&amp;rsquo;s oddly hard to get popular Python HTTP servers to log as JSON.</description>
+      <description>It&amp;rsquo;s oddly hard to get popular Python HTTP servers to log as JSON. A few weeks ago, I spent a few hours convincing uWSGI to do so and I&amp;rsquo;ve been through the same process today but with Gunicorn.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Thu, 01 Dec 2022 11:46:25 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/djangos-json-encoder-rounds-datetimes-down-to-the-nearest-millisecond/</guid>
-      <description>Django provides a custom DjangoJSONEncoder class that can encode datetime.</description>
+      <description>Django provides a custom DjangoJSONEncoder class that can encode datetime.date, datetime.datetime, decimal.Decimal and uuid.UUID types.
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Fri, 26 Mar 2021 14:37:33 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/json-is-valid-yaml/</guid>
-      <description>YAML is a superset of JSON which means a YAML parser can parse JSON (but not necessarily the other way around).</description>
+      <description>YAML is a superset of JSON which means a YAML parser can parse JSON (but not necessarily the other way around).
+</description>
     </item>
     
 

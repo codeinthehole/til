@@ -6,7 +6,8 @@
 
         <meta name="description" content="
     To run the server, run:
-docker run &ndash;rm \ &ndash;volume=&quot;${PWD}:/srv/jekyll&quot; \ -p 4000:4000 \ -it jekyll/jekyll:3.
+docker run --rm \ --volume=&#34;${PWD}:/srv/jekyll&#34; \ -p 4000:4000 \ -it jekyll/jekyll:3.8 \ jekyll serve --incremental This will install your Gemfile.lock dependencies and run the local server on port 4000.
+
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +23,13 @@ docker run &ndash;rm \ &ndash;volume=&quot;${PWD}:/srv/jekyll&quot; \ -p 4000:40
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-run-jekyll-in-a-docker-container/" />
 <meta property="og:title" content="TIL How to run Jekyll in a Docker container — David Winterbottom" />
 <meta property="og:description" content="To run the server, run:
-docker run --rm \ --volume=&#34;${PWD}:/srv/jekyll&#34; \ -p 4000:4000 \ -it jekyll/jekyll:3. — can be read in 1 minute" />
+docker run --rm \
+    --volume=&#34;${PWD}:/srv/jekyll&#34; \
+    -p 4000:4000 \
+    -it jekyll/jekyll:3.8 \
+    jekyll serve --incremental
+This will install your Gemfile.lock dependencies and run the local server on
+port 4000. — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />

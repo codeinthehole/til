@@ -18,7 +18,8 @@
       <pubDate>Wed, 31 Jan 2024 12:07:20 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-bind-custom-keyboard-shortcuts-to-nested-macos-menu-options/</guid>
-      <description>MacOS allows you to override and bind new keyboard shortcuts for an app.</description>
+      <description>MacOS allows you to override and bind new keyboard shortcuts for an app.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Wed, 02 Sep 2020 11:34:04 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-configure-alfreds-bear-workflow-to-open-notes-in-the-main-window/</guid>
-      <description>This applies to the Bear workflow written in Go whose default behaviour (in v1.</description>
+      <description>This applies to the Bear workflow written in Go whose default behaviour (in v1.1.6) is to open notes in a new window rather than the main Bear application window.
+</description>
     </item>
     
 

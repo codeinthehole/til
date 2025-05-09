@@ -18,7 +18,8 @@
       <pubDate>Wed, 20 Jul 2022 15:20:35 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/email-log-search-in-google-workspace-has-some-strange-behaviour/</guid>
-      <description>Google Workspace admins can use the Email Log Search feature to inspect emails sent and received by Gmail.</description>
+      <description>Google Workspace admins can use the Email Log Search feature to inspect emails sent and received by Gmail. However beware that the email detail page isn&amp;rsquo;t consistent: it can change depending on which filters were used to find it.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Mon, 31 Jan 2022 17:23:09 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/google-groups-can-be-nested/</guid>
-      <description>You can do this from the &amp;ldquo;Add members&amp;rdquo; section of the Group detail page.</description>
+      <description>You can do this from the &amp;ldquo;Add members&amp;rdquo; section of the Group detail page. See the official docs.
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Wed, 02 Dec 2020 11:39:41 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/gsuites-groups-admin-role-can-read-any-group-email/</guid>
-      <description>If members of your Google org want to administer groups, it&amp;rsquo;s tempting to make them a &amp;ldquo;Groups Admin&amp;rdquo;.</description>
+      <description>If members of your Google org want to administer groups, it&amp;rsquo;s tempting to make them a &amp;ldquo;Groups Admin&amp;rdquo;.
+</description>
     </item>
     
     <item>
@@ -45,7 +48,8 @@
       <pubDate>Fri, 06 Nov 2020 11:22:02 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-hide-nighttime-hours-in-google-calendar/</guid>
-      <description>In the &amp;ldquo;Week&amp;rdquo; view of Google Calendar, it&amp;rsquo;s annoying that each day is listed from 00:00 onwards.</description>
+      <description>In the &amp;ldquo;Week&amp;rdquo; view of Google Calendar, it&amp;rsquo;s annoying that each day is listed from 00:00 onwards. Since I never have events that start before 8am, it&amp;rsquo;s creates a lot of dead space:
+</description>
     </item>
     
 

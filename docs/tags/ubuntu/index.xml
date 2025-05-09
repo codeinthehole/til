@@ -18,7 +18,8 @@
       <pubDate>Thu, 18 Aug 2022 15:00:40 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-retry-captures-stdout/</guid>
-      <description>Debian&amp;rsquo;s retry command allows you to repeatedly run a command until it succeeds.</description>
+      <description>Debian&amp;rsquo;s retry command allows you to repeatedly run a command until it succeeds. This is useful for running commands that intermittently fail.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Fri, 14 May 2021 14:28:19 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-ubuntus-alert-bash-alias/</guid>
-      <description>Ubuntu&amp;rsquo;s default ~/.bashrc includes an alert alias for triggering a desktop notification when a long-running processes has completed:</description>
+      <description>Ubuntu&amp;rsquo;s default ~/.bashrc includes an alert alias for triggering a desktop notification when a long-running processes has completed:
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-passwordless-users-in-ec2/</guid>
-      <description>The file that controls where the default ubuntu user on an Ubuntu EC2 instance is /etc/sudoers.</description>
+      <description>The file that controls where the default ubuntu user on an Ubuntu EC2 instance is /etc/sudoers.d/90-cloud-init-users which has contents:
+</description>
     </item>
     
 

@@ -6,7 +6,7 @@
 
         <meta name="description" content="
     As in these two commands behave differently:
-chmod -R g&#43;X,g-wx .
+chmod -R g&#43;X,g-wx . # DOESN&#39;T set group executable bit on folders chmod -R g-wx,g&#43;X . # DOES set group executable bit on folders 
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -22,7 +22,9 @@ chmod -R g&#43;X,g-wx .
 <meta property="og:url" content="https://til.codeinthehole.com/posts/the-order-of-permissions-matter-with-chmod/" />
 <meta property="og:title" content="TIL The order of permissions matters with &#39;chmod&#39; — David Winterbottom" />
 <meta property="og:description" content="As in these two commands behave differently:
-chmod -R g&#43;X,g-wx . — can be read in 1 minute" />
+chmod -R g&#43;X,g-wx .  # DOESN&#39;T set group executable bit on folders
+chmod -R g-wx,g&#43;X .  # DOES set group executable bit on folders
+ — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />

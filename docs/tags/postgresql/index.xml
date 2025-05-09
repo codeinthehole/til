@@ -18,7 +18,8 @@
       <pubDate>Wed, 01 Nov 2023 21:36:51 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-psqlrc-options-can-override-commandline-options/</guid>
-      <description>I was trying to work out why this psql command wasn&amp;rsquo;t printing results in tab-separated format:</description>
+      <description>I was trying to work out why this psql command wasn&amp;rsquo;t printing results in tab-separated format:
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Tue, 09 May 2023 16:52:32 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-set-perrole-statement-timeouts-in-postgres/</guid>
-      <description>Postgres has a statement_timeout setting that will abort statements that run longer than the specified number of milliseconds.</description>
+      <description>Postgres has a statement_timeout setting that will abort statements that run longer than the specified number of milliseconds.
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Tue, 18 Oct 2022 17:43:06 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-postgres-sequences-arent-restored-after-a-rollback/</guid>
-      <description>Verify by creating a table and inserting a single row</description>
+      <description>Verify by creating a table and inserting a single row
+</description>
     </item>
     
     <item>
@@ -45,7 +48,8 @@
       <pubDate>Fri, 05 Nov 2021 16:54:26 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-a-gotcha-with-psycopg2s-autocommit-handling/</guid>
-      <description>Some commands in Postgres can&amp;rsquo;t be run inside a transaction (e.</description>
+      <description>Some commands in Postgres can&amp;rsquo;t be run inside a transaction (e.g. running VACUUM FULL or creating indexes concurrently); they require autocommit mode to be enabled on the connection.
+</description>
     </item>
     
     <item>
@@ -54,7 +58,8 @@
       <pubDate>Wed, 28 Apr 2021 09:46:21 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/the-correct-sequence-of-sql-statements-for-dropping-a-role/</guid>
-      <description>Suppose you create a PostgreSQL user with read-only privileges as follows:</description>
+      <description>Suppose you create a PostgreSQL user with read-only privileges as follows:
+</description>
     </item>
     
 

@@ -18,7 +18,8 @@
       <pubDate>Fri, 29 Jan 2021 16:36:52 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/virgin-medias-web-safe-product-uses-dns/</guid>
-      <description>Virgin Media&amp;rsquo;s Web Safe product applies its blocking rules using its DNS servers, the same way the OpenDNS&amp;rsquo;s Family Shield does.</description>
+      <description>Virgin Media&amp;rsquo;s Web Safe product applies its blocking rules using its DNS servers, the same way the OpenDNS&amp;rsquo;s Family Shield does. I thought perhaps it was doing something cleverer.
+</description>
     </item>
     
 

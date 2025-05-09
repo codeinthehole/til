@@ -18,7 +18,8 @@
       <pubDate>Thu, 16 Sep 2021 14:08:54 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-reset-an-ssh-session/</guid>
-      <description>Hit enter to start a new line then type ~.</description>
+      <description>Hit enter to start a new line then type ~. to disconnect an SSH session.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Mon, 09 Aug 2021 12:26:02 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-have-ssh-sessions-via-aws-session-manager/</guid>
-      <description>This can be achieved by adding a block like this to your ~/.</description>
+      <description>This can be achieved by adding a block like this to your ~/.ssh/config:
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Fri, 26 Mar 2021 11:09:30 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-convert-ssh2-public-keys-to-openssh-format/</guid>
-      <description>Turns out cloud-init requires public keys to be in the single-line OpenSSH format but I was passing keys in multi-line SSH2 format.</description>
+      <description>Turns out cloud-init requires public keys to be in the single-line OpenSSH format but I was passing keys in multi-line SSH2 format. /var/log/cloud-init.log was complaining that:
+</description>
     </item>
     
 

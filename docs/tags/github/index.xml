@@ -29,7 +29,8 @@
       
       <guid>https://til.codeinthehole.com/posts/github-supports-a-markdown-extension-for-creating-alert-blocks/</guid>
       <description>The syntax is:
-&amp;gt; [!NOTE] &amp;gt; This is a note.</description>
+&amp;gt; [!NOTE] &amp;gt; This is a note. which renders as:
+</description>
     </item>
     
     <item>
@@ -38,7 +39,8 @@
       <pubDate>Sat, 01 Jul 2023 18:57:50 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-two-trailing-spaces-indicates-a-line-break-in-markdown/</guid>
-      <description>Not sure how I&amp;rsquo;ve never come across this before, but Markdown supports hard line breaks by ending a line with two spaces.</description>
+      <description>Not sure how I&amp;rsquo;ve never come across this before, but Markdown supports hard line breaks by ending a line with two spaces. Don&amp;rsquo;t strip trailing whitespace in your Markdown editor pre-save hooks.
+</description>
     </item>
     
     <item>
@@ -47,7 +49,8 @@
       <pubDate>Wed, 21 Jun 2023 15:08:24 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-vimium-has-shortcuts-for-following-pagination-links/</guid>
-      <description>Until today, I had Vimium disabled for Github as I believed Github&amp;rsquo;s keyboard shortcuts were useful enough to warrant losing Vimium&amp;rsquo;s.</description>
+      <description>Until today, I had Vimium disabled for Github as I believed Github&amp;rsquo;s keyboard shortcuts were useful enough to warrant losing Vimium&amp;rsquo;s.
+</description>
     </item>
     
     <item>
@@ -56,7 +59,8 @@
       <pubDate>Fri, 16 Dec 2022 21:17:06 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-hub-clashes-with-vimpolyglot/</guid>
-      <description>I use Github&amp;rsquo;s hub library to create pull requests with a command similar to:</description>
+      <description>I use Github&amp;rsquo;s hub library to create pull requests with a command similar to:
+</description>
     </item>
     
     <item>
@@ -65,7 +69,8 @@
       <pubDate>Fri, 01 Jul 2022 14:33:52 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-pycon-markdown-format/</guid>
-      <description>Github-flavoured markdown uses Linguist for syntax highlighting, and Linguist supports &amp;ldquo;Python console&amp;rdquo; as a language.</description>
+      <description>Github-flavoured markdown uses Linguist for syntax highlighting, and Linguist supports &amp;ldquo;Python console&amp;rdquo; as a language.
+</description>
     </item>
     
     <item>
@@ -74,7 +79,8 @@
       <pubDate>Wed, 02 Feb 2022 18:08:58 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-githubs-involves-search-filter/</guid>
-      <description>There&amp;rsquo;s a plethora of filters that can be used with Github&amp;rsquo;s search functionality.</description>
+      <description>There&amp;rsquo;s a plethora of filters that can be used with Github&amp;rsquo;s search functionality.
+</description>
     </item>
     
     <item>
@@ -83,7 +89,8 @@
       <pubDate>Fri, 05 Feb 2021 12:17:33 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-githubs-me-search-term/</guid>
-      <description>Which lets you filter by the current user. For example, use is:open is:pr author:@me to show pull-requests authored by yourself:</description>
+      <description>Which lets you filter by the current user. For example, use is:open is:pr author:@me to show pull-requests authored by yourself:
+</description>
     </item>
     
     <item>
@@ -92,7 +99,8 @@
       <pubDate>Tue, 27 Oct 2020 16:39:43 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-embed-markdown-content-in-a-github-code-block/</guid>
-      <description>Normally, fenced code blocks are delimited with triple backticks ```.</description>
+      <description>Normally, fenced code blocks are delimited with triple backticks ```.
+</description>
     </item>
     
 

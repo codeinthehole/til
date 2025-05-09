@@ -28,7 +28,8 @@
       <pubDate>Wed, 01 Mar 2023 21:36:32 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-create-a-word-cloud-from-text-piped-via-stdin/</guid>
-      <description>There&amp;rsquo;s a word_cloud generator package available from PyPI that can take its source text from STDIN:</description>
+      <description>There&amp;rsquo;s a word_cloud generator package available from PyPI that can take its source text from STDIN:
+</description>
     </item>
     
     <item>
@@ -37,7 +38,8 @@
       <pubDate>Wed, 22 Feb 2023 21:13:57 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-the-typos-source-code-spell-checker/</guid>
-      <description>typos is a source code spell checker written Rust that&amp;rsquo;s useful for finding typos in code comments and variable names.</description>
+      <description>typos is a source code spell checker written Rust that&amp;rsquo;s useful for finding typos in code comments and variable names.
+</description>
     </item>
     
     <item>
@@ -46,7 +48,8 @@
       <pubDate>Thu, 05 Jan 2023 11:19:09 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-format-json-into-a-table-with-jq-and-column/</guid>
-      <description>You can create tabular data from JSON using jq to generate tab-separated output and column to format.</description>
+      <description>You can create tabular data from JSON using jq to generate tab-separated output and column to format.
+</description>
     </item>
     
     <item>
@@ -55,7 +58,8 @@
       <pubDate>Fri, 19 Mar 2021 09:42:34 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-delta/</guid>
-      <description>delta provides much improved diff views in the terminal.</description>
+      <description>delta provides much improved diff views in the terminal. It provides things like:
+</description>
     </item>
     
     <item>
@@ -64,7 +68,8 @@
       <pubDate>Tue, 12 Jan 2021 09:37:14 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-search-for-fixed-strings-with-grep-and-ripgrep/</guid>
-      <description>To search for a fixed string (i.e. not a regex), use:</description>
+      <description>To search for a fixed string (i.e. not a regex), use:
+</description>
     </item>
     
     <item>
@@ -73,7 +78,8 @@
       <pubDate>Tue, 29 Dec 2020 16:23:12 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-define-custom-filetype-filters-in-ripgrep/</guid>
-      <description>ripgrep lets you filter files by their language type — e.</description>
+      <description>ripgrep lets you filter files by their language type — e.g. search only C-related files:
+</description>
     </item>
     
     <item>
@@ -82,7 +88,8 @@
       <pubDate>Mon, 21 Dec 2020 10:33:25 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-specify-the-filetype-for-bat/</guid>
-      <description>bat is a useful replacement for cat that supports syntax highlighting.</description>
+      <description>bat is a useful replacement for cat that supports syntax highlighting.
+</description>
     </item>
     
     <item>
@@ -91,7 +98,8 @@
       <pubDate>Sat, 19 Dec 2020 22:49:55 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-envsubst/</guid>
-      <description>Am learning Kubernetes and was looking for ways to dynamically create YAML resource files.</description>
+      <description>Am learning Kubernetes and was looking for ways to dynamically create YAML resource files.
+</description>
     </item>
     
     <item>
@@ -100,7 +108,8 @@
       <pubDate>Fri, 04 Dec 2020 21:38:22 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-set-perproject-ripgrep-exclude-rules/</guid>
-      <description>In some projects, you want ripgrep to ignore some files that aren&amp;rsquo;t in .</description>
+      <description>In some projects, you want ripgrep to ignore some files that aren&amp;rsquo;t in .gitignore — things like statically generated files in a Hugo site (like this one). You can do this by adding them to a local .ignore file.
+</description>
     </item>
     
     <item>
@@ -109,7 +118,8 @@
       <pubDate>Mon, 16 Nov 2020 22:10:57 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/exuberantctags-has-been-superceded-by-universalctags/</guid>
-      <description>In the sense that the Exuberant ctags project has stalled, and Universal ctags has been introduced to continue development.</description>
+      <description>In the sense that the Exuberant ctags project has stalled, and Universal ctags has been introduced to continue development.
+</description>
     </item>
     
     <item>
@@ -118,7 +128,8 @@
       <pubDate>Thu, 12 Nov 2020 14:43:50 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-column/</guid>
-      <description>Which formats input into columns. This is useful for formatting data into a table structure.</description>
+      <description>Which formats input into columns. This is useful for formatting data into a table structure.
+</description>
     </item>
     
     <item>
@@ -127,7 +138,8 @@
       <pubDate>Fri, 23 Oct 2020 17:35:10 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/fd-has-an-option-for-searching-filepaths/</guid>
-      <description>If you pass -p, then the fd will retrieve all filepaths matching $PATTERN:</description>
+      <description>If you pass -p, then the fd will retrieve all filepaths matching $PATTERN:
+</description>
     </item>
     
     <item>
@@ -136,7 +148,8 @@
       <pubDate>Tue, 29 Sep 2020 12:47:23 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-use-xargs-with-printf/</guid>
-      <description>This is obvious in retrospect but it hadn&amp;rsquo;t dawned on me that you can use xargs printf to use STDIN as printf arguments.</description>
+      <description>This is obvious in retrospect but it hadn&amp;rsquo;t dawned on me that you can use xargs printf to use STDIN as printf arguments. Trivial example:
+</description>
     </item>
     
     <item>
@@ -145,7 +158,8 @@
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-pngcrush/</guid>
-      <description>It&amp;rsquo;s an image optimizer for .png files. It&amp;rsquo;s available via Homebrew for MacOS and works like:</description>
+      <description>It&amp;rsquo;s an image optimizer for .png files. It&amp;rsquo;s available via Homebrew for MacOS and works like:
+</description>
     </item>
     
 

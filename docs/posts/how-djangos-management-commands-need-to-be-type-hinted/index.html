@@ -20,7 +20,10 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-djangos-management-commands-need-to-be-type-hinted/" />
 <meta property="og:title" content="TIL How Django&#39;s management commands need to be type hinted — David Winterbottom" />
-<meta property="og:description" content="For Django management commands with arguments, you might not expect Mypy (configured with the django-stubs plugin) to complain about this signature: — can be read in 2 minutes" />
+<meta property="og:description" content="For Django management commands with arguments, you might not expect Mypy
+(configured with the
+django-stubs plugin) to
+complain about this signature: — can be read in 2 minutes" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
@@ -84,8 +87,7 @@ complain about this signature:</p>
 <blockquote>
 <p>It&rsquo;s unsafe to override a method with a more specific argument type, as it
 violates the Liskov substitution principle. For return types, it’s unsafe to
-override a method with a more general return type.</p>
-</blockquote>
+override a method with a more general return type.</p></blockquote>
 <p>To proceed you can either pluck the positional arguments out of the <code>kwargs</code>
 dict:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.core.management.base <span style="color:#f92672">import</span> BaseCommand, CommandParser

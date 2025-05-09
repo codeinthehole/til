@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Turns out cloud-init requires public keys to be in the single-line OpenSSH format but I was passing keys in multi-line SSH2 format.
+    Turns out cloud-init requires public keys to be in the single-line OpenSSH format but I was passing keys in multi-line SSH2 format. /var/log/cloud-init.log was complaining that:
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -20,7 +20,9 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-convert-ssh2-public-keys-to-openssh-format/" />
 <meta property="og:title" content="TIL How to convert SSH2 public keys to OpenSSH format — David Winterbottom" />
-<meta property="og:description" content="Turns out cloud-init requires public keys to be in the single-line OpenSSH format but I was passing keys in multi-line SSH2 format. — can be read in 1 minute" />
+<meta property="og:description" content="Turns out cloud-init requires
+public keys to be in the single-line OpenSSH format but I was passing keys in
+multi-line SSH2 format. /var/log/cloud-init.log was complaining that: — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />

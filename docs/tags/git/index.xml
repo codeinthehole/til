@@ -18,7 +18,8 @@
       <pubDate>Mon, 05 Aug 2024 18:42:43 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-add-commit-sizes-to-git-log-output/</guid>
-      <description>It&amp;rsquo;s sometimes useful to see the sizes of each Git commit — &amp;ldquo;size&amp;rdquo; as in the number of line additions and deletions.</description>
+      <description>It&amp;rsquo;s sometimes useful to see the sizes of each Git commit — &amp;ldquo;size&amp;rdquo; as in the number of line additions and deletions.
+</description>
     </item>
     
     <item>
@@ -37,7 +38,8 @@
       <pubDate>Fri, 10 May 2024 21:59:31 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-set-the-default-branch-for-a-git-remote/</guid>
-      <description>Just putting this here as I always forget.</description>
+      <description>Just putting this here as I always forget.
+</description>
     </item>
     
     <item>
@@ -46,7 +48,8 @@
       <pubDate>Wed, 27 Mar 2024 14:56:20 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-edit-and-search-the-files-in-one-commit/</guid>
-      <description>When interactive rebasing, it&amp;rsquo;s useful to be able to edit all the files in one particular commit.</description>
+      <description>When interactive rebasing, it&amp;rsquo;s useful to be able to edit all the files in one particular commit. Here&amp;rsquo;s how you can do that.
+</description>
     </item>
     
     <item>
@@ -55,7 +58,8 @@
       <pubDate>Fri, 09 Jun 2023 16:06:55 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-avoid-committing-jupyter-notebook-output-to-git/</guid>
-      <description>When working with Jupyter Notebooks, the output of each cell does not need to be committed as:</description>
+      <description>When working with Jupyter Notebooks, the output of each cell does not need to be committed as:
+</description>
     </item>
     
     <item>
@@ -64,7 +68,8 @@
       <pubDate>Fri, 28 Apr 2023 20:11:32 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-git-foreachref-support-conditional-logic-in-its-format/</guid>
-      <description>Git&amp;rsquo;s for-each-ref command allows you to iterate over refs and print them according to the --format option.</description>
+      <description>Git&amp;rsquo;s for-each-ref command allows you to iterate over refs and print them according to the --format option.
+</description>
     </item>
     
     <item>
@@ -73,7 +78,8 @@
       <pubDate>Wed, 15 Feb 2023 14:49:51 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-perform-a-noninteractive-interactive-git-rebase/</guid>
-      <description>If you create a load of fix-up commits using:</description>
+      <description>If you create a load of fix-up commits using:
+</description>
     </item>
     
     <item>
@@ -82,7 +88,8 @@
       <pubDate>Wed, 11 Jan 2023 15:41:02 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-show-the-history-of-a-file-with-git-log-patch/</guid>
-      <description>Am slightly embarrassed to admit it but I&amp;rsquo;ve only just discovered the --patch option to git log which shows diff information for each commit.</description>
+      <description>Am slightly embarrassed to admit it but I&amp;rsquo;ve only just discovered the --patch option to git log which shows diff information for each commit.
+</description>
     </item>
     
     <item>
@@ -91,7 +98,8 @@
       <pubDate>Fri, 12 Nov 2021 11:37:54 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-continue-a-git-rebase-and-skip-editing-the-commit-message/</guid>
-      <description>During an interactive rebase, when you&amp;rsquo;ve fixed the conflicts or finished editing the commit you can run:</description>
+      <description>During an interactive rebase, when you&amp;rsquo;ve fixed the conflicts or finished editing the commit you can run:
+</description>
     </item>
     
     <item>
@@ -100,7 +108,8 @@
       <pubDate>Fri, 15 Oct 2021 16:54:35 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-print-the-changed-filepaths-from-a-commit-and-nothing-else/</guid>
-      <description>The --name-only option for git log restricts the output to the changed file paths but not their full diffs.</description>
+      <description>The --name-only option for git log restricts the output to the changed file paths but not their full diffs. However, by default, the output still includes the commit subject and description which means the output can&amp;rsquo;t be piped into commands that expect a list of file paths.
+</description>
     </item>
     
     <item>
@@ -109,7 +118,8 @@
       <pubDate>Tue, 12 Oct 2021 14:37:13 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-gits-diffrelative-config-option/</guid>
-      <description>Setting this option to true in ~/.gitconfig ensures diff commands show paths relative to the current directory:</description>
+      <description>Setting this option to true in ~/.gitconfig ensures diff commands show paths relative to the current directory:
+</description>
     </item>
     
     <item>
@@ -118,7 +128,8 @@
       <pubDate>Wed, 08 Sep 2021 09:29:15 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-git-mergebase/</guid>
-      <description>Git&amp;rsquo;s merge-base command can be used to find the common ancestor for two commits (or branches/references).</description>
+      <description>Git&amp;rsquo;s merge-base command can be used to find the common ancestor for two commits (or branches/references). From the docs:
+</description>
     </item>
     
     <item>
@@ -127,7 +138,8 @@
       <pubDate>Wed, 21 Jul 2021 12:50:48 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-git-aliases-that-run-an-external-command-are-run-from-the-repository-root/</guid>
-      <description>Verify this by creating an alias in ~/.gitconfig like so:</description>
+      <description>Verify this by creating an alias in ~/.gitconfig like so:
+</description>
     </item>
     
     <item>
@@ -136,7 +148,8 @@
       <pubDate>Wed, 02 Jun 2021 13:00:25 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-git-log-g/</guid>
-      <description>git log supports two options for searching the contents of each commit&amp;rsquo;s patch:</description>
+      <description>git log supports two options for searching the contents of each commit&amp;rsquo;s patch:
+</description>
     </item>
     
     <item>
@@ -145,7 +158,8 @@
       <pubDate>Tue, 30 Mar 2021 16:46:39 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/that-vimpolyglot-conflicts-with-hub-when-creating-pull-requests/</guid>
-      <description>Hub, the Github CLI tool, allows a pull request to be created from the command line.</description>
+      <description>Hub, the Github CLI tool, allows a pull request to be created from the command line. It does this by opening Vim like so:
+</description>
     </item>
     
     <item>
@@ -154,7 +168,8 @@
       <pubDate>Sun, 28 Mar 2021 11:28:17 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-gitabsorb/</guid>
-      <description>git-absorb is a great tool for crafting atomic commits.</description>
+      <description>git-absorb is a great tool for crafting atomic commits. Given some uncommitted changes, it automates the process of identifying which commit to squash each change into. The workflow is simply:
+</description>
     </item>
     
     <item>
@@ -163,7 +178,8 @@
       <pubDate>Thu, 25 Mar 2021 17:11:34 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-include-the-date-in-git-reflog-output/</guid>
-      <description>By default, the output of git reflog doesn&amp;rsquo;t include the date when the reference was updated.</description>
+      <description>By default, the output of git reflog doesn&amp;rsquo;t include the date when the reference was updated. But git reflog [show] is an alias of git log --walk-reflogs --oneline and so accepts any of the options of git log. This means the date can be included by using the --format option.
+</description>
     </item>
     
     <item>
@@ -172,7 +188,8 @@
       <pubDate>Fri, 19 Mar 2021 09:42:34 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-delta/</guid>
-      <description>delta provides much improved diff views in the terminal.</description>
+      <description>delta provides much improved diff views in the terminal. It provides things like:
+</description>
     </item>
     
     <item>
@@ -181,7 +198,8 @@
       <pubDate>Fri, 05 Mar 2021 22:49:17 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-use-git-log-to-view-the-evolution-of-a-function/</guid>
-      <description>Modern versions of git log provide a -L option which lets you trace the evolution of a line range or function:</description>
+      <description>Modern versions of git log provide a -L option which lets you trace the evolution of a line range or function:
+</description>
     </item>
     
     <item>
@@ -190,7 +208,8 @@
       <pubDate>Mon, 05 Oct 2020 11:34:01 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-resolve-git-conflicts-on-renamed-files/</guid>
-      <description>If there&amp;rsquo;s been a large-scale renaming of files in master and you attempt to rebase your pull-request branch, the resulting conflicts can be tricky to resolve.</description>
+      <description>If there&amp;rsquo;s been a large-scale renaming of files in master and you attempt to rebase your pull-request branch, the resulting conflicts can be tricky to resolve. You&amp;rsquo;ll see lots of conflicts of form:
+</description>
     </item>
     
     <item>
@@ -200,7 +219,8 @@
       
       <guid>https://til.codeinthehole.com/posts/how-to-count-lines-of-code-in-a-git-repo/</guid>
       <description>For a given commit $SHA, use:
-git diff --shortstat `git hash-object -t tree /dev/null`.</description>
+git diff --shortstat `git hash-object -t tree /dev/null`..$SHA which works as git hash-object -t tree /dev/null computes the hash of the empty tree.
+</description>
     </item>
     
 

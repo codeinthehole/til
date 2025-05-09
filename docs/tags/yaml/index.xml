@@ -18,7 +18,8 @@
       <pubDate>Fri, 26 Mar 2021 14:37:33 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/json-is-valid-yaml/</guid>
-      <description>YAML is a superset of JSON which means a YAML parser can parse JSON (but not necessarily the other way around).</description>
+      <description>YAML is a superset of JSON which means a YAML parser can parse JSON (but not necessarily the other way around).
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Fri, 11 Dec 2020 20:53:22 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/about-yamls-node-anchors-and-aliases/</guid>
-      <description>I&amp;rsquo;ve seen these a few times but only today decided to actually work out how they worked.</description>
+      <description>I&amp;rsquo;ve seen these a few times but only today decided to actually work out how they worked.
+</description>
     </item>
     
     <item>
@@ -37,7 +39,8 @@
       
       <guid>https://til.codeinthehole.com/posts/yaml-has-several-stringparsing-gotchas/</guid>
       <description>For instance, in YAML 1.1:
-Yes and No parse to true and false x:y is parsed as a base-60 number if y is less than 60 See for yourself with these Python tests:</description>
+Yes and No parse to true and false x:y is parsed as a base-60 number if y is less than 60 See for yourself with these Python tests:
+</description>
     </item>
     
 

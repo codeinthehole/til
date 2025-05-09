@@ -18,7 +18,8 @@
       <pubDate>Thu, 29 Sep 2022 19:21:45 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/which-behaves-diffferently-in-zsh-compared-to-bash/</guid>
-      <description>which is a command used to identify the location of executables; however it behaves differently on Zsh compared to Bash.</description>
+      <description>which is a command used to identify the location of executables; however it behaves differently on Zsh compared to Bash.
+</description>
     </item>
     
 

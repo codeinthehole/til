@@ -18,7 +18,8 @@
       <pubDate>Tue, 07 May 2024 10:37:10 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/hugo-v01230-changed-the-default-rendering-mode-of-hugo-server/</guid>
-      <description>The problem After running brew upgrade and upgrading Hugo from v0.</description>
+      <description>The problem After running brew upgrade and upgrading Hugo from v0.121.1 to v0.125.4, I found that hugo server was rewriting all the permalinks in my site to use localhost:1313. These changes would persist after hugo server was stopped and I accidentally committed them and broke the production version of this site.
+</description>
     </item>
     
     <item>
@@ -27,7 +28,8 @@
       <pubDate>Mon, 17 Aug 2020 14:32:50 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/how-to-list-pages-with-matching-tag-in-hugo/</guid>
-      <description>In a detail template, you can grab a post&amp;rsquo;s tags with {{ .</description>
+      <description>In a detail template, you can grab a post&amp;rsquo;s tags with {{ .GetTerms &amp;quot;tags&amp;quot; }}. You can then loop over this and fetch a list of pages with each tag, excluding the current post:
+</description>
     </item>
     
     <item>
@@ -36,7 +38,8 @@
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://til.codeinthehole.com/posts/you-can-have-sass-asset-pipelines-in-hugo/</guid>
-      <description>Which lets you build a CSS stylesheet via something like:</description>
+      <description>Which lets you build a CSS stylesheet via something like:
+</description>
     </item>
     
 

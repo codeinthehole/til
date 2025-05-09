@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    If you’re using Universal Ctags (which you should be), you just need to add a ~/.
+    If you&rsquo;re using Universal Ctags (which you should be), you just need to add a ~/.ctags.d/terraform.ctags with contents:
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -20,7 +20,9 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-configure-ctags-to-parse-terraform-files/" />
 <meta property="og:title" content="TIL How to configure &#39;ctags&#39; to parse Terraform files — David Winterbottom" />
-<meta property="og:description" content="If you&rsquo;re using Universal Ctags (which you should be), you just need to add a ~/. — can be read in 1 minute" />
+<meta property="og:description" content="If you&rsquo;re using Universal Ctags
+(which you should be), you just need to add a ~/.ctags.d/terraform.ctags with
+contents: — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
@@ -73,7 +75,7 @@ contents:</p>
 </span></span><span style="display:flex;"><span>--regex-terraform=/^([a-z0-9_]+)[[:space:]]*=/\1/f,TFVar/
 </span></span></code></pre></div><p>Then, for example, a Terraform resource like:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-terraform" data-lang="terraform"><span style="display:flex;"><span><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_cloudwatch_log_group&#34;</span> <span style="color:#e6db74">&#34;my-log-group&#34;</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;my-log-group&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my-log-group&#34;</span>
 </span></span><span style="display:flex;"><span>  ...
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>will have <code>my-log-group</code> stored as an identifier so you can jump to its
