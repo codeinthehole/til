@@ -46,7 +46,8 @@ the same way as `README.md`?
 ## Configuration
 
 You can use an `EZA_COLORS` environment variable to configure `eza` syntax
-highlighting. It has a CSV format of `key=value,key=value,...`, where:
+highlighting. It has a CSV format of `key=value:key=value:...` using `:` to
+delimit key-value pairs, where:
 
 - `key` is either a two-letter file-type code, or a glob pattern.
 - `value` is a `;`-seperated sequence of ANSI color codes (or the special value

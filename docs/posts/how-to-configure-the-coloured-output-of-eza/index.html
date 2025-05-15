@@ -84,7 +84,8 @@ differently. Bit jarring - can we configure <code>eza</code> to highlight <code>
 the same way as <code>README.md</code>?</p>
 <h2 id="configuration">Configuration</h2>
 <p>You can use an <code>EZA_COLORS</code> environment variable to configure <code>eza</code> syntax
-highlighting. It has a CSV format of <code>key=value,key=value,...</code>, where:</p>
+highlighting. It has a CSV format of <code>key=value:key=value:...</code> using <code>:</code> to
+delimit key-value pairs, where:</p>
 <ul>
 <li><code>key</code> is either a two-letter file-type code, or a glob pattern.</li>
 <li><code>value</code> is a <code>;</code>-seperated sequence of ANSI color codes (or the special value
