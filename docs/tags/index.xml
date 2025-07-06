@@ -6,7 +6,7 @@
     <description>Tags TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 May 2025 21:49:28 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 06 Jul 2025 21:35:07 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Git</title>
       <link>https://til.codeinthehole.com/tags/git/</link>
-      <pubDate>Fri, 09 May 2025 21:49:28 +0100</pubDate>
+      <pubDate>Sun, 06 Jul 2025 21:35:07 +0100</pubDate>
       
       <guid>https://til.codeinthehole.com/tags/git/</guid>
       <description></description>

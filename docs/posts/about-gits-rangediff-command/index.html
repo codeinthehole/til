@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="
-    Git&rsquo;s merge-base command can be used to find the common ancestor for two commits (or branches/references). From the docs:
+    How to compare two ranges of commits.
 ">
 
         <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
@@ -18,18 +18,16 @@
 
         
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://til.codeinthehole.com/posts/about-git-mergebase/" />
-<meta property="og:title" content="TIL About &#39;git merge-base&#39; — David Winterbottom" />
-<meta property="og:description" content="Git&rsquo;s merge-base command can be used to find the common ancestor for two
-commits (or branches/references). From the
-docs: — can be read in 1 minute" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/about-gits-rangediff-command/" />
+<meta property="og:title" content="TIL About Git&#39;s &#39;range-diff&#39; command — David Winterbottom" />
+<meta property="og:description" content="How to compare two ranges of commits. — can be read in 1 minute" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
 
 
         <title>
-    TIL About &#39;git merge-base&#39; — David Winterbottom
+    TIL About Git&#39;s &#39;range-diff&#39; command — David Winterbottom
 </title>
 
         
@@ -58,37 +56,29 @@ docs: — can be read in 1 minute" />
     <article>
         <header id="post-header">
             <div id="date_sentence">
-                On <time>September 8, 2021</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+                On <time>July 6, 2025</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
             </div>
-            <h1>About <code>git merge-base</code></h1>
-        </header><p>Git&rsquo;s <code>merge-base</code> command can be used to find the common ancestor for two
-commits (or branches/references). From the
-<a href="https://git-scm.com/docs/git-merge-base#_discussion">docs</a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Given two commits A and B, git merge-base A B will output a commit which is
-</span></span><span style="display:flex;"><span>reachable from both A and B through the parent relationship.
+            <h1>About Git&rsquo;s <code>range-diff</code> command</h1>
+        </header><p><code>git range-diff</code> lets you compare two ranges of commits. One way of invoking it
+is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git range-diff &lt;old-range&gt; &lt;new-range&gt;
+</span></span></code></pre></div><p>I&rsquo;ve used it recently to compare two versions of the same pull request branch,
+before and after a force-push. In a GitHub action, this can be implemented as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Assign the before and after commit hashes to variables.</span>
+</span></span><span style="display:flex;"><span>BEFORE_HEAD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ github.event.before }}&#34;</span>
+</span></span><span style="display:flex;"><span>AFTER_HEAD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ github.event.after }}&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>For example, with this topology:
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compute the merge base for the before and after commits.</span>
+</span></span><span style="display:flex;"><span>BEFORE_MERGE_BASE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>git merge-base origin/main $BEFORE_HEAD<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>AFTER_MERGE_BASE<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>git merge-base origin/main $AFTER_HEAD<span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>             o---o---o---B
-</span></span><span style="display:flex;"><span>            /
-</span></span><span style="display:flex;"><span>    ---o---1---o---o---o---A
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ensure we have the appropriate commits  from the remote repository.</span>
+</span></span><span style="display:flex;"><span>git fetch origin $BEFORE_HEAD $AFTER_HEAD
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>the merge base between A and B is 1.
-</span></span></code></pre></div><p>This is useful for
-<a href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">rebasing feature branches</a>.
-This command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git rebase -i <span style="color:#e6db74">`</span>git merge-base head origin/master<span style="color:#e6db74">`</span>
-</span></span></code></pre></div><p>will open the interactive rebase editor with every commit from your feature
-branch selected.</p>
-<p>If you often rebase commits to create a readable, self-contained history, this
-command is invaluable and I recommend you alias it to something easy to type. I
-have this in my <code>~/.bash_aliases</code> file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>alias grb<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;git rebase -i `git merge-base head origin/$(git defaultbranch)`&#39;</span>
-</span></span></code></pre></div><p>where the <code>defaultbranch</code> alias is defined in <code>~/.gitconfig</code> as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dosini" data-lang="dosini"><span style="display:flex;"><span><span style="color:#66d9ef">[alias]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">...</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">defaultbranch</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;!f() { git symbolic-ref refs/remotes/origin/HEAD | cut -d/ -f4; }; f&#34;</span>
-</span></span></code></pre></div></article>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compute the range-diff between the two commit ranges.</span>
+</span></span><span style="display:flex;"><span>git range-diff $BEFORE_MERGE_BASE..$BEFORE_HEAD $AFTER_MERGE_BASE..$AFTER_HEAD<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>See the <a href="https://git-scm.com/docs/git-range-diff">Git documentation</a> for more details.</p>
+<pre tabindex="0"><code></code></pre></article>
 
         </main>
 
@@ -111,11 +101,6 @@ have this in my <code>~/.bash_aliases</code> file:</p>
                 
                     <p>Other things learnt about <a href="/tags/git/">Git</a>:</p>
                     <ul>
-                        
-                            <li><a href="/posts/about-gits-rangediff-command/">About Git&rsquo;s <code>range-diff</code> command</a></li>
-
-                            
-                            
                         
                             <li><a href="/posts/how-to-run-precommit-using-an-interactive-rebase/">How to run pre-commit using an interactive rebase</a></li>
 
@@ -162,6 +147,11 @@ have this in my <code>~/.bash_aliases</code> file:</p>
                             
                             
                         
+                            <li><a href="/posts/how-to-continue-a-git-rebase-and-skip-editing-the-commit-message/">How to continue a Git rebase and skip editing the commit message</a></li>
+
+                            
+                            
+                        
                     </ul>
                 
 
@@ -173,9 +163,9 @@ have this in my <code>~/.bash_aliases</code> file:</p>
         <hr color="#eee"/>
 
         
+            <p>⌨️ Jump to the previous TIL using the ◀️ cursor key.</p>
         
         
-            <p>⌨️ Jump to the previous/next TIL using the ◀️ or ▶️ cursor keys.</p>
         
     </footer>
 
@@ -184,11 +174,9 @@ have this in my <code>~/.bash_aliases</code> file:</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script>
         
-            Mousetrap.bind("left", function() { window.location.replace("\/posts\/you-can-have-ssh-sessions-via-aws-session-manager\/"); })
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/how-to-run-precommit-using-an-interactive-rebase\/"); })
         
 
-        
-            Mousetrap.bind("right", function() { window.location.replace("\/posts\/the-names-for-macos-keyboard-metacharacters\/"); })
         
     </script>
 
