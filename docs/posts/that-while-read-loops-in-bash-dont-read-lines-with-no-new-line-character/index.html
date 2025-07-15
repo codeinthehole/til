@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    A Bash script I was working on had a while read loop that processed Git commit SHAs:
+git log --pretty=format:&#39;%H&#39; $OPTIONS | while read -r line; do ... done but it did nothing when the git log command only piped one SHA in. Why?
+
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/that-while-read-loops-in-bash-dont-read-lines-with-no-new-line-character/" />
+<meta property="og:title" content="TIL That &#39;while read&#39; loops ignore single line inputs (with no newline character) — David Winterbottom" />
+<meta property="og:description" content="A Bash script I was working on had a while read loop that processed Git commit
+SHAs:
+git log --pretty=format:&#39;%H&#39; $OPTIONS | while read -r line; do
+    ...
+done
+but it did nothing when the git log command only piped one SHA in. Why? — can be read in 2 minutes" />
+
+
+<meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
+
+
+        <title>
+    TIL That &#39;while read&#39; loops ignore single line inputs (with no newline character) — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt&hellip;</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>July 15, 2025</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+            </div>
+            <h1>That <code>while read</code> loops ignore single line inputs (with no newline character)</h1>
+        </header><p>A Bash script I was working on had a <code>while read</code> loop that processed Git commit
+SHAs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log --pretty<span style="color:#f92672">=</span>format:<span style="color:#e6db74">&#39;%H&#39;</span> $OPTIONS | <span style="color:#66d9ef">while</span> read -r line; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>but it did nothing when the <code>git log</code> command only piped one SHA in. Why?</p>
+<p>Because <code>read</code> is designed to work with sequences of lines and lines need to end
+with a newline character. In this case, the piped input had no newline character
+and so <code>read</code> doesn&rsquo;t process it.</p>
+<p>Verify for yourself with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>printf <span style="color:#e6db74">&#34;example&#34;</span> | <span style="color:#66d9ef">while</span> read -r line; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;</span>$line<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>which doesn&rsquo;t print anything, and see
+<a href="https://unix.stackexchange.com/a/418081">this Stack Overflow answer</a> for a more
+detailed explanation.</p>
+<p>My script was fixed by including an additional <code>%n</code> format option which ensures
+each line ends with a newline character and the <code>while read</code> loop works as
+expected:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log --pretty<span style="color:#f92672">=</span>format:<span style="color:#e6db74">&#39;%H%n&#39;</span> $OPTIONS | <span style="color:#66d9ef">while</span> read -r line; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><h2 id="spotting-missing-hidden-characters">Spotting missing hidden characters</h2>
+<p>A useful technique for comparing two strings that look the same is to run <code>diff</code>
+on their hexdump with <code>xxd</code> (or <code>hexdump</code>). E.g. compare the output of using
+<code>printf</code> and <code>echo</code> with the same string:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; diff &lt;<span style="color:#f92672">(</span>printf <span style="color:#e6db74">&#34;example&#34;</span> | xxd<span style="color:#f92672">)</span> &lt;<span style="color:#f92672">(</span>echo <span style="color:#e6db74">&#34;example&#34;</span> | xxd<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>1c1
+</span></span><span style="display:flex;"><span>&lt; 00000000: <span style="color:#ae81ff">6578</span> 616d 706c <span style="color:#ae81ff">65</span>                        example
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>&gt; 00000000: <span style="color:#ae81ff">6578</span> 616d 706c 650a                      example.
+</span></span></code></pre></div><p>Here you see that <code>echo</code> appends a line feed character (hex <code>0a</code>).</p></article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/bash/">Bash</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/when-to-use-stdout-and-stderr-in-shell-scripts/">When to use stdout and stderr in shell scripts</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-bashs-compgen-builtin/">About Bash&rsquo;s <code>compgen</code> built-in</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-bashs-pipestatus-variable/">About Bash&rsquo;s <code>$PIPESTATUS</code> variable</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-make-homebrewinstalled-bash-your-default-shell/">How to make Homebrew-installed Bash your default shell</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/which-behaves-diffferently-in-zsh-compared-to-bash/"><code>which</code> behaves diffferently in Zsh compared to Bash</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-join-an-array-in-bash/">How to join an array in Bash</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-bashs-seconds-shell-variable/">About Bash&rsquo;s <code>$SECONDS</code> shell variable</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-ubuntus-alert-bash-alias/">About Ubuntu&rsquo;s <code>alert</code> Bash alias</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-readonly-bash-variables/">About <code>readonly</code> Bash variables</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-shellcheck/">About <code>shellcheck</code></a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/git/">Git</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/about-gits-rangediff-command/">About Git&rsquo;s <code>range-diff</code> command</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-run-precommit-using-an-interactive-rebase/">How to run pre-commit using an interactive rebase</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-add-commit-sizes-to-git-log-output/">How to add commit sizes to <code>git log</code> output</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-measure-codeowner-coverage-within-a-large-repo/">How to measure codeowner coverage within a large repo</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-set-the-default-branch-for-a-git-remote/">How to set the default branch for a Git remote</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-edit-and-search-the-files-in-one-commit/">How to edit and search the files in one commit</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-avoid-committing-jupyter-notebook-output-to-git/">How to avoid committing Jupyter Notebook output to Git</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-git-foreachref-support-conditional-logic-in-its-format/">That <code>git for-each-ref</code> support conditional logic in its format</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-perform-a-noninteractive-interactive-git-rebase/">How to perform a non-interactive, interactive Git rebase</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-show-the-history-of-a-file-with-git-log-patch/">How to show the history of a file with <code>git log --patch</code></a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+            
+
+        
+
+        <br/>
+        <hr color="#eee"/>
+
+        
+            <p>⌨️ Jump to the previous TIL using the ◀️ cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/about-gits-rangediff-command\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>

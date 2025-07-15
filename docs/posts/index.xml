@@ -6,11 +6,22 @@
     <description>All TILs - David Winterbottom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Jul 2025 21:35:07 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 15 Jul 2025 15:38:29 +0100</lastBuildDate>
     
 	<atom:link href="https://til.codeinthehole.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+    
+    <item>
+      <title>That `while read` loops ignore single line inputs (with no newline character)</title>
+      <link>https://til.codeinthehole.com/posts/that-while-read-loops-in-bash-dont-read-lines-with-no-new-line-character/</link>
+      <pubDate>Tue, 15 Jul 2025 15:38:29 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/that-while-read-loops-in-bash-dont-read-lines-with-no-new-line-character/</guid>
+      <description>A Bash script I was working on had a while read loop that processed Git commit SHAs:
+git log --pretty=format:&amp;#39;%H&amp;#39; $OPTIONS | while read -r line; do ... done but it did nothing when the git log command only piped one SHA in. Why?
+</description>
+    </item>
     
     <item>
       <title>About Git&#39;s `range-diff` command</title>
