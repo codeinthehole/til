@@ -80,7 +80,7 @@ and so <code>read</code> doesn&rsquo;t process it.</p>
 </span></span></code></pre></div><p>which doesn&rsquo;t print anything, and see
 <a href="https://unix.stackexchange.com/a/418081">this Stack Overflow answer</a> for a more
 detailed explanation.</p>
-<p>My script was fixed by including an additional <code>%n</code> format option which ensures
+<p>My script was fixed by using the <code>--pretty=tformat:&quot;%H&quot;</code> option which ensures
 each line ends with a newline character and the <code>while read</code> loop works as
 expected:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log --pretty<span style="color:#f92672">=</span>format:<span style="color:#e6db74">&#39;%H%n&#39;</span> $OPTIONS | <span style="color:#66d9ef">while</span> read -r line; <span style="color:#66d9ef">do</span>

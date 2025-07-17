@@ -33,7 +33,7 @@ which doesn't print anything, and see
 [this Stack Overflow answer](https://unix.stackexchange.com/a/418081) for a more
 detailed explanation.
 
-My script was fixed by including an additional `%n` format option which ensures
+My script was fixed by using the `--pretty=tformat:"%H"` option which ensures
 each line ends with a newline character and the `while read` loop works as
 expected:
 
