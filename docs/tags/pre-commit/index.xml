@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Pre-Commit - Today I Learnt — David Winterbottom</title>
+    <link>https://til.codeinthehole.com/tags/pre-commit/</link>
+    <description>Pre-Commit TILs - David Winterbottom</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 May 2025 21:49:28 +0100</lastBuildDate>
+    
+	<atom:link href="https://til.codeinthehole.com/tags/pre-commit/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    <item>
+      <title>How to run pre-commit using an interactive rebase</title>
+      <link>https://til.codeinthehole.com/posts/how-to-run-precommit-using-an-interactive-rebase/</link>
+      <pubDate>Fri, 09 May 2025 21:49:28 +0100</pubDate>
+      
+      <guid>https://til.codeinthehole.com/posts/how-to-run-precommit-using-an-interactive-rebase/</guid>
+      <description>Using git rebase to run shell commands on each commit</description>
+    </item>
+    
+
+  </channel>
+</rss>

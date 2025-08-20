@@ -20,7 +20,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://til.codeinthehole.com/posts/how-to-run-precommit-using-an-interactive-rebase/" />
 <meta property="og:title" content="TIL How to run pre-commit using an interactive rebase — David Winterbottom" />
-<meta property="og:description" content="Using git rebase to run shell commands on each commit — can be read in 1 minute" />
+<meta property="og:description" content="Using git rebase to run shell commands on each commit — can be read in 2 minutes" />
 
 
 <meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
@@ -63,20 +63,27 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rebase -i --exec <span style="color:#e6db74">&#34;</span>$command<span style="color:#e6db74">&#34;</span> $ref
 </span></span></code></pre></div><p>which adds:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exec $command
-</span></span></code></pre></div><p>after each commit in the rebase todo list. You can edit or remove the commands
-if you like. You can even add <code>exec</code> lines manually even if you didn&rsquo;t start the
-rebase with the <code>--exec</code> option.</p>
-<p>So to run your <code>pre-commit</code> hooks on each commit in an interactive rebase, use:</p>
+</span></span></code></pre></div><p>after each commit in the rebase todo list.</p>
+<p>You can edit or remove the commands if you like. You can even add <code>exec</code> lines
+manually even if you didn&rsquo;t start the rebase with the <code>--exec</code> option.</p>
+<h2 id="running-pre-commit-hooks">Running pre-commit hooks</h2>
+<p>To run your <code>pre-commit</code> hooks on each commit in an interactive rebase, use:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rebase -i --exec <span style="color:#e6db74">&#34;pre-commit run --hook-stage commit --from HEAD^ --to=HEAD&#34;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    $ref
-</span></span></code></pre></div><p>If you simply want to run some command after every commit on your pull request
-branch without rebasing your commits against a different ref, drop the <code>-i</code>
-flag:</p>
+</span></span></code></pre></div><p>To run a command after every commit on your pull request branch without rebasing
+your commits against a different ref, drop the <code>-i</code> flag:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rebase --exec <span style="color:#e6db74">&#39;$command&#39;</span> $ref
-</span></span></code></pre></div><p>So, for a feature branch based on <code>main</code>, run:</p>
+</span></span></code></pre></div><p>The rebase will stop if <code>$command</code> fails, so you can fix the issue and continue.</p>
+<p>For a feature branch based on <code>main</code>, run:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rebase --exec <span style="color:#e6db74">&#39;pre-commit run --hook-stage commit --from HEAD^ --to=HEAD&#39;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#66d9ef">$(</span>git merge-base main HEAD<span style="color:#66d9ef">)</span>
 </span></span></code></pre></div><p>to check your pre-commit hooks pass on every commit.</p>
+<p>This can be extended to verify that pre-commit hooks pass on <em>the whole repo</em>
+(not just the files modified in a commit) after each commit:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rebase --exec <span style="color:#e6db74">&#39;pre-commit run --hook-stage commit --all-files&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#66d9ef">$(</span>git merge-base main HEAD<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>This is useful if you&rsquo;ve rebased your pull request branch and want to verify
+that each commit is still atomic and passes all pre-commit checks.</p>
 </article>
 
         </main>
@@ -154,6 +161,18 @@ flag:</p>
                     </ul>
                 
 
+            
+
+        
+
+            
+            
+
+            
+                
+                
+
+                
             
 
         
