@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="
+    The case of the ref matters in added Git worktrees
+">
+
+        <link rel="shortcut icon" href="https://til.codeinthehole.com/favicon.ico">
+
+        
+            
+
+        
+        <link rel="stylesheet" href="/css/main.min.css">
+
+        
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://til.codeinthehole.com/posts/the-head-and-head-can-resolve-differently-in-added-git-worktrees/" />
+<meta property="og:title" content="TIL That &#39;head&#39; and &#39;HEAD&#39; can resolve differently in added Git worktrees — David Winterbottom" />
+<meta property="og:description" content="The case of the ref matters in added Git worktrees — can be read in 2 minutes" />
+
+
+<meta property="og:image" content="https://til.codeinthehole.com/images/site.png" />
+
+
+        <title>
+    TIL That &#39;head&#39; and &#39;HEAD&#39; can resolve differently in added Git worktrees — David Winterbottom
+</title>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500T4RE03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {dataLayer.push(arguments); }
+
+            
+            window['ga-disable-G-4500T4RE03'] = location.hostname != "til.codeinthehole.com"
+            gtag('js', new Date());
+            gtag('config', 'G-4500T4RE03');
+        </script>
+
+    </head>
+
+    <body>
+        
+            <header id="banner">
+                <h2><a href="https://til.codeinthehole.com/">Today I Learnt&hellip;</a></h2>
+            </header>
+        
+
+        <main id="content">
+            
+    <article>
+        <header id="post-header">
+            <div id="date_sentence">
+                On <time>September 2, 2025</time>, <a href="https://codeinthehole.com" title="that is, David Winterbottom">I</a> learnt ...
+            </div>
+            <h1>That <code>head</code> and <code>HEAD</code> can resolve differently in added Git worktrees</h1>
+        </header><p>To prepare for a live demo of agentic coding, I created two branches based off a
+historic commit and checked each one out in a separate worktree.</p>
+<pre tabindex="0"><code>default   ____a_b_________c_d
+demo1         \
+demo2         \
+</code></pre><p>The idea was to recreate commit <code>b</code> using two LLM agents, one in each branch, to
+compare their approach and output.</p>
+<p>I did a dress rehearsal and it worked as expected with each agent adding a new
+commit to their respective branches:</p>
+<pre tabindex="0"><code>default   ____a_b_________c_d
+demo1         \_x
+demo2         \_y
+</code></pre><p>To reset the branches for the live demo, I ran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git reset --hard head^
+</span></span></code></pre></div><p>on each demo branch to remove the just-created commits (<code>x</code> and <code>y</code>).</p>
+<p>However, instead of reverting each demo branch to commit <code>a</code>, they were reset to
+commit <code>c</code>, the second-to-last commit on the primary worktree:</p>
+<pre tabindex="0"><code>default   ____a_b_________c_d
+demo1                     \
+demo2                     \
+</code></pre><p>I didn&rsquo;t spot this and it ruined my demo. Why though?</p>
+<p>The problem was I used (lowercase) <code>head</code> instead of <code>HEAD</code>.</p>
+<p>On case-folding file systems (the default on MacOS), the <code>head</code> ref behaves
+differently in an added Git worktree: it resolves to the tip of the <em>main
+worktree</em> rather than the current branch. Hence why I inadvertently reset each
+demo branch to the wrong commit.</p>
+<p>To avoid this problem, don&rsquo;t use <code>head</code> in added Git worktrees. Either use the
+upper case <code>HEAD</code> or less dangerous <code>@</code> reference.</p>
+<p><a href="https://stackoverflow.com/a/62307256">This Stack Overflow answer</a> explains it
+well.</p>
+</article>
+
+        </main>
+
+        
+    <footer id="footer">
+
+        
+        
+
+        
+        
+        
+
+            
+            
+
+            
+                
+
+                
+                    <p>Other things learnt about <a href="/tags/git/">Git</a>:</p>
+                    <ul>
+                        
+                            <li><a href="/posts/that-while-read-loops-in-bash-dont-read-lines-with-no-new-line-character/">That <code>while read</code> loops ignore single line inputs (with no newline character)</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/about-gits-rangediff-command/">About Git&rsquo;s <code>range-diff</code> command</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-run-precommit-using-an-interactive-rebase/">How to run pre-commit using an interactive rebase</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-add-commit-sizes-to-git-log-output/">How to add commit sizes to <code>git log</code> output</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-measure-codeowner-coverage-within-a-large-repo/">How to measure codeowner coverage within a large repo</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-set-the-default-branch-for-a-git-remote/">How to set the default branch for a Git remote</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-edit-and-search-the-files-in-one-commit/">How to edit and search the files in one commit</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-avoid-committing-jupyter-notebook-output-to-git/">How to avoid committing Jupyter Notebook output to Git</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/that-git-foreachref-support-conditional-logic-in-its-format/">That <code>git for-each-ref</code> support conditional logic in its format</a></li>
+
+                            
+                            
+                        
+                            <li><a href="/posts/how-to-perform-a-noninteractive-interactive-git-rebase/">How to perform a non-interactive, interactive Git rebase</a></li>
+
+                            
+                            
+                        
+                    </ul>
+                
+
+            
+
+        
+
+        <br/>
+        <hr color="#eee"/>
+
+        
+            <p>⌨️ Jump to the previous TIL using the ◀️ cursor key.</p>
+        
+        
+        
+    </footer>
+
+
+        
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    <script>
+        
+            Mousetrap.bind("left", function() { window.location.replace("\/posts\/that-while-read-loops-in-bash-dont-read-lines-with-no-new-line-character\/"); })
+        
+
+        
+    </script>
+
+    </body>
+</html>
