@@ -48,7 +48,7 @@ First sentence...
 CONTENT
 
     # Open Vim insert mode with the cursor after the frontmatter.
-    vim -c ':normal }' -c 'startinsert' $filepath
+    $EDITOR -c ':normal }' -c 'startinsert' $filepath
 
     # Generate static site.
     publish "$filepath" "TIL $description"
